@@ -62,6 +62,7 @@
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.lue_deparment = new DevExpress.XtraEditors.LookUpEdit();
             this.btn_AddNewDerpament = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_AddNewRole = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.rdo_Gender.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.check_Status.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Role.Properties)).BeginInit();
@@ -460,18 +461,31 @@
             this.lue_deparment.Name = "lue_deparment";
             this.lue_deparment.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lue_deparment.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("department_id", "ID"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("department_name", "Tên chức vụ")});
             this.lue_deparment.Properties.NullText = "Chọn";
             this.lue_deparment.Size = new System.Drawing.Size(289, 20);
             this.lue_deparment.TabIndex = 290;
             // 
             // btn_AddNewDerpament
             // 
-            this.btn_AddNewDerpament.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btn_AddNewDerpament.Location = new System.Drawing.Point(557, 140);
+            this.btn_AddNewDerpament.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AddNewDerpament.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_AddNewDerpament.ImageOptions.Image")));
+            this.btn_AddNewDerpament.Location = new System.Drawing.Point(548, 140);
             this.btn_AddNewDerpament.Name = "btn_AddNewDerpament";
             this.btn_AddNewDerpament.Size = new System.Drawing.Size(25, 27);
             this.btn_AddNewDerpament.TabIndex = 291;
             this.btn_AddNewDerpament.Click += new System.EventHandler(this.btn_AddNewDerpament_Click);
+            // 
+            // btn_AddNewRole
+            // 
+            this.btn_AddNewRole.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_AddNewRole.ImageOptions.Image")));
+            this.btn_AddNewRole.Location = new System.Drawing.Point(548, 361);
+            this.btn_AddNewRole.Name = "btn_AddNewRole";
+            this.btn_AddNewRole.Size = new System.Drawing.Size(25, 27);
+            this.btn_AddNewRole.TabIndex = 291;
+            this.btn_AddNewRole.Click += new System.EventHandler(this.btn_AddNewDerpament_Click);
             // 
             // frm_RegisterUser
             // 
@@ -479,6 +493,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 563);
+            this.Controls.Add(this.btn_AddNewRole);
             this.Controls.Add(this.btn_AddNewDerpament);
             this.Controls.Add(this.lue_deparment);
             this.Controls.Add(this.rdo_Gender);
@@ -571,5 +586,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.LookUpEdit lue_deparment;
         private DevExpress.XtraEditors.SimpleButton btn_AddNewDerpament;
+        private DevExpress.XtraEditors.SimpleButton btn_AddNewRole;
     }
 }

@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PhanMemQuanLyCongTrinh
+namespace PhanMemQuanLyCongTrinh.DTO
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;

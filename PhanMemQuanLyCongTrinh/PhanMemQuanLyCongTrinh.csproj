@@ -52,10 +52,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataClasses1.designer.cs">
+    <Compile Include="BUS\deparmentBus.cs" />
+    <Compile Include="BUS\userBus.cs" />
+    <Compile Include="DAO\departmentDao.cs" />
+    <Compile Include="DAO\userDao.cs" />
+    <Compile Include="DTO\DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Button.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Button.designer.cs">
+      <DependentUpon>frm_Button.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\frm_department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\frm_department.Designer.cs">
+      <DependentUpon>frm_department.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Login.cs">
       <SubType>Form</SubType>
@@ -63,22 +79,22 @@
     <Compile Include="frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyHeThong\frm_ChangePassword.cs">
+    <Compile Include="GUI\QuanLyHeThong\frm_ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyHeThong\frm_ChangePassword.Designer.cs">
+    <Compile Include="GUI\QuanLyHeThong\frm_ChangePassword.Designer.cs">
       <DependentUpon>frm_ChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyHeThong\frm_RegisterUser.cs">
+    <Compile Include="GUI\QuanLyHeThong\frm_RegisterUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyHeThong\frm_RegisterUser.Designer.cs">
+    <Compile Include="GUI\QuanLyHeThong\frm_RegisterUser.Designer.cs">
       <DependentUpon>frm_RegisterUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLyHeThong\frm_UserInfo.cs">
+    <Compile Include="GUI\QuanLyHeThong\frm_UserInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyHeThong\frm_UserInfo.Designer.cs">
+    <Compile Include="GUI\QuanLyHeThong\frm_UserInfo.Designer.cs">
       <DependentUpon>frm_UserInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -90,19 +106,25 @@
       <DependentUpon>frm_Main.cs</DependentUpon>
     </Compile>
     <None Include="app.config" />
-    <None Include="DataClasses1.dbml.layout">
+    <None Include="DTO\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="frm_Button.resx">
+      <DependentUpon>frm_Button.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_department.resx">
+      <DependentUpon>frm_department.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyHeThong\frm_ChangePassword.resx">
+    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_ChangePassword.resx">
       <DependentUpon>frm_ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyHeThong\frm_RegisterUser.resx">
+    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_RegisterUser.resx">
       <DependentUpon>frm_RegisterUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLyHeThong\frm_UserInfo.resx">
+    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_UserInfo.resx">
       <DependentUpon>frm_UserInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -118,7 +140,7 @@
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataClasses1.dbml">
+    <None Include="DTO\DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
@@ -136,6 +158,7 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

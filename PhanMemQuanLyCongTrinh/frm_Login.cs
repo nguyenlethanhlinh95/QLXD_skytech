@@ -7,19 +7,21 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using PhanMemQuanLyCongTrinh.BUS;
 
 namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_Login : DevExpress.XtraEditors.XtraForm
     {
+        private userBus userBus = null;
+
         public frm_Login( )
         {
             InitializeComponent( );
+            userBus = new userBus( );
         }
 
-        DataClasses1DataContext db = new DataClasses1DataContext();
-
-
+        
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -33,27 +35,27 @@ namespace PhanMemQuanLyCongTrinh
             }
             else
             {
-                var user = from p in db.ST_employees
-                        where p.employee_username == txt_UserName.Text
-                        && p.employee_password == txt_PassWord.Text
-                        select p;
+                Int64 IntCheckLogin = userBus.checkLogin(txt_UserName.Text, txt_PassWord.Text);
 
-                if ( user.Any())
-                {
+                if ( IntCheckLogin > 0)
+                {                   
+                    var user = userBus.getUserByID(IntCheckLogin);
+
+                    // check quyen
+                    var Quyen = user.GetType( ).GetProperty("permission_id").GetValue(user, null);
+                    var Vitual_Quyen = (Quyen == null) ? 0 : Int64.Parse(Quyen.ToString( ));
+
+                    frm_Main.Vitual_Username = txt_UserName.Text;
+                    frm_Main.Vitual_Quyen = Vitual_Quyen;
+
                     // tao form moi
                     frm_Main f = new frm_Main( );
-                    // an form hien tai
-                    this.Hide( );
+                    // an form hien tai                  
                     // show form
+                    MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide( );
+
                     f.ShowDialog( );
-                    this.Show( );
-
-
-                    frm_Main.Vitual_Username = user.Single( ).employee_username;
-                    frm_Main.Vitual_Quyen = Int64.Parse(user.Single( ).permission_id.ToString());
-
-                    this.DialogResult = DialogResult.OK;
-                    this.Close( );
                 }
                 else
                 {

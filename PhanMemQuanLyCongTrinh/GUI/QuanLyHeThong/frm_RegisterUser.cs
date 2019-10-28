@@ -7,24 +7,35 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using PhanMemQuanLyCongTrinh.BUS;
 
 namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_RegisterUser : DevExpress.XtraEditors.XtraForm
     {
+        deparmentBus deparmentBus = new deparmentBus();
+
         public frm_RegisterUser( )
         {
             InitializeComponent( );
         }
 
-        DataClasses1DataContext db = new DataClasses1DataContext();
-
         #region Load
         private void frm_RegisterUser_Load(object sender, EventArgs e)
         {
+            loadDeparment();
+        }
 
+        private void loadDeparment()
+        {
+            var data = deparmentBus.listAll();
+
+            lue_deparment.Properties.DataSource = data;
+            lue_deparment.Properties.ValueMember = "department_id";
+            lue_deparment.Properties.DisplayMember = "department_name";
         }
         #endregion
+
 
         #region Event
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -38,17 +49,15 @@ namespace PhanMemQuanLyCongTrinh
             var password = txt_Pass.Text;
 
         }
-        #endregion End Event
-
         private void btn_AddNewDerpament_Click(object sender, EventArgs e)
         {
-            //frm f = new frm_TableManager( );
-            //// an form hien tai
-            //this.Hide( );
-            //// show form
-            //f.ShowDialog( );
+            frm_department f = new frm_department( );
+            f.ShowDialog( );
 
         }
+        #endregion End Event
+
+        
 
 
   

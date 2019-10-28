@@ -7,6 +7,7 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using DevExpress.LookAndFeel;
 
 namespace PhanMemQuanLyCongTrinh
 {

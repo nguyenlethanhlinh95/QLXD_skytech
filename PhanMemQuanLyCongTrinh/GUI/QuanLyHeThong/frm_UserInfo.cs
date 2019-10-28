@@ -16,5 +16,12 @@ namespace PhanMemQuanLyCongTrinh
         {
             InitializeComponent( );
         }
+
+        private void simpleButton13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

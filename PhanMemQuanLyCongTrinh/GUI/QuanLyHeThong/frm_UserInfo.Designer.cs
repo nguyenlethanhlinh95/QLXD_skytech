@@ -57,6 +57,12 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.rdo_Gender = new DevExpress.XtraEditors.RadioGroup();
             this.check_Status = new DevExpress.XtraEditors.CheckEdit();
+            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Role.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_BirthDay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Department.Properties)).BeginInit();
@@ -413,12 +419,103 @@
             this.check_Status.Size = new System.Drawing.Size(75, 19);
             this.check_Status.TabIndex = 12;
             // 
+            // simpleButton13
+            // 
+            this.simpleButton13.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
+            this.simpleButton13.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.simpleButton13.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.simpleButton13.Appearance.Options.UseBackColor = true;
+            this.simpleButton13.Appearance.Options.UseFont = true;
+            this.simpleButton13.Appearance.Options.UseForeColor = true;
+            this.simpleButton13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image")));
+            this.simpleButton13.Location = new System.Drawing.Point(562, 148);
+            this.simpleButton13.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
+            this.simpleButton13.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.simpleButton13.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.simpleButton13.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.simpleButton13.Name = "simpleButton13";
+            this.simpleButton13.Size = new System.Drawing.Size(23, 24);
+            this.simpleButton13.TabIndex = 262;
+            this.simpleButton13.Click += new System.EventHandler(this.simpleButton13_Click);
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl13.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.Appearance.Options.UseForeColor = true;
+            this.labelControl13.Location = new System.Drawing.Point(538, 60);
+            this.labelControl13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(8, 16);
+            this.labelControl13.TabIndex = 255;
+            this.labelControl13.Text = "*";
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl14.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl14.Appearance.Options.UseFont = true;
+            this.labelControl14.Appearance.Options.UseForeColor = true;
+            this.labelControl14.Location = new System.Drawing.Point(538, 90);
+            this.labelControl14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(8, 16);
+            this.labelControl14.TabIndex = 255;
+            this.labelControl14.Text = "*";
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl15.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl15.Appearance.Options.UseFont = true;
+            this.labelControl15.Appearance.Options.UseForeColor = true;
+            this.labelControl15.Location = new System.Drawing.Point(538, 152);
+            this.labelControl15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(8, 16);
+            this.labelControl15.TabIndex = 255;
+            this.labelControl15.Text = "*";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.simpleButton1.Appearance.Options.UseBackColor = true;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(562, 363);
+            this.simpleButton1.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
+            this.simpleButton1.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.simpleButton1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.simpleButton1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(23, 24);
+            this.simpleButton1.TabIndex = 262;
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl16.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl16.Appearance.Options.UseFont = true;
+            this.labelControl16.Appearance.Options.UseForeColor = true;
+            this.labelControl16.Location = new System.Drawing.Point(538, 368);
+            this.labelControl16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Size = new System.Drawing.Size(8, 16);
+            this.labelControl16.TabIndex = 255;
+            this.labelControl16.Text = "*";
+            // 
             // frm_UserInfo
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 563);
+            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.simpleButton13);
             this.Controls.Add(this.rdo_Gender);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.check_Status);
@@ -434,6 +531,10 @@
             this.Controls.Add(this.pic_Logo);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.txt_Name);
+            this.Controls.Add(this.labelControl16);
+            this.Controls.Add(this.labelControl15);
+            this.Controls.Add(this.labelControl14);
+            this.Controls.Add(this.labelControl13);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.txt_Pass);
             this.Controls.Add(this.labelControl8);
@@ -500,5 +601,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.RadioGroup rdo_Gender;
         private DevExpress.XtraEditors.CheckEdit check_Status;
+        private DevExpress.XtraEditors.SimpleButton simpleButton13;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraEditors.LabelControl labelControl15;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LabelControl labelControl16;
     }
 }

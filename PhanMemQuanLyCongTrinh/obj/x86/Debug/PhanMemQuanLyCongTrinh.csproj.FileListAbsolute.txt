@@ -41,3 +41,5 @@ D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQua
 D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_Main.resources
 D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.csproj.GenerateResource.Cache
 D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.exe.licenses
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\FormMau.frm_Button.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_department.resources
