@@ -1,0 +1,31 @@
+c:\users\duc\documents\visual studio 2010\Projects\PhanMemQuanLyCongTrinh\PhanMemQuanLyCongTrinh\bin\Debug\PhanMemQuanLyCongTrinh.exe
+c:\users\duc\documents\visual studio 2010\Projects\PhanMemQuanLyCongTrinh\PhanMemQuanLyCongTrinh\bin\Debug\PhanMemQuanLyCongTrinh.pdb
+c:\users\duc\documents\visual studio 2010\Projects\PhanMemQuanLyCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.Properties.Resources.resources
+c:\users\duc\documents\visual studio 2010\Projects\PhanMemQuanLyCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.ribbonFormMain.resources
+c:\users\duc\documents\visual studio 2010\Projects\PhanMemQuanLyCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.csproj.GenerateResource.Cache
+c:\users\duc\documents\visual studio 2010\Projects\PhanMemQuanLyCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.exe.licenses
+c:\users\duc\documents\visual studio 2010\Projects\PhanMemQuanLyCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.exe
+c:\users\duc\documents\visual studio 2010\Projects\PhanMemQuanLyCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.pdb
+C:\Users\Duc\documents\visual studio 2010\Projects\PhanMemQuanLyCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.csprojResolveAssemblyReference.cache
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQL_XayDung2\QLCongTrinh_root\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.exe
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQL_XayDung2\QLCongTrinh_root\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.pdb
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQL_XayDung2\QLCongTrinh_root\PhanMemQuanLyCongTrinh\bin\Debug\PhanMemQuanLyCongTrinh.exe
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQL_XayDung2\QLCongTrinh_root\PhanMemQuanLyCongTrinh\bin\Debug\PhanMemQuanLyCongTrinh.pdb
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQL_XayDung2\QLCongTrinh_root\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.csprojResolveAssemblyReference.cache
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQL_XayDung2\QLCongTrinh_root\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.Properties.Resources.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQL_XayDung2\QLCongTrinh_root\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.csproj.GenerateResource.Cache
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQL_XayDung2\QLCongTrinh_root\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.exe.licenses
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQL_XayDung2\QLCongTrinh_root\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_Main.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQL_XayDung2\QLCongTrinh_root\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_UserInfo.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQLXD\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.exe
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQLXD\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.pdb
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQLXD\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.csprojResolveAssemblyReference.cache
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQLXD\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_UserInfo.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQLXD\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.Properties.Resources.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQLXD\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_Main.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQLXD\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.csproj.GenerateResource.Cache
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQLXD\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.exe.licenses
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQLXD\QLCongTrinh\PhanMemQuanLyCongTrinh\bin\Debug\PhanMemQuanLyCongTrinh.exe
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\PMQLXD\QLCongTrinh\PhanMemQuanLyCongTrinh\bin\Debug\PhanMemQuanLyCongTrinh.pdb
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.exe
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.pdb
