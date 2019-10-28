@@ -36,11 +36,10 @@
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.txt_BirthDay = new DevExpress.XtraEditors.TextEdit();
-            this.cmb_Department = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.btn_image = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Exit = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_Update = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_New = new DevExpress.XtraEditors.SimpleButton();
             this.pic_Logo = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txt_Name = new DevExpress.XtraEditors.TextEdit();
@@ -61,11 +60,12 @@
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
+            this.lue_deparment = new DevExpress.XtraEditors.LookUpEdit();
+            this.btn_AddNewDerpament = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.rdo_Gender.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.check_Status.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Role.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_BirthDay.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_Department.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Pass.Properties)).BeginInit();
@@ -74,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Phone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Address.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_UserName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_deparment.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // rdo_Gender
@@ -155,24 +156,6 @@
             this.txt_BirthDay.Size = new System.Drawing.Size(291, 22);
             this.txt_BirthDay.TabIndex = 266;
             // 
-            // cmb_Department
-            // 
-            this.cmb_Department.EditValue = "Giám đốc";
-            this.cmb_Department.Location = new System.Drawing.Point(237, 147);
-            this.cmb_Department.Name = "cmb_Department";
-            this.cmb_Department.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
-            this.cmb_Department.Properties.Appearance.Options.UseFont = true;
-            this.cmb_Department.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmb_Department.Properties.Items.AddRange(new object[] {
-            "Giám đốc",
-            "Tổng Quản lý",
-            "Trưởng chi nhánh",
-            "Phó chi nhánh",
-            "Nhân viên"});
-            this.cmb_Department.Size = new System.Drawing.Size(291, 22);
-            this.cmb_Department.TabIndex = 265;
-            // 
             // labelControl9
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
@@ -224,29 +207,31 @@
             this.btn_Exit.TabIndex = 276;
             this.btn_Exit.Text = "Đóng";
             this.btn_Exit.ToolTipTitle = "ESC";
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
-            // btn_Update
+            // btn_New
             // 
-            this.btn_Update.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_Update.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_Update.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.btn_Update.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn_Update.Appearance.Options.UseBackColor = true;
-            this.btn_Update.Appearance.Options.UseFont = true;
-            this.btn_Update.Appearance.Options.UseForeColor = true;
-            this.btn_Update.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Update.ImageOptions.Image")));
-            this.btn_Update.Location = new System.Drawing.Point(521, 442);
-            this.btn_Update.LookAndFeel.SkinMaskColor = System.Drawing.Color.RoyalBlue;
-            this.btn_Update.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_Update.LookAndFeel.SkinName = "Office 2010 Black";
-            this.btn_Update.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btn_Update.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(110, 36);
-            this.btn_Update.TabIndex = 275;
-            this.btn_Update.Text = "Cập nhật";
-            this.btn_Update.ToolTipTitle = "Ctrl +S";
+            this.btn_New.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_New.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_New.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.btn_New.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_New.Appearance.Options.UseBackColor = true;
+            this.btn_New.Appearance.Options.UseFont = true;
+            this.btn_New.Appearance.Options.UseForeColor = true;
+            this.btn_New.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.btn_New.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_New.ImageOptions.Image")));
+            this.btn_New.Location = new System.Drawing.Point(521, 442);
+            this.btn_New.LookAndFeel.SkinMaskColor = System.Drawing.Color.RoyalBlue;
+            this.btn_New.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_New.LookAndFeel.SkinName = "Office 2010 Black";
+            this.btn_New.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btn_New.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_New.Name = "btn_New";
+            this.btn_New.Size = new System.Drawing.Size(110, 36);
+            this.btn_New.TabIndex = 275;
+            this.btn_New.Text = "Thêm mới";
+            this.btn_New.ToolTipTitle = "Ctrl +S";
+            this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
             // 
             // pic_Logo
             // 
@@ -423,7 +408,7 @@
             this.labelControl13.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl13.Appearance.Options.UseFont = true;
             this.labelControl13.Appearance.Options.UseForeColor = true;
-            this.labelControl13.Location = new System.Drawing.Point(545, 61);
+            this.labelControl13.Location = new System.Drawing.Point(534, 58);
             this.labelControl13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(8, 16);
@@ -436,7 +421,7 @@
             this.labelControl14.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl14.Appearance.Options.UseFont = true;
             this.labelControl14.Appearance.Options.UseForeColor = true;
-            this.labelControl14.Location = new System.Drawing.Point(545, 91);
+            this.labelControl14.Location = new System.Drawing.Point(534, 88);
             this.labelControl14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(8, 16);
@@ -449,7 +434,7 @@
             this.labelControl15.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl15.Appearance.Options.UseFont = true;
             this.labelControl15.Appearance.Options.UseForeColor = true;
-            this.labelControl15.Location = new System.Drawing.Point(545, 153);
+            this.labelControl15.Location = new System.Drawing.Point(534, 145);
             this.labelControl15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(8, 16);
@@ -462,12 +447,31 @@
             this.labelControl16.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl16.Appearance.Options.UseFont = true;
             this.labelControl16.Appearance.Options.UseForeColor = true;
-            this.labelControl16.Location = new System.Drawing.Point(545, 340);
+            this.labelControl16.Location = new System.Drawing.Point(534, 340);
             this.labelControl16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(8, 16);
             this.labelControl16.TabIndex = 284;
             this.labelControl16.Text = "*";
+            // 
+            // lue_deparment
+            // 
+            this.lue_deparment.Location = new System.Drawing.Point(237, 144);
+            this.lue_deparment.Name = "lue_deparment";
+            this.lue_deparment.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lue_deparment.Properties.NullText = "Chọn";
+            this.lue_deparment.Size = new System.Drawing.Size(289, 20);
+            this.lue_deparment.TabIndex = 290;
+            // 
+            // btn_AddNewDerpament
+            // 
+            this.btn_AddNewDerpament.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btn_AddNewDerpament.Location = new System.Drawing.Point(557, 140);
+            this.btn_AddNewDerpament.Name = "btn_AddNewDerpament";
+            this.btn_AddNewDerpament.Size = new System.Drawing.Size(25, 27);
+            this.btn_AddNewDerpament.TabIndex = 291;
+            this.btn_AddNewDerpament.Click += new System.EventHandler(this.btn_AddNewDerpament_Click);
             // 
             // frm_RegisterUser
             // 
@@ -475,6 +479,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 563);
+            this.Controls.Add(this.btn_AddNewDerpament);
+            this.Controls.Add(this.lue_deparment);
             this.Controls.Add(this.rdo_Gender);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.check_Status);
@@ -482,11 +488,10 @@
             this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.txt_BirthDay);
-            this.Controls.Add(this.cmb_Department);
             this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.btn_image);
             this.Controls.Add(this.btn_Exit);
-            this.Controls.Add(this.btn_Update);
+            this.Controls.Add(this.btn_New);
             this.Controls.Add(this.pic_Logo);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.txt_Name);
@@ -512,11 +517,11 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐĂNG KÝ TÀI KHOẢN";
+            this.Load += new System.EventHandler(this.frm_RegisterUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rdo_Gender.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.check_Status.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Role.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_BirthDay.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_Department.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Pass.Properties)).EndInit();
@@ -525,6 +530,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Phone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Address.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_UserName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_deparment.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -539,11 +545,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.TextEdit txt_BirthDay;
-        private DevExpress.XtraEditors.ComboBoxEdit cmb_Department;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.SimpleButton btn_image;
         private DevExpress.XtraEditors.SimpleButton btn_Exit;
-        private DevExpress.XtraEditors.SimpleButton btn_Update;
+        private DevExpress.XtraEditors.SimpleButton btn_New;
         private DevExpress.XtraEditors.PictureEdit pic_Logo;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.TextEdit txt_Name;
@@ -564,5 +569,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.LabelControl labelControl16;
+        private DevExpress.XtraEditors.LookUpEdit lue_deparment;
+        private DevExpress.XtraEditors.SimpleButton btn_AddNewDerpament;
     }
 }

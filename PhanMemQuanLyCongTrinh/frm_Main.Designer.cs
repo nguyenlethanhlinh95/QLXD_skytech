@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnCustomer = new DevExpress.XtraBars.BarButtonItem();
@@ -137,7 +138,9 @@
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -462,6 +465,7 @@
             this.btnUserInformation.LargeWidth = 100;
             this.btnUserInformation.Name = "btnUserInformation";
             this.btnUserInformation.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnUserInformation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUserInformation_ItemClick);
             // 
             // btnPermission
             // 
@@ -489,6 +493,7 @@
             this.btnRegistered.LargeWidth = 100;
             this.btnRegistered.Name = "btnRegistered";
             this.btnRegistered.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnRegistered.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRegistered_ItemClick);
             // 
             // btnHistory
             // 
@@ -1173,6 +1178,10 @@
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Hợp Đồng - Công Trình";
             // 
+            // xtraTabbedMdiManager1
+            // 
+            this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1180,6 +1189,7 @@
             this.ClientSize = new System.Drawing.Size(1214, 664);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.IsMdiContainer = true;
             this.Name = "frm_Main";
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -1187,6 +1197,7 @@
             this.Text = "\'";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1302,5 +1313,6 @@
         private DevExpress.XtraBars.BarButtonItem btnReportBug;
         private DevExpress.XtraBars.BarCheckItem btnPaymentSlipsContruction;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
     }
 }
