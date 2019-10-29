@@ -246,6 +246,7 @@
             this.btnCustomer.LargeWidth = 100;
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCustomer_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -261,6 +262,7 @@
             this.btnCustomerGroup.LargeWidth = 100;
             this.btnCustomerGroup.Name = "btnCustomerGroup";
             this.btnCustomerGroup.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnCustomerGroup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCustomerGroup_ItemClick);
             // 
             // btnDepartment
             // 
@@ -484,6 +486,7 @@
             this.btnChangePassword.LargeWidth = 100;
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnChangePassword.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChangePassword_ItemClick);
             // 
             // btnRegistered
             // 
@@ -1196,6 +1199,7 @@
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "\'";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frm_Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);

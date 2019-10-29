@@ -47,5 +47,10 @@ namespace PhanMemQuanLyCongTrinh.BUS
             return false;
            }
        }
+
+       public bool upatePass(string pass, Int64 id)
+       {
+            return _userDao.updatePassword(pass, id);
+       }
     }
 }

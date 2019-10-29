@@ -39,6 +39,9 @@
     <Reference Include="DevExpress.Utils.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -52,9 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\customerBus.cs" />
+    <Compile Include="BUS\customerGroupBus.cs" />
     <Compile Include="BUS\deparmentBus.cs" />
     <Compile Include="BUS\messeage.cs" />
     <Compile Include="BUS\userBus.cs" />
+    <Compile Include="DAO\customerDao.cs" />
+    <Compile Include="DAO\customerGroupDao.cs" />
     <Compile Include="DAO\customer_group.cs" />
     <Compile Include="DAO\departmentDao.cs" />
     <Compile Include="DAO\userDao.cs" />
@@ -69,16 +76,34 @@
     <Compile Include="frm_Button.designer.cs">
       <DependentUpon>frm_Button.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\QuanLyHeThong\frm_EmployeesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\frm_EmployeesList.Designer.cs">
+      <DependentUpon>frm_EmployeesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\frm_Logout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\frm_Logout.Designer.cs">
+      <DependentUpon>frm_Logout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\frm_RePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\frm_RePassword.Designer.cs">
+      <DependentUpon>frm_RePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\QuanLyHeThong\frm_NewDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\QuanLyHeThong\frm_NewDepartment.Designer.cs">
       <DependentUpon>frm_NewDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Login.cs">
+    <Compile Include="GUI\QuanLyHeThong\frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Login.Designer.cs">
+    <Compile Include="GUI\QuanLyHeThong\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\QuanLyHeThong\frm_ChangePassword.cs">
@@ -99,6 +124,24 @@
     <Compile Include="GUI\QuanLyHeThong\frm_UserInfo.Designer.cs">
       <DependentUpon>frm_UserInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Quotations\Customer\frm_Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quotations\Customer\frm_Customer.designer.cs">
+      <DependentUpon>frm_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Quotations\Customer\frm_NewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quotations\Customer\frm_NewCustomer.designer.cs">
+      <DependentUpon>frm_NewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Quotations\Customer\frm_NewCustomerGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quotations\Customer\frm_NewCustomerGroup.designer.cs">
+      <DependentUpon>frm_NewCustomerGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frm_Main.cs">
@@ -114,10 +157,16 @@
     <EmbeddedResource Include="frm_Button.resx">
       <DependentUpon>frm_Button.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_EmployeesList.resx">
+      <DependentUpon>frm_EmployeesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_Logout.resx">
+      <DependentUpon>frm_Logout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanLyHeThong\frm_NewDepartment.resx">
       <DependentUpon>frm_NewDepartment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Login.resx">
+    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanLyHeThong\frm_ChangePassword.resx">
@@ -126,8 +175,20 @@
     <EmbeddedResource Include="GUI\QuanLyHeThong\frm_RegisterUser.resx">
       <DependentUpon>frm_RegisterUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_RePassword.resx">
+      <DependentUpon>frm_RePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanLyHeThong\frm_UserInfo.resx">
       <DependentUpon>frm_UserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quotations\Customer\frm_Customer.resx">
+      <DependentUpon>frm_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quotations\Customer\frm_NewCustomer.resx">
+      <DependentUpon>frm_NewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quotations\Customer\frm_NewCustomerGroup.resx">
+      <DependentUpon>frm_NewCustomerGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

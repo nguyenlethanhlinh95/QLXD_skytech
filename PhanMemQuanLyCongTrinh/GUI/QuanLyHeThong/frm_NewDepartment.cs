@@ -24,15 +24,20 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_AddNew_Click(object sender, EventArgs e)
         {
-            if (txt_deparment.Text != "")
+            
+        }
+
+        private void but_Update_Click(object sender, EventArgs e)
+        {
+            if ( txt_deparment.Text != "" )
             {
                 bool status = depBus.insert(txt_deparment.Text);
 
-                if (status)
+                if ( status )
                 {
                     messeage.success("Thêm mới thành công");
 
-                    this.Close();
+                    this.Close( );
                 }
                 else
                 {

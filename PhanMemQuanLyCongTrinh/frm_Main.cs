@@ -63,6 +63,56 @@ namespace PhanMemQuanLyCongTrinh
             }
         }
 
+        private void frm_Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCustomer_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_Customer));
+            if ( frm == null )
+            {
+                frm_Customer forms = new frm_Customer( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
+        private void btnCustomerGroup_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_NewCustomerGroup));
+            if ( frm == null )
+            {
+                frm_NewCustomerGroup forms = new frm_NewCustomerGroup( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
+        private void btnChangePassword_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_RePassword));
+            if ( frm == null )
+            {
+                frm_RePassword forms = new frm_RePassword( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
         
     }
 }

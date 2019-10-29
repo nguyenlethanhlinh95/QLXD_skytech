@@ -122,5 +122,24 @@ namespace PhanMemQuanLyCongTrinh.DAO
                 return false;
             }
         }
+
+        public bool updatePassword(string pass, Int64 id)
+        {
+            try
+            {
+                var user = (from u in db.ST_employees
+                            where u.employee_id == id
+                            select u).Single( );
+
+                user.employee_password = pass;
+                db.SubmitChanges();
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+            
+        }
     }
 }

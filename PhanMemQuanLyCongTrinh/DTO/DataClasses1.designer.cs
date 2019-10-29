@@ -370,6 +370,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		
 		private System.Nullable<bool> _custome_gender;
 		
+		private System.Nullable<long> _employee_id;
+		
 		private System.Nullable<System.DateTime> _customer_created_date;
 		
 		private System.Data.Linq.Binary _customer_image;
@@ -406,6 +408,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void Oncustome_date_of_birthChanged();
     partial void Oncustome_genderChanging(System.Nullable<bool> value);
     partial void Oncustome_genderChanged();
+    partial void Onemployee_idChanging(System.Nullable<long> value);
+    partial void Onemployee_idChanged();
     partial void Oncustomer_created_dateChanging(System.Nullable<System.DateTime> value);
     partial void Oncustomer_created_dateChanged();
     partial void Oncustomer_imageChanging(System.Data.Linq.Binary value);
@@ -675,6 +679,26 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._custome_gender = value;
 					this.SendPropertyChanged("custome_gender");
 					this.Oncustome_genderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_id", DbType="BigInt")]
+		public System.Nullable<long> employee_id
+		{
+			get
+			{
+				return this._employee_id;
+			}
+			set
+			{
+				if ((this._employee_id != value))
+				{
+					this.Onemployee_idChanging(value);
+					this.SendPropertyChanging();
+					this._employee_id = value;
+					this.SendPropertyChanged("employee_id");
+					this.Onemployee_idChanged();
 				}
 			}
 		}
