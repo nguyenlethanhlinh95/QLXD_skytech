@@ -69,5 +69,58 @@ namespace PhanMemQuanLyCongTrinh.DAO
 
             return Convert.ToInt64(propertyName);
         }
+
+        public Int64 insertUser(ST_employee em)
+        {
+            try
+            {
+                db.ST_employees.InsertOnSubmit(em);
+                db.SubmitChanges( );
+
+                Int64 id = Int64.Parse(em.employee_id.ToString( ));
+                return id;
+            }
+            catch{
+                return 0;
+            }
+            
+        }
+
+        public bool updateUser(ST_employee em, Int64 id)
+        {
+            try{
+                var user = (from b in db.ST_employees
+                            where b.employee_id == id
+                            select b).Single();
+                if (user != null)
+                {
+                    user.employee_username = em.employee_username;
+                    user.employee_password = em.employee_password;
+                    user.employee_name = em.employee_name;
+                    user.employee_phone = em.employee_phone;
+                    user.employee_status = em.employee_status;
+                    user.employee_image = em.employee_image;
+                    user.employee_gender = em.employee_gender;
+                    user.employee_date_of_birth = em.employee_date_of_birth;
+                    user.employee_address = em.employee_address;
+                    user.employee_bank_account_number = em.employee_bank_account_number;
+                    user.department_id = em.department_id;
+                    user.permission_id = em.permission_id;
+                    user.employee_created_date = em.employee_created_date;
+
+
+                    db.SubmitChanges( );
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }               
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

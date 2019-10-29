@@ -86,7 +86,7 @@
             this.btn_Login.Appearance.Options.UseFont = true;
             this.btn_Login.Appearance.Options.UseForeColor = true;
             this.btn_Login.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.btn_Login.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Update.ImageOptions.Image")));
+            this.btn_Login.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Login.ImageOptions.Image")));
             this.btn_Login.Location = new System.Drawing.Point(249, 295);
             this.btn_Login.LookAndFeel.SkinMaskColor = System.Drawing.Color.RoyalBlue;
             this.btn_Login.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));

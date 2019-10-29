@@ -13,5 +13,19 @@ namespace PhanMemQuanLyCongTrinh.BUS
         {
             return departmentDao.getAllDepartment();
         }
+
+        public bool insert(string name)
+        {
+            bool boolInsert = departmentDao.insertDepartment(name);
+
+            if (boolInsert)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

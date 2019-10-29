@@ -52,7 +52,7 @@
             this.btn_AddNew.Appearance.Options.UseBackColor = true;
             this.btn_AddNew.Appearance.Options.UseFont = true;
             this.btn_AddNew.Appearance.Options.UseForeColor = true;
-            this.btn_AddNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btn_AddNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_AddNew.ImageOptions.Image")));
             this.btn_AddNew.Location = new System.Drawing.Point(369, 96);
             this.btn_AddNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
             this.btn_AddNew.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;

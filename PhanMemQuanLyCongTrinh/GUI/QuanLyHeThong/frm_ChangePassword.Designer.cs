@@ -65,7 +65,7 @@
             this.btn_Exit.Appearance.Options.UseFont = true;
             this.btn_Exit.Appearance.Options.UseForeColor = true;
             this.btn_Exit.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.btn_Exit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("but_Exit.ImageOptions.Image")));
+            this.btn_Exit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Exit.ImageOptions.Image")));
             this.btn_Exit.Location = new System.Drawing.Point(354, 333);
             this.btn_Exit.LookAndFeel.SkinMaskColor = System.Drawing.Color.Gray;
             this.btn_Exit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Black;
@@ -88,7 +88,7 @@
             this.btn_Update.Appearance.Options.UseFont = true;
             this.btn_Update.Appearance.Options.UseForeColor = true;
             this.btn_Update.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("but_Update.ImageOptions.Image")));
+            this.btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Update.ImageOptions.Image")));
             this.btn_Update.Location = new System.Drawing.Point(224, 333);
             this.btn_Update.LookAndFeel.SkinMaskColor = System.Drawing.Color.RoyalBlue;
             this.btn_Update.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));

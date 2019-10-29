@@ -52,8 +52,9 @@
       <Column Name="employee_username" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="employee_password" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="employee_address" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="employee_phone" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="employee_date_of_birth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="employee_email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="employee_phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="employee_date_of_birth" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="employee_gender" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="employee_bank_account_number" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="employee_image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />

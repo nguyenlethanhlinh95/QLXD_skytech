@@ -960,6 +960,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		
 		private string _employee_address;
 		
+		private string _employee_email;
+		
 		private string _employee_phone;
 		
 		private System.Nullable<System.DateTime> _employee_date_of_birth;
@@ -996,6 +998,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void Onemployee_passwordChanged();
     partial void Onemployee_addressChanging(string value);
     partial void Onemployee_addressChanged();
+    partial void Onemployee_emailChanging(string value);
+    partial void Onemployee_emailChanged();
     partial void Onemployee_phoneChanging(string value);
     partial void Onemployee_phoneChanged();
     partial void Onemployee_date_of_birthChanging(System.Nullable<System.DateTime> value);
@@ -1143,7 +1147,27 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_phone", DbType="NVarChar(255)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_email", DbType="VarChar(50)")]
+		public string employee_email
+		{
+			get
+			{
+				return this._employee_email;
+			}
+			set
+			{
+				if ((this._employee_email != value))
+				{
+					this.Onemployee_emailChanging(value);
+					this.SendPropertyChanging();
+					this._employee_email = value;
+					this.SendPropertyChanged("employee_email");
+					this.Onemployee_emailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_phone", DbType="NVarChar(50)")]
 		public string employee_phone
 		{
 			get
@@ -1163,7 +1187,7 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_date_of_birth", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_date_of_birth", DbType="DateTime")]
 		public System.Nullable<System.DateTime> employee_date_of_birth
 		{
 			get

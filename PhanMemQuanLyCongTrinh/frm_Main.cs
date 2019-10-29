@@ -14,6 +14,7 @@ namespace PhanMemQuanLyCongTrinh
     public partial class frm_Main : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public static string Vitual_Username;
+        public static Int64 Vitual_id = 0;
         public static string Vitual_Chinhanh;
         public static Int64 Vitual_Quyen;
         private Form kiemtraform(Type ftype)
@@ -49,7 +50,7 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btnRegistered_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frm_UserInfo));
+            Form frm = kiemtraform(typeof(frm_RegisterUser));
             if ( frm == null )
             {
                 frm_RegisterUser forms = new frm_RegisterUser( );

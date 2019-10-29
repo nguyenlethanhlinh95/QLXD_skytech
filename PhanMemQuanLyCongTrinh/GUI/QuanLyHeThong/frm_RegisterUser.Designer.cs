@@ -32,10 +32,8 @@
             this.rdo_Gender = new DevExpress.XtraEditors.RadioGroup();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.check_Status = new DevExpress.XtraEditors.CheckEdit();
-            this.cmb_Role = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_BirthDay = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.btn_image = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Exit = new DevExpress.XtraEditors.SimpleButton();
@@ -59,14 +57,13 @@
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.lue_deparment = new DevExpress.XtraEditors.LookUpEdit();
             this.btn_AddNewDerpament = new DevExpress.XtraEditors.SimpleButton();
             this.btn_AddNewRole = new DevExpress.XtraEditors.SimpleButton();
+            this.dt_DateOfBirth = new DevExpress.XtraEditors.DateEdit();
+            this.lue_role = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.rdo_Gender.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.check_Status.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_Role.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_BirthDay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Pass.Properties)).BeginInit();
@@ -76,6 +73,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Address.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_UserName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_deparment.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_DateOfBirth.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_DateOfBirth.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_role.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // rdo_Gender
@@ -88,6 +88,7 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "Nữ")});
             this.rdo_Gender.Size = new System.Drawing.Size(147, 29);
             this.rdo_Gender.TabIndex = 270;
+            this.rdo_Gender.SelectedIndexChanged += new System.EventHandler(this.rdo_Gender_SelectedIndexChanged);
             // 
             // labelControl12
             // 
@@ -109,21 +110,7 @@
             this.check_Status.Properties.Caption = "";
             this.check_Status.Size = new System.Drawing.Size(75, 19);
             this.check_Status.TabIndex = 273;
-            // 
-            // cmb_Role
-            // 
-            this.cmb_Role.EditValue = "Administrator";
-            this.cmb_Role.Location = new System.Drawing.Point(235, 363);
-            this.cmb_Role.Name = "cmb_Role";
-            this.cmb_Role.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
-            this.cmb_Role.Properties.Appearance.Options.UseFont = true;
-            this.cmb_Role.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmb_Role.Properties.Items.AddRange(new object[] {
-            "Administrator",
-            "Nhân viên"});
-            this.cmb_Role.Size = new System.Drawing.Size(291, 22);
-            this.cmb_Role.TabIndex = 272;
+            this.check_Status.CheckedChanged += new System.EventHandler(this.check_Status_CheckedChanged);
             // 
             // labelControl11
             // 
@@ -146,16 +133,6 @@
             this.labelControl10.Size = new System.Drawing.Size(55, 16);
             this.labelControl10.TabIndex = 287;
             this.labelControl10.Text = "Ngày sinh";
-            // 
-            // txt_BirthDay
-            // 
-            this.txt_BirthDay.Location = new System.Drawing.Point(237, 176);
-            this.txt_BirthDay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_BirthDay.Name = "txt_BirthDay";
-            this.txt_BirthDay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
-            this.txt_BirthDay.Properties.Appearance.Options.UseFont = true;
-            this.txt_BirthDay.Size = new System.Drawing.Size(291, 22);
-            this.txt_BirthDay.TabIndex = 266;
             // 
             // labelControl9
             // 
@@ -185,6 +162,7 @@
             this.btn_image.Size = new System.Drawing.Size(100, 23);
             this.btn_image.TabIndex = 274;
             this.btn_image.Text = "Hình ảnh";
+            this.btn_image.Click += new System.EventHandler(this.btn_image_Click);
             // 
             // btn_Exit
             // 
@@ -277,7 +255,6 @@
             // 
             // txt_Pass
             // 
-            this.txt_Pass.Enabled = false;
             this.txt_Pass.Location = new System.Drawing.Point(237, 85);
             this.txt_Pass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_Pass.Name = "txt_Pass";
@@ -442,19 +419,6 @@
             this.labelControl15.TabIndex = 284;
             this.labelControl15.Text = "*";
             // 
-            // labelControl16
-            // 
-            this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
-            this.labelControl16.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Appearance.Options.UseForeColor = true;
-            this.labelControl16.Location = new System.Drawing.Point(534, 340);
-            this.labelControl16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(8, 16);
-            this.labelControl16.TabIndex = 284;
-            this.labelControl16.Text = "*";
-            // 
             // lue_deparment
             // 
             this.lue_deparment.Location = new System.Drawing.Point(237, 144);
@@ -467,6 +431,7 @@
             this.lue_deparment.Properties.NullText = "Chọn";
             this.lue_deparment.Size = new System.Drawing.Size(289, 20);
             this.lue_deparment.TabIndex = 290;
+            this.lue_deparment.EditValueChanged += new System.EventHandler(this.lue_deparment_EditValueChanged);
             // 
             // btn_AddNewDerpament
             // 
@@ -487,22 +452,48 @@
             this.btn_AddNewRole.TabIndex = 291;
             this.btn_AddNewRole.Click += new System.EventHandler(this.btn_AddNewDerpament_Click);
             // 
+            // dt_DateOfBirth
+            // 
+            this.dt_DateOfBirth.EditValue = null;
+            this.dt_DateOfBirth.Location = new System.Drawing.Point(235, 177);
+            this.dt_DateOfBirth.Name = "dt_DateOfBirth";
+            this.dt_DateOfBirth.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_DateOfBirth.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_DateOfBirth.Size = new System.Drawing.Size(291, 20);
+            this.dt_DateOfBirth.TabIndex = 292;
+            // 
+            // lue_role
+            // 
+            this.lue_role.Location = new System.Drawing.Point(235, 365);
+            this.lue_role.Name = "lue_role";
+            this.lue_role.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lue_role.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("", "ID"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("", "Tên quyền")});
+            this.lue_role.Properties.NullText = "Chọn";
+            this.lue_role.Size = new System.Drawing.Size(291, 20);
+            this.lue_role.TabIndex = 290;
+            this.lue_role.EditValueChanged += new System.EventHandler(this.lue_deparment_EditValueChanged);
+            // 
             // frm_RegisterUser
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 563);
+            this.Controls.Add(this.dt_DateOfBirth);
             this.Controls.Add(this.btn_AddNewRole);
             this.Controls.Add(this.btn_AddNewDerpament);
+            this.Controls.Add(this.lue_role);
             this.Controls.Add(this.lue_deparment);
             this.Controls.Add(this.rdo_Gender);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.check_Status);
-            this.Controls.Add(this.cmb_Role);
             this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.labelControl10);
-            this.Controls.Add(this.txt_BirthDay);
             this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.btn_image);
             this.Controls.Add(this.btn_Exit);
@@ -510,7 +501,6 @@
             this.Controls.Add(this.pic_Logo);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.txt_Name);
-            this.Controls.Add(this.labelControl16);
             this.Controls.Add(this.labelControl15);
             this.Controls.Add(this.labelControl14);
             this.Controls.Add(this.labelControl13);
@@ -535,8 +525,6 @@
             this.Load += new System.EventHandler(this.frm_RegisterUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rdo_Gender.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.check_Status.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_Role.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_BirthDay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Pass.Properties)).EndInit();
@@ -546,6 +534,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_Address.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_UserName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_deparment.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_DateOfBirth.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_DateOfBirth.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_role.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -556,10 +547,8 @@
         private DevExpress.XtraEditors.RadioGroup rdo_Gender;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.CheckEdit check_Status;
-        private DevExpress.XtraEditors.ComboBoxEdit cmb_Role;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.TextEdit txt_BirthDay;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.SimpleButton btn_image;
         private DevExpress.XtraEditors.SimpleButton btn_Exit;
@@ -583,9 +572,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl15;
-        private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.LookUpEdit lue_deparment;
         private DevExpress.XtraEditors.SimpleButton btn_AddNewDerpament;
         private DevExpress.XtraEditors.SimpleButton btn_AddNewRole;
+        private DevExpress.XtraEditors.DateEdit dt_DateOfBirth;
+        private DevExpress.XtraEditors.LookUpEdit lue_role;
     }
 }

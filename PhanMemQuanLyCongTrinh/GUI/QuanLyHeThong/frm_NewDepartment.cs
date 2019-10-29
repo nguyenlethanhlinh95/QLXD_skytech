@@ -7,6 +7,7 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using PhanMemQuanLyCongTrinh.BUS;
 
 namespace PhanMemQuanLyCongTrinh
 {
@@ -17,11 +18,26 @@ namespace PhanMemQuanLyCongTrinh
             InitializeComponent( );
         }
 
+        deparmentBus depBus = new deparmentBus();
+
+
+
         private void btn_AddNew_Click(object sender, EventArgs e)
         {
             if (txt_deparment.Text != "")
             {
-                
+                bool status = depBus.insert(txt_deparment.Text);
+
+                if (status)
+                {
+                    messeage.success("Thêm mới thành công");
+
+                    this.Close();
+                }
+                else
+                {
+                    messeage.error("Không thể thêm mới");
+                }
             }
             else
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using PhanMemQuanLyCongTrinh.DAO;
+using PhanMemQuanLyCongTrinh.DTO;
 
 namespace PhanMemQuanLyCongTrinh.BUS
 {
@@ -29,6 +30,22 @@ namespace PhanMemQuanLyCongTrinh.BUS
             return user;
        }
 
+       public Int64 insertUser(ST_employee em)
+       {
+            return _userDao.insertUser(em);
+       }
 
+       public bool updateUser(ST_employee em, Int64 id)
+       {
+           var boolUpdate = _userDao.updateUser(em, id);
+           if (boolUpdate)
+           {
+            return true;
+           }
+           else
+           {
+            return false;
+           }
+       }
     }
 }

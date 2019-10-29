@@ -33,8 +33,6 @@
             this.cmb_Role = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_BirthDay = new DevExpress.XtraEditors.TextEdit();
-            this.cmb_Department = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.btn_image = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Exit = new DevExpress.XtraEditors.SimpleButton();
@@ -57,15 +55,14 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.rdo_Gender = new DevExpress.XtraEditors.RadioGroup();
             this.check_Status = new DevExpress.XtraEditors.CheckEdit();
-            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.btn_Deparment = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
+            this.dt_DateOfBirth = new DevExpress.XtraEditors.DateEdit();
+            this.lue_deparment = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Role.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_BirthDay.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_Department.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Pass.Properties)).BeginInit();
@@ -76,6 +73,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_BankNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdo_Gender.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.check_Status.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_DateOfBirth.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_DateOfBirth.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_deparment.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl12
@@ -126,34 +126,6 @@
             this.labelControl10.TabIndex = 258;
             this.labelControl10.Text = "Ngày sinh";
             // 
-            // txt_BirthDay
-            // 
-            this.txt_BirthDay.Location = new System.Drawing.Point(231, 178);
-            this.txt_BirthDay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_BirthDay.Name = "txt_BirthDay";
-            this.txt_BirthDay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
-            this.txt_BirthDay.Properties.Appearance.Options.UseFont = true;
-            this.txt_BirthDay.Size = new System.Drawing.Size(291, 22);
-            this.txt_BirthDay.TabIndex = 5;
-            // 
-            // cmb_Department
-            // 
-            this.cmb_Department.EditValue = "Giám đốc";
-            this.cmb_Department.Location = new System.Drawing.Point(231, 149);
-            this.cmb_Department.Name = "cmb_Department";
-            this.cmb_Department.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
-            this.cmb_Department.Properties.Appearance.Options.UseFont = true;
-            this.cmb_Department.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmb_Department.Properties.Items.AddRange(new object[] {
-            "Giám đốc",
-            "Tổng Quản lý",
-            "Trưởng chi nhánh",
-            "Phó chi nhánh",
-            "Nhân viên"});
-            this.cmb_Department.Size = new System.Drawing.Size(291, 22);
-            this.cmb_Department.TabIndex = 4;
-            // 
             // labelControl9
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
@@ -182,6 +154,7 @@
             this.btn_image.Size = new System.Drawing.Size(100, 23);
             this.btn_image.TabIndex = 13;
             this.btn_image.Text = "Hình ảnh";
+            this.btn_image.Click += new System.EventHandler(this.btn_image_Click_1);
             // 
             // btn_Exit
             // 
@@ -228,6 +201,7 @@
             this.btn_Update.TabIndex = 14;
             this.btn_Update.Text = "Cập nhật";
             this.btn_Update.ToolTipTitle = "Ctrl +S";
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // pic_Logo
             // 
@@ -358,6 +332,7 @@
             // 
             // txt_UserName
             // 
+            this.txt_UserName.Enabled = false;
             this.txt_UserName.Location = new System.Drawing.Point(231, 57);
             this.txt_UserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_UserName.Name = "txt_UserName";
@@ -408,6 +383,7 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "Nữ")});
             this.rdo_Gender.Size = new System.Drawing.Size(147, 29);
             this.rdo_Gender.TabIndex = 9;
+            this.rdo_Gender.EditValueChanged += new System.EventHandler(this.rdo_Gender_EditValueChanged);
             // 
             // check_Status
             // 
@@ -418,25 +394,7 @@
             this.check_Status.Properties.Caption = "";
             this.check_Status.Size = new System.Drawing.Size(75, 19);
             this.check_Status.TabIndex = 12;
-            // 
-            // simpleButton13
-            // 
-            this.simpleButton13.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
-            this.simpleButton13.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.simpleButton13.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.simpleButton13.Appearance.Options.UseBackColor = true;
-            this.simpleButton13.Appearance.Options.UseFont = true;
-            this.simpleButton13.Appearance.Options.UseForeColor = true;
-            this.simpleButton13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton13.ImageOptions.Image")));
-            this.simpleButton13.Location = new System.Drawing.Point(562, 148);
-            this.simpleButton13.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
-            this.simpleButton13.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
-            this.simpleButton13.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
-            this.simpleButton13.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.simpleButton13.Name = "simpleButton13";
-            this.simpleButton13.Size = new System.Drawing.Size(23, 24);
-            this.simpleButton13.TabIndex = 262;
-            this.simpleButton13.Click += new System.EventHandler(this.simpleButton13_Click);
+            this.check_Status.CheckedChanged += new System.EventHandler(this.check_Status_CheckedChanged);
             // 
             // labelControl13
             // 
@@ -477,36 +435,50 @@
             this.labelControl15.TabIndex = 255;
             this.labelControl15.Text = "*";
             // 
+            // btn_Deparment
+            // 
+            this.btn_Deparment.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Deparment.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btn_Deparment.Location = new System.Drawing.Point(552, 150);
+            this.btn_Deparment.Name = "btn_Deparment";
+            this.btn_Deparment.Size = new System.Drawing.Size(25, 27);
+            this.btn_Deparment.TabIndex = 292;
+            this.btn_Deparment.Click += new System.EventHandler(this.btn_Deparment_Click);
+            // 
             // simpleButton1
             // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(562, 363);
-            this.simpleButton1.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
-            this.simpleButton1.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
-            this.simpleButton1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
-            this.simpleButton1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.simpleButton1.Location = new System.Drawing.Point(538, 363);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(23, 24);
-            this.simpleButton1.TabIndex = 262;
+            this.simpleButton1.Size = new System.Drawing.Size(25, 27);
+            this.simpleButton1.TabIndex = 292;
             // 
-            // labelControl16
+            // dt_DateOfBirth
             // 
-            this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
-            this.labelControl16.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl16.Appearance.Options.UseFont = true;
-            this.labelControl16.Appearance.Options.UseForeColor = true;
-            this.labelControl16.Location = new System.Drawing.Point(538, 368);
-            this.labelControl16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(8, 16);
-            this.labelControl16.TabIndex = 255;
-            this.labelControl16.Text = "*";
+            this.dt_DateOfBirth.EditValue = null;
+            this.dt_DateOfBirth.Location = new System.Drawing.Point(229, 181);
+            this.dt_DateOfBirth.Name = "dt_DateOfBirth";
+            this.dt_DateOfBirth.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_DateOfBirth.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dt_DateOfBirth.Size = new System.Drawing.Size(291, 20);
+            this.dt_DateOfBirth.TabIndex = 293;
+            // 
+            // lue_deparment
+            // 
+            this.lue_deparment.Location = new System.Drawing.Point(229, 149);
+            this.lue_deparment.Name = "lue_deparment";
+            this.lue_deparment.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lue_deparment.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("department_id", "ID"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("department_name", "Tên chức vụ")});
+            this.lue_deparment.Properties.NullText = "Chọn";
+            this.lue_deparment.Size = new System.Drawing.Size(293, 20);
+            this.lue_deparment.TabIndex = 294;
+            this.lue_deparment.EditValueChanged += new System.EventHandler(this.lue_deparment_EditValueChanged);
             // 
             // frm_UserInfo
             // 
@@ -514,16 +486,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1183, 563);
+            this.Controls.Add(this.lue_deparment);
+            this.Controls.Add(this.dt_DateOfBirth);
             this.Controls.Add(this.simpleButton1);
-            this.Controls.Add(this.simpleButton13);
+            this.Controls.Add(this.btn_Deparment);
             this.Controls.Add(this.rdo_Gender);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.check_Status);
             this.Controls.Add(this.cmb_Role);
             this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.labelControl10);
-            this.Controls.Add(this.txt_BirthDay);
-            this.Controls.Add(this.cmb_Department);
             this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.btn_image);
             this.Controls.Add(this.btn_Exit);
@@ -531,7 +503,6 @@
             this.Controls.Add(this.pic_Logo);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.txt_Name);
-            this.Controls.Add(this.labelControl16);
             this.Controls.Add(this.labelControl15);
             this.Controls.Add(this.labelControl14);
             this.Controls.Add(this.labelControl13);
@@ -553,9 +524,8 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "THÔNG TIN NGƯỜI DÙNG";
+            this.Load += new System.EventHandler(this.frm_UserInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cmb_Role.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_BirthDay.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmb_Department.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Pass.Properties)).EndInit();
@@ -566,6 +536,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_BankNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdo_Gender.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.check_Status.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_DateOfBirth.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_DateOfBirth.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_deparment.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -577,8 +550,6 @@
         private DevExpress.XtraEditors.ComboBoxEdit cmb_Role;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.TextEdit txt_BirthDay;
-        private DevExpress.XtraEditors.ComboBoxEdit cmb_Department;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.SimpleButton btn_image;
         private DevExpress.XtraEditors.SimpleButton btn_Exit;
@@ -601,11 +572,12 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.RadioGroup rdo_Gender;
         private DevExpress.XtraEditors.CheckEdit check_Status;
-        private DevExpress.XtraEditors.SimpleButton simpleButton13;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl15;
+        private DevExpress.XtraEditors.SimpleButton btn_Deparment;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.LabelControl labelControl16;
+        private DevExpress.XtraEditors.DateEdit dt_DateOfBirth;
+        private DevExpress.XtraEditors.LookUpEdit lue_deparment;
     }
 }

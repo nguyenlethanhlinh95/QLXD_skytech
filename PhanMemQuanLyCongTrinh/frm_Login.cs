@@ -47,6 +47,7 @@ namespace PhanMemQuanLyCongTrinh
 
                     frm_Main.Vitual_Username = txt_UserName.Text;
                     frm_Main.Vitual_Quyen = Vitual_Quyen;
+                    frm_Main.Vitual_id = IntCheckLogin;
 
                     // tao form moi
                     frm_Main f = new frm_Main( );

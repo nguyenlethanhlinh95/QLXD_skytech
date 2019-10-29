@@ -53,7 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\deparmentBus.cs" />
+    <Compile Include="BUS\messeage.cs" />
     <Compile Include="BUS\userBus.cs" />
+    <Compile Include="DAO\customer_group.cs" />
     <Compile Include="DAO\departmentDao.cs" />
     <Compile Include="DAO\userDao.cs" />
     <Compile Include="DTO\DataClasses1.designer.cs">
@@ -67,11 +69,11 @@
     <Compile Include="frm_Button.designer.cs">
       <DependentUpon>frm_Button.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\frm_department.cs">
+    <Compile Include="GUI\QuanLyHeThong\frm_NewDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\frm_department.Designer.cs">
-      <DependentUpon>frm_department.cs</DependentUpon>
+    <Compile Include="GUI\QuanLyHeThong\frm_NewDepartment.Designer.cs">
+      <DependentUpon>frm_NewDepartment.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Login.cs">
       <SubType>Form</SubType>
@@ -112,8 +114,8 @@
     <EmbeddedResource Include="frm_Button.resx">
       <DependentUpon>frm_Button.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_department.resx">
-      <DependentUpon>frm_department.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_NewDepartment.resx">
+      <DependentUpon>frm_NewDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
