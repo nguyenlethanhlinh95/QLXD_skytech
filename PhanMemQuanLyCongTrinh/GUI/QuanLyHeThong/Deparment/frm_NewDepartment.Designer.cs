@@ -1,6 +1,6 @@
 ﻿namespace PhanMemQuanLyCongTrinh
 {
-    partial class frm_department
+    partial class frm_Newdepartment
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent( )
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_department));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Newdepartment));
             this.txt_deparment = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.but_Update = new DevExpress.XtraEditors.SimpleButton();
+            this.but_Exit = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txt_deparment.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             this.but_Update.Appearance.Options.UseForeColor = true;
             this.but_Update.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.but_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("but_Update.ImageOptions.Image")));
-            this.but_Update.Location = new System.Drawing.Point(360, 100);
+            this.but_Update.Location = new System.Drawing.Point(184, 105);
             this.but_Update.LookAndFeel.SkinMaskColor = System.Drawing.Color.RoyalBlue;
             this.but_Update.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.but_Update.LookAndFeel.SkinName = "Office 2010 Black";
@@ -78,20 +79,46 @@
             this.but_Update.ToolTipTitle = "Ctrl +S";
             this.but_Update.Click += new System.EventHandler(this.but_Update_Click);
             // 
-            // frm_department
+            // but_Exit
+            // 
+            this.but_Exit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.but_Exit.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.but_Exit.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.but_Exit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.but_Exit.Appearance.Options.UseBackColor = true;
+            this.but_Exit.Appearance.Options.UseFont = true;
+            this.but_Exit.Appearance.Options.UseForeColor = true;
+            this.but_Exit.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.but_Exit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("but_Exit.ImageOptions.Image")));
+            this.but_Exit.Location = new System.Drawing.Point(318, 105);
+            this.but_Exit.LookAndFeel.SkinMaskColor = System.Drawing.Color.Gray;
+            this.but_Exit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Black;
+            this.but_Exit.LookAndFeel.SkinName = "Office 2010 Black";
+            this.but_Exit.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.but_Exit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.but_Exit.Name = "but_Exit";
+            this.but_Exit.Size = new System.Drawing.Size(110, 36);
+            this.but_Exit.TabIndex = 17;
+            this.but_Exit.Text = "Đóng";
+            this.but_Exit.ToolTipTitle = "ESC";
+            this.but_Exit.Click += new System.EventHandler(this.but_Exit_Click);
+            // 
+            // frm_Newdepartment
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 176);
+            this.Controls.Add(this.but_Exit);
             this.Controls.Add(this.but_Update);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txt_deparment);
             this.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.Name = "frm_department";
+            this.Name = "frm_Newdepartment";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "THÊM MỚI CHỨC VỤ";
+            this.Load += new System.EventHandler(this.frm_department_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_deparment.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -103,5 +130,6 @@
         private DevExpress.XtraEditors.TextEdit txt_deparment;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.SimpleButton but_Update;
+        private DevExpress.XtraEditors.SimpleButton but_Exit;
     }
 }

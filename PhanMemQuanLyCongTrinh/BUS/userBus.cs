@@ -52,5 +52,20 @@ namespace PhanMemQuanLyCongTrinh.BUS
        {
             return _userDao.updatePassword(pass, id);
        }
+
+       public bool deleteUser(Int64 id)
+       {
+            return _userDao.deleteEmployee(id);
+       }
+
+       public IEnumerable<Object> getAll( )
+       {
+            return _userDao.getAllUser();
+       }
+
+       public IEnumerable<Object> getAllUserByDepartment(Int64 id)
+       {
+           return _userDao.getAllUserByDepartment(id);
+       }
     }
 }

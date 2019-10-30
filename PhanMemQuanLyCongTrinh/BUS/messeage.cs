@@ -17,5 +17,22 @@ namespace PhanMemQuanLyCongTrinh.BUS
         {
             MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        public static bool info(string mess, string name)
+        {
+            
+            DialogResult dialogResult = MessageBox.Show( mess + name, "Thông Báo!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        
     }
 }

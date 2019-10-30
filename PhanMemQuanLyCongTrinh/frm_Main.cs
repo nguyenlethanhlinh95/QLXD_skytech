@@ -85,10 +85,25 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btnCustomerGroup_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frm_NewCustomerGroup));
+            //Form frm = kiemtraform(typeof(frm_NewCustomerGroup));
+            //if ( frm == null )
+            //{
+            //    frm_NewCustomerGroup forms = new frm_NewCustomerGroup( );
+            //    forms.MdiParent = this;
+            //    forms.Show( );
+            //}
+            //else
+            //{
+            //    frm.Activate( );
+            //}
+        }
+
+        private void btnChangePassword_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_RePassword));
             if ( frm == null )
             {
-                frm_NewCustomerGroup forms = new frm_NewCustomerGroup( );
+                frm_RePassword forms = new frm_RePassword( );
                 forms.MdiParent = this;
                 forms.Show( );
             }
@@ -98,12 +113,42 @@ namespace PhanMemQuanLyCongTrinh
             }
         }
 
-        private void btnChangePassword_ItemClick(object sender, ItemClickEventArgs e)
+        private void btnEmployee_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frm_RePassword));
+            Form frm = kiemtraform(typeof(frm_Employees));
             if ( frm == null )
             {
-                frm_RePassword forms = new frm_RePassword( );
+                frm_Employees forms = new frm_Employees( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
+        private void btnUnit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_Supplies));
+            if ( frm == null )
+            {
+                frm_Supplies forms = new frm_Supplies( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
+        private void btnConstructors_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_Vendor));
+            if ( frm == null )
+            {
+                frm_Vendor forms = new frm_Vendor( );
                 forms.MdiParent = this;
                 forms.Show( );
             }

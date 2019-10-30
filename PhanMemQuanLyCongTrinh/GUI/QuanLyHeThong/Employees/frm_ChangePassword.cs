@@ -16,6 +16,16 @@ namespace PhanMemQuanLyCongTrinh
         {
             InitializeComponent( );
         }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 

@@ -77,6 +77,7 @@
             this.btn_Exit.TabIndex = 216;
             this.btn_Exit.Text = "Đóng";
             this.btn_Exit.ToolTipTitle = "ESC";
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // btn_Update
             // 
@@ -100,6 +101,7 @@
             this.btn_Update.TabIndex = 215;
             this.btn_Update.Text = "Cập nhật";
             this.btn_Update.ToolTipTitle = "Ctrl +S";
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // labelControl1
             // 

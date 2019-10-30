@@ -8,11 +8,11 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace PhanMemQuanLyCongTrinh.GUI.QuanLyHeThong
+namespace PhanMemQuanLyCongTrinh
 {
-    public partial class frm_EmployeesList : DevExpress.XtraEditors.XtraForm
+    public partial class frm_Supplies : DevExpress.XtraEditors.XtraForm
     {
-        public frm_EmployeesList( )
+        public frm_Supplies( )
         {
             InitializeComponent( );
         }

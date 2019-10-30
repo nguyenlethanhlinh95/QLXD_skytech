@@ -51,6 +51,9 @@ namespace PhanMemQuanLyCongTrinh
 
                     // tao form moi
                     frm_Main f = new frm_Main( );
+
+                    
+
                     // an form hien tai                  
                     // show form
                     MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -67,7 +70,10 @@ namespace PhanMemQuanLyCongTrinh
         }
 
 
-  
+        private void CloseForm(Object sender, EventArgs args)
+        {
+            Application.Exit( );
+        }
        
     }
 }

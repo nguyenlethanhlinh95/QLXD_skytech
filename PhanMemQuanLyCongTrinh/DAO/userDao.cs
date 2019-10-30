@@ -37,10 +37,22 @@ namespace PhanMemQuanLyCongTrinh.DAO
 
         public IEnumerable<Object> getAllUser()
         {
-            var users = from u in db.ST_employees
-                        select u;
+            var dlg = new DevExpress.Utils.WaitDialogForm("Đang tải dữ liệu ...", "Thông báo");
+            try{
+                var users = from u in db.ST_employees
+                            select u;
 
-            return users;
+                return users;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                dlg.Close( );
+            }
+            
         }
 
         public Object getUserByUserName(string userName)
@@ -138,6 +150,53 @@ namespace PhanMemQuanLyCongTrinh.DAO
             catch(Exception)
             {
                 return false;
+            }
+            
+        }
+
+        public bool deleteEmployee(Int64 id)
+        {
+            try
+            {
+                var delete = db.ST_employees.Where(p => p.employee_id.Equals(id)).SingleOrDefault( );
+                db.ST_employees.DeleteOnSubmit(delete);
+                db.SubmitChanges( );
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+        public IEnumerable<Object> getAllUserByDepartment(Int64 id)
+        {
+            var dlg = new DevExpress.Utils.WaitDialogForm("Đang tải dữ liệu ...", "Thông báo");
+            try{
+                db.Dispose( );
+                db = new DataClasses1DataContext( );
+                db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
+
+                var data = from b in db.ST_employees
+                           where b.department_id == id
+                           select b;
+
+                if ( data != null )
+                {
+                    return data;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch(Exception)
+            {
+                return null;
+            }
+            finally{
+                dlg.Close( );
             }
             
         }

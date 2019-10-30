@@ -33,9 +33,9 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void InsertST_customer_group(ST_customer_group instance);
     partial void UpdateST_customer_group(ST_customer_group instance);
     partial void DeleteST_customer_group(ST_customer_group instance);
-    partial void InsertST_permission(ST_permission instance);
-    partial void UpdateST_permission(ST_permission instance);
-    partial void DeleteST_permission(ST_permission instance);
+    partial void InsertST_vendor(ST_vendor instance);
+    partial void UpdateST_vendor(ST_vendor instance);
+    partial void DeleteST_vendor(ST_vendor instance);
     partial void InsertST_customer(ST_customer instance);
     partial void UpdateST_customer(ST_customer instance);
     partial void DeleteST_customer(ST_customer instance);
@@ -45,6 +45,15 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void InsertST_employee(ST_employee instance);
     partial void UpdateST_employee(ST_employee instance);
     partial void DeleteST_employee(ST_employee instance);
+    partial void InsertST_group_supply(ST_group_supply instance);
+    partial void UpdateST_group_supply(ST_group_supply instance);
+    partial void DeleteST_group_supply(ST_group_supply instance);
+    partial void InsertST_permission(ST_permission instance);
+    partial void UpdateST_permission(ST_permission instance);
+    partial void DeleteST_permission(ST_permission instance);
+    partial void InsertST_unit(ST_unit instance);
+    partial void UpdateST_unit(ST_unit instance);
+    partial void DeleteST_unit(ST_unit instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -85,11 +94,11 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
-		public System.Data.Linq.Table<ST_permission> ST_permissions
+		public System.Data.Linq.Table<ST_vendor> ST_vendors
 		{
 			get
 			{
-				return this.GetTable<ST_permission>();
+				return this.GetTable<ST_vendor>();
 			}
 		}
 		
@@ -114,6 +123,30 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			get
 			{
 				return this.GetTable<ST_employee>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ST_group_supply> ST_group_supplies
+		{
+			get
+			{
+				return this.GetTable<ST_group_supply>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ST_permission> ST_permissions
+		{
+			get
+			{
+				return this.GetTable<ST_permission>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ST_unit> ST_units
+		{
+			get
+			{
+				return this.GetTable<ST_unit>();
 			}
 		}
 	}
@@ -228,91 +261,259 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_permissions")]
-	public partial class ST_permission : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_vendors")]
+	public partial class ST_vendor : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private long _permission_id;
+		private long _vendor_id;
 		
-		private string _permission_id_custom;
+		private string _vendor_id_custom;
 		
-		private string _permission_name_;
+		private string _vendor_name;
+		
+		private string _vendor_address;
+		
+		private string _vendor_phone;
+		
+		private string _vendor_bank_account_number;
+		
+		private System.Data.Linq.Binary _vendor_image;
+		
+		private System.Nullable<bool> _vendor_status;
+		
+		private System.Nullable<System.DateTime> _vendor_created_date;
+		
+		private System.Nullable<long> _employee_created;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onpermission_idChanging(long value);
-    partial void Onpermission_idChanged();
-    partial void Onpermission_id_customChanging(string value);
-    partial void Onpermission_id_customChanged();
-    partial void Onpermission_name_Changing(string value);
-    partial void Onpermission_name_Changed();
+    partial void Onvendor_idChanging(long value);
+    partial void Onvendor_idChanged();
+    partial void Onvendor_id_customChanging(string value);
+    partial void Onvendor_id_customChanged();
+    partial void Onvendor_nameChanging(string value);
+    partial void Onvendor_nameChanged();
+    partial void Onvendor_addressChanging(string value);
+    partial void Onvendor_addressChanged();
+    partial void Onvendor_phoneChanging(string value);
+    partial void Onvendor_phoneChanged();
+    partial void Onvendor_bank_account_numberChanging(string value);
+    partial void Onvendor_bank_account_numberChanged();
+    partial void Onvendor_imageChanging(System.Data.Linq.Binary value);
+    partial void Onvendor_imageChanged();
+    partial void Onvendor_statusChanging(System.Nullable<bool> value);
+    partial void Onvendor_statusChanged();
+    partial void Onvendor_created_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Onvendor_created_dateChanged();
+    partial void Onemployee_createdChanging(System.Nullable<long> value);
+    partial void Onemployee_createdChanged();
     #endregion
 		
-		public ST_permission()
+		public ST_vendor()
 		{
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_permission_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long permission_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long vendor_id
 		{
 			get
 			{
-				return this._permission_id;
+				return this._vendor_id;
 			}
 			set
 			{
-				if ((this._permission_id != value))
+				if ((this._vendor_id != value))
 				{
-					this.Onpermission_idChanging(value);
+					this.Onvendor_idChanging(value);
 					this.SendPropertyChanging();
-					this._permission_id = value;
-					this.SendPropertyChanged("permission_id");
-					this.Onpermission_idChanged();
+					this._vendor_id = value;
+					this.SendPropertyChanged("vendor_id");
+					this.Onvendor_idChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_permission_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(32)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
-		public string permission_id_custom
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(34)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string vendor_id_custom
 		{
 			get
 			{
-				return this._permission_id_custom;
+				return this._vendor_id_custom;
 			}
 			set
 			{
-				if ((this._permission_id_custom != value))
+				if ((this._vendor_id_custom != value))
 				{
-					this.Onpermission_id_customChanging(value);
+					this.Onvendor_id_customChanging(value);
 					this.SendPropertyChanging();
-					this._permission_id_custom = value;
-					this.SendPropertyChanged("permission_id_custom");
-					this.Onpermission_id_customChanged();
+					this._vendor_id_custom = value;
+					this.SendPropertyChanged("vendor_id_custom");
+					this.Onvendor_id_customChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_permission_name_", DbType="NVarChar(200)")]
-		public string permission_name_
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_name", DbType="NVarChar(255)")]
+		public string vendor_name
 		{
 			get
 			{
-				return this._permission_name_;
+				return this._vendor_name;
 			}
 			set
 			{
-				if ((this._permission_name_ != value))
+				if ((this._vendor_name != value))
 				{
-					this.Onpermission_name_Changing(value);
+					this.Onvendor_nameChanging(value);
 					this.SendPropertyChanging();
-					this._permission_name_ = value;
-					this.SendPropertyChanged("permission_name_");
-					this.Onpermission_name_Changed();
+					this._vendor_name = value;
+					this.SendPropertyChanged("vendor_name");
+					this.Onvendor_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_address", DbType="NVarChar(255)")]
+		public string vendor_address
+		{
+			get
+			{
+				return this._vendor_address;
+			}
+			set
+			{
+				if ((this._vendor_address != value))
+				{
+					this.Onvendor_addressChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_address = value;
+					this.SendPropertyChanged("vendor_address");
+					this.Onvendor_addressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_phone", DbType="VarChar(30)")]
+		public string vendor_phone
+		{
+			get
+			{
+				return this._vendor_phone;
+			}
+			set
+			{
+				if ((this._vendor_phone != value))
+				{
+					this.Onvendor_phoneChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_phone = value;
+					this.SendPropertyChanged("vendor_phone");
+					this.Onvendor_phoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_bank_account_number", DbType="VarChar(30)")]
+		public string vendor_bank_account_number
+		{
+			get
+			{
+				return this._vendor_bank_account_number;
+			}
+			set
+			{
+				if ((this._vendor_bank_account_number != value))
+				{
+					this.Onvendor_bank_account_numberChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_bank_account_number = value;
+					this.SendPropertyChanged("vendor_bank_account_number");
+					this.Onvendor_bank_account_numberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary vendor_image
+		{
+			get
+			{
+				return this._vendor_image;
+			}
+			set
+			{
+				if ((this._vendor_image != value))
+				{
+					this.Onvendor_imageChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_image = value;
+					this.SendPropertyChanged("vendor_image");
+					this.Onvendor_imageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_status", DbType="Bit")]
+		public System.Nullable<bool> vendor_status
+		{
+			get
+			{
+				return this._vendor_status;
+			}
+			set
+			{
+				if ((this._vendor_status != value))
+				{
+					this.Onvendor_statusChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_status = value;
+					this.SendPropertyChanged("vendor_status");
+					this.Onvendor_statusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_created_date", DbType="Date")]
+		public System.Nullable<System.DateTime> vendor_created_date
+		{
+			get
+			{
+				return this._vendor_created_date;
+			}
+			set
+			{
+				if ((this._vendor_created_date != value))
+				{
+					this.Onvendor_created_dateChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_created_date = value;
+					this.SendPropertyChanged("vendor_created_date");
+					this.Onvendor_created_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_created", DbType="BigInt")]
+		public System.Nullable<long> employee_created
+		{
+			get
+			{
+				return this._employee_created;
+			}
+			set
+			{
+				if ((this._employee_created != value))
+				{
+					this.Onemployee_createdChanging(value);
+					this.SendPropertyChanging();
+					this._employee_created = value;
+					this.SendPropertyChanged("employee_created");
+					this.Onemployee_createdChanged();
 				}
 			}
 		}
@@ -1387,6 +1588,336 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._employee_created = value;
 					this.SendPropertyChanged("employee_created");
 					this.Onemployee_createdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_group_supplies")]
+	public partial class ST_group_supply : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _group_supplies_id;
+		
+		private string _group_supplies_id_custom;
+		
+		private string _group_supplies_name;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Ongroup_supplies_idChanging(long value);
+    partial void Ongroup_supplies_idChanged();
+    partial void Ongroup_supplies_id_customChanging(string value);
+    partial void Ongroup_supplies_id_customChanged();
+    partial void Ongroup_supplies_nameChanging(string value);
+    partial void Ongroup_supplies_nameChanged();
+    #endregion
+		
+		public ST_group_supply()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_group_supplies_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long group_supplies_id
+		{
+			get
+			{
+				return this._group_supplies_id;
+			}
+			set
+			{
+				if ((this._group_supplies_id != value))
+				{
+					this.Ongroup_supplies_idChanging(value);
+					this.SendPropertyChanging();
+					this._group_supplies_id = value;
+					this.SendPropertyChanged("group_supplies_id");
+					this.Ongroup_supplies_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_group_supplies_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(34)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string group_supplies_id_custom
+		{
+			get
+			{
+				return this._group_supplies_id_custom;
+			}
+			set
+			{
+				if ((this._group_supplies_id_custom != value))
+				{
+					this.Ongroup_supplies_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._group_supplies_id_custom = value;
+					this.SendPropertyChanged("group_supplies_id_custom");
+					this.Ongroup_supplies_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_group_supplies_name", DbType="NVarChar(200)")]
+		public string group_supplies_name
+		{
+			get
+			{
+				return this._group_supplies_name;
+			}
+			set
+			{
+				if ((this._group_supplies_name != value))
+				{
+					this.Ongroup_supplies_nameChanging(value);
+					this.SendPropertyChanging();
+					this._group_supplies_name = value;
+					this.SendPropertyChanged("group_supplies_name");
+					this.Ongroup_supplies_nameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_permissions")]
+	public partial class ST_permission : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _permission_id;
+		
+		private string _permission_id_custom;
+		
+		private string _permission_name_;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onpermission_idChanging(long value);
+    partial void Onpermission_idChanged();
+    partial void Onpermission_id_customChanging(string value);
+    partial void Onpermission_id_customChanged();
+    partial void Onpermission_name_Changing(string value);
+    partial void Onpermission_name_Changed();
+    #endregion
+		
+		public ST_permission()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_permission_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long permission_id
+		{
+			get
+			{
+				return this._permission_id;
+			}
+			set
+			{
+				if ((this._permission_id != value))
+				{
+					this.Onpermission_idChanging(value);
+					this.SendPropertyChanging();
+					this._permission_id = value;
+					this.SendPropertyChanged("permission_id");
+					this.Onpermission_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_permission_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(32)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string permission_id_custom
+		{
+			get
+			{
+				return this._permission_id_custom;
+			}
+			set
+			{
+				if ((this._permission_id_custom != value))
+				{
+					this.Onpermission_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._permission_id_custom = value;
+					this.SendPropertyChanged("permission_id_custom");
+					this.Onpermission_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_permission_name_", DbType="NVarChar(200)")]
+		public string permission_name_
+		{
+			get
+			{
+				return this._permission_name_;
+			}
+			set
+			{
+				if ((this._permission_name_ != value))
+				{
+					this.Onpermission_name_Changing(value);
+					this.SendPropertyChanging();
+					this._permission_name_ = value;
+					this.SendPropertyChanged("permission_name_");
+					this.Onpermission_name_Changed();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_units")]
+	public partial class ST_unit : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _unit_id;
+		
+		private string _unit_id_custom;
+		
+		private string _unit_name;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onunit_idChanging(long value);
+    partial void Onunit_idChanged();
+    partial void Onunit_id_customChanging(string value);
+    partial void Onunit_id_customChanged();
+    partial void Onunit_nameChanging(string value);
+    partial void Onunit_nameChanged();
+    #endregion
+		
+		public ST_unit()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_unit_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long unit_id
+		{
+			get
+			{
+				return this._unit_id;
+			}
+			set
+			{
+				if ((this._unit_id != value))
+				{
+					this.Onunit_idChanging(value);
+					this.SendPropertyChanging();
+					this._unit_id = value;
+					this.SendPropertyChanged("unit_id");
+					this.Onunit_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_unit_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(34)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string unit_id_custom
+		{
+			get
+			{
+				return this._unit_id_custom;
+			}
+			set
+			{
+				if ((this._unit_id_custom != value))
+				{
+					this.Onunit_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._unit_id_custom = value;
+					this.SendPropertyChanged("unit_id_custom");
+					this.Onunit_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_unit_name", DbType="NVarChar(200)")]
+		public string unit_name
+		{
+			get
+			{
+				return this._unit_name;
+			}
+			set
+			{
+				if ((this._unit_name != value))
+				{
+					this.Onunit_nameChanging(value);
+					this.SendPropertyChanging();
+					this._unit_name = value;
+					this.SendPropertyChanged("unit_name");
+					this.Onunit_nameChanged();
 				}
 			}
 		}

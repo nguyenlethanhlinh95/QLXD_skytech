@@ -11,9 +11,9 @@ using PhanMemQuanLyCongTrinh.BUS;
 
 namespace PhanMemQuanLyCongTrinh
 {
-    public partial class frm_department : DevExpress.XtraEditors.XtraForm
+    public partial class frm_Newdepartment : DevExpress.XtraEditors.XtraForm
     {
-        public frm_department( )
+        public frm_Newdepartment( )
         {
             InitializeComponent( );
         }
@@ -48,6 +48,16 @@ namespace PhanMemQuanLyCongTrinh
             {
                 XtraMessageBox.Show("Dữ liệu trống?", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
+        }
+
+        private void frm_department_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void but_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
  

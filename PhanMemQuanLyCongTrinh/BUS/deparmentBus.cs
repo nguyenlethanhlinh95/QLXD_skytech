@@ -27,5 +27,15 @@ namespace PhanMemQuanLyCongTrinh.BUS
                 return false;
             }
         }
+
+        public Object getDepartment(Int64 id)
+        {
+            return departmentDao.getDeparment(id);
+        }
+
+        public bool update(string name, Int64 id)
+        {
+            return departmentDao.update(name, id);
+        }
     }
 }

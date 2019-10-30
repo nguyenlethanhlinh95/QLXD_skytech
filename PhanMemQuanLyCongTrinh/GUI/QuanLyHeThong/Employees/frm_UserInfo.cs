@@ -22,6 +22,8 @@ namespace PhanMemQuanLyCongTrinh
             InitializeComponent( );
         }
 
+        // check neu chinh sua thong tin user
+        public Int64 user_id = 0;
         private bool gender = false;
         private bool check = false;
         private Int64 idDeparment = 0;
@@ -51,7 +53,23 @@ namespace PhanMemQuanLyCongTrinh
         }
         public void LoadData()
         {
-            Int64 id = frm_Main.Vitual_id;
+            if (user_id == 0)
+            {
+                Int64 id = frm_Main.Vitual_id;
+
+                loadUser(id);
+            }
+            else
+            {
+                // admin cap nhat user
+                loadUser(user_id);
+            }
+            
+            
+        }
+
+        public void loadUser(Int64 id)
+        {
             var user = userBus.getUserByID(id);
 
             var Name = user.GetType( ).GetProperty("employee_name").GetValue(user, null);
@@ -74,7 +92,7 @@ namespace PhanMemQuanLyCongTrinh
 
             var employee_date_of_birth = user.GetType( ).GetProperty("employee_date_of_birth").GetValue(user, null);
             dt_DateOfBirth.Text = (employee_date_of_birth == null) ? "" : employee_date_of_birth.ToString( );
-    
+
             var employee_gender = user.GetType( ).GetProperty("employee_gender").GetValue(user, null);
             rdo_Gender.EditValue = (employee_gender == null) ? "" : employee_gender;
 
@@ -83,7 +101,7 @@ namespace PhanMemQuanLyCongTrinh
 
             var department_id = user.GetType( ).GetProperty("department_id").GetValue(user, null);
             var departmentID = (department_id == null) ? "" : department_id.ToString( );
-            lue_deparment.ItemIndex = Int32.Parse(departmentID) -1;
+            lue_deparment.ItemIndex = Int32.Parse(departmentID) - 1;
 
             var employee_status = user.GetType( ).GetProperty("employee_status").GetValue(user, null);
             check_Status.EditValue = (employee_status == null) ? "" : employee_status;
@@ -91,13 +109,13 @@ namespace PhanMemQuanLyCongTrinh
 
             //hien thi hinh anh
             var employee_image = user.GetType( ).GetProperty("employee_image").GetValue(user, null);
-            if (employee_image != null)
+            if ( employee_image != null )
             {
-               var brimary = employee_image;
-               byte[] array = (brimary as System.Data.Linq.Binary).ToArray();
-               MemoryStream ms = new MemoryStream(array);
+                var brimary = employee_image;
+                byte[] array = (brimary as System.Data.Linq.Binary).ToArray( );
+                MemoryStream ms = new MemoryStream(array);
 
-               pic_Logo.Image = Image.FromStream(ms);
+                pic_Logo.Image = Image.FromStream(ms);
             }
 
 
@@ -107,8 +125,8 @@ namespace PhanMemQuanLyCongTrinh
             selectedGender = (selectedGender == null) ? "0" : selectedGender.ToString( );
 
             gender = bool.Parse(selectedGender.ToString( ));
-            check = bool.Parse(employee_status.ToString());
-            idDeparment = Int64.Parse(departmentID.ToString());
+            check = bool.Parse(employee_status.ToString( ));
+            idDeparment = Int64.Parse(departmentID.ToString( ));
         }
 
         #endregion End load
@@ -139,7 +157,16 @@ namespace PhanMemQuanLyCongTrinh
 
             private void btn_Update_Click(object sender, EventArgs e)
             {
-                var idUser = frm_Main.Vitual_id;
+                Int64 idUser = 0;
+                if (user_id == 0)
+                {
+                    idUser = frm_Main.Vitual_id;
+                }
+                else
+                {
+                    idUser = user_id;
+                }
+
                 var user = userBus.getUserByID(idUser);
 
                 var _username = txt_UserName.Text;
@@ -203,9 +230,9 @@ namespace PhanMemQuanLyCongTrinh
                             employee.employee_image = imageToByteArray(pic_Logo.Image);
                         }
 
-                        
 
-                        var id = userBus.updateUser(employee, frm_Main.Vitual_id);
+
+                        var id = userBus.updateUser(employee, idUser);
                         if (id)
                         {  
                             messeage.success("Cập nhật thành công !");
@@ -272,7 +299,7 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_Deparment_Click(object sender, EventArgs e)
         {
-            frm_department f = new frm_department( );
+            frm_Newdepartment f = new frm_Newdepartment( );
             f.ShowDialog( );
         }
 

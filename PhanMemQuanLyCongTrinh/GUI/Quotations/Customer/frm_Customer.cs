@@ -18,6 +18,7 @@ namespace PhanMemQuanLyCongTrinh
         BUS.customerGroupBus customerGroupBus;
         public int index;
         public int indexCustomerGroup;
+
         public frm_Customer()
         {
             InitializeComponent();
@@ -134,7 +135,7 @@ namespace PhanMemQuanLyCongTrinh
         private void btn_DeleteCustomerGroup_CheckedChanged(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Int64 customerGroupId = Convert.ToInt64(grdv_CustomerGroup.GetRowCellValue(indexCustomerGroup, "customer_group_id").ToString());
-            var customerGroupName = Convert.ToInt64(grdv_CustomerGroup.GetRowCellValue(indexCustomerGroup, "customer_group_name").ToString());
+            var customerGroupName = grdv_CustomerGroup.GetRowCellValue(indexCustomerGroup, "customer_group_name").ToString();
             DialogResult dialogResult = MessageBox.Show("Bạn Có Muốn Xóa Nhóm Khách Hàng " + customerGroupName + " Không!", "Thông Báo!!!", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -142,7 +143,7 @@ namespace PhanMemQuanLyCongTrinh
                 if (boolDeleteCustomer == true)
                 {
                     MessageBox.Show("Xóa Nhóm Khách hàng Thành Công!");
-                    loadCustomer();
+                    loadCustomerGroup();
                 }
                 else
                 {

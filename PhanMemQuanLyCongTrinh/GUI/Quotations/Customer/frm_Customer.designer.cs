@@ -30,42 +30,42 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Customer));
-            DevExpress.Utils.SuperToolTip superToolTip19 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem19 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip20 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem20 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip21 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem21 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip22 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem22 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip23 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem23 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip24 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem24 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip25 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem25 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip26 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem26 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip27 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem27 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip28 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem28 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip29 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem29 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip30 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem30 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip31 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem31 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip32 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem32 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip33 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem33 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip34 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem34 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip35 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem35 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip36 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem36 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip9 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem9 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip10 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem10 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip11 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem11 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip12 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem12 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip13 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem13 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip14 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem14 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip15 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem15 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip16 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem16 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip17 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem17 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip18 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem18 = new DevExpress.Utils.ToolTipTitleItem();
             this.bar6 = new DevExpress.XtraBars.Bar();
             this.bar5 = new DevExpress.XtraBars.Bar();
             this.bar4 = new DevExpress.XtraBars.Bar();
@@ -209,9 +209,9 @@
             this.barButtonItem2.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem19.Text = "Chĩnh sửa vật phẩm đã chọn";
-            superToolTip19.Items.Add(toolTipTitleItem19);
-            this.barButtonItem2.SuperTip = superToolTip19;
+            toolTipTitleItem1.Text = "Chĩnh sửa vật phẩm đã chọn";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            this.barButtonItem2.SuperTip = superToolTip1;
             // 
             // barButtonItem3
             // 
@@ -224,9 +224,9 @@
             this.barButtonItem3.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.Size = new System.Drawing.Size(80, 0);
-            toolTipTitleItem20.Text = "Xóa Vật Phẩm Đã Chọn\r\n";
-            superToolTip20.Items.Add(toolTipTitleItem20);
-            this.barButtonItem3.SuperTip = superToolTip20;
+            toolTipTitleItem2.Text = "Xóa Vật Phẩm Đã Chọn\r\n";
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            this.barButtonItem3.SuperTip = superToolTip2;
             // 
             // barButtonItem4
             // 
@@ -239,9 +239,9 @@
             this.barButtonItem4.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem21.Text = "Làm Mới Danh Sách Vật Phẩm\r\n";
-            superToolTip21.Items.Add(toolTipTitleItem21);
-            this.barButtonItem4.SuperTip = superToolTip21;
+            toolTipTitleItem3.Text = "Làm Mới Danh Sách Vật Phẩm\r\n";
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            this.barButtonItem4.SuperTip = superToolTip3;
             // 
             // barButtonItem5
             // 
@@ -254,9 +254,9 @@
             this.barButtonItem5.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem5.Name = "barButtonItem5";
             this.barButtonItem5.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem22.Text = "Nhập File Danh Sách Vật Phẩm";
-            superToolTip22.Items.Add(toolTipTitleItem22);
-            this.barButtonItem5.SuperTip = superToolTip22;
+            toolTipTitleItem4.Text = "Nhập File Danh Sách Vật Phẩm";
+            superToolTip4.Items.Add(toolTipTitleItem4);
+            this.barButtonItem5.SuperTip = superToolTip4;
             // 
             // barButtonItem6
             // 
@@ -269,9 +269,9 @@
             this.barButtonItem6.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem6.Name = "barButtonItem6";
             this.barButtonItem6.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem23.Text = "Xuất File Danh Sách Vật Phẩm";
-            superToolTip23.Items.Add(toolTipTitleItem23);
-            this.barButtonItem6.SuperTip = superToolTip23;
+            toolTipTitleItem5.Text = "Xuất File Danh Sách Vật Phẩm";
+            superToolTip5.Items.Add(toolTipTitleItem5);
+            this.barButtonItem6.SuperTip = superToolTip5;
             // 
             // barButtonItem7
             // 
@@ -284,9 +284,9 @@
             this.barButtonItem7.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem7.Name = "barButtonItem7";
             this.barButtonItem7.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem24.Text = "In File Danh Sách Vật Phẩm";
-            superToolTip24.Items.Add(toolTipTitleItem24);
-            this.barButtonItem7.SuperTip = superToolTip24;
+            toolTipTitleItem6.Text = "In File Danh Sách Vật Phẩm";
+            superToolTip6.Items.Add(toolTipTitleItem6);
+            this.barButtonItem7.SuperTip = superToolTip6;
             // 
             // barButtonItem8
             // 
@@ -299,9 +299,9 @@
             this.barButtonItem8.ItemAppearance.Normal.Options.UseFont = true;
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem25.Text = "Đóng Cửa Sổ Hiện Tại";
-            superToolTip25.Items.Add(toolTipTitleItem25);
-            this.barButtonItem8.SuperTip = superToolTip25;
+            toolTipTitleItem7.Text = "Đóng Cửa Sổ Hiện Tại";
+            superToolTip7.Items.Add(toolTipTitleItem7);
+            this.barButtonItem8.SuperTip = superToolTip7;
             // 
             // barDockControlRight
             // 
@@ -363,9 +363,9 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.Location = new System.Drawing.Point(0, 172);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -504,9 +504,9 @@
             this.btn_AddCustomerGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_AddCustomerGroup.ImageOptions.LargeImage")));
             this.btn_AddCustomerGroup.Name = "btn_AddCustomerGroup";
             this.btn_AddCustomerGroup.Size = new System.Drawing.Size(60, 0);
-            toolTipTitleItem26.Text = "Thêm Nhóm Khách Hàng\r\n";
-            superToolTip26.Items.Add(toolTipTitleItem26);
-            this.btn_AddCustomerGroup.SuperTip = superToolTip26;
+            toolTipTitleItem8.Text = "Thêm Nhóm Khách Hàng\r\n";
+            superToolTip8.Items.Add(toolTipTitleItem8);
+            this.btn_AddCustomerGroup.SuperTip = superToolTip8;
             this.btn_AddCustomerGroup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_AddCustomerGroup_ItemClick);
             // 
             // btn_EditCustomerGroup
@@ -517,9 +517,9 @@
             this.btn_EditCustomerGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_EditCustomerGroup.ImageOptions.LargeImage")));
             this.btn_EditCustomerGroup.Name = "btn_EditCustomerGroup";
             this.btn_EditCustomerGroup.Size = new System.Drawing.Size(60, 0);
-            toolTipTitleItem27.Text = "Chĩnh Sửa Nhóm Khách Hàng";
-            superToolTip27.Items.Add(toolTipTitleItem27);
-            this.btn_EditCustomerGroup.SuperTip = superToolTip27;
+            toolTipTitleItem9.Text = "Chĩnh Sửa Nhóm Khách Hàng";
+            superToolTip9.Items.Add(toolTipTitleItem9);
+            this.btn_EditCustomerGroup.SuperTip = superToolTip9;
             this.btn_EditCustomerGroup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_EditCustomerGroup_ItemClick);
             // 
             // btn_DeleteCustomerGroup
@@ -530,9 +530,9 @@
             this.btn_DeleteCustomerGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_DeleteCustomerGroup.ImageOptions.LargeImage")));
             this.btn_DeleteCustomerGroup.Name = "btn_DeleteCustomerGroup";
             this.btn_DeleteCustomerGroup.Size = new System.Drawing.Size(50, 0);
-            toolTipTitleItem28.Text = "Xóa Nhóm Khách Hàng\r\n";
-            superToolTip28.Items.Add(toolTipTitleItem28);
-            this.btn_DeleteCustomerGroup.SuperTip = superToolTip28;
+            toolTipTitleItem10.Text = "Xóa Nhóm Khách Hàng\r\n";
+            superToolTip10.Items.Add(toolTipTitleItem10);
+            this.btn_DeleteCustomerGroup.SuperTip = superToolTip10;
             this.btn_DeleteCustomerGroup.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DeleteCustomerGroup_CheckedChanged);
             // 
             // barStaticItem1
@@ -600,9 +600,9 @@
             // tabPane2
             // 
             this.tabPane2.AllowCollapse = DevExpress.Utils.DefaultBoolean.Default;
-            this.tabPane2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabPane2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabPane2.Controls.Add(this.tabNavigationPage2);
             this.tabPane2.Location = new System.Drawing.Point(385, 0);
             this.tabPane2.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -849,9 +849,9 @@
             this.btn_Add.ItemInMenuAppearance.Normal.Options.UseFont = true;
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem29.Text = "Ctrl + N";
-            superToolTip29.Items.Add(toolTipTitleItem29);
-            this.btn_Add.SuperTip = superToolTip29;
+            toolTipTitleItem11.Text = "Ctrl + N";
+            superToolTip11.Items.Add(toolTipTitleItem11);
+            this.btn_Add.SuperTip = superToolTip11;
             this.btn_Add.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Add_ItemClick);
             // 
             // barStaticItem4
@@ -863,7 +863,7 @@
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Caption = "Chĩnh Sửa";
+            this.btn_Edit.Caption = "Chỉnh Sửa";
             this.btn_Edit.ContentHorizontalAlignment = DevExpress.XtraBars.BarItemContentAlignment.Center;
             this.btn_Edit.Id = 1;
             this.btn_Edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Edit.ImageOptions.Image")));
@@ -876,9 +876,9 @@
             this.btn_Edit.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem30.Text = "Ctrl + E";
-            superToolTip30.Items.Add(toolTipTitleItem30);
-            this.btn_Edit.SuperTip = superToolTip30;
+            toolTipTitleItem12.Text = "Ctrl + E";
+            superToolTip12.Items.Add(toolTipTitleItem12);
+            this.btn_Edit.SuperTip = superToolTip12;
             this.btn_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Edit_ItemClick);
             // 
             // barStaticItem2
@@ -903,9 +903,9 @@
             this.btn_Delete.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(80, 0);
-            toolTipTitleItem31.Text = "Ctrl + Delete\r\n";
-            superToolTip31.Items.Add(toolTipTitleItem31);
-            this.btn_Delete.SuperTip = superToolTip31;
+            toolTipTitleItem13.Text = "Ctrl + Delete\r\n";
+            superToolTip13.Items.Add(toolTipTitleItem13);
+            this.btn_Delete.SuperTip = superToolTip13;
             this.btn_Delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Delete_ItemClick);
             // 
             // barStaticItem5
@@ -930,9 +930,9 @@
             this.btn_Refesh.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Refesh.Name = "btn_Refesh";
             this.btn_Refesh.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem32.Text = "Ctrl + F5\r\n";
-            superToolTip32.Items.Add(toolTipTitleItem32);
-            this.btn_Refesh.SuperTip = superToolTip32;
+            toolTipTitleItem14.Text = "Ctrl + F5\r\n";
+            superToolTip14.Items.Add(toolTipTitleItem14);
+            this.btn_Refesh.SuperTip = superToolTip14;
             this.btn_Refesh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Refesh_ItemClick);
             // 
             // barStaticItem6
@@ -957,9 +957,9 @@
             this.btn_Import.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Import.Name = "btn_Import";
             this.btn_Import.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem33.Text = "Ctrl + F7";
-            superToolTip33.Items.Add(toolTipTitleItem33);
-            this.btn_Import.SuperTip = superToolTip33;
+            toolTipTitleItem15.Text = "Ctrl + F7";
+            superToolTip15.Items.Add(toolTipTitleItem15);
+            this.btn_Import.SuperTip = superToolTip15;
             // 
             // barStaticItem7
             // 
@@ -983,9 +983,9 @@
             this.btn_Export.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Export.Name = "btn_Export";
             this.btn_Export.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem34.Text = "Ctrl + F8";
-            superToolTip34.Items.Add(toolTipTitleItem34);
-            this.btn_Export.SuperTip = superToolTip34;
+            toolTipTitleItem16.Text = "Ctrl + F8";
+            superToolTip16.Items.Add(toolTipTitleItem16);
+            this.btn_Export.SuperTip = superToolTip16;
             // 
             // barStaticItem8
             // 
@@ -1009,9 +1009,9 @@
             this.btn_Print.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Print.Name = "btn_Print";
             this.btn_Print.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem35.Text = "Ctrl + P";
-            superToolTip35.Items.Add(toolTipTitleItem35);
-            this.btn_Print.SuperTip = superToolTip35;
+            toolTipTitleItem17.Text = "Ctrl + P";
+            superToolTip17.Items.Add(toolTipTitleItem17);
+            this.btn_Print.SuperTip = superToolTip17;
             // 
             // barStaticItem9
             // 
@@ -1035,9 +1035,9 @@
             this.btn_Close.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem36.Text = "Esc";
-            superToolTip36.Items.Add(toolTipTitleItem36);
-            this.btn_Close.SuperTip = superToolTip36;
+            toolTipTitleItem18.Text = "Esc";
+            superToolTip18.Items.Add(toolTipTitleItem18);
+            this.btn_Close.SuperTip = superToolTip18;
             this.btn_Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Close_ItemClick);
             // 
             // bar8

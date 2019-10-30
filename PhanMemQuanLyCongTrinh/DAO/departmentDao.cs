@@ -14,6 +14,9 @@ namespace PhanMemQuanLyCongTrinh.DAO
         {
             try
             {
+                db.Dispose( );
+                db = new DataClasses1DataContext( );
+                db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
                 var data = from d in db.ST_departments
                            select d;
 
@@ -29,9 +32,13 @@ namespace PhanMemQuanLyCongTrinh.DAO
         {
             
             try{
-                var depament = from b in db.ST_departments
+                db.Dispose( );
+                db = new DataClasses1DataContext( );
+                db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
+
+                var depament = (from b in db.ST_departments
                                where b.department_id == id
-                               select b;
+                               select b).Single();
 
                 return depament;
             }
@@ -54,6 +61,41 @@ namespace PhanMemQuanLyCongTrinh.DAO
                 return true;
             }
             catch(Exception)
+            {
+                return false;
+            }
+            
+        }
+
+        public bool deleteDepartment(Int64 idDepartment)
+        {
+            try{
+                var delete = db.ST_departments.Where(p => p.department_id.Equals(idDepartment)).SingleOrDefault( );
+
+                db.ST_departments.DeleteOnSubmit(delete);
+                db.SubmitChanges( );
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+            
+        }
+
+        public bool update(string name, Int64 id)
+        {
+            try{
+                var dep = (from b in db.ST_departments
+                           where b.department_id == id
+                           select b).Single( );
+
+                dep.department_name = name;
+
+                db.SubmitChanges( );
+                return true;
+            }
+            catch(Exception )
             {
                 return false;
             }

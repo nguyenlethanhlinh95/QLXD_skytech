@@ -153,7 +153,7 @@ namespace PhanMemQuanLyCongTrinh
         }
         private void btn_AddNewDerpament_Click(object sender, EventArgs e)
         {
-            frm_department f = new frm_department( );
+            frm_Newdepartment f = new frm_Newdepartment( );
 
             f.FormClosed += new FormClosedEventHandler(dongformGroup);
 

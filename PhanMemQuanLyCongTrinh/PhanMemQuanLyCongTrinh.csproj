@@ -60,15 +60,30 @@
     <Compile Include="BUS\deparmentBus.cs" />
     <Compile Include="BUS\messeage.cs" />
     <Compile Include="BUS\userBus.cs" />
+    <Compile Include="BUS\vendorBus.cs" />
     <Compile Include="DAO\customerDao.cs" />
     <Compile Include="DAO\customerGroupDao.cs" />
-    <Compile Include="DAO\customer_group.cs" />
+    <Compile Include="DAO\customer_groupDao.cs" />
     <Compile Include="DAO\departmentDao.cs" />
+    <Compile Include="DAO\group_suppliesDao.cs" />
     <Compile Include="DAO\userDao.cs" />
+    <Compile Include="DAO\vendorDao.cs" />
     <Compile Include="DTO\DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\supplies\frm_Supplies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\supplies\frm_Supplies.Designer.cs">
+      <DependentUpon>frm_Supplies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\supplies\frm_AddNewSupplies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\supplies\frm_AddNewSupplies.Designer.cs">
+      <DependentUpon>frm_AddNewSupplies.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Button.cs">
       <SubType>Form</SubType>
@@ -76,11 +91,17 @@
     <Compile Include="frm_Button.designer.cs">
       <DependentUpon>frm_Button.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\frm_EmployeesList.cs">
+    <Compile Include="GUI\QuanLyHeThong\Deparment\frm_EditDeparment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\frm_EmployeesList.Designer.cs">
-      <DependentUpon>frm_EmployeesList.cs</DependentUpon>
+    <Compile Include="GUI\QuanLyHeThong\Deparment\frm_EditDeparment.Designer.cs">
+      <DependentUpon>frm_EditDeparment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\Employees\frm_Employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\Employees\frm_Employees.Designer.cs">
+      <DependentUpon>frm_Employees.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\QuanLyHeThong\frm_Logout.cs">
       <SubType>Form</SubType>
@@ -88,41 +109,59 @@
     <Compile Include="GUI\QuanLyHeThong\frm_Logout.Designer.cs">
       <DependentUpon>frm_Logout.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\frm_RePassword.cs">
+    <Compile Include="GUI\QuanLyHeThong\Employees\frm_RePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\frm_RePassword.Designer.cs">
+    <Compile Include="GUI\QuanLyHeThong\Employees\frm_RePassword.Designer.cs">
       <DependentUpon>frm_RePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\frm_NewDepartment.cs">
+    <Compile Include="GUI\QuanLyHeThong\Deparment\frm_NewDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\frm_NewDepartment.Designer.cs">
+    <Compile Include="GUI\QuanLyHeThong\Deparment\frm_NewDepartment.Designer.cs">
       <DependentUpon>frm_NewDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\frm_Login.cs">
+    <Compile Include="GUI\QuanLyHeThong\Employees\frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\frm_Login.Designer.cs">
+    <Compile Include="GUI\QuanLyHeThong\Employees\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\frm_ChangePassword.cs">
+    <Compile Include="GUI\QuanLyHeThong\Employees\frm_ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\frm_ChangePassword.Designer.cs">
+    <Compile Include="GUI\QuanLyHeThong\Employees\frm_ChangePassword.Designer.cs">
       <DependentUpon>frm_ChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\frm_RegisterUser.cs">
+    <Compile Include="GUI\QuanLyHeThong\Employees\frm_RegisterUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\frm_RegisterUser.Designer.cs">
+    <Compile Include="GUI\QuanLyHeThong\Employees\frm_RegisterUser.Designer.cs">
       <DependentUpon>frm_RegisterUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\frm_UserInfo.cs">
+    <Compile Include="GUI\QuanLyHeThong\Employees\frm_UserInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\frm_UserInfo.Designer.cs">
+    <Compile Include="GUI\QuanLyHeThong\Employees\frm_UserInfo.Designer.cs">
       <DependentUpon>frm_UserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\Vendor\frm_NewVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\Vendor\frm_NewVendor.Designer.cs">
+      <DependentUpon>frm_NewVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\Vendor\frm_UpdateVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\Vendor\frm_UpdateVendor.Designer.cs">
+      <DependentUpon>frm_UpdateVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\Vendor\frm_Vendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\Vendor\frm_Vendor.Designer.cs">
+      <DependentUpon>frm_Vendor.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Quotations\Customer\frm_Customer.cs">
       <SubType>Form</SubType>
@@ -154,32 +193,50 @@
     <None Include="DTO\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\supplies\frm_Supplies.resx">
+      <DependentUpon>frm_Supplies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\supplies\frm_AddNewSupplies.resx">
+      <DependentUpon>frm_AddNewSupplies.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Button.resx">
       <DependentUpon>frm_Button.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_EmployeesList.resx">
-      <DependentUpon>frm_EmployeesList.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\Deparment\frm_EditDeparment.resx">
+      <DependentUpon>frm_EditDeparment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\Employees\frm_Employees.resx">
+      <DependentUpon>frm_Employees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanLyHeThong\frm_Logout.resx">
       <DependentUpon>frm_Logout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_NewDepartment.resx">
+    <EmbeddedResource Include="GUI\QuanLyHeThong\Deparment\frm_NewDepartment.resx">
       <DependentUpon>frm_NewDepartment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_Login.resx">
+    <EmbeddedResource Include="GUI\QuanLyHeThong\Employees\frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_ChangePassword.resx">
+    <EmbeddedResource Include="GUI\QuanLyHeThong\Employees\frm_ChangePassword.resx">
       <DependentUpon>frm_ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_RegisterUser.resx">
+    <EmbeddedResource Include="GUI\QuanLyHeThong\Employees\frm_RegisterUser.resx">
       <DependentUpon>frm_RegisterUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_RePassword.resx">
+    <EmbeddedResource Include="GUI\QuanLyHeThong\Employees\frm_RePassword.resx">
       <DependentUpon>frm_RePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QuanLyHeThong\frm_UserInfo.resx">
+    <EmbeddedResource Include="GUI\QuanLyHeThong\Employees\frm_UserInfo.resx">
       <DependentUpon>frm_UserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\Vendor\frm_NewVendor.resx">
+      <DependentUpon>frm_NewVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\Vendor\frm_UpdateVendor.resx">
+      <DependentUpon>frm_UpdateVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\Vendor\frm_Vendor.resx">
+      <DependentUpon>frm_Vendor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Quotations\Customer\frm_Customer.resx">
       <DependentUpon>frm_Customer.cs</DependentUpon>

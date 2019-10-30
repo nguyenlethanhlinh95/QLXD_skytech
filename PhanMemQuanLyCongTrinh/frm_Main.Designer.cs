@@ -281,6 +281,7 @@
             this.btnEmployee.LargeWidth = 100;
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnEmployee.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEmployee_ItemClick);
             // 
             // barButtonItem6
             // 
@@ -426,6 +427,7 @@
             this.btnConstructors.LargeWidth = 100;
             this.btnConstructors.Name = "btnConstructors";
             this.btnConstructors.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnConstructors.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnConstructors_ItemClick);
             // 
             // barButtonItem23
             // 
@@ -450,6 +452,7 @@
             this.btnUnit.LargeWidth = 100;
             this.btnUnit.Name = "btnUnit";
             this.btnUnit.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnUnit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUnit_ItemClick);
             // 
             // barButtonItem26
             // 
@@ -500,7 +503,7 @@
             // 
             // btnHistory
             // 
-            this.btnHistory.Caption = "Lịch Sữ";
+            this.btnHistory.Caption = "Lịch Sử";
             this.btnHistory.Id = 33;
             this.btnHistory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHistory.ImageOptions.Image")));
             this.btnHistory.LargeWidth = 100;
@@ -943,7 +946,6 @@
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnCustomerGroup);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnCustomer);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnConstructors);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
@@ -951,7 +953,6 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnDepartment);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnEmployee);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Nhân Viên";
