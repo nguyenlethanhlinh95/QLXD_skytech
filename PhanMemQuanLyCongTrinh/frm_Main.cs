@@ -130,10 +130,10 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btnUnit_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frm_Supplies));
+            Form frm = kiemtraform(typeof(frm_Units));
             if ( frm == null )
             {
-                frm_Supplies forms = new frm_Supplies( );
+                frm_Units forms = new frm_Units( );
                 forms.MdiParent = this;
                 forms.Show( );
             }
@@ -145,10 +145,30 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btnConstructors_ItemClick(object sender, ItemClickEventArgs e)
         {
+            
+        }
+
+        private void btnVendor_ItemClick(object sender, ItemClickEventArgs e)
+        {
             Form frm = kiemtraform(typeof(frm_Vendor));
             if ( frm == null )
             {
                 frm_Vendor forms = new frm_Vendor( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
+        private void btnProduct_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_Supplies));
+            if ( frm == null )
+            {
+                frm_Supplies forms = new frm_Supplies( );
                 forms.MdiParent = this;
                 forms.Show( );
             }

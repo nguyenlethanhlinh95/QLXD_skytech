@@ -76,9 +76,11 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_Add_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frm_NewVendor frm = new frm_NewVendor();
+            frm_NewVendor frm = new frm_NewVendor( );
             frm.FormClosed += new FormClosedEventHandler(dongform);
-            frm.Show();
+            frm.Show( );
+            
+
         }
         private void dongform(object sender, EventArgs e)
         {
@@ -108,5 +110,8 @@ namespace PhanMemQuanLyCongTrinh
             }
            
         }
+
+        
+        
     }
 }

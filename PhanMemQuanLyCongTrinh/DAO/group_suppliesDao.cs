@@ -9,9 +9,14 @@ namespace PhanMemQuanLyCongTrinh.DAO
     public class group_suppliesDao
     {
         DataClasses1DataContext db = new DataClasses1DataContext();
+
         public IEnumerable<Object> getAllGroupSupplies()
         {
             try{
+                db.Dispose( );
+                db = new DataClasses1DataContext( );
+                db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
+
                 var listAll = from g in db.ST_group_supplies
                               select g;
                 return listAll;
@@ -26,6 +31,10 @@ namespace PhanMemQuanLyCongTrinh.DAO
         public Object getGroupSupplie(Int64 id)
         {
             try{
+                db.Dispose( );
+                db = new DataClasses1DataContext( );
+                db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
+
                 var item = (from b in db.ST_group_supplies
                             where b.group_supplies_id == id
                             select b).Single( );
@@ -39,10 +48,17 @@ namespace PhanMemQuanLyCongTrinh.DAO
             
         }
 
-        public bool insertGroupSupplie(ST_group_supply group)
+        public bool insertGroupSupplie(string group)
         {
             try{
-                db.ST_group_supplies.InsertOnSubmit(group);
+                db.Dispose( );
+                db = new DataClasses1DataContext( );
+                db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
+
+                ST_group_supply _group = new ST_group_supply();
+                _group.group_supplies_name = group;
+
+                db.ST_group_supplies.InsertOnSubmit(_group);
                 db.SubmitChanges( );
 
                 return true;
@@ -54,14 +70,15 @@ namespace PhanMemQuanLyCongTrinh.DAO
             
         }
 
-        public bool updateGroupSupplie(ST_group_supply group_supp)
+        public bool updateGroupSupplie(string name, Int64 id)
         {
             try
             {
                 var group = (from b in db.ST_group_supplies
-                            where group_supp.group_supplies_id == b.group_supplies_id
+                             where id == b.group_supplies_id
                             select b).Single();
-                group.group_supplies_name = group_supp.group_supplies_name;              
+
+                group.group_supplies_name = name;              
                 db.SubmitChanges( );
 
                 return true;

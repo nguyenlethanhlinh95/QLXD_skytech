@@ -1,6 +1,6 @@
 ﻿namespace PhanMemQuanLyCongTrinh
 {
-    partial class frm_Vendor
+    partial class frm_Units
     {
         /// <summary>
         /// Required designer variable.
@@ -13,9 +13,9 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if ( disposing && (components != null) )
             {
-                components.Dispose();
+                components.Dispose( );
             }
             base.Dispose(disposing);
         }
@@ -26,10 +26,10 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private void InitializeComponent( )
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Vendor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Supplies));
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
@@ -46,6 +46,7 @@
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
+            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar7 = new DevExpress.XtraBars.Bar();
             this.btn_Add = new DevExpress.XtraBars.BarButtonItem();
@@ -70,14 +71,11 @@
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.grdc_Vendor = new DevExpress.XtraGrid.GridControl();
-            this.grdv_Vendor = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.vendor_id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.vendor_id_custom = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.vendor_name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.vendor_phone = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.vendor_address = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
+            this.grdc_unit = new DevExpress.XtraGrid.GridControl();
+            this.grdv_unit = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.unit_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.unit_id_custom = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.unit_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
@@ -89,11 +87,19 @@
             this.tabPane2 = new DevExpress.XtraBars.Navigation.TabPane();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdc_Vendor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_Vendor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdc_unit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_unit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane2)).BeginInit();
             this.tabPane2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // barDockControl1
+            // 
+            this.barDockControl1.CausesValidation = false;
+            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl1.Location = new System.Drawing.Point(0, 51);
+            this.barDockControl1.Manager = this.barManager2;
+            this.barDockControl1.Size = new System.Drawing.Size(0, 648);
             // 
             // barManager2
             // 
@@ -258,7 +264,6 @@
             toolTipTitleItem4.Text = "Ctrl + F5\r\n";
             superToolTip4.Items.Add(toolTipTitleItem4);
             this.btn_Refesh.SuperTip = superToolTip4;
-            this.btn_Refesh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Refesh_ItemClick);
             // 
             // barStaticItem6
             // 
@@ -363,7 +368,6 @@
             toolTipTitleItem8.Text = "Esc";
             superToolTip8.Items.Add(toolTipTitleItem8);
             this.btn_Close.SuperTip = superToolTip8;
-            this.btn_Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Close_ItemClick);
             // 
             // bar8
             // 
@@ -425,8 +429,8 @@
             // 
             this.tabNavigationPage2.Appearance.BackColor = System.Drawing.Color.Black;
             this.tabNavigationPage2.Appearance.Options.UseBackColor = true;
-            this.tabNavigationPage2.Caption = "Danh Sách Nhà Cung Cấp";
-            this.tabNavigationPage2.Controls.Add(this.grdc_Vendor);
+            this.tabNavigationPage2.Caption = "Danh Sách đơn vị";
+            this.tabNavigationPage2.Controls.Add(this.grdc_unit);
             this.tabNavigationPage2.Controls.Add(this.barDockControl1);
             this.tabNavigationPage2.Controls.Add(this.barDockControl2);
             this.tabNavigationPage2.Controls.Add(this.barDockControl3);
@@ -439,103 +443,76 @@
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Size = new System.Drawing.Size(1370, 722);
             // 
-            // grdc_Vendor
+            // grdc_unit
             // 
-            this.grdc_Vendor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdc_Vendor.Location = new System.Drawing.Point(0, 51);
-            this.grdc_Vendor.MainView = this.grdv_Vendor;
-            this.grdc_Vendor.Name = "grdc_Vendor";
-            this.grdc_Vendor.Size = new System.Drawing.Size(1370, 648);
-            this.grdc_Vendor.TabIndex = 18;
-            this.grdc_Vendor.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grdv_Vendor});
+            this.grdc_unit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdc_unit.Location = new System.Drawing.Point(0, 51);
+            this.grdc_unit.MainView = this.grdv_unit;
+            this.grdc_unit.Name = "grdc_unit";
+            this.grdc_unit.Size = new System.Drawing.Size(1370, 648);
+            this.grdc_unit.TabIndex = 18;
+            this.grdc_unit.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdv_unit});
             // 
-            // grdv_Vendor
+            // grdv_unit
             // 
-            this.grdv_Vendor.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdv_Vendor.Appearance.Row.Options.UseFont = true;
-            this.grdv_Vendor.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdv_Vendor.Appearance.TopNewRow.Options.UseFont = true;
-            this.grdv_Vendor.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.vendor_id,
-            this.vendor_id_custom,
-            this.vendor_name,
-            this.vendor_phone,
-            this.vendor_address});
-            this.grdv_Vendor.GridControl = this.grdc_Vendor;
-            this.grdv_Vendor.Name = "grdv_Vendor";
-            this.grdv_Vendor.OptionsBehavior.Editable = false;
-            this.grdv_Vendor.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            this.grdv_Vendor.OptionsView.ShowGroupPanel = false;
-            this.grdv_Vendor.RowHeight = 30;
-            this.grdv_Vendor.ViewCaptionHeight = 0;
-            this.grdv_Vendor.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdv_Vendor_FocusedRowChanged);
+            this.grdv_unit.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_unit.Appearance.Row.Options.UseFont = true;
+            this.grdv_unit.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_unit.Appearance.TopNewRow.Options.UseFont = true;
+            this.grdv_unit.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.unit_id,
+            this.unit_id_custom,
+            this.unit_name});
+            this.grdv_unit.GridControl = this.grdc_unit;
+            this.grdv_unit.Name = "grdv_unit";
+            this.grdv_unit.OptionsBehavior.Editable = false;
+            this.grdv_unit.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.grdv_unit.OptionsView.ShowGroupPanel = false;
+            this.grdv_unit.RowHeight = 30;
+            this.grdv_unit.ViewCaptionHeight = 0;
+            this.grdv_unit.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdv_unit_FocusedRowChanged);
             // 
-            // vendor_id
+            // unit_id
             // 
-            this.vendor_id.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vendor_id.AppearanceCell.Options.UseFont = true;
-            this.vendor_id.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vendor_id.AppearanceHeader.Options.UseFont = true;
-            this.vendor_id.Caption = "ID";
-            this.vendor_id.FieldName = "vendor_id";
-            this.vendor_id.Name = "vendor_id";
+            this.unit_id.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unit_id.AppearanceCell.Options.UseFont = true;
+            this.unit_id.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unit_id.AppearanceHeader.Options.UseFont = true;
+            this.unit_id.Caption = "ID";
+            this.unit_id.FieldName = "unit_id";
+            this.unit_id.Name = "unit_id";
+            this.unit_id.OptionsColumn.FixedWidth = true;
             // 
-            // vendor_id_custom
+            // unit_id_custom
             // 
-            this.vendor_id_custom.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vendor_id_custom.AppearanceCell.Options.UseFont = true;
-            this.vendor_id_custom.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vendor_id_custom.AppearanceHeader.Options.UseFont = true;
-            this.vendor_id_custom.Caption = "Mã Nhà Cung Cấp";
-            this.vendor_id_custom.FieldName = "vendor_id_custom";
-            this.vendor_id_custom.Name = "vendor_id_custom";
-            this.vendor_id_custom.Visible = true;
-            this.vendor_id_custom.VisibleIndex = 0;
+            this.unit_id_custom.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unit_id_custom.AppearanceCell.Options.UseFont = true;
+            this.unit_id_custom.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unit_id_custom.AppearanceHeader.Options.UseFont = true;
+            this.unit_id_custom.Caption = "Mã ĐVT";
+            this.unit_id_custom.FieldName = "unit_id_custom";
+            this.unit_id_custom.MaxWidth = 120;
+            this.unit_id_custom.Name = "unit_id_custom";
+            this.unit_id_custom.OptionsColumn.FixedWidth = true;
+            this.unit_id_custom.Visible = true;
+            this.unit_id_custom.VisibleIndex = 0;
+            this.unit_id_custom.Width = 120;
             // 
-            // vendor_name
+            // unit_name
             // 
-            this.vendor_name.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vendor_name.AppearanceCell.Options.UseFont = true;
-            this.vendor_name.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vendor_name.AppearanceHeader.Options.UseFont = true;
-            this.vendor_name.Caption = "Tên Nhà Cung Cấp";
-            this.vendor_name.FieldName = "vendor_name";
-            this.vendor_name.Name = "vendor_name";
-            this.vendor_name.Visible = true;
-            this.vendor_name.VisibleIndex = 1;
-            // 
-            // vendor_phone
-            // 
-            this.vendor_phone.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vendor_phone.AppearanceCell.Options.UseFont = true;
-            this.vendor_phone.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vendor_phone.AppearanceHeader.Options.UseFont = true;
-            this.vendor_phone.Caption = "Số Điện Thoại";
-            this.vendor_phone.FieldName = "vendor_phone";
-            this.vendor_phone.Name = "vendor_phone";
-            this.vendor_phone.Visible = true;
-            this.vendor_phone.VisibleIndex = 2;
-            // 
-            // vendor_address
-            // 
-            this.vendor_address.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vendor_address.AppearanceCell.Options.UseFont = true;
-            this.vendor_address.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vendor_address.AppearanceHeader.Options.UseFont = true;
-            this.vendor_address.Caption = "Địa Chỉ";
-            this.vendor_address.FieldName = "vendor_address";
-            this.vendor_address.Name = "vendor_address";
-            this.vendor_address.Visible = true;
-            this.vendor_address.VisibleIndex = 3;
-            // 
-            // barDockControl1
-            // 
-            this.barDockControl1.CausesValidation = false;
-            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl1.Location = new System.Drawing.Point(0, 51);
-            this.barDockControl1.Manager = this.barManager2;
-            this.barDockControl1.Size = new System.Drawing.Size(0, 648);
+            this.unit_name.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unit_name.AppearanceCell.Options.UseFont = true;
+            this.unit_name.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unit_name.AppearanceHeader.Options.UseFont = true;
+            this.unit_name.Caption = "Tên ĐVT";
+            this.unit_name.FieldName = "unit_name";
+            this.unit_name.MaxWidth = 400;
+            this.unit_name.Name = "unit_name";
+            this.unit_name.OptionsColumn.FixedWidth = true;
+            this.unit_name.Visible = true;
+            this.unit_name.VisibleIndex = 1;
+            this.unit_name.Width = 400;
             // 
             // barDockControl2
             // 
@@ -604,27 +581,27 @@
             this.tabPane2.RegularSize = new System.Drawing.Size(1370, 749);
             this.tabPane2.SelectedPage = this.tabNavigationPage2;
             this.tabPane2.Size = new System.Drawing.Size(1370, 749);
-            this.tabPane2.TabIndex = 11;
+            this.tabPane2.TabIndex = 12;
             this.tabPane2.Text = "tabPane2";
             // 
-            // frm_Vendor
+            // frm_Supplies
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.tabPane2);
-            this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "frm_Vendor";
+            this.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.Name = "frm_Supplies";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NHÀ CUNG CẤP";
-            this.Load += new System.EventHandler(this.frm_Vendor_Load);
+            this.Text = "ĐƠN VỊ TÍNH";
+            this.Load += new System.EventHandler(this.frm_Supplies_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             this.tabNavigationPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdc_Vendor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_Vendor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdc_unit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_unit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane2)).EndInit();
             this.tabPane2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -633,6 +610,7 @@
 
         #endregion
 
+        private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarManager barManager2;
         private DevExpress.XtraBars.Bar bar7;
         private DevExpress.XtraBars.BarButtonItem btn_Add;
@@ -656,23 +634,21 @@
         private DevExpress.XtraBars.BarDockControl barDockControl5;
         private DevExpress.XtraBars.BarDockControl barDockControl6;
         private DevExpress.XtraBars.BarDockControl barDockControl7;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
+        private DevExpress.XtraGrid.GridControl grdc_unit;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdv_unit;
+        private DevExpress.XtraGrid.Columns.GridColumn unit_id;
+        private DevExpress.XtraGrid.Columns.GridColumn unit_id_custom;
+        private DevExpress.XtraGrid.Columns.GridColumn unit_name;
+        private DevExpress.XtraBars.BarDockControl barDockControl2;
+        private DevExpress.XtraBars.BarDockControl barDockControl3;
+        private DevExpress.XtraBars.BarDockControl barDockControl8;
         private DevExpress.XtraBars.BarCheckItem barCheckItem2;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem2;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem3;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem4;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
-        private DevExpress.XtraGrid.GridControl grdc_Vendor;
-        private DevExpress.XtraGrid.Views.Grid.GridView grdv_Vendor;
-        private DevExpress.XtraGrid.Columns.GridColumn vendor_id;
-        private DevExpress.XtraGrid.Columns.GridColumn vendor_id_custom;
-        private DevExpress.XtraGrid.Columns.GridColumn vendor_name;
-        private DevExpress.XtraGrid.Columns.GridColumn vendor_phone;
-        private DevExpress.XtraGrid.Columns.GridColumn vendor_address;
-        private DevExpress.XtraBars.BarDockControl barDockControl1;
-        private DevExpress.XtraBars.BarDockControl barDockControl2;
-        private DevExpress.XtraBars.BarDockControl barDockControl3;
-        private DevExpress.XtraBars.BarDockControl barDockControl8;
         private DevExpress.XtraBars.Navigation.TabPane tabPane2;
+
     }
 }

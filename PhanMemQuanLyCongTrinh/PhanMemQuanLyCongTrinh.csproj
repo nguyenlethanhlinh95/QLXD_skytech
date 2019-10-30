@@ -55,10 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\QuanLyHeThong\GroupSupplies\frm_AddNewGroupSupplies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\GroupSupplies\frm_AddNewGroupSupplies.Designer.cs">
+      <DependentUpon>frm_AddNewGroupSupplies.cs</DependentUpon>
+    </Compile>
     <Compile Include="BUS\customerBus.cs" />
     <Compile Include="BUS\customerGroupBus.cs" />
     <Compile Include="BUS\deparmentBus.cs" />
+    <Compile Include="BUS\group_suppliesBus.cs" />
     <Compile Include="BUS\messeage.cs" />
+    <Compile Include="BUS\unitBus.cs" />
     <Compile Include="BUS\userBus.cs" />
     <Compile Include="BUS\vendorBus.cs" />
     <Compile Include="DAO\customerDao.cs" />
@@ -66,6 +74,7 @@
     <Compile Include="DAO\customer_groupDao.cs" />
     <Compile Include="DAO\departmentDao.cs" />
     <Compile Include="DAO\group_suppliesDao.cs" />
+    <Compile Include="DAO\unitDao.cs" />
     <Compile Include="DAO\userDao.cs" />
     <Compile Include="DAO\vendorDao.cs" />
     <Compile Include="DTO\DataClasses1.designer.cs">
@@ -73,17 +82,47 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\supplies\frm_Supplies.cs">
+    <Compile Include="GUI\QuanLyHeThong\GroupSupplies\frm_UpdateGroupSupplies.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\supplies\frm_Supplies.Designer.cs">
-      <DependentUpon>frm_Supplies.cs</DependentUpon>
+    <Compile Include="GUI\QuanLyHeThong\GroupSupplies\frm_UpdateGroupSupplies.Designer.cs">
+      <DependentUpon>frm_UpdateGroupSupplies.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\QuanLyHeThong\supplies\frm_AddNewSupplies.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\QuanLyHeThong\supplies\frm_AddNewSupplies.Designer.cs">
       <DependentUpon>frm_AddNewSupplies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\supplies\frm_Supplies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\supplies\frm_Supplies.Designer.cs">
+      <DependentUpon>frm_Supplies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\supplies\frm_UpdateSuppliescs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\supplies\frm_UpdateSuppliescs.Designer.cs">
+      <DependentUpon>frm_UpdateSuppliescs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\Unit\frm_Update_Unit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\Unit\frm_Update_Unit.Designer.cs">
+      <DependentUpon>frm_Update_Unit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\Unit\frm_Units.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\Unit\frm_Units.Designer.cs">
+      <DependentUpon>frm_Units.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\Unit\frm_AddNewUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\QuanLyHeThong\Unit\frm_AddNewUnit.Designer.cs">
+      <DependentUpon>frm_AddNewUnit.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Button.cs">
       <SubType>Form</SubType>
@@ -193,11 +232,23 @@
     <None Include="DTO\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\GroupSupplies\frm_AddNewGroupSupplies.resx">
+      <DependentUpon>frm_AddNewGroupSupplies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\GroupSupplies\frm_UpdateGroupSupplies.resx">
+      <DependentUpon>frm_UpdateGroupSupplies.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanLyHeThong\supplies\frm_Supplies.resx">
       <DependentUpon>frm_Supplies.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QuanLyHeThong\supplies\frm_AddNewSupplies.resx">
-      <DependentUpon>frm_AddNewSupplies.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\Unit\frm_Update_Unit.resx">
+      <DependentUpon>frm_Update_Unit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\Unit\frm_Units.resx">
+      <DependentUpon>frm_Units.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\Unit\frm_AddNewUnit.resx">
+      <DependentUpon>frm_AddNewUnit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Button.resx">
       <DependentUpon>frm_Button.cs</DependentUpon>

@@ -51,6 +51,9 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void InsertST_permission(ST_permission instance);
     partial void UpdateST_permission(ST_permission instance);
     partial void DeleteST_permission(ST_permission instance);
+    partial void InsertST_supply(ST_supply instance);
+    partial void UpdateST_supply(ST_supply instance);
+    partial void DeleteST_supply(ST_supply instance);
     partial void InsertST_unit(ST_unit instance);
     partial void UpdateST_unit(ST_unit instance);
     partial void DeleteST_unit(ST_unit instance);
@@ -139,6 +142,14 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			get
 			{
 				return this.GetTable<ST_permission>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ST_supply> ST_supplies
+		{
+			get
+			{
+				return this.GetTable<ST_supply>();
 			}
 		}
 		
@@ -1808,6 +1819,404 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._permission_name_ = value;
 					this.SendPropertyChanged("permission_name_");
 					this.Onpermission_name_Changed();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_supplies")]
+	public partial class ST_supply : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _supplies_id;
+		
+		private string _supplies_id_custom;
+		
+		private long _unit_id;
+		
+		private long _group_supplies_id;
+		
+		private System.Nullable<long> _vendor_id;
+		
+		private string _supplies_name;
+		
+		private string _supplies_barcode;
+		
+		private string _supplies_description;
+		
+		private System.Data.Linq.Binary _supplies_image;
+		
+		private System.Nullable<decimal> _supplies_entry_price;
+		
+		private System.Nullable<decimal> _supplies_wholesale_price;
+		
+		private System.Nullable<decimal> _supplies_commercial_price;
+		
+		private System.Nullable<decimal> _supplies_shipping_cost;
+		
+		private System.Nullable<int> _supplies_survive_the_norm;
+		
+		private System.Nullable<long> _employee_created;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onsupplies_idChanging(long value);
+    partial void Onsupplies_idChanged();
+    partial void Onsupplies_id_customChanging(string value);
+    partial void Onsupplies_id_customChanged();
+    partial void Onunit_idChanging(long value);
+    partial void Onunit_idChanged();
+    partial void Ongroup_supplies_idChanging(long value);
+    partial void Ongroup_supplies_idChanged();
+    partial void Onvendor_idChanging(System.Nullable<long> value);
+    partial void Onvendor_idChanged();
+    partial void Onsupplies_nameChanging(string value);
+    partial void Onsupplies_nameChanged();
+    partial void Onsupplies_barcodeChanging(string value);
+    partial void Onsupplies_barcodeChanged();
+    partial void Onsupplies_descriptionChanging(string value);
+    partial void Onsupplies_descriptionChanged();
+    partial void Onsupplies_imageChanging(System.Data.Linq.Binary value);
+    partial void Onsupplies_imageChanged();
+    partial void Onsupplies_entry_priceChanging(System.Nullable<decimal> value);
+    partial void Onsupplies_entry_priceChanged();
+    partial void Onsupplies_wholesale_priceChanging(System.Nullable<decimal> value);
+    partial void Onsupplies_wholesale_priceChanged();
+    partial void Onsupplies_commercial_priceChanging(System.Nullable<decimal> value);
+    partial void Onsupplies_commercial_priceChanged();
+    partial void Onsupplies_shipping_costChanging(System.Nullable<decimal> value);
+    partial void Onsupplies_shipping_costChanged();
+    partial void Onsupplies_survive_the_normChanging(System.Nullable<int> value);
+    partial void Onsupplies_survive_the_normChanged();
+    partial void Onemployee_createdChanging(System.Nullable<long> value);
+    partial void Onemployee_createdChanged();
+    #endregion
+		
+		public ST_supply()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_supplies_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long supplies_id
+		{
+			get
+			{
+				return this._supplies_id;
+			}
+			set
+			{
+				if ((this._supplies_id != value))
+				{
+					this.Onsupplies_idChanging(value);
+					this.SendPropertyChanging();
+					this._supplies_id = value;
+					this.SendPropertyChanged("supplies_id");
+					this.Onsupplies_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_supplies_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(33)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string supplies_id_custom
+		{
+			get
+			{
+				return this._supplies_id_custom;
+			}
+			set
+			{
+				if ((this._supplies_id_custom != value))
+				{
+					this.Onsupplies_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._supplies_id_custom = value;
+					this.SendPropertyChanged("supplies_id_custom");
+					this.Onsupplies_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_unit_id", DbType="BigInt NOT NULL")]
+		public long unit_id
+		{
+			get
+			{
+				return this._unit_id;
+			}
+			set
+			{
+				if ((this._unit_id != value))
+				{
+					this.Onunit_idChanging(value);
+					this.SendPropertyChanging();
+					this._unit_id = value;
+					this.SendPropertyChanged("unit_id");
+					this.Onunit_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_group_supplies_id", DbType="BigInt NOT NULL")]
+		public long group_supplies_id
+		{
+			get
+			{
+				return this._group_supplies_id;
+			}
+			set
+			{
+				if ((this._group_supplies_id != value))
+				{
+					this.Ongroup_supplies_idChanging(value);
+					this.SendPropertyChanging();
+					this._group_supplies_id = value;
+					this.SendPropertyChanged("group_supplies_id");
+					this.Ongroup_supplies_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_id", DbType="BigInt")]
+		public System.Nullable<long> vendor_id
+		{
+			get
+			{
+				return this._vendor_id;
+			}
+			set
+			{
+				if ((this._vendor_id != value))
+				{
+					this.Onvendor_idChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_id = value;
+					this.SendPropertyChanged("vendor_id");
+					this.Onvendor_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_supplies_name", DbType="NVarChar(255)")]
+		public string supplies_name
+		{
+			get
+			{
+				return this._supplies_name;
+			}
+			set
+			{
+				if ((this._supplies_name != value))
+				{
+					this.Onsupplies_nameChanging(value);
+					this.SendPropertyChanging();
+					this._supplies_name = value;
+					this.SendPropertyChanged("supplies_name");
+					this.Onsupplies_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_supplies_barcode", DbType="NVarChar(255)")]
+		public string supplies_barcode
+		{
+			get
+			{
+				return this._supplies_barcode;
+			}
+			set
+			{
+				if ((this._supplies_barcode != value))
+				{
+					this.Onsupplies_barcodeChanging(value);
+					this.SendPropertyChanging();
+					this._supplies_barcode = value;
+					this.SendPropertyChanged("supplies_barcode");
+					this.Onsupplies_barcodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_supplies_description", DbType="NVarChar(255)")]
+		public string supplies_description
+		{
+			get
+			{
+				return this._supplies_description;
+			}
+			set
+			{
+				if ((this._supplies_description != value))
+				{
+					this.Onsupplies_descriptionChanging(value);
+					this.SendPropertyChanging();
+					this._supplies_description = value;
+					this.SendPropertyChanged("supplies_description");
+					this.Onsupplies_descriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_supplies_image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary supplies_image
+		{
+			get
+			{
+				return this._supplies_image;
+			}
+			set
+			{
+				if ((this._supplies_image != value))
+				{
+					this.Onsupplies_imageChanging(value);
+					this.SendPropertyChanging();
+					this._supplies_image = value;
+					this.SendPropertyChanged("supplies_image");
+					this.Onsupplies_imageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_supplies_entry_price", DbType="Money")]
+		public System.Nullable<decimal> supplies_entry_price
+		{
+			get
+			{
+				return this._supplies_entry_price;
+			}
+			set
+			{
+				if ((this._supplies_entry_price != value))
+				{
+					this.Onsupplies_entry_priceChanging(value);
+					this.SendPropertyChanging();
+					this._supplies_entry_price = value;
+					this.SendPropertyChanged("supplies_entry_price");
+					this.Onsupplies_entry_priceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_supplies_wholesale_price", DbType="Money")]
+		public System.Nullable<decimal> supplies_wholesale_price
+		{
+			get
+			{
+				return this._supplies_wholesale_price;
+			}
+			set
+			{
+				if ((this._supplies_wholesale_price != value))
+				{
+					this.Onsupplies_wholesale_priceChanging(value);
+					this.SendPropertyChanging();
+					this._supplies_wholesale_price = value;
+					this.SendPropertyChanged("supplies_wholesale_price");
+					this.Onsupplies_wholesale_priceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_supplies_commercial_price", DbType="Money")]
+		public System.Nullable<decimal> supplies_commercial_price
+		{
+			get
+			{
+				return this._supplies_commercial_price;
+			}
+			set
+			{
+				if ((this._supplies_commercial_price != value))
+				{
+					this.Onsupplies_commercial_priceChanging(value);
+					this.SendPropertyChanging();
+					this._supplies_commercial_price = value;
+					this.SendPropertyChanged("supplies_commercial_price");
+					this.Onsupplies_commercial_priceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_supplies_shipping_cost", DbType="Money")]
+		public System.Nullable<decimal> supplies_shipping_cost
+		{
+			get
+			{
+				return this._supplies_shipping_cost;
+			}
+			set
+			{
+				if ((this._supplies_shipping_cost != value))
+				{
+					this.Onsupplies_shipping_costChanging(value);
+					this.SendPropertyChanging();
+					this._supplies_shipping_cost = value;
+					this.SendPropertyChanged("supplies_shipping_cost");
+					this.Onsupplies_shipping_costChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_supplies_survive_the_norm", DbType="Int")]
+		public System.Nullable<int> supplies_survive_the_norm
+		{
+			get
+			{
+				return this._supplies_survive_the_norm;
+			}
+			set
+			{
+				if ((this._supplies_survive_the_norm != value))
+				{
+					this.Onsupplies_survive_the_normChanging(value);
+					this.SendPropertyChanging();
+					this._supplies_survive_the_norm = value;
+					this.SendPropertyChanged("supplies_survive_the_norm");
+					this.Onsupplies_survive_the_normChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_created", DbType="BigInt")]
+		public System.Nullable<long> employee_created
+		{
+			get
+			{
+				return this._employee_created;
+			}
+			set
+			{
+				if ((this._employee_created != value))
+				{
+					this.Onemployee_createdChanging(value);
+					this.SendPropertyChanging();
+					this._employee_created = value;
+					this.SendPropertyChanged("employee_created");
+					this.Onemployee_createdChanged();
 				}
 			}
 		}

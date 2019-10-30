@@ -316,6 +316,7 @@
             this.btnProduct.LargeWidth = 100;
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnProduct.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProduct_ItemClick);
             // 
             // barButtonItem10
             // 
@@ -838,6 +839,7 @@
             this.btnVendor.LargeWidth = 100;
             this.btnVendor.Name = "btnVendor";
             this.btnVendor.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnVendor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVendor_ItemClick);
             // 
             // btnStorehouses
             // 
@@ -959,7 +961,6 @@
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnProductGroup);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnProduct);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnUnit);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnVendor);

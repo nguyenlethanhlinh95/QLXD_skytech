@@ -273,6 +273,7 @@
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.txt_VendorName);
             this.Name = "frm_NewVendor";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "THÊM NHÀ CUNG CẤP";
             this.Load += new System.EventHandler(this.frm_NewVendor_Load);

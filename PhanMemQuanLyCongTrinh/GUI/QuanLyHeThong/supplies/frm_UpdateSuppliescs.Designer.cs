@@ -1,6 +1,6 @@
 ﻿namespace PhanMemQuanLyCongTrinh
 {
-    partial class frm_AddNewSupplies
+    partial class frm_UpdateSuppliescs
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container( );
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frm_AddNewSupplies";
+            this.Text = "frm_UpdateSuppliescs";
         }
 
         #endregion

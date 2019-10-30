@@ -31,9 +31,17 @@ namespace PhanMemQuanLyCongTrinh
 
         #region Load
         private void LoadDepartment()
-        {   
-            var datasource = _dep.listAll();
-            grdc_Department.DataSource = datasource;
+        {
+            var datasource = _dep.listAll( );
+            if (datasource == null)
+            {
+                messeage.error("Không thể load dữ liệu");
+            }
+            else
+            {
+                grdc_Department.DataSource = datasource;
+            }
+                       
         }
 
         private void LoadEmployee()

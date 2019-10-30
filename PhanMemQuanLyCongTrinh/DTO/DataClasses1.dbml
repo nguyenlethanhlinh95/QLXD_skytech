@@ -87,6 +87,25 @@
       <Column Name="permission_name_" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.ST_supplies" Member="ST_supplies">
+    <Type Name="ST_supply">
+      <Column Name="supplies_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="supplies_id_custom" Type="System.String" DbType="VarChar(33)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="unit_id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="group_supplies_id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="vendor_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="supplies_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="supplies_barcode" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="supplies_description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="supplies_image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="supplies_entry_price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="supplies_wholesale_price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="supplies_commercial_price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="supplies_shipping_cost" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="supplies_survive_the_norm" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="employee_created" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.ST_units" Member="ST_units">
     <Type Name="ST_unit">
       <Column Name="unit_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
