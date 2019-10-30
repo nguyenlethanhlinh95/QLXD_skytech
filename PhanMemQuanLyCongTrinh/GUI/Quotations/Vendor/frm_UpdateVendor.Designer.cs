@@ -300,7 +300,7 @@
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.txt_VendorName);
             this.Name = "frm_UpdateVendor";
-            this.Text = "frm_UpdateVendor";
+            this.Text = "CHĨNH SỬA NHÀ CUNG CẤP";
             this.Load += new System.EventHandler(this.frm_UpdateVendor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_BankAccountNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Address.Properties)).EndInit();

@@ -35,6 +35,8 @@
             this.lbl_CustomerGroupName = new DevExpress.XtraEditors.LabelControl();
             this.txt_CustomerGroupId = new DevExpress.XtraEditors.TextEdit();
             this.txt_CustomerGroupName = new DevExpress.XtraEditors.TextEdit();
+            this.lbl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txt_CustomerGroupId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_CustomerGroupName.Properties)).BeginInit();
             this.SuspendLayout();
@@ -127,12 +129,40 @@
             this.txt_CustomerGroupName.Size = new System.Drawing.Size(304, 22);
             this.txt_CustomerGroupName.TabIndex = 20;
             // 
+            // lbl1
+            // 
+            this.lbl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.lbl1.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.lbl1.Appearance.Options.UseFont = true;
+            this.lbl1.Appearance.Options.UseForeColor = true;
+            this.lbl1.Location = new System.Drawing.Point(508, 25);
+            this.lbl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(8, 16);
+            this.lbl1.TabIndex = 292;
+            this.lbl1.Text = "*";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(508, 62);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(8, 16);
+            this.labelControl1.TabIndex = 293;
+            this.labelControl1.Text = "*";
+            // 
             // frm_NewCustomerGroup
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 164);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.lbl1);
             this.Controls.Add(this.txt_CustomerGroupName);
             this.Controls.Add(this.txt_CustomerGroupId);
             this.Controls.Add(this.lbl_CustomerGroupName);
@@ -160,6 +190,8 @@
         private DevExpress.XtraEditors.LabelControl lbl_CustomerGroupName;
         private DevExpress.XtraEditors.TextEdit txt_CustomerGroupId;
         private DevExpress.XtraEditors.TextEdit txt_CustomerGroupName;
+        private DevExpress.XtraEditors.LabelControl lbl1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
 
     }
 }

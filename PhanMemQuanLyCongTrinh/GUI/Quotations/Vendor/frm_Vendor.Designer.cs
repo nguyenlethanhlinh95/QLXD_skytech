@@ -77,6 +77,7 @@
             this.vendor_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.vendor_phone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.vendor_address = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.vendor_bank_account_number = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
@@ -188,7 +189,7 @@
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Caption = "Chỉnh Sửa";
+            this.btn_Edit.Caption = "Chĩnh Sửa";
             this.btn_Edit.ContentHorizontalAlignment = DevExpress.XtraBars.BarItemContentAlignment.Center;
             this.btn_Edit.Id = 1;
             this.btn_Edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Edit.ImageOptions.Image")));
@@ -461,7 +462,8 @@
             this.vendor_id_custom,
             this.vendor_name,
             this.vendor_phone,
-            this.vendor_address});
+            this.vendor_address,
+            this.vendor_bank_account_number});
             this.grdv_Vendor.GridControl = this.grdc_Vendor;
             this.grdv_Vendor.Name = "grdv_Vendor";
             this.grdv_Vendor.OptionsBehavior.Editable = false;
@@ -479,7 +481,9 @@
             this.vendor_id.AppearanceHeader.Options.UseFont = true;
             this.vendor_id.Caption = "ID";
             this.vendor_id.FieldName = "vendor_id";
+            this.vendor_id.MinWidth = 10;
             this.vendor_id.Name = "vendor_id";
+            this.vendor_id.OptionsColumn.FixedWidth = true;
             // 
             // vendor_id_custom
             // 
@@ -490,8 +494,10 @@
             this.vendor_id_custom.Caption = "Mã Nhà Cung Cấp";
             this.vendor_id_custom.FieldName = "vendor_id_custom";
             this.vendor_id_custom.Name = "vendor_id_custom";
+            this.vendor_id_custom.OptionsColumn.FixedWidth = true;
             this.vendor_id_custom.Visible = true;
             this.vendor_id_custom.VisibleIndex = 0;
+            this.vendor_id_custom.Width = 150;
             // 
             // vendor_name
             // 
@@ -502,8 +508,10 @@
             this.vendor_name.Caption = "Tên Nhà Cung Cấp";
             this.vendor_name.FieldName = "vendor_name";
             this.vendor_name.Name = "vendor_name";
+            this.vendor_name.OptionsColumn.FixedWidth = true;
             this.vendor_name.Visible = true;
             this.vendor_name.VisibleIndex = 1;
+            this.vendor_name.Width = 150;
             // 
             // vendor_phone
             // 
@@ -514,8 +522,10 @@
             this.vendor_phone.Caption = "Số Điện Thoại";
             this.vendor_phone.FieldName = "vendor_phone";
             this.vendor_phone.Name = "vendor_phone";
+            this.vendor_phone.OptionsColumn.FixedWidth = true;
             this.vendor_phone.Visible = true;
             this.vendor_phone.VisibleIndex = 2;
+            this.vendor_phone.Width = 150;
             // 
             // vendor_address
             // 
@@ -526,8 +536,20 @@
             this.vendor_address.Caption = "Địa Chỉ";
             this.vendor_address.FieldName = "vendor_address";
             this.vendor_address.Name = "vendor_address";
+            this.vendor_address.OptionsColumn.FixedWidth = true;
             this.vendor_address.Visible = true;
             this.vendor_address.VisibleIndex = 3;
+            this.vendor_address.Width = 200;
+            // 
+            // vendor_bank_account_number
+            // 
+            this.vendor_bank_account_number.Caption = "Số Tài Khoản";
+            this.vendor_bank_account_number.FieldName = "vendor_bank_account_number";
+            this.vendor_bank_account_number.Name = "vendor_bank_account_number";
+            this.vendor_bank_account_number.OptionsColumn.FixedWidth = true;
+            this.vendor_bank_account_number.Visible = true;
+            this.vendor_bank_account_number.VisibleIndex = 4;
+            this.vendor_bank_account_number.Width = 100;
             // 
             // barDockControl1
             // 
@@ -674,5 +696,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControl3;
         private DevExpress.XtraBars.BarDockControl barDockControl8;
         private DevExpress.XtraBars.Navigation.TabPane tabPane2;
+        private DevExpress.XtraGrid.Columns.GridColumn vendor_bank_account_number;
     }
 }

@@ -108,16 +108,16 @@ namespace PhanMemQuanLyCongTrinh
                 bool boolUpdateVendor = updateVendor();
                 if (boolUpdateVendor == true)
                 {
-                    messeage.success("Thêm Nhà Cung Cấp Thành Công!");
+                    messeage.success("Chỉnh SửaThành Công!");
                 }
                 else
                 {
-                    messeage.error("Thêm Nhà Cung Cấp Thất Bại!");
+                    messeage.error("Không Thể Chỉnh Sửa!");
                 }
             }
             else
             {
-                MessageBox.Show(check);
+                messeage.error(check);
             }
         }
 

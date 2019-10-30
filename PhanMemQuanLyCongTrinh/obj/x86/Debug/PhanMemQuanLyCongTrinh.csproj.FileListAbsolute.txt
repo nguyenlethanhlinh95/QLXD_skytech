@@ -59,3 +59,11 @@ D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQua
 D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_Units.resources
 D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_AddNewGroupSupplies.resources
 D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_UpdateGroupSupplies.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_NewStorehouse.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_Storehouse.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_UpdateStorehouse.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_AccountingAccounts.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_NewAccountingAccountsGroup.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_UpdateAccountingAccountsGroup.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_BuildingContractor.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_NewBuildingContractor.resources

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnCustomer = new DevExpress.XtraBars.BarButtonItem();
@@ -138,7 +137,7 @@
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -537,6 +536,7 @@
             this.btnRevenueAndExpenditure.LargeWidth = 100;
             this.btnRevenueAndExpenditure.Name = "btnRevenueAndExpenditure";
             this.btnRevenueAndExpenditure.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnRevenueAndExpenditure.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRevenueAndExpenditure_ItemClick);
             // 
             // btnDetailRevenueAndExpenditure
             // 
@@ -849,6 +849,7 @@
             this.btnStorehouses.LargeWidth = 100;
             this.btnStorehouses.Name = "btnStorehouses";
             this.btnStorehouses.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnStorehouses.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStorehouses_ItemClick);
             // 
             // btnStatisticsIContructionSupplies
             // 
@@ -971,7 +972,6 @@
             // ribbonPageGroup13
             // 
             this.ribbonPageGroup13.ItemLinks.Add(this.btnRevenueAndExpenditure);
-            this.ribbonPageGroup13.ItemLinks.Add(this.btnDetailRevenueAndExpenditure);
             this.ribbonPageGroup13.Name = "ribbonPageGroup13";
             this.ribbonPageGroup13.Text = "Thu - Chi";
             // 

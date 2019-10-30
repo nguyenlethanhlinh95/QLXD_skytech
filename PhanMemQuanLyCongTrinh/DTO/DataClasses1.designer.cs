@@ -30,33 +30,51 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertST_construction(ST_construction instance);
+    partial void UpdateST_construction(ST_construction instance);
+    partial void DeleteST_construction(ST_construction instance);
+    partial void InsertST_building_contractor(ST_building_contractor instance);
+    partial void UpdateST_building_contractor(ST_building_contractor instance);
+    partial void DeleteST_building_contractor(ST_building_contractor instance);
+    partial void InsertST_construction_item(ST_construction_item instance);
+    partial void UpdateST_construction_item(ST_construction_item instance);
+    partial void DeleteST_construction_item(ST_construction_item instance);
     partial void InsertST_customer_group(ST_customer_group instance);
     partial void UpdateST_customer_group(ST_customer_group instance);
     partial void DeleteST_customer_group(ST_customer_group instance);
-    partial void InsertST_vendor(ST_vendor instance);
-    partial void UpdateST_vendor(ST_vendor instance);
-    partial void DeleteST_vendor(ST_vendor instance);
     partial void InsertST_customer(ST_customer instance);
     partial void UpdateST_customer(ST_customer instance);
     partial void DeleteST_customer(ST_customer instance);
     partial void InsertST_department(ST_department instance);
     partial void UpdateST_department(ST_department instance);
     partial void DeleteST_department(ST_department instance);
+    partial void InsertST_detail_income_and_expenditure_pattern(ST_detail_income_and_expenditure_pattern instance);
+    partial void UpdateST_detail_income_and_expenditure_pattern(ST_detail_income_and_expenditure_pattern instance);
+    partial void DeleteST_detail_income_and_expenditure_pattern(ST_detail_income_and_expenditure_pattern instance);
     partial void InsertST_employee(ST_employee instance);
     partial void UpdateST_employee(ST_employee instance);
     partial void DeleteST_employee(ST_employee instance);
     partial void InsertST_group_supply(ST_group_supply instance);
     partial void UpdateST_group_supply(ST_group_supply instance);
     partial void DeleteST_group_supply(ST_group_supply instance);
+    partial void InsertST_income_and_expenditure_pattern(ST_income_and_expenditure_pattern instance);
+    partial void UpdateST_income_and_expenditure_pattern(ST_income_and_expenditure_pattern instance);
+    partial void DeleteST_income_and_expenditure_pattern(ST_income_and_expenditure_pattern instance);
     partial void InsertST_permission(ST_permission instance);
     partial void UpdateST_permission(ST_permission instance);
     partial void DeleteST_permission(ST_permission instance);
+    partial void InsertST_storehouse(ST_storehouse instance);
+    partial void UpdateST_storehouse(ST_storehouse instance);
+    partial void DeleteST_storehouse(ST_storehouse instance);
     partial void InsertST_supply(ST_supply instance);
     partial void UpdateST_supply(ST_supply instance);
     partial void DeleteST_supply(ST_supply instance);
     partial void InsertST_unit(ST_unit instance);
     partial void UpdateST_unit(ST_unit instance);
     partial void DeleteST_unit(ST_unit instance);
+    partial void InsertST_vendor(ST_vendor instance);
+    partial void UpdateST_vendor(ST_vendor instance);
+    partial void DeleteST_vendor(ST_vendor instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -89,19 +107,35 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<ST_construction> ST_constructions
+		{
+			get
+			{
+				return this.GetTable<ST_construction>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ST_building_contractor> ST_building_contractors
+		{
+			get
+			{
+				return this.GetTable<ST_building_contractor>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ST_construction_item> ST_construction_items
+		{
+			get
+			{
+				return this.GetTable<ST_construction_item>();
+			}
+		}
+		
 		public System.Data.Linq.Table<ST_customer_group> ST_customer_groups
 		{
 			get
 			{
 				return this.GetTable<ST_customer_group>();
-			}
-		}
-		
-		public System.Data.Linq.Table<ST_vendor> ST_vendors
-		{
-			get
-			{
-				return this.GetTable<ST_vendor>();
 			}
 		}
 		
@@ -121,6 +155,14 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
+		public System.Data.Linq.Table<ST_detail_income_and_expenditure_pattern> ST_detail_income_and_expenditure_patterns
+		{
+			get
+			{
+				return this.GetTable<ST_detail_income_and_expenditure_pattern>();
+			}
+		}
+		
 		public System.Data.Linq.Table<ST_employee> ST_employees
 		{
 			get
@@ -137,11 +179,27 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
+		public System.Data.Linq.Table<ST_income_and_expenditure_pattern> ST_income_and_expenditure_patterns
+		{
+			get
+			{
+				return this.GetTable<ST_income_and_expenditure_pattern>();
+			}
+		}
+		
 		public System.Data.Linq.Table<ST_permission> ST_permissions
 		{
 			get
 			{
 				return this.GetTable<ST_permission>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ST_storehouse> ST_storehouses
+		{
+			get
+			{
+				return this.GetTable<ST_storehouse>();
 			}
 		}
 		
@@ -158,6 +216,1136 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			get
 			{
 				return this.GetTable<ST_unit>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ST_vendor> ST_vendors
+		{
+			get
+			{
+				return this.GetTable<ST_vendor>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_constructions")]
+	public partial class ST_construction : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _construction_id;
+		
+		private string _construction_id_custom;
+		
+		private string _construction_name;
+		
+		private string _construction_addresss;
+		
+		private long _customer_id;
+		
+		private string _construction_phone;
+		
+		private string _construction_contract_number;
+		
+		private System.Nullable<decimal> _construction_total_price;
+		
+		private System.Data.Linq.Binary _construction_file;
+		
+		private System.Nullable<System.DateTime> _construction_date_start;
+		
+		private System.Nullable<System.DateTime> _construction_date_end;
+		
+		private System.Nullable<System.DateTime> _construction_date_guarantee;
+		
+		private System.Nullable<int> _construction_status;
+		
+		private System.Nullable<long> _employee_created;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onconstruction_idChanging(long value);
+    partial void Onconstruction_idChanged();
+    partial void Onconstruction_id_customChanging(string value);
+    partial void Onconstruction_id_customChanged();
+    partial void Onconstruction_nameChanging(string value);
+    partial void Onconstruction_nameChanged();
+    partial void Onconstruction_addresssChanging(string value);
+    partial void Onconstruction_addresssChanged();
+    partial void Oncustomer_idChanging(long value);
+    partial void Oncustomer_idChanged();
+    partial void Onconstruction_phoneChanging(string value);
+    partial void Onconstruction_phoneChanged();
+    partial void Onconstruction_contract_numberChanging(string value);
+    partial void Onconstruction_contract_numberChanged();
+    partial void Onconstruction_total_priceChanging(System.Nullable<decimal> value);
+    partial void Onconstruction_total_priceChanged();
+    partial void Onconstruction_fileChanging(System.Data.Linq.Binary value);
+    partial void Onconstruction_fileChanged();
+    partial void Onconstruction_date_startChanging(System.Nullable<System.DateTime> value);
+    partial void Onconstruction_date_startChanged();
+    partial void Onconstruction_date_endChanging(System.Nullable<System.DateTime> value);
+    partial void Onconstruction_date_endChanged();
+    partial void Onconstruction_date_guaranteeChanging(System.Nullable<System.DateTime> value);
+    partial void Onconstruction_date_guaranteeChanged();
+    partial void Onconstruction_statusChanging(System.Nullable<int> value);
+    partial void Onconstruction_statusChanged();
+    partial void Onemployee_createdChanging(System.Nullable<long> value);
+    partial void Onemployee_createdChanged();
+    #endregion
+		
+		public ST_construction()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long construction_id
+		{
+			get
+			{
+				return this._construction_id;
+			}
+			set
+			{
+				if ((this._construction_id != value))
+				{
+					this.Onconstruction_idChanging(value);
+					this.SendPropertyChanging();
+					this._construction_id = value;
+					this.SendPropertyChanged("construction_id");
+					this.Onconstruction_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(33)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string construction_id_custom
+		{
+			get
+			{
+				return this._construction_id_custom;
+			}
+			set
+			{
+				if ((this._construction_id_custom != value))
+				{
+					this.Onconstruction_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._construction_id_custom = value;
+					this.SendPropertyChanged("construction_id_custom");
+					this.Onconstruction_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_name", DbType="NVarChar(255)")]
+		public string construction_name
+		{
+			get
+			{
+				return this._construction_name;
+			}
+			set
+			{
+				if ((this._construction_name != value))
+				{
+					this.Onconstruction_nameChanging(value);
+					this.SendPropertyChanging();
+					this._construction_name = value;
+					this.SendPropertyChanged("construction_name");
+					this.Onconstruction_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_addresss", DbType="NVarChar(255)")]
+		public string construction_addresss
+		{
+			get
+			{
+				return this._construction_addresss;
+			}
+			set
+			{
+				if ((this._construction_addresss != value))
+				{
+					this.Onconstruction_addresssChanging(value);
+					this.SendPropertyChanging();
+					this._construction_addresss = value;
+					this.SendPropertyChanged("construction_addresss");
+					this.Onconstruction_addresssChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_id", DbType="BigInt NOT NULL")]
+		public long customer_id
+		{
+			get
+			{
+				return this._customer_id;
+			}
+			set
+			{
+				if ((this._customer_id != value))
+				{
+					this.Oncustomer_idChanging(value);
+					this.SendPropertyChanging();
+					this._customer_id = value;
+					this.SendPropertyChanged("customer_id");
+					this.Oncustomer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_phone", DbType="NVarChar(30)")]
+		public string construction_phone
+		{
+			get
+			{
+				return this._construction_phone;
+			}
+			set
+			{
+				if ((this._construction_phone != value))
+				{
+					this.Onconstruction_phoneChanging(value);
+					this.SendPropertyChanging();
+					this._construction_phone = value;
+					this.SendPropertyChanged("construction_phone");
+					this.Onconstruction_phoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_contract_number", DbType="NVarChar(255)")]
+		public string construction_contract_number
+		{
+			get
+			{
+				return this._construction_contract_number;
+			}
+			set
+			{
+				if ((this._construction_contract_number != value))
+				{
+					this.Onconstruction_contract_numberChanging(value);
+					this.SendPropertyChanging();
+					this._construction_contract_number = value;
+					this.SendPropertyChanged("construction_contract_number");
+					this.Onconstruction_contract_numberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_total_price", DbType="Money")]
+		public System.Nullable<decimal> construction_total_price
+		{
+			get
+			{
+				return this._construction_total_price;
+			}
+			set
+			{
+				if ((this._construction_total_price != value))
+				{
+					this.Onconstruction_total_priceChanging(value);
+					this.SendPropertyChanging();
+					this._construction_total_price = value;
+					this.SendPropertyChanged("construction_total_price");
+					this.Onconstruction_total_priceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_file", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary construction_file
+		{
+			get
+			{
+				return this._construction_file;
+			}
+			set
+			{
+				if ((this._construction_file != value))
+				{
+					this.Onconstruction_fileChanging(value);
+					this.SendPropertyChanging();
+					this._construction_file = value;
+					this.SendPropertyChanged("construction_file");
+					this.Onconstruction_fileChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_date_start", DbType="Date")]
+		public System.Nullable<System.DateTime> construction_date_start
+		{
+			get
+			{
+				return this._construction_date_start;
+			}
+			set
+			{
+				if ((this._construction_date_start != value))
+				{
+					this.Onconstruction_date_startChanging(value);
+					this.SendPropertyChanging();
+					this._construction_date_start = value;
+					this.SendPropertyChanged("construction_date_start");
+					this.Onconstruction_date_startChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_date_end", DbType="Date")]
+		public System.Nullable<System.DateTime> construction_date_end
+		{
+			get
+			{
+				return this._construction_date_end;
+			}
+			set
+			{
+				if ((this._construction_date_end != value))
+				{
+					this.Onconstruction_date_endChanging(value);
+					this.SendPropertyChanging();
+					this._construction_date_end = value;
+					this.SendPropertyChanged("construction_date_end");
+					this.Onconstruction_date_endChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_date_guarantee", DbType="Date")]
+		public System.Nullable<System.DateTime> construction_date_guarantee
+		{
+			get
+			{
+				return this._construction_date_guarantee;
+			}
+			set
+			{
+				if ((this._construction_date_guarantee != value))
+				{
+					this.Onconstruction_date_guaranteeChanging(value);
+					this.SendPropertyChanging();
+					this._construction_date_guarantee = value;
+					this.SendPropertyChanged("construction_date_guarantee");
+					this.Onconstruction_date_guaranteeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_status", DbType="Int")]
+		public System.Nullable<int> construction_status
+		{
+			get
+			{
+				return this._construction_status;
+			}
+			set
+			{
+				if ((this._construction_status != value))
+				{
+					this.Onconstruction_statusChanging(value);
+					this.SendPropertyChanging();
+					this._construction_status = value;
+					this.SendPropertyChanged("construction_status");
+					this.Onconstruction_statusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_created", DbType="BigInt")]
+		public System.Nullable<long> employee_created
+		{
+			get
+			{
+				return this._employee_created;
+			}
+			set
+			{
+				if ((this._employee_created != value))
+				{
+					this.Onemployee_createdChanging(value);
+					this.SendPropertyChanging();
+					this._employee_created = value;
+					this.SendPropertyChanged("employee_created");
+					this.Onemployee_createdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_building_contractors")]
+	public partial class ST_building_contractor : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _building_contractor_id;
+		
+		private string _building_contractor_id_custom;
+		
+		private string _building_contractor_name;
+		
+		private string _building_contractor_address;
+		
+		private string _building_contractor_phone;
+		
+		private string _building_contractor_email;
+		
+		private string _building_contractor_bank_account_number;
+		
+		private string _building_contractor_tax_code;
+		
+		private string _building_contractor_description;
+		
+		private System.Nullable<decimal> _building_contractor_liabilities;
+		
+		private System.Nullable<System.DateTime> _building_contractor_date_of_birth;
+		
+		private System.Nullable<System.DateTime> _building_contractor_created_date;
+		
+		private System.Nullable<bool> _building_contractor_status;
+		
+		private System.Data.Linq.Binary _building_contractor_image;
+		
+		private System.Nullable<long> _employee_created;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onbuilding_contractor_idChanging(long value);
+    partial void Onbuilding_contractor_idChanged();
+    partial void Onbuilding_contractor_id_customChanging(string value);
+    partial void Onbuilding_contractor_id_customChanged();
+    partial void Onbuilding_contractor_nameChanging(string value);
+    partial void Onbuilding_contractor_nameChanged();
+    partial void Onbuilding_contractor_addressChanging(string value);
+    partial void Onbuilding_contractor_addressChanged();
+    partial void Onbuilding_contractor_phoneChanging(string value);
+    partial void Onbuilding_contractor_phoneChanged();
+    partial void Onbuilding_contractor_emailChanging(string value);
+    partial void Onbuilding_contractor_emailChanged();
+    partial void Onbuilding_contractor_bank_account_numberChanging(string value);
+    partial void Onbuilding_contractor_bank_account_numberChanged();
+    partial void Onbuilding_contractor_tax_codeChanging(string value);
+    partial void Onbuilding_contractor_tax_codeChanged();
+    partial void Onbuilding_contractor_descriptionChanging(string value);
+    partial void Onbuilding_contractor_descriptionChanged();
+    partial void Onbuilding_contractor_liabilitiesChanging(System.Nullable<decimal> value);
+    partial void Onbuilding_contractor_liabilitiesChanged();
+    partial void Onbuilding_contractor_date_of_birthChanging(System.Nullable<System.DateTime> value);
+    partial void Onbuilding_contractor_date_of_birthChanged();
+    partial void Onbuilding_contractor_created_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Onbuilding_contractor_created_dateChanged();
+    partial void Onbuilding_contractor_statusChanging(System.Nullable<bool> value);
+    partial void Onbuilding_contractor_statusChanged();
+    partial void Onbuilding_contractor_imageChanging(System.Data.Linq.Binary value);
+    partial void Onbuilding_contractor_imageChanged();
+    partial void Onemployee_createdChanging(System.Nullable<long> value);
+    partial void Onemployee_createdChanged();
+    #endregion
+		
+		public ST_building_contractor()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_building_contractor_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long building_contractor_id
+		{
+			get
+			{
+				return this._building_contractor_id;
+			}
+			set
+			{
+				if ((this._building_contractor_id != value))
+				{
+					this.Onbuilding_contractor_idChanging(value);
+					this.SendPropertyChanging();
+					this._building_contractor_id = value;
+					this.SendPropertyChanged("building_contractor_id");
+					this.Onbuilding_contractor_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_building_contractor_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(34)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string building_contractor_id_custom
+		{
+			get
+			{
+				return this._building_contractor_id_custom;
+			}
+			set
+			{
+				if ((this._building_contractor_id_custom != value))
+				{
+					this.Onbuilding_contractor_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._building_contractor_id_custom = value;
+					this.SendPropertyChanged("building_contractor_id_custom");
+					this.Onbuilding_contractor_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_building_contractor_name", DbType="NVarChar(255)")]
+		public string building_contractor_name
+		{
+			get
+			{
+				return this._building_contractor_name;
+			}
+			set
+			{
+				if ((this._building_contractor_name != value))
+				{
+					this.Onbuilding_contractor_nameChanging(value);
+					this.SendPropertyChanging();
+					this._building_contractor_name = value;
+					this.SendPropertyChanged("building_contractor_name");
+					this.Onbuilding_contractor_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_building_contractor_address", DbType="NVarChar(255)")]
+		public string building_contractor_address
+		{
+			get
+			{
+				return this._building_contractor_address;
+			}
+			set
+			{
+				if ((this._building_contractor_address != value))
+				{
+					this.Onbuilding_contractor_addressChanging(value);
+					this.SendPropertyChanging();
+					this._building_contractor_address = value;
+					this.SendPropertyChanged("building_contractor_address");
+					this.Onbuilding_contractor_addressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_building_contractor_phone", DbType="NVarChar(30)")]
+		public string building_contractor_phone
+		{
+			get
+			{
+				return this._building_contractor_phone;
+			}
+			set
+			{
+				if ((this._building_contractor_phone != value))
+				{
+					this.Onbuilding_contractor_phoneChanging(value);
+					this.SendPropertyChanging();
+					this._building_contractor_phone = value;
+					this.SendPropertyChanged("building_contractor_phone");
+					this.Onbuilding_contractor_phoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_building_contractor_email", DbType="VarChar(30)")]
+		public string building_contractor_email
+		{
+			get
+			{
+				return this._building_contractor_email;
+			}
+			set
+			{
+				if ((this._building_contractor_email != value))
+				{
+					this.Onbuilding_contractor_emailChanging(value);
+					this.SendPropertyChanging();
+					this._building_contractor_email = value;
+					this.SendPropertyChanged("building_contractor_email");
+					this.Onbuilding_contractor_emailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_building_contractor_bank_account_number", DbType="NVarChar(30)")]
+		public string building_contractor_bank_account_number
+		{
+			get
+			{
+				return this._building_contractor_bank_account_number;
+			}
+			set
+			{
+				if ((this._building_contractor_bank_account_number != value))
+				{
+					this.Onbuilding_contractor_bank_account_numberChanging(value);
+					this.SendPropertyChanging();
+					this._building_contractor_bank_account_number = value;
+					this.SendPropertyChanged("building_contractor_bank_account_number");
+					this.Onbuilding_contractor_bank_account_numberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_building_contractor_tax_code", DbType="NVarChar(255)")]
+		public string building_contractor_tax_code
+		{
+			get
+			{
+				return this._building_contractor_tax_code;
+			}
+			set
+			{
+				if ((this._building_contractor_tax_code != value))
+				{
+					this.Onbuilding_contractor_tax_codeChanging(value);
+					this.SendPropertyChanging();
+					this._building_contractor_tax_code = value;
+					this.SendPropertyChanged("building_contractor_tax_code");
+					this.Onbuilding_contractor_tax_codeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_building_contractor_description", DbType="NVarChar(255)")]
+		public string building_contractor_description
+		{
+			get
+			{
+				return this._building_contractor_description;
+			}
+			set
+			{
+				if ((this._building_contractor_description != value))
+				{
+					this.Onbuilding_contractor_descriptionChanging(value);
+					this.SendPropertyChanging();
+					this._building_contractor_description = value;
+					this.SendPropertyChanged("building_contractor_description");
+					this.Onbuilding_contractor_descriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_building_contractor_liabilities", DbType="Money")]
+		public System.Nullable<decimal> building_contractor_liabilities
+		{
+			get
+			{
+				return this._building_contractor_liabilities;
+			}
+			set
+			{
+				if ((this._building_contractor_liabilities != value))
+				{
+					this.Onbuilding_contractor_liabilitiesChanging(value);
+					this.SendPropertyChanging();
+					this._building_contractor_liabilities = value;
+					this.SendPropertyChanged("building_contractor_liabilities");
+					this.Onbuilding_contractor_liabilitiesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_building_contractor_date_of_birth", DbType="Date")]
+		public System.Nullable<System.DateTime> building_contractor_date_of_birth
+		{
+			get
+			{
+				return this._building_contractor_date_of_birth;
+			}
+			set
+			{
+				if ((this._building_contractor_date_of_birth != value))
+				{
+					this.Onbuilding_contractor_date_of_birthChanging(value);
+					this.SendPropertyChanging();
+					this._building_contractor_date_of_birth = value;
+					this.SendPropertyChanged("building_contractor_date_of_birth");
+					this.Onbuilding_contractor_date_of_birthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_building_contractor_created_date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> building_contractor_created_date
+		{
+			get
+			{
+				return this._building_contractor_created_date;
+			}
+			set
+			{
+				if ((this._building_contractor_created_date != value))
+				{
+					this.Onbuilding_contractor_created_dateChanging(value);
+					this.SendPropertyChanging();
+					this._building_contractor_created_date = value;
+					this.SendPropertyChanged("building_contractor_created_date");
+					this.Onbuilding_contractor_created_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_building_contractor_status", DbType="Bit")]
+		public System.Nullable<bool> building_contractor_status
+		{
+			get
+			{
+				return this._building_contractor_status;
+			}
+			set
+			{
+				if ((this._building_contractor_status != value))
+				{
+					this.Onbuilding_contractor_statusChanging(value);
+					this.SendPropertyChanging();
+					this._building_contractor_status = value;
+					this.SendPropertyChanged("building_contractor_status");
+					this.Onbuilding_contractor_statusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_building_contractor_image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary building_contractor_image
+		{
+			get
+			{
+				return this._building_contractor_image;
+			}
+			set
+			{
+				if ((this._building_contractor_image != value))
+				{
+					this.Onbuilding_contractor_imageChanging(value);
+					this.SendPropertyChanging();
+					this._building_contractor_image = value;
+					this.SendPropertyChanged("building_contractor_image");
+					this.Onbuilding_contractor_imageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_created", DbType="BigInt")]
+		public System.Nullable<long> employee_created
+		{
+			get
+			{
+				return this._employee_created;
+			}
+			set
+			{
+				if ((this._employee_created != value))
+				{
+					this.Onemployee_createdChanging(value);
+					this.SendPropertyChanging();
+					this._employee_created = value;
+					this.SendPropertyChanged("employee_created");
+					this.Onemployee_createdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_construction_items")]
+	public partial class ST_construction_item : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _construction_item_id;
+		
+		private string _construction_item_custom;
+		
+		private string _construction_item_name;
+		
+		private long _construction_id;
+		
+		private long _building_contractor_id;
+		
+		private System.Nullable<decimal> _construction_item_total_price;
+		
+		private System.Data.Linq.Binary _construction_item_image;
+		
+		private System.Data.Linq.Binary _construction_item_file;
+		
+		private System.Nullable<System.DateTime> _construction_item_date_start;
+		
+		private System.Nullable<System.DateTime> _construction_item_date_end;
+		
+		private System.Nullable<System.DateTime> _construction_item_date_end_guarantee;
+		
+		private System.Nullable<int> _construction_item_status;
+		
+		private System.Nullable<long> _employee_created;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onconstruction_item_idChanging(long value);
+    partial void Onconstruction_item_idChanged();
+    partial void Onconstruction_item_customChanging(string value);
+    partial void Onconstruction_item_customChanged();
+    partial void Onconstruction_item_nameChanging(string value);
+    partial void Onconstruction_item_nameChanged();
+    partial void Onconstruction_idChanging(long value);
+    partial void Onconstruction_idChanged();
+    partial void Onbuilding_contractor_idChanging(long value);
+    partial void Onbuilding_contractor_idChanged();
+    partial void Onconstruction_item_total_priceChanging(System.Nullable<decimal> value);
+    partial void Onconstruction_item_total_priceChanged();
+    partial void Onconstruction_item_imageChanging(System.Data.Linq.Binary value);
+    partial void Onconstruction_item_imageChanged();
+    partial void Onconstruction_item_fileChanging(System.Data.Linq.Binary value);
+    partial void Onconstruction_item_fileChanged();
+    partial void Onconstruction_item_date_startChanging(System.Nullable<System.DateTime> value);
+    partial void Onconstruction_item_date_startChanged();
+    partial void Onconstruction_item_date_endChanging(System.Nullable<System.DateTime> value);
+    partial void Onconstruction_item_date_endChanged();
+    partial void Onconstruction_item_date_end_guaranteeChanging(System.Nullable<System.DateTime> value);
+    partial void Onconstruction_item_date_end_guaranteeChanged();
+    partial void Onconstruction_item_statusChanging(System.Nullable<int> value);
+    partial void Onconstruction_item_statusChanged();
+    partial void Onemployee_createdChanging(System.Nullable<long> value);
+    partial void Onemployee_createdChanged();
+    #endregion
+		
+		public ST_construction_item()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long construction_item_id
+		{
+			get
+			{
+				return this._construction_item_id;
+			}
+			set
+			{
+				if ((this._construction_item_id != value))
+				{
+					this.Onconstruction_item_idChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_id = value;
+					this.SendPropertyChanged("construction_item_id");
+					this.Onconstruction_item_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_custom", AutoSync=AutoSync.Always, DbType="VarChar(33)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string construction_item_custom
+		{
+			get
+			{
+				return this._construction_item_custom;
+			}
+			set
+			{
+				if ((this._construction_item_custom != value))
+				{
+					this.Onconstruction_item_customChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_custom = value;
+					this.SendPropertyChanged("construction_item_custom");
+					this.Onconstruction_item_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_name", DbType="VarChar(255)")]
+		public string construction_item_name
+		{
+			get
+			{
+				return this._construction_item_name;
+			}
+			set
+			{
+				if ((this._construction_item_name != value))
+				{
+					this.Onconstruction_item_nameChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_name = value;
+					this.SendPropertyChanged("construction_item_name");
+					this.Onconstruction_item_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_id", DbType="BigInt NOT NULL")]
+		public long construction_id
+		{
+			get
+			{
+				return this._construction_id;
+			}
+			set
+			{
+				if ((this._construction_id != value))
+				{
+					this.Onconstruction_idChanging(value);
+					this.SendPropertyChanging();
+					this._construction_id = value;
+					this.SendPropertyChanged("construction_id");
+					this.Onconstruction_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_building_contractor_id", DbType="BigInt NOT NULL")]
+		public long building_contractor_id
+		{
+			get
+			{
+				return this._building_contractor_id;
+			}
+			set
+			{
+				if ((this._building_contractor_id != value))
+				{
+					this.Onbuilding_contractor_idChanging(value);
+					this.SendPropertyChanging();
+					this._building_contractor_id = value;
+					this.SendPropertyChanged("building_contractor_id");
+					this.Onbuilding_contractor_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_total_price", DbType="Money")]
+		public System.Nullable<decimal> construction_item_total_price
+		{
+			get
+			{
+				return this._construction_item_total_price;
+			}
+			set
+			{
+				if ((this._construction_item_total_price != value))
+				{
+					this.Onconstruction_item_total_priceChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_total_price = value;
+					this.SendPropertyChanged("construction_item_total_price");
+					this.Onconstruction_item_total_priceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary construction_item_image
+		{
+			get
+			{
+				return this._construction_item_image;
+			}
+			set
+			{
+				if ((this._construction_item_image != value))
+				{
+					this.Onconstruction_item_imageChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_image = value;
+					this.SendPropertyChanged("construction_item_image");
+					this.Onconstruction_item_imageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_file", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary construction_item_file
+		{
+			get
+			{
+				return this._construction_item_file;
+			}
+			set
+			{
+				if ((this._construction_item_file != value))
+				{
+					this.Onconstruction_item_fileChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_file = value;
+					this.SendPropertyChanged("construction_item_file");
+					this.Onconstruction_item_fileChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_date_start", DbType="Date")]
+		public System.Nullable<System.DateTime> construction_item_date_start
+		{
+			get
+			{
+				return this._construction_item_date_start;
+			}
+			set
+			{
+				if ((this._construction_item_date_start != value))
+				{
+					this.Onconstruction_item_date_startChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_date_start = value;
+					this.SendPropertyChanged("construction_item_date_start");
+					this.Onconstruction_item_date_startChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_date_end", DbType="Date")]
+		public System.Nullable<System.DateTime> construction_item_date_end
+		{
+			get
+			{
+				return this._construction_item_date_end;
+			}
+			set
+			{
+				if ((this._construction_item_date_end != value))
+				{
+					this.Onconstruction_item_date_endChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_date_end = value;
+					this.SendPropertyChanged("construction_item_date_end");
+					this.Onconstruction_item_date_endChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_date_end_guarantee", DbType="Date")]
+		public System.Nullable<System.DateTime> construction_item_date_end_guarantee
+		{
+			get
+			{
+				return this._construction_item_date_end_guarantee;
+			}
+			set
+			{
+				if ((this._construction_item_date_end_guarantee != value))
+				{
+					this.Onconstruction_item_date_end_guaranteeChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_date_end_guarantee = value;
+					this.SendPropertyChanged("construction_item_date_end_guarantee");
+					this.Onconstruction_item_date_end_guaranteeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_status", DbType="Int")]
+		public System.Nullable<int> construction_item_status
+		{
+			get
+			{
+				return this._construction_item_status;
+			}
+			set
+			{
+				if ((this._construction_item_status != value))
+				{
+					this.Onconstruction_item_statusChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_status = value;
+					this.SendPropertyChanged("construction_item_status");
+					this.Onconstruction_item_statusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_created", DbType="BigInt")]
+		public System.Nullable<long> employee_created
+		{
+			get
+			{
+				return this._employee_created;
+			}
+			set
+			{
+				if ((this._employee_created != value))
+				{
+					this.Onemployee_createdChanging(value);
+					this.SendPropertyChanging();
+					this._employee_created = value;
+					this.SendPropertyChanged("employee_created");
+					this.Onemployee_createdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -247,284 +1435,6 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._customer_group_name = value;
 					this.SendPropertyChanged("customer_group_name");
 					this.Oncustomer_group_nameChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_vendors")]
-	public partial class ST_vendor : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _vendor_id;
-		
-		private string _vendor_id_custom;
-		
-		private string _vendor_name;
-		
-		private string _vendor_address;
-		
-		private string _vendor_phone;
-		
-		private string _vendor_bank_account_number;
-		
-		private System.Data.Linq.Binary _vendor_image;
-		
-		private System.Nullable<bool> _vendor_status;
-		
-		private System.Nullable<System.DateTime> _vendor_created_date;
-		
-		private System.Nullable<long> _employee_created;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onvendor_idChanging(long value);
-    partial void Onvendor_idChanged();
-    partial void Onvendor_id_customChanging(string value);
-    partial void Onvendor_id_customChanged();
-    partial void Onvendor_nameChanging(string value);
-    partial void Onvendor_nameChanged();
-    partial void Onvendor_addressChanging(string value);
-    partial void Onvendor_addressChanged();
-    partial void Onvendor_phoneChanging(string value);
-    partial void Onvendor_phoneChanged();
-    partial void Onvendor_bank_account_numberChanging(string value);
-    partial void Onvendor_bank_account_numberChanged();
-    partial void Onvendor_imageChanging(System.Data.Linq.Binary value);
-    partial void Onvendor_imageChanged();
-    partial void Onvendor_statusChanging(System.Nullable<bool> value);
-    partial void Onvendor_statusChanged();
-    partial void Onvendor_created_dateChanging(System.Nullable<System.DateTime> value);
-    partial void Onvendor_created_dateChanged();
-    partial void Onemployee_createdChanging(System.Nullable<long> value);
-    partial void Onemployee_createdChanged();
-    #endregion
-		
-		public ST_vendor()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long vendor_id
-		{
-			get
-			{
-				return this._vendor_id;
-			}
-			set
-			{
-				if ((this._vendor_id != value))
-				{
-					this.Onvendor_idChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_id = value;
-					this.SendPropertyChanged("vendor_id");
-					this.Onvendor_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(34)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
-		public string vendor_id_custom
-		{
-			get
-			{
-				return this._vendor_id_custom;
-			}
-			set
-			{
-				if ((this._vendor_id_custom != value))
-				{
-					this.Onvendor_id_customChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_id_custom = value;
-					this.SendPropertyChanged("vendor_id_custom");
-					this.Onvendor_id_customChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_name", DbType="NVarChar(255)")]
-		public string vendor_name
-		{
-			get
-			{
-				return this._vendor_name;
-			}
-			set
-			{
-				if ((this._vendor_name != value))
-				{
-					this.Onvendor_nameChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_name = value;
-					this.SendPropertyChanged("vendor_name");
-					this.Onvendor_nameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_address", DbType="NVarChar(255)")]
-		public string vendor_address
-		{
-			get
-			{
-				return this._vendor_address;
-			}
-			set
-			{
-				if ((this._vendor_address != value))
-				{
-					this.Onvendor_addressChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_address = value;
-					this.SendPropertyChanged("vendor_address");
-					this.Onvendor_addressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_phone", DbType="VarChar(30)")]
-		public string vendor_phone
-		{
-			get
-			{
-				return this._vendor_phone;
-			}
-			set
-			{
-				if ((this._vendor_phone != value))
-				{
-					this.Onvendor_phoneChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_phone = value;
-					this.SendPropertyChanged("vendor_phone");
-					this.Onvendor_phoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_bank_account_number", DbType="VarChar(30)")]
-		public string vendor_bank_account_number
-		{
-			get
-			{
-				return this._vendor_bank_account_number;
-			}
-			set
-			{
-				if ((this._vendor_bank_account_number != value))
-				{
-					this.Onvendor_bank_account_numberChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_bank_account_number = value;
-					this.SendPropertyChanged("vendor_bank_account_number");
-					this.Onvendor_bank_account_numberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary vendor_image
-		{
-			get
-			{
-				return this._vendor_image;
-			}
-			set
-			{
-				if ((this._vendor_image != value))
-				{
-					this.Onvendor_imageChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_image = value;
-					this.SendPropertyChanged("vendor_image");
-					this.Onvendor_imageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_status", DbType="Bit")]
-		public System.Nullable<bool> vendor_status
-		{
-			get
-			{
-				return this._vendor_status;
-			}
-			set
-			{
-				if ((this._vendor_status != value))
-				{
-					this.Onvendor_statusChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_status = value;
-					this.SendPropertyChanged("vendor_status");
-					this.Onvendor_statusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_created_date", DbType="Date")]
-		public System.Nullable<System.DateTime> vendor_created_date
-		{
-			get
-			{
-				return this._vendor_created_date;
-			}
-			set
-			{
-				if ((this._vendor_created_date != value))
-				{
-					this.Onvendor_created_dateChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_created_date = value;
-					this.SendPropertyChanged("vendor_created_date");
-					this.Onvendor_created_dateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_created", DbType="BigInt")]
-		public System.Nullable<long> employee_created
-		{
-			get
-			{
-				return this._employee_created;
-			}
-			set
-			{
-				if ((this._employee_created != value))
-				{
-					this.Onemployee_createdChanging(value);
-					this.SendPropertyChanging();
-					this._employee_created = value;
-					this.SendPropertyChanged("employee_created");
-					this.Onemployee_createdChanged();
 				}
 			}
 		}
@@ -1178,6 +2088,140 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_detail_income_and_expenditure_patterns")]
+	public partial class ST_detail_income_and_expenditure_pattern : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _detail_income_and_expenditure_pattern_id;
+		
+		private System.Nullable<int> _detail_income_and_expenditure_pattern_id_custom;
+		
+		private long _income_and_expenditure_pattern_id;
+		
+		private string _detail_income_and_expenditure_pattern_description;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Ondetail_income_and_expenditure_pattern_idChanging(long value);
+    partial void Ondetail_income_and_expenditure_pattern_idChanged();
+    partial void Ondetail_income_and_expenditure_pattern_id_customChanging(System.Nullable<int> value);
+    partial void Ondetail_income_and_expenditure_pattern_id_customChanged();
+    partial void Onincome_and_expenditure_pattern_idChanging(long value);
+    partial void Onincome_and_expenditure_pattern_idChanged();
+    partial void Ondetail_income_and_expenditure_pattern_descriptionChanging(string value);
+    partial void Ondetail_income_and_expenditure_pattern_descriptionChanged();
+    #endregion
+		
+		public ST_detail_income_and_expenditure_pattern()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_income_and_expenditure_pattern_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long detail_income_and_expenditure_pattern_id
+		{
+			get
+			{
+				return this._detail_income_and_expenditure_pattern_id;
+			}
+			set
+			{
+				if ((this._detail_income_and_expenditure_pattern_id != value))
+				{
+					this.Ondetail_income_and_expenditure_pattern_idChanging(value);
+					this.SendPropertyChanging();
+					this._detail_income_and_expenditure_pattern_id = value;
+					this.SendPropertyChanged("detail_income_and_expenditure_pattern_id");
+					this.Ondetail_income_and_expenditure_pattern_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_income_and_expenditure_pattern_id_custom", DbType="Int")]
+		public System.Nullable<int> detail_income_and_expenditure_pattern_id_custom
+		{
+			get
+			{
+				return this._detail_income_and_expenditure_pattern_id_custom;
+			}
+			set
+			{
+				if ((this._detail_income_and_expenditure_pattern_id_custom != value))
+				{
+					this.Ondetail_income_and_expenditure_pattern_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._detail_income_and_expenditure_pattern_id_custom = value;
+					this.SendPropertyChanged("detail_income_and_expenditure_pattern_id_custom");
+					this.Ondetail_income_and_expenditure_pattern_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_income_and_expenditure_pattern_id", DbType="BigInt NOT NULL")]
+		public long income_and_expenditure_pattern_id
+		{
+			get
+			{
+				return this._income_and_expenditure_pattern_id;
+			}
+			set
+			{
+				if ((this._income_and_expenditure_pattern_id != value))
+				{
+					this.Onincome_and_expenditure_pattern_idChanging(value);
+					this.SendPropertyChanging();
+					this._income_and_expenditure_pattern_id = value;
+					this.SendPropertyChanged("income_and_expenditure_pattern_id");
+					this.Onincome_and_expenditure_pattern_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_income_and_expenditure_pattern_description", DbType="NVarChar(255)")]
+		public string detail_income_and_expenditure_pattern_description
+		{
+			get
+			{
+				return this._detail_income_and_expenditure_pattern_description;
+			}
+			set
+			{
+				if ((this._detail_income_and_expenditure_pattern_description != value))
+				{
+					this.Ondetail_income_and_expenditure_pattern_descriptionChanging(value);
+					this.SendPropertyChanging();
+					this._detail_income_and_expenditure_pattern_description = value;
+					this.SendPropertyChanged("detail_income_and_expenditure_pattern_description");
+					this.Ondetail_income_and_expenditure_pattern_descriptionChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_employees")]
 	public partial class ST_employee : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1734,6 +2778,116 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_income_and_expenditure_patterns")]
+	public partial class ST_income_and_expenditure_pattern : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _income_and_expenditure_pattern_id;
+		
+		private System.Nullable<int> _income_and_expenditure_pattern_id_custom;
+		
+		private string _income_and_expenditure_pattern_name;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onincome_and_expenditure_pattern_idChanging(long value);
+    partial void Onincome_and_expenditure_pattern_idChanged();
+    partial void Onincome_and_expenditure_pattern_id_customChanging(System.Nullable<int> value);
+    partial void Onincome_and_expenditure_pattern_id_customChanged();
+    partial void Onincome_and_expenditure_pattern_nameChanging(string value);
+    partial void Onincome_and_expenditure_pattern_nameChanged();
+    #endregion
+		
+		public ST_income_and_expenditure_pattern()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_income_and_expenditure_pattern_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long income_and_expenditure_pattern_id
+		{
+			get
+			{
+				return this._income_and_expenditure_pattern_id;
+			}
+			set
+			{
+				if ((this._income_and_expenditure_pattern_id != value))
+				{
+					this.Onincome_and_expenditure_pattern_idChanging(value);
+					this.SendPropertyChanging();
+					this._income_and_expenditure_pattern_id = value;
+					this.SendPropertyChanged("income_and_expenditure_pattern_id");
+					this.Onincome_and_expenditure_pattern_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_income_and_expenditure_pattern_id_custom", DbType="Int")]
+		public System.Nullable<int> income_and_expenditure_pattern_id_custom
+		{
+			get
+			{
+				return this._income_and_expenditure_pattern_id_custom;
+			}
+			set
+			{
+				if ((this._income_and_expenditure_pattern_id_custom != value))
+				{
+					this.Onincome_and_expenditure_pattern_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._income_and_expenditure_pattern_id_custom = value;
+					this.SendPropertyChanged("income_and_expenditure_pattern_id_custom");
+					this.Onincome_and_expenditure_pattern_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_income_and_expenditure_pattern_name", DbType="NVarChar(255)")]
+		public string income_and_expenditure_pattern_name
+		{
+			get
+			{
+				return this._income_and_expenditure_pattern_name;
+			}
+			set
+			{
+				if ((this._income_and_expenditure_pattern_name != value))
+				{
+					this.Onincome_and_expenditure_pattern_nameChanging(value);
+					this.SendPropertyChanging();
+					this._income_and_expenditure_pattern_name = value;
+					this.SendPropertyChanged("income_and_expenditure_pattern_name");
+					this.Onincome_and_expenditure_pattern_nameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_permissions")]
 	public partial class ST_permission : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1819,6 +2973,164 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._permission_name_ = value;
 					this.SendPropertyChanged("permission_name_");
 					this.Onpermission_name_Changed();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_storehouses")]
+	public partial class ST_storehouse : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _storehouse_id;
+		
+		private string _storehouse_id_custom;
+		
+		private string _storehouse_name;
+		
+		private string _storehouse_address;
+		
+		private System.Nullable<bool> _storehouse_status;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onstorehouse_idChanging(long value);
+    partial void Onstorehouse_idChanged();
+    partial void Onstorehouse_id_customChanging(string value);
+    partial void Onstorehouse_id_customChanged();
+    partial void Onstorehouse_nameChanging(string value);
+    partial void Onstorehouse_nameChanged();
+    partial void Onstorehouse_addressChanging(string value);
+    partial void Onstorehouse_addressChanged();
+    partial void Onstorehouse_statusChanging(System.Nullable<bool> value);
+    partial void Onstorehouse_statusChanged();
+    #endregion
+		
+		public ST_storehouse()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_storehouse_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long storehouse_id
+		{
+			get
+			{
+				return this._storehouse_id;
+			}
+			set
+			{
+				if ((this._storehouse_id != value))
+				{
+					this.Onstorehouse_idChanging(value);
+					this.SendPropertyChanging();
+					this._storehouse_id = value;
+					this.SendPropertyChanged("storehouse_id");
+					this.Onstorehouse_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_storehouse_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(34)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string storehouse_id_custom
+		{
+			get
+			{
+				return this._storehouse_id_custom;
+			}
+			set
+			{
+				if ((this._storehouse_id_custom != value))
+				{
+					this.Onstorehouse_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._storehouse_id_custom = value;
+					this.SendPropertyChanged("storehouse_id_custom");
+					this.Onstorehouse_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_storehouse_name", DbType="NVarChar(255)")]
+		public string storehouse_name
+		{
+			get
+			{
+				return this._storehouse_name;
+			}
+			set
+			{
+				if ((this._storehouse_name != value))
+				{
+					this.Onstorehouse_nameChanging(value);
+					this.SendPropertyChanging();
+					this._storehouse_name = value;
+					this.SendPropertyChanged("storehouse_name");
+					this.Onstorehouse_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_storehouse_address", DbType="NVarChar(255)")]
+		public string storehouse_address
+		{
+			get
+			{
+				return this._storehouse_address;
+			}
+			set
+			{
+				if ((this._storehouse_address != value))
+				{
+					this.Onstorehouse_addressChanging(value);
+					this.SendPropertyChanging();
+					this._storehouse_address = value;
+					this.SendPropertyChanged("storehouse_address");
+					this.Onstorehouse_addressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_storehouse_status", DbType="Bit")]
+		public System.Nullable<bool> storehouse_status
+		{
+			get
+			{
+				return this._storehouse_status;
+			}
+			set
+			{
+				if ((this._storehouse_status != value))
+				{
+					this.Onstorehouse_statusChanging(value);
+					this.SendPropertyChanging();
+					this._storehouse_status = value;
+					this.SendPropertyChanged("storehouse_status");
+					this.Onstorehouse_statusChanged();
 				}
 			}
 		}
@@ -2327,6 +3639,284 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._unit_name = value;
 					this.SendPropertyChanged("unit_name");
 					this.Onunit_nameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_vendors")]
+	public partial class ST_vendor : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _vendor_id;
+		
+		private string _vendor_id_custom;
+		
+		private string _vendor_name;
+		
+		private string _vendor_address;
+		
+		private string _vendor_phone;
+		
+		private string _vendor_bank_account_number;
+		
+		private System.Data.Linq.Binary _vendor_image;
+		
+		private System.Nullable<bool> _vendor_status;
+		
+		private System.Nullable<System.DateTime> _vendor_created_date;
+		
+		private System.Nullable<long> _employee_created;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onvendor_idChanging(long value);
+    partial void Onvendor_idChanged();
+    partial void Onvendor_id_customChanging(string value);
+    partial void Onvendor_id_customChanged();
+    partial void Onvendor_nameChanging(string value);
+    partial void Onvendor_nameChanged();
+    partial void Onvendor_addressChanging(string value);
+    partial void Onvendor_addressChanged();
+    partial void Onvendor_phoneChanging(string value);
+    partial void Onvendor_phoneChanged();
+    partial void Onvendor_bank_account_numberChanging(string value);
+    partial void Onvendor_bank_account_numberChanged();
+    partial void Onvendor_imageChanging(System.Data.Linq.Binary value);
+    partial void Onvendor_imageChanged();
+    partial void Onvendor_statusChanging(System.Nullable<bool> value);
+    partial void Onvendor_statusChanged();
+    partial void Onvendor_created_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Onvendor_created_dateChanged();
+    partial void Onemployee_createdChanging(System.Nullable<long> value);
+    partial void Onemployee_createdChanged();
+    #endregion
+		
+		public ST_vendor()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long vendor_id
+		{
+			get
+			{
+				return this._vendor_id;
+			}
+			set
+			{
+				if ((this._vendor_id != value))
+				{
+					this.Onvendor_idChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_id = value;
+					this.SendPropertyChanged("vendor_id");
+					this.Onvendor_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(34)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string vendor_id_custom
+		{
+			get
+			{
+				return this._vendor_id_custom;
+			}
+			set
+			{
+				if ((this._vendor_id_custom != value))
+				{
+					this.Onvendor_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_id_custom = value;
+					this.SendPropertyChanged("vendor_id_custom");
+					this.Onvendor_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_name", DbType="NVarChar(255)")]
+		public string vendor_name
+		{
+			get
+			{
+				return this._vendor_name;
+			}
+			set
+			{
+				if ((this._vendor_name != value))
+				{
+					this.Onvendor_nameChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_name = value;
+					this.SendPropertyChanged("vendor_name");
+					this.Onvendor_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_address", DbType="NVarChar(255)")]
+		public string vendor_address
+		{
+			get
+			{
+				return this._vendor_address;
+			}
+			set
+			{
+				if ((this._vendor_address != value))
+				{
+					this.Onvendor_addressChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_address = value;
+					this.SendPropertyChanged("vendor_address");
+					this.Onvendor_addressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_phone", DbType="VarChar(30)")]
+		public string vendor_phone
+		{
+			get
+			{
+				return this._vendor_phone;
+			}
+			set
+			{
+				if ((this._vendor_phone != value))
+				{
+					this.Onvendor_phoneChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_phone = value;
+					this.SendPropertyChanged("vendor_phone");
+					this.Onvendor_phoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_bank_account_number", DbType="VarChar(30)")]
+		public string vendor_bank_account_number
+		{
+			get
+			{
+				return this._vendor_bank_account_number;
+			}
+			set
+			{
+				if ((this._vendor_bank_account_number != value))
+				{
+					this.Onvendor_bank_account_numberChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_bank_account_number = value;
+					this.SendPropertyChanged("vendor_bank_account_number");
+					this.Onvendor_bank_account_numberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary vendor_image
+		{
+			get
+			{
+				return this._vendor_image;
+			}
+			set
+			{
+				if ((this._vendor_image != value))
+				{
+					this.Onvendor_imageChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_image = value;
+					this.SendPropertyChanged("vendor_image");
+					this.Onvendor_imageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_status", DbType="Bit")]
+		public System.Nullable<bool> vendor_status
+		{
+			get
+			{
+				return this._vendor_status;
+			}
+			set
+			{
+				if ((this._vendor_status != value))
+				{
+					this.Onvendor_statusChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_status = value;
+					this.SendPropertyChanged("vendor_status");
+					this.Onvendor_statusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_created_date", DbType="Date")]
+		public System.Nullable<System.DateTime> vendor_created_date
+		{
+			get
+			{
+				return this._vendor_created_date;
+			}
+			set
+			{
+				if ((this._vendor_created_date != value))
+				{
+					this.Onvendor_created_dateChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_created_date = value;
+					this.SendPropertyChanged("vendor_created_date");
+					this.Onvendor_created_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_created", DbType="BigInt")]
+		public System.Nullable<long> employee_created
+		{
+			get
+			{
+				return this._employee_created;
+			}
+			set
+			{
+				if ((this._employee_created != value))
+				{
+					this.Onemployee_createdChanging(value);
+					this.SendPropertyChanging();
+					this._employee_created = value;
+					this.SendPropertyChanged("employee_created");
+					this.Onemployee_createdChanged();
 				}
 			}
 		}

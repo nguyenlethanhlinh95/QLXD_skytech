@@ -7,7 +7,7 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-
+using PhanMemQuanLyCongTrinh.BUS;
 namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_NewCustomerGroup : DevExpress.XtraEditors.XtraForm
@@ -25,6 +25,7 @@ namespace PhanMemQuanLyCongTrinh
             txt_CustomerGroupId.Text = dt.GetType().GetProperty("customer_group_id_custom").GetValue(dt, null).ToString();
             txt_CustomerGroupName.Text = dt.GetType().GetProperty("customer_group_name").GetValue(dt, null).ToString();
         }
+
         private void frm_NewCustomerGroup_Load(object sender, EventArgs e)
         {
             if (customerGroupId == 0)
@@ -41,6 +42,7 @@ namespace PhanMemQuanLyCongTrinh
                 loadCustomerGroup();
             }
         }
+
         private string updateCustomerGroup()
         {
            DTO.ST_customer_group customerGroup = new DTO.ST_customer_group();
@@ -49,11 +51,11 @@ namespace PhanMemQuanLyCongTrinh
             bool boolUpdateCustomerGroup = customerGroupBus.updateCustomerGroup(customerGroup);
             if (boolUpdateCustomerGroup == true)
             {
-                return "Chĩnh Sửa Nhóm Khách Hàng Thành Công!";
+                return "Chĩnh Sửa Thành Công!";
             }
             else
             {
-                return "Chĩnh Sửa Nhóm Khách Hàng Không Thành Công!";
+                return "Không Thể Chỉnh Sửa!";
             }
 
         }
@@ -66,22 +68,26 @@ namespace PhanMemQuanLyCongTrinh
             bool boolInsertCustomerGroup = customerGroupBus.insertCustomerGroup(customerGroup);
             if (boolInsertCustomerGroup == true)
             {
-                return "Thêm Nhóm Khách Hàng Thành Công!";
+                return "Thêm Mới Thành Công!";
+                this.Close();
             }
             else
             {
-                return "Thêm Nhóm Khách Hàng Không Thành Công!";
+                return "Không Thể Thêm Mới!";
             }
         }
+
         private void but_Update_Click(object sender, EventArgs e)
         {
             if (customerGroupId == 0)
             {
-                MessageBox.Show(insertCustomerGroup());
+                messeage.success(insertCustomerGroup());
+                
             }
             else
             {
-                MessageBox.Show(updateCustomerGroup());
+                messeage.error(updateCustomerGroup());
+                
             }
         }
 
@@ -92,7 +98,7 @@ namespace PhanMemQuanLyCongTrinh
 
         private void lbl_CustomerGroupName_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void lbl_CustomerGroupId_Click(object sender, EventArgs e)

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.IO;
+using PhanMemQuanLyCongTrinh.BUS;
 namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_NewCustomer : DevExpress.XtraEditors.XtraForm
@@ -20,12 +21,15 @@ namespace PhanMemQuanLyCongTrinh
             get;
             set;
         }
+
         public frm_NewCustomer()
         {
             InitializeComponent();
             customerBus = new BUS.customerBus();
             customerGroupBus = new BUS.customerGroupBus();
         }
+
+        
         Image convertBiranyToImage(byte[] data)
         {
             using (MemoryStream ms = new MemoryStream(data))
@@ -36,6 +40,7 @@ namespace PhanMemQuanLyCongTrinh
             }
         }
 
+        #region Load Customer
         public void loadDetailCustomer()
         {
             var customer = customerBus.getCustomer(customerId);
@@ -82,15 +87,16 @@ namespace PhanMemQuanLyCongTrinh
 
 
         }
+        #endregion 
 
-
+        #region Load Customer Group
         public void loadComboboxCustomerGroup()
         {
             lke_CustomerGroup.Properties.ValueMember = "customer_group_id";
             lke_CustomerGroup.Properties.DisplayMember = "customer_group_name";
             lke_CustomerGroup.Properties.DataSource = customerGroupBus.getAllCustomerGroup();
         }
-
+        #endregion
 
         private void frm_NewCustomer_Load(object sender, EventArgs e)
         {
@@ -112,6 +118,8 @@ namespace PhanMemQuanLyCongTrinh
             loadComboboxCustomerGroup();
         }
 
+
+
         private void btn_AddCustomerGroup_Click(object sender, EventArgs e)
         {
             frm_NewCustomerGroup frm = new frm_NewCustomerGroup();
@@ -119,10 +127,16 @@ namespace PhanMemQuanLyCongTrinh
             frm.customerGroupId = 0;
             frm.Show();
         }
+
+
+
         private void dongformGroup(object sender, EventArgs e)
         {
             loadComboboxCustomerGroup();
         }
+
+
+        #region insert Customer 
         private void insertCustomer()
         {
             DTO.ST_customer newCustomer = new DTO.ST_customer();
@@ -153,7 +167,7 @@ namespace PhanMemQuanLyCongTrinh
             newCustomer.customer_description = txt_Description.Text;
             newCustomer.customer_email = txt_Email.Text;
             newCustomer.customer_liabilities = txt_Liabilities.Text;
-            newCustomer.employee_created = 1;
+            newCustomer.employee_created = frm_Main.Vitual_id;
 
 
             // get value lookup edit customer group
@@ -179,24 +193,19 @@ namespace PhanMemQuanLyCongTrinh
            bool boolInsertCustomer = customerBus.insertCustomer(newCustomer);
            if (boolInsertCustomer == true)
            {
-               MessageBox.Show("Thêm Khách Hàng Thành Công!");
-              
-               txt_Address.Text = "";
-               txt_BankAccountNumber.Text = "";
-               txt_CustomerName.Text = "";
-               txt_Description.Text = "";
-               txt_Email.Text = "";
-               txt_Fax.Text = "";
-               txt_Liabilities.Text = "";
-               txt_PhoneNumber.Text = "";
-               pic_Logo.Image = null;
+               messeage.success("Thêm Mới Thành Công!");
+
+               this.Close();
            }
            else
            {
-               MessageBox.Show("Thêm Khách Hàng Không Thành Công!");
+               messeage.error("Không Thể Thêm Mới!");
+
            }   
         }
+        #endregion
 
+        #region update Customer Group
         public void updateCustomer()
         {
             DTO.ST_customer updateCustomer = new DTO.ST_customer();
@@ -245,16 +254,19 @@ namespace PhanMemQuanLyCongTrinh
             bool boolUpdateCustomer = customerBus.updateCustomer(updateCustomer);
             if (boolUpdateCustomer == true)
             {
-                MessageBox.Show("Chĩnh Sửa Khách Hàng Thành Công!");
+                messeage.success("Chĩnh Sửa Thành Công!");
+                
             }
             else
             {
-                MessageBox.Show("Chĩnh Sửa Khách Hàng Không Thành Công!");
+                messeage.error("Không Thể Chĩnh Sửa!");
             }   
 
 
 
         }
+
+        #endregion
 
 
         public string checkNull()
@@ -307,6 +319,8 @@ namespace PhanMemQuanLyCongTrinh
             }
         }
 
+
+
         private void but_Update_Click(object sender, EventArgs e)
         {
             string check = checkNull();
@@ -320,7 +334,7 @@ namespace PhanMemQuanLyCongTrinh
             }  
             else
             {
-                MessageBox.Show(check);
+                messeage.error(check);
             }
         }
 

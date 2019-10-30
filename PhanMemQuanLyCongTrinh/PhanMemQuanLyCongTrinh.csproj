@@ -55,22 +55,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\AccountingAccountGroupBus.cs" />
+    <Compile Include="BUS\buildingContractorBus.cs" />
+    <Compile Include="BUS\customerBus.cs" />
+    <Compile Include="BUS\customerGroupBus.cs" />
+    <Compile Include="BUS\storehouseBus.cs" />
+    <Compile Include="DAO\AccountingAccountGroupDao.cs" />
+    <Compile Include="DAO\AcountingAcountDaocs.cs" />
+    <Compile Include="DAO\buildingContractorDao.cs" />
+    <Compile Include="DAO\customerDao.cs" />
+    <Compile Include="DAO\customerGroupDao.cs" />
+    <Compile Include="DAO\storehouseDao.cs" />
     <Compile Include="GUI\QuanLyHeThong\GroupSupplies\frm_AddNewGroupSupplies.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\QuanLyHeThong\GroupSupplies\frm_AddNewGroupSupplies.Designer.cs">
       <DependentUpon>frm_AddNewGroupSupplies.cs</DependentUpon>
     </Compile>
-    <Compile Include="BUS\customerBus.cs" />
-    <Compile Include="BUS\customerGroupBus.cs" />
     <Compile Include="BUS\deparmentBus.cs" />
     <Compile Include="BUS\group_suppliesBus.cs" />
     <Compile Include="BUS\messeage.cs" />
     <Compile Include="BUS\unitBus.cs" />
     <Compile Include="BUS\userBus.cs" />
     <Compile Include="BUS\vendorBus.cs" />
-    <Compile Include="DAO\customerDao.cs" />
-    <Compile Include="DAO\customerGroupDao.cs" />
     <Compile Include="DAO\customer_groupDao.cs" />
     <Compile Include="DAO\departmentDao.cs" />
     <Compile Include="DAO\group_suppliesDao.cs" />
@@ -184,23 +191,35 @@
     <Compile Include="GUI\QuanLyHeThong\Employees\frm_UserInfo.Designer.cs">
       <DependentUpon>frm_UserInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\Vendor\frm_NewVendor.cs">
+    <Compile Include="GUI\Quotations\AccountingAccounts\frm_AccountingAccounts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\Vendor\frm_NewVendor.Designer.cs">
-      <DependentUpon>frm_NewVendor.cs</DependentUpon>
+    <Compile Include="GUI\Quotations\AccountingAccounts\frm_AccountingAccounts.Designer.cs">
+      <DependentUpon>frm_AccountingAccounts.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\Vendor\frm_UpdateVendor.cs">
+    <Compile Include="GUI\Quotations\AccountingAccounts\frm_NewAccountingAccountsGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\Vendor\frm_UpdateVendor.Designer.cs">
-      <DependentUpon>frm_UpdateVendor.cs</DependentUpon>
+    <Compile Include="GUI\Quotations\AccountingAccounts\frm_NewAccountingAccountsGroup.Designer.cs">
+      <DependentUpon>frm_NewAccountingAccountsGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\Vendor\frm_Vendor.cs">
+    <Compile Include="GUI\Quotations\AccountingAccounts\frm_UpdateAccountingAccountsGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\Vendor\frm_Vendor.Designer.cs">
-      <DependentUpon>frm_Vendor.cs</DependentUpon>
+    <Compile Include="GUI\Quotations\AccountingAccounts\frm_UpdateAccountingAccountsGroup.Designer.cs">
+      <DependentUpon>frm_UpdateAccountingAccountsGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Quotations\BuildingContractors\frm_BuildingContractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quotations\BuildingContractors\frm_BuildingContractor.Designer.cs">
+      <DependentUpon>frm_BuildingContractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Quotations\BuildingContractors\frm_NewBuildingContractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quotations\BuildingContractors\frm_NewBuildingContractor.Designer.cs">
+      <DependentUpon>frm_NewBuildingContractor.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Quotations\Customer\frm_Customer.cs">
       <SubType>Form</SubType>
@@ -219,6 +238,42 @@
     </Compile>
     <Compile Include="GUI\Quotations\Customer\frm_NewCustomerGroup.designer.cs">
       <DependentUpon>frm_NewCustomerGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Quotations\StoreHouse\frm_NewStorehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quotations\StoreHouse\frm_NewStorehouse.Designer.cs">
+      <DependentUpon>frm_NewStorehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Quotations\StoreHouse\frm_Storehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quotations\StoreHouse\frm_Storehouse.Designer.cs">
+      <DependentUpon>frm_Storehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Quotations\StoreHouse\frm_UpdateStorehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quotations\StoreHouse\frm_UpdateStorehouse.Designer.cs">
+      <DependentUpon>frm_UpdateStorehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Quotations\Vendor\frm_NewVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quotations\Vendor\frm_NewVendor.Designer.cs">
+      <DependentUpon>frm_NewVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Quotations\Vendor\frm_UpdateVendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quotations\Vendor\frm_UpdateVendor.Designer.cs">
+      <DependentUpon>frm_UpdateVendor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Quotations\Vendor\frm_Vendor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quotations\Vendor\frm_Vendor.Designer.cs">
+      <DependentUpon>frm_Vendor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -280,14 +335,20 @@
     <EmbeddedResource Include="GUI\QuanLyHeThong\Employees\frm_UserInfo.resx">
       <DependentUpon>frm_UserInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QuanLyHeThong\Vendor\frm_NewVendor.resx">
-      <DependentUpon>frm_NewVendor.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Quotations\AccountingAccounts\frm_AccountingAccounts.resx">
+      <DependentUpon>frm_AccountingAccounts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QuanLyHeThong\Vendor\frm_UpdateVendor.resx">
-      <DependentUpon>frm_UpdateVendor.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Quotations\AccountingAccounts\frm_NewAccountingAccountsGroup.resx">
+      <DependentUpon>frm_NewAccountingAccountsGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QuanLyHeThong\Vendor\frm_Vendor.resx">
-      <DependentUpon>frm_Vendor.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Quotations\AccountingAccounts\frm_UpdateAccountingAccountsGroup.resx">
+      <DependentUpon>frm_UpdateAccountingAccountsGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quotations\BuildingContractors\frm_BuildingContractor.resx">
+      <DependentUpon>frm_BuildingContractor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quotations\BuildingContractors\frm_NewBuildingContractor.resx">
+      <DependentUpon>frm_NewBuildingContractor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Quotations\Customer\frm_Customer.resx">
       <DependentUpon>frm_Customer.cs</DependentUpon>
@@ -297,6 +358,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Quotations\Customer\frm_NewCustomerGroup.resx">
       <DependentUpon>frm_NewCustomerGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quotations\StoreHouse\frm_NewStorehouse.resx">
+      <DependentUpon>frm_NewStorehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quotations\StoreHouse\frm_Storehouse.resx">
+      <DependentUpon>frm_Storehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quotations\StoreHouse\frm_UpdateStorehouse.resx">
+      <DependentUpon>frm_UpdateStorehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quotations\Vendor\frm_NewVendor.resx">
+      <DependentUpon>frm_NewVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quotations\Vendor\frm_UpdateVendor.resx">
+      <DependentUpon>frm_UpdateVendor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quotations\Vendor\frm_Vendor.resx">
+      <DependentUpon>frm_Vendor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

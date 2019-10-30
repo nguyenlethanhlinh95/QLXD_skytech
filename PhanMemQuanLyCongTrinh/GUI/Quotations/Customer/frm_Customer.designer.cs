@@ -363,9 +363,9 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.Location = new System.Drawing.Point(0, 172);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -600,12 +600,12 @@
             // tabPane2
             // 
             this.tabPane2.AllowCollapse = DevExpress.Utils.DefaultBoolean.Default;
-            this.tabPane2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabPane2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tabPane2.Controls.Add(this.tabNavigationPage2);
             this.tabPane2.Location = new System.Drawing.Point(385, 0);
-            this.tabPane2.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabPane2.LookAndFeel.SkinMaskColor = System.Drawing.Color.White;
             this.tabPane2.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
             this.tabPane2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.tabPane2.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -677,6 +677,7 @@
             this.customer_id.Caption = "ID";
             this.customer_id.FieldName = "customer_id";
             this.customer_id.Name = "customer_id";
+            this.customer_id.OptionsColumn.FixedWidth = true;
             // 
             // customer_id_custom
             // 
@@ -686,7 +687,10 @@
             this.customer_id_custom.AppearanceHeader.Options.UseFont = true;
             this.customer_id_custom.Caption = "Mã Khách Hàng";
             this.customer_id_custom.FieldName = "customer_id_custom";
+            this.customer_id_custom.MaxWidth = 100;
+            this.customer_id_custom.MinWidth = 100;
             this.customer_id_custom.Name = "customer_id_custom";
+            this.customer_id_custom.OptionsColumn.FixedWidth = true;
             this.customer_id_custom.Visible = true;
             this.customer_id_custom.VisibleIndex = 0;
             // 
@@ -698,9 +702,13 @@
             this.customer_name.AppearanceHeader.Options.UseFont = true;
             this.customer_name.Caption = "Tên Khách Hàng";
             this.customer_name.FieldName = "customer_name";
+            this.customer_name.MaxWidth = 150;
+            this.customer_name.MinWidth = 150;
             this.customer_name.Name = "customer_name";
+            this.customer_name.OptionsColumn.FixedWidth = true;
             this.customer_name.Visible = true;
             this.customer_name.VisibleIndex = 1;
+            this.customer_name.Width = 150;
             // 
             // customers_group_name
             // 
@@ -710,9 +718,13 @@
             this.customers_group_name.AppearanceHeader.Options.UseFont = true;
             this.customers_group_name.Caption = "Nhóm Khách Hàng";
             this.customers_group_name.FieldName = "customer_group_name";
+            this.customers_group_name.MaxWidth = 150;
+            this.customers_group_name.MinWidth = 150;
             this.customers_group_name.Name = "customers_group_name";
+            this.customers_group_name.OptionsColumn.FixedWidth = true;
             this.customers_group_name.Visible = true;
             this.customers_group_name.VisibleIndex = 2;
+            this.customers_group_name.Width = 150;
             // 
             // custome_phone
             // 
@@ -722,9 +734,12 @@
             this.custome_phone.AppearanceHeader.Options.UseFont = true;
             this.custome_phone.Caption = "Số Điện Thoại";
             this.custome_phone.FieldName = "custome_phone";
+            this.custome_phone.MaxWidth = 100;
             this.custome_phone.Name = "custome_phone";
+            this.custome_phone.OptionsColumn.FixedWidth = true;
             this.custome_phone.Visible = true;
             this.custome_phone.VisibleIndex = 3;
+            this.custome_phone.Width = 100;
             // 
             // customer_email
             // 
@@ -734,9 +749,12 @@
             this.customer_email.AppearanceHeader.Options.UseFont = true;
             this.customer_email.Caption = "Email";
             this.customer_email.FieldName = "customer_email";
+            this.customer_email.MaxWidth = 100;
             this.customer_email.Name = "customer_email";
+            this.customer_email.OptionsColumn.FixedWidth = true;
             this.customer_email.Visible = true;
             this.customer_email.VisibleIndex = 4;
+            this.customer_email.Width = 100;
             // 
             // customer_address
             // 
@@ -746,9 +764,13 @@
             this.customer_address.AppearanceHeader.Options.UseFont = true;
             this.customer_address.Caption = "Địa Chỉ";
             this.customer_address.FieldName = "customer_address";
+            this.customer_address.MaxWidth = 200;
+            this.customer_address.MinWidth = 200;
             this.customer_address.Name = "customer_address";
+            this.customer_address.OptionsColumn.FixedWidth = true;
             this.customer_address.Visible = true;
             this.customer_address.VisibleIndex = 5;
+            this.customer_address.Width = 200;
             // 
             // customer_liabilities
             // 
@@ -758,9 +780,12 @@
             this.customer_liabilities.AppearanceHeader.Options.UseFont = true;
             this.customer_liabilities.Caption = "Công Nợ";
             this.customer_liabilities.FieldName = "customer_liabilities";
+            this.customer_liabilities.MinWidth = 100;
             this.customer_liabilities.Name = "customer_liabilities";
+            this.customer_liabilities.OptionsColumn.FixedWidth = true;
             this.customer_liabilities.Visible = true;
             this.customer_liabilities.VisibleIndex = 6;
+            this.customer_liabilities.Width = 100;
             // 
             // barDockControl6
             // 
@@ -863,7 +888,7 @@
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Caption = "Chỉnh Sửa";
+            this.btn_Edit.Caption = "Chĩnh Sửa";
             this.btn_Edit.ContentHorizontalAlignment = DevExpress.XtraBars.BarItemContentAlignment.Center;
             this.btn_Edit.Id = 1;
             this.btn_Edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Edit.ImageOptions.Image")));

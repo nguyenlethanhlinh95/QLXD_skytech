@@ -145,7 +145,17 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btnConstructors_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
+            Form frm = kiemtraform(typeof(frm_BuildingContractor));
+            if ( frm == null )
+            {
+                frm_BuildingContractor forms = new frm_BuildingContractor( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
         }
 
         private void btnVendor_ItemClick(object sender, ItemClickEventArgs e)
@@ -169,6 +179,36 @@ namespace PhanMemQuanLyCongTrinh
             if ( frm == null )
             {
                 frm_Supplies forms = new frm_Supplies( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
+        private void btnStorehouses_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_Storehouse));
+            if ( frm == null )
+            {
+                frm_Storehouse forms = new frm_Storehouse( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
+        private void btnRevenueAndExpenditure_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_AccountingAccounts));
+            if ( frm == null )
+            {
+                frm_AccountingAccounts forms = new frm_AccountingAccounts( );
                 forms.MdiParent = this;
                 forms.Show( );
             }

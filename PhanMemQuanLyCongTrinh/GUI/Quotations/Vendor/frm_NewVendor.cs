@@ -70,7 +70,7 @@ namespace PhanMemQuanLyCongTrinh
 
             return vendorBus.insertVendor(newVendor);
         }
-
+       
         byte[] converImageToBirany(Image img)
         {
             using (MemoryStream ms = new MemoryStream())
@@ -79,7 +79,7 @@ namespace PhanMemQuanLyCongTrinh
                 return ms.ToArray();
             }
         }
-
+       
         private void frm_NewVendor_Load(object sender, EventArgs e)
         {
 
@@ -94,16 +94,17 @@ namespace PhanMemQuanLyCongTrinh
                     bool boolInsertVendor = insertVendor();
                     if (boolInsertVendor == true)
                     {
-                        messeage.success("Thêm Nhà Cung Cấp Thành Công!");
+                        messeage.success("Thêm Mới Thành Công!");
+                        this.Close();
                     }
                     else
                     {
-                        messeage.error("Thêm Nhà Cung Cấp Thất Bại!");
+                        messeage.error("Không Thể Thêm Mới!");
                     }
             }
             else
             {
-                MessageBox.Show(check);
+                messeage.error(check);
             }
         }
 
