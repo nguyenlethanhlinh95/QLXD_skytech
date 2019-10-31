@@ -105,9 +105,11 @@
             this.btnReportBug = new DevExpress.XtraBars.BarButtonItem();
             this.btnPaymentSlipsContruction = new DevExpress.XtraBars.BarCheckItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup24 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -138,6 +140,7 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.btnListEnterCouponSupplies = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -221,9 +224,11 @@
             this.btnSettingHelp,
             this.btnReportBug,
             this.btnPaymentSlipsContruction,
-            this.skinRibbonGalleryBarItem1});
+            this.skinRibbonGalleryBarItem1,
+            this.barButtonItem1,
+            this.btnListEnterCouponSupplies});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 79;
+            this.ribbon.MaxItemId = 81;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage4,
@@ -333,6 +338,7 @@
             this.btnEnterCouponSupplies.LargeWidth = 100;
             this.btnEnterCouponSupplies.Name = "btnEnterCouponSupplies";
             this.btnEnterCouponSupplies.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnEnterCouponSupplies.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEnterCouponSupplies_ItemClick);
             // 
             // btnOutCouponSuppliesConstruction
             // 
@@ -906,13 +912,20 @@
             this.skinRibbonGalleryBarItem1.Id = 77;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "twst";
+            this.barButtonItem1.Id = 79;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // ribbonPage4
             // 
             this.ribbonPage4.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.ribbonPage4.Appearance.Options.UseFont = true;
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup12,
-            this.ribbonPageGroup11});
+            this.ribbonPageGroup11,
+            this.ribbonPageGroup24});
             this.ribbonPage4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage4.ImageOptions.Image")));
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Hệ Thống";
@@ -933,6 +946,12 @@
             this.ribbonPageGroup11.ItemLinks.Add(this.btnRestore);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
             this.ribbonPageGroup11.Text = "Hệ Thống";
+            // 
+            // ribbonPageGroup24
+            // 
+            this.ribbonPageGroup24.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup24.Name = "ribbonPageGroup24";
+            this.ribbonPageGroup24.Text = "test";
             // 
             // ribbonPage1
             // 
@@ -990,6 +1009,7 @@
             // ribbonPageGroup5
             // 
             this.ribbonPageGroup5.ItemLinks.Add(this.btnEnterCouponSupplies);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnListEnterCouponSupplies);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Nhập Vật Tư";
             // 
@@ -1187,6 +1207,16 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // btnListEnterCouponSupplies
+            // 
+            this.btnListEnterCouponSupplies.Caption = "Danh sách phiếu nhập";
+            this.btnListEnterCouponSupplies.Id = 80;
+            this.btnListEnterCouponSupplies.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.btnListEnterCouponSupplies.LargeWidth = 100;
+            this.btnListEnterCouponSupplies.Name = "btnListEnterCouponSupplies";
+            this.btnListEnterCouponSupplies.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnListEnterCouponSupplies.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnListEnterCouponSupplies_ItemClick);
+            // 
             // frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1320,5 +1350,8 @@
         private DevExpress.XtraBars.BarCheckItem btnPaymentSlipsContruction;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup24;
+        private DevExpress.XtraBars.BarButtonItem btnListEnterCouponSupplies;
     }
 }

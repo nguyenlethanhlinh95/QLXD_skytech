@@ -42,6 +42,29 @@ namespace FormMau
             this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_Exit = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_Update = new DevExpress.XtraEditors.SimpleButton();
+            this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.txt_UserName = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_UserName.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Edit
@@ -251,6 +274,202 @@ namespace FormMau
             this.simpleButton13.TabIndex = 13;
             this.simpleButton13.Text = "Thêm Mới";
             // 
+            // btn_Exit
+            // 
+            this.btn_Exit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Exit.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Exit.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.btn_Exit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_Exit.Appearance.Options.UseBackColor = true;
+            this.btn_Exit.Appearance.Options.UseFont = true;
+            this.btn_Exit.Appearance.Options.UseForeColor = true;
+            this.btn_Exit.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.btn_Exit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Exit.ImageOptions.Image")));
+            this.btn_Exit.Location = new System.Drawing.Point(510, 496);
+            this.btn_Exit.LookAndFeel.SkinMaskColor = System.Drawing.Color.Gray;
+            this.btn_Exit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Black;
+            this.btn_Exit.LookAndFeel.SkinName = "Office 2010 Black";
+            this.btn_Exit.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btn_Exit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(110, 36);
+            this.btn_Exit.TabIndex = 278;
+            this.btn_Exit.Text = "Thoát";
+            this.btn_Exit.ToolTipTitle = "ESC";
+            // 
+            // btn_Update
+            // 
+            this.btn_Update.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Update.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Update.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.btn_Update.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_Update.Appearance.Options.UseBackColor = true;
+            this.btn_Update.Appearance.Options.UseFont = true;
+            this.btn_Update.Appearance.Options.UseForeColor = true;
+            this.btn_Update.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Update.ImageOptions.Image")));
+            this.btn_Update.Location = new System.Drawing.Point(380, 496);
+            this.btn_Update.LookAndFeel.SkinMaskColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Update.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_Update.LookAndFeel.SkinName = "Office 2010 Black";
+            this.btn_Update.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btn_Update.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(110, 36);
+            this.btn_Update.TabIndex = 277;
+            this.btn_Update.Text = "Thêm mới";
+            this.btn_Update.ToolTipTitle = "Ctrl +S";
+            // 
+            // memoEdit1
+            // 
+            this.memoEdit1.Location = new System.Drawing.Point(380, 333);
+            this.memoEdit1.Name = "memoEdit1";
+            this.memoEdit1.Size = new System.Drawing.Size(241, 133);
+            this.memoEdit1.TabIndex = 276;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(261, 333);
+            this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(54, 16);
+            this.labelControl2.TabIndex = 269;
+            this.labelControl2.Text = "Diễn giải";
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Enabled = false;
+            this.textEdit1.Location = new System.Drawing.Point(380, 154);
+            this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.textEdit1.Properties.Appearance.Options.UseFont = true;
+            this.textEdit1.Size = new System.Drawing.Size(241, 22);
+            this.textEdit1.TabIndex = 274;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(261, 157);
+            this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(108, 16);
+            this.labelControl3.TabIndex = 264;
+            this.labelControl3.Text = "Người giao hàng:";
+            // 
+            // textEdit5
+            // 
+            this.textEdit5.Enabled = false;
+            this.textEdit5.Location = new System.Drawing.Point(380, 304);
+            this.textEdit5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textEdit5.Name = "textEdit5";
+            this.textEdit5.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.textEdit5.Properties.Appearance.Options.UseFont = true;
+            this.textEdit5.Size = new System.Drawing.Size(241, 22);
+            this.textEdit5.TabIndex = 273;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(261, 310);
+            this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(54, 16);
+            this.labelControl8.TabIndex = 268;
+            this.labelControl8.Text = "Trả NCC:";
+            // 
+            // textEdit4
+            // 
+            this.textEdit4.Enabled = false;
+            this.textEdit4.Location = new System.Drawing.Point(380, 244);
+            this.textEdit4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textEdit4.Name = "textEdit4";
+            this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.textEdit4.Properties.Appearance.Options.UseFont = true;
+            this.textEdit4.Size = new System.Drawing.Size(241, 22);
+            this.textEdit4.TabIndex = 275;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(261, 250);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(81, 16);
+            this.labelControl7.TabIndex = 265;
+            this.labelControl7.Text = "Cần trả NCC:";
+            // 
+            // textEdit3
+            // 
+            this.textEdit3.Enabled = false;
+            this.textEdit3.Location = new System.Drawing.Point(380, 214);
+            this.textEdit3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textEdit3.Name = "textEdit3";
+            this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.textEdit3.Properties.Appearance.Options.UseFont = true;
+            this.textEdit3.Size = new System.Drawing.Size(241, 22);
+            this.textEdit3.TabIndex = 270;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(261, 220);
+            this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(58, 16);
+            this.labelControl5.TabIndex = 267;
+            this.labelControl5.Text = "Giảm giá:";
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.Enabled = false;
+            this.textEdit2.Location = new System.Drawing.Point(380, 184);
+            this.textEdit2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.textEdit2.Properties.Appearance.Options.UseFont = true;
+            this.textEdit2.Size = new System.Drawing.Size(241, 22);
+            this.textEdit2.TabIndex = 271;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(261, 190);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(101, 16);
+            this.labelControl4.TabIndex = 266;
+            this.labelControl4.Text = "Tổng tiền hàng:";
+            // 
+            // txt_UserName
+            // 
+            this.txt_UserName.Enabled = false;
+            this.txt_UserName.Location = new System.Drawing.Point(380, 124);
+            this.txt_UserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_UserName.Name = "txt_UserName";
+            this.txt_UserName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_UserName.Properties.Appearance.Options.UseFont = true;
+            this.txt_UserName.Size = new System.Drawing.Size(241, 22);
+            this.txt_UserName.TabIndex = 272;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(261, 130);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(60, 16);
+            this.labelControl1.TabIndex = 263;
+            this.labelControl1.Text = "Số phiếu:";
+            // 
             // frm_Button
             // 
             this.ActiveGlowColor = System.Drawing.Color.White;
@@ -258,7 +477,23 @@ namespace FormMau
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 405);
+            this.ClientSize = new System.Drawing.Size(879, 607);
+            this.Controls.Add(this.btn_Exit);
+            this.Controls.Add(this.btn_Update);
+            this.Controls.Add(this.memoEdit1);
+            this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.textEdit5);
+            this.Controls.Add(this.labelControl8);
+            this.Controls.Add(this.textEdit4);
+            this.Controls.Add(this.labelControl7);
+            this.Controls.Add(this.textEdit3);
+            this.Controls.Add(this.labelControl5);
+            this.Controls.Add(this.textEdit2);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.txt_UserName);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.simpleButton13);
             this.Controls.Add(this.simpleButton12);
             this.Controls.Add(this.simpleButton11);
@@ -275,7 +510,15 @@ namespace FormMau
             this.Name = "frm_Button";
             this.Text = "BUTTON";
             this.Load += new System.EventHandler(this.frm_Button_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_UserName.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -294,5 +537,21 @@ namespace FormMau
         private DevExpress.XtraEditors.SimpleButton simpleButton12;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton13;
+        private DevExpress.XtraEditors.SimpleButton btn_Exit;
+        private DevExpress.XtraEditors.SimpleButton btn_Update;
+        private DevExpress.XtraEditors.MemoEdit memoEdit1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.TextEdit txt_UserName;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

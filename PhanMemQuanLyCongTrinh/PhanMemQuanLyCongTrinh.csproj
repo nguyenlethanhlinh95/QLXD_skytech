@@ -60,12 +60,32 @@
     <Compile Include="BUS\customerBus.cs" />
     <Compile Include="BUS\customerGroupBus.cs" />
     <Compile Include="BUS\storehouseBus.cs" />
+    <Compile Include="BUS\supliesBus.cs" />
     <Compile Include="DAO\AccountingAccountGroupDao.cs" />
     <Compile Include="DAO\AcountingAcountDaocs.cs" />
     <Compile Include="DAO\buildingContractorDao.cs" />
     <Compile Include="DAO\customerDao.cs" />
     <Compile Include="DAO\customerGroupDao.cs" />
     <Compile Include="DAO\storehouseDao.cs" />
+    <Compile Include="DAO\supliesDao.cs" />
+    <Compile Include="GUI\VatTu\frm_AddNewEnterCouponSupplies.cs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\VatTu\frm_AddNewEnterCouponSupplies.cs.Designer.cs">
+      <DependentUpon>frm_AddNewEnterCouponSupplies.cs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\VatTu\frm_EditEnterCouponSupplies.cs.cs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\VatTu\frm_EditEnterCouponSupplies.cs.cs.Designer.cs">
+      <DependentUpon>frm_EditEnterCouponSupplies.cs.cs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\VatTu\frm_EnterCouponSupplies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\VatTu\frm_EnterCouponSupplies.Designer.cs">
+      <DependentUpon>frm_EnterCouponSupplies.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\QuanLyHeThong\GroupSupplies\frm_AddNewGroupSupplies.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,14 +307,26 @@
     <None Include="DTO\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="GUI\VatTu\frm_AddNewEnterCouponSupplies.cs.resx">
+      <DependentUpon>frm_AddNewEnterCouponSupplies.cs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\VatTu\frm_EnterCouponSupplies.resx">
+      <DependentUpon>frm_EnterCouponSupplies.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanLyHeThong\GroupSupplies\frm_AddNewGroupSupplies.resx">
       <DependentUpon>frm_AddNewGroupSupplies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanLyHeThong\GroupSupplies\frm_UpdateGroupSupplies.resx">
       <DependentUpon>frm_UpdateGroupSupplies.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\supplies\frm_AddNewSupplies.resx">
+      <DependentUpon>frm_AddNewSupplies.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanLyHeThong\supplies\frm_Supplies.resx">
       <DependentUpon>frm_Supplies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\QuanLyHeThong\supplies\frm_UpdateSuppliescs.resx">
+      <DependentUpon>frm_UpdateSuppliescs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanLyHeThong\Unit\frm_Update_Unit.resx">
       <DependentUpon>frm_Update_Unit.cs</DependentUpon>

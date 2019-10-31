@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent( )
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Supplies));
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
@@ -71,7 +70,7 @@
             this.group_supplies_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.group_supplies_id_custom = new DevExpress.XtraGrid.Columns.GridColumn();
             this.group_supplies_name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btn_AddGroup_supplies = new DevExpress.XtraBars.BarButtonItem();
             this.btn_EditGroup_supplies = new DevExpress.XtraBars.BarButtonItem();
@@ -100,12 +99,19 @@
             this.bar10 = new DevExpress.XtraBars.Bar();
             this.tabPane2 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.grdc_Employee = new DevExpress.XtraGrid.GridControl();
-            this.grdv_Employee = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grdc_Supplies = new DevExpress.XtraGrid.GridControl();
+            this.grdv_Supplies = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.supplies_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.supplies_id_custom = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.supplies_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.unit_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.vendor_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.supplies_description = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.supplies_entry_price = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.supplies_commercial_price = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.supplies_wholesale_price = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
-            this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager2 = new DevExpress.XtraBars.BarManager();
             this.bar7 = new DevExpress.XtraBars.Bar();
             this.btn_Add = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
@@ -140,12 +146,6 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.bar6 = new DevExpress.XtraBars.Bar();
             this.bar12 = new DevExpress.XtraBars.Bar();
-            this.supplies_name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.unit_id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.vendor_id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.supplies_description = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.supplies_entry_price = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.supplies_commercial_price = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdc_group_supplies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_group_supplies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -155,8 +155,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabPane2)).BeginInit();
             this.tabPane2.SuspendLayout();
             this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdc_Employee)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_Employee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdc_Supplies)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_Supplies)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -528,8 +528,8 @@
             // 
             this.tabNavigationPage2.Appearance.BackColor = System.Drawing.Color.Black;
             this.tabNavigationPage2.Appearance.Options.UseBackColor = true;
-            this.tabNavigationPage2.Caption = "Danh Sách Khách Hàng";
-            this.tabNavigationPage2.Controls.Add(this.grdc_Employee);
+            this.tabNavigationPage2.Caption = "Vật Tư";
+            this.tabNavigationPage2.Controls.Add(this.grdc_Supplies);
             this.tabNavigationPage2.Controls.Add(this.barDockControl6);
             this.tabNavigationPage2.Controls.Add(this.barDockControl7);
             this.tabNavigationPage2.Controls.Add(this.barDockControl5);
@@ -538,40 +538,42 @@
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Size = new System.Drawing.Size(965, 702);
             // 
-            // grdc_Employee
+            // grdc_Supplies
             // 
-            this.grdc_Employee.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdc_Employee.Location = new System.Drawing.Point(0, 51);
-            this.grdc_Employee.MainView = this.grdv_Employee;
-            this.grdc_Employee.MenuManager = this.barManager1;
-            this.grdc_Employee.Name = "grdc_Employee";
-            this.grdc_Employee.Size = new System.Drawing.Size(965, 628);
-            this.grdc_Employee.TabIndex = 18;
-            this.grdc_Employee.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grdv_Employee});
+            this.grdc_Supplies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdc_Supplies.Location = new System.Drawing.Point(0, 51);
+            this.grdc_Supplies.MainView = this.grdv_Supplies;
+            this.grdc_Supplies.MenuManager = this.barManager1;
+            this.grdc_Supplies.Name = "grdc_Supplies";
+            this.grdc_Supplies.Size = new System.Drawing.Size(965, 628);
+            this.grdc_Supplies.TabIndex = 18;
+            this.grdc_Supplies.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdv_Supplies});
             // 
-            // grdv_Employee
+            // grdv_Supplies
             // 
-            this.grdv_Employee.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdv_Employee.Appearance.Row.Options.UseFont = true;
-            this.grdv_Employee.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdv_Employee.Appearance.TopNewRow.Options.UseFont = true;
-            this.grdv_Employee.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.grdv_Supplies.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_Supplies.Appearance.Row.Options.UseFont = true;
+            this.grdv_Supplies.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_Supplies.Appearance.TopNewRow.Options.UseFont = true;
+            this.grdv_Supplies.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.supplies_id,
             this.supplies_id_custom,
             this.supplies_name,
-            this.unit_id,
-            this.vendor_id,
+            this.unit_name,
+            this.vendor_name,
             this.supplies_description,
             this.supplies_entry_price,
-            this.supplies_commercial_price});
-            this.grdv_Employee.GridControl = this.grdc_Employee;
-            this.grdv_Employee.Name = "grdv_Employee";
-            this.grdv_Employee.OptionsBehavior.Editable = false;
-            this.grdv_Employee.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            this.grdv_Employee.OptionsView.ShowGroupPanel = false;
-            this.grdv_Employee.RowHeight = 30;
-            this.grdv_Employee.ViewCaptionHeight = 0;
+            this.supplies_commercial_price,
+            this.supplies_wholesale_price});
+            this.grdv_Supplies.GridControl = this.grdc_Supplies;
+            this.grdv_Supplies.Name = "grdv_Supplies";
+            this.grdv_Supplies.OptionsBehavior.Editable = false;
+            this.grdv_Supplies.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.grdv_Supplies.OptionsView.ShowGroupPanel = false;
+            this.grdv_Supplies.RowHeight = 30;
+            this.grdv_Supplies.ViewCaptionHeight = 0;
+            this.grdv_Supplies.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdv_Supplies_FocusedRowChanged);
             // 
             // supplies_id
             // 
@@ -589,12 +591,74 @@
             this.supplies_id_custom.AppearanceCell.Options.UseFont = true;
             this.supplies_id_custom.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.supplies_id_custom.AppearanceHeader.Options.UseFont = true;
-            this.supplies_id_custom.Caption = "Mã nhân viên";
+            this.supplies_id_custom.Caption = "Mã VT";
             this.supplies_id_custom.FieldName = "supplies_id_custom";
             this.supplies_id_custom.Name = "supplies_id_custom";
             this.supplies_id_custom.OptionsColumn.FixedWidth = true;
             this.supplies_id_custom.Visible = true;
             this.supplies_id_custom.VisibleIndex = 0;
+            // 
+            // supplies_name
+            // 
+            this.supplies_name.Caption = "Tên VT";
+            this.supplies_name.FieldName = "supplies_name";
+            this.supplies_name.Name = "supplies_name";
+            this.supplies_name.Visible = true;
+            this.supplies_name.VisibleIndex = 1;
+            // 
+            // unit_name
+            // 
+            this.unit_name.Caption = "Đơn vị";
+            this.unit_name.FieldName = "unit_name";
+            this.unit_name.Name = "unit_name";
+            this.unit_name.Visible = true;
+            this.unit_name.VisibleIndex = 2;
+            // 
+            // vendor_name
+            // 
+            this.vendor_name.Caption = "Nhà cung cấp";
+            this.vendor_name.FieldName = "vendor_name";
+            this.vendor_name.Name = "vendor_name";
+            this.vendor_name.Visible = true;
+            this.vendor_name.VisibleIndex = 3;
+            // 
+            // supplies_description
+            // 
+            this.supplies_description.Caption = "Mô tả";
+            this.supplies_description.FieldName = "supplies_description";
+            this.supplies_description.Name = "supplies_description";
+            this.supplies_description.Visible = true;
+            this.supplies_description.VisibleIndex = 4;
+            // 
+            // supplies_entry_price
+            // 
+            this.supplies_entry_price.Caption = "Giá nhập";
+            this.supplies_entry_price.DisplayFormat.FormatString = "{0:#,##0} VND";
+            this.supplies_entry_price.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.supplies_entry_price.FieldName = "supplies_entry_price";
+            this.supplies_entry_price.Name = "supplies_entry_price";
+            this.supplies_entry_price.Visible = true;
+            this.supplies_entry_price.VisibleIndex = 5;
+            // 
+            // supplies_commercial_price
+            // 
+            this.supplies_commercial_price.Caption = "Giá bán";
+            this.supplies_commercial_price.DisplayFormat.FormatString = "{0:#,##0} VND";
+            this.supplies_commercial_price.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.supplies_commercial_price.FieldName = "supplies_commercial_price";
+            this.supplies_commercial_price.Name = "supplies_commercial_price";
+            this.supplies_commercial_price.Visible = true;
+            this.supplies_commercial_price.VisibleIndex = 6;
+            // 
+            // supplies_wholesale_price
+            // 
+            this.supplies_wholesale_price.Caption = "Số tiền giảm";
+            this.supplies_wholesale_price.DisplayFormat.FormatString = "{0:#,##0} VND";
+            this.supplies_wholesale_price.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.supplies_wholesale_price.FieldName = "supplies_wholesale_price";
+            this.supplies_wholesale_price.Name = "supplies_wholesale_price";
+            this.supplies_wholesale_price.Visible = true;
+            this.supplies_wholesale_price.VisibleIndex = 7;
             // 
             // barDockControl6
             // 
@@ -686,6 +750,7 @@
             toolTipTitleItem6.Text = "Ctrl + N";
             superToolTip6.Items.Add(toolTipTitleItem6);
             this.btn_Add.SuperTip = superToolTip6;
+            this.btn_Add.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Add_ItemClick);
             // 
             // barStaticItem4
             // 
@@ -712,6 +777,7 @@
             toolTipTitleItem7.Text = "Ctrl + E";
             superToolTip7.Items.Add(toolTipTitleItem7);
             this.btn_Edit.SuperTip = superToolTip7;
+            this.btn_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Edit_ItemClick);
             // 
             // barStaticItem2
             // 
@@ -1058,52 +1124,6 @@
             this.bar12.OptionsBar.AllowQuickCustomization = false;
             this.bar12.Text = "Tools";
             // 
-            // supplies_name
-            // 
-            this.supplies_name.Caption = "Tên VT";
-            this.supplies_name.FieldName = "supplies_name";
-            this.supplies_name.Name = "supplies_name";
-            this.supplies_name.Visible = true;
-            this.supplies_name.VisibleIndex = 1;
-            // 
-            // unit_id
-            // 
-            this.unit_id.Caption = "Đơn vị";
-            this.unit_id.FieldName = "unit_id";
-            this.unit_id.Name = "unit_id";
-            this.unit_id.Visible = true;
-            this.unit_id.VisibleIndex = 2;
-            // 
-            // vendor_id
-            // 
-            this.vendor_id.Caption = "Nhà cung cấp";
-            this.vendor_id.Name = "vendor_id";
-            this.vendor_id.Visible = true;
-            this.vendor_id.VisibleIndex = 3;
-            // 
-            // supplies_description
-            // 
-            this.supplies_description.Caption = "Mô tả";
-            this.supplies_description.Name = "supplies_description";
-            this.supplies_description.Visible = true;
-            this.supplies_description.VisibleIndex = 4;
-            // 
-            // supplies_entry_price
-            // 
-            this.supplies_entry_price.Caption = "Giá nhập";
-            this.supplies_entry_price.FieldName = "supplies_entry_price";
-            this.supplies_entry_price.Name = "supplies_entry_price";
-            this.supplies_entry_price.Visible = true;
-            this.supplies_entry_price.VisibleIndex = 5;
-            // 
-            // supplies_commercial_price
-            // 
-            this.supplies_commercial_price.Caption = "Giá bán";
-            this.supplies_commercial_price.FieldName = "supplies_commercial_price";
-            this.supplies_commercial_price.Name = "supplies_commercial_price";
-            this.supplies_commercial_price.Visible = true;
-            this.supplies_commercial_price.VisibleIndex = 6;
-            // 
             // frm_Supplies
             // 
             this.Appearance.Options.UseFont = true;
@@ -1135,8 +1155,8 @@
             this.tabPane2.ResumeLayout(false);
             this.tabNavigationPage2.ResumeLayout(false);
             this.tabNavigationPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdc_Employee)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_Employee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdc_Supplies)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_Supplies)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1179,8 +1199,8 @@
         private DevExpress.XtraBars.Bar bar10;
         private DevExpress.XtraBars.Navigation.TabPane tabPane2;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
-        private DevExpress.XtraGrid.GridControl grdc_Employee;
-        private DevExpress.XtraGrid.Views.Grid.GridView grdv_Employee;
+        private DevExpress.XtraGrid.GridControl grdc_Supplies;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdv_Supplies;
         private DevExpress.XtraGrid.Columns.GridColumn supplies_id;
         private DevExpress.XtraGrid.Columns.GridColumn supplies_id_custom;
         private DevExpress.XtraBars.BarDockControl barDockControl6;
@@ -1220,10 +1240,11 @@
         private DevExpress.XtraBars.Bar bar6;
         private DevExpress.XtraBars.Bar bar12;
         private DevExpress.XtraGrid.Columns.GridColumn supplies_name;
-        private DevExpress.XtraGrid.Columns.GridColumn unit_id;
-        private DevExpress.XtraGrid.Columns.GridColumn vendor_id;
+        private DevExpress.XtraGrid.Columns.GridColumn unit_name;
+        private DevExpress.XtraGrid.Columns.GridColumn vendor_name;
         private DevExpress.XtraGrid.Columns.GridColumn supplies_description;
         private DevExpress.XtraGrid.Columns.GridColumn supplies_entry_price;
         private DevExpress.XtraGrid.Columns.GridColumn supplies_commercial_price;
+        private DevExpress.XtraGrid.Columns.GridColumn supplies_wholesale_price;
     }
 }

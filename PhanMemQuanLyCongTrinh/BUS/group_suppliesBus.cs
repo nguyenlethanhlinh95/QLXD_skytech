@@ -39,5 +39,15 @@ namespace PhanMemQuanLyCongTrinh.BUS
         {
             return _groupDao.updateGroupSupplie(name, id);
         }
+
+        public bool deleteGroupSupplie(Int64 id)
+        {
+            return _groupDao.deleteGroupSupplie(id);
+        }
+
+        public bool changeIdParent(Int64 id)
+        {
+            return _groupDao.changeIdParent(id);
+        }
     }
 }

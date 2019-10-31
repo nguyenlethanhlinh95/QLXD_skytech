@@ -104,5 +104,32 @@ namespace PhanMemQuanLyCongTrinh.DAO
                 return false;
             }
         }
+
+        public bool changeIdParent(Int64 id)
+        {
+            try
+            {
+                var datasource = from u in db.ST_supplies
+                                where u.group_supplies_id == id
+                                select u;
+                
+                if (datasource != null)
+                {
+                    foreach ( var item in datasource )
+                    {
+                        item.group_supplies_id = 1;
+                    }
+                    db.SubmitChanges();
+                    return true;
+                }
+                return true;
+   
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+                      
+        }
     }
 }

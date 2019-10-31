@@ -31,6 +31,14 @@ namespace PhanMemQuanLyCongTrinh
         public frm_Main()
         {
             InitializeComponent();
+
+            // The following line provides localization for the application's user interface.  
+            System.Threading.Thread.CurrentThread.CurrentUICulture =
+                new System.Globalization.CultureInfo("vi");
+
+            // The following line provides localization for data formats.  
+            System.Threading.Thread.CurrentThread.CurrentCulture =
+                new System.Globalization.CultureInfo("vi-VN");  
         }
 
         private void btnUserInformation_ItemClick(object sender, ItemClickEventArgs e)
@@ -218,6 +226,37 @@ namespace PhanMemQuanLyCongTrinh
             }
         }
 
+        private void btnEnterCouponSupplies_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_AddNewEnterCouponSupplies));
+            if ( frm == null )
+            {
+                frm_AddNewEnterCouponSupplies forms = new frm_AddNewEnterCouponSupplies( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
+        private void btnListEnterCouponSupplies_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_EnterCouponSupplies));
+            if ( frm == null )
+            {
+                frm_EnterCouponSupplies forms = new frm_EnterCouponSupplies( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
+        
         
     }
 }

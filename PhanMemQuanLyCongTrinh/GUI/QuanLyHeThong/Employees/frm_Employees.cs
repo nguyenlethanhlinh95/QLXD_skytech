@@ -131,6 +131,8 @@ namespace PhanMemQuanLyCongTrinh
         private void btn_Add_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frm_RegisterUser f = new frm_RegisterUser();
+            //f.FormClosed += new FormClosedEventHandler(dongformEmployee);
+
             f.ShowDialog();
         }
 
