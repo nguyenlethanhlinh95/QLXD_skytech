@@ -256,6 +256,36 @@ namespace PhanMemQuanLyCongTrinh
             }
         }
 
+        private void btnConstructions_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_Constructions));
+            if ( frm == null )
+            {
+                frm_Constructions forms = new frm_Constructions( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
+        private void btnSuppliesInWearHouse_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_StorehouseDetail));
+            if ( frm == null )
+            {
+                frm_StorehouseDetail forms = new frm_StorehouseDetail( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
         
         
     }

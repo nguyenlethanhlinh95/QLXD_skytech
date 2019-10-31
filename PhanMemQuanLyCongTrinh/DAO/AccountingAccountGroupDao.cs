@@ -5,7 +5,7 @@ using System.Text;
 using PhanMemQuanLyCongTrinh.DTO;
 namespace PhanMemQuanLyCongTrinh.DAO
 {
-    class AccountingAccountGroupDao
+    class accountingAccountGroupDao
     {
         DataClasses1DataContext db = new DataClasses1DataContext();
         public object getAllAccountingAcountGroup()
@@ -20,7 +20,7 @@ namespace PhanMemQuanLyCongTrinh.DAO
              }
              catch(Exception)
              {
-                 return false;
+                 return null;
              }
 
         }
@@ -36,8 +36,21 @@ namespace PhanMemQuanLyCongTrinh.DAO
             }
              catch (Exception)
              {
-                 return false;
+                 return null;
              }
+        }
+
+        public object getAccountingAcountGroupWithCustom(Int32 customId)
+        {
+            try
+            {
+                var AccountingAcountGroup = from d in db.ST_income_and_expenditure_patterns where d.income_and_expenditure_pattern_id_custom == customId select d;
+                return AccountingAcountGroup.First();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public bool deleteAAG(Int64 AAGId)

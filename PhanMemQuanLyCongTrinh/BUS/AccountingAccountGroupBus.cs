@@ -7,7 +7,7 @@ namespace PhanMemQuanLyCongTrinh.BUS
 {
     class AccountingAccountGroupBus
     {
-        DAO.AccountingAccountGroupDao AAG = new DAO.AccountingAccountGroupDao();
+        DAO.accountingAccountGroupDao AAG = new DAO.accountingAccountGroupDao();
         public object getAllAccountingAcountGroup()
         {
             return AAG.getAllAccountingAcountGroup();
@@ -27,6 +27,18 @@ namespace PhanMemQuanLyCongTrinh.BUS
         public object getAccountingAcountGroup(Int64 AAGroupId)
         {
             return AAG.getAccountingAcountGroup(AAGroupId);
+        }
+        public bool IsAAGroupIdCustom(Int32 customId)
+        {
+            if (AAG.getAccountingAcountGroupWithCustom(customId) == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+ 
         }
     }
 }

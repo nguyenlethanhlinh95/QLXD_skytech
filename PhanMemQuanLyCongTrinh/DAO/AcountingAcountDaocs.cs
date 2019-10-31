@@ -5,7 +5,7 @@ using System.Text;
 using PhanMemQuanLyCongTrinh.DTO;
 namespace PhanMemQuanLyCongTrinh.DAO
 {
-    class AcountingAcountDaocs
+    class acountingAcountDaocs
     {
         DataClasses1DataContext db = new DTO.DataClasses1DataContext();
 
@@ -35,6 +35,19 @@ namespace PhanMemQuanLyCongTrinh.DAO
             }
         }
 
+        public object getAccountingAcountWithCustom(Int32 customId)
+        {
+            try
+            {
+                var AccountingAcount = from d in db.ST_detail_income_and_expenditure_patterns where d.detail_income_and_expenditure_pattern_id_custom == customId select d;
+                return AccountingAcount.First();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         public object getAcountingAcount(Int64 AAId)
         {
             try
@@ -51,10 +64,10 @@ namespace PhanMemQuanLyCongTrinh.DAO
                                    t1.detail_income_and_expenditure_pattern_id,
                                    t1.detail_income_and_expenditure_pattern_id_custom,
                                    t1.detail_income_and_expenditure_pattern_description,
-                                   t2.income_and_expenditure_pattern_name,
+                                   t2.income_and_expenditure_pattern_id,
                                }
                                    ;
-                return AcountingAcount;
+                return AcountingAcount.First();
             }
             catch (Exception)
             {
@@ -122,13 +135,13 @@ namespace PhanMemQuanLyCongTrinh.DAO
                 return false;
             }
         }
-        public bool deleteCustomer(Int64 id)
+        public bool deleteAcountingAccount(Int64 id)
         {
             try
             {
-                var delete = db.ST_customers.Where(p => p.customer_id.Equals(id)).SingleOrDefault();
+                var delete = db.ST_detail_income_and_expenditure_patterns.Where(p => p.detail_income_and_expenditure_pattern_id.Equals(id)).SingleOrDefault();
 
-                db.ST_customers.DeleteOnSubmit(delete);
+                db.ST_detail_income_and_expenditure_patterns.DeleteOnSubmit(delete);
                 db.SubmitChanges();
                 return true;
             }
@@ -136,6 +149,32 @@ namespace PhanMemQuanLyCongTrinh.DAO
             {
                 return false;
             }
+        }
+        public bool changeIdParent(Int64 groupId)
+        {
+            try
+            {
+                var datasource = from u in db.ST_detail_income_and_expenditure_patterns
+                                 where u.income_and_expenditure_pattern_id == groupId
+                                 select u;
+
+                if (datasource != null)
+                {
+                    foreach (var item in datasource)
+                    {
+                        item.income_and_expenditure_pattern_id = 1;
+                    }
+                    db.SubmitChanges();
+                    return true;
+                }
+                return true;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
     }
 }

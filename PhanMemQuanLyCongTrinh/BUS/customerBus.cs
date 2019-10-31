@@ -32,5 +32,9 @@ namespace PhanMemQuanLyCongTrinh.BUS
         {
             return customerDao.getCustomerWithGroup(customerGroupId);
         }
+        public bool changeIdParent(Int64 groupId)
+        {
+            return customerDao.changeIdParent(groupId);
+        }
     }
 }

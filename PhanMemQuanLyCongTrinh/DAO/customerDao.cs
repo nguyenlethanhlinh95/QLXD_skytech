@@ -139,5 +139,32 @@ namespace PhanMemQuanLyCongTrinh.DAO
                 return false;
             }
         }
+
+        public bool changeIdParent(Int64 groupId)
+        {
+            try
+            {
+                var datasource = from u in db.ST_customers
+                                 where u.customer_group_id == groupId
+                                 select u;
+
+                if (datasource != null)
+                {
+                    foreach (var item in datasource)
+                    {
+                        item.customer_group_id = 1;
+                    }
+                    db.SubmitChanges();
+                    return true;
+                }
+                return true;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
     }
 }

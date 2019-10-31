@@ -106,6 +106,7 @@
             this.btnPaymentSlipsContruction = new DevExpress.XtraBars.BarCheckItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnListEnterCouponSupplies = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -140,7 +141,6 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
-            this.btnListEnterCouponSupplies = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -372,6 +372,7 @@
             this.btnSuppliesInWearHouse.LargeWidth = 100;
             this.btnSuppliesInWearHouse.Name = "btnSuppliesInWearHouse";
             this.btnSuppliesInWearHouse.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnSuppliesInWearHouse.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSuppliesInWearHouse_ItemClick);
             // 
             // btnChangeSuppliesInWearHouse
             // 
@@ -561,6 +562,7 @@
             this.btnConstructions.LargeWidth = 100;
             this.btnConstructions.Name = "btnConstructions";
             this.btnConstructions.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnConstructions.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnConstructions_ItemClick);
             // 
             // btnConstructionItems
             // 
@@ -918,6 +920,16 @@
             this.barButtonItem1.Id = 79;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
+            // btnListEnterCouponSupplies
+            // 
+            this.btnListEnterCouponSupplies.Caption = "Danh sách phiếu nhập";
+            this.btnListEnterCouponSupplies.Id = 80;
+            this.btnListEnterCouponSupplies.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnListEnterCouponSupplies.ImageOptions.Image")));
+            this.btnListEnterCouponSupplies.LargeWidth = 100;
+            this.btnListEnterCouponSupplies.Name = "btnListEnterCouponSupplies";
+            this.btnListEnterCouponSupplies.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnListEnterCouponSupplies.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnListEnterCouponSupplies_ItemClick);
+            // 
             // ribbonPage4
             // 
             this.ribbonPage4.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
@@ -1206,16 +1218,6 @@
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
-            // btnListEnterCouponSupplies
-            // 
-            this.btnListEnterCouponSupplies.Caption = "Danh sách phiếu nhập";
-            this.btnListEnterCouponSupplies.Id = 80;
-            this.btnListEnterCouponSupplies.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.btnListEnterCouponSupplies.LargeWidth = 100;
-            this.btnListEnterCouponSupplies.Name = "btnListEnterCouponSupplies";
-            this.btnListEnterCouponSupplies.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnListEnterCouponSupplies.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnListEnterCouponSupplies_ItemClick);
             // 
             // frm_Main
             // 

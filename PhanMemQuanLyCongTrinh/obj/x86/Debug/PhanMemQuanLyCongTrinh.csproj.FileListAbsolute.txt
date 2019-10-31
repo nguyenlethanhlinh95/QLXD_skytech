@@ -71,3 +71,6 @@ D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQua
 D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_UpdateSuppliescs.resources
 D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_EnterCouponSupplies.resources
 D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_AddNewEnterCouponSupplies.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_Constructions.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_NewConstructions.resources
+D:\UDEMY\Winform\PhanMemQuanLyXayDung\Source\QLCongTrinh4\QLCongTrinh\PhanMemQuanLyCongTrinh\obj\x86\Debug\PhanMemQuanLyCongTrinh.frm_StorehouseDetail.resources

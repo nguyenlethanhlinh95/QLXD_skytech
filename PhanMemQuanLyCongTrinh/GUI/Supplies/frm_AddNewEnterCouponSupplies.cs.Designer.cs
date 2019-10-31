@@ -47,8 +47,6 @@
             this.txt_UserName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.slue_Supplies = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.supplies_id = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,6 +57,8 @@
             this.supplies_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.supplies_entry_price = new DevExpress.XtraGrid.Columns.GridColumn();
             this.supplies_commercial_price = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -72,10 +72,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_UserName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.slue_Supplies.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -172,7 +172,6 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Enabled = false;
             this.textEdit1.Location = new System.Drawing.Point(140, 73);
             this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit1.Name = "textEdit1";
@@ -194,7 +193,6 @@
             // 
             // textEdit5
             // 
-            this.textEdit5.Enabled = false;
             this.textEdit5.Location = new System.Drawing.Point(140, 223);
             this.textEdit5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit5.Name = "textEdit5";
@@ -216,7 +214,6 @@
             // 
             // textEdit4
             // 
-            this.textEdit4.Enabled = false;
             this.textEdit4.Location = new System.Drawing.Point(140, 163);
             this.textEdit4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit4.Name = "textEdit4";
@@ -238,7 +235,6 @@
             // 
             // textEdit3
             // 
-            this.textEdit3.Enabled = false;
             this.textEdit3.Location = new System.Drawing.Point(140, 133);
             this.textEdit3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit3.Name = "textEdit3";
@@ -260,7 +256,6 @@
             // 
             // textEdit2
             // 
-            this.textEdit2.Enabled = false;
             this.textEdit2.Location = new System.Drawing.Point(140, 103);
             this.textEdit2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit2.Name = "textEdit2";
@@ -282,7 +277,6 @@
             // 
             // txt_UserName
             // 
-            this.txt_UserName.Enabled = false;
             this.txt_UserName.Location = new System.Drawing.Point(140, 43);
             this.txt_UserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_UserName.Name = "txt_UserName";
@@ -311,26 +305,6 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(773, 50);
             this.panelControl1.TabIndex = 1;
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.gridControl1);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 50);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(773, 513);
-            this.panelControl2.TabIndex = 2;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(161, 13);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(73, 16);
-            this.labelControl6.TabIndex = 279;
-            this.labelControl6.Text = "Nhập hàng:";
             // 
             // slue_Supplies
             // 
@@ -424,6 +398,26 @@
             this.supplies_commercial_price.Visible = true;
             this.supplies_commercial_price.VisibleIndex = 6;
             // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(161, 13);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(73, 16);
+            this.labelControl6.TabIndex = 279;
+            this.labelControl6.Text = "Nhập hàng:";
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.gridControl1);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Location = new System.Drawing.Point(0, 50);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(773, 513);
+            this.panelControl2.TabIndex = 2;
+            // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -468,10 +462,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.slue_Supplies.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
