@@ -107,6 +107,14 @@
       <Column Name="department_percentage_overtime" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.ST_detail_employee_constructions" Member="ST_detail_employee_constructions">
+    <Type Name="ST_detail_employee_construction">
+      <Column Name="employee_construction_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="employee_construction_id_custom" Type="System.String" DbType="VarChar(47)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="employee_id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="construction_item_id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.ST_detail_enter_coupon_supplies" Member="ST_detail_enter_coupon_supplies">
     <Type Name="ST_detail_enter_coupon_supply">
       <Column Name="detail_enter_coupon_supplies_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -190,6 +198,14 @@
       <Column Name="storehouse_status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.ST_storehouses_detail" Member="ST_storehouses_details">
+    <Type Name="ST_storehouses_detail">
+      <Column Name="storehouses_detail_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="storehouse_id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="supplies_id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="storehouse_detail_quantity" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.ST_supplies" Member="ST_supplies">
     <Type Name="ST_supply">
       <Column Name="supplies_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -214,14 +230,6 @@
       <Column Name="unit_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="unit_id_custom" Type="System.String" DbType="VarChar(34)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="unit_name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ST_storehouses_detail" Member="ST_storehouses_details">
-    <Type Name="ST_storehouses_detail">
-      <Column Name="storehouses_detail_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="storehouse_id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="supplies_id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="storehouse_detail_quantity" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

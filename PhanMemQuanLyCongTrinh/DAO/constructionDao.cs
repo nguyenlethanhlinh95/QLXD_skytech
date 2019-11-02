@@ -17,13 +17,12 @@ namespace PhanMemQuanLyCongTrinh.DAO
                 db = new DTO.DataClasses1DataContext();
                 db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
                 var buildingContractor = from t1 in db.ST_constructions
-                                         join t2 in db.ST_customers
-                                         on t1.customer_id equals t2.customer_id
                                          select new
                                          {
                                              t1.construction_id,
                                              t1.construction_id_custom,
                                              t1.construction_name,
+                                             t1.construction_addresss,
                                             
                                          }
                                               ;

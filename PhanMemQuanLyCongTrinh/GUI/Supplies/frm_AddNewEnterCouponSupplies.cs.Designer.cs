@@ -31,45 +31,55 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_AddNewEnterCouponSupplies));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btn_Exit = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_Update = new DevExpress.XtraEditors.SimpleButton();
-            this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
+            this.btn_AddNew = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_descriptoon = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_deliver = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_total_price = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_percent_discount = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.txt_total = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txt_UserName = new DevExpress.XtraEditors.TextEdit();
+            this.txt_number = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_AddNewSuppelies = new DevExpress.XtraEditors.SimpleButton();
             this.slue_Supplies = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.supplies_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.supplies_id_custom = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.supplies_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.unit_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.group_supplies_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.vendor_name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.supplies_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.supplies_entry_price = new DevExpress.XtraGrid.Columns.GridColumn();
             this.supplies_commercial_price = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ID_custom = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.supplies_name_VT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.supplies_unit = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.supplies_quantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItem_quantity = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.supplies_price = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.supplies_wholesale_price = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.total = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_descriptoon.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_deliver.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_UserName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_total_price.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_percent_discount.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_total.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_number.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.slue_Supplies.Properties)).BeginInit();
@@ -78,25 +88,26 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItem_quantity)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.btn_Exit);
-            this.groupControl1.Controls.Add(this.btn_Update);
-            this.groupControl1.Controls.Add(this.memoEdit1);
+            this.groupControl1.Controls.Add(this.btn_AddNew);
+            this.groupControl1.Controls.Add(this.txt_descriptoon);
             this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.textEdit1);
+            this.groupControl1.Controls.Add(this.txt_deliver);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.textEdit5);
             this.groupControl1.Controls.Add(this.labelControl8);
-            this.groupControl1.Controls.Add(this.textEdit4);
+            this.groupControl1.Controls.Add(this.txt_total_price);
             this.groupControl1.Controls.Add(this.labelControl7);
-            this.groupControl1.Controls.Add(this.textEdit3);
+            this.groupControl1.Controls.Add(this.txt_percent_discount);
             this.groupControl1.Controls.Add(this.labelControl5);
-            this.groupControl1.Controls.Add(this.textEdit2);
+            this.groupControl1.Controls.Add(this.txt_total);
             this.groupControl1.Controls.Add(this.labelControl4);
-            this.groupControl1.Controls.Add(this.txt_UserName);
+            this.groupControl1.Controls.Add(this.txt_number);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupControl1.Location = new System.Drawing.Point(773, 0);
@@ -129,35 +140,35 @@
             this.btn_Exit.Text = "Thoát";
             this.btn_Exit.ToolTipTitle = "ESC";
             // 
-            // btn_Update
+            // btn_AddNew
             // 
-            this.btn_Update.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_Update.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_Update.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.btn_Update.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn_Update.Appearance.Options.UseBackColor = true;
-            this.btn_Update.Appearance.Options.UseFont = true;
-            this.btn_Update.Appearance.Options.UseForeColor = true;
-            this.btn_Update.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Update.ImageOptions.Image")));
-            this.btn_Update.Location = new System.Drawing.Point(140, 415);
-            this.btn_Update.LookAndFeel.SkinMaskColor = System.Drawing.Color.RoyalBlue;
-            this.btn_Update.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_Update.LookAndFeel.SkinName = "Office 2010 Black";
-            this.btn_Update.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btn_Update.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(110, 36);
-            this.btn_Update.TabIndex = 293;
-            this.btn_Update.Text = "Thêm mới";
-            this.btn_Update.ToolTipTitle = "Ctrl +S";
+            this.btn_AddNew.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_AddNew.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_AddNew.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.btn_AddNew.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_AddNew.Appearance.Options.UseBackColor = true;
+            this.btn_AddNew.Appearance.Options.UseFont = true;
+            this.btn_AddNew.Appearance.Options.UseForeColor = true;
+            this.btn_AddNew.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.btn_AddNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Update.ImageOptions.Image")));
+            this.btn_AddNew.Location = new System.Drawing.Point(140, 415);
+            this.btn_AddNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.RoyalBlue;
+            this.btn_AddNew.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_AddNew.LookAndFeel.SkinName = "Office 2010 Black";
+            this.btn_AddNew.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btn_AddNew.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_AddNew.Name = "btn_AddNew";
+            this.btn_AddNew.Size = new System.Drawing.Size(110, 36);
+            this.btn_AddNew.TabIndex = 293;
+            this.btn_AddNew.Text = "Thêm mới";
+            this.btn_AddNew.ToolTipTitle = "Ctrl +S";
             // 
-            // memoEdit1
+            // txt_descriptoon
             // 
-            this.memoEdit1.Location = new System.Drawing.Point(140, 252);
-            this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(241, 133);
-            this.memoEdit1.TabIndex = 292;
+            this.txt_descriptoon.Location = new System.Drawing.Point(140, 252);
+            this.txt_descriptoon.Name = "txt_descriptoon";
+            this.txt_descriptoon.Size = new System.Drawing.Size(241, 133);
+            this.txt_descriptoon.TabIndex = 292;
             // 
             // labelControl2
             // 
@@ -170,15 +181,15 @@
             this.labelControl2.TabIndex = 285;
             this.labelControl2.Text = "Diễn giải";
             // 
-            // textEdit1
+            // txt_deliver
             // 
-            this.textEdit1.Location = new System.Drawing.Point(140, 73);
-            this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(241, 22);
-            this.textEdit1.TabIndex = 290;
+            this.txt_deliver.Location = new System.Drawing.Point(140, 73);
+            this.txt_deliver.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_deliver.Name = "txt_deliver";
+            this.txt_deliver.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_deliver.Properties.Appearance.Options.UseFont = true;
+            this.txt_deliver.Size = new System.Drawing.Size(241, 22);
+            this.txt_deliver.TabIndex = 290;
             // 
             // labelControl3
             // 
@@ -212,15 +223,16 @@
             this.labelControl8.TabIndex = 284;
             this.labelControl8.Text = "Trả NCC:";
             // 
-            // textEdit4
+            // txt_total_price
             // 
-            this.textEdit4.Location = new System.Drawing.Point(140, 163);
-            this.textEdit4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
-            this.textEdit4.Properties.Appearance.Options.UseFont = true;
-            this.textEdit4.Size = new System.Drawing.Size(241, 22);
-            this.textEdit4.TabIndex = 291;
+            this.txt_total_price.Enabled = false;
+            this.txt_total_price.Location = new System.Drawing.Point(140, 163);
+            this.txt_total_price.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_total_price.Name = "txt_total_price";
+            this.txt_total_price.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_total_price.Properties.Appearance.Options.UseFont = true;
+            this.txt_total_price.Size = new System.Drawing.Size(241, 22);
+            this.txt_total_price.TabIndex = 291;
             // 
             // labelControl7
             // 
@@ -233,15 +245,15 @@
             this.labelControl7.TabIndex = 281;
             this.labelControl7.Text = "Cần trả NCC:";
             // 
-            // textEdit3
+            // txt_percent_discount
             // 
-            this.textEdit3.Location = new System.Drawing.Point(140, 133);
-            this.textEdit3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
-            this.textEdit3.Properties.Appearance.Options.UseFont = true;
-            this.textEdit3.Size = new System.Drawing.Size(241, 22);
-            this.textEdit3.TabIndex = 286;
+            this.txt_percent_discount.Location = new System.Drawing.Point(140, 133);
+            this.txt_percent_discount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_percent_discount.Name = "txt_percent_discount";
+            this.txt_percent_discount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_percent_discount.Properties.Appearance.Options.UseFont = true;
+            this.txt_percent_discount.Size = new System.Drawing.Size(241, 22);
+            this.txt_percent_discount.TabIndex = 286;
             // 
             // labelControl5
             // 
@@ -254,15 +266,16 @@
             this.labelControl5.TabIndex = 283;
             this.labelControl5.Text = "Giảm giá:";
             // 
-            // textEdit2
+            // txt_total
             // 
-            this.textEdit2.Location = new System.Drawing.Point(140, 103);
-            this.textEdit2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
-            this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Size = new System.Drawing.Size(241, 22);
-            this.textEdit2.TabIndex = 287;
+            this.txt_total.Enabled = false;
+            this.txt_total.Location = new System.Drawing.Point(140, 103);
+            this.txt_total.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_total.Name = "txt_total";
+            this.txt_total.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_total.Properties.Appearance.Options.UseFont = true;
+            this.txt_total.Size = new System.Drawing.Size(241, 22);
+            this.txt_total.TabIndex = 287;
             // 
             // labelControl4
             // 
@@ -275,15 +288,15 @@
             this.labelControl4.TabIndex = 282;
             this.labelControl4.Text = "Tổng tiền hàng:";
             // 
-            // txt_UserName
+            // txt_number
             // 
-            this.txt_UserName.Location = new System.Drawing.Point(140, 43);
-            this.txt_UserName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_UserName.Name = "txt_UserName";
-            this.txt_UserName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
-            this.txt_UserName.Properties.Appearance.Options.UseFont = true;
-            this.txt_UserName.Size = new System.Drawing.Size(241, 22);
-            this.txt_UserName.TabIndex = 288;
+            this.txt_number.Location = new System.Drawing.Point(140, 43);
+            this.txt_number.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_number.Name = "txt_number";
+            this.txt_number.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_number.Properties.Appearance.Options.UseFont = true;
+            this.txt_number.Size = new System.Drawing.Size(241, 22);
+            this.txt_number.TabIndex = 288;
             // 
             // labelControl1
             // 
@@ -298,6 +311,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.btn_AddNewSuppelies);
             this.panelControl1.Controls.Add(this.slue_Supplies);
             this.panelControl1.Controls.Add(this.labelControl6);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -305,6 +319,17 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(773, 50);
             this.panelControl1.TabIndex = 1;
+            // 
+            // btn_AddNewSuppelies
+            // 
+            this.btn_AddNewSuppelies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AddNewSuppelies.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_AddNewSuppelies.ImageOptions.Image")));
+            this.btn_AddNewSuppelies.Location = new System.Drawing.Point(544, 12);
+            this.btn_AddNewSuppelies.Name = "btn_AddNewSuppelies";
+            this.btn_AddNewSuppelies.Size = new System.Drawing.Size(25, 23);
+            this.btn_AddNewSuppelies.TabIndex = 292;
+            this.btn_AddNewSuppelies.ToolTipTitle = "Thêm mới Vật tư";
+            this.btn_AddNewSuppelies.Click += new System.EventHandler(this.btn_AddNewSuppelies_Click);
             // 
             // slue_Supplies
             // 
@@ -325,10 +350,10 @@
             this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.supplies_id,
             this.supplies_id_custom,
+            this.supplies_name,
             this.unit_name,
             this.group_supplies_name,
             this.vendor_name,
-            this.supplies_name,
             this.supplies_entry_price,
             this.supplies_commercial_price});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
@@ -350,13 +375,21 @@
             this.supplies_id_custom.Visible = true;
             this.supplies_id_custom.VisibleIndex = 0;
             // 
+            // supplies_name
+            // 
+            this.supplies_name.Caption = "Tên VT";
+            this.supplies_name.FieldName = "supplies_name";
+            this.supplies_name.Name = "supplies_name";
+            this.supplies_name.Visible = true;
+            this.supplies_name.VisibleIndex = 1;
+            // 
             // unit_name
             // 
             this.unit_name.Caption = "Đơn vị tính";
             this.unit_name.FieldName = "unit_name";
             this.unit_name.Name = "unit_name";
             this.unit_name.Visible = true;
-            this.unit_name.VisibleIndex = 1;
+            this.unit_name.VisibleIndex = 2;
             // 
             // group_supplies_name
             // 
@@ -364,7 +397,7 @@
             this.group_supplies_name.FieldName = "group_supplies_name";
             this.group_supplies_name.Name = "group_supplies_name";
             this.group_supplies_name.Visible = true;
-            this.group_supplies_name.VisibleIndex = 2;
+            this.group_supplies_name.VisibleIndex = 3;
             // 
             // vendor_name
             // 
@@ -372,15 +405,7 @@
             this.vendor_name.FieldName = "vendor_name";
             this.vendor_name.Name = "vendor_name";
             this.vendor_name.Visible = true;
-            this.vendor_name.VisibleIndex = 3;
-            // 
-            // supplies_name
-            // 
-            this.supplies_name.Caption = "Tên VT";
-            this.supplies_name.FieldName = "supplies_name";
-            this.supplies_name.Name = "supplies_name";
-            this.supplies_name.Visible = true;
-            this.supplies_name.VisibleIndex = 4;
+            this.vendor_name.VisibleIndex = 4;
             // 
             // supplies_entry_price
             // 
@@ -422,8 +447,12 @@
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(2, 2);
+            this.gridControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.gridControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItem_quantity});
             this.gridControl1.Size = new System.Drawing.Size(769, 509);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -431,8 +460,102 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.GroupPanel.BackColor = System.Drawing.Color.Transparent;
+            this.gridView1.Appearance.GroupPanel.Options.UseBackColor = true;
+            this.gridView1.Appearance.HeaderPanel.BackColor = System.Drawing.Color.Black;
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.White;
+            this.gridView1.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ID,
+            this.ID_custom,
+            this.supplies_name_VT,
+            this.supplies_unit,
+            this.supplies_quantity,
+            this.supplies_price,
+            this.supplies_wholesale_price,
+            this.total});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.FieldName = "ID";
+            this.ID.Name = "ID";
+            this.ID.OptionsColumn.AllowEdit = false;
+            // 
+            // ID_custom
+            // 
+            this.ID_custom.Caption = "Mã VT";
+            this.ID_custom.FieldName = "ID_custom";
+            this.ID_custom.Name = "ID_custom";
+            this.ID_custom.OptionsColumn.AllowEdit = false;
+            this.ID_custom.Visible = true;
+            this.ID_custom.VisibleIndex = 0;
+            // 
+            // supplies_name_VT
+            // 
+            this.supplies_name_VT.Caption = "Tên VT";
+            this.supplies_name_VT.FieldName = "supplies_name";
+            this.supplies_name_VT.Name = "supplies_name_VT";
+            this.supplies_name_VT.OptionsColumn.AllowEdit = false;
+            this.supplies_name_VT.Visible = true;
+            this.supplies_name_VT.VisibleIndex = 1;
+            // 
+            // supplies_unit
+            // 
+            this.supplies_unit.Caption = "Đơn vị";
+            this.supplies_unit.FieldName = "supplies_unit";
+            this.supplies_unit.Name = "supplies_unit";
+            this.supplies_unit.OptionsColumn.AllowEdit = false;
+            this.supplies_unit.Visible = true;
+            this.supplies_unit.VisibleIndex = 2;
+            // 
+            // supplies_quantity
+            // 
+            this.supplies_quantity.Caption = "Số lượng";
+            this.supplies_quantity.ColumnEdit = this.repositoryItem_quantity;
+            this.supplies_quantity.FieldName = "supplies_quantity";
+            this.supplies_quantity.Name = "supplies_quantity";
+            this.supplies_quantity.Visible = true;
+            this.supplies_quantity.VisibleIndex = 3;
+            // 
+            // repositoryItem_quantity
+            // 
+            this.repositoryItem_quantity.AutoHeight = false;
+            this.repositoryItem_quantity.Name = "repositoryItem_quantity";
+            // 
+            // supplies_price
+            // 
+            this.supplies_price.Caption = "Giá nhập";
+            this.supplies_price.FieldName = "supplies_price";
+            this.supplies_price.Name = "supplies_price";
+            this.supplies_price.OptionsColumn.AllowEdit = false;
+            this.supplies_price.Visible = true;
+            this.supplies_price.VisibleIndex = 4;
+            // 
+            // supplies_wholesale_price
+            // 
+            this.supplies_wholesale_price.Caption = "Tiền giảm";
+            this.supplies_wholesale_price.FieldName = "supplies_wholesale_price";
+            this.supplies_wholesale_price.Name = "supplies_wholesale_price";
+            this.supplies_wholesale_price.OptionsColumn.AllowEdit = false;
+            this.supplies_wholesale_price.Visible = true;
+            this.supplies_wholesale_price.VisibleIndex = 5;
+            // 
+            // total
+            // 
+            this.total.Caption = "Tổng tiền";
+            this.total.FieldName = "total";
+            this.total.Name = "total";
+            this.total.OptionsColumn.AllowEdit = false;
+            this.total.Visible = true;
+            this.total.VisibleIndex = 6;
             // 
             // frm_AddNewEnterCouponSupplies
             // 
@@ -452,13 +575,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_descriptoon.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_deliver.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_UserName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_total_price.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_percent_discount.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_total.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_number.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -468,6 +591,7 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItem_quantity)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -476,20 +600,20 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton btn_Exit;
-        private DevExpress.XtraEditors.SimpleButton btn_Update;
-        private DevExpress.XtraEditors.MemoEdit memoEdit1;
+        private DevExpress.XtraEditors.SimpleButton btn_AddNew;
+        private DevExpress.XtraEditors.MemoEdit txt_descriptoon;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txt_deliver;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit textEdit5;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit txt_total_price;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit txt_percent_discount;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit txt_total;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.TextEdit txt_UserName;
+        private DevExpress.XtraEditors.TextEdit txt_number;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
@@ -506,6 +630,16 @@
         private DevExpress.XtraGrid.Columns.GridColumn supplies_commercial_price;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn ID;
+        private DevExpress.XtraGrid.Columns.GridColumn ID_custom;
+        private DevExpress.XtraGrid.Columns.GridColumn supplies_name_VT;
+        private DevExpress.XtraGrid.Columns.GridColumn supplies_unit;
+        private DevExpress.XtraGrid.Columns.GridColumn supplies_quantity;
+        private DevExpress.XtraGrid.Columns.GridColumn supplies_price;
+        private DevExpress.XtraGrid.Columns.GridColumn supplies_wholesale_price;
+        private DevExpress.XtraGrid.Columns.GridColumn total;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItem_quantity;
+        private DevExpress.XtraEditors.SimpleButton btn_AddNewSuppelies;
 
 
 

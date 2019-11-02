@@ -51,6 +51,9 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void InsertST_department(ST_department instance);
     partial void UpdateST_department(ST_department instance);
     partial void DeleteST_department(ST_department instance);
+    partial void InsertST_detail_employee_construction(ST_detail_employee_construction instance);
+    partial void UpdateST_detail_employee_construction(ST_detail_employee_construction instance);
+    partial void DeleteST_detail_employee_construction(ST_detail_employee_construction instance);
     partial void InsertST_detail_enter_coupon_supply(ST_detail_enter_coupon_supply instance);
     partial void UpdateST_detail_enter_coupon_supply(ST_detail_enter_coupon_supply instance);
     partial void DeleteST_detail_enter_coupon_supply(ST_detail_enter_coupon_supply instance);
@@ -75,15 +78,15 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void InsertST_storehouse(ST_storehouse instance);
     partial void UpdateST_storehouse(ST_storehouse instance);
     partial void DeleteST_storehouse(ST_storehouse instance);
+    partial void InsertST_storehouses_detail(ST_storehouses_detail instance);
+    partial void UpdateST_storehouses_detail(ST_storehouses_detail instance);
+    partial void DeleteST_storehouses_detail(ST_storehouses_detail instance);
     partial void InsertST_supply(ST_supply instance);
     partial void UpdateST_supply(ST_supply instance);
     partial void DeleteST_supply(ST_supply instance);
     partial void InsertST_unit(ST_unit instance);
     partial void UpdateST_unit(ST_unit instance);
     partial void DeleteST_unit(ST_unit instance);
-    partial void InsertST_storehouses_detail(ST_storehouses_detail instance);
-    partial void UpdateST_storehouses_detail(ST_storehouses_detail instance);
-    partial void DeleteST_storehouses_detail(ST_storehouses_detail instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -172,6 +175,14 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
+		public System.Data.Linq.Table<ST_detail_employee_construction> ST_detail_employee_constructions
+		{
+			get
+			{
+				return this.GetTable<ST_detail_employee_construction>();
+			}
+		}
+		
 		public System.Data.Linq.Table<ST_detail_enter_coupon_supply> ST_detail_enter_coupon_supplies
 		{
 			get
@@ -236,6 +247,14 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
+		public System.Data.Linq.Table<ST_storehouses_detail> ST_storehouses_details
+		{
+			get
+			{
+				return this.GetTable<ST_storehouses_detail>();
+			}
+		}
+		
 		public System.Data.Linq.Table<ST_supply> ST_supplies
 		{
 			get
@@ -249,14 +268,6 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			get
 			{
 				return this.GetTable<ST_unit>();
-			}
-		}
-		
-		public System.Data.Linq.Table<ST_storehouses_detail> ST_storehouses_details
-		{
-			get
-			{
-				return this.GetTable<ST_storehouses_detail>();
 			}
 		}
 	}
@@ -2423,6 +2434,140 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_detail_employee_constructions")]
+	public partial class ST_detail_employee_construction : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _employee_construction_id;
+		
+		private string _employee_construction_id_custom;
+		
+		private long _employee_id;
+		
+		private long _construction_item_id;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onemployee_construction_idChanging(long value);
+    partial void Onemployee_construction_idChanged();
+    partial void Onemployee_construction_id_customChanging(string value);
+    partial void Onemployee_construction_id_customChanged();
+    partial void Onemployee_idChanging(long value);
+    partial void Onemployee_idChanged();
+    partial void Onconstruction_item_idChanging(long value);
+    partial void Onconstruction_item_idChanged();
+    #endregion
+		
+		public ST_detail_employee_construction()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_construction_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long employee_construction_id
+		{
+			get
+			{
+				return this._employee_construction_id;
+			}
+			set
+			{
+				if ((this._employee_construction_id != value))
+				{
+					this.Onemployee_construction_idChanging(value);
+					this.SendPropertyChanging();
+					this._employee_construction_id = value;
+					this.SendPropertyChanged("employee_construction_id");
+					this.Onemployee_construction_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_construction_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(47)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string employee_construction_id_custom
+		{
+			get
+			{
+				return this._employee_construction_id_custom;
+			}
+			set
+			{
+				if ((this._employee_construction_id_custom != value))
+				{
+					this.Onemployee_construction_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._employee_construction_id_custom = value;
+					this.SendPropertyChanged("employee_construction_id_custom");
+					this.Onemployee_construction_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_id", DbType="BigInt NOT NULL")]
+		public long employee_id
+		{
+			get
+			{
+				return this._employee_id;
+			}
+			set
+			{
+				if ((this._employee_id != value))
+				{
+					this.Onemployee_idChanging(value);
+					this.SendPropertyChanging();
+					this._employee_id = value;
+					this.SendPropertyChanged("employee_id");
+					this.Onemployee_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_id", DbType="BigInt NOT NULL")]
+		public long construction_item_id
+		{
+			get
+			{
+				return this._construction_item_id;
+			}
+			set
+			{
+				if ((this._construction_item_id != value))
+				{
+					this.Onconstruction_item_idChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_id = value;
+					this.SendPropertyChanged("construction_item_id");
+					this.Onconstruction_item_idChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_detail_enter_coupon_supplies")]
 	public partial class ST_detail_enter_coupon_supply : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3951,6 +4096,140 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_storehouses_detail")]
+	public partial class ST_storehouses_detail : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _storehouses_detail_id;
+		
+		private long _storehouse_id;
+		
+		private long _supplies_id;
+		
+		private System.Nullable<long> _storehouse_detail_quantity;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onstorehouses_detail_idChanging(long value);
+    partial void Onstorehouses_detail_idChanged();
+    partial void Onstorehouse_idChanging(long value);
+    partial void Onstorehouse_idChanged();
+    partial void Onsupplies_idChanging(long value);
+    partial void Onsupplies_idChanged();
+    partial void Onstorehouse_detail_quantityChanging(System.Nullable<long> value);
+    partial void Onstorehouse_detail_quantityChanged();
+    #endregion
+		
+		public ST_storehouses_detail()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_storehouses_detail_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long storehouses_detail_id
+		{
+			get
+			{
+				return this._storehouses_detail_id;
+			}
+			set
+			{
+				if ((this._storehouses_detail_id != value))
+				{
+					this.Onstorehouses_detail_idChanging(value);
+					this.SendPropertyChanging();
+					this._storehouses_detail_id = value;
+					this.SendPropertyChanged("storehouses_detail_id");
+					this.Onstorehouses_detail_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_storehouse_id", DbType="BigInt NOT NULL")]
+		public long storehouse_id
+		{
+			get
+			{
+				return this._storehouse_id;
+			}
+			set
+			{
+				if ((this._storehouse_id != value))
+				{
+					this.Onstorehouse_idChanging(value);
+					this.SendPropertyChanging();
+					this._storehouse_id = value;
+					this.SendPropertyChanged("storehouse_id");
+					this.Onstorehouse_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_supplies_id", DbType="BigInt NOT NULL")]
+		public long supplies_id
+		{
+			get
+			{
+				return this._supplies_id;
+			}
+			set
+			{
+				if ((this._supplies_id != value))
+				{
+					this.Onsupplies_idChanging(value);
+					this.SendPropertyChanging();
+					this._supplies_id = value;
+					this.SendPropertyChanged("supplies_id");
+					this.Onsupplies_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_storehouse_detail_quantity", DbType="BigInt")]
+		public System.Nullable<long> storehouse_detail_quantity
+		{
+			get
+			{
+				return this._storehouse_detail_quantity;
+			}
+			set
+			{
+				if ((this._storehouse_detail_quantity != value))
+				{
+					this.Onstorehouse_detail_quantityChanging(value);
+					this.SendPropertyChanging();
+					this._storehouse_detail_quantity = value;
+					this.SendPropertyChanged("storehouse_detail_quantity");
+					this.Onstorehouse_detail_quantityChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_supplies")]
 	public partial class ST_supply : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -4434,140 +4713,6 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._unit_name = value;
 					this.SendPropertyChanged("unit_name");
 					this.Onunit_nameChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_storehouses_detail")]
-	public partial class ST_storehouses_detail : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _storehouses_detail_id;
-		
-		private long _storehouse_id;
-		
-		private long _supplies_id;
-		
-		private System.Nullable<long> _storehouse_detail_quantity;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onstorehouses_detail_idChanging(long value);
-    partial void Onstorehouses_detail_idChanged();
-    partial void Onstorehouse_idChanging(long value);
-    partial void Onstorehouse_idChanged();
-    partial void Onsupplies_idChanging(long value);
-    partial void Onsupplies_idChanged();
-    partial void Onstorehouse_detail_quantityChanging(System.Nullable<long> value);
-    partial void Onstorehouse_detail_quantityChanged();
-    #endregion
-		
-		public ST_storehouses_detail()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_storehouses_detail_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long storehouses_detail_id
-		{
-			get
-			{
-				return this._storehouses_detail_id;
-			}
-			set
-			{
-				if ((this._storehouses_detail_id != value))
-				{
-					this.Onstorehouses_detail_idChanging(value);
-					this.SendPropertyChanging();
-					this._storehouses_detail_id = value;
-					this.SendPropertyChanged("storehouses_detail_id");
-					this.Onstorehouses_detail_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_storehouse_id", DbType="BigInt NOT NULL")]
-		public long storehouse_id
-		{
-			get
-			{
-				return this._storehouse_id;
-			}
-			set
-			{
-				if ((this._storehouse_id != value))
-				{
-					this.Onstorehouse_idChanging(value);
-					this.SendPropertyChanging();
-					this._storehouse_id = value;
-					this.SendPropertyChanged("storehouse_id");
-					this.Onstorehouse_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_supplies_id", DbType="BigInt NOT NULL")]
-		public long supplies_id
-		{
-			get
-			{
-				return this._supplies_id;
-			}
-			set
-			{
-				if ((this._supplies_id != value))
-				{
-					this.Onsupplies_idChanging(value);
-					this.SendPropertyChanging();
-					this._supplies_id = value;
-					this.SendPropertyChanged("supplies_id");
-					this.Onsupplies_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_storehouse_detail_quantity", DbType="BigInt")]
-		public System.Nullable<long> storehouse_detail_quantity
-		{
-			get
-			{
-				return this._storehouse_detail_quantity;
-			}
-			set
-			{
-				if ((this._storehouse_detail_quantity != value))
-				{
-					this.Onstorehouse_detail_quantityChanging(value);
-					this.SendPropertyChanging();
-					this._storehouse_detail_quantity = value;
-					this.SendPropertyChanged("storehouse_detail_quantity");
-					this.Onstorehouse_detail_quantityChanged();
 				}
 			}
 		}

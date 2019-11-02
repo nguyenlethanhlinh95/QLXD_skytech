@@ -74,6 +74,11 @@ namespace PhanMemQuanLyCongTrinh
         {
             Application.Exit( );
         }
+
+        private void frm_Login_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btn_Login;
+        }
        
     }
 }

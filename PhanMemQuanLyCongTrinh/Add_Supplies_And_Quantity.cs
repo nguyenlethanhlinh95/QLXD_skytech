@@ -5,7 +5,9 @@ using System.Text;
 
 namespace PhanMemQuanLyCongTrinh
 {
-    class test
+    public class Add_Supplies_And_Quantity
     {
+        public Int64 id ;
+        public Int64 quantity ;
     }
 }

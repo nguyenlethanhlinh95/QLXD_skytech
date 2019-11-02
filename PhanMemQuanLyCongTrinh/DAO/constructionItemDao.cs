@@ -52,5 +52,24 @@ namespace PhanMemQuanLyCongTrinh.DAO
             return customer;
         }
 
+        public IEnumerable<Object> getContructionItemForSearchWithGroup(Int64 contructionId)
+        {
+            db.Dispose( );
+            db = new DataClasses1DataContext( );
+            db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
+
+            var construction_item = from t1 in db.ST_construction_items
+                           where t1.construction_id == contructionId
+                           select new
+                           {
+                               t1.construction_item_id,
+                               t1.construction_item_custom,
+                               t1.construction_item_name,
+                                t1.construction_item_status
+                           };
+            return construction_item;
+        }
+
+
     }
 }

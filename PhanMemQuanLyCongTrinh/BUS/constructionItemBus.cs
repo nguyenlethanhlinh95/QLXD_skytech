@@ -28,5 +28,10 @@ namespace PhanMemQuanLyCongTrinh.BUS
         {
             return constructionItemDao.getContructionItemWithGroup(contructionId);
         }
+
+        public IEnumerable<Object> getContructionItemForSearchWithGroup(Int64 contructionId)
+        {
+            return constructionItemDao.getContructionItemForSearchWithGroup(contructionId);
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Main));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnCustomer = new DevExpress.XtraBars.BarButtonItem();
@@ -140,7 +141,7 @@
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -408,6 +409,7 @@
             this.btnEmployeeConstructions.LargeWidth = 100;
             this.btnEmployeeConstructions.Name = "btnEmployeeConstructions";
             this.btnEmployeeConstructions.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnEmployeeConstructions.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEmployeeConstructions_ItemClick);
             // 
             // barButtonItem20
             // 

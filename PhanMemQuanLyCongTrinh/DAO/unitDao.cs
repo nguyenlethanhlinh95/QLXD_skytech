@@ -12,6 +12,7 @@ namespace PhanMemQuanLyCongTrinh.DAO
 
         public IEnumerable<object> getAllUnits( )
         {
+            var dlg = new DevExpress.Utils.WaitDialogForm("Đang tải dữ liệu ...", "Thông báo");
             try
             {
                 db.Dispose( );
@@ -25,6 +26,10 @@ namespace PhanMemQuanLyCongTrinh.DAO
             catch ( Exception )
             {
                 return null;
+            }
+            finally
+            {
+                dlg.Close( );
             }
         }
 

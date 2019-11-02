@@ -523,7 +523,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "THÊM MỚI VẬT TƯ";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.frm_AddNewSupplies_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lue_Units.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Ton.Properties)).EndInit();

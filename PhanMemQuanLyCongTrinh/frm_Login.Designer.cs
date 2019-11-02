@@ -173,6 +173,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐĂNG NHẬP";
+            this.Load += new System.EventHandler(this.frm_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_PassWord.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_UserName.Properties)).EndInit();

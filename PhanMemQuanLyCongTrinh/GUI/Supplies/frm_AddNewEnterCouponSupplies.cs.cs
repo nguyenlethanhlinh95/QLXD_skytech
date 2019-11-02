@@ -8,12 +8,14 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using PhanMemQuanLyCongTrinh.BUS;
+using PhanMemQuanLyCongTrinh.DTO;
+
 
 namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_AddNewEnterCouponSupplies : DevExpress.XtraEditors.XtraForm
     {
-        
+        DataClasses1DataContext db = new DataClasses1DataContext();
         public frm_AddNewEnterCouponSupplies( )
         {
             InitializeComponent( );
@@ -22,11 +24,28 @@ namespace PhanMemQuanLyCongTrinh
         supliesBus _sup = new supliesBus();
         private Int64 idSupplies = 0;
 
- 
+        List<Add_Supplies_And_Quantity> listObject = new List<Add_Supplies_And_Quantity>( );
+        List<Int64> ListID = new List<Int64>();
+
         private void frm_AddNewEnterCouponSupplies_Load(object sender, EventArgs e)
         {
             LoadSearchLookUp();
+
+            repositoryItem_quantity.EditValueChanged += new EventHandler(repositoryItemComboBox1_EditValueChanged);
+
+            StyleDevxpressGridControl.styleGridControl(gridControl1, gridView1);
         }
+
+        private void repositoryItemComboBox1_EditValueChanged(object sender, EventArgs e)
+        {
+            //The Current selected value in the dropdownlist  
+            TextEdit t = sender as TextEdit;
+            string editvalue =  t.EditValue.ToString();
+            messeage.success(editvalue);
+
+        }
+  
+        
 
         #region Load
 
@@ -38,26 +57,132 @@ namespace PhanMemQuanLyCongTrinh
             slue_Supplies.Properties.ShowClearButton = false;
         }
 
+        
+
         #endregion End Load
 
         #region Event
         private void slue_Supplies_EditValueChanged(object sender, EventArgs e)
         {
-            idSupplies = Int64.Parse(slue_Supplies.EditValue.ToString( ));
+            try{
+                idSupplies = Int64.Parse(slue_Supplies.EditValue.ToString( ));
+                var totalRow = listObject.Count;
 
-            Int64[] idList;
+                if ( totalRow > 0 )
+                {
+                    // tim trong list co khong roi add vao
+                    bool check = false;
+                    foreach ( var item in listObject )
+                    {
+                        if ( item.id == idSupplies )
+                        {
+                            // update quantity len 1
+                            item.quantity += 1;
+                            check = true;
+                            break;
+                        }
+                    }
+
+                    if ( check == false )
+                    {
+                        Add_Supplies_And_Quantity item = new Add_Supplies_And_Quantity( );
+                        item.id = idSupplies;
+                        item.quantity = 1;
+
+                        listObject.Add(item);
 
 
-            //if ( idList )
+                        //ListID.Add(idSupplies);
+                    }
+
+                }
+                else
+                {
+                    // add vao
+                    Add_Supplies_And_Quantity item = new Add_Supplies_And_Quantity( );
+                    item.id = idSupplies;
+                    item.quantity = 1;
+
+                    listObject.Add(item);
+                    //ListID.Add(idSupplies);
+                }
+
+
+
+                // update GridView
+                var datasource = from sup in db.ST_supplies
+                                 join ven in db.ST_vendors on sup.vendor_id equals ven.vendor_id
+                                 join unit in db.ST_units on sup.unit_id equals unit.unit_id
+                                 join group_sup in db.ST_group_supplies on sup.group_supplies_id equals group_sup.group_supplies_id
+
+                                 select new
+                                 {
+                                     sup.supplies_id,
+                                     sup.supplies_id_custom,
+                                     sup.supplies_name,
+                                     unit.unit_name,
+                                     group_sup.group_supplies_name,
+                                     sup.supplies_wholesale_price,
+                                     sup.supplies_entry_price,
+
+                                 };
+                
+                
+                DataTable table = new DataTable();
+
+                table.Columns.Add("ID", typeof(string));
+                table.Columns.Add("ID_custom", typeof(string));
+                table.Columns.Add("supplies_name", typeof(string));
+                table.Columns.Add("supplies_unit", typeof(string));
+                table.Columns.Add("supplies_quantity", typeof(Int64));
+                table.Columns.Add("supplies_price", typeof(Decimal));
+                table.Columns.Add("supplies_wholesale_price", typeof(Decimal));
+                table.Columns.Add("total", typeof(Decimal));
+
+                var count = listObject.Count;
+                foreach ( var item in listObject )
+                {
+                    foreach ( var itemList in datasource )
+                    {
+                        if ( item.id == itemList.supplies_id )
+                        {
+                            DataRow newRow = table.NewRow();
+                            newRow["ID"] = itemList.supplies_id; // remove this line
+                            newRow["ID_custom"] = itemList.supplies_id_custom; // remove this line
+                            newRow["supplies_name"] = itemList.supplies_name;
+                            newRow["supplies_unit"] = itemList.unit_name;
+                            newRow["supplies_quantity"] = item.quantity;
+                            newRow["supplies_price"] = itemList.supplies_entry_price;
+                            newRow["supplies_wholesale_price"] = itemList.supplies_wholesale_price;
+                            newRow["total"] = item.quantity * itemList.supplies_entry_price;
+
+                            table.Rows.Add(newRow);
+
+                            break;
+                        }
+                    }
+                }
+                gridControl1.DataSource = table;
+            }
+            catch(Exception)
+            {
+                messeage.error("Có lỗi hãy kiểm tra lại !!");
+            }
             
-            //for ( int runs = 0; runs < 400; runs++ )
-            //{
-            //    termsList.Add(value);
-            //}
+        }
 
-
+        private void dongformSearch(object sender, EventArgs e)
+        {
+            LoadSearchLookUp( );
         }
         #endregion End Event
+
+        private void btn_AddNewSuppelies_Click(object sender, EventArgs e)
+        {
+            frm_AddNewSupplies frm = new frm_AddNewSupplies();
+            frm.FormClosed += new FormClosedEventHandler(dongformSearch);
+            frm.ShowDialog();
+        }
 
 
 

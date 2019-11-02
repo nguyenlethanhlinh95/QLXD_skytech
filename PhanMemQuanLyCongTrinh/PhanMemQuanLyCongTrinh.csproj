@@ -55,15 +55,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Add_Supplies_And_Quantity.cs" />
     <Compile Include="BUS\AccountingAccountGroupBus.cs" />
     <Compile Include="BUS\AcountingAcountBus.cs" />
     <Compile Include="BUS\buildingContractorBus.cs" />
+    <Compile Include="BUS\ChangeColorGridView.cs" />
     <Compile Include="BUS\constructionBus.cs" />
     <Compile Include="BUS\constructionItemBus.cs" />
     <Compile Include="BUS\customerBus.cs" />
     <Compile Include="BUS\customerGroupBus.cs" />
+    <Compile Include="BUS\detail_employee_constructionBus.cs" />
     <Compile Include="BUS\storehouseBus.cs" />
     <Compile Include="BUS\storehouseDetailBus.cs" />
+    <Compile Include="BUS\StyleDevxpressGridControl.cs" />
     <Compile Include="BUS\supliesBus.cs" />
     <Compile Include="DAO\AccountingAccountGroupDao.cs" />
     <Compile Include="DAO\AcountingAcountDaocs.cs" />
@@ -72,6 +76,7 @@
     <Compile Include="DAO\constructionItemDao.cs" />
     <Compile Include="DAO\customerDao.cs" />
     <Compile Include="DAO\customerGroupDao.cs" />
+    <Compile Include="DAO\detail_employee_constructionDao.cs" />
     <Compile Include="DAO\storehouseDao.cs" />
     <Compile Include="DAO\storehouseDetailDao.cs" />
     <Compile Include="DAO\supliesDao.cs" />
@@ -79,6 +84,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AddNewEmployeeContructItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AddNewEmployeeContructItems.Designer.cs">
+      <DependentUpon>frm_AddNewEmployeeContructItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Employees_Contruct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Employees_Contruct.Designer.cs">
+      <DependentUpon>frm_Employees_Contruct.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Supplies\Construction\frm_Constructions.cs">
       <SubType>Form</SubType>
@@ -212,10 +229,10 @@
     <Compile Include="GUI\QuanLyHeThong\Deparment\frm_NewDepartment.Designer.cs">
       <DependentUpon>frm_NewDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\Employees\frm_Login.cs">
+    <Compile Include="frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\QuanLyHeThong\Employees\frm_Login.Designer.cs">
+    <Compile Include="frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\QuanLyHeThong\Employees\frm_ChangePassword.cs">
@@ -332,6 +349,12 @@
     <None Include="DTO\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="frm_AddNewEmployeeContructItems.resx">
+      <DependentUpon>frm_AddNewEmployeeContructItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Employees_Contruct.resx">
+      <DependentUpon>frm_Employees_Contruct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Supplies\Construction\frm_Constructions.resx">
       <DependentUpon>frm_Constructions.cs</DependentUpon>
     </EmbeddedResource>
@@ -386,7 +409,7 @@
     <EmbeddedResource Include="GUI\QuanLyHeThong\Deparment\frm_NewDepartment.resx">
       <DependentUpon>frm_NewDepartment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\QuanLyHeThong\Employees\frm_Login.resx">
+    <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanLyHeThong\Employees\frm_ChangePassword.resx">

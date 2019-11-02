@@ -286,6 +286,21 @@ namespace PhanMemQuanLyCongTrinh
             }
         }
 
+        private void btnEmployeeConstructions_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_Employees_Contruct));
+            if ( frm == null )
+            {
+                frm_Employees_Contruct forms = new frm_Employees_Contruct( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
         
         
     }
