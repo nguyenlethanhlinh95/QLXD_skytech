@@ -195,6 +195,7 @@
             toolTipTitleItem2.Text = "Chĩnh Sửa Nhóm Khách Hàng";
             superToolTip2.Items.Add(toolTipTitleItem2);
             this.btn_EditCustomerGroup.SuperTip = superToolTip2;
+            this.btn_EditCustomerGroup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_EditCustomerGroup_ItemClick);
             // 
             // btn_DeleteCustomerGroup
             // 
@@ -485,6 +486,7 @@
             toolTipTitleItem4.Text = "Ctrl + N";
             superToolTip4.Items.Add(toolTipTitleItem4);
             this.btn_Add.SuperTip = superToolTip4;
+            this.btn_Add.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Add_ItemClick);
             // 
             // barStaticItem4
             // 
@@ -511,6 +513,7 @@
             toolTipTitleItem5.Text = "Ctrl + E";
             superToolTip5.Items.Add(toolTipTitleItem5);
             this.btn_Edit.SuperTip = superToolTip5;
+            this.btn_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Edit_ItemClick);
             // 
             // barStaticItem2
             // 
@@ -537,6 +540,7 @@
             toolTipTitleItem6.Text = "Ctrl + Delete\r\n";
             superToolTip6.Items.Add(toolTipTitleItem6);
             this.btn_Delete.SuperTip = superToolTip6;
+            this.btn_Delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Delete_ItemClick);
             // 
             // barStaticItem5
             // 
@@ -563,6 +567,7 @@
             toolTipTitleItem7.Text = "Ctrl + F5\r\n";
             superToolTip7.Items.Add(toolTipTitleItem7);
             this.btn_Refesh.SuperTip = superToolTip7;
+            this.btn_Refesh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Refesh_ItemClick);
             // 
             // barStaticItem6
             // 
@@ -667,6 +672,7 @@
             toolTipTitleItem11.Text = "Esc";
             superToolTip11.Items.Add(toolTipTitleItem11);
             this.btn_Close.SuperTip = superToolTip11;
+            this.btn_Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Close_ItemClick);
             // 
             // bar8
             // 
@@ -776,6 +782,7 @@
             this.grdv_ConstructionItem.OptionsView.ShowGroupPanel = false;
             this.grdv_ConstructionItem.RowHeight = 30;
             this.grdv_ConstructionItem.ViewCaptionHeight = 0;
+            this.grdv_ConstructionItem.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdv_ConstructionItem_FocusedRowChanged);
             // 
             // construction_item_id
             // 

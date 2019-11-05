@@ -13,12 +13,21 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_NewConstructions : DevExpress.XtraEditors.XtraForm
     {
+        BUS.constructionBus constructionBus = new BUS.constructionBus();
+        BUS.customerBus customerBus = new BUS.customerBus();
         public frm_NewConstructions()
         {
             InitializeComponent();
         }
        
         OpenFileDialog open;
+
+        public void loadCustomer()
+        {
+            lke_Customer.Properties.DisplayMember = "customer_name";
+            lke_Customer.Properties.ValueMember = "customer_id";
+            lke_Customer.Properties.DataSource = customerBus.getAllCustomer();      
+        }
 
         private void btn_OpenFile_Click(object sender, EventArgs e)
         {
@@ -109,7 +118,7 @@ namespace PhanMemQuanLyCongTrinh
         }
 
 
-        private void insertConstruction()
+        private bool insertConstruction()
         {
            
 
@@ -119,25 +128,36 @@ namespace PhanMemQuanLyCongTrinh
             newConstruction.construction_addresss = txt_Address.Text;
             newConstruction.construction_contract_number = txt_ContractNumber.Text;
             newConstruction.construction_total_price = Convert.ToDecimal(txt_Price.Text);
-            newConstruction.construction_file_name = txt_file.Text;
-            newConstruction.construction_file = getFile();
+            string filepath = txt_file.Text;
+            string filename = Path.GetFileName(filepath);
+            FileStream fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            byte[] bytes = br.ReadBytes((Int32)fs.Length);
+            br.Close();
+            fs.Close();
+
+
+            newConstruction.construction_file_name = filename;
+
+            newConstruction.construction_file = bytes;
             if (date_Start.Text != "")
             {
                 DateTime dateStart = Convert.ToDateTime(date_Start.Text);
                 dateStart.ToString("yy/MM/dd");
                 newConstruction.construction_date_start = dateStart;
             }
+
             if (date_End.Text != "")
             {
                 DateTime dateEnd = Convert.ToDateTime(date_End.Text);
                 dateEnd.ToString("yy/MM/dd");
-                newConstruction.construction_date_start = dateEnd;
+                newConstruction.construction_date_end = dateEnd;
             }
             if (date_Guarantee.Text != "")
             {
                 DateTime dateGuarantee = Convert.ToDateTime(date_Guarantee.Text);
                 dateGuarantee.ToString("yy/MM/dd");
-                newConstruction.construction_date_start = dateGuarantee;
+                newConstruction.construction_date_guarantee = dateGuarantee;
             }
 
              if (pic_Logo.Image != null)
@@ -146,23 +166,12 @@ namespace PhanMemQuanLyCongTrinh
                 System.Data.Linq.Binary fileBinary = new System.Data.Linq.Binary(fileByte);
                 newConstruction.construction_image = fileBinary;
             }
-
-
-            //bool boolInsertCustomer = customerBus.insertCustomer(newCustomer);
-            //if (boolInsertCustomer == true)
-            //{
-            //    messeage.success("Thêm Mới Thành Công!");
-
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    messeage.error("Không Thể Thêm Mới!");
-
-            //}   
+             newConstruction.construction_status = 0;
+             newConstruction.employee_created = frm_Main.Vitual_id;
 
 
 
+            return constructionBus.insertContstruction(newConstruction);
 
         }
 
@@ -172,6 +181,16 @@ namespace PhanMemQuanLyCongTrinh
             string checkNull1 = checkNull();
             if (checkNull1 == "true")
             {
+                bool boolInsertConstruction = insertConstruction();
+                if (boolInsertConstruction == true)
+                {
+                    messeage.success("Thêm Mới Thành Công!");
+                    this.Close();
+                }
+                else
+                {
+                    messeage.error("Không Thể Thêm Mới!");
+                }
 
             }
             else
@@ -179,7 +198,64 @@ namespace PhanMemQuanLyCongTrinh
                 messeage.error(checkNull1);
             }
         }
-        
+
+        private void btn_AddCustomer_Click(object sender, EventArgs e)
+        {
+            frm_NewCustomer frm = new frm_NewCustomer();
+            frm.FormClosed += new FormClosedEventHandler(dongform);
+            frm.customerId = 0;
+            frm.ShowDialog();
+        }
+        private void dongform(object sender, EventArgs e)
+        {
+            loadCustomer();
+        }
+
+        private void frm_NewConstructions_Load(object sender, EventArgs e)
+        {
+            loadCustomer();
+        }
+
+        private void btn_Img_Click(object sender, EventArgs e)
+        {
+            string filename;
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true, Multiselect = false })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    filename = ofd.FileName;
+                    pic_Logo.Image = Image.FromFile(filename);
+                }
+            }
+        }
+
+        private void but_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_Update_Click_1(object sender, EventArgs e)
+        {
+            string check = checkNull();
+            if (check == "true")
+            {
+
+                bool boolInsertVendor = insertConstruction();
+                if (boolInsertVendor == true)
+                {
+                    messeage.success("Thêm Mới Thành Công!");
+                    this.Close();
+                }
+                else
+                {
+                    messeage.error("Không Thể Thêm Mới!");
+                }
+            }
+            else
+            {
+                messeage.error(check);
+            }
+        }
        
     }
 }

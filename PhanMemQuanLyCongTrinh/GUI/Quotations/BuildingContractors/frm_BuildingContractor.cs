@@ -94,7 +94,7 @@ namespace PhanMemQuanLyCongTrinh
             frm_NewBuildingContractor frm = new frm_NewBuildingContractor();
             frm.FormClosed += new FormClosedEventHandler(dongform);
             frm.buildingContractorId = 0;
-            frm.Show();
+            frm.ShowDialog();
             
         }
 
@@ -111,7 +111,7 @@ namespace PhanMemQuanLyCongTrinh
                 frm_NewBuildingContractor frm = new frm_NewBuildingContractor();
                 frm.FormClosed += new FormClosedEventHandler(dongform);
                 frm.buildingContractorId = Convert.ToInt64(grdv_BuidingContractor.GetRowCellValue(index, "building_contractor_id").ToString());
-                frm.Show();
+                frm.ShowDialog();
             }
             else
             {

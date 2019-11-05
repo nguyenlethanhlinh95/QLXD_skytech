@@ -30,12 +30,15 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertST_building_contractor(ST_building_contractor instance);
-    partial void UpdateST_building_contractor(ST_building_contractor instance);
-    partial void DeleteST_building_contractor(ST_building_contractor instance);
+    partial void InsertST_advance_table(ST_advance_table instance);
+    partial void UpdateST_advance_table(ST_advance_table instance);
+    partial void DeleteST_advance_table(ST_advance_table instance);
     partial void InsertST_vendor(ST_vendor instance);
     partial void UpdateST_vendor(ST_vendor instance);
     partial void DeleteST_vendor(ST_vendor instance);
+    partial void InsertST_building_contractor(ST_building_contractor instance);
+    partial void UpdateST_building_contractor(ST_building_contractor instance);
+    partial void DeleteST_building_contractor(ST_building_contractor instance);
     partial void InsertST_construction_item(ST_construction_item instance);
     partial void UpdateST_construction_item(ST_construction_item instance);
     partial void DeleteST_construction_item(ST_construction_item instance);
@@ -60,6 +63,12 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void InsertST_detail_income_and_expenditure_pattern(ST_detail_income_and_expenditure_pattern instance);
     partial void UpdateST_detail_income_and_expenditure_pattern(ST_detail_income_and_expenditure_pattern instance);
     partial void DeleteST_detail_income_and_expenditure_pattern(ST_detail_income_and_expenditure_pattern instance);
+    partial void InsertST_detail_out_coupon_supply(ST_detail_out_coupon_supply instance);
+    partial void UpdateST_detail_out_coupon_supply(ST_detail_out_coupon_supply instance);
+    partial void DeleteST_detail_out_coupon_supply(ST_detail_out_coupon_supply instance);
+    partial void InsertST_detail_pulic_debt(ST_detail_pulic_debt instance);
+    partial void UpdateST_detail_pulic_debt(ST_detail_pulic_debt instance);
+    partial void DeleteST_detail_pulic_debt(ST_detail_pulic_debt instance);
     partial void InsertST_employee(ST_employee instance);
     partial void UpdateST_employee(ST_employee instance);
     partial void DeleteST_employee(ST_employee instance);
@@ -72,9 +81,27 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void InsertST_income_and_expenditure_pattern(ST_income_and_expenditure_pattern instance);
     partial void UpdateST_income_and_expenditure_pattern(ST_income_and_expenditure_pattern instance);
     partial void DeleteST_income_and_expenditure_pattern(ST_income_and_expenditure_pattern instance);
+    partial void InsertST_income_coupon(ST_income_coupon instance);
+    partial void UpdateST_income_coupon(ST_income_coupon instance);
+    partial void DeleteST_income_coupon(ST_income_coupon instance);
+    partial void InsertST_out_coupon_supply(ST_out_coupon_supply instance);
+    partial void UpdateST_out_coupon_supply(ST_out_coupon_supply instance);
+    partial void DeleteST_out_coupon_supply(ST_out_coupon_supply instance);
+    partial void InsertST_payment_slip(ST_payment_slip instance);
+    partial void UpdateST_payment_slip(ST_payment_slip instance);
+    partial void DeleteST_payment_slip(ST_payment_slip instance);
+    partial void InsertST_payroll_employee_construction(ST_payroll_employee_construction instance);
+    partial void UpdateST_payroll_employee_construction(ST_payroll_employee_construction instance);
+    partial void DeleteST_payroll_employee_construction(ST_payroll_employee_construction instance);
     partial void InsertST_permission(ST_permission instance);
     partial void UpdateST_permission(ST_permission instance);
     partial void DeleteST_permission(ST_permission instance);
+    partial void InsertST_progress_construction_item(ST_progress_construction_item instance);
+    partial void UpdateST_progress_construction_item(ST_progress_construction_item instance);
+    partial void DeleteST_progress_construction_item(ST_progress_construction_item instance);
+    partial void InsertST_pulic_debt(ST_pulic_debt instance);
+    partial void UpdateST_pulic_debt(ST_pulic_debt instance);
+    partial void DeleteST_pulic_debt(ST_pulic_debt instance);
     partial void InsertST_storehouse(ST_storehouse instance);
     partial void UpdateST_storehouse(ST_storehouse instance);
     partial void DeleteST_storehouse(ST_storehouse instance);
@@ -84,6 +111,9 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void InsertST_supply(ST_supply instance);
     partial void UpdateST_supply(ST_supply instance);
     partial void DeleteST_supply(ST_supply instance);
+    partial void InsertST_timesheet(ST_timesheet instance);
+    partial void UpdateST_timesheet(ST_timesheet instance);
+    partial void DeleteST_timesheet(ST_timesheet instance);
     partial void InsertST_unit(ST_unit instance);
     partial void UpdateST_unit(ST_unit instance);
     partial void DeleteST_unit(ST_unit instance);
@@ -119,11 +149,11 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<ST_building_contractor> ST_building_contractors
+		public System.Data.Linq.Table<ST_advance_table> ST_advance_tables
 		{
 			get
 			{
-				return this.GetTable<ST_building_contractor>();
+				return this.GetTable<ST_advance_table>();
 			}
 		}
 		
@@ -132,6 +162,14 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			get
 			{
 				return this.GetTable<ST_vendor>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ST_building_contractor> ST_building_contractors
+		{
+			get
+			{
+				return this.GetTable<ST_building_contractor>();
 			}
 		}
 		
@@ -199,6 +237,22 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
+		public System.Data.Linq.Table<ST_detail_out_coupon_supply> ST_detail_out_coupon_supplies
+		{
+			get
+			{
+				return this.GetTable<ST_detail_out_coupon_supply>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ST_detail_pulic_debt> ST_detail_pulic_debts
+		{
+			get
+			{
+				return this.GetTable<ST_detail_pulic_debt>();
+			}
+		}
+		
 		public System.Data.Linq.Table<ST_employee> ST_employees
 		{
 			get
@@ -231,11 +285,59 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
+		public System.Data.Linq.Table<ST_income_coupon> ST_income_coupons
+		{
+			get
+			{
+				return this.GetTable<ST_income_coupon>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ST_out_coupon_supply> ST_out_coupon_supplies
+		{
+			get
+			{
+				return this.GetTable<ST_out_coupon_supply>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ST_payment_slip> ST_payment_slips
+		{
+			get
+			{
+				return this.GetTable<ST_payment_slip>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ST_payroll_employee_construction> ST_payroll_employee_constructions
+		{
+			get
+			{
+				return this.GetTable<ST_payroll_employee_construction>();
+			}
+		}
+		
 		public System.Data.Linq.Table<ST_permission> ST_permissions
 		{
 			get
 			{
 				return this.GetTable<ST_permission>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ST_progress_construction_item> ST_progress_construction_items
+		{
+			get
+			{
+				return this.GetTable<ST_progress_construction_item>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ST_pulic_debt> ST_pulic_debts
+		{
+			get
+			{
+				return this.GetTable<ST_pulic_debt>();
 			}
 		}
 		
@@ -263,11 +365,527 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
+		public System.Data.Linq.Table<ST_timesheet> ST_timesheets
+		{
+			get
+			{
+				return this.GetTable<ST_timesheet>();
+			}
+		}
+		
 		public System.Data.Linq.Table<ST_unit> ST_units
 		{
 			get
 			{
 				return this.GetTable<ST_unit>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_advance_tables")]
+	public partial class ST_advance_table : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _advance_table_id;
+		
+		private string _advance_table_id_custom;
+		
+		private string _advance_table_name;
+		
+		private string _advance_table_description;
+		
+		private System.Nullable<System.DateTime> _advance_table_created_date;
+		
+		private long _employee_id;
+		
+		private System.Nullable<bool> _advance_table_status;
+		
+		private long _employee_created;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onadvance_table_idChanging(long value);
+    partial void Onadvance_table_idChanged();
+    partial void Onadvance_table_id_customChanging(string value);
+    partial void Onadvance_table_id_customChanged();
+    partial void Onadvance_table_nameChanging(string value);
+    partial void Onadvance_table_nameChanged();
+    partial void Onadvance_table_descriptionChanging(string value);
+    partial void Onadvance_table_descriptionChanged();
+    partial void Onadvance_table_created_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Onadvance_table_created_dateChanged();
+    partial void Onemployee_idChanging(long value);
+    partial void Onemployee_idChanged();
+    partial void Onadvance_table_statusChanging(System.Nullable<bool> value);
+    partial void Onadvance_table_statusChanged();
+    partial void Onemployee_createdChanging(long value);
+    partial void Onemployee_createdChanged();
+    #endregion
+		
+		public ST_advance_table()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_advance_table_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long advance_table_id
+		{
+			get
+			{
+				return this._advance_table_id;
+			}
+			set
+			{
+				if ((this._advance_table_id != value))
+				{
+					this.Onadvance_table_idChanging(value);
+					this.SendPropertyChanging();
+					this._advance_table_id = value;
+					this.SendPropertyChanged("advance_table_id");
+					this.Onadvance_table_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_advance_table_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(33)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string advance_table_id_custom
+		{
+			get
+			{
+				return this._advance_table_id_custom;
+			}
+			set
+			{
+				if ((this._advance_table_id_custom != value))
+				{
+					this.Onadvance_table_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._advance_table_id_custom = value;
+					this.SendPropertyChanged("advance_table_id_custom");
+					this.Onadvance_table_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_advance_table_name", DbType="NVarChar(255)")]
+		public string advance_table_name
+		{
+			get
+			{
+				return this._advance_table_name;
+			}
+			set
+			{
+				if ((this._advance_table_name != value))
+				{
+					this.Onadvance_table_nameChanging(value);
+					this.SendPropertyChanging();
+					this._advance_table_name = value;
+					this.SendPropertyChanged("advance_table_name");
+					this.Onadvance_table_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_advance_table_description", DbType="NVarChar(255)")]
+		public string advance_table_description
+		{
+			get
+			{
+				return this._advance_table_description;
+			}
+			set
+			{
+				if ((this._advance_table_description != value))
+				{
+					this.Onadvance_table_descriptionChanging(value);
+					this.SendPropertyChanging();
+					this._advance_table_description = value;
+					this.SendPropertyChanged("advance_table_description");
+					this.Onadvance_table_descriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_advance_table_created_date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> advance_table_created_date
+		{
+			get
+			{
+				return this._advance_table_created_date;
+			}
+			set
+			{
+				if ((this._advance_table_created_date != value))
+				{
+					this.Onadvance_table_created_dateChanging(value);
+					this.SendPropertyChanging();
+					this._advance_table_created_date = value;
+					this.SendPropertyChanged("advance_table_created_date");
+					this.Onadvance_table_created_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_id", DbType="BigInt NOT NULL")]
+		public long employee_id
+		{
+			get
+			{
+				return this._employee_id;
+			}
+			set
+			{
+				if ((this._employee_id != value))
+				{
+					this.Onemployee_idChanging(value);
+					this.SendPropertyChanging();
+					this._employee_id = value;
+					this.SendPropertyChanged("employee_id");
+					this.Onemployee_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_advance_table_status", DbType="Bit")]
+		public System.Nullable<bool> advance_table_status
+		{
+			get
+			{
+				return this._advance_table_status;
+			}
+			set
+			{
+				if ((this._advance_table_status != value))
+				{
+					this.Onadvance_table_statusChanging(value);
+					this.SendPropertyChanging();
+					this._advance_table_status = value;
+					this.SendPropertyChanged("advance_table_status");
+					this.Onadvance_table_statusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_created", DbType="BigInt NOT NULL")]
+		public long employee_created
+		{
+			get
+			{
+				return this._employee_created;
+			}
+			set
+			{
+				if ((this._employee_created != value))
+				{
+					this.Onemployee_createdChanging(value);
+					this.SendPropertyChanging();
+					this._employee_created = value;
+					this.SendPropertyChanged("employee_created");
+					this.Onemployee_createdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_vendors")]
+	public partial class ST_vendor : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _vendor_id;
+		
+		private string _vendor_id_custom;
+		
+		private string _vendor_name;
+		
+		private string _vendor_address;
+		
+		private string _vendor_phone;
+		
+		private string _vendor_bank_account_number;
+		
+		private System.Data.Linq.Binary _vendor_image;
+		
+		private System.Nullable<bool> _vendor_status;
+		
+		private System.Nullable<System.DateTime> _vendor_created_date;
+		
+		private System.Nullable<long> _employee_created;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onvendor_idChanging(long value);
+    partial void Onvendor_idChanged();
+    partial void Onvendor_id_customChanging(string value);
+    partial void Onvendor_id_customChanged();
+    partial void Onvendor_nameChanging(string value);
+    partial void Onvendor_nameChanged();
+    partial void Onvendor_addressChanging(string value);
+    partial void Onvendor_addressChanged();
+    partial void Onvendor_phoneChanging(string value);
+    partial void Onvendor_phoneChanged();
+    partial void Onvendor_bank_account_numberChanging(string value);
+    partial void Onvendor_bank_account_numberChanged();
+    partial void Onvendor_imageChanging(System.Data.Linq.Binary value);
+    partial void Onvendor_imageChanged();
+    partial void Onvendor_statusChanging(System.Nullable<bool> value);
+    partial void Onvendor_statusChanged();
+    partial void Onvendor_created_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Onvendor_created_dateChanged();
+    partial void Onemployee_createdChanging(System.Nullable<long> value);
+    partial void Onemployee_createdChanged();
+    #endregion
+		
+		public ST_vendor()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long vendor_id
+		{
+			get
+			{
+				return this._vendor_id;
+			}
+			set
+			{
+				if ((this._vendor_id != value))
+				{
+					this.Onvendor_idChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_id = value;
+					this.SendPropertyChanged("vendor_id");
+					this.Onvendor_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(34)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string vendor_id_custom
+		{
+			get
+			{
+				return this._vendor_id_custom;
+			}
+			set
+			{
+				if ((this._vendor_id_custom != value))
+				{
+					this.Onvendor_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_id_custom = value;
+					this.SendPropertyChanged("vendor_id_custom");
+					this.Onvendor_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_name", DbType="NVarChar(255)")]
+		public string vendor_name
+		{
+			get
+			{
+				return this._vendor_name;
+			}
+			set
+			{
+				if ((this._vendor_name != value))
+				{
+					this.Onvendor_nameChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_name = value;
+					this.SendPropertyChanged("vendor_name");
+					this.Onvendor_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_address", DbType="NVarChar(255)")]
+		public string vendor_address
+		{
+			get
+			{
+				return this._vendor_address;
+			}
+			set
+			{
+				if ((this._vendor_address != value))
+				{
+					this.Onvendor_addressChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_address = value;
+					this.SendPropertyChanged("vendor_address");
+					this.Onvendor_addressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_phone", DbType="VarChar(30)")]
+		public string vendor_phone
+		{
+			get
+			{
+				return this._vendor_phone;
+			}
+			set
+			{
+				if ((this._vendor_phone != value))
+				{
+					this.Onvendor_phoneChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_phone = value;
+					this.SendPropertyChanged("vendor_phone");
+					this.Onvendor_phoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_bank_account_number", DbType="VarChar(30)")]
+		public string vendor_bank_account_number
+		{
+			get
+			{
+				return this._vendor_bank_account_number;
+			}
+			set
+			{
+				if ((this._vendor_bank_account_number != value))
+				{
+					this.Onvendor_bank_account_numberChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_bank_account_number = value;
+					this.SendPropertyChanged("vendor_bank_account_number");
+					this.Onvendor_bank_account_numberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary vendor_image
+		{
+			get
+			{
+				return this._vendor_image;
+			}
+			set
+			{
+				if ((this._vendor_image != value))
+				{
+					this.Onvendor_imageChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_image = value;
+					this.SendPropertyChanged("vendor_image");
+					this.Onvendor_imageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_status", DbType="Bit")]
+		public System.Nullable<bool> vendor_status
+		{
+			get
+			{
+				return this._vendor_status;
+			}
+			set
+			{
+				if ((this._vendor_status != value))
+				{
+					this.Onvendor_statusChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_status = value;
+					this.SendPropertyChanged("vendor_status");
+					this.Onvendor_statusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_created_date", DbType="Date")]
+		public System.Nullable<System.DateTime> vendor_created_date
+		{
+			get
+			{
+				return this._vendor_created_date;
+			}
+			set
+			{
+				if ((this._vendor_created_date != value))
+				{
+					this.Onvendor_created_dateChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_created_date = value;
+					this.SendPropertyChanged("vendor_created_date");
+					this.Onvendor_created_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_created", DbType="BigInt")]
+		public System.Nullable<long> employee_created
+		{
+			get
+			{
+				return this._employee_created;
+			}
+			set
+			{
+				if ((this._employee_created != value))
+				{
+					this.Onemployee_createdChanging(value);
+					this.SendPropertyChanging();
+					this._employee_created = value;
+					this.SendPropertyChanged("employee_created");
+					this.Onemployee_createdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -670,284 +1288,6 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_vendors")]
-	public partial class ST_vendor : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private long _vendor_id;
-		
-		private string _vendor_id_custom;
-		
-		private string _vendor_name;
-		
-		private string _vendor_address;
-		
-		private string _vendor_phone;
-		
-		private string _vendor_bank_account_number;
-		
-		private System.Data.Linq.Binary _vendor_image;
-		
-		private System.Nullable<bool> _vendor_status;
-		
-		private System.Nullable<System.DateTime> _vendor_created_date;
-		
-		private System.Nullable<long> _employee_created;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onvendor_idChanging(long value);
-    partial void Onvendor_idChanged();
-    partial void Onvendor_id_customChanging(string value);
-    partial void Onvendor_id_customChanged();
-    partial void Onvendor_nameChanging(string value);
-    partial void Onvendor_nameChanged();
-    partial void Onvendor_addressChanging(string value);
-    partial void Onvendor_addressChanged();
-    partial void Onvendor_phoneChanging(string value);
-    partial void Onvendor_phoneChanged();
-    partial void Onvendor_bank_account_numberChanging(string value);
-    partial void Onvendor_bank_account_numberChanged();
-    partial void Onvendor_imageChanging(System.Data.Linq.Binary value);
-    partial void Onvendor_imageChanged();
-    partial void Onvendor_statusChanging(System.Nullable<bool> value);
-    partial void Onvendor_statusChanged();
-    partial void Onvendor_created_dateChanging(System.Nullable<System.DateTime> value);
-    partial void Onvendor_created_dateChanged();
-    partial void Onemployee_createdChanging(System.Nullable<long> value);
-    partial void Onemployee_createdChanged();
-    #endregion
-		
-		public ST_vendor()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public long vendor_id
-		{
-			get
-			{
-				return this._vendor_id;
-			}
-			set
-			{
-				if ((this._vendor_id != value))
-				{
-					this.Onvendor_idChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_id = value;
-					this.SendPropertyChanged("vendor_id");
-					this.Onvendor_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(34)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
-		public string vendor_id_custom
-		{
-			get
-			{
-				return this._vendor_id_custom;
-			}
-			set
-			{
-				if ((this._vendor_id_custom != value))
-				{
-					this.Onvendor_id_customChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_id_custom = value;
-					this.SendPropertyChanged("vendor_id_custom");
-					this.Onvendor_id_customChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_name", DbType="NVarChar(255)")]
-		public string vendor_name
-		{
-			get
-			{
-				return this._vendor_name;
-			}
-			set
-			{
-				if ((this._vendor_name != value))
-				{
-					this.Onvendor_nameChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_name = value;
-					this.SendPropertyChanged("vendor_name");
-					this.Onvendor_nameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_address", DbType="NVarChar(255)")]
-		public string vendor_address
-		{
-			get
-			{
-				return this._vendor_address;
-			}
-			set
-			{
-				if ((this._vendor_address != value))
-				{
-					this.Onvendor_addressChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_address = value;
-					this.SendPropertyChanged("vendor_address");
-					this.Onvendor_addressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_phone", DbType="VarChar(30)")]
-		public string vendor_phone
-		{
-			get
-			{
-				return this._vendor_phone;
-			}
-			set
-			{
-				if ((this._vendor_phone != value))
-				{
-					this.Onvendor_phoneChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_phone = value;
-					this.SendPropertyChanged("vendor_phone");
-					this.Onvendor_phoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_bank_account_number", DbType="VarChar(30)")]
-		public string vendor_bank_account_number
-		{
-			get
-			{
-				return this._vendor_bank_account_number;
-			}
-			set
-			{
-				if ((this._vendor_bank_account_number != value))
-				{
-					this.Onvendor_bank_account_numberChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_bank_account_number = value;
-					this.SendPropertyChanged("vendor_bank_account_number");
-					this.Onvendor_bank_account_numberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary vendor_image
-		{
-			get
-			{
-				return this._vendor_image;
-			}
-			set
-			{
-				if ((this._vendor_image != value))
-				{
-					this.Onvendor_imageChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_image = value;
-					this.SendPropertyChanged("vendor_image");
-					this.Onvendor_imageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_status", DbType="Bit")]
-		public System.Nullable<bool> vendor_status
-		{
-			get
-			{
-				return this._vendor_status;
-			}
-			set
-			{
-				if ((this._vendor_status != value))
-				{
-					this.Onvendor_statusChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_status = value;
-					this.SendPropertyChanged("vendor_status");
-					this.Onvendor_statusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_created_date", DbType="Date")]
-		public System.Nullable<System.DateTime> vendor_created_date
-		{
-			get
-			{
-				return this._vendor_created_date;
-			}
-			set
-			{
-				if ((this._vendor_created_date != value))
-				{
-					this.Onvendor_created_dateChanging(value);
-					this.SendPropertyChanging();
-					this._vendor_created_date = value;
-					this.SendPropertyChanged("vendor_created_date");
-					this.Onvendor_created_dateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_created", DbType="BigInt")]
-		public System.Nullable<long> employee_created
-		{
-			get
-			{
-				return this._employee_created;
-			}
-			set
-			{
-				if ((this._employee_created != value))
-				{
-					this.Onemployee_createdChanging(value);
-					this.SendPropertyChanging();
-					this._employee_created = value;
-					this.SendPropertyChanged("employee_created");
-					this.Onemployee_createdChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_construction_items")]
 	public partial class ST_construction_item : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -960,6 +1300,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		
 		private string _construction_item_name;
 		
+		private string _construction_contract_number;
+		
 		private long _construction_id;
 		
 		private long _building_contractor_id;
@@ -967,6 +1309,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		private System.Nullable<decimal> _construction_item_total_price;
 		
 		private System.Data.Linq.Binary _construction_item_image;
+		
+		private string _construction_item_file_name;
 		
 		private System.Data.Linq.Binary _construction_item_file;
 		
@@ -990,6 +1334,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void Onconstruction_item_customChanged();
     partial void Onconstruction_item_nameChanging(string value);
     partial void Onconstruction_item_nameChanged();
+    partial void Onconstruction_contract_numberChanging(string value);
+    partial void Onconstruction_contract_numberChanged();
     partial void Onconstruction_idChanging(long value);
     partial void Onconstruction_idChanged();
     partial void Onbuilding_contractor_idChanging(long value);
@@ -998,6 +1344,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void Onconstruction_item_total_priceChanged();
     partial void Onconstruction_item_imageChanging(System.Data.Linq.Binary value);
     partial void Onconstruction_item_imageChanged();
+    partial void Onconstruction_item_file_nameChanging(string value);
+    partial void Onconstruction_item_file_nameChanged();
     partial void Onconstruction_item_fileChanging(System.Data.Linq.Binary value);
     partial void Onconstruction_item_fileChanged();
     partial void Onconstruction_item_date_startChanging(System.Nullable<System.DateTime> value);
@@ -1073,6 +1421,26 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._construction_item_name = value;
 					this.SendPropertyChanged("construction_item_name");
 					this.Onconstruction_item_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_contract_number", DbType="NVarChar(255)")]
+		public string construction_contract_number
+		{
+			get
+			{
+				return this._construction_contract_number;
+			}
+			set
+			{
+				if ((this._construction_contract_number != value))
+				{
+					this.Onconstruction_contract_numberChanging(value);
+					this.SendPropertyChanging();
+					this._construction_contract_number = value;
+					this.SendPropertyChanged("construction_contract_number");
+					this.Onconstruction_contract_numberChanged();
 				}
 			}
 		}
@@ -1153,6 +1521,26 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._construction_item_image = value;
 					this.SendPropertyChanged("construction_item_image");
 					this.Onconstruction_item_imageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_file_name", DbType="NVarChar(255)")]
+		public string construction_item_file_name
+		{
+			get
+			{
+				return this._construction_item_file_name;
+			}
+			set
+			{
+				if ((this._construction_item_file_name != value))
+				{
+					this.Onconstruction_item_file_nameChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_file_name = value;
+					this.SendPropertyChanged("construction_item_file_name");
+					this.Onconstruction_item_file_nameChanged();
 				}
 			}
 		}
@@ -1312,17 +1700,19 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		
 		private string _construction_addresss;
 		
-		private long _customer_id;
-		
 		private string _construction_contract_number;
 		
-		private System.Nullable<decimal> _construction_total_price;
+		private System.Data.Linq.Binary _construction_image;
+		
+		private long _customer_id;
+		
+		private string _construction_phone;
 		
 		private string _construction_file_name;
 		
-		private System.Data.Linq.Binary _construction_file;
+		private System.Nullable<decimal> _construction_total_price;
 		
-		private System.Data.Linq.Binary _construction_image;
+		private System.Data.Linq.Binary _construction_file;
 		
 		private System.Nullable<System.DateTime> _construction_date_start;
 		
@@ -1346,18 +1736,20 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void Onconstruction_nameChanged();
     partial void Onconstruction_addresssChanging(string value);
     partial void Onconstruction_addresssChanged();
-    partial void Oncustomer_idChanging(long value);
-    partial void Oncustomer_idChanged();
     partial void Onconstruction_contract_numberChanging(string value);
     partial void Onconstruction_contract_numberChanged();
-    partial void Onconstruction_total_priceChanging(System.Nullable<decimal> value);
-    partial void Onconstruction_total_priceChanged();
-    partial void Onconstruction_file_nameChanging(string value);
-    partial void Onconstruction_file_nameChanged();
-    partial void Onconstruction_fileChanging(System.Data.Linq.Binary value);
-    partial void Onconstruction_fileChanged();
     partial void Onconstruction_imageChanging(System.Data.Linq.Binary value);
     partial void Onconstruction_imageChanged();
+    partial void Oncustomer_idChanging(long value);
+    partial void Oncustomer_idChanged();
+    partial void Onconstruction_phoneChanging(string value);
+    partial void Onconstruction_phoneChanged();
+    partial void Onconstruction_file_nameChanging(string value);
+    partial void Onconstruction_file_nameChanged();
+    partial void Onconstruction_total_priceChanging(System.Nullable<decimal> value);
+    partial void Onconstruction_total_priceChanged();
+    partial void Onconstruction_fileChanging(System.Data.Linq.Binary value);
+    partial void Onconstruction_fileChanged();
     partial void Onconstruction_date_startChanging(System.Nullable<System.DateTime> value);
     partial void Onconstruction_date_startChanged();
     partial void Onconstruction_date_endChanging(System.Nullable<System.DateTime> value);
@@ -1455,6 +1847,46 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_contract_number", DbType="NVarChar(255)")]
+		public string construction_contract_number
+		{
+			get
+			{
+				return this._construction_contract_number;
+			}
+			set
+			{
+				if ((this._construction_contract_number != value))
+				{
+					this.Onconstruction_contract_numberChanging(value);
+					this.SendPropertyChanging();
+					this._construction_contract_number = value;
+					this.SendPropertyChanged("construction_contract_number");
+					this.Onconstruction_contract_numberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary construction_image
+		{
+			get
+			{
+				return this._construction_image;
+			}
+			set
+			{
+				if ((this._construction_image != value))
+				{
+					this.Onconstruction_imageChanging(value);
+					this.SendPropertyChanging();
+					this._construction_image = value;
+					this.SendPropertyChanged("construction_image");
+					this.Onconstruction_imageChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_id", DbType="BigInt NOT NULL")]
 		public long customer_id
 		{
@@ -1475,22 +1907,42 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_contract_number", DbType="NVarChar(255)")]
-		public string construction_contract_number
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_phone", DbType="NVarChar(30)")]
+		public string construction_phone
 		{
 			get
 			{
-				return this._construction_contract_number;
+				return this._construction_phone;
 			}
 			set
 			{
-				if ((this._construction_contract_number != value))
+				if ((this._construction_phone != value))
 				{
-					this.Onconstruction_contract_numberChanging(value);
+					this.Onconstruction_phoneChanging(value);
 					this.SendPropertyChanging();
-					this._construction_contract_number = value;
-					this.SendPropertyChanged("construction_contract_number");
-					this.Onconstruction_contract_numberChanged();
+					this._construction_phone = value;
+					this.SendPropertyChanged("construction_phone");
+					this.Onconstruction_phoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_file_name", DbType="NVarChar(255)")]
+		public string construction_file_name
+		{
+			get
+			{
+				return this._construction_file_name;
+			}
+			set
+			{
+				if ((this._construction_file_name != value))
+				{
+					this.Onconstruction_file_nameChanging(value);
+					this.SendPropertyChanging();
+					this._construction_file_name = value;
+					this.SendPropertyChanged("construction_file_name");
+					this.Onconstruction_file_nameChanged();
 				}
 			}
 		}
@@ -1515,26 +1967,6 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_file_name", DbType="NVarChar(100)")]
-		public string construction_file_name
-		{
-			get
-			{
-				return this._construction_file_name;
-			}
-			set
-			{
-				if ((this._construction_file_name != value))
-				{
-					this.Onconstruction_file_nameChanging(value);
-					this.SendPropertyChanging();
-					this._construction_file_name = value;
-					this.SendPropertyChanged("construction_file_name");
-					this.Onconstruction_file_nameChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_file", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary construction_file
 		{
@@ -1551,26 +1983,6 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._construction_file = value;
 					this.SendPropertyChanged("construction_file");
 					this.Onconstruction_fileChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary construction_image
-		{
-			get
-			{
-				return this._construction_image;
-			}
-			set
-			{
-				if ((this._construction_image != value))
-				{
-					this.Onconstruction_imageChanging(value);
-					this.SendPropertyChanging();
-					this._construction_image = value;
-					this.SendPropertyChanged("construction_image");
-					this.Onconstruction_imageChanged();
 				}
 			}
 		}
@@ -2584,7 +2996,7 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		
 		private System.Nullable<int> _detail_enter_coupon_supplies_quatity;
 		
-		private string _detail_enter_coupon_supplies_description;
+		private System.Nullable<decimal> _detail_enter_coupon_supplies_total;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2600,8 +3012,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void Onsupplies_idChanged();
     partial void Ondetail_enter_coupon_supplies_quatityChanging(System.Nullable<int> value);
     partial void Ondetail_enter_coupon_supplies_quatityChanged();
-    partial void Ondetail_enter_coupon_supplies_descriptionChanging(string value);
-    partial void Ondetail_enter_coupon_supplies_descriptionChanged();
+    partial void Ondetail_enter_coupon_supplies_totalChanging(System.Nullable<decimal> value);
+    partial void Ondetail_enter_coupon_supplies_totalChanged();
     #endregion
 		
 		public ST_detail_enter_coupon_supply()
@@ -2709,22 +3121,22 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_enter_coupon_supplies_description", DbType="NVarChar(255)")]
-		public string detail_enter_coupon_supplies_description
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_enter_coupon_supplies_total", DbType="Money")]
+		public System.Nullable<decimal> detail_enter_coupon_supplies_total
 		{
 			get
 			{
-				return this._detail_enter_coupon_supplies_description;
+				return this._detail_enter_coupon_supplies_total;
 			}
 			set
 			{
-				if ((this._detail_enter_coupon_supplies_description != value))
+				if ((this._detail_enter_coupon_supplies_total != value))
 				{
-					this.Ondetail_enter_coupon_supplies_descriptionChanging(value);
+					this.Ondetail_enter_coupon_supplies_totalChanging(value);
 					this.SendPropertyChanging();
-					this._detail_enter_coupon_supplies_description = value;
-					this.SendPropertyChanged("detail_enter_coupon_supplies_description");
-					this.Ondetail_enter_coupon_supplies_descriptionChanged();
+					this._detail_enter_coupon_supplies_total = value;
+					this.SendPropertyChanged("detail_enter_coupon_supplies_total");
+					this.Ondetail_enter_coupon_supplies_totalChanged();
 				}
 			}
 		}
@@ -2859,6 +3271,346 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._detail_income_and_expenditure_pattern_description = value;
 					this.SendPropertyChanged("detail_income_and_expenditure_pattern_description");
 					this.Ondetail_income_and_expenditure_pattern_descriptionChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_detail_out_coupon_supplies")]
+	public partial class ST_detail_out_coupon_supply : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _detail_out_coupon_supplies_id;
+		
+		private string _detail_out_coupon_supplies_id_custom;
+		
+		private long _out_coupon_supplies_id;
+		
+		private long _supplies_id;
+		
+		private System.Nullable<int> _detail_out_coupon_supplies_quantity;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Ondetail_out_coupon_supplies_idChanging(long value);
+    partial void Ondetail_out_coupon_supplies_idChanged();
+    partial void Ondetail_out_coupon_supplies_id_customChanging(string value);
+    partial void Ondetail_out_coupon_supplies_id_customChanged();
+    partial void Onout_coupon_supplies_idChanging(long value);
+    partial void Onout_coupon_supplies_idChanged();
+    partial void Onsupplies_idChanging(long value);
+    partial void Onsupplies_idChanged();
+    partial void Ondetail_out_coupon_supplies_quantityChanging(System.Nullable<int> value);
+    partial void Ondetail_out_coupon_supplies_quantityChanged();
+    #endregion
+		
+		public ST_detail_out_coupon_supply()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_out_coupon_supplies_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long detail_out_coupon_supplies_id
+		{
+			get
+			{
+				return this._detail_out_coupon_supplies_id;
+			}
+			set
+			{
+				if ((this._detail_out_coupon_supplies_id != value))
+				{
+					this.Ondetail_out_coupon_supplies_idChanging(value);
+					this.SendPropertyChanging();
+					this._detail_out_coupon_supplies_id = value;
+					this.SendPropertyChanged("detail_out_coupon_supplies_id");
+					this.Ondetail_out_coupon_supplies_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_out_coupon_supplies_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(47)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string detail_out_coupon_supplies_id_custom
+		{
+			get
+			{
+				return this._detail_out_coupon_supplies_id_custom;
+			}
+			set
+			{
+				if ((this._detail_out_coupon_supplies_id_custom != value))
+				{
+					this.Ondetail_out_coupon_supplies_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._detail_out_coupon_supplies_id_custom = value;
+					this.SendPropertyChanged("detail_out_coupon_supplies_id_custom");
+					this.Ondetail_out_coupon_supplies_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_out_coupon_supplies_id", DbType="BigInt NOT NULL")]
+		public long out_coupon_supplies_id
+		{
+			get
+			{
+				return this._out_coupon_supplies_id;
+			}
+			set
+			{
+				if ((this._out_coupon_supplies_id != value))
+				{
+					this.Onout_coupon_supplies_idChanging(value);
+					this.SendPropertyChanging();
+					this._out_coupon_supplies_id = value;
+					this.SendPropertyChanged("out_coupon_supplies_id");
+					this.Onout_coupon_supplies_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_supplies_id", DbType="BigInt NOT NULL")]
+		public long supplies_id
+		{
+			get
+			{
+				return this._supplies_id;
+			}
+			set
+			{
+				if ((this._supplies_id != value))
+				{
+					this.Onsupplies_idChanging(value);
+					this.SendPropertyChanging();
+					this._supplies_id = value;
+					this.SendPropertyChanged("supplies_id");
+					this.Onsupplies_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_out_coupon_supplies_quantity", DbType="Int")]
+		public System.Nullable<int> detail_out_coupon_supplies_quantity
+		{
+			get
+			{
+				return this._detail_out_coupon_supplies_quantity;
+			}
+			set
+			{
+				if ((this._detail_out_coupon_supplies_quantity != value))
+				{
+					this.Ondetail_out_coupon_supplies_quantityChanging(value);
+					this.SendPropertyChanging();
+					this._detail_out_coupon_supplies_quantity = value;
+					this.SendPropertyChanged("detail_out_coupon_supplies_quantity");
+					this.Ondetail_out_coupon_supplies_quantityChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_detail_pulic_debt")]
+	public partial class ST_detail_pulic_debt : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _detail_pulic_debt_id;
+		
+		private string _detail_pulic_debt_id_custom;
+		
+		private long _pulic_debt_id;
+		
+		private System.Nullable<long> _payment_slip_id;
+		
+		private System.Nullable<long> _income_coupon_id;
+		
+		private System.Nullable<decimal> _detail_pulic_debt_total;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Ondetail_pulic_debt_idChanging(long value);
+    partial void Ondetail_pulic_debt_idChanged();
+    partial void Ondetail_pulic_debt_id_customChanging(string value);
+    partial void Ondetail_pulic_debt_id_customChanged();
+    partial void Onpulic_debt_idChanging(long value);
+    partial void Onpulic_debt_idChanged();
+    partial void Onpayment_slip_idChanging(System.Nullable<long> value);
+    partial void Onpayment_slip_idChanged();
+    partial void Onincome_coupon_idChanging(System.Nullable<long> value);
+    partial void Onincome_coupon_idChanged();
+    partial void Ondetail_pulic_debt_totalChanging(System.Nullable<decimal> value);
+    partial void Ondetail_pulic_debt_totalChanged();
+    #endregion
+		
+		public ST_detail_pulic_debt()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_pulic_debt_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long detail_pulic_debt_id
+		{
+			get
+			{
+				return this._detail_pulic_debt_id;
+			}
+			set
+			{
+				if ((this._detail_pulic_debt_id != value))
+				{
+					this.Ondetail_pulic_debt_idChanging(value);
+					this.SendPropertyChanging();
+					this._detail_pulic_debt_id = value;
+					this.SendPropertyChanged("detail_pulic_debt_id");
+					this.Ondetail_pulic_debt_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_pulic_debt_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(35)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string detail_pulic_debt_id_custom
+		{
+			get
+			{
+				return this._detail_pulic_debt_id_custom;
+			}
+			set
+			{
+				if ((this._detail_pulic_debt_id_custom != value))
+				{
+					this.Ondetail_pulic_debt_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._detail_pulic_debt_id_custom = value;
+					this.SendPropertyChanged("detail_pulic_debt_id_custom");
+					this.Ondetail_pulic_debt_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pulic_debt_id", DbType="BigInt NOT NULL")]
+		public long pulic_debt_id
+		{
+			get
+			{
+				return this._pulic_debt_id;
+			}
+			set
+			{
+				if ((this._pulic_debt_id != value))
+				{
+					this.Onpulic_debt_idChanging(value);
+					this.SendPropertyChanging();
+					this._pulic_debt_id = value;
+					this.SendPropertyChanged("pulic_debt_id");
+					this.Onpulic_debt_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payment_slip_id", DbType="BigInt")]
+		public System.Nullable<long> payment_slip_id
+		{
+			get
+			{
+				return this._payment_slip_id;
+			}
+			set
+			{
+				if ((this._payment_slip_id != value))
+				{
+					this.Onpayment_slip_idChanging(value);
+					this.SendPropertyChanging();
+					this._payment_slip_id = value;
+					this.SendPropertyChanged("payment_slip_id");
+					this.Onpayment_slip_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_income_coupon_id", DbType="BigInt")]
+		public System.Nullable<long> income_coupon_id
+		{
+			get
+			{
+				return this._income_coupon_id;
+			}
+			set
+			{
+				if ((this._income_coupon_id != value))
+				{
+					this.Onincome_coupon_idChanging(value);
+					this.SendPropertyChanging();
+					this._income_coupon_id = value;
+					this.SendPropertyChanged("income_coupon_id");
+					this.Onincome_coupon_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_pulic_debt_total", DbType="Money")]
+		public System.Nullable<decimal> detail_pulic_debt_total
+		{
+			get
+			{
+				return this._detail_pulic_debt_total;
+			}
+			set
+			{
+				if ((this._detail_pulic_debt_total != value))
+				{
+					this.Ondetail_pulic_debt_totalChanging(value);
+					this.SendPropertyChanging();
+					this._detail_pulic_debt_total = value;
+					this.SendPropertyChanged("detail_pulic_debt_total");
+					this.Ondetail_pulic_debt_totalChanged();
 				}
 			}
 		}
@@ -3340,6 +4092,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		
 		private string _enter_coupon_supplies_id_custom;
 		
+		private long _vendor_id;
+		
 		private long _storehouse_id;
 		
 		private string _enter_coupon_supplies_number;
@@ -3348,11 +4102,11 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		
 		private string _enter_coupon_supplies_description;
 		
-		private string _enter_coupon_supplies_deliver;
-		
 		private System.Nullable<int> _enter_coupon_supplies_total_percent_discount;
 		
 		private System.Nullable<decimal> _enter_coupon_supplies_total_price;
+		
+		private string _enter_coupon_supplies_document;
 		
 		private long _employee_created;
 		
@@ -3364,6 +4118,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void Onenter_coupon_supplies_idChanged();
     partial void Onenter_coupon_supplies_id_customChanging(string value);
     partial void Onenter_coupon_supplies_id_customChanged();
+    partial void Onvendor_idChanging(long value);
+    partial void Onvendor_idChanged();
     partial void Onstorehouse_idChanging(long value);
     partial void Onstorehouse_idChanged();
     partial void Onenter_coupon_supplies_numberChanging(string value);
@@ -3372,12 +4128,12 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void Onenter_coupon_supplies_created_dateChanged();
     partial void Onenter_coupon_supplies_descriptionChanging(string value);
     partial void Onenter_coupon_supplies_descriptionChanged();
-    partial void Onenter_coupon_supplies_deliverChanging(string value);
-    partial void Onenter_coupon_supplies_deliverChanged();
     partial void Onenter_coupon_supplies_total_percent_discountChanging(System.Nullable<int> value);
     partial void Onenter_coupon_supplies_total_percent_discountChanged();
     partial void Onenter_coupon_supplies_total_priceChanging(System.Nullable<decimal> value);
     partial void Onenter_coupon_supplies_total_priceChanged();
+    partial void Onenter_coupon_supplies_documentChanging(string value);
+    partial void Onenter_coupon_supplies_documentChanged();
     partial void Onemployee_createdChanging(long value);
     partial void Onemployee_createdChanged();
     #endregion
@@ -3423,6 +4179,26 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._enter_coupon_supplies_id_custom = value;
 					this.SendPropertyChanged("enter_coupon_supplies_id_custom");
 					this.Onenter_coupon_supplies_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_id", DbType="BigInt NOT NULL")]
+		public long vendor_id
+		{
+			get
+			{
+				return this._vendor_id;
+			}
+			set
+			{
+				if ((this._vendor_id != value))
+				{
+					this.Onvendor_idChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_id = value;
+					this.SendPropertyChanged("vendor_id");
+					this.Onvendor_idChanged();
 				}
 			}
 		}
@@ -3507,26 +4283,6 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enter_coupon_supplies_deliver", DbType="NVarChar(200)")]
-		public string enter_coupon_supplies_deliver
-		{
-			get
-			{
-				return this._enter_coupon_supplies_deliver;
-			}
-			set
-			{
-				if ((this._enter_coupon_supplies_deliver != value))
-				{
-					this.Onenter_coupon_supplies_deliverChanging(value);
-					this.SendPropertyChanging();
-					this._enter_coupon_supplies_deliver = value;
-					this.SendPropertyChanged("enter_coupon_supplies_deliver");
-					this.Onenter_coupon_supplies_deliverChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enter_coupon_supplies_total_percent_discount", DbType="Int")]
 		public System.Nullable<int> enter_coupon_supplies_total_percent_discount
 		{
@@ -3563,6 +4319,26 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._enter_coupon_supplies_total_price = value;
 					this.SendPropertyChanged("enter_coupon_supplies_total_price");
 					this.Onenter_coupon_supplies_total_priceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enter_coupon_supplies_document", DbType="NVarChar(255)")]
+		public string enter_coupon_supplies_document
+		{
+			get
+			{
+				return this._enter_coupon_supplies_document;
+			}
+			set
+			{
+				if ((this._enter_coupon_supplies_document != value))
+				{
+					this.Onenter_coupon_supplies_documentChanging(value);
+					this.SendPropertyChanging();
+					this._enter_coupon_supplies_document = value;
+					this.SendPropertyChanged("enter_coupon_supplies_document");
+					this.Onenter_coupon_supplies_documentChanged();
 				}
 			}
 		}
@@ -3828,6 +4604,1262 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_income_coupons")]
+	public partial class ST_income_coupon : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _income_coupon_id;
+		
+		private string _income_coupon_id_custom;
+		
+		private System.Nullable<long> _construction_id;
+		
+		private long _detail_income_and_expenditure_pattern_id;
+		
+		private System.Nullable<long> _customer_id;
+		
+		private string _income_coupon_address;
+		
+		private string _income_coupon_description;
+		
+		private string _income_coupon_document;
+		
+		private System.Nullable<System.DateTime> _income_coupon_created_date;
+		
+		private System.Nullable<decimal> _income_coupon_total_price;
+		
+		private long _employee_id_created;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onincome_coupon_idChanging(long value);
+    partial void Onincome_coupon_idChanged();
+    partial void Onincome_coupon_id_customChanging(string value);
+    partial void Onincome_coupon_id_customChanged();
+    partial void Onconstruction_idChanging(System.Nullable<long> value);
+    partial void Onconstruction_idChanged();
+    partial void Ondetail_income_and_expenditure_pattern_idChanging(long value);
+    partial void Ondetail_income_and_expenditure_pattern_idChanged();
+    partial void Oncustomer_idChanging(System.Nullable<long> value);
+    partial void Oncustomer_idChanged();
+    partial void Onincome_coupon_addressChanging(string value);
+    partial void Onincome_coupon_addressChanged();
+    partial void Onincome_coupon_descriptionChanging(string value);
+    partial void Onincome_coupon_descriptionChanged();
+    partial void Onincome_coupon_documentChanging(string value);
+    partial void Onincome_coupon_documentChanged();
+    partial void Onincome_coupon_created_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Onincome_coupon_created_dateChanged();
+    partial void Onincome_coupon_total_priceChanging(System.Nullable<decimal> value);
+    partial void Onincome_coupon_total_priceChanged();
+    partial void Onemployee_id_createdChanging(long value);
+    partial void Onemployee_id_createdChanged();
+    #endregion
+		
+		public ST_income_coupon()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_income_coupon_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long income_coupon_id
+		{
+			get
+			{
+				return this._income_coupon_id;
+			}
+			set
+			{
+				if ((this._income_coupon_id != value))
+				{
+					this.Onincome_coupon_idChanging(value);
+					this.SendPropertyChanging();
+					this._income_coupon_id = value;
+					this.SendPropertyChanged("income_coupon_id");
+					this.Onincome_coupon_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_income_coupon_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(33)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string income_coupon_id_custom
+		{
+			get
+			{
+				return this._income_coupon_id_custom;
+			}
+			set
+			{
+				if ((this._income_coupon_id_custom != value))
+				{
+					this.Onincome_coupon_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._income_coupon_id_custom = value;
+					this.SendPropertyChanged("income_coupon_id_custom");
+					this.Onincome_coupon_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_id", DbType="BigInt")]
+		public System.Nullable<long> construction_id
+		{
+			get
+			{
+				return this._construction_id;
+			}
+			set
+			{
+				if ((this._construction_id != value))
+				{
+					this.Onconstruction_idChanging(value);
+					this.SendPropertyChanging();
+					this._construction_id = value;
+					this.SendPropertyChanged("construction_id");
+					this.Onconstruction_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_income_and_expenditure_pattern_id", DbType="BigInt NOT NULL")]
+		public long detail_income_and_expenditure_pattern_id
+		{
+			get
+			{
+				return this._detail_income_and_expenditure_pattern_id;
+			}
+			set
+			{
+				if ((this._detail_income_and_expenditure_pattern_id != value))
+				{
+					this.Ondetail_income_and_expenditure_pattern_idChanging(value);
+					this.SendPropertyChanging();
+					this._detail_income_and_expenditure_pattern_id = value;
+					this.SendPropertyChanged("detail_income_and_expenditure_pattern_id");
+					this.Ondetail_income_and_expenditure_pattern_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_id", DbType="BigInt")]
+		public System.Nullable<long> customer_id
+		{
+			get
+			{
+				return this._customer_id;
+			}
+			set
+			{
+				if ((this._customer_id != value))
+				{
+					this.Oncustomer_idChanging(value);
+					this.SendPropertyChanging();
+					this._customer_id = value;
+					this.SendPropertyChanged("customer_id");
+					this.Oncustomer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_income_coupon_address", DbType="NVarChar(255)")]
+		public string income_coupon_address
+		{
+			get
+			{
+				return this._income_coupon_address;
+			}
+			set
+			{
+				if ((this._income_coupon_address != value))
+				{
+					this.Onincome_coupon_addressChanging(value);
+					this.SendPropertyChanging();
+					this._income_coupon_address = value;
+					this.SendPropertyChanged("income_coupon_address");
+					this.Onincome_coupon_addressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_income_coupon_description", DbType="NVarChar(255)")]
+		public string income_coupon_description
+		{
+			get
+			{
+				return this._income_coupon_description;
+			}
+			set
+			{
+				if ((this._income_coupon_description != value))
+				{
+					this.Onincome_coupon_descriptionChanging(value);
+					this.SendPropertyChanging();
+					this._income_coupon_description = value;
+					this.SendPropertyChanged("income_coupon_description");
+					this.Onincome_coupon_descriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_income_coupon_document", DbType="NVarChar(255)")]
+		public string income_coupon_document
+		{
+			get
+			{
+				return this._income_coupon_document;
+			}
+			set
+			{
+				if ((this._income_coupon_document != value))
+				{
+					this.Onincome_coupon_documentChanging(value);
+					this.SendPropertyChanging();
+					this._income_coupon_document = value;
+					this.SendPropertyChanged("income_coupon_document");
+					this.Onincome_coupon_documentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_income_coupon_created_date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> income_coupon_created_date
+		{
+			get
+			{
+				return this._income_coupon_created_date;
+			}
+			set
+			{
+				if ((this._income_coupon_created_date != value))
+				{
+					this.Onincome_coupon_created_dateChanging(value);
+					this.SendPropertyChanging();
+					this._income_coupon_created_date = value;
+					this.SendPropertyChanged("income_coupon_created_date");
+					this.Onincome_coupon_created_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_income_coupon_total_price", DbType="Money")]
+		public System.Nullable<decimal> income_coupon_total_price
+		{
+			get
+			{
+				return this._income_coupon_total_price;
+			}
+			set
+			{
+				if ((this._income_coupon_total_price != value))
+				{
+					this.Onincome_coupon_total_priceChanging(value);
+					this.SendPropertyChanging();
+					this._income_coupon_total_price = value;
+					this.SendPropertyChanged("income_coupon_total_price");
+					this.Onincome_coupon_total_priceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_id_created", DbType="BigInt NOT NULL")]
+		public long employee_id_created
+		{
+			get
+			{
+				return this._employee_id_created;
+			}
+			set
+			{
+				if ((this._employee_id_created != value))
+				{
+					this.Onemployee_id_createdChanging(value);
+					this.SendPropertyChanging();
+					this._employee_id_created = value;
+					this.SendPropertyChanged("employee_id_created");
+					this.Onemployee_id_createdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_out_coupon_supplies")]
+	public partial class ST_out_coupon_supply : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _out_coupon_supplies_id;
+		
+		private string _out_coupon_supplies_id_custom;
+		
+		private System.Nullable<long> _employee_id;
+		
+		private System.Nullable<long> _construction_id;
+		
+		private System.Nullable<long> _customer_id;
+		
+		private long _storehouse_id;
+		
+		private System.Nullable<System.DateTime> _out_coupon_supplies_created_date;
+		
+		private string _out_coupon_supplies_number;
+		
+		private string _out_coupon_supplies_description;
+		
+		private System.Nullable<int> _out_coupon_supplies_total_percent_discount;
+		
+		private System.Nullable<decimal> _out_coupon_supplies_total_price;
+		
+		private long _employee_id_created;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onout_coupon_supplies_idChanging(long value);
+    partial void Onout_coupon_supplies_idChanged();
+    partial void Onout_coupon_supplies_id_customChanging(string value);
+    partial void Onout_coupon_supplies_id_customChanged();
+    partial void Onemployee_idChanging(System.Nullable<long> value);
+    partial void Onemployee_idChanged();
+    partial void Onconstruction_idChanging(System.Nullable<long> value);
+    partial void Onconstruction_idChanged();
+    partial void Oncustomer_idChanging(System.Nullable<long> value);
+    partial void Oncustomer_idChanged();
+    partial void Onstorehouse_idChanging(long value);
+    partial void Onstorehouse_idChanged();
+    partial void Onout_coupon_supplies_created_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Onout_coupon_supplies_created_dateChanged();
+    partial void Onout_coupon_supplies_numberChanging(string value);
+    partial void Onout_coupon_supplies_numberChanged();
+    partial void Onout_coupon_supplies_descriptionChanging(string value);
+    partial void Onout_coupon_supplies_descriptionChanged();
+    partial void Onout_coupon_supplies_total_percent_discountChanging(System.Nullable<int> value);
+    partial void Onout_coupon_supplies_total_percent_discountChanged();
+    partial void Onout_coupon_supplies_total_priceChanging(System.Nullable<decimal> value);
+    partial void Onout_coupon_supplies_total_priceChanged();
+    partial void Onemployee_id_createdChanging(long value);
+    partial void Onemployee_id_createdChanged();
+    #endregion
+		
+		public ST_out_coupon_supply()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_out_coupon_supplies_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long out_coupon_supplies_id
+		{
+			get
+			{
+				return this._out_coupon_supplies_id;
+			}
+			set
+			{
+				if ((this._out_coupon_supplies_id != value))
+				{
+					this.Onout_coupon_supplies_idChanging(value);
+					this.SendPropertyChanging();
+					this._out_coupon_supplies_id = value;
+					this.SendPropertyChanged("out_coupon_supplies_id");
+					this.Onout_coupon_supplies_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_out_coupon_supplies_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(45)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string out_coupon_supplies_id_custom
+		{
+			get
+			{
+				return this._out_coupon_supplies_id_custom;
+			}
+			set
+			{
+				if ((this._out_coupon_supplies_id_custom != value))
+				{
+					this.Onout_coupon_supplies_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._out_coupon_supplies_id_custom = value;
+					this.SendPropertyChanged("out_coupon_supplies_id_custom");
+					this.Onout_coupon_supplies_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_id", DbType="BigInt")]
+		public System.Nullable<long> employee_id
+		{
+			get
+			{
+				return this._employee_id;
+			}
+			set
+			{
+				if ((this._employee_id != value))
+				{
+					this.Onemployee_idChanging(value);
+					this.SendPropertyChanging();
+					this._employee_id = value;
+					this.SendPropertyChanged("employee_id");
+					this.Onemployee_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_id", DbType="BigInt")]
+		public System.Nullable<long> construction_id
+		{
+			get
+			{
+				return this._construction_id;
+			}
+			set
+			{
+				if ((this._construction_id != value))
+				{
+					this.Onconstruction_idChanging(value);
+					this.SendPropertyChanging();
+					this._construction_id = value;
+					this.SendPropertyChanged("construction_id");
+					this.Onconstruction_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_id", DbType="BigInt")]
+		public System.Nullable<long> customer_id
+		{
+			get
+			{
+				return this._customer_id;
+			}
+			set
+			{
+				if ((this._customer_id != value))
+				{
+					this.Oncustomer_idChanging(value);
+					this.SendPropertyChanging();
+					this._customer_id = value;
+					this.SendPropertyChanged("customer_id");
+					this.Oncustomer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_storehouse_id", DbType="BigInt NOT NULL")]
+		public long storehouse_id
+		{
+			get
+			{
+				return this._storehouse_id;
+			}
+			set
+			{
+				if ((this._storehouse_id != value))
+				{
+					this.Onstorehouse_idChanging(value);
+					this.SendPropertyChanging();
+					this._storehouse_id = value;
+					this.SendPropertyChanged("storehouse_id");
+					this.Onstorehouse_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_out_coupon_supplies_created_date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> out_coupon_supplies_created_date
+		{
+			get
+			{
+				return this._out_coupon_supplies_created_date;
+			}
+			set
+			{
+				if ((this._out_coupon_supplies_created_date != value))
+				{
+					this.Onout_coupon_supplies_created_dateChanging(value);
+					this.SendPropertyChanging();
+					this._out_coupon_supplies_created_date = value;
+					this.SendPropertyChanged("out_coupon_supplies_created_date");
+					this.Onout_coupon_supplies_created_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_out_coupon_supplies_number", DbType="NVarChar(200)")]
+		public string out_coupon_supplies_number
+		{
+			get
+			{
+				return this._out_coupon_supplies_number;
+			}
+			set
+			{
+				if ((this._out_coupon_supplies_number != value))
+				{
+					this.Onout_coupon_supplies_numberChanging(value);
+					this.SendPropertyChanging();
+					this._out_coupon_supplies_number = value;
+					this.SendPropertyChanged("out_coupon_supplies_number");
+					this.Onout_coupon_supplies_numberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_out_coupon_supplies_description", DbType="NVarChar(255)")]
+		public string out_coupon_supplies_description
+		{
+			get
+			{
+				return this._out_coupon_supplies_description;
+			}
+			set
+			{
+				if ((this._out_coupon_supplies_description != value))
+				{
+					this.Onout_coupon_supplies_descriptionChanging(value);
+					this.SendPropertyChanging();
+					this._out_coupon_supplies_description = value;
+					this.SendPropertyChanged("out_coupon_supplies_description");
+					this.Onout_coupon_supplies_descriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_out_coupon_supplies_total_percent_discount", DbType="Int")]
+		public System.Nullable<int> out_coupon_supplies_total_percent_discount
+		{
+			get
+			{
+				return this._out_coupon_supplies_total_percent_discount;
+			}
+			set
+			{
+				if ((this._out_coupon_supplies_total_percent_discount != value))
+				{
+					this.Onout_coupon_supplies_total_percent_discountChanging(value);
+					this.SendPropertyChanging();
+					this._out_coupon_supplies_total_percent_discount = value;
+					this.SendPropertyChanged("out_coupon_supplies_total_percent_discount");
+					this.Onout_coupon_supplies_total_percent_discountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_out_coupon_supplies_total_price", DbType="Money")]
+		public System.Nullable<decimal> out_coupon_supplies_total_price
+		{
+			get
+			{
+				return this._out_coupon_supplies_total_price;
+			}
+			set
+			{
+				if ((this._out_coupon_supplies_total_price != value))
+				{
+					this.Onout_coupon_supplies_total_priceChanging(value);
+					this.SendPropertyChanging();
+					this._out_coupon_supplies_total_price = value;
+					this.SendPropertyChanged("out_coupon_supplies_total_price");
+					this.Onout_coupon_supplies_total_priceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_id_created", DbType="BigInt NOT NULL")]
+		public long employee_id_created
+		{
+			get
+			{
+				return this._employee_id_created;
+			}
+			set
+			{
+				if ((this._employee_id_created != value))
+				{
+					this.Onemployee_id_createdChanging(value);
+					this.SendPropertyChanging();
+					this._employee_id_created = value;
+					this.SendPropertyChanged("employee_id_created");
+					this.Onemployee_id_createdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_payment_slips")]
+	public partial class ST_payment_slip : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _payment_slip_id;
+		
+		private string _payment_slip_id_custom;
+		
+		private System.Nullable<long> _employee_id;
+		
+		private System.Nullable<long> _vendor_id;
+		
+		private System.Nullable<long> _construction_id;
+		
+		private System.Nullable<long> _enter_coupon_supplies_id;
+		
+		private System.Nullable<int> _payment_slip_No;
+		
+		private System.Nullable<int> _payment_slip_Co;
+		
+		private System.Nullable<long> _customer_id;
+		
+		private string _payment_slip_receiver;
+		
+		private string _payment_slip_address;
+		
+		private string _payment_slip_description;
+		
+		private string _payment_slip_document;
+		
+		private System.Nullable<decimal> _payment_slip_total_price;
+		
+		private long _detail_income_and_expenditure_pattern_id;
+		
+		private System.Nullable<System.DateTime> _payment_slip_created_date;
+		
+		private long _employee_created;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onpayment_slip_idChanging(long value);
+    partial void Onpayment_slip_idChanged();
+    partial void Onpayment_slip_id_customChanging(string value);
+    partial void Onpayment_slip_id_customChanged();
+    partial void Onemployee_idChanging(System.Nullable<long> value);
+    partial void Onemployee_idChanged();
+    partial void Onvendor_idChanging(System.Nullable<long> value);
+    partial void Onvendor_idChanged();
+    partial void Onconstruction_idChanging(System.Nullable<long> value);
+    partial void Onconstruction_idChanged();
+    partial void Onenter_coupon_supplies_idChanging(System.Nullable<long> value);
+    partial void Onenter_coupon_supplies_idChanged();
+    partial void Onpayment_slip_NoChanging(System.Nullable<int> value);
+    partial void Onpayment_slip_NoChanged();
+    partial void Onpayment_slip_CoChanging(System.Nullable<int> value);
+    partial void Onpayment_slip_CoChanged();
+    partial void Oncustomer_idChanging(System.Nullable<long> value);
+    partial void Oncustomer_idChanged();
+    partial void Onpayment_slip_receiverChanging(string value);
+    partial void Onpayment_slip_receiverChanged();
+    partial void Onpayment_slip_addressChanging(string value);
+    partial void Onpayment_slip_addressChanged();
+    partial void Onpayment_slip_descriptionChanging(string value);
+    partial void Onpayment_slip_descriptionChanged();
+    partial void Onpayment_slip_documentChanging(string value);
+    partial void Onpayment_slip_documentChanged();
+    partial void Onpayment_slip_total_priceChanging(System.Nullable<decimal> value);
+    partial void Onpayment_slip_total_priceChanged();
+    partial void Ondetail_income_and_expenditure_pattern_idChanging(long value);
+    partial void Ondetail_income_and_expenditure_pattern_idChanged();
+    partial void Onpayment_slip_created_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Onpayment_slip_created_dateChanged();
+    partial void Onemployee_createdChanging(long value);
+    partial void Onemployee_createdChanged();
+    #endregion
+		
+		public ST_payment_slip()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payment_slip_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long payment_slip_id
+		{
+			get
+			{
+				return this._payment_slip_id;
+			}
+			set
+			{
+				if ((this._payment_slip_id != value))
+				{
+					this.Onpayment_slip_idChanging(value);
+					this.SendPropertyChanging();
+					this._payment_slip_id = value;
+					this.SendPropertyChanged("payment_slip_id");
+					this.Onpayment_slip_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payment_slip_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(43)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string payment_slip_id_custom
+		{
+			get
+			{
+				return this._payment_slip_id_custom;
+			}
+			set
+			{
+				if ((this._payment_slip_id_custom != value))
+				{
+					this.Onpayment_slip_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._payment_slip_id_custom = value;
+					this.SendPropertyChanged("payment_slip_id_custom");
+					this.Onpayment_slip_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_id", DbType="BigInt")]
+		public System.Nullable<long> employee_id
+		{
+			get
+			{
+				return this._employee_id;
+			}
+			set
+			{
+				if ((this._employee_id != value))
+				{
+					this.Onemployee_idChanging(value);
+					this.SendPropertyChanging();
+					this._employee_id = value;
+					this.SendPropertyChanged("employee_id");
+					this.Onemployee_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_id", DbType="BigInt")]
+		public System.Nullable<long> vendor_id
+		{
+			get
+			{
+				return this._vendor_id;
+			}
+			set
+			{
+				if ((this._vendor_id != value))
+				{
+					this.Onvendor_idChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_id = value;
+					this.SendPropertyChanged("vendor_id");
+					this.Onvendor_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_id", DbType="BigInt")]
+		public System.Nullable<long> construction_id
+		{
+			get
+			{
+				return this._construction_id;
+			}
+			set
+			{
+				if ((this._construction_id != value))
+				{
+					this.Onconstruction_idChanging(value);
+					this.SendPropertyChanging();
+					this._construction_id = value;
+					this.SendPropertyChanged("construction_id");
+					this.Onconstruction_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enter_coupon_supplies_id", DbType="BigInt")]
+		public System.Nullable<long> enter_coupon_supplies_id
+		{
+			get
+			{
+				return this._enter_coupon_supplies_id;
+			}
+			set
+			{
+				if ((this._enter_coupon_supplies_id != value))
+				{
+					this.Onenter_coupon_supplies_idChanging(value);
+					this.SendPropertyChanging();
+					this._enter_coupon_supplies_id = value;
+					this.SendPropertyChanged("enter_coupon_supplies_id");
+					this.Onenter_coupon_supplies_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payment_slip_No", DbType="Int")]
+		public System.Nullable<int> payment_slip_No
+		{
+			get
+			{
+				return this._payment_slip_No;
+			}
+			set
+			{
+				if ((this._payment_slip_No != value))
+				{
+					this.Onpayment_slip_NoChanging(value);
+					this.SendPropertyChanging();
+					this._payment_slip_No = value;
+					this.SendPropertyChanged("payment_slip_No");
+					this.Onpayment_slip_NoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payment_slip_Co", DbType="Int")]
+		public System.Nullable<int> payment_slip_Co
+		{
+			get
+			{
+				return this._payment_slip_Co;
+			}
+			set
+			{
+				if ((this._payment_slip_Co != value))
+				{
+					this.Onpayment_slip_CoChanging(value);
+					this.SendPropertyChanging();
+					this._payment_slip_Co = value;
+					this.SendPropertyChanged("payment_slip_Co");
+					this.Onpayment_slip_CoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_id", DbType="BigInt")]
+		public System.Nullable<long> customer_id
+		{
+			get
+			{
+				return this._customer_id;
+			}
+			set
+			{
+				if ((this._customer_id != value))
+				{
+					this.Oncustomer_idChanging(value);
+					this.SendPropertyChanging();
+					this._customer_id = value;
+					this.SendPropertyChanged("customer_id");
+					this.Oncustomer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payment_slip_receiver", DbType="NVarChar(255)")]
+		public string payment_slip_receiver
+		{
+			get
+			{
+				return this._payment_slip_receiver;
+			}
+			set
+			{
+				if ((this._payment_slip_receiver != value))
+				{
+					this.Onpayment_slip_receiverChanging(value);
+					this.SendPropertyChanging();
+					this._payment_slip_receiver = value;
+					this.SendPropertyChanged("payment_slip_receiver");
+					this.Onpayment_slip_receiverChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payment_slip_address", DbType="NVarChar(255)")]
+		public string payment_slip_address
+		{
+			get
+			{
+				return this._payment_slip_address;
+			}
+			set
+			{
+				if ((this._payment_slip_address != value))
+				{
+					this.Onpayment_slip_addressChanging(value);
+					this.SendPropertyChanging();
+					this._payment_slip_address = value;
+					this.SendPropertyChanged("payment_slip_address");
+					this.Onpayment_slip_addressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payment_slip_description", DbType="NVarChar(255)")]
+		public string payment_slip_description
+		{
+			get
+			{
+				return this._payment_slip_description;
+			}
+			set
+			{
+				if ((this._payment_slip_description != value))
+				{
+					this.Onpayment_slip_descriptionChanging(value);
+					this.SendPropertyChanging();
+					this._payment_slip_description = value;
+					this.SendPropertyChanged("payment_slip_description");
+					this.Onpayment_slip_descriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payment_slip_document", DbType="NVarChar(255)")]
+		public string payment_slip_document
+		{
+			get
+			{
+				return this._payment_slip_document;
+			}
+			set
+			{
+				if ((this._payment_slip_document != value))
+				{
+					this.Onpayment_slip_documentChanging(value);
+					this.SendPropertyChanging();
+					this._payment_slip_document = value;
+					this.SendPropertyChanged("payment_slip_document");
+					this.Onpayment_slip_documentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payment_slip_total_price", DbType="Money")]
+		public System.Nullable<decimal> payment_slip_total_price
+		{
+			get
+			{
+				return this._payment_slip_total_price;
+			}
+			set
+			{
+				if ((this._payment_slip_total_price != value))
+				{
+					this.Onpayment_slip_total_priceChanging(value);
+					this.SendPropertyChanging();
+					this._payment_slip_total_price = value;
+					this.SendPropertyChanged("payment_slip_total_price");
+					this.Onpayment_slip_total_priceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_detail_income_and_expenditure_pattern_id", DbType="BigInt NOT NULL")]
+		public long detail_income_and_expenditure_pattern_id
+		{
+			get
+			{
+				return this._detail_income_and_expenditure_pattern_id;
+			}
+			set
+			{
+				if ((this._detail_income_and_expenditure_pattern_id != value))
+				{
+					this.Ondetail_income_and_expenditure_pattern_idChanging(value);
+					this.SendPropertyChanging();
+					this._detail_income_and_expenditure_pattern_id = value;
+					this.SendPropertyChanged("detail_income_and_expenditure_pattern_id");
+					this.Ondetail_income_and_expenditure_pattern_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payment_slip_created_date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> payment_slip_created_date
+		{
+			get
+			{
+				return this._payment_slip_created_date;
+			}
+			set
+			{
+				if ((this._payment_slip_created_date != value))
+				{
+					this.Onpayment_slip_created_dateChanging(value);
+					this.SendPropertyChanging();
+					this._payment_slip_created_date = value;
+					this.SendPropertyChanged("payment_slip_created_date");
+					this.Onpayment_slip_created_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_created", DbType="BigInt NOT NULL")]
+		public long employee_created
+		{
+			get
+			{
+				return this._employee_created;
+			}
+			set
+			{
+				if ((this._employee_created != value))
+				{
+					this.Onemployee_createdChanging(value);
+					this.SendPropertyChanging();
+					this._employee_created = value;
+					this.SendPropertyChanged("employee_created");
+					this.Onemployee_createdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_payroll_employee_constructions")]
+	public partial class ST_payroll_employee_construction : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _payroll_employee_construction_id;
+		
+		private string _payroll_employee_construction_id_custom;
+		
+		private string _payroll_employee_construction_name;
+		
+		private System.Nullable<System.DateTime> _payroll_employee_construction_date_start;
+		
+		private System.Nullable<System.DateTime> _payroll_employee_construction_date_end;
+		
+		private long _employee_created;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onpayroll_employee_construction_idChanging(long value);
+    partial void Onpayroll_employee_construction_idChanged();
+    partial void Onpayroll_employee_construction_id_customChanging(string value);
+    partial void Onpayroll_employee_construction_id_customChanged();
+    partial void Onpayroll_employee_construction_nameChanging(string value);
+    partial void Onpayroll_employee_construction_nameChanged();
+    partial void Onpayroll_employee_construction_date_startChanging(System.Nullable<System.DateTime> value);
+    partial void Onpayroll_employee_construction_date_startChanged();
+    partial void Onpayroll_employee_construction_date_endChanging(System.Nullable<System.DateTime> value);
+    partial void Onpayroll_employee_construction_date_endChanged();
+    partial void Onemployee_createdChanging(long value);
+    partial void Onemployee_createdChanged();
+    #endregion
+		
+		public ST_payroll_employee_construction()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payroll_employee_construction_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long payroll_employee_construction_id
+		{
+			get
+			{
+				return this._payroll_employee_construction_id;
+			}
+			set
+			{
+				if ((this._payroll_employee_construction_id != value))
+				{
+					this.Onpayroll_employee_construction_idChanging(value);
+					this.SendPropertyChanging();
+					this._payroll_employee_construction_id = value;
+					this.SendPropertyChanged("payroll_employee_construction_id");
+					this.Onpayroll_employee_construction_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payroll_employee_construction_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(33)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string payroll_employee_construction_id_custom
+		{
+			get
+			{
+				return this._payroll_employee_construction_id_custom;
+			}
+			set
+			{
+				if ((this._payroll_employee_construction_id_custom != value))
+				{
+					this.Onpayroll_employee_construction_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._payroll_employee_construction_id_custom = value;
+					this.SendPropertyChanged("payroll_employee_construction_id_custom");
+					this.Onpayroll_employee_construction_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payroll_employee_construction_name", DbType="NVarChar(255)")]
+		public string payroll_employee_construction_name
+		{
+			get
+			{
+				return this._payroll_employee_construction_name;
+			}
+			set
+			{
+				if ((this._payroll_employee_construction_name != value))
+				{
+					this.Onpayroll_employee_construction_nameChanging(value);
+					this.SendPropertyChanging();
+					this._payroll_employee_construction_name = value;
+					this.SendPropertyChanged("payroll_employee_construction_name");
+					this.Onpayroll_employee_construction_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payroll_employee_construction_date_start", DbType="Date")]
+		public System.Nullable<System.DateTime> payroll_employee_construction_date_start
+		{
+			get
+			{
+				return this._payroll_employee_construction_date_start;
+			}
+			set
+			{
+				if ((this._payroll_employee_construction_date_start != value))
+				{
+					this.Onpayroll_employee_construction_date_startChanging(value);
+					this.SendPropertyChanging();
+					this._payroll_employee_construction_date_start = value;
+					this.SendPropertyChanged("payroll_employee_construction_date_start");
+					this.Onpayroll_employee_construction_date_startChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payroll_employee_construction_date_end", DbType="Date")]
+		public System.Nullable<System.DateTime> payroll_employee_construction_date_end
+		{
+			get
+			{
+				return this._payroll_employee_construction_date_end;
+			}
+			set
+			{
+				if ((this._payroll_employee_construction_date_end != value))
+				{
+					this.Onpayroll_employee_construction_date_endChanging(value);
+					this.SendPropertyChanging();
+					this._payroll_employee_construction_date_end = value;
+					this.SendPropertyChanged("payroll_employee_construction_date_end");
+					this.Onpayroll_employee_construction_date_endChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_created", DbType="BigInt NOT NULL")]
+		public long employee_created
+		{
+			get
+			{
+				return this._employee_created;
+			}
+			set
+			{
+				if ((this._employee_created != value))
+				{
+					this.Onemployee_createdChanging(value);
+					this.SendPropertyChanging();
+					this._employee_created = value;
+					this.SendPropertyChanged("employee_created");
+					this.Onemployee_createdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_permissions")]
 	public partial class ST_permission : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3913,6 +5945,370 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._permission_name_ = value;
 					this.SendPropertyChanged("permission_name_");
 					this.Onpermission_name_Changed();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_progress_construction_items")]
+	public partial class ST_progress_construction_item : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _progress_construction_item_id;
+		
+		private string _progress_construction_item_custom;
+		
+		private long _construction_item_id;
+		
+		private System.Nullable<int> _progress_construction_item_percent;
+		
+		private System.Nullable<System.DateTime> _progress_construction_item_date;
+		
+		private string _progress_construction_item_description;
+		
+		private System.Data.Linq.Binary _progress_construction_item_image;
+		
+		private System.Nullable<long> _employee_created;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onprogress_construction_item_idChanging(long value);
+    partial void Onprogress_construction_item_idChanged();
+    partial void Onprogress_construction_item_customChanging(string value);
+    partial void Onprogress_construction_item_customChanged();
+    partial void Onconstruction_item_idChanging(long value);
+    partial void Onconstruction_item_idChanged();
+    partial void Onprogress_construction_item_percentChanging(System.Nullable<int> value);
+    partial void Onprogress_construction_item_percentChanged();
+    partial void Onprogress_construction_item_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Onprogress_construction_item_dateChanged();
+    partial void Onprogress_construction_item_descriptionChanging(string value);
+    partial void Onprogress_construction_item_descriptionChanged();
+    partial void Onprogress_construction_item_imageChanging(System.Data.Linq.Binary value);
+    partial void Onprogress_construction_item_imageChanged();
+    partial void Onemployee_createdChanging(System.Nullable<long> value);
+    partial void Onemployee_createdChanged();
+    #endregion
+		
+		public ST_progress_construction_item()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_progress_construction_item_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long progress_construction_item_id
+		{
+			get
+			{
+				return this._progress_construction_item_id;
+			}
+			set
+			{
+				if ((this._progress_construction_item_id != value))
+				{
+					this.Onprogress_construction_item_idChanging(value);
+					this.SendPropertyChanging();
+					this._progress_construction_item_id = value;
+					this.SendPropertyChanged("progress_construction_item_id");
+					this.Onprogress_construction_item_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_progress_construction_item_custom", AutoSync=AutoSync.Always, DbType="VarChar(55)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string progress_construction_item_custom
+		{
+			get
+			{
+				return this._progress_construction_item_custom;
+			}
+			set
+			{
+				if ((this._progress_construction_item_custom != value))
+				{
+					this.Onprogress_construction_item_customChanging(value);
+					this.SendPropertyChanging();
+					this._progress_construction_item_custom = value;
+					this.SendPropertyChanged("progress_construction_item_custom");
+					this.Onprogress_construction_item_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_id", DbType="BigInt NOT NULL")]
+		public long construction_item_id
+		{
+			get
+			{
+				return this._construction_item_id;
+			}
+			set
+			{
+				if ((this._construction_item_id != value))
+				{
+					this.Onconstruction_item_idChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_id = value;
+					this.SendPropertyChanged("construction_item_id");
+					this.Onconstruction_item_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_progress_construction_item_percent", DbType="Int")]
+		public System.Nullable<int> progress_construction_item_percent
+		{
+			get
+			{
+				return this._progress_construction_item_percent;
+			}
+			set
+			{
+				if ((this._progress_construction_item_percent != value))
+				{
+					this.Onprogress_construction_item_percentChanging(value);
+					this.SendPropertyChanging();
+					this._progress_construction_item_percent = value;
+					this.SendPropertyChanged("progress_construction_item_percent");
+					this.Onprogress_construction_item_percentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_progress_construction_item_date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> progress_construction_item_date
+		{
+			get
+			{
+				return this._progress_construction_item_date;
+			}
+			set
+			{
+				if ((this._progress_construction_item_date != value))
+				{
+					this.Onprogress_construction_item_dateChanging(value);
+					this.SendPropertyChanging();
+					this._progress_construction_item_date = value;
+					this.SendPropertyChanged("progress_construction_item_date");
+					this.Onprogress_construction_item_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_progress_construction_item_description", DbType="NVarChar(255)")]
+		public string progress_construction_item_description
+		{
+			get
+			{
+				return this._progress_construction_item_description;
+			}
+			set
+			{
+				if ((this._progress_construction_item_description != value))
+				{
+					this.Onprogress_construction_item_descriptionChanging(value);
+					this.SendPropertyChanging();
+					this._progress_construction_item_description = value;
+					this.SendPropertyChanged("progress_construction_item_description");
+					this.Onprogress_construction_item_descriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_progress_construction_item_image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary progress_construction_item_image
+		{
+			get
+			{
+				return this._progress_construction_item_image;
+			}
+			set
+			{
+				if ((this._progress_construction_item_image != value))
+				{
+					this.Onprogress_construction_item_imageChanging(value);
+					this.SendPropertyChanging();
+					this._progress_construction_item_image = value;
+					this.SendPropertyChanged("progress_construction_item_image");
+					this.Onprogress_construction_item_imageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_created", DbType="BigInt")]
+		public System.Nullable<long> employee_created
+		{
+			get
+			{
+				return this._employee_created;
+			}
+			set
+			{
+				if ((this._employee_created != value))
+				{
+					this.Onemployee_createdChanging(value);
+					this.SendPropertyChanging();
+					this._employee_created = value;
+					this.SendPropertyChanged("employee_created");
+					this.Onemployee_createdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_pulic_debt")]
+	public partial class ST_pulic_debt : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _pulic_debt_id;
+		
+		private string _pulic_debt_id_custom;
+		
+		private System.Nullable<long> _customer_id;
+		
+		private System.Nullable<long> _vendor_id;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onpulic_debt_idChanging(long value);
+    partial void Onpulic_debt_idChanged();
+    partial void Onpulic_debt_id_customChanging(string value);
+    partial void Onpulic_debt_id_customChanged();
+    partial void Oncustomer_idChanging(System.Nullable<long> value);
+    partial void Oncustomer_idChanged();
+    partial void Onvendor_idChanging(System.Nullable<long> value);
+    partial void Onvendor_idChanged();
+    #endregion
+		
+		public ST_pulic_debt()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pulic_debt_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long pulic_debt_id
+		{
+			get
+			{
+				return this._pulic_debt_id;
+			}
+			set
+			{
+				if ((this._pulic_debt_id != value))
+				{
+					this.Onpulic_debt_idChanging(value);
+					this.SendPropertyChanging();
+					this._pulic_debt_id = value;
+					this.SendPropertyChanged("pulic_debt_id");
+					this.Onpulic_debt_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pulic_debt_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(33)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string pulic_debt_id_custom
+		{
+			get
+			{
+				return this._pulic_debt_id_custom;
+			}
+			set
+			{
+				if ((this._pulic_debt_id_custom != value))
+				{
+					this.Onpulic_debt_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._pulic_debt_id_custom = value;
+					this.SendPropertyChanged("pulic_debt_id_custom");
+					this.Onpulic_debt_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_id", DbType="BigInt")]
+		public System.Nullable<long> customer_id
+		{
+			get
+			{
+				return this._customer_id;
+			}
+			set
+			{
+				if ((this._customer_id != value))
+				{
+					this.Oncustomer_idChanging(value);
+					this.SendPropertyChanging();
+					this._customer_id = value;
+					this.SendPropertyChanged("customer_id");
+					this.Oncustomer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendor_id", DbType="BigInt")]
+		public System.Nullable<long> vendor_id
+		{
+			get
+			{
+				return this._vendor_id;
+			}
+			set
+			{
+				if ((this._vendor_id != value))
+				{
+					this.Onvendor_idChanging(value);
+					this.SendPropertyChanging();
+					this._vendor_id = value;
+					this.SendPropertyChanged("vendor_id");
+					this.Onvendor_idChanged();
 				}
 			}
 		}
@@ -4589,6 +6985,236 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_created", DbType="BigInt")]
 		public System.Nullable<long> employee_created
+		{
+			get
+			{
+				return this._employee_created;
+			}
+			set
+			{
+				if ((this._employee_created != value))
+				{
+					this.Onemployee_createdChanging(value);
+					this.SendPropertyChanging();
+					this._employee_created = value;
+					this.SendPropertyChanged("employee_created");
+					this.Onemployee_createdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_timesheets")]
+	public partial class ST_timesheet : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private long _timesheet_id;
+		
+		private string _timesheet_id_custom;
+		
+		private long _employee_id;
+		
+		private System.Nullable<bool> _timesheet_do_1_day;
+		
+		private System.Nullable<bool> _timesheet_do_half_day;
+		
+		private System.Nullable<int> _timesheet_do_hour;
+		
+		private System.Nullable<bool> _timesheet_do_hour_overtime;
+		
+		private long _employee_created;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Ontimesheet_idChanging(long value);
+    partial void Ontimesheet_idChanged();
+    partial void Ontimesheet_id_customChanging(string value);
+    partial void Ontimesheet_id_customChanged();
+    partial void Onemployee_idChanging(long value);
+    partial void Onemployee_idChanged();
+    partial void Ontimesheet_do_1_dayChanging(System.Nullable<bool> value);
+    partial void Ontimesheet_do_1_dayChanged();
+    partial void Ontimesheet_do_half_dayChanging(System.Nullable<bool> value);
+    partial void Ontimesheet_do_half_dayChanged();
+    partial void Ontimesheet_do_hourChanging(System.Nullable<int> value);
+    partial void Ontimesheet_do_hourChanged();
+    partial void Ontimesheet_do_hour_overtimeChanging(System.Nullable<bool> value);
+    partial void Ontimesheet_do_hour_overtimeChanged();
+    partial void Onemployee_createdChanging(long value);
+    partial void Onemployee_createdChanged();
+    #endregion
+		
+		public ST_timesheet()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timesheet_id", AutoSync=AutoSync.OnInsert, DbType="BigInt NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public long timesheet_id
+		{
+			get
+			{
+				return this._timesheet_id;
+			}
+			set
+			{
+				if ((this._timesheet_id != value))
+				{
+					this.Ontimesheet_idChanging(value);
+					this.SendPropertyChanging();
+					this._timesheet_id = value;
+					this.SendPropertyChanged("timesheet_id");
+					this.Ontimesheet_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timesheet_id_custom", AutoSync=AutoSync.Always, DbType="VarChar(34)", IsDbGenerated=true, UpdateCheck=UpdateCheck.Never)]
+		public string timesheet_id_custom
+		{
+			get
+			{
+				return this._timesheet_id_custom;
+			}
+			set
+			{
+				if ((this._timesheet_id_custom != value))
+				{
+					this.Ontimesheet_id_customChanging(value);
+					this.SendPropertyChanging();
+					this._timesheet_id_custom = value;
+					this.SendPropertyChanged("timesheet_id_custom");
+					this.Ontimesheet_id_customChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_id", DbType="BigInt NOT NULL")]
+		public long employee_id
+		{
+			get
+			{
+				return this._employee_id;
+			}
+			set
+			{
+				if ((this._employee_id != value))
+				{
+					this.Onemployee_idChanging(value);
+					this.SendPropertyChanging();
+					this._employee_id = value;
+					this.SendPropertyChanged("employee_id");
+					this.Onemployee_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timesheet_do_1_day", DbType="Bit")]
+		public System.Nullable<bool> timesheet_do_1_day
+		{
+			get
+			{
+				return this._timesheet_do_1_day;
+			}
+			set
+			{
+				if ((this._timesheet_do_1_day != value))
+				{
+					this.Ontimesheet_do_1_dayChanging(value);
+					this.SendPropertyChanging();
+					this._timesheet_do_1_day = value;
+					this.SendPropertyChanged("timesheet_do_1_day");
+					this.Ontimesheet_do_1_dayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timesheet_do_half_day", DbType="Bit")]
+		public System.Nullable<bool> timesheet_do_half_day
+		{
+			get
+			{
+				return this._timesheet_do_half_day;
+			}
+			set
+			{
+				if ((this._timesheet_do_half_day != value))
+				{
+					this.Ontimesheet_do_half_dayChanging(value);
+					this.SendPropertyChanging();
+					this._timesheet_do_half_day = value;
+					this.SendPropertyChanged("timesheet_do_half_day");
+					this.Ontimesheet_do_half_dayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timesheet_do_hour", DbType="Int")]
+		public System.Nullable<int> timesheet_do_hour
+		{
+			get
+			{
+				return this._timesheet_do_hour;
+			}
+			set
+			{
+				if ((this._timesheet_do_hour != value))
+				{
+					this.Ontimesheet_do_hourChanging(value);
+					this.SendPropertyChanging();
+					this._timesheet_do_hour = value;
+					this.SendPropertyChanged("timesheet_do_hour");
+					this.Ontimesheet_do_hourChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timesheet_do_hour_overtime", DbType="Bit")]
+		public System.Nullable<bool> timesheet_do_hour_overtime
+		{
+			get
+			{
+				return this._timesheet_do_hour_overtime;
+			}
+			set
+			{
+				if ((this._timesheet_do_hour_overtime != value))
+				{
+					this.Ontimesheet_do_hour_overtimeChanging(value);
+					this.SendPropertyChanging();
+					this._timesheet_do_hour_overtime = value;
+					this.SendPropertyChanged("timesheet_do_hour_overtime");
+					this.Ontimesheet_do_hour_overtimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_employee_created", DbType="BigInt NOT NULL")]
+		public long employee_created
 		{
 			get
 			{

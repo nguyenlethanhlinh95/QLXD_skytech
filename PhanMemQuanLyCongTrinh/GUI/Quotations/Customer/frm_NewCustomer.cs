@@ -125,7 +125,7 @@ namespace PhanMemQuanLyCongTrinh
             frm_NewCustomerGroup frm = new frm_NewCustomerGroup();
             frm.FormClosed += new FormClosedEventHandler(dongformGroup);
             frm.customerGroupId = 0;
-            frm.Show();
+            frm.ShowDialog();
         }
 
 

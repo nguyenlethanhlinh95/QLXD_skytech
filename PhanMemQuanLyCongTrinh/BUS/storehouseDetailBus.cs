@@ -26,6 +26,24 @@ namespace PhanMemQuanLyCongTrinh.BUS
             return store.getStorehouseDetailWithGroup(storehouseId);
         }
 
-        
+        public bool insert(Int64 storeHo, Int64 idSupplies, Int32 quantity)
+        {
+            return store.insert(storeHo, idSupplies, quantity);
+        }
+
+        public bool isCheckSupplies(Int64 id)
+        {
+            return store.isCheckSupplies(id);
+        }
+
+        public bool updateQuality(Int64 idSup, int quality, Int64 storehousesId)
+        {
+            return store.updateQuality(idSup, quality, storehousesId);
+        }
+
+        public bool updateQuality(Int64 quality, Int64 storehousesId)
+        {
+            return store.updateQuality( quality, storehousesId);
+        }
     }
 }

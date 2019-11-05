@@ -452,6 +452,7 @@
             this.btnProgressConstructionItems.LargeWidth = 100;
             this.btnProgressConstructionItems.Name = "btnProgressConstructionItems";
             this.btnProgressConstructionItems.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnProgressConstructionItems.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProgressConstructionItems_ItemClick);
             // 
             // btnUnit
             // 
@@ -574,6 +575,7 @@
             this.btnConstructionItems.LargeWidth = 100;
             this.btnConstructionItems.Name = "btnConstructionItems";
             this.btnConstructionItems.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnConstructionItems.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnConstructionItems_ItemClick);
             // 
             // btnPlanConstructions
             // 
@@ -583,6 +585,7 @@
             this.btnPlanConstructions.LargeWidth = 100;
             this.btnPlanConstructions.Name = "btnPlanConstructions";
             this.btnPlanConstructions.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnPlanConstructions.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPlanConstructions_ItemClick);
             // 
             // btnPayroll
             // 
@@ -1037,7 +1040,6 @@
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.btnSuppliesInWearHouse);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnChangeSuppliesInWearHouse);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Kho";
             // 
@@ -1055,7 +1057,6 @@
             // ribbonPageGroup10
             // 
             this.ribbonPageGroup10.ItemLinks.Add(this.btnConstructions);
-            this.ribbonPageGroup10.ItemLinks.Add(this.btnConstructionItems);
             this.ribbonPageGroup10.ItemLinks.Add(this.btnPlanConstructions);
             this.ribbonPageGroup10.ItemLinks.Add(this.btnProgressConstructionItems);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";

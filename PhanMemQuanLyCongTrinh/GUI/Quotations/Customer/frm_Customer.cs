@@ -51,7 +51,7 @@ namespace PhanMemQuanLyCongTrinh
         {
             frm_NewCustomer frm = new frm_NewCustomer();
             frm.FormClosed += new FormClosedEventHandler(dongform);
-            frm.Show();
+            frm.ShowDialog();
            
         }
         private void btn_Edit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -62,7 +62,7 @@ namespace PhanMemQuanLyCongTrinh
                 frm_NewCustomer frm = new frm_NewCustomer();
                 frm.FormClosed += new FormClosedEventHandler(dongform);
                 frm.customerId = customerId;
-                frm.Show();
+                frm.ShowDialog();
             }
             else
             {
@@ -74,7 +74,7 @@ namespace PhanMemQuanLyCongTrinh
             frm_NewCustomerGroup frm = new frm_NewCustomerGroup();
             frm.FormClosed += new FormClosedEventHandler(dongformGroup);
             frm.customerGroupId = 0;
-            frm.Show();
+            frm.ShowDialog();
         }
 
         private void btn_EditCustomerGroup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -85,7 +85,7 @@ namespace PhanMemQuanLyCongTrinh
             frm_NewCustomerGroup frm = new frm_NewCustomerGroup();
             frm.FormClosed += new FormClosedEventHandler(dongformGroup);
             frm.customerGroupId = customerGroupId;
-            frm.Show();
+            frm.ShowDialog();
             }
             else
             {
@@ -172,36 +172,53 @@ namespace PhanMemQuanLyCongTrinh
             if (grdv_CustomerGroup.RowCount > 0)
             {
                 Int64 customerGroupId = Convert.ToInt64(grdv_CustomerGroup.GetRowCellValue(indexCustomerGroup, "customer_group_id").ToString());
-                var customerGroupName = grdv_CustomerGroup.GetRowCellValue(indexCustomerGroup, "customer_group_name").ToString();
+               
                 
-                 bool boolCheckDeleteGroup = messeage.info("Bạn Có Muốn Xóa Nhóm Khách Hàng '", customerGroupName);
+                var customerGroupName = grdv_CustomerGroup.GetRowCellValue(indexCustomerGroup, "customer_group_name").ToString();
+                if (customerGroupId != 1)
+                {
+                    bool boolCheckDeleteGroup = messeage.info("Bạn Có Muốn Xóa Nhóm Khách Hàng '", customerGroupName);
 
-               if (boolCheckDeleteGroup == true)
-               {
-                   bool boolDeleteCustomerGroup = customerGroupBus.deleteCustomerGroup(customerGroupId);
-                    if (boolDeleteCustomerGroup == true)
+                    if (boolCheckDeleteGroup == true)
                     {
-                       
-                        messeage.success("Xóa Nhóm Khách hàng Thành Công!");
-                        loadCustomerGroup();
+
+                        bool changeGroupId = customerBus.changeIdParent(customerGroupId);
+                        if (changeGroupId == true)
+                        {
+                            bool boolDeleteCustomerGroup = customerGroupBus.deleteCustomerGroup(customerGroupId);
+                            if (boolDeleteCustomerGroup == true)
+                            {
+
+                                messeage.success("Xóa Nhóm Khách hàng Thành Công!");
+                                loadCustomerGroup();
+
+                            }
+                            else
+                            {
+                                messeage.error("Xóa Nhóm Khách hàng Không Thành Công!");
+
+                            }
+                        }
+                        else
+                        {
+                            messeage.error("Xóa Nhóm Khách hàng Không Thành Công!");
+
+                        }
                         
                     }
-                    else
-                    {
-                        messeage.error("Xóa Nhóm Khách hàng Không Thành Công!");
-                       
-                    }
-               }
 
-               
+
+                }
+                else
+                {
+                    messeage.error("Nhóm Khách Hàng Này Không Thể Xóa");
+                }
             }
-             else
-             {
-                 messeage.error("Không có Nhóm  Khách Hàng Để Xóa!!!");
-                
-             }
-                
-               
+            else
+            {
+                    messeage.error("Không có Nhóm  Khách Hàng Để Xóa!!!");
+
+            }         
         }
    
     }

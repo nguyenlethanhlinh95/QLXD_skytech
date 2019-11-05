@@ -64,10 +64,23 @@
     <Compile Include="BUS\constructionItemBus.cs" />
     <Compile Include="BUS\customerBus.cs" />
     <Compile Include="BUS\customerGroupBus.cs" />
+    <Compile Include="BUS\detailEnterCouponSuppliesBus.cs" />
+    <Compile Include="BUS\detailPulicDebtBus.cs" />
     <Compile Include="BUS\detail_employee_constructionBus.cs" />
+    <Compile Include="BUS\EnterCouponSuppliesBus.cs" />
+    <Compile Include="BUS\OutCouponSuppliesToConstructionBus.cs" />
+    <Compile Include="BUS\PaymentSlipBus.cs" />
+    <Compile Include="BUS\progressBus.cs" />
+    <Compile Include="BUS\pulicDebtBus.cs" />
     <Compile Include="BUS\storehouseBus.cs" />
     <Compile Include="BUS\storehouseDetailBus.cs" />
-    <Compile Include="BUS\StyleDevxpressGridControl.cs" />
+    <Compile Include="DAO\detailEnterCouponSuppliesDao.cs" />
+    <Compile Include="DAO\detailPulicDebtDao.cs" />
+    <Compile Include="DAO\EnterCouponSuppliesDao.cs" />
+    <Compile Include="DAO\OutCouponSuppliesToConstructionDao.cs" />
+    <Compile Include="DAO\PaymentSlipDao.cs" />
+    <Compile Include="DAO\pulicDebtDao.cs" />
+    <Compile Include="GUI\StyleDevxpressGridControl.cs" />
     <Compile Include="BUS\supliesBus.cs" />
     <Compile Include="DAO\AccountingAccountGroupDao.cs" />
     <Compile Include="DAO\AcountingAcountDaocs.cs" />
@@ -77,6 +90,7 @@
     <Compile Include="DAO\customerDao.cs" />
     <Compile Include="DAO\customerGroupDao.cs" />
     <Compile Include="DAO\detail_employee_constructionDao.cs" />
+    <Compile Include="DAO\progressDao.cs" />
     <Compile Include="DAO\storehouseDao.cs" />
     <Compile Include="DAO\storehouseDetailDao.cs" />
     <Compile Include="DAO\supliesDao.cs" />
@@ -85,29 +99,83 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </Compile>
-    <Compile Include="frm_AddNewEmployeeContructItems.cs">
+    <Compile Include="GUI\Construction\frm_AddNewEmployeeContructItems.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_AddNewEmployeeContructItems.Designer.cs">
+    <Compile Include="GUI\Construction\frm_AddNewEmployeeContructItems.Designer.cs">
       <DependentUpon>frm_AddNewEmployeeContructItems.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Employees_Contruct.cs">
+    <Compile Include="GUI\Construction\frm_Employees_Contruct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Employees_Contruct.Designer.cs">
+    <Compile Include="GUI\Construction\frm_Employees_Contruct.Designer.cs">
       <DependentUpon>frm_Employees_Contruct.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Supplies\Construction\frm_Constructions.cs">
+    <Compile Include="GUI\Construction\frm_Constructions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Supplies\Construction\frm_Constructions.Designer.cs">
+    <Compile Include="GUI\Construction\frm_Constructions.Designer.cs">
       <DependentUpon>frm_Constructions.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Supplies\Construction\frm_NewConstructions.cs">
+    <Compile Include="GUI\Construction\frm_newConstructionItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Supplies\Construction\frm_NewConstructions.Designer.cs">
+    <Compile Include="GUI\Construction\frm_newConstructionItem.Designer.cs">
+      <DependentUpon>frm_newConstructionItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Construction\frm_NewConstructions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Construction\frm_NewConstructions.Designer.cs">
       <DependentUpon>frm_NewConstructions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Construction\frm_NewProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Construction\frm_NewProgress.Designer.cs">
+      <DependentUpon>frm_NewProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Construction\frm_progress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Construction\frm_progress.Designer.cs">
+      <DependentUpon>frm_progress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Construction\frm_UpdateConstructionItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Construction\frm_UpdateConstructionItem.Designer.cs">
+      <DependentUpon>frm_UpdateConstructionItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Construction\frm_UpdateContruction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Construction\frm_UpdateContruction.Designer.cs">
+      <DependentUpon>frm_UpdateContruction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Construction\frm_Updateprogress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Construction\frm_Updateprogress.Designer.cs">
+      <DependentUpon>frm_Updateprogress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Supplies\frm_EnterCoupon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Supplies\frm_EnterCoupon.designer.cs">
+      <DependentUpon>frm_EnterCoupon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Supplies\OutCoupon\frm_NewOutCouponToConstructions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Supplies\OutCoupon\frm_NewOutCouponToConstructions.Designer.cs">
+      <DependentUpon>frm_NewOutCouponToConstructions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Supplies\OutCoupon\frm_OutCouponToConstructions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Supplies\OutCoupon\frm_OutCouponToConstructions.Designer.cs">
+      <DependentUpon>frm_OutCouponToConstructions.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Supplies\StorehouseDetail\frm_StorehouseDetail.cs">
       <SubType>Form</SubType>
@@ -126,12 +194,6 @@
     </Compile>
     <Compile Include="GUI\Supplies\frm_EditEnterCouponSupplies.cs.cs.Designer.cs">
       <DependentUpon>frm_EditEnterCouponSupplies.cs.cs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Supplies\frm_EnterCouponSupplies.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Supplies\frm_EnterCouponSupplies.Designer.cs">
-      <DependentUpon>frm_EnterCouponSupplies.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\QuanLyHeThong\GroupSupplies\frm_AddNewGroupSupplies.cs">
       <SubType>Form</SubType>
@@ -349,26 +411,50 @@
     <None Include="DTO\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="frm_AddNewEmployeeContructItems.resx">
+    <EmbeddedResource Include="GUI\Construction\frm_AddNewEmployeeContructItems.resx">
       <DependentUpon>frm_AddNewEmployeeContructItems.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Employees_Contruct.resx">
+    <EmbeddedResource Include="GUI\Construction\frm_Employees_Contruct.resx">
       <DependentUpon>frm_Employees_Contruct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Supplies\Construction\frm_Constructions.resx">
+    <EmbeddedResource Include="GUI\Construction\frm_Constructions.resx">
       <DependentUpon>frm_Constructions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Supplies\Construction\frm_NewConstructions.resx">
+    <EmbeddedResource Include="GUI\Construction\frm_newConstructionItem.resx">
+      <DependentUpon>frm_newConstructionItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Construction\frm_NewConstructions.resx">
       <DependentUpon>frm_NewConstructions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Construction\frm_NewProgress.resx">
+      <DependentUpon>frm_NewProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Construction\frm_progress.resx">
+      <DependentUpon>frm_progress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Construction\frm_UpdateConstructionItem.resx">
+      <DependentUpon>frm_UpdateConstructionItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Construction\frm_UpdateContruction.resx">
+      <DependentUpon>frm_UpdateContruction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Construction\frm_Updateprogress.resx">
+      <DependentUpon>frm_Updateprogress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Supplies\frm_EnterCoupon.resx">
+      <DependentUpon>frm_EnterCoupon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Supplies\OutCoupon\frm_NewOutCouponToConstructions.resx">
+      <DependentUpon>frm_NewOutCouponToConstructions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Supplies\OutCoupon\frm_OutCouponToConstructions.resx">
+      <DependentUpon>frm_OutCouponToConstructions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Supplies\StorehouseDetail\frm_StorehouseDetail.resx">
       <DependentUpon>frm_StorehouseDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Supplies\frm_AddNewEnterCouponSupplies.cs.resx">
       <DependentUpon>frm_AddNewEnterCouponSupplies.cs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Supplies\frm_EnterCouponSupplies.resx">
-      <DependentUpon>frm_EnterCouponSupplies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanLyHeThong\GroupSupplies\frm_AddNewGroupSupplies.resx">
       <DependentUpon>frm_AddNewGroupSupplies.cs</DependentUpon>

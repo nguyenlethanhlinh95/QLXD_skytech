@@ -243,10 +243,10 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btnListEnterCouponSupplies_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = kiemtraform(typeof(frm_EnterCouponSupplies));
+            Form frm = kiemtraform(typeof(frm_EnterCoupon));
             if ( frm == null )
             {
-                frm_EnterCouponSupplies forms = new frm_EnterCouponSupplies( );
+                frm_EnterCoupon forms = new frm_EnterCoupon( );
                 forms.MdiParent = this;
                 forms.Show( );
             }
@@ -299,6 +299,31 @@ namespace PhanMemQuanLyCongTrinh
             {
                 frm.Activate( );
             }
+        }
+
+        private void btnConstructionItems_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnProgressConstructionItems_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_progress));
+            if ( frm == null )
+            {
+                frm_progress forms = new frm_progress( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
+        private void btnPlanConstructions_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
 
         

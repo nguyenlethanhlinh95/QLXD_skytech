@@ -37,5 +37,10 @@ namespace FormMau
         {
 
         }
+
+        private void simpleButton14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

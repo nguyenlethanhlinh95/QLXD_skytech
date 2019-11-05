@@ -90,16 +90,27 @@ namespace PhanMemQuanLyCongTrinh
             loadEmployees(id_contruct_items);
         }
 
+        private void dongformCon(object sender, EventArgs e)
+        {
+            loadAllContruct( );
 
+        }
 
+        private void dongformConItem(object sender, EventArgs e)
+        {
+            loadConstruction_items(id_contruct_items);
 
+        }
         #endregion EndLoad
 
         #region Event
 
         private void btn_AddNewSuppelies_Click(object sender, EventArgs e)
         {
-            
+            frm_NewConstructions frm = new frm_NewConstructions( );
+            frm.FormClosed += new FormClosedEventHandler(dongformCon);
+
+            frm.ShowDialog( );
         }
 
         // Hang muc
@@ -118,7 +129,7 @@ namespace PhanMemQuanLyCongTrinh
                 }
                 else
                 {
-                    messeage.info("Bạn chưa có hạng mục của công trình, hãy thêm hạng mục !", "");
+                    messeage.error("Bạn chưa có hạng mục của công trình, hãy thêm hạng mục !");
                     grdc_em.DataSource = null;
                 }
             }
@@ -148,7 +159,7 @@ namespace PhanMemQuanLyCongTrinh
                 }
                 else
                 {
-                    messeage.info("Bạn chưa có hạng mục của công trình, hãy thêm hạng mục !", "Thông báo");
+                    messeage.error("Bạn chưa có hạng mục của công trình, hãy thêm hạng mục !");
                 }
             }
             else
@@ -236,6 +247,15 @@ namespace PhanMemQuanLyCongTrinh
 
         }
         #endregion EndEvent
+
+        private void btn_AddNew_Construction_items_Click(object sender, EventArgs e)
+        {            
+            frm_NewConstructionItem frm = new frm_NewConstructionItem( );
+            frm.FormClosed += new FormClosedEventHandler(dongformConItem);
+
+            frm.ShowDialog( );
+
+        }
 
         
         

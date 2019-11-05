@@ -60,16 +60,36 @@ namespace PhanMemQuanLyCongTrinh.DAO
         }
 
 
-        public bool updateQuality(Int64 quality, Int64 storehousesId)
+        public bool updateQuality(Int64 idSup , int quality, Int64 storehousesId)
         {
             try
             {
-                var update = db.ST_storehouses_details.Where(p => p.storehouses_detail_id == storehousesId).SingleOrDefault();
-                update.storehouse_detail_quantity = quality;
+                var update = db.ST_storehouses_details.Where(p => p.supplies_id == idSup).SingleOrDefault( );
+                Int64 quantity = Int64.Parse(update.storehouse_detail_quantity.ToString());
+
+                update.storehouse_detail_quantity = quantity + quality;
+                update.storehouse_id = storehousesId;
+                update.supplies_id = idSup;
                 db.SubmitChanges();
                 return true;
             }
             catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool updateQuality(Int64 quality, Int64 storehousesId)
+        {
+            try
+            {
+                var update = db.ST_storehouses_details.Where(p => p.storehouses_detail_id == storehousesId).SingleOrDefault( );
+                update.storehouse_detail_quantity = update.storehouse_detail_quantity + quality;
+                update.storehouse_id = storehousesId;
+                db.SubmitChanges( );
+                return true;
+            }
+            catch ( Exception )
             {
                 return false;
             }
@@ -239,6 +259,42 @@ namespace PhanMemQuanLyCongTrinh.DAO
             }
         }
 
+        public bool insert(Int64 storeHo ,Int64 idSupplies, Int32 quantity)
+        {
+            try
+            {
+                db.Dispose( );
+                db = new DTO.DataClasses1DataContext( );
+                db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
+                
+                ST_storehouses_detail de = new ST_storehouses_detail();
+                de.supplies_id = idSupplies;
+                de.storehouse_detail_quantity = quantity;
+                de.storehouse_id = storeHo;
 
+                db.ST_storehouses_details.InsertOnSubmit(de);
+                db.SubmitChanges();
+                return true;
+            }
+            catch ( Exception )
+            {
+                return false;
+            }
+        }
+
+        public bool isCheckSupplies(Int64 id)
+        {
+            var data = from b in db.ST_storehouses_details
+                        where b.supplies_id == id
+                        select b.supplies_id;
+            if (data.Any())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

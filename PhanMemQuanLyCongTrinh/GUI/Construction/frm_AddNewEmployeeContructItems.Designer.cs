@@ -155,7 +155,7 @@
             // 
             this.tabNavigationPage2.Appearance.BackColor = System.Drawing.Color.Black;
             this.tabNavigationPage2.Appearance.Options.UseBackColor = true;
-            this.tabNavigationPage2.Caption = "Danh sách nhân viên";
+            this.tabNavigationPage2.Caption = "Danh sách nhân viên chưa có trong Hạng mục";
             this.tabNavigationPage2.Controls.Add(this.grdc_em);
             this.tabNavigationPage2.Controls.Add(this.barDockControl1);
             this.tabNavigationPage2.Controls.Add(this.barDockControl2);

@@ -1,6 +1,6 @@
 ﻿namespace PhanMemQuanLyCongTrinh
 {
-    partial class frm_EnterCouponSupplies
+    partial class frm_EnterCoupon
     {
         /// <summary>
         /// Required designer variable.
@@ -13,9 +13,9 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if ( disposing && (components != null) )
+            if (disposing && (components != null))
             {
-                components.Dispose( );
+                components.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -26,9 +26,10 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent( )
+        private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_EnterCouponSupplies));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_EnterCoupon));
             DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
@@ -45,13 +46,7 @@
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
-            this.grdv_unit = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.unit_id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.unit_id_custom = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.unit_name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.grdc_unit = new DevExpress.XtraGrid.GridControl();
-            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
-            this.barManager2 = new DevExpress.XtraBars.BarManager();
+            this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar7 = new DevExpress.XtraBars.Bar();
             this.btn_Add = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
@@ -74,101 +69,37 @@
             this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
-            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
             this.barCheckItem2 = new DevExpress.XtraBars.BarCheckItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem2 = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem3 = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem4 = new DevExpress.XtraBars.BarHeaderItem();
-            this.tabPane2 = new DevExpress.XtraBars.Navigation.TabPane();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_unit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdc_unit)).BeginInit();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.date_End = new DevExpress.XtraEditors.DateEdit();
+            this.date_Start = new DevExpress.XtraEditors.DateEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.grdc_EnterCoupon = new DevExpress.XtraGrid.GridControl();
+            this.grdv_EnterCoupon = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.enter_coupon_supplies_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.enter_coupon_supplies_id_custom = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.storehouse_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.enter_coupon_supplies_created_date = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.enter_coupon_supplies_number = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.enter_coupon_supplies_total_percent_discount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.enter_coupon_supplies_total_price = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.employee_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.enter_coupon_supplies_description = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
-            this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabPane2)).BeginInit();
-            this.tabPane2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.date_End.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_End.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_Start.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_Start.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdc_EnterCoupon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_EnterCoupon)).BeginInit();
             this.SuspendLayout();
-            // 
-            // grdv_unit
-            // 
-            this.grdv_unit.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdv_unit.Appearance.Row.Options.UseFont = true;
-            this.grdv_unit.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdv_unit.Appearance.TopNewRow.Options.UseFont = true;
-            this.grdv_unit.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.unit_id,
-            this.unit_id_custom,
-            this.unit_name});
-            this.grdv_unit.GridControl = this.grdc_unit;
-            this.grdv_unit.Name = "grdv_unit";
-            this.grdv_unit.OptionsBehavior.Editable = false;
-            this.grdv_unit.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            this.grdv_unit.OptionsView.ShowGroupPanel = false;
-            this.grdv_unit.RowHeight = 30;
-            this.grdv_unit.ViewCaptionHeight = 0;
-            // 
-            // unit_id
-            // 
-            this.unit_id.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unit_id.AppearanceCell.Options.UseFont = true;
-            this.unit_id.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unit_id.AppearanceHeader.Options.UseFont = true;
-            this.unit_id.Caption = "ID";
-            this.unit_id.FieldName = "unit_id";
-            this.unit_id.Name = "unit_id";
-            this.unit_id.OptionsColumn.FixedWidth = true;
-            // 
-            // unit_id_custom
-            // 
-            this.unit_id_custom.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unit_id_custom.AppearanceCell.Options.UseFont = true;
-            this.unit_id_custom.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unit_id_custom.AppearanceHeader.Options.UseFont = true;
-            this.unit_id_custom.Caption = "Mã ĐVT";
-            this.unit_id_custom.FieldName = "unit_id_custom";
-            this.unit_id_custom.MaxWidth = 120;
-            this.unit_id_custom.Name = "unit_id_custom";
-            this.unit_id_custom.OptionsColumn.FixedWidth = true;
-            this.unit_id_custom.Visible = true;
-            this.unit_id_custom.VisibleIndex = 0;
-            this.unit_id_custom.Width = 120;
-            // 
-            // unit_name
-            // 
-            this.unit_name.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unit_name.AppearanceCell.Options.UseFont = true;
-            this.unit_name.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unit_name.AppearanceHeader.Options.UseFont = true;
-            this.unit_name.Caption = "Tên ĐVT";
-            this.unit_name.FieldName = "unit_name";
-            this.unit_name.MaxWidth = 400;
-            this.unit_name.Name = "unit_name";
-            this.unit_name.OptionsColumn.FixedWidth = true;
-            this.unit_name.Visible = true;
-            this.unit_name.VisibleIndex = 1;
-            this.unit_name.Width = 400;
-            // 
-            // grdc_unit
-            // 
-            this.grdc_unit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdc_unit.Location = new System.Drawing.Point(0, 51);
-            this.grdc_unit.MainView = this.grdv_unit;
-            this.grdc_unit.Name = "grdc_unit";
-            this.grdc_unit.Size = new System.Drawing.Size(1370, 648);
-            this.grdc_unit.TabIndex = 18;
-            this.grdc_unit.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grdv_unit});
-            // 
-            // barDockControl1
-            // 
-            this.barDockControl1.CausesValidation = false;
-            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl1.Location = new System.Drawing.Point(0, 51);
-            this.barDockControl1.Manager = this.barManager2;
-            this.barDockControl1.Size = new System.Drawing.Size(0, 648);
             // 
             // barManager2
             // 
@@ -180,7 +111,7 @@
             this.barManager2.DockControls.Add(this.barDockControl5);
             this.barManager2.DockControls.Add(this.barDockControl6);
             this.barManager2.DockControls.Add(this.barDockControl7);
-            this.barManager2.Form = this.tabNavigationPage2;
+            this.barManager2.Form = this;
             this.barManager2.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.btn_Add,
             this.btn_Edit,
@@ -252,7 +183,6 @@
             toolTipTitleItem1.Text = "Ctrl + N";
             superToolTip1.Items.Add(toolTipTitleItem1);
             this.btn_Add.SuperTip = superToolTip1;
-            this.btn_Add.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Add_ItemClick);
             // 
             // barStaticItem4
             // 
@@ -263,7 +193,7 @@
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Caption = "Chỉnh Sửa";
+            this.btn_Edit.Caption = "Chĩnh Sửa";
             this.btn_Edit.ContentHorizontalAlignment = DevExpress.XtraBars.BarItemContentAlignment.Center;
             this.btn_Edit.Id = 1;
             this.btn_Edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Edit.ImageOptions.Image")));
@@ -279,7 +209,6 @@
             toolTipTitleItem2.Text = "Ctrl + E";
             superToolTip2.Items.Add(toolTipTitleItem2);
             this.btn_Edit.SuperTip = superToolTip2;
-            this.btn_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Edit_ItemClick);
             // 
             // barStaticItem2
             // 
@@ -306,7 +235,6 @@
             toolTipTitleItem3.Text = "Ctrl + Delete\r\n";
             superToolTip3.Items.Add(toolTipTitleItem3);
             this.btn_Delete.SuperTip = superToolTip3;
-            this.btn_Delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Delete_ItemClick);
             // 
             // barStaticItem5
             // 
@@ -333,6 +261,7 @@
             toolTipTitleItem4.Text = "Ctrl + F5\r\n";
             superToolTip4.Items.Add(toolTipTitleItem4);
             this.btn_Refesh.SuperTip = superToolTip4;
+            this.btn_Refesh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Refesh_ItemClick);
             // 
             // barStaticItem6
             // 
@@ -474,7 +403,7 @@
             // 
             this.barDockControl5.CausesValidation = false;
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl5.Location = new System.Drawing.Point(0, 699);
+            this.barDockControl5.Location = new System.Drawing.Point(0, 726);
             this.barDockControl5.Manager = this.barManager2;
             this.barDockControl5.Size = new System.Drawing.Size(1370, 23);
             // 
@@ -484,7 +413,7 @@
             this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl6.Location = new System.Drawing.Point(0, 51);
             this.barDockControl6.Manager = this.barManager2;
-            this.barDockControl6.Size = new System.Drawing.Size(0, 648);
+            this.barDockControl6.Size = new System.Drawing.Size(0, 675);
             // 
             // barDockControl7
             // 
@@ -492,49 +421,7 @@
             this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControl7.Location = new System.Drawing.Point(1370, 51);
             this.barDockControl7.Manager = this.barManager2;
-            this.barDockControl7.Size = new System.Drawing.Size(0, 648);
-            // 
-            // tabNavigationPage2
-            // 
-            this.tabNavigationPage2.Appearance.BackColor = System.Drawing.Color.Black;
-            this.tabNavigationPage2.Appearance.Options.UseBackColor = true;
-            this.tabNavigationPage2.Caption = "Danh Sách Phiếu Nhập Vật Tư";
-            this.tabNavigationPage2.Controls.Add(this.grdc_unit);
-            this.tabNavigationPage2.Controls.Add(this.barDockControl1);
-            this.tabNavigationPage2.Controls.Add(this.barDockControl2);
-            this.tabNavigationPage2.Controls.Add(this.barDockControl3);
-            this.tabNavigationPage2.Controls.Add(this.barDockControl8);
-            this.tabNavigationPage2.Controls.Add(this.barDockControl6);
-            this.tabNavigationPage2.Controls.Add(this.barDockControl7);
-            this.tabNavigationPage2.Controls.Add(this.barDockControl5);
-            this.tabNavigationPage2.Controls.Add(this.barDockControl4);
-            this.tabNavigationPage2.Margin = new System.Windows.Forms.Padding(100, 3, 100, 3);
-            this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1370, 722);
-            // 
-            // barDockControl2
-            // 
-            this.barDockControl2.CausesValidation = false;
-            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl2.Location = new System.Drawing.Point(1370, 51);
-            this.barDockControl2.Manager = this.barManager2;
-            this.barDockControl2.Size = new System.Drawing.Size(0, 648);
-            // 
-            // barDockControl3
-            // 
-            this.barDockControl3.CausesValidation = false;
-            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl3.Location = new System.Drawing.Point(0, 699);
-            this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(1370, 0);
-            // 
-            // barDockControl8
-            // 
-            this.barDockControl8.CausesValidation = false;
-            this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl8.Location = new System.Drawing.Point(0, 51);
-            this.barDockControl8.Manager = this.barManager2;
-            this.barDockControl8.Size = new System.Drawing.Size(1370, 0);
+            this.barDockControl7.Size = new System.Drawing.Size(0, 675);
             // 
             // barCheckItem2
             // 
@@ -563,56 +450,249 @@
             this.barHeaderItem4.Id = 14;
             this.barHeaderItem4.Name = "barHeaderItem4";
             // 
-            // tabPane2
+            // groupControl1
             // 
-            this.tabPane2.AllowCollapse = DevExpress.Utils.DefaultBoolean.Default;
-            this.tabPane2.Controls.Add(this.tabNavigationPage2);
-            this.tabPane2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane2.Location = new System.Drawing.Point(0, 0);
-            this.tabPane2.LookAndFeel.SkinMaskColor = System.Drawing.Color.White;
-            this.tabPane2.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.White;
-            this.tabPane2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
-            this.tabPane2.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.tabPane2.Name = "tabPane2";
-            this.tabPane2.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
-            this.tabNavigationPage2});
-            this.tabPane2.RegularSize = new System.Drawing.Size(1370, 749);
-            this.tabPane2.SelectedPage = this.tabNavigationPage2;
-            this.tabPane2.Size = new System.Drawing.Size(1370, 749);
-            this.tabPane2.TabIndex = 13;
-            this.tabPane2.Text = "tabPane2";
+            this.groupControl1.Controls.Add(this.date_End);
+            this.groupControl1.Controls.Add(this.date_Start);
+            this.groupControl1.Controls.Add(this.labelControl2);
+            this.groupControl1.Controls.Add(this.labelControl1);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl1.Location = new System.Drawing.Point(0, 51);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.ShowCaption = false;
+            this.groupControl1.Size = new System.Drawing.Size(1370, 54);
+            this.groupControl1.TabIndex = 4;
+            this.groupControl1.Text = "groupControl1";
             // 
-            // frm_EnterCouponSupplies
+            // date_End
+            // 
+            this.date_End.EditValue = null;
+            this.date_End.Location = new System.Drawing.Point(796, 13);
+            this.date_End.MenuManager = this.barManager2;
+            this.date_End.Name = "date_End";
+            this.date_End.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.date_End.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.date_End.Size = new System.Drawing.Size(199, 20);
+            this.date_End.TabIndex = 5;
+            this.date_End.EditValueChanged += new System.EventHandler(this.date_End_EditValueChanged);
+            // 
+            // date_Start
+            // 
+            this.date_Start.EditValue = null;
+            this.date_Start.Location = new System.Drawing.Point(406, 12);
+            this.date_Start.MenuManager = this.barManager2;
+            this.date_Start.Name = "date_Start";
+            this.date_Start.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.date_Start.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.date_Start.Size = new System.Drawing.Size(199, 20);
+            this.date_Start.TabIndex = 4;
+            this.date_Start.EditValueChanged += new System.EventHandler(this.date_Start_EditValueChanged);
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(681, 17);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(98, 16);
+            this.labelControl2.TabIndex = 3;
+            this.labelControl2.Text = "Đến Ngày Ngày";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(339, 17);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(52, 16);
+            this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "Từ Ngày";
+            // 
+            // grdc_EnterCoupon
+            // 
+            this.grdc_EnterCoupon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdc_EnterCoupon.Location = new System.Drawing.Point(0, 105);
+            this.grdc_EnterCoupon.MainView = this.grdv_EnterCoupon;
+            this.grdc_EnterCoupon.Name = "grdc_EnterCoupon";
+            this.grdc_EnterCoupon.Size = new System.Drawing.Size(1370, 621);
+            this.grdc_EnterCoupon.TabIndex = 19;
+            this.grdc_EnterCoupon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdv_EnterCoupon});
+            // 
+            // grdv_EnterCoupon
+            // 
+            this.grdv_EnterCoupon.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_EnterCoupon.Appearance.Row.Options.UseFont = true;
+            this.grdv_EnterCoupon.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_EnterCoupon.Appearance.TopNewRow.Options.UseFont = true;
+            this.grdv_EnterCoupon.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.enter_coupon_supplies_id,
+            this.enter_coupon_supplies_id_custom,
+            this.storehouse_name,
+            this.enter_coupon_supplies_created_date,
+            this.enter_coupon_supplies_number,
+            this.enter_coupon_supplies_total_percent_discount,
+            this.enter_coupon_supplies_total_price,
+            this.employee_name,
+            this.enter_coupon_supplies_description});
+            this.grdv_EnterCoupon.GridControl = this.grdc_EnterCoupon;
+            this.grdv_EnterCoupon.Name = "grdv_EnterCoupon";
+            this.grdv_EnterCoupon.OptionsBehavior.Editable = false;
+            this.grdv_EnterCoupon.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.grdv_EnterCoupon.OptionsView.ShowGroupPanel = false;
+            this.grdv_EnterCoupon.RowHeight = 30;
+            this.grdv_EnterCoupon.ViewCaptionHeight = 0;
+            // 
+            // enter_coupon_supplies_id
+            // 
+            this.enter_coupon_supplies_id.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enter_coupon_supplies_id.AppearanceCell.Options.UseFont = true;
+            this.enter_coupon_supplies_id.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enter_coupon_supplies_id.AppearanceHeader.Options.UseFont = true;
+            this.enter_coupon_supplies_id.Caption = "ID";
+            this.enter_coupon_supplies_id.FieldName = "enter_coupon_supplies_id";
+            this.enter_coupon_supplies_id.MinWidth = 10;
+            this.enter_coupon_supplies_id.Name = "enter_coupon_supplies_id";
+            this.enter_coupon_supplies_id.OptionsColumn.FixedWidth = true;
+            // 
+            // enter_coupon_supplies_id_custom
+            // 
+            this.enter_coupon_supplies_id_custom.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enter_coupon_supplies_id_custom.AppearanceCell.Options.UseFont = true;
+            this.enter_coupon_supplies_id_custom.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enter_coupon_supplies_id_custom.AppearanceHeader.Options.UseFont = true;
+            this.enter_coupon_supplies_id_custom.Caption = "Mã Phiếu Nhập";
+            this.enter_coupon_supplies_id_custom.FieldName = "enter_coupon_supplies_id_custom";
+            this.enter_coupon_supplies_id_custom.Name = "enter_coupon_supplies_id_custom";
+            this.enter_coupon_supplies_id_custom.OptionsColumn.FixedWidth = true;
+            this.enter_coupon_supplies_id_custom.Visible = true;
+            this.enter_coupon_supplies_id_custom.VisibleIndex = 0;
+            this.enter_coupon_supplies_id_custom.Width = 100;
+            // 
+            // storehouse_name
+            // 
+            this.storehouse_name.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.storehouse_name.AppearanceCell.Options.UseFont = true;
+            this.storehouse_name.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.storehouse_name.AppearanceHeader.Options.UseFont = true;
+            this.storehouse_name.Caption = "Tên Kho";
+            this.storehouse_name.FieldName = "storehouse_name";
+            this.storehouse_name.Name = "storehouse_name";
+            this.storehouse_name.OptionsColumn.FixedWidth = true;
+            this.storehouse_name.Visible = true;
+            this.storehouse_name.VisibleIndex = 1;
+            this.storehouse_name.Width = 150;
+            // 
+            // enter_coupon_supplies_created_date
+            // 
+            this.enter_coupon_supplies_created_date.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enter_coupon_supplies_created_date.AppearanceCell.Options.UseFont = true;
+            this.enter_coupon_supplies_created_date.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enter_coupon_supplies_created_date.AppearanceHeader.Options.UseFont = true;
+            this.enter_coupon_supplies_created_date.Caption = "Ngày Lập";
+            this.enter_coupon_supplies_created_date.FieldName = "enter_coupon_supplies_created_date";
+            this.enter_coupon_supplies_created_date.Name = "enter_coupon_supplies_created_date";
+            this.enter_coupon_supplies_created_date.OptionsColumn.FixedWidth = true;
+            this.enter_coupon_supplies_created_date.Visible = true;
+            this.enter_coupon_supplies_created_date.VisibleIndex = 2;
+            this.enter_coupon_supplies_created_date.Width = 150;
+            // 
+            // enter_coupon_supplies_number
+            // 
+            this.enter_coupon_supplies_number.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enter_coupon_supplies_number.AppearanceCell.Options.UseFont = true;
+            this.enter_coupon_supplies_number.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enter_coupon_supplies_number.AppearanceHeader.Options.UseFont = true;
+            this.enter_coupon_supplies_number.Caption = "Số Phiếu";
+            this.enter_coupon_supplies_number.FieldName = "enter_coupon_supplies_number";
+            this.enter_coupon_supplies_number.Name = "enter_coupon_supplies_number";
+            this.enter_coupon_supplies_number.OptionsColumn.FixedWidth = true;
+            this.enter_coupon_supplies_number.Visible = true;
+            this.enter_coupon_supplies_number.VisibleIndex = 3;
+            this.enter_coupon_supplies_number.Width = 150;
+            // 
+            // enter_coupon_supplies_total_percent_discount
+            // 
+            this.enter_coupon_supplies_total_percent_discount.Caption = "Chiết Khấu";
+            this.enter_coupon_supplies_total_percent_discount.FieldName = "enter_coupon_supplies_total_percent_discount";
+            this.enter_coupon_supplies_total_percent_discount.Name = "enter_coupon_supplies_total_percent_discount";
+            this.enter_coupon_supplies_total_percent_discount.Visible = true;
+            this.enter_coupon_supplies_total_percent_discount.VisibleIndex = 4;
+            this.enter_coupon_supplies_total_percent_discount.Width = 150;
+            // 
+            // enter_coupon_supplies_total_price
+            // 
+            this.enter_coupon_supplies_total_price.AppearanceCell.Options.UseTextOptions = true;
+            this.enter_coupon_supplies_total_price.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.enter_coupon_supplies_total_price.Caption = "Tổng Tiền";
+            this.enter_coupon_supplies_total_price.DisplayFormat.FormatString = "{0:n0} VNĐ";
+            this.enter_coupon_supplies_total_price.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.enter_coupon_supplies_total_price.FieldName = "enter_coupon_supplies_total_price";
+            this.enter_coupon_supplies_total_price.Name = "enter_coupon_supplies_total_price";
+            this.enter_coupon_supplies_total_price.OptionsColumn.FixedWidth = true;
+            this.enter_coupon_supplies_total_price.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "enter_coupon_supplies_total_price", "Tổng Tiền ={0:n0} VNĐ")});
+            this.enter_coupon_supplies_total_price.Visible = true;
+            this.enter_coupon_supplies_total_price.VisibleIndex = 5;
+            this.enter_coupon_supplies_total_price.Width = 200;
+            // 
+            // employee_name
+            // 
+            this.employee_name.Caption = "Người Lập";
+            this.employee_name.FieldName = "employee_name";
+            this.employee_name.Name = "employee_name";
+            this.employee_name.Visible = true;
+            this.employee_name.VisibleIndex = 6;
+            this.employee_name.Width = 226;
+            // 
+            // enter_coupon_supplies_description
+            // 
+            this.enter_coupon_supplies_description.Caption = "Ghi Chú";
+            this.enter_coupon_supplies_description.FieldName = "enter_coupon_supplies_description";
+            this.enter_coupon_supplies_description.Name = "enter_coupon_supplies_description";
+            this.enter_coupon_supplies_description.Visible = true;
+            this.enter_coupon_supplies_description.VisibleIndex = 7;
+            this.enter_coupon_supplies_description.Width = 226;
+            // 
+            // frm_EnterCoupon
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
-            this.Controls.Add(this.tabPane2);
-            this.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.Name = "frm_EnterCouponSupplies";
+            this.Controls.Add(this.grdc_EnterCoupon);
+            this.Controls.Add(this.groupControl1);
+            this.Controls.Add(this.barDockControl6);
+            this.Controls.Add(this.barDockControl7);
+            this.Controls.Add(this.barDockControl5);
+            this.Controls.Add(this.barDockControl4);
+            this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name = "frm_EnterCoupon";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DANH SÁCH PHIẾU NHẬP VẬT TƯ";
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_unit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdc_unit)).EndInit();
+            this.Text = "DANH SÁCH PHIẾU NHẬP";
+            this.Load += new System.EventHandler(this.frm_EnterCoupon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
-            this.tabNavigationPage2.ResumeLayout(false);
-            this.tabNavigationPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabPane2)).EndInit();
-            this.tabPane2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.date_End.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_End.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_Start.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_Start.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdc_EnterCoupon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_EnterCoupon)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DevExpress.XtraGrid.Views.Grid.GridView grdv_unit;
-        private DevExpress.XtraGrid.Columns.GridColumn unit_id;
-        private DevExpress.XtraGrid.Columns.GridColumn unit_id_custom;
-        private DevExpress.XtraGrid.Columns.GridColumn unit_name;
-        private DevExpress.XtraGrid.GridControl grdc_unit;
-        private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarManager barManager2;
         private DevExpress.XtraBars.Bar bar7;
         private DevExpress.XtraBars.BarButtonItem btn_Add;
@@ -636,15 +716,26 @@
         private DevExpress.XtraBars.BarDockControl barDockControl5;
         private DevExpress.XtraBars.BarDockControl barDockControl6;
         private DevExpress.XtraBars.BarDockControl barDockControl7;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
-        private DevExpress.XtraBars.BarDockControl barDockControl2;
-        private DevExpress.XtraBars.BarDockControl barDockControl3;
-        private DevExpress.XtraBars.BarDockControl barDockControl8;
         private DevExpress.XtraBars.BarCheckItem barCheckItem2;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem2;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem3;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem4;
-        private DevExpress.XtraBars.Navigation.TabPane tabPane2;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.DateEdit date_End;
+        private DevExpress.XtraEditors.DateEdit date_Start;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraGrid.GridControl grdc_EnterCoupon;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdv_EnterCoupon;
+        private DevExpress.XtraGrid.Columns.GridColumn enter_coupon_supplies_id;
+        private DevExpress.XtraGrid.Columns.GridColumn enter_coupon_supplies_id_custom;
+        private DevExpress.XtraGrid.Columns.GridColumn storehouse_name;
+        private DevExpress.XtraGrid.Columns.GridColumn enter_coupon_supplies_created_date;
+        private DevExpress.XtraGrid.Columns.GridColumn enter_coupon_supplies_number;
+        private DevExpress.XtraGrid.Columns.GridColumn enter_coupon_supplies_total_price;
+        private DevExpress.XtraGrid.Columns.GridColumn employee_name;
+        private DevExpress.XtraGrid.Columns.GridColumn enter_coupon_supplies_description;
+        private DevExpress.XtraGrid.Columns.GridColumn enter_coupon_supplies_total_percent_discount;
     }
 }

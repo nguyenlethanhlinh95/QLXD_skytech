@@ -58,6 +58,11 @@ namespace FormMau
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txt_UserName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton14 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton15 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton16 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton17 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
@@ -470,6 +475,101 @@ namespace FormMau
             this.labelControl1.TabIndex = 263;
             this.labelControl1.Text = "Số phiếu:";
             // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.Location = new System.Drawing.Point(823, 91);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(110, 43);
+            this.simpleButton2.TabIndex = 279;
+            this.simpleButton2.Text = "Thêm mới";
+            // 
+            // simpleButton14
+            // 
+            this.simpleButton14.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.simpleButton14.Appearance.Options.UseFont = true;
+            this.simpleButton14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton14.ImageOptions.Image")));
+            this.simpleButton14.Location = new System.Drawing.Point(823, 176);
+            this.simpleButton14.Name = "simpleButton14";
+            this.simpleButton14.Size = new System.Drawing.Size(110, 43);
+            this.simpleButton14.TabIndex = 279;
+            this.simpleButton14.Text = "Xóa";
+            this.simpleButton14.Click += new System.EventHandler(this.simpleButton14_Click);
+            // 
+            // simpleButton15
+            // 
+            this.simpleButton15.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.simpleButton15.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.simpleButton15.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton15.Appearance.Options.UseBackColor = true;
+            this.simpleButton15.Appearance.Options.UseFont = true;
+            this.simpleButton15.Appearance.Options.UseForeColor = true;
+            this.simpleButton15.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(136)))), ((int)(((byte)(56)))));
+            this.simpleButton15.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.simpleButton15.AppearanceHovered.Options.UseBackColor = true;
+            this.simpleButton15.AppearanceHovered.Options.UseFont = true;
+            this.simpleButton15.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.simpleButton15.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton15.ImageOptions.Image")));
+            this.simpleButton15.Location = new System.Drawing.Point(823, 250);
+            this.simpleButton15.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.simpleButton15.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.simpleButton15.Name = "simpleButton15";
+            this.simpleButton15.Size = new System.Drawing.Size(110, 43);
+            this.simpleButton15.TabIndex = 279;
+            this.simpleButton15.Text = "Lưu";
+            this.simpleButton15.ToolTipTitle = "Lưu";
+            // 
+            // simpleButton16
+            // 
+            this.simpleButton16.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.simpleButton16.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.simpleButton16.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton16.Appearance.Options.UseBackColor = true;
+            this.simpleButton16.Appearance.Options.UseFont = true;
+            this.simpleButton16.Appearance.Options.UseForeColor = true;
+            this.simpleButton16.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(136)))), ((int)(((byte)(56)))));
+            this.simpleButton16.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.simpleButton16.AppearanceHovered.Options.UseBackColor = true;
+            this.simpleButton16.AppearanceHovered.Options.UseFont = true;
+            this.simpleButton16.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.simpleButton16.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton16.ImageOptions.Image")));
+            this.simpleButton16.Location = new System.Drawing.Point(823, 333);
+            this.simpleButton16.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.simpleButton16.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.simpleButton16.Name = "simpleButton16";
+            this.simpleButton16.Size = new System.Drawing.Size(110, 43);
+            this.simpleButton16.TabIndex = 279;
+            this.simpleButton16.Text = "Thêm mới";
+            this.simpleButton16.ToolTipTitle = "Lưu";
+            // 
+            // simpleButton17
+            // 
+            this.simpleButton17.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.simpleButton17.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.simpleButton17.Appearance.ForeColor = System.Drawing.Color.White;
+            this.simpleButton17.Appearance.Options.UseBackColor = true;
+            this.simpleButton17.Appearance.Options.UseFont = true;
+            this.simpleButton17.Appearance.Options.UseForeColor = true;
+            this.simpleButton17.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(136)))), ((int)(((byte)(56)))));
+            this.simpleButton17.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.simpleButton17.AppearanceHovered.Options.UseBackColor = true;
+            this.simpleButton17.AppearanceHovered.Options.UseFont = true;
+            this.simpleButton17.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.simpleButton17.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.simpleButton17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton17.ImageOptions.Image")));
+            this.simpleButton17.Location = new System.Drawing.Point(823, 406);
+            this.simpleButton17.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.simpleButton17.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.simpleButton17.Name = "simpleButton17";
+            this.simpleButton17.Size = new System.Drawing.Size(110, 43);
+            this.simpleButton17.TabIndex = 279;
+            this.simpleButton17.Text = "Xóa";
+            this.simpleButton17.ToolTipTitle = "Lưu";
+            // 
             // frm_Button
             // 
             this.ActiveGlowColor = System.Drawing.Color.White;
@@ -477,7 +577,12 @@ namespace FormMau
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 607);
+            this.ClientSize = new System.Drawing.Size(1126, 607);
+            this.Controls.Add(this.simpleButton14);
+            this.Controls.Add(this.simpleButton17);
+            this.Controls.Add(this.simpleButton16);
+            this.Controls.Add(this.simpleButton15);
+            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.memoEdit1);
@@ -553,5 +658,10 @@ namespace FormMau
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txt_UserName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton14;
+        private DevExpress.XtraEditors.SimpleButton simpleButton15;
+        private DevExpress.XtraEditors.SimpleButton simpleButton16;
+        private DevExpress.XtraEditors.SimpleButton simpleButton17;
     }
 }

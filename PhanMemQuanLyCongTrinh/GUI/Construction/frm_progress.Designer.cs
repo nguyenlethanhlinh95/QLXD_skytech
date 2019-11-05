@@ -1,6 +1,6 @@
 ﻿namespace PhanMemQuanLyCongTrinh
 {
-    partial class frm_Employees_Contruct
+    partial class frm_progress
     {
         /// <summary>
         /// Required designer variable.
@@ -13,9 +13,9 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if ( disposing && (components != null) )
+            if (disposing && (components != null))
             {
-                components.Dispose( );
+                components.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -26,29 +26,26 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent( )
+        private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Employees_Contruct));
-            DevExpress.Utils.SuperToolTip superToolTip9 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem9 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip10 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem10 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip11 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem11 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip12 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem12 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip13 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem13 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip14 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem14 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip15 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem15 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip16 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem16 = new DevExpress.Utils.ToolTipTitleItem();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.lue_Contruct_items = new DevExpress.XtraEditors.LookUpEdit();
-            this.lue_Contruct = new DevExpress.XtraEditors.LookUpEdit();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_progress));
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar7 = new DevExpress.XtraBars.Bar();
             this.btn_Add = new DevExpress.XtraBars.BarButtonItem();
@@ -73,94 +70,47 @@
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.grdc_em = new DevExpress.XtraGrid.GridControl();
-            this.grdv_em = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.employee_id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.employee_id_custom = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grdc_progress = new DevExpress.XtraGrid.GridControl();
+            this.grdv_progress = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.progress_construction_item_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.employee_name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.employee_address = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.employee_date_of_birth = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.department_name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.employee_phone = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.department_price = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.employee_status = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
+            this.construction_item_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.progress_construction_item_custom = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.progress_construction_item_percent = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.progress_construction_item_date = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.progress_construction_item_image = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.progress_construction_item_description = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.barDockControl9 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl10 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl11 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl12 = new DevExpress.XtraBars.BarDockControl();
             this.barCheckItem2 = new DevExpress.XtraBars.BarCheckItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem2 = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem3 = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem4 = new DevExpress.XtraBars.BarHeaderItem();
+            this.tabPane2 = new DevExpress.XtraBars.Navigation.TabPane();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btn_Construction_items = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btn_AddNewSuppelies = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.tabPane2 = new DevExpress.XtraBars.Navigation.TabPane();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lue_Contruct_items.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lue_Contruct.Properties)).BeginInit();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.lke_Contruct_items = new DevExpress.XtraEditors.LookUpEdit();
+            this.lke_Contruct = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdc_em)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_em)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdc_progress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_progress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane2)).BeginInit();
             this.tabPane2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lke_Contruct_items.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lke_Contruct.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.lue_Contruct_items);
-            this.panelControl1.Controls.Add(this.lue_Contruct);
-            this.panelControl1.Controls.Add(this.btn_Construction_items);
-            this.panelControl1.Controls.Add(this.labelControl6);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.btn_AddNewSuppelies);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1370, 57);
-            this.panelControl1.TabIndex = 0;
-            // 
-            // lue_Contruct_items
-            // 
-            this.lue_Contruct_items.Location = new System.Drawing.Point(879, 21);
-            this.lue_Contruct_items.Name = "lue_Contruct_items";
-            this.lue_Contruct_items.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lue_Contruct_items.Properties.Appearance.Options.UseFont = true;
-            this.lue_Contruct_items.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lue_Contruct_items.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("construction_item_id", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("construction_item_custom", "Mã", 75, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("construction_item_name", "Tên Hạng Mục", 120, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.lue_Contruct_items.Properties.NullText = "Chọn";
-            this.lue_Contruct_items.Size = new System.Drawing.Size(249, 22);
-            this.lue_Contruct_items.TabIndex = 294;
-            this.lue_Contruct_items.EditValueChanged += new System.EventHandler(this.lue_Contruct_items_EditValueChanged);
-            // 
-            // lue_Contruct
-            // 
-            this.lue_Contruct.Location = new System.Drawing.Point(297, 20);
-            this.lue_Contruct.MenuManager = this.barManager2;
-            this.lue_Contruct.Name = "lue_Contruct";
-            this.lue_Contruct.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lue_Contruct.Properties.Appearance.Options.UseFont = true;
-            this.lue_Contruct.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lue_Contruct.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("construction_id", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("construction_id_custom", "Mã", 75, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("construction_name", "Tên CT", 120, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.lue_Contruct.Properties.NullText = "Chọn";
-            this.lue_Contruct.Size = new System.Drawing.Size(249, 22);
-            this.lue_Contruct.TabIndex = 294;
-            this.lue_Contruct.EditValueChanged += new System.EventHandler(this.lue_Contruct_EditValueChanged);
             // 
             // barManager2
             // 
@@ -241,9 +191,9 @@
             this.btn_Add.ItemInMenuAppearance.Normal.Options.UseFont = true;
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem9.Text = "Ctrl + N";
-            superToolTip9.Items.Add(toolTipTitleItem9);
-            this.btn_Add.SuperTip = superToolTip9;
+            toolTipTitleItem1.Text = "Ctrl + N";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            this.btn_Add.SuperTip = superToolTip1;
             this.btn_Add.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Add_ItemClick);
             // 
             // barStaticItem4
@@ -257,7 +207,6 @@
             // 
             this.btn_Edit.Caption = "Chỉnh Sửa";
             this.btn_Edit.ContentHorizontalAlignment = DevExpress.XtraBars.BarItemContentAlignment.Center;
-            this.btn_Edit.Enabled = false;
             this.btn_Edit.Id = 1;
             this.btn_Edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Edit.ImageOptions.Image")));
             this.btn_Edit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Edit.ImageOptions.LargeImage")));
@@ -269,9 +218,10 @@
             this.btn_Edit.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem10.Text = "Ctrl + E";
-            superToolTip10.Items.Add(toolTipTitleItem10);
-            this.btn_Edit.SuperTip = superToolTip10;
+            toolTipTitleItem2.Text = "Ctrl + E";
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            this.btn_Edit.SuperTip = superToolTip2;
+            this.btn_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Edit_ItemClick);
             // 
             // barStaticItem2
             // 
@@ -295,9 +245,9 @@
             this.btn_Delete.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(80, 0);
-            toolTipTitleItem11.Text = "Ctrl + Delete\r\n";
-            superToolTip11.Items.Add(toolTipTitleItem11);
-            this.btn_Delete.SuperTip = superToolTip11;
+            toolTipTitleItem3.Text = "Ctrl + Delete\r\n";
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            this.btn_Delete.SuperTip = superToolTip3;
             this.btn_Delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Delete_ItemClick);
             // 
             // barStaticItem5
@@ -322,10 +272,9 @@
             this.btn_Refesh.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Refesh.Name = "btn_Refesh";
             this.btn_Refesh.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem12.Text = "Ctrl + F5\r\n";
-            superToolTip12.Items.Add(toolTipTitleItem12);
-            this.btn_Refesh.SuperTip = superToolTip12;
-            this.btn_Refesh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Refesh_ItemClick);
+            toolTipTitleItem4.Text = "Ctrl + F5\r\n";
+            superToolTip4.Items.Add(toolTipTitleItem4);
+            this.btn_Refesh.SuperTip = superToolTip4;
             // 
             // barStaticItem6
             // 
@@ -349,9 +298,9 @@
             this.btn_Import.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Import.Name = "btn_Import";
             this.btn_Import.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem13.Text = "Ctrl + F7";
-            superToolTip13.Items.Add(toolTipTitleItem13);
-            this.btn_Import.SuperTip = superToolTip13;
+            toolTipTitleItem5.Text = "Ctrl + F7";
+            superToolTip5.Items.Add(toolTipTitleItem5);
+            this.btn_Import.SuperTip = superToolTip5;
             // 
             // barStaticItem7
             // 
@@ -375,9 +324,9 @@
             this.btn_Export.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Export.Name = "btn_Export";
             this.btn_Export.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem14.Text = "Ctrl + F8";
-            superToolTip14.Items.Add(toolTipTitleItem14);
-            this.btn_Export.SuperTip = superToolTip14;
+            toolTipTitleItem6.Text = "Ctrl + F8";
+            superToolTip6.Items.Add(toolTipTitleItem6);
+            this.btn_Export.SuperTip = superToolTip6;
             // 
             // barStaticItem8
             // 
@@ -401,9 +350,9 @@
             this.btn_Print.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Print.Name = "btn_Print";
             this.btn_Print.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem15.Text = "Ctrl + P";
-            superToolTip15.Items.Add(toolTipTitleItem15);
-            this.btn_Print.SuperTip = superToolTip15;
+            toolTipTitleItem7.Text = "Ctrl + P";
+            superToolTip7.Items.Add(toolTipTitleItem7);
+            this.btn_Print.SuperTip = superToolTip7;
             // 
             // barStaticItem9
             // 
@@ -427,9 +376,9 @@
             this.btn_Close.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem16.Text = "Esc";
-            superToolTip16.Items.Add(toolTipTitleItem16);
-            this.btn_Close.SuperTip = superToolTip16;
+            toolTipTitleItem8.Text = "Esc";
+            superToolTip8.Items.Add(toolTipTitleItem8);
+            this.btn_Close.SuperTip = superToolTip8;
             // 
             // bar8
             // 
@@ -491,12 +440,12 @@
             // 
             this.tabNavigationPage2.Appearance.BackColor = System.Drawing.Color.Black;
             this.tabNavigationPage2.Appearance.Options.UseBackColor = true;
-            this.tabNavigationPage2.Caption = "Danh sách nhân viên";
-            this.tabNavigationPage2.Controls.Add(this.grdc_em);
-            this.tabNavigationPage2.Controls.Add(this.barDockControl1);
-            this.tabNavigationPage2.Controls.Add(this.barDockControl2);
-            this.tabNavigationPage2.Controls.Add(this.barDockControl3);
-            this.tabNavigationPage2.Controls.Add(this.barDockControl8);
+            this.tabNavigationPage2.Caption = "Tiến Độ Công Trình";
+            this.tabNavigationPage2.Controls.Add(this.grdc_progress);
+            this.tabNavigationPage2.Controls.Add(this.barDockControl9);
+            this.tabNavigationPage2.Controls.Add(this.barDockControl10);
+            this.tabNavigationPage2.Controls.Add(this.barDockControl11);
+            this.tabNavigationPage2.Controls.Add(this.barDockControl12);
             this.tabNavigationPage2.Controls.Add(this.barDockControl6);
             this.tabNavigationPage2.Controls.Add(this.barDockControl7);
             this.tabNavigationPage2.Controls.Add(this.barDockControl5);
@@ -506,149 +455,187 @@
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Size = new System.Drawing.Size(1366, 661);
             // 
-            // grdc_em
+            // grdc_progress
             // 
-            this.grdc_em.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdc_em.Location = new System.Drawing.Point(0, 51);
-            this.grdc_em.MainView = this.grdv_em;
-            this.grdc_em.Name = "grdc_em";
-            this.grdc_em.Size = new System.Drawing.Size(1366, 587);
-            this.grdc_em.TabIndex = 18;
-            this.grdc_em.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grdv_em});
+            this.grdc_progress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdc_progress.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdc_progress.Location = new System.Drawing.Point(0, 51);
+            this.grdc_progress.MainView = this.grdv_progress;
+            this.grdc_progress.Name = "grdc_progress";
+            this.grdc_progress.Size = new System.Drawing.Size(1366, 587);
+            this.grdc_progress.TabIndex = 18;
+            this.grdc_progress.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdv_progress});
             // 
-            // grdv_em
+            // grdv_progress
             // 
-            this.grdv_em.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdv_em.Appearance.Row.Options.UseFont = true;
-            this.grdv_em.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdv_em.Appearance.TopNewRow.Options.UseFont = true;
-            this.grdv_em.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.employee_id,
-            this.employee_id_custom,
+            this.grdv_progress.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_progress.Appearance.Row.Options.UseFont = true;
+            this.grdv_progress.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_progress.Appearance.TopNewRow.Options.UseFont = true;
+            this.grdv_progress.ColumnPanelRowHeight = 30;
+            this.grdv_progress.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.progress_construction_item_id,
             this.employee_name,
-            this.employee_address,
-            this.employee_date_of_birth,
-            this.department_name,
-            this.employee_phone,
-            this.department_price,
-            this.employee_status});
-            this.grdv_em.GridControl = this.grdc_em;
-            this.grdv_em.Name = "grdv_em";
-            this.grdv_em.OptionsBehavior.Editable = false;
-            this.grdv_em.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            this.grdv_em.OptionsView.ShowGroupPanel = false;
-            this.grdv_em.RowHeight = 30;
-            this.grdv_em.ViewCaptionHeight = 0;
+            this.construction_item_name,
+            this.progress_construction_item_custom,
+            this.progress_construction_item_percent,
+            this.progress_construction_item_date,
+            this.progress_construction_item_image,
+            this.progress_construction_item_description});
+            this.grdv_progress.GridControl = this.grdc_progress;
+            this.grdv_progress.Name = "grdv_progress";
+            this.grdv_progress.OptionsBehavior.Editable = false;
+            this.grdv_progress.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.grdv_progress.OptionsView.ShowGroupPanel = false;
+            this.grdv_progress.RowHeight = 150;
+            this.grdv_progress.ViewCaptionHeight = 0;
+            this.grdv_progress.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdv_progress_FocusedRowChanged);
             // 
-            // employee_id
+            // progress_construction_item_id
             // 
-            this.employee_id.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employee_id.AppearanceCell.Options.UseFont = true;
-            this.employee_id.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employee_id.AppearanceHeader.Options.UseFont = true;
-            this.employee_id.Caption = "ID_Em";
-            this.employee_id.FieldName = "employee_id";
-            this.employee_id.Name = "employee_id";
-            this.employee_id.OptionsColumn.FixedWidth = true;
-            // 
-            // employee_id_custom
-            // 
-            this.employee_id_custom.Caption = "Mã";
-            this.employee_id_custom.FieldName = "employee_id_custom";
-            this.employee_id_custom.Name = "employee_id_custom";
-            this.employee_id_custom.Visible = true;
-            this.employee_id_custom.VisibleIndex = 0;
+            this.progress_construction_item_id.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progress_construction_item_id.AppearanceCell.Options.UseFont = true;
+            this.progress_construction_item_id.AppearanceCell.Options.UseTextOptions = true;
+            this.progress_construction_item_id.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.progress_construction_item_id.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progress_construction_item_id.AppearanceHeader.Options.UseFont = true;
+            this.progress_construction_item_id.AppearanceHeader.Options.UseTextOptions = true;
+            this.progress_construction_item_id.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.progress_construction_item_id.Caption = "ID";
+            this.progress_construction_item_id.FieldName = "progress_construction_item_id";
+            this.progress_construction_item_id.Name = "progress_construction_item_id";
+            this.progress_construction_item_id.OptionsColumn.FixedWidth = true;
             // 
             // employee_name
             // 
-            this.employee_name.Caption = "Tên NV";
+            this.employee_name.AppearanceCell.Options.UseTextOptions = true;
+            this.employee_name.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.employee_name.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employee_name.AppearanceHeader.Options.UseFont = true;
+            this.employee_name.AppearanceHeader.Options.UseTextOptions = true;
+            this.employee_name.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.employee_name.Caption = "Người Lập";
             this.employee_name.FieldName = "employee_name";
             this.employee_name.Name = "employee_name";
             this.employee_name.Visible = true;
-            this.employee_name.VisibleIndex = 1;
+            this.employee_name.VisibleIndex = 0;
             // 
-            // employee_address
+            // construction_item_name
             // 
-            this.employee_address.Caption = "Địa Chỉ";
-            this.employee_address.FieldName = "employee_address";
-            this.employee_address.Name = "employee_address";
-            this.employee_address.Visible = true;
-            this.employee_address.VisibleIndex = 2;
+            this.construction_item_name.AppearanceCell.Options.UseTextOptions = true;
+            this.construction_item_name.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.construction_item_name.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.construction_item_name.AppearanceHeader.Options.UseFont = true;
+            this.construction_item_name.AppearanceHeader.Options.UseTextOptions = true;
+            this.construction_item_name.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.construction_item_name.Caption = "Hạng Mục";
+            this.construction_item_name.FieldName = "construction_item_name";
+            this.construction_item_name.Name = "construction_item_name";
+            this.construction_item_name.Visible = true;
+            this.construction_item_name.VisibleIndex = 1;
             // 
-            // employee_date_of_birth
+            // progress_construction_item_custom
             // 
-            this.employee_date_of_birth.Caption = "Ngày Sinh";
-            this.employee_date_of_birth.DisplayFormat.FormatString = "dd/mm/yyy";
-            this.employee_date_of_birth.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.employee_date_of_birth.FieldName = "employee_date_of_birth";
-            this.employee_date_of_birth.Name = "employee_date_of_birth";
-            this.employee_date_of_birth.Visible = true;
-            this.employee_date_of_birth.VisibleIndex = 3;
+            this.progress_construction_item_custom.AppearanceCell.Options.UseTextOptions = true;
+            this.progress_construction_item_custom.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.progress_construction_item_custom.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progress_construction_item_custom.AppearanceHeader.Options.UseFont = true;
+            this.progress_construction_item_custom.AppearanceHeader.Options.UseTextOptions = true;
+            this.progress_construction_item_custom.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.progress_construction_item_custom.Caption = "Mã";
+            this.progress_construction_item_custom.FieldName = "progress_construction_item_custom";
+            this.progress_construction_item_custom.Name = "progress_construction_item_custom";
+            this.progress_construction_item_custom.Visible = true;
+            this.progress_construction_item_custom.VisibleIndex = 2;
             // 
-            // department_name
+            // progress_construction_item_percent
             // 
-            this.department_name.Caption = "Chức vụ";
-            this.department_name.FieldName = "department_name";
-            this.department_name.Name = "department_name";
-            this.department_name.Visible = true;
-            this.department_name.VisibleIndex = 4;
+            this.progress_construction_item_percent.AppearanceCell.Options.UseTextOptions = true;
+            this.progress_construction_item_percent.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.progress_construction_item_percent.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progress_construction_item_percent.AppearanceHeader.Options.UseFont = true;
+            this.progress_construction_item_percent.AppearanceHeader.Options.UseTextOptions = true;
+            this.progress_construction_item_percent.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.progress_construction_item_percent.Caption = "Phần Trăm";
+            this.progress_construction_item_percent.FieldName = "progress_construction_item_percent";
+            this.progress_construction_item_percent.Name = "progress_construction_item_percent";
+            this.progress_construction_item_percent.Visible = true;
+            this.progress_construction_item_percent.VisibleIndex = 3;
             // 
-            // employee_phone
+            // progress_construction_item_date
             // 
-            this.employee_phone.Caption = "SĐT";
-            this.employee_phone.FieldName = "employee_phone";
-            this.employee_phone.Name = "employee_phone";
-            this.employee_phone.Visible = true;
-            this.employee_phone.VisibleIndex = 5;
+            this.progress_construction_item_date.AppearanceCell.Options.UseTextOptions = true;
+            this.progress_construction_item_date.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.progress_construction_item_date.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progress_construction_item_date.AppearanceHeader.Options.UseFont = true;
+            this.progress_construction_item_date.AppearanceHeader.Options.UseTextOptions = true;
+            this.progress_construction_item_date.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.progress_construction_item_date.Caption = "Ngày";
+            this.progress_construction_item_date.FieldName = "progress_construction_item_date";
+            this.progress_construction_item_date.Name = "progress_construction_item_date";
+            this.progress_construction_item_date.Visible = true;
+            this.progress_construction_item_date.VisibleIndex = 4;
             // 
-            // department_price
+            // progress_construction_item_image
             // 
-            this.department_price.Caption = "Tiền Công/Ngày";
-            this.department_price.FieldName = "department_price";
-            this.department_price.Name = "department_price";
-            this.department_price.Visible = true;
-            this.department_price.VisibleIndex = 6;
+            this.progress_construction_item_image.AppearanceCell.Options.UseTextOptions = true;
+            this.progress_construction_item_image.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.progress_construction_item_image.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progress_construction_item_image.AppearanceHeader.Options.UseFont = true;
+            this.progress_construction_item_image.AppearanceHeader.Options.UseTextOptions = true;
+            this.progress_construction_item_image.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.progress_construction_item_image.Caption = "Hình Ảnh";
+            this.progress_construction_item_image.FieldName = "progress_construction_item_image";
+            this.progress_construction_item_image.Name = "progress_construction_item_image";
+            this.progress_construction_item_image.Visible = true;
+            this.progress_construction_item_image.VisibleIndex = 5;
             // 
-            // employee_status
+            // progress_construction_item_description
             // 
-            this.employee_status.Caption = "Tình Trạng";
-            this.employee_status.FieldName = "employee_status";
-            this.employee_status.Name = "employee_status";
-            this.employee_status.Visible = true;
-            this.employee_status.VisibleIndex = 7;
+            this.progress_construction_item_description.AppearanceCell.Options.UseTextOptions = true;
+            this.progress_construction_item_description.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.progress_construction_item_description.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progress_construction_item_description.AppearanceHeader.Options.UseFont = true;
+            this.progress_construction_item_description.AppearanceHeader.Options.UseTextOptions = true;
+            this.progress_construction_item_description.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.progress_construction_item_description.Caption = "Ghi Chú";
+            this.progress_construction_item_description.FieldName = "progress_construction_item_description";
+            this.progress_construction_item_description.Name = "progress_construction_item_description";
+            this.progress_construction_item_description.Visible = true;
+            this.progress_construction_item_description.VisibleIndex = 6;
             // 
-            // barDockControl1
+            // barDockControl9
             // 
-            this.barDockControl1.CausesValidation = false;
-            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl1.Location = new System.Drawing.Point(0, 51);
-            this.barDockControl1.Manager = this.barManager2;
-            this.barDockControl1.Size = new System.Drawing.Size(0, 587);
+            this.barDockControl9.CausesValidation = false;
+            this.barDockControl9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl9.Location = new System.Drawing.Point(0, 51);
+            this.barDockControl9.Manager = null;
+            this.barDockControl9.Size = new System.Drawing.Size(0, 587);
             // 
-            // barDockControl2
+            // barDockControl10
             // 
-            this.barDockControl2.CausesValidation = false;
-            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl2.Location = new System.Drawing.Point(1366, 51);
-            this.barDockControl2.Manager = this.barManager2;
-            this.barDockControl2.Size = new System.Drawing.Size(0, 587);
+            this.barDockControl10.CausesValidation = false;
+            this.barDockControl10.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl10.Location = new System.Drawing.Point(1366, 51);
+            this.barDockControl10.Manager = null;
+            this.barDockControl10.Size = new System.Drawing.Size(0, 587);
             // 
-            // barDockControl3
+            // barDockControl11
             // 
-            this.barDockControl3.CausesValidation = false;
-            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl3.Location = new System.Drawing.Point(0, 638);
-            this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(1366, 0);
+            this.barDockControl11.CausesValidation = false;
+            this.barDockControl11.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl11.Location = new System.Drawing.Point(0, 638);
+            this.barDockControl11.Manager = null;
+            this.barDockControl11.Size = new System.Drawing.Size(1366, 0);
             // 
-            // barDockControl8
+            // barDockControl12
             // 
-            this.barDockControl8.CausesValidation = false;
-            this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl8.Location = new System.Drawing.Point(0, 51);
-            this.barDockControl8.Manager = this.barManager2;
-            this.barDockControl8.Size = new System.Drawing.Size(1366, 0);
+            this.barDockControl12.CausesValidation = false;
+            this.barDockControl12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl12.Location = new System.Drawing.Point(0, 51);
+            this.barDockControl12.Manager = null;
+            this.barDockControl12.Size = new System.Drawing.Size(1366, 0);
             // 
             // barCheckItem2
             // 
@@ -677,58 +664,6 @@
             this.barHeaderItem4.Id = 14;
             this.barHeaderItem4.Name = "barHeaderItem4";
             // 
-            // btn_Construction_items
-            // 
-            this.btn_Construction_items.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Construction_items.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Construction_items.ImageOptions.Image")));
-            this.btn_Construction_items.Location = new System.Drawing.Point(1145, 20);
-            this.btn_Construction_items.Name = "btn_Construction_items";
-            this.btn_Construction_items.Size = new System.Drawing.Size(25, 23);
-            this.btn_Construction_items.TabIndex = 292;
-            this.btn_Construction_items.ToolTipTitle = "Thêm mới Vật tư";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(175, 21);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(107, 16);
-            this.labelControl6.TabIndex = 279;
-            this.labelControl6.Text = "Chọn công trình:";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(759, 23);
-            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(103, 16);
-            this.labelControl1.TabIndex = 279;
-            this.labelControl1.Text = "Chọn hạng mục:";
-            // 
-            // btn_AddNewSuppelies
-            // 
-            this.btn_AddNewSuppelies.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_AddNewSuppelies.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_AddNewSuppelies.ImageOptions.Image")));
-            this.btn_AddNewSuppelies.Location = new System.Drawing.Point(564, 18);
-            this.btn_AddNewSuppelies.Name = "btn_AddNewSuppelies";
-            this.btn_AddNewSuppelies.Size = new System.Drawing.Size(25, 23);
-            this.btn_AddNewSuppelies.TabIndex = 292;
-            this.btn_AddNewSuppelies.ToolTipTitle = "Thêm mới Vật tư";
-            this.btn_AddNewSuppelies.Click += new System.EventHandler(this.btn_AddNewSuppelies_Click);
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.tabPane2);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 57);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1370, 692);
-            this.panelControl2.TabIndex = 1;
-            // 
             // tabPane2
             // 
             this.tabPane2.AllowCollapse = DevExpress.Utils.DefaultBoolean.Default;
@@ -748,7 +683,109 @@
             this.tabPane2.TabIndex = 13;
             this.tabPane2.Text = "tabPane2";
             // 
-            // frm_Employees_Contruct
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.tabPane2);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Location = new System.Drawing.Point(0, 57);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(1370, 692);
+            this.panelControl2.TabIndex = 5;
+            // 
+            // btn_Construction_items
+            // 
+            this.btn_Construction_items.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Construction_items.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Construction_items.ImageOptions.Image")));
+            this.btn_Construction_items.Location = new System.Drawing.Point(1145, 20);
+            this.btn_Construction_items.Name = "btn_Construction_items";
+            this.btn_Construction_items.Size = new System.Drawing.Size(25, 23);
+            this.btn_Construction_items.TabIndex = 292;
+            this.btn_Construction_items.ToolTipTitle = "Thêm mới Vật tư";
+            this.btn_Construction_items.Click += new System.EventHandler(this.btn_Construction_items_Click);
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(175, 21);
+            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(107, 16);
+            this.labelControl6.TabIndex = 279;
+            this.labelControl6.Text = "Chọn công trình:";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(759, 23);
+            this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(103, 16);
+            this.labelControl1.TabIndex = 279;
+            this.labelControl1.Text = "Chọn hạng mục:";
+            // 
+            // btn_AddNewSuppelies
+            // 
+            this.btn_AddNewSuppelies.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_AddNewSuppelies.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_AddNewSuppelies.ImageOptions.Image")));
+            this.btn_AddNewSuppelies.Location = new System.Drawing.Point(573, 17);
+            this.btn_AddNewSuppelies.Name = "btn_AddNewSuppelies";
+            this.btn_AddNewSuppelies.Size = new System.Drawing.Size(25, 23);
+            this.btn_AddNewSuppelies.TabIndex = 292;
+            this.btn_AddNewSuppelies.ToolTipTitle = "Thêm mới Vật tư";
+            this.btn_AddNewSuppelies.Click += new System.EventHandler(this.btn_AddNewSuppelies_Click);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.lke_Contruct_items);
+            this.panelControl1.Controls.Add(this.lke_Contruct);
+            this.panelControl1.Controls.Add(this.btn_Construction_items);
+            this.panelControl1.Controls.Add(this.labelControl6);
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.btn_AddNewSuppelies);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1370, 57);
+            this.panelControl1.TabIndex = 4;
+            this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
+            // 
+            // lke_Contruct_items
+            // 
+            this.lke_Contruct_items.Location = new System.Drawing.Point(879, 21);
+            this.lke_Contruct_items.Name = "lke_Contruct_items";
+            this.lke_Contruct_items.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.lke_Contruct_items.Properties.Appearance.Options.UseFont = true;
+            this.lke_Contruct_items.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lke_Contruct_items.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("construction_item_id", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("construction_item_custom", "Mã", 75, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("construction_item_name", "Tên Hạng Mục", 120, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lke_Contruct_items.Properties.NullText = "Chọn";
+            this.lke_Contruct_items.Size = new System.Drawing.Size(249, 20);
+            this.lke_Contruct_items.TabIndex = 294;
+            this.lke_Contruct_items.EditValueChanged += new System.EventHandler(this.lke_Contruct_items_EditValueChanged);
+            // 
+            // lke_Contruct
+            // 
+            this.lke_Contruct.Location = new System.Drawing.Point(297, 20);
+            this.lke_Contruct.Name = "lke_Contruct";
+            this.lke_Contruct.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.lke_Contruct.Properties.Appearance.Options.UseFont = true;
+            this.lke_Contruct.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lke_Contruct.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("construction_id", "ID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("construction_id_custom", "Mã", 75, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("construction_name", "Tên CT", 120, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lke_Contruct.Properties.NullText = "Chọn";
+            this.lke_Contruct.Size = new System.Drawing.Size(249, 20);
+            this.lke_Contruct.TabIndex = 294;
+            this.lke_Contruct.EditValueChanged += new System.EventHandler(this.lke_Contruct_EditValueChanged);
+            // 
+            // frm_progress
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -756,44 +793,32 @@
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
-            this.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.Name = "frm_Employees_Contruct";
+            this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Name = "frm_progress";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NHÂN VIÊN CÔNG TRÌNH";
-            this.Load += new System.EventHandler(this.frm_Employees_Contruct_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lue_Contruct_items.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lue_Contruct.Properties)).EndInit();
+            this.Text = "Tiến Độ Dự Án";
+            this.Load += new System.EventHandler(this.frm_progress_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             this.tabNavigationPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdc_em)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_em)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdc_progress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_progress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane2)).EndInit();
             this.tabPane2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lke_Contruct_items.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lke_Contruct.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.SimpleButton btn_Construction_items;
-        private DevExpress.XtraEditors.SimpleButton btn_AddNewSuppelies;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraBars.Navigation.TabPane tabPane2;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
-        private DevExpress.XtraGrid.GridControl grdc_em;
-        private DevExpress.XtraGrid.Views.Grid.GridView grdv_em;
-        private DevExpress.XtraGrid.Columns.GridColumn employee_id;
-        private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarManager barManager2;
         private DevExpress.XtraBars.Bar bar7;
         private DevExpress.XtraBars.BarButtonItem btn_Add;
@@ -822,18 +847,30 @@
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem2;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem3;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem4;
-        private DevExpress.XtraBars.BarDockControl barDockControl2;
-        private DevExpress.XtraBars.BarDockControl barDockControl3;
-        private DevExpress.XtraBars.BarDockControl barDockControl8;
-        private DevExpress.XtraEditors.LookUpEdit lue_Contruct;
-        private DevExpress.XtraEditors.LookUpEdit lue_Contruct_items;
-        private DevExpress.XtraGrid.Columns.GridColumn employee_id_custom;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
+        private DevExpress.XtraGrid.GridControl grdc_progress;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdv_progress;
+        private DevExpress.XtraGrid.Columns.GridColumn progress_construction_item_id;
         private DevExpress.XtraGrid.Columns.GridColumn employee_name;
-        private DevExpress.XtraGrid.Columns.GridColumn employee_address;
-        private DevExpress.XtraGrid.Columns.GridColumn employee_date_of_birth;
-        private DevExpress.XtraGrid.Columns.GridColumn department_name;
-        private DevExpress.XtraGrid.Columns.GridColumn employee_phone;
-        private DevExpress.XtraGrid.Columns.GridColumn department_price;
-        private DevExpress.XtraGrid.Columns.GridColumn employee_status;
+        private DevExpress.XtraGrid.Columns.GridColumn progress_construction_item_custom;
+        private DevExpress.XtraGrid.Columns.GridColumn progress_construction_item_percent;
+        private DevExpress.XtraGrid.Columns.GridColumn progress_construction_item_date;
+        private DevExpress.XtraGrid.Columns.GridColumn progress_construction_item_image;
+        private DevExpress.XtraGrid.Columns.GridColumn progress_construction_item_description;
+        private DevExpress.XtraBars.BarDockControl barDockControl9;
+        private DevExpress.XtraBars.BarDockControl barDockControl10;
+        private DevExpress.XtraBars.BarDockControl barDockControl11;
+        private DevExpress.XtraBars.BarDockControl barDockControl12;
+        private DevExpress.XtraBars.Navigation.TabPane tabPane2;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.SimpleButton btn_Construction_items;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.SimpleButton btn_AddNewSuppelies;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.LookUpEdit lke_Contruct_items;
+        private DevExpress.XtraEditors.LookUpEdit lke_Contruct;
+        private DevExpress.XtraGrid.Columns.GridColumn construction_item_name;
+
     }
 }
