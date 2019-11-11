@@ -8,6 +8,9 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
 using DevExpress.LookAndFeel;
+using DevExpress.Skins;
+using DevExpress.UserSkins;
+using DevExpress.Utils.Taskbar.Core;
 
 namespace PhanMemQuanLyCongTrinh
 {
@@ -73,6 +76,93 @@ namespace PhanMemQuanLyCongTrinh
 
         private void frm_Main_Load(object sender, EventArgs e)
         {
+            DevExpress.UserSkins.BonusSkins.Register();
+            DevExpress.XtraBars.Helpers.SkinHelper.InitSkinGallery(skinRibbonGalleryBarItem2, true);
+
+            UserLookAndFeel.Default.SetSkinStyle(SkinStyle.Bezier, SkinSvgPalette.Bezier.OfficeColorful);
+
+            taskbarAssistant1.ProgressMode = TaskbarButtonProgressMode.Indeterminate;
+            taskbarAssistant1.ProgressCurrentValue = 100;
+
+
+            load_login( );
+
+        }
+
+        private void load_login( )
+        {
+            btnUserInformation.Visibility = BarItemVisibility.Never;
+            btnPermission.Visibility = BarItemVisibility.Never;
+            btnRegistered.Visibility = BarItemVisibility.Never;
+            ribbonPageGroup11.Visible = false;
+
+            ribbonPage1.Visible = false;
+            ribbonPage9.Visible = false;
+            ribbonPage2.Visible = false;
+            ribbonPage3.Visible = false;
+            ribbonPage5.Visible = false;
+            ribbonPage6.Visible = false;
+            ribbonPage7.Visible = false;
+            ribbonPage8.Visible = false;
+            LoginEvent( );
+        }
+
+        private void LoginEvent( )
+        {
+            foreach ( Form childForm in MdiChildren )
+            {
+                childForm.Close( );
+            }
+            frm_DangNhap log = new frm_DangNhap( );
+            if ( log.ShowDialog( ) == DialogResult.OK )
+            {
+                try
+                {
+                    //xử lí sự kiện đăng nhập thành công
+                    // quyen 1 admin
+                    if ( Vitual_Quyen == 1 )
+                    {
+                        barButtonItem_login.Visibility = BarItemVisibility.Never;
+                        Menu_adminstrator_true();
+                        //Menu_adminstrator_true( );
+                    }
+                    else
+                    {
+                        //if (Vitual_Quyen == "Quản lý chi nhánh")
+                        //{
+                        //    Menu_quanly_true();
+                        //}
+                        //else
+                        //{
+                        //Menu_NHANVIEN_true( );
+                        //}
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Có lỗi xảy ra khi thao tác với CSDL.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        void Menu_adminstrator_true( )
+        {
+            btnUserInformation.Visibility = BarItemVisibility.Always;
+            btnPermission.Visibility = BarItemVisibility.Always;
+            btnRegistered.Visibility = BarItemVisibility.Always;
+            ribbonPageGroup11.Visible = true;
+
+            barButtonItem1_DangXuat.Visibility = BarItemVisibility.Always;
+
+            ribbonPage1.Visible = true;
+            ribbonPage9.Visible = true;
+            ribbonPage2.Visible = true;
+            ribbonPage3.Visible = true;
+            ribbonPage5.Visible = true;
+            ribbonPage6.Visible = true;
+            ribbonPage7.Visible = true;
+            ribbonPage8.Visible = true;
 
         }
 
@@ -324,6 +414,18 @@ namespace PhanMemQuanLyCongTrinh
         private void btnPlanConstructions_ItemClick(object sender, ItemClickEventArgs e)
         {
 
+        }
+
+        private void barButtonItem1_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+            this.Close();
+        }
+
+        private void barButtonItem_login_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frm_DangNhap frm = new frm_DangNhap();
+            frm.ShowDialog();
         }
 
         

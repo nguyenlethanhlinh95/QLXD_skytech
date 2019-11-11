@@ -20,10 +20,10 @@ namespace PhanMemQuanLyCongTrinh
             InitializeComponent( );
         }
 
-        vendorBus _vender = new vendorBus();
+        VendorBus _vender = new VendorBus();
         unitBus _unit = new unitBus();
-        group_suppliesBus _group = new group_suppliesBus();
-        supliesBus _sup = new supliesBus();
+        Group_suppliesBus _group = new Group_suppliesBus();
+        SupliesBus _sup = new SupliesBus();
 
         private Int64 idGroup = 0;
         private Int64 idUnit = 0;
@@ -34,9 +34,18 @@ namespace PhanMemQuanLyCongTrinh
         #region Load
         private void frm_AddNewSupplies_Load(object sender, EventArgs e)
         {
+            this.AcceptButton = btn_AddNew;
             loadUnit();
             loadVender();
             loadGroupSupplies();
+
+            StyleDevxpressGridControl.styleTextBoxVND(txt_InPutPrice);
+            StyleDevxpressGridControl.styleTextBoxVND(txt_PriceGiam);
+            StyleDevxpressGridControl.styleTextBoxVND(txt_OutPutPrice);
+
+            StyleDevxpressGridControl.autoLookUpEdit(lue_GroupSuplies);
+            StyleDevxpressGridControl.autoLookUpEdit(lue_Units);
+            StyleDevxpressGridControl.autoLookUpEdit(lue_Vender);
         }
 
         private void loadUnit()

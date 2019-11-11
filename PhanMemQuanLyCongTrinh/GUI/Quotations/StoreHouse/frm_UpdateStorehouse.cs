@@ -14,7 +14,7 @@ namespace PhanMemQuanLyCongTrinh
     {
         public Int64 storehouseId;
 
-        BUS.storehouseBus storehouseBus = new BUS.storehouseBus();
+        BUS.StorehouseBus storehouseBus = new BUS.StorehouseBus();
         public frm_UpdateStorehouse()
         {
             InitializeComponent();

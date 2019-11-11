@@ -11,6 +11,21 @@ namespace PhanMemQuanLyCongTrinh.BUS
     {
         EnterCouponSuppliesDao _enter = new EnterCouponSuppliesDao();
 
+        public Int64 getIdVender(Int64 idEnter)
+        {
+            return _enter.getIdVender(idEnter);
+        }
+
+        public Decimal getPrice_Pay(Int64 idPhieuNhap)
+        {
+            return _enter.getPrice_Pay(idPhieuNhap);
+        }
+
+        public Int64 getIdStoreHouse(Int64 idEnter)
+        {
+            return _enter.getIdStoreHouse(idEnter);
+        }
+
         public bool isCheckNumber(string name)
         {
             return _enter.isCheckNumber(name);

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_AddNewEnterCouponSupplies));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btn_New = new DevExpress.XtraEditors.SimpleButton();
             this.lue_Kho = new DevExpress.XtraEditors.LookUpEdit();
             this.lue_NCC = new DevExpress.XtraEditors.LookUpEdit();
             this.s_number = new DevExpress.XtraEditors.SpinEdit();
@@ -101,6 +102,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.btn_New);
             this.groupControl1.Controls.Add(this.lue_Kho);
             this.groupControl1.Controls.Add(this.lue_NCC);
             this.groupControl1.Controls.Add(this.s_number);
@@ -131,10 +133,35 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "groupControl1";
             // 
+            // btn_New
+            // 
+            this.btn_New.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_New.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_New.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.btn_New.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_New.Appearance.Options.UseBackColor = true;
+            this.btn_New.Appearance.Options.UseFont = true;
+            this.btn_New.Appearance.Options.UseForeColor = true;
+            this.btn_New.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.btn_New.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_New.ImageOptions.Image")));
+            this.btn_New.Location = new System.Drawing.Point(19, 505);
+            this.btn_New.LookAndFeel.SkinMaskColor = System.Drawing.Color.Green;
+            this.btn_New.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_New.LookAndFeel.SkinName = "Office 2010 Black";
+            this.btn_New.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btn_New.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_New.Name = "btn_New";
+            this.btn_New.Size = new System.Drawing.Size(110, 36);
+            this.btn_New.TabIndex = 297;
+            this.btn_New.Text = "Thêm mới";
+            this.btn_New.ToolTipTitle = "Ctrl +S";
+            this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
+            // 
             // lue_Kho
             // 
             this.lue_Kho.Location = new System.Drawing.Point(140, 72);
             this.lue_Kho.Name = "lue_Kho";
+            this.lue_Kho.Properties.AcceptEditorTextAsNewValue = DevExpress.Utils.DefaultBoolean.True;
             this.lue_Kho.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lue_Kho.Properties.Appearance.Options.UseFont = true;
             this.lue_Kho.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -209,6 +236,7 @@
             this.btn_Exit.TabIndex = 294;
             this.btn_Exit.Text = "Thoát";
             this.btn_Exit.ToolTipTitle = "ESC";
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // btn_AddNew
             // 
@@ -230,7 +258,7 @@
             this.btn_AddNew.Name = "btn_AddNew";
             this.btn_AddNew.Size = new System.Drawing.Size(110, 36);
             this.btn_AddNew.TabIndex = 293;
-            this.btn_AddNew.Text = "Thêm mới";
+            this.btn_AddNew.Text = "LƯU";
             this.btn_AddNew.ToolTipTitle = "Ctrl +S";
             this.btn_AddNew.Click += new System.EventHandler(this.btn_AddNew_Click);
             // 
@@ -327,6 +355,8 @@
             this.txt_total_price.Name = "txt_total_price";
             this.txt_total_price.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_total_price.Properties.Appearance.Options.UseFont = true;
+            this.txt_total_price.Properties.DisplayFormat.FormatString = "{0:n0} VNĐ";
+            this.txt_total_price.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txt_total_price.Properties.ReadOnly = true;
             this.txt_total_price.Size = new System.Drawing.Size(241, 22);
             this.txt_total_price.TabIndex = 291;
@@ -579,10 +609,8 @@
             this.gridView1.Appearance.FooterPanel.Options.UseForeColor = true;
             this.gridView1.Appearance.GroupPanel.BackColor = System.Drawing.Color.Transparent;
             this.gridView1.Appearance.GroupPanel.Options.UseBackColor = true;
-            this.gridView1.Appearance.HeaderPanel.BackColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.White;
-            this.gridView1.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 8.25F);
+            this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView1.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
@@ -605,8 +633,6 @@
             // 
             this.ID.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F);
             this.ID.AppearanceCell.Options.UseFont = true;
-            this.ID.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.ID.AppearanceHeader.Options.UseFont = true;
             this.ID.Caption = "ID";
             this.ID.FieldName = "ID";
             this.ID.Name = "ID";
@@ -617,8 +643,6 @@
             // 
             this.ID_custom.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F);
             this.ID_custom.AppearanceCell.Options.UseFont = true;
-            this.ID_custom.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.ID_custom.AppearanceHeader.Options.UseFont = true;
             this.ID_custom.Caption = "Mã VT";
             this.ID_custom.FieldName = "ID_custom";
             this.ID_custom.Name = "ID_custom";
@@ -631,8 +655,6 @@
             // 
             this.supplies_name_VT.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F);
             this.supplies_name_VT.AppearanceCell.Options.UseFont = true;
-            this.supplies_name_VT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.supplies_name_VT.AppearanceHeader.Options.UseFont = true;
             this.supplies_name_VT.Caption = "Tên VT";
             this.supplies_name_VT.FieldName = "supplies_name";
             this.supplies_name_VT.Name = "supplies_name_VT";
@@ -646,8 +668,6 @@
             // 
             this.supplies_unit.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F);
             this.supplies_unit.AppearanceCell.Options.UseFont = true;
-            this.supplies_unit.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.supplies_unit.AppearanceHeader.Options.UseFont = true;
             this.supplies_unit.Caption = "Đơn vị";
             this.supplies_unit.FieldName = "supplies_unit";
             this.supplies_unit.Name = "supplies_unit";
@@ -660,8 +680,6 @@
             // 
             this.supplies_quantity.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.supplies_quantity.AppearanceCell.Options.UseFont = true;
-            this.supplies_quantity.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.supplies_quantity.AppearanceHeader.Options.UseFont = true;
             this.supplies_quantity.Caption = "Số lượng";
             this.supplies_quantity.ColumnEdit = this.repositoryItem_quantity;
             this.supplies_quantity.FieldName = "supplies_quantity";
@@ -681,8 +699,6 @@
             this.supplies_price.AppearanceCell.Options.UseFont = true;
             this.supplies_price.AppearanceCell.Options.UseTextOptions = true;
             this.supplies_price.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.supplies_price.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.supplies_price.AppearanceHeader.Options.UseFont = true;
             this.supplies_price.Caption = "Giá nhập";
             this.supplies_price.DisplayFormat.FormatString = "{0:n0} VNĐ";
             this.supplies_price.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -700,8 +716,6 @@
             this.total.AppearanceCell.Options.UseFont = true;
             this.total.AppearanceCell.Options.UseTextOptions = true;
             this.total.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.total.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.total.AppearanceHeader.Options.UseFont = true;
             this.total.Caption = "Tổng tiền";
             this.total.DisplayFormat.FormatString = "{0:n0} VNĐ";
             this.total.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -771,7 +785,6 @@
         private DevExpress.XtraEditors.TextEdit txt_total_price;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txt_total;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txt_number;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -806,6 +819,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.TextEdit txt_ChungTu;
         private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.TextEdit txt_total;
+        private DevExpress.XtraEditors.SimpleButton btn_New;
 
 
 

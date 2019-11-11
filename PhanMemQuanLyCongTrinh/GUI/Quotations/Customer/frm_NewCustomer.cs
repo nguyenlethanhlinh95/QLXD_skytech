@@ -13,9 +13,9 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_NewCustomer : DevExpress.XtraEditors.XtraForm
     {
-        BUS.customerBus customerBus;
+        BUS.CustomerBus customerBus;
 
-        BUS.customerGroupBus customerGroupBus;
+        BUS.CustomerGroupBus customerGroupBus;
         public Int64 customerId
         {
             get;
@@ -25,8 +25,8 @@ namespace PhanMemQuanLyCongTrinh
         public frm_NewCustomer()
         {
             InitializeComponent();
-            customerBus = new BUS.customerBus();
-            customerGroupBus = new BUS.customerGroupBus();
+            customerBus = new BUS.CustomerBus();
+            customerGroupBus = new BUS.CustomerGroupBus();
         }
 
         

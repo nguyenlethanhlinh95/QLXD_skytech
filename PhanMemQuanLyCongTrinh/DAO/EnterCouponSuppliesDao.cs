@@ -10,6 +10,58 @@ namespace PhanMemQuanLyCongTrinh.DAO
     {
         DataClasses1DataContext db = new DataClasses1DataContext( );
 
+        public Int64 getIdStoreHouse(Int64 idEnter)
+        {
+            try
+            {
+                Int64 id = (from b in db.ST_enter_coupon_supplies
+                            where b.enter_coupon_supplies_id == idEnter
+                            select b.storehouse_id).Single();
+
+                return id;
+            }
+            catch(Exception)
+            {
+                return 0;
+            }
+            
+        }
+
+        // lay tien thanh toan dau tien
+        public Decimal getPrice_Pay(Int64 idPhieuNhap)
+        {
+            try
+            {
+                var data = (from b in db.ST_payment_slips
+                            where b.enter_coupon_supplies_id == idPhieuNhap
+                            orderby b.payment_slip_created_date ascending
+                            select b.payment_slip_total_price).First( );
+                return data.Value;
+            }
+            catch(Exception)
+            {
+                return 0;
+            }
+            
+        }
+
+        public Int64 getIdVender(Int64 idEnter)
+        {
+            try
+            {
+                Int64 id = (from b in db.ST_enter_coupon_supplies
+                            where b.enter_coupon_supplies_id == idEnter
+                            select b.vendor_id).Single( );
+
+                return id;
+            }
+            catch ( Exception )
+            {
+                return 0;
+            }
+
+        }
+
         public bool isCheckNumber(string name)
         {
             var collection = from b in db.ST_enter_coupon_supplies
@@ -201,12 +253,26 @@ namespace PhanMemQuanLyCongTrinh.DAO
         {
             try
             {
-                var updateVendor = db.ST_enter_coupon_supplies.Where(p => p.enter_coupon_supplies_id.Equals(enter.enter_coupon_supplies_id)).SingleOrDefault( );
+                var update = db.ST_enter_coupon_supplies.Where(p => p.enter_coupon_supplies_id.Equals(enter.enter_coupon_supplies_id)).SingleOrDefault( );
 
-                //updateVendor. = unit.unit_name;
+                if ( update.storehouse_id == enter.storehouse_id)
+                {
+                    update.enter_coupon_supplies_id = enter.enter_coupon_supplies_id;
+                    update.vendor_id = enter.vendor_id;
+                    update.storehouse_id = enter.storehouse_id;
+                    update.enter_coupon_supplies_number = enter.enter_coupon_supplies_number;
+                    update.enter_coupon_supplies_created_date = enter.enter_coupon_supplies_created_date;
+                    update.enter_coupon_supplies_description = enter.enter_coupon_supplies_description;
+                    update.enter_coupon_supplies_total_price = enter.enter_coupon_supplies_total_price;
+                    update.enter_coupon_supplies_document = enter.enter_coupon_supplies_document;
+                    update.employee_created = enter.employee_created;
+                    update.enter_coupon_supplies_deliver = enter.enter_coupon_supplies_deliver;
+                    db.SubmitChanges( );
+                    return true;
+                }
 
-                db.SubmitChanges( );
-                return true;
+                return false;
+                
             }
             catch ( Exception )
             {

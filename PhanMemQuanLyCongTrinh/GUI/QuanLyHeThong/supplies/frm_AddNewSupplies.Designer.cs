@@ -61,6 +61,9 @@
             this.lue_GroupSuplies = new DevExpress.XtraEditors.LookUpEdit();
             this.txt_PriceGiam = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.lue_Units.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_Ton.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_InPutPrice.Properties)).BeginInit();
@@ -141,7 +144,7 @@
             // btn_AddNewUnit
             // 
             this.btn_AddNewUnit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_AddNewUnit.ImageOptions.Image")));
-            this.btn_AddNewUnit.Location = new System.Drawing.Point(604, 138);
+            this.btn_AddNewUnit.Location = new System.Drawing.Point(589, 140);
             this.btn_AddNewUnit.Name = "btn_AddNewUnit";
             this.btn_AddNewUnit.Size = new System.Drawing.Size(23, 23);
             this.btn_AddNewUnit.TabIndex = 324;
@@ -151,7 +154,7 @@
             // 
             this.lue_Units.Location = new System.Drawing.Point(278, 139);
             this.lue_Units.Name = "lue_Units";
-            this.lue_Units.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lue_Units.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lue_Units.Properties.Appearance.Options.UseFont = true;
             this.lue_Units.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -213,7 +216,7 @@
             this.txt_Ton.Location = new System.Drawing.Point(278, 344);
             this.txt_Ton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_Ton.Name = "txt_Ton";
-            this.txt_Ton.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_Ton.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Ton.Properties.Appearance.Options.UseFont = true;
             this.txt_Ton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_Ton.Size = new System.Drawing.Size(291, 22);
@@ -224,7 +227,7 @@
             this.txt_InPutPrice.Location = new System.Drawing.Point(278, 220);
             this.txt_InPutPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_InPutPrice.Name = "txt_InPutPrice";
-            this.txt_InPutPrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_InPutPrice.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_InPutPrice.Properties.Appearance.Options.UseFont = true;
             this.txt_InPutPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_InPutPrice.Size = new System.Drawing.Size(291, 22);
@@ -335,16 +338,16 @@
             this.labelControl5.Location = new System.Drawing.Point(136, 384);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(46, 16);
+            this.labelControl5.Size = new System.Drawing.Size(47, 16);
             this.labelControl5.TabIndex = 311;
-            this.labelControl5.Text = "Ghi chú";
+            this.labelControl5.Text = "Ghi Chú";
             // 
             // txt_Description
             // 
             this.txt_Description.Location = new System.Drawing.Point(278, 381);
             this.txt_Description.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_Description.Name = "txt_Description";
-            this.txt_Description.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_Description.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Description.Properties.Appearance.Options.UseFont = true;
             this.txt_Description.Size = new System.Drawing.Size(466, 22);
             this.txt_Description.TabIndex = 305;
@@ -365,7 +368,7 @@
             this.txt_Name.Location = new System.Drawing.Point(278, 53);
             this.txt_Name.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_Name.Name = "txt_Name";
-            this.txt_Name.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_Name.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Name.Properties.Appearance.Options.UseFont = true;
             this.txt_Name.Size = new System.Drawing.Size(291, 22);
             this.txt_Name.TabIndex = 296;
@@ -373,7 +376,7 @@
             // btn_AddNewGroupSupplies
             // 
             this.btn_AddNewGroupSupplies.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_AddNewGroupSupplies.ImageOptions.Image")));
-            this.btn_AddNewGroupSupplies.Location = new System.Drawing.Point(604, 95);
+            this.btn_AddNewGroupSupplies.Location = new System.Drawing.Point(589, 97);
             this.btn_AddNewGroupSupplies.Name = "btn_AddNewGroupSupplies";
             this.btn_AddNewGroupSupplies.Size = new System.Drawing.Size(23, 23);
             this.btn_AddNewGroupSupplies.TabIndex = 324;
@@ -382,7 +385,7 @@
             // btn_AddNewVender
             // 
             this.btn_AddNewVender.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_AddNewVender.ImageOptions.Image")));
-            this.btn_AddNewVender.Location = new System.Drawing.Point(604, 178);
+            this.btn_AddNewVender.Location = new System.Drawing.Point(589, 180);
             this.btn_AddNewVender.Name = "btn_AddNewVender";
             this.btn_AddNewVender.Size = new System.Drawing.Size(23, 23);
             this.btn_AddNewVender.TabIndex = 324;
@@ -406,7 +409,7 @@
             this.txt_OutPutPrice.EditValue = "";
             this.txt_OutPutPrice.Location = new System.Drawing.Point(278, 260);
             this.txt_OutPutPrice.Name = "txt_OutPutPrice";
-            this.txt_OutPutPrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_OutPutPrice.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_OutPutPrice.Properties.Appearance.Options.UseFont = true;
             this.txt_OutPutPrice.Size = new System.Drawing.Size(291, 22);
             this.txt_OutPutPrice.TabIndex = 323;
@@ -416,7 +419,7 @@
             this.lue_Vender.Location = new System.Drawing.Point(278, 180);
             this.lue_Vender.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lue_Vender.Name = "lue_Vender";
-            this.lue_Vender.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.lue_Vender.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lue_Vender.Properties.Appearance.Options.UseFont = true;
             this.lue_Vender.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -446,7 +449,7 @@
             // 
             this.lue_GroupSuplies.Location = new System.Drawing.Point(278, 98);
             this.lue_GroupSuplies.Name = "lue_GroupSuplies";
-            this.lue_GroupSuplies.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lue_GroupSuplies.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lue_GroupSuplies.Properties.Appearance.Options.UseFont = true;
             this.lue_GroupSuplies.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -464,7 +467,7 @@
             this.txt_PriceGiam.EditValue = "";
             this.txt_PriceGiam.Location = new System.Drawing.Point(278, 299);
             this.txt_PriceGiam.Name = "txt_PriceGiam";
-            this.txt_PriceGiam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_PriceGiam.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_PriceGiam.Properties.Appearance.Options.UseFont = true;
             this.txt_PriceGiam.Size = new System.Drawing.Size(291, 22);
             this.txt_PriceGiam.TabIndex = 323;
@@ -479,6 +482,39 @@
             this.labelControl6.Size = new System.Drawing.Size(103, 16);
             this.labelControl6.TabIndex = 315;
             this.labelControl6.Text = "Số Tiền Giảm Giá";
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(589, 223);
+            this.labelControl11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(27, 16);
+            this.labelControl11.TabIndex = 310;
+            this.labelControl11.Text = "VNĐ";
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelControl12.Appearance.Options.UseFont = true;
+            this.labelControl12.Location = new System.Drawing.Point(589, 263);
+            this.labelControl12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(27, 16);
+            this.labelControl12.TabIndex = 310;
+            this.labelControl12.Text = "VNĐ";
+            // 
+            // labelControl17
+            // 
+            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelControl17.Appearance.Options.UseFont = true;
+            this.labelControl17.Location = new System.Drawing.Point(589, 302);
+            this.labelControl17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(27, 16);
+            this.labelControl17.TabIndex = 310;
+            this.labelControl17.Text = "VNĐ";
             // 
             // frm_AddNewSupplies
             // 
@@ -513,6 +549,9 @@
             this.Controls.Add(this.lblMaKhachHang);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.txt_Description);
+            this.Controls.Add(this.labelControl17);
+            this.Controls.Add(this.labelControl12);
+            this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.txt_Name);
             this.Controls.Add(this.txt_PriceGiam);
@@ -573,5 +612,8 @@
         private DevExpress.XtraEditors.LookUpEdit lue_GroupSuplies;
         private DevExpress.XtraEditors.TextEdit txt_PriceGiam;
         private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.LabelControl labelControl17;
     }
 }

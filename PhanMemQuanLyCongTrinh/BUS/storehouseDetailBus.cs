@@ -5,9 +5,9 @@ using System.Text;
 
 namespace PhanMemQuanLyCongTrinh.BUS
 {
-    class storehouseDetailBus
+    class StorehouseDetailBus
     {
-        DAO.storehouseDetailDao store = new DAO.storehouseDetailDao();
+        DAO.StorehouseDetailDao store = new DAO.StorehouseDetailDao();
 
 
 
@@ -15,6 +15,11 @@ namespace PhanMemQuanLyCongTrinh.BUS
         public bool changeIdParent(Int64 groupId)
         {
             return store.changeIdParent(groupId);
+        }
+
+        public object getSuppliesAndQuantityWithStoreHouse(Int64 storehouseId)
+        {
+            return store.getSuppliesAndQuantityWithStoreHouse(storehouseId);
         }
 
         public object getAllStorehouseDetail()
@@ -44,6 +49,11 @@ namespace PhanMemQuanLyCongTrinh.BUS
         public bool updateQuality(Int64 quality, Int64 storehousesId)
         {
             return store.updateQuality( quality, storehousesId);
+        }
+
+        public bool updateQuantityDiv(Int64 idSup , int quality, Int64 storehousesId)
+        {
+            return store.updateQuantityDiv(idSup, quality, storehousesId);
         }
     }
 }

@@ -14,9 +14,9 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_NewConstructionItem : DevExpress.XtraEditors.XtraForm
     {
-        BUS.constructionBus constructionBus = new BUS.constructionBus();
-        BUS.constructionItemBus constructionItemBus = new BUS.constructionItemBus();
-        BUS.buildingContractorBus buildingContractorBus = new buildingContractorBus();
+        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus();
+        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus();
+        BUS.BuildingContractorBus buildingContractorBus = new BuildingContractorBus();
 
         public frm_NewConstructionItem()
         {

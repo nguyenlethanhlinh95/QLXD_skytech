@@ -19,8 +19,8 @@ namespace PhanMemQuanLyCongTrinh
             InitializeComponent( );
         }
 
-        userBus _user = new userBus();
-        detail_employee_constructionBus _detail = new detail_employee_constructionBus();
+        UserBus _user = new UserBus();
+        Detail_Employee_ConstructionBus _detail = new Detail_Employee_ConstructionBus();
 
         public IEnumerable<Object> source = null;
         public Int64 idContructItemms = 0;

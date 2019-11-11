@@ -100,12 +100,12 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Location = new System.Drawing.Point(109, 51);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(65, 16);
+            this.labelControl7.Size = new System.Drawing.Size(71, 16);
             this.labelControl7.TabIndex = 294;
             this.labelControl7.Text = "Tên đơn vị";
             // 
@@ -114,7 +114,7 @@
             this.txt_Name.Location = new System.Drawing.Point(240, 45);
             this.txt_Name.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_Name.Name = "txt_Name";
-            this.txt_Name.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_Name.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_Name.Properties.Appearance.Options.UseFont = true;
             this.txt_Name.Size = new System.Drawing.Size(317, 22);
             this.txt_Name.TabIndex = 291;

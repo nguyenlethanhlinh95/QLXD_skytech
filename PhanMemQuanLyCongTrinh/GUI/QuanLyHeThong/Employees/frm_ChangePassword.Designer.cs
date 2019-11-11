@@ -105,54 +105,54 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(58, 244);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(103, 16);
+            this.labelControl1.Size = new System.Drawing.Size(124, 17);
             this.labelControl1.TabIndex = 218;
             this.labelControl1.Text = "Nhập lại mật khẩu";
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(58, 166);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(69, 16);
+            this.labelControl2.Size = new System.Drawing.Size(84, 17);
             this.labelControl2.TabIndex = 219;
             this.labelControl2.Text = "Mật khẩu cũ";
             // 
             // labelControl7
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Location = new System.Drawing.Point(58, 205);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(77, 16);
+            this.labelControl7.Size = new System.Drawing.Size(93, 17);
             this.labelControl7.TabIndex = 220;
             this.labelControl7.Text = "Mật khẩu mới";
             // 
             // labelControl6
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Location = new System.Drawing.Point(226, 68);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(212, 27);
+            this.labelControl6.Size = new System.Drawing.Size(234, 27);
             this.labelControl6.TabIndex = 217;
             this.labelControl6.Text = "THAY ĐỔI MẬT KHẨU";
             // 
             // txt_ReNewPass
             // 
-            this.txt_ReNewPass.Location = new System.Drawing.Point(189, 238);
+            this.txt_ReNewPass.Location = new System.Drawing.Point(224, 241);
             this.txt_ReNewPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_ReNewPass.Name = "txt_ReNewPass";
-            this.txt_ReNewPass.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_ReNewPass.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_ReNewPass.Properties.Appearance.Options.UseFont = true;
             this.txt_ReNewPass.Properties.PasswordChar = '*';
             this.txt_ReNewPass.Size = new System.Drawing.Size(317, 22);
@@ -160,10 +160,10 @@
             // 
             // txt_NewPass
             // 
-            this.txt_NewPass.Location = new System.Drawing.Point(189, 199);
+            this.txt_NewPass.Location = new System.Drawing.Point(224, 202);
             this.txt_NewPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_NewPass.Name = "txt_NewPass";
-            this.txt_NewPass.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_NewPass.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_NewPass.Properties.Appearance.Options.UseFont = true;
             this.txt_NewPass.Properties.PasswordChar = '*';
             this.txt_NewPass.Size = new System.Drawing.Size(317, 22);
@@ -171,10 +171,10 @@
             // 
             // txt_OldPass
             // 
-            this.txt_OldPass.Location = new System.Drawing.Point(189, 160);
+            this.txt_OldPass.Location = new System.Drawing.Point(224, 163);
             this.txt_OldPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_OldPass.Name = "txt_OldPass";
-            this.txt_OldPass.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_OldPass.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_OldPass.Properties.Appearance.Options.UseFont = true;
             this.txt_OldPass.Properties.PasswordChar = '*';
             this.txt_OldPass.Size = new System.Drawing.Size(317, 22);
@@ -201,6 +201,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐỔI MẬT KHẨU CÁ NHÂN";
+            this.Load += new System.EventHandler(this.frm_ChangePassword_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ReNewPass.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_NewPass.Properties)).EndInit();

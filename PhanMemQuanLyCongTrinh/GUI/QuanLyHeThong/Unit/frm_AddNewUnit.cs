@@ -26,31 +26,44 @@ namespace PhanMemQuanLyCongTrinh
             this.Close();
         }
 
-        private void btn_AddNew_Click(object sender, EventArgs e)
+        private void btn_New_Click(object sender, EventArgs e)
         {
-            if (txt_Name.Text == "")
+            try
             {
-                messeage.error("Bạn chưa nhập tên đơn vị !");
-            }
-            else
-            {
-                ST_unit unit = new ST_unit()
+                if ( txt_Name.Text == "" )
                 {
-                    unit_name = txt_Name.Text
-                };
-
-                bool bInsert = _unitBus.insertVendor(unit);
-
-                if (bInsert)
-                {
-                    messeage.success("Thêm mới thành công !");
-                    this.Close();
+                    messeage.error("Bạn chưa nhập tên đơn vị !");
                 }
                 else
                 {
-                    messeage.error("Không thể thêm mới!");
+                    ST_unit unit = new ST_unit( )
+                    {
+                        unit_name = txt_Name.Text
+                    };
+
+                    bool bInsert = _unitBus.insertVendor(unit);
+
+                    if ( bInsert )
+                    {
+                        messeage.success("Thêm mới thành công !");
+                        this.Close( );
+                    }
+                    else
+                    {
+                        messeage.error("Không thể thêm mới!");
+                    }
                 }
             }
+            catch(Exception)
+            {
+                messeage.error("Không thể thêm mới!");
+            }
+            
+        }
+
+        private void frm_AddNewUnit_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btn_New;
         }
     }
 }

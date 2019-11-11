@@ -30,16 +30,17 @@ namespace PhanMemQuanLyCongTrinh
         private string linkImage = "";
 
 
-        userBus userBus = new userBus();
-        deparmentBus deparmentBus = new deparmentBus();
+        UserBus userBus = new UserBus();
+        DeparmentBus deparmentBus = new DeparmentBus();
 
         private void frm_UserInfo_Load(object sender, EventArgs e)
         {
+            this.AcceptButton = btn_Update;
             dt_DateOfBirth.Properties.Mask.MaskType = MaskType.DateTime;
             dt_DateOfBirth.Properties.Mask.EditMask = "dd-MM-yyyy";
 
             loadDeparment();
-            LoadData();
+            LoadData();           
         }
 
         #region Load
@@ -214,7 +215,9 @@ namespace PhanMemQuanLyCongTrinh
                             employee_status = _status,
                             employee_gender = gender,
                             department_id = idDeparment,
-  
+                            
+                            // chua xu ly cap nhat quyen
+                            permission_id = frm_Main.Vitual_Quyen
                                                       
                         };
 
@@ -260,10 +263,41 @@ namespace PhanMemQuanLyCongTrinh
 
                 }
             }
+
+            private void btn_Deparment_Click(object sender, EventArgs e)
+            {
+                frm_Newdepartment f = new frm_Newdepartment( );
+                f.FormClosed += new FormClosedEventHandler(dongformDeparment);
+                f.ShowDialog( );
+            }
+
+            private void btn_image_Click_1(object sender, EventArgs e)
+            {
+                OpenFileDialog openFile = new OpenFileDialog( );
+                openFile.Filter = "Pictures files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png)|*.jpg; *.jpeg; *.jpe; *.jfif; *.png|All files (*.*)|*.*";
+
+                openFile.FilterIndex = 1;
+                openFile.RestoreDirectory = true;
+                if ( openFile.ShowDialog( ) == DialogResult.OK )
+                {
+                    linkImage = openFile.FileName;
+                    pic_Logo.Image = Image.FromFile(linkImage);
+
+                }
+            }
+
+            private void btn_Exit_Click(object sender, EventArgs e)
+            {
+                this.Close( );
+            }
+
+            private void dongformDeparment(object sender, EventArgs e)
+            {
+                loadDeparment( );
+            }
         #endregion End Event
 
         
-
         //ảnh -> byte[]
         public byte[] imageToByteArray(System.Drawing.Image imageIn)
         {
@@ -280,33 +314,6 @@ namespace PhanMemQuanLyCongTrinh
                 bf.Serialize(ms, obj);
                 return ms.ToArray( );
             }
-        }
-
-        private void btn_image_Click_1(object sender, EventArgs e)
-        {
-            OpenFileDialog openFile = new OpenFileDialog( );
-            openFile.Filter = "Pictures files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png)|*.jpg; *.jpeg; *.jpe; *.jfif; *.png|All files (*.*)|*.*";
-
-            openFile.FilterIndex = 1;
-            openFile.RestoreDirectory = true;
-            if ( openFile.ShowDialog( ) == DialogResult.OK )
-            {
-                linkImage = openFile.FileName;
-                pic_Logo.Image = Image.FromFile(linkImage);
-
-            }   
-        }
-
-        private void btn_Deparment_Click(object sender, EventArgs e)
-        {
-            frm_Newdepartment f = new frm_Newdepartment( );
-            f.ShowDialog( );
-        }
-
-     
-
-        
-
-  
+        }  
     }
 }

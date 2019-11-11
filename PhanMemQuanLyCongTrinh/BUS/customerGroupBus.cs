@@ -5,9 +5,9 @@ using System.Text;
 
 namespace PhanMemQuanLyCongTrinh.BUS
 {
-    class customerGroupBus
+    class CustomerGroupBus
     {
-        DAO.customerGroupDao customerGroupDao = new DAO.customerGroupDao();
+        DAO.CustomerGroupDao customerGroupDao = new DAO.CustomerGroupDao();
         public object getAllCustomerGroup()
         {
             return customerGroupDao.getAllCustomerGroup();

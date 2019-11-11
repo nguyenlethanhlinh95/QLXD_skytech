@@ -8,7 +8,7 @@ namespace PhanMemQuanLyCongTrinh.BUS
     
     public class unitBus
     {
-        DAO.unitDao _unit = new DAO.unitDao();
+        DAO.UnitDao _unit = new DAO.UnitDao();
 
         public object getAllUnits( )
         {

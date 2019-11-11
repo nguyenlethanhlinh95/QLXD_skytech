@@ -9,5 +9,6 @@ namespace PhanMemQuanLyCongTrinh
     {
         public Int64 id ;
         public Int64 quantity ;
+        public Decimal total;
     }
 }

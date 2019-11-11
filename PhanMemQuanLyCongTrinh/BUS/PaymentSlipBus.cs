@@ -16,6 +16,11 @@ namespace PhanMemQuanLyCongTrinh.BUS
             return _pay.getAllPaymentSlips();
         }
 
+        public Int64 getIdPaymentSlipsFromEnter(Int64 idEnter)
+        {
+            return _pay.getIdPaymentSlipsFromEnter(idEnter);
+        }
+
         public object getPaymentSlip(Int64 paymentId)
         {
             return _pay.getPaymentSlip(paymentId);

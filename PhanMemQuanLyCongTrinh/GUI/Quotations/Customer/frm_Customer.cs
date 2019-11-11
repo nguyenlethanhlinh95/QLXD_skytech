@@ -14,8 +14,8 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_Customer : DevExpress.XtraEditors.XtraForm
     {
-        BUS.customerBus customerBus = new BUS.customerBus();
-        BUS.customerGroupBus customerGroupBus = new BUS.customerGroupBus();
+        BUS.CustomerBus customerBus = new BUS.CustomerBus();
+        BUS.CustomerGroupBus customerGroupBus = new BUS.CustomerGroupBus();
 
      
         public int index;
@@ -41,7 +41,8 @@ namespace PhanMemQuanLyCongTrinh
         
         private void frm_CustomerGroup_Load(object sender, EventArgs e)
         {
-          
+            StyleDevxpressGridControl.styleGridControl(grdc_Customer, grdv_Customer);
+            StyleDevxpressGridControl.styleGridControl(grdc_CustomerGroup, grdv_CustomerGroup);
             loadCustomerGroup();
         }
 

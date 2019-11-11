@@ -426,6 +426,7 @@
             toolTipTitleItem8.Text = "Esc";
             superToolTip8.Items.Add(toolTipTitleItem8);
             this.btn_Close.SuperTip = superToolTip8;
+            this.btn_Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Close_ItemClick);
             // 
             // bar6
             // 
@@ -530,7 +531,7 @@
             // 
             this.tabNavigationPage2.Appearance.BackColor = System.Drawing.Color.Black;
             this.tabNavigationPage2.Appearance.Options.UseBackColor = true;
-            this.tabNavigationPage2.Caption = "Danh Sách Khách Hàng";
+            this.tabNavigationPage2.Caption = "Danh Sách Nhân viên";
             this.tabNavigationPage2.Controls.Add(this.grdc_Employee);
             this.tabNavigationPage2.Controls.Add(this.barDockControl6);
             this.tabNavigationPage2.Controls.Add(this.barDockControl7);
@@ -619,7 +620,7 @@
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Chức vụ";
-            this.gridColumn1.FieldName = "department_id";
+            this.gridColumn1.FieldName = "department_name";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.FixedWidth = true;
             this.gridColumn1.Visible = true;
@@ -765,7 +766,6 @@
             toolTipTitleItem11.Text = "Xóa Nhóm Khách Hàng\r\n";
             superToolTip11.Items.Add(toolTipTitleItem11);
             this.btn_DeleteDepartmnet.SuperTip = superToolTip11;
-            this.btn_DeleteDepartmnet.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DeleteDepartmnet_CheckedChanged);
             this.btn_DeleteDepartmnet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DeleteDepartmnent);
             // 
             // barStaticItem1
@@ -832,7 +832,7 @@
             // 
             // tabNavigationPage1
             // 
-            this.tabNavigationPage1.Caption = "Nhóm Khách Hàng";
+            this.tabNavigationPage1.Caption = "Chức vụ Nhân viên";
             this.tabNavigationPage1.Controls.Add(this.grdc_Department);
             this.tabNavigationPage1.Controls.Add(this.barDockControlLeft);
             this.tabNavigationPage1.Controls.Add(this.barDockControl3);
@@ -882,7 +882,7 @@
             this.department_id_custom.AppearanceCell.Options.UseFont = true;
             this.department_id_custom.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.department_id_custom.AppearanceHeader.Options.UseFont = true;
-            this.department_id_custom.Caption = "Chức vụ nhân viên";
+            this.department_id_custom.Caption = "Mã chức vụ";
             this.department_id_custom.FieldName = "department_id_custom";
             this.department_id_custom.Name = "department_id_custom";
             this.department_id_custom.Visible = true;

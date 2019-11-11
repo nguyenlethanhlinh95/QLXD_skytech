@@ -14,7 +14,7 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_Vendor : DevExpress.XtraEditors.XtraForm
     {
-        BUS.vendorBus vendorBus = new vendorBus();
+        BUS.VendorBus vendorBus = new VendorBus();
 
         int index;
 
@@ -28,6 +28,7 @@ namespace PhanMemQuanLyCongTrinh
         }
         private void frm_Vendor_Load(object sender, EventArgs e)
         {
+            StyleDevxpressGridControl.styleGridControl(grdc_Vendor, grdv_Vendor);
             loadAllVenDor();
         }
 

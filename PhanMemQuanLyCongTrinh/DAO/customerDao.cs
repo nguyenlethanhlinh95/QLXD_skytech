@@ -5,7 +5,7 @@ using System.Text;
 using PhanMemQuanLyCongTrinh.DTO;
 namespace PhanMemQuanLyCongTrinh.DAO
 {
-    class customerDao
+    class CustomerDao
     {
         DataClasses1DataContext db = new DTO.DataClasses1DataContext();
 
@@ -153,8 +153,9 @@ namespace PhanMemQuanLyCongTrinh.DAO
                     foreach (var item in datasource)
                     {
                         item.customer_group_id = 1;
+                        db.SubmitChanges();
                     }
-                    db.SubmitChanges();
+                    
                     return true;
                 }
                 return true;

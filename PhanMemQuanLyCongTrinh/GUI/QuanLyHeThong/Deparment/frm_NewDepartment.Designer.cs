@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Newdepartment));
             this.txt_deparment = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.but_Update = new DevExpress.XtraEditors.SimpleButton();
             this.but_Exit = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_New = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txt_deparment.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_deparment
             // 
-            this.txt_deparment.Location = new System.Drawing.Point(241, 50);
+            this.txt_deparment.Location = new System.Drawing.Point(242, 46);
             this.txt_deparment.Name = "txt_deparment";
             this.txt_deparment.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_deparment.Properties.Appearance.Options.UseFont = true;
@@ -49,35 +49,11 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(143, 53);
+            this.labelControl1.Location = new System.Drawing.Point(144, 49);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(79, 14);
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "Tên chức vụ";
-            // 
-            // but_Update
-            // 
-            this.but_Update.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.but_Update.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.but_Update.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.but_Update.Appearance.ForeColor = System.Drawing.Color.White;
-            this.but_Update.Appearance.Options.UseBackColor = true;
-            this.but_Update.Appearance.Options.UseFont = true;
-            this.but_Update.Appearance.Options.UseForeColor = true;
-            this.but_Update.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.but_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("but_Update.ImageOptions.Image")));
-            this.but_Update.Location = new System.Drawing.Point(184, 105);
-            this.but_Update.LookAndFeel.SkinMaskColor = System.Drawing.Color.RoyalBlue;
-            this.but_Update.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.but_Update.LookAndFeel.SkinName = "Office 2010 Black";
-            this.but_Update.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.but_Update.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.but_Update.Name = "but_Update";
-            this.but_Update.Size = new System.Drawing.Size(110, 36);
-            this.but_Update.TabIndex = 16;
-            this.but_Update.Text = "Thêm mới";
-            this.but_Update.ToolTipTitle = "Ctrl +S";
-            this.but_Update.Click += new System.EventHandler(this.but_Update_Click);
             // 
             // but_Exit
             // 
@@ -90,7 +66,7 @@
             this.but_Exit.Appearance.Options.UseForeColor = true;
             this.but_Exit.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.but_Exit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("but_Exit.ImageOptions.Image")));
-            this.but_Exit.Location = new System.Drawing.Point(318, 105);
+            this.but_Exit.Location = new System.Drawing.Point(320, 101);
             this.but_Exit.LookAndFeel.SkinMaskColor = System.Drawing.Color.Gray;
             this.but_Exit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Black;
             this.but_Exit.LookAndFeel.SkinName = "Office 2010 Black";
@@ -103,14 +79,38 @@
             this.but_Exit.ToolTipTitle = "ESC";
             this.but_Exit.Click += new System.EventHandler(this.but_Exit_Click);
             // 
+            // btn_New
+            // 
+            this.btn_New.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_New.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_New.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.btn_New.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_New.Appearance.Options.UseBackColor = true;
+            this.btn_New.Appearance.Options.UseFont = true;
+            this.btn_New.Appearance.Options.UseForeColor = true;
+            this.btn_New.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.btn_New.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_New.ImageOptions.Image")));
+            this.btn_New.Location = new System.Drawing.Point(184, 101);
+            this.btn_New.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_New.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_New.LookAndFeel.SkinName = "Office 2010 Black";
+            this.btn_New.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btn_New.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_New.Name = "btn_New";
+            this.btn_New.Size = new System.Drawing.Size(110, 36);
+            this.btn_New.TabIndex = 276;
+            this.btn_New.Text = "Thêm mới";
+            this.btn_New.ToolTipTitle = "Ctrl +S";
+            this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
+            // 
             // frm_Newdepartment
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 176);
+            this.Controls.Add(this.btn_New);
             this.Controls.Add(this.but_Exit);
-            this.Controls.Add(this.but_Update);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txt_deparment);
             this.Font = new System.Drawing.Font("Tahoma", 9F);
@@ -129,7 +129,7 @@
 
         private DevExpress.XtraEditors.TextEdit txt_deparment;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.SimpleButton but_Update;
         private DevExpress.XtraEditors.SimpleButton but_Exit;
+        private DevExpress.XtraEditors.SimpleButton btn_New;
     }
 }

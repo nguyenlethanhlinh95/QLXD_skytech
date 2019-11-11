@@ -11,34 +11,26 @@ using PhanMemQuanLyCongTrinh.BUS;
 
 namespace PhanMemQuanLyCongTrinh
 {
-    public partial class frm_Login : DevExpress.XtraEditors.XtraForm
+    public partial class frm_DangNhap : DevExpress.XtraEditors.XtraForm
     {
-        private userBus userBus = null;
-
-        public frm_Login( )
+        public frm_DangNhap( )
         {
             InitializeComponent( );
-            userBus = new userBus( );
         }
+        private UserBus userBus = new UserBus( );
 
-        
-        private void btn_Exit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btn_Login_Click(object sender, EventArgs e)
+        private void btn_login_Click(object sender, EventArgs e)
         {
             if ( txt_UserName.Text == "" || txt_PassWord.Text == "" )
             {
-                MessageBox.Show("Bạn chưa nhập tên đăng nhập hoặc mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                messeage.warnning("Bạn chưa nhập tên đăng nhập hoặc mật khẩu!");
             }
             else
             {
                 Int64 IntCheckLogin = userBus.checkLogin(txt_UserName.Text, txt_PassWord.Text);
 
-                if ( IntCheckLogin > 0)
-                {                   
+                if ( IntCheckLogin > 0 )
+                {
                     var user = userBus.getUserByID(IntCheckLogin);
 
                     // check quyen
@@ -52,33 +44,29 @@ namespace PhanMemQuanLyCongTrinh
                     // tao form moi
                     frm_Main f = new frm_Main( );
 
-                    
+                    messeage.success("Đăng nhập thành công!");
 
-                    // an form hien tai                  
-                    // show form
-                    MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Hide( );
-
-                    f.ShowDialog( );
+                    this.DialogResult = DialogResult.OK;
+                    this.Close( );
+                
                 }
                 else
                 {
-                    MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu");
+                    messeage.error("Tên đăng nhập hoặc mật khẩu không đúng!");
                 }
 
             }
         }
 
-
-        private void CloseForm(Object sender, EventArgs args)
+        private void btn_Exit_Click(object sender, EventArgs e)
         {
-            Application.Exit( );
+            this.Close();
         }
 
-        private void frm_Login_Load(object sender, EventArgs e)
+        private void frm_DangNhap_Load(object sender, EventArgs e)
         {
-            this.AcceptButton = btn_Login;
+            this.AcceptButton = btn_login;
         }
-       
+
     }
 }

@@ -5,9 +5,9 @@ using System.Text;
 
 namespace PhanMemQuanLyCongTrinh.BUS
 {
-    class constructionBus
+    class ConstructionBus
     {
-        DAO.constructionDao constructionDao = new DAO.constructionDao();
+        DAO.ConstructionDao constructionDao = new DAO.ConstructionDao();
         public object getAllContruction()
         {
             return constructionDao.getAllContruction();

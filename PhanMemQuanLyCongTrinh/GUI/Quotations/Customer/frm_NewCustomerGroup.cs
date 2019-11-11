@@ -13,11 +13,11 @@ namespace PhanMemQuanLyCongTrinh
     public partial class frm_NewCustomerGroup : DevExpress.XtraEditors.XtraForm
     {
         public Int64 customerGroupId { set; get; }
-        BUS.customerGroupBus customerGroupBus;
+        BUS.CustomerGroupBus customerGroupBus;
         public frm_NewCustomerGroup()
         {
             InitializeComponent();
-            customerGroupBus = new BUS.customerGroupBus();
+            customerGroupBus = new BUS.CustomerGroupBus();
         }
         public void loadCustomerGroup()
         {

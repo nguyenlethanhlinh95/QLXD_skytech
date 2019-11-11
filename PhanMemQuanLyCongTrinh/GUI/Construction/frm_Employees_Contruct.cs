@@ -21,20 +21,19 @@ namespace PhanMemQuanLyCongTrinh
 
         Int64 id_contruct = 0;
         Int64 id_contruct_items = 0;
-        constructionBus _contruct = new constructionBus( );
-        constructionItemBus _contructItem = new constructionItemBus();
-        detail_employee_constructionBus _detai = new detail_employee_constructionBus();
+        ConstructionBus _contruct = new ConstructionBus( );
+        ConstructionItemBus _contructItem = new ConstructionItemBus();
+        Detail_Employee_ConstructionBus _detai = new Detail_Employee_ConstructionBus();
 
         #region Load
 
         private void frm_Employees_Contruct_Load(object sender, EventArgs e)
         {
-            loadAllContruct( );
-            loadAllEmployee();
-
             StyleDevxpressGridControl.styleGridControl(grdc_em, grdv_em);
             grdv_em.OptionsSelection.MultiSelect = true;
             grdv_em.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+            loadAllContruct( );
+            loadAllEmployee();            
         }
 
         // load contruct

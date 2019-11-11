@@ -6,7 +6,7 @@ using PhanMemQuanLyCongTrinh.DTO;
 
 namespace PhanMemQuanLyCongTrinh.DAO
 {
-    public class detailEnterCouponSuppliesDao
+    public class DetailEnterCouponSuppliesDao
     {
         DataClasses1DataContext db = new DataClasses1DataContext( );
 
@@ -32,6 +32,22 @@ namespace PhanMemQuanLyCongTrinh.DAO
                 dlg.Close( );
             }
         }
+
+        public IEnumerable<Object> getAllSupplies(Int64 idEnter)
+        {
+            try{
+                var data = from b in db.ST_detail_enter_coupon_supplies
+                            where b.enter_coupon_supplies_id == idEnter
+                            select b;
+                return data;
+            }
+            catch(Exception )
+            {
+                return null;
+            }
+        }
+
+        
 
         public object getDetail(Int64 id)
         {

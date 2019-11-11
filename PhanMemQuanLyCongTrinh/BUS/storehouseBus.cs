@@ -5,9 +5,9 @@ using System.Text;
 
 namespace PhanMemQuanLyCongTrinh.BUS
 {
-    class storehouseBus
+    class StorehouseBus
     {
-        DAO.storehouseDao storehouseDao = new DAO.storehouseDao();
+        DAO.StorehouseDao storehouseDao = new DAO.StorehouseDao();
         public object getAllStorehouse()
         {
             return storehouseDao.getAllStorehouse();

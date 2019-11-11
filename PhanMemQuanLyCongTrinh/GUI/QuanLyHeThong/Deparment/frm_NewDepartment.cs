@@ -18,7 +18,7 @@ namespace PhanMemQuanLyCongTrinh
             InitializeComponent( );
         }
 
-        deparmentBus depBus = new deparmentBus();
+        DeparmentBus depBus = new DeparmentBus();
 
 
 
@@ -27,7 +27,17 @@ namespace PhanMemQuanLyCongTrinh
             
         }
 
-        private void but_Update_Click(object sender, EventArgs e)
+        private void frm_department_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btn_New;
+        }
+
+        private void but_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_New_Click(object sender, EventArgs e)
         {
             if ( txt_deparment.Text != "" )
             {
@@ -48,16 +58,6 @@ namespace PhanMemQuanLyCongTrinh
             {
                 XtraMessageBox.Show("Dữ liệu trống?", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
-        }
-
-        private void frm_department_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void but_Exit_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
  

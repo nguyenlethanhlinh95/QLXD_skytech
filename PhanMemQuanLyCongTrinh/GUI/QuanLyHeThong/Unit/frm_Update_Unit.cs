@@ -56,6 +56,7 @@ namespace PhanMemQuanLyCongTrinh
 
         private void frm_Update_Unit_Load(object sender, EventArgs e)
         {
+            this.AcceptButton = btn_Update;
             LoadData();
         }
 

@@ -33,6 +33,30 @@ namespace PhanMemQuanLyCongTrinh.DAO
             }
         }
 
+        public Int64 getIdPaymentSlipsFromEnter(Int64 idEnter)
+        {
+            try
+            {
+                var data = (from b in db.ST_payment_slips
+                            where b.enter_coupon_supplies_id == idEnter
+                            orderby b.payment_slip_created_date ascending
+                            select new { b.payment_slip_id }).First( );
+                if ( data != null )
+                {
+                    return Int64.Parse(data.ToString());
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch(Exception)
+            {
+                return 0;
+            }
+            
+        }
+
         public object getPaymentSlip(Int64 paymentId)
         {
             try
@@ -86,9 +110,28 @@ namespace PhanMemQuanLyCongTrinh.DAO
         {
             try
             {
-                var updateVendor = db.ST_payment_slips.Where(p => p.payment_slip_id.Equals(pay.payment_slip_id)).SingleOrDefault( );
+                var updatePay = db.ST_payment_slips.Where(p => p.payment_slip_id.Equals(pay.payment_slip_id)).SingleOrDefault( );
 
-                //updateVendor. = unit.unit_name;
+                //var updatePay = (from p in db.ST_payment_slips
+                //                 where p.payment_slip_id == pay.payment_slip_id
+                //                orderby p.payment_slip_id ascending
+                //                select p
+                //                ).First();
+                updatePay.payment_slip_id = pay.payment_slip_id;
+                updatePay.employee_id = pay.employee_id;
+                updatePay.vendor_id = pay.vendor_id;
+                updatePay.construction_id = pay.construction_id;
+                updatePay.enter_coupon_supplies_id = pay.enter_coupon_supplies_id;
+                updatePay.payment_slip_No = pay.payment_slip_No;
+                updatePay.payment_slip_Co = pay.payment_slip_Co;
+                updatePay.customer_id = pay.customer_id;
+                updatePay.payment_slip_receiver = pay.payment_slip_receiver;
+                updatePay.payment_slip_address = pay.payment_slip_address;
+                updatePay.payment_slip_document = pay.payment_slip_document;
+                updatePay.payment_slip_total_price = pay.payment_slip_total_price;
+                updatePay.detail_income_and_expenditure_pattern_id = pay.detail_income_and_expenditure_pattern_id;
+                updatePay.payment_slip_created_date = pay.payment_slip_created_date;
+                updatePay.employee_created = pay.employee_created;
 
                 db.SubmitChanges( );
                 return true;

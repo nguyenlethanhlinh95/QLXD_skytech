@@ -6,7 +6,7 @@ using PhanMemQuanLyCongTrinh.DTO;
 
 namespace PhanMemQuanLyCongTrinh.DAO
 {
-    public class detail_employee_constructionDao
+    public class Detail_employee_constructionDao
     {
         DataClasses1DataContext db = new DataClasses1DataContext();
         public bool insert(ST_detail_employee_construction item)

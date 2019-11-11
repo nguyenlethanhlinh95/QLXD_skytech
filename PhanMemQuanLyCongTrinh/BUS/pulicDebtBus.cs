@@ -7,9 +7,9 @@ using PhanMemQuanLyCongTrinh.DTO;
 
 namespace PhanMemQuanLyCongTrinh.BUS
 {
-    public class pulicDebtBus
+    public class PulicDebtBus
     {
-        pulicDebtDao _pu = new pulicDebtDao();
+        PulicDebtDao _pu = new PulicDebtDao();
         public IEnumerable<object> getAllPulicDebts( )
         {
             return _pu.getAllPulicDebts();

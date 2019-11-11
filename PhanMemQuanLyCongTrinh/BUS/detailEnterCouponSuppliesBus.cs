@@ -6,12 +6,18 @@ using PhanMemQuanLyCongTrinh.DAO;
 
 namespace PhanMemQuanLyCongTrinh.BUS
 {
-    public class detailEnterCouponSuppliesBus
+    public class DetailEnterCouponSuppliesBus
     {
-        detailEnterCouponSuppliesDao _de = new detailEnterCouponSuppliesDao();
+        DetailEnterCouponSuppliesDao _de = new DetailEnterCouponSuppliesDao();
         public IEnumerable<object> getAll( )
         {
             return _de.getAll();
+        }
+
+
+        public IEnumerable<Object> getAllSupplies(Int64 idEnter)
+        {
+            return _de.getAllSupplies(idEnter);
         }
 
         public object getDetail(Int64 id)

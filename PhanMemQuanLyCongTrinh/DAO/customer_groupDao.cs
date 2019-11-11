@@ -6,7 +6,7 @@ using PhanMemQuanLyCongTrinh.DTO;
 
 namespace PhanMemQuanLyCongTrinh.DAO
 {
-    public class customer_groupDao
+    public class Customer_groupDao
     {
         DataClasses1DataContext db = new DataClasses1DataContext( );
 

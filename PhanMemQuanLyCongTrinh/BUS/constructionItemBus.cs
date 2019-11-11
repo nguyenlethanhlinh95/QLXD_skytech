@@ -6,9 +6,9 @@ using System.Text;
 namespace PhanMemQuanLyCongTrinh.BUS
 {
     
-    class constructionItemBus
+    class ConstructionItemBus
     {
-        DAO.constructionItemDao constructionItemDao = new DAO.constructionItemDao();
+        DAO.ConstructionItemDao constructionItemDao = new DAO.ConstructionItemDao();
         public bool isContructionIdtemGroup(Int64 contructionId)
         {
             var construction = constructionItemDao.isContructionIdtemGroup(contructionId);

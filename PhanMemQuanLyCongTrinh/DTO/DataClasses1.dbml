@@ -201,6 +201,7 @@
       <Column Name="enter_coupon_supplies_total_price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="enter_coupon_supplies_document" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="employee_created" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="enter_coupon_supplies_deliver" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.ST_group_supplies" Member="ST_group_supplies">

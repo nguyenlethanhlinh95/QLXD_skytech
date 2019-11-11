@@ -6,7 +6,7 @@ using PhanMemQuanLyCongTrinh.DTO;
 
 namespace PhanMemQuanLyCongTrinh.DAO
 {
-    public class userDao
+    public class UserDao
     {
         DataClasses1DataContext db = new DataClasses1DataContext();
 
@@ -40,7 +40,8 @@ namespace PhanMemQuanLyCongTrinh.DAO
             var dlg = new DevExpress.Utils.WaitDialogForm("Đang tải dữ liệu ...", "Thông báo");
             try{
                 var users = from u in db.ST_employees
-                            select u;
+                            join dep in db.ST_departments on u.department_id equals dep.department_id
+                            select new { u.employee_id, u.employee_id_custom, u.employee_name, dep.department_name, u.employee_username, u.employee_phone, u.employee_address, u.employee_email, u.employee_bank_account_number, u.employee_status, u.permission_id };
 
                 return users;
             }
@@ -169,7 +170,32 @@ namespace PhanMemQuanLyCongTrinh.DAO
             }
         }
 
+        public bool changeUserToDeparment(Int64 idDep)
+        {
+            try
+            {
+                var datasource = from e in db.ST_employees
+                                 where e.department_id == idDep
+                                 select e;
 
+                if ( datasource != null )
+                {
+                    foreach ( var item in datasource )
+                    {
+                        item.department_id = 3;
+                        db.SubmitChanges( );
+                    }
+                    
+                    return true;
+                }
+                return false;
+
+            }
+            catch ( Exception )
+            {
+                return false;
+            }
+        }
         public IEnumerable<Object> getAllUserByDepartment(Int64 id)
         {
             var dlg = new DevExpress.Utils.WaitDialogForm("Đang tải dữ liệu ...", "Thông báo");
@@ -178,9 +204,10 @@ namespace PhanMemQuanLyCongTrinh.DAO
                 db = new DataClasses1DataContext( );
                 db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
 
-                var data = from b in db.ST_employees
-                           where b.department_id == id
-                           select b;
+                var data = from u in db.ST_employees
+                           where u.department_id == id
+                           join dep in db.ST_departments on u.department_id equals dep.department_id
+                           select new { u.employee_id, u.employee_id_custom, u.employee_name, dep.department_name, u.employee_username, u.employee_phone, u.employee_address, u.employee_email, u.employee_bank_account_number, u.employee_status, u.permission_id };
 
                 if ( data != null )
                 {

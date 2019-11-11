@@ -13,7 +13,7 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_EditDeparment : DevExpress.XtraEditors.XtraForm
     {
-        BUS.deparmentBus depBus = new BUS.deparmentBus();
+        BUS.DeparmentBus depBus = new BUS.DeparmentBus();
         
         public Int64 id = 0;
 
@@ -29,6 +29,7 @@ namespace PhanMemQuanLyCongTrinh
 
         private void frm_EditDeparment_Load(object sender, EventArgs e)
         {
+            this.AcceptButton = but_Update;
             if (id != 0)
             {
                 loadDepartment( );

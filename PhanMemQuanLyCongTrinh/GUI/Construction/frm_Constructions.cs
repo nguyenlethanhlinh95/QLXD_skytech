@@ -12,8 +12,8 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_Constructions : DevExpress.XtraEditors.XtraForm
     {
-        BUS.constructionBus constructionBus = new BUS.constructionBus();
-        BUS.constructionItemBus constructionItemBus = new BUS.constructionItemBus();
+        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus();
+        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus();
         int indexConstruction;
         int indexConstructionItem;
 
@@ -31,6 +31,8 @@ namespace PhanMemQuanLyCongTrinh
         }
         private void frm_Constructions_Load(object sender, EventArgs e)
         {
+            StyleDevxpressGridControl.styleGridControl(grdc_Construction, grdv_Construction);
+            StyleDevxpressGridControl.styleGridControl(grdc_ConstructionItem, grdv_ConstructionItem);
             loadContruction();
         }
 

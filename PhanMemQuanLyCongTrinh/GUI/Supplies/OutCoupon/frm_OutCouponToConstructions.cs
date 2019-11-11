@@ -7,6 +7,8 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using PhanMemQuanLyCongTrinh.BUS;
+
 
 namespace PhanMemQuanLyCongTrinh
 {
@@ -25,6 +27,7 @@ namespace PhanMemQuanLyCongTrinh
 
         private void frm_OutCouponToConstructions_Load(object sender, EventArgs e)
         {
+            StyleDevxpressGridControl.styleGridControl(grdc_OutCoupon, grdv_OutCoupon);
             loadAllOutCoupon();
         }
 

@@ -16,8 +16,8 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_RegisterUser : DevExpress.XtraEditors.XtraForm
     {
-        deparmentBus deparmentBus = new deparmentBus();
-        userBus userBus = new userBus();
+        DeparmentBus deparmentBus = new DeparmentBus();
+        UserBus userBus = new UserBus();
 
         private bool gender = false;
         private bool check = false;
@@ -40,10 +40,13 @@ namespace PhanMemQuanLyCongTrinh
         }
         private void frm_RegisterUser_Load(object sender, EventArgs e)
         {
+            this.AcceptButton = btn_New;
             Load_lue_deparment( );
 
             dt_DateOfBirth.Properties.Mask.MaskType = MaskType.DateTime  ;
             dt_DateOfBirth.Properties.Mask.EditMask = "dd-MM-yyyy"  ;
+            StyleDevxpressGridControl.autoLookUpEdit(lue_deparment);
+            
         }
 
         #endregion

@@ -6,9 +6,9 @@ using PhanMemQuanLyCongTrinh.DAO;
 
 namespace PhanMemQuanLyCongTrinh.BUS
 {
-    public class supliesBus
+    public class SupliesBus
     {
-        supliesDao _sup = new supliesDao();
+        SupliesDao _sup = new SupliesDao();
         public bool insertSuplies(DTO.ST_supply supply)
         {
             return _sup.insertSuplies(supply);

@@ -19,7 +19,7 @@ namespace PhanMemQuanLyCongTrinh
         }
         public Int64 id_group = 0;
 
-        group_suppliesBus _group = new group_suppliesBus();
+        Group_suppliesBus _group = new Group_suppliesBus();
 
         private void frm_UpdateGroupSupplies_Load(object sender, EventArgs e)
         {

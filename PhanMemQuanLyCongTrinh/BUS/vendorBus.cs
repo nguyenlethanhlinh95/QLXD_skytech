@@ -6,9 +6,9 @@ using System.Text;
 namespace PhanMemQuanLyCongTrinh.BUS
 {
     
-    class vendorBus
+    class VendorBus
     {
-        DAO.vendorDao vendorDao = new DAO.vendorDao();
+        DAO.VendorDao vendorDao = new DAO.VendorDao();
 
         public object loadAllVendor()
         {

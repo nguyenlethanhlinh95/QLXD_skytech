@@ -7,9 +7,9 @@ using PhanMemQuanLyCongTrinh.DTO;
 
 namespace PhanMemQuanLyCongTrinh.BUS
 {
-    public class detail_employee_constructionBus
+    public class Detail_Employee_ConstructionBus
     {
-        detail_employee_constructionDao _em = new detail_employee_constructionDao( );
+        Detail_employee_constructionDao _em = new Detail_employee_constructionDao( );
         public bool insert(ST_detail_employee_construction item)
         {
             return _em.insert(item);

@@ -12,7 +12,7 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_Storehouse : DevExpress.XtraEditors.XtraForm
     {
-        BUS.storehouseBus storehouseBus = new BUS.storehouseBus();
+        BUS.StorehouseBus storehouseBus = new BUS.StorehouseBus();
         int index;
         public frm_Storehouse()
         {
@@ -30,6 +30,7 @@ namespace PhanMemQuanLyCongTrinh
 
         private void frm_Storehouse_Load(object sender, EventArgs e)
         {
+            StyleDevxpressGridControl.styleGridControl(grdc_Storehouse, grdv_Storehouse);
             loadAllStorehouse();
         }
 

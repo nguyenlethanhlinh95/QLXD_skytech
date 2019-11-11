@@ -115,8 +115,7 @@
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.grdc_StorehouseDetail = new DevExpress.XtraGrid.GridControl();
             this.grdv_StorehouseDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.storehouses_detail_id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.storehouse_name2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.supplies_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.supplies_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.storehouse_detail_quantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barDockControl10 = new DevExpress.XtraBars.BarDockControl();
@@ -137,6 +136,8 @@
             this.barHeaderItem3 = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem4 = new DevExpress.XtraBars.BarHeaderItem();
             this.tabPane2 = new DevExpress.XtraBars.Navigation.TabPane();
+            this.supplies_image = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.supplies_id_custom = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -796,9 +797,10 @@
             this.grdv_StorehouseDetail.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grdv_StorehouseDetail.Appearance.TopNewRow.Options.UseFont = true;
             this.grdv_StorehouseDetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.storehouses_detail_id,
-            this.storehouse_name2,
+            this.supplies_id,
+            this.supplies_image,
             this.supplies_name,
+            this.supplies_id_custom,
             this.storehouse_detail_quantity});
             this.grdv_StorehouseDetail.GridControl = this.grdc_StorehouseDetail;
             this.grdv_StorehouseDetail.Name = "grdv_StorehouseDetail";
@@ -808,30 +810,16 @@
             this.grdv_StorehouseDetail.RowHeight = 30;
             this.grdv_StorehouseDetail.ViewCaptionHeight = 0;
             // 
-            // storehouses_detail_id
+            // supplies_id
             // 
-            this.storehouses_detail_id.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storehouses_detail_id.AppearanceCell.Options.UseFont = true;
-            this.storehouses_detail_id.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storehouses_detail_id.AppearanceHeader.Options.UseFont = true;
-            this.storehouses_detail_id.Caption = "ID";
-            this.storehouses_detail_id.FieldName = "storehouses_detail_id";
-            this.storehouses_detail_id.Name = "storehouses_detail_id";
-            this.storehouses_detail_id.OptionsColumn.FixedWidth = true;
-            // 
-            // storehouse_name2
-            // 
-            this.storehouse_name2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storehouse_name2.AppearanceCell.Options.UseFont = true;
-            this.storehouse_name2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storehouse_name2.AppearanceHeader.Options.UseFont = true;
-            this.storehouse_name2.Caption = "Tên Kho";
-            this.storehouse_name2.FieldName = "storehouse_name";
-            this.storehouse_name2.Name = "storehouse_name2";
-            this.storehouse_name2.OptionsColumn.FixedWidth = true;
-            this.storehouse_name2.Visible = true;
-            this.storehouse_name2.VisibleIndex = 0;
-            this.storehouse_name2.Width = 338;
+            this.supplies_id.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.supplies_id.AppearanceCell.Options.UseFont = true;
+            this.supplies_id.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.supplies_id.AppearanceHeader.Options.UseFont = true;
+            this.supplies_id.Caption = "ID";
+            this.supplies_id.FieldName = "supplies_id";
+            this.supplies_id.Name = "supplies_id";
+            this.supplies_id.OptionsColumn.FixedWidth = true;
             // 
             // supplies_name
             // 
@@ -839,13 +827,13 @@
             this.supplies_name.AppearanceCell.Options.UseFont = true;
             this.supplies_name.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.supplies_name.AppearanceHeader.Options.UseFont = true;
-            this.supplies_name.Caption = "Vật Tư";
+            this.supplies_name.Caption = "Tên vật Tư";
             this.supplies_name.FieldName = "supplies_name";
             this.supplies_name.Name = "supplies_name";
             this.supplies_name.OptionsColumn.FixedWidth = true;
             this.supplies_name.Visible = true;
             this.supplies_name.VisibleIndex = 1;
-            this.supplies_name.Width = 386;
+            this.supplies_name.Width = 320;
             // 
             // storehouse_detail_quantity
             // 
@@ -853,13 +841,13 @@
             this.storehouse_detail_quantity.AppearanceCell.Options.UseFont = true;
             this.storehouse_detail_quantity.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.storehouse_detail_quantity.AppearanceHeader.Options.UseFont = true;
-            this.storehouse_detail_quantity.Caption = "Số Lượng";
+            this.storehouse_detail_quantity.Caption = "Tồn kho";
             this.storehouse_detail_quantity.FieldName = "storehouse_detail_quantity";
             this.storehouse_detail_quantity.Name = "storehouse_detail_quantity";
             this.storehouse_detail_quantity.OptionsColumn.FixedWidth = true;
             this.storehouse_detail_quantity.Visible = true;
             this.storehouse_detail_quantity.VisibleIndex = 2;
-            this.storehouse_detail_quantity.Width = 150;
+            this.storehouse_detail_quantity.Width = 120;
             // 
             // barDockControl10
             // 
@@ -1033,9 +1021,9 @@
             // tabPane2
             // 
             this.tabPane2.AllowCollapse = DevExpress.Utils.DefaultBoolean.Default;
-            this.tabPane2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabPane2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabPane2.Controls.Add(this.tabNavigationPage2);
             this.tabPane2.Location = new System.Drawing.Point(447, 0);
             this.tabPane2.LookAndFeel.SkinMaskColor = System.Drawing.Color.White;
@@ -1050,6 +1038,26 @@
             this.tabPane2.Size = new System.Drawing.Size(924, 751);
             this.tabPane2.TabIndex = 23;
             this.tabPane2.Text = "tabPane2";
+            // 
+            // supplies_image
+            // 
+            this.supplies_image.Caption = "Hình ảnh";
+            this.supplies_image.FieldName = "supplies_image";
+            this.supplies_image.Name = "supplies_image";
+            this.supplies_image.OptionsColumn.FixedWidth = true;
+            this.supplies_image.Visible = true;
+            this.supplies_image.VisibleIndex = 0;
+            this.supplies_image.Width = 150;
+            // 
+            // supplies_id_custom
+            // 
+            this.supplies_id_custom.Caption = "Mã";
+            this.supplies_id_custom.FieldName = "supplies_id_custom";
+            this.supplies_id_custom.Name = "supplies_id_custom";
+            this.supplies_id_custom.OptionsColumn.FixedWidth = true;
+            this.supplies_id_custom.Visible = true;
+            this.supplies_id_custom.VisibleIndex = 3;
+            this.supplies_id_custom.Width = 120;
             // 
             // frm_StorehouseDetail
             // 
@@ -1148,8 +1156,7 @@
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
         private DevExpress.XtraGrid.GridControl grdc_StorehouseDetail;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_StorehouseDetail;
-        private DevExpress.XtraGrid.Columns.GridColumn storehouses_detail_id;
-        private DevExpress.XtraGrid.Columns.GridColumn storehouse_name2;
+        private DevExpress.XtraGrid.Columns.GridColumn supplies_id;
         private DevExpress.XtraGrid.Columns.GridColumn supplies_name;
         private DevExpress.XtraGrid.Columns.GridColumn storehouse_detail_quantity;
         private DevExpress.XtraBars.BarDockControl barDockControl10;
@@ -1161,6 +1168,8 @@
         private DevExpress.XtraBars.BarDockControl barDockControl22;
         private DevExpress.XtraBars.BarDockControl barDockControl23;
         private DevExpress.XtraBars.Navigation.TabPane tabPane2;
+        private DevExpress.XtraGrid.Columns.GridColumn supplies_image;
+        private DevExpress.XtraGrid.Columns.GridColumn supplies_id_custom;
 
     }
 }

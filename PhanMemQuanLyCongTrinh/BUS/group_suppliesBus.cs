@@ -7,9 +7,9 @@ using PhanMemQuanLyCongTrinh.DAO;
 
 namespace PhanMemQuanLyCongTrinh.BUS
 {
-    public class group_suppliesBus
+    public class Group_suppliesBus
     {
-        group_suppliesDao _groupDao = new group_suppliesDao();
+        Group_suppliesDao _groupDao = new Group_suppliesDao();
 
         public IEnumerable<Object> getAllGroup()
         {

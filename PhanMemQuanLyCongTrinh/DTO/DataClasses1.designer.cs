@@ -4110,6 +4110,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		
 		private long _employee_created;
 		
+		private string _enter_coupon_supplies_deliver;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -4136,6 +4138,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void Onenter_coupon_supplies_documentChanged();
     partial void Onemployee_createdChanging(long value);
     partial void Onemployee_createdChanged();
+    partial void Onenter_coupon_supplies_deliverChanging(string value);
+    partial void Onenter_coupon_supplies_deliverChanged();
     #endregion
 		
 		public ST_enter_coupon_supply()
@@ -4359,6 +4363,26 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._employee_created = value;
 					this.SendPropertyChanged("employee_created");
 					this.Onemployee_createdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_enter_coupon_supplies_deliver", DbType="VarChar(200)")]
+		public string enter_coupon_supplies_deliver
+		{
+			get
+			{
+				return this._enter_coupon_supplies_deliver;
+			}
+			set
+			{
+				if ((this._enter_coupon_supplies_deliver != value))
+				{
+					this.Onenter_coupon_supplies_deliverChanging(value);
+					this.SendPropertyChanging();
+					this._enter_coupon_supplies_deliver = value;
+					this.SendPropertyChanged("enter_coupon_supplies_deliver");
+					this.Onenter_coupon_supplies_deliverChanged();
 				}
 			}
 		}

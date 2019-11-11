@@ -18,34 +18,46 @@ namespace PhanMemQuanLyCongTrinh
             InitializeComponent( );
         }
 
-        group_suppliesBus _group = new group_suppliesBus();
+        Group_suppliesBus _group = new Group_suppliesBus();
 
         private void but_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void but_AddNew_Click(object sender, EventArgs e)
+        private void btn_New_Click(object sender, EventArgs e)
         {
-            if ( txt_name.Text != "" )
+            try
             {
-                bool status = _group.insert(txt_name.Text);
-
-                if ( status )
+                if ( txt_name.Text != "" )
                 {
-                    messeage.success("Thêm mới thành công");
+                    bool status = _group.insert(txt_name.Text);
 
-                    this.Close( );
+                    if ( status )
+                    {
+                        messeage.success("Thêm mới thành công !");
+
+                        this.Close( );
+                    }
+                    else
+                    {
+                        messeage.error("Không thể thêm mới !");
+                    }
                 }
                 else
                 {
-                    messeage.error("Không thể thêm mới");
+                    XtraMessageBox.Show("Dữ liệu trống?", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 }
             }
-            else
+            catch(Exception)
             {
-                XtraMessageBox.Show("Dữ liệu trống?", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                messeage.error("Không thể thêm mới !");
             }
+        }
+
+        private void frm_AddNewGroupSupplies_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btn_New;
         }
 
         

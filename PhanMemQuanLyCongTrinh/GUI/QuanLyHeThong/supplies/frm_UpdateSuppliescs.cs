@@ -20,10 +20,10 @@ namespace PhanMemQuanLyCongTrinh
             InitializeComponent( );
         }
 
-        vendorBus _vender = new vendorBus( );
+        VendorBus _vender = new VendorBus( );
         unitBus _unit = new unitBus( );
-        group_suppliesBus _group = new group_suppliesBus( );
-        supliesBus _sup = new supliesBus( );
+        Group_suppliesBus _group = new Group_suppliesBus( );
+        SupliesBus _sup = new SupliesBus( );
 
         private Int64 idGroup = 0;
         private Int64 idUnit = 0;
@@ -34,7 +34,7 @@ namespace PhanMemQuanLyCongTrinh
 
         private void frm_UpdateSuppliescs_Load(object sender, EventArgs e)
         {
-
+            this.AcceptButton = btn_Update;
             if ( id_Suppliesc != 0 )
             {
                 loadUnit( );

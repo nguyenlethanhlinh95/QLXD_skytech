@@ -24,6 +24,7 @@ namespace PhanMemQuanLyCongTrinh
 
         private void frm_Supplies_Load(object sender, EventArgs e)
         {
+            StyleDevxpressGridControl.styleGridControl(grdc_unit, grdv_unit);
             loadGridViewUnits( );
         }
 

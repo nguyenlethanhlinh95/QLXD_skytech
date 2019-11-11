@@ -13,9 +13,9 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_Updateprogress : DevExpress.XtraEditors.XtraForm
     {
-        BUS.constructionBus constructionBus = new BUS.constructionBus();
-        BUS.constructionItemBus constructionItemBus = new BUS.constructionItemBus();
-        BUS.progressBus progressBus = new BUS.progressBus();
+        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus();
+        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus();
+        BUS.ProgressBus progressBus = new BUS.ProgressBus();
 
         public Int64 progressId { get; set; }
         Int64 contructionId;

@@ -18,11 +18,11 @@ namespace PhanMemQuanLyCongTrinh
             InitializeComponent( );
         }
 
-        userBus userBus = new userBus();
+        UserBus userBus = new UserBus();
 
         private void frm_RePassword_Load(object sender, EventArgs e)
         {
-            
+            this.AcceptButton = btn_Update;
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)

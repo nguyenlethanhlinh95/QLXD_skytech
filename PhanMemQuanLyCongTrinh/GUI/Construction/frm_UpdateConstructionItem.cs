@@ -20,9 +20,9 @@ namespace PhanMemQuanLyCongTrinh
         string fileName;
 
         public Int64 counstructionItemId { get; set; }
-        BUS.constructionBus constructionBus = new BUS.constructionBus();
-        BUS.constructionItemBus constructionItemBus = new BUS.constructionItemBus();
-        BUS.buildingContractorBus buildingContractorBus = new BUS.buildingContractorBus();
+        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus();
+        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus();
+        BUS.BuildingContractorBus buildingContractorBus = new BUS.BuildingContractorBus();
 
         public frm_UpdateConstructionItem()
         {

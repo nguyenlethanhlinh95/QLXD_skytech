@@ -12,7 +12,7 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_BuildingContractor : DevExpress.XtraEditors.XtraForm
     {
-        BUS.buildingContractorBus buildingContractorBus = new BUS.buildingContractorBus();
+        BUS.BuildingContractorBus buildingContractorBus = new BUS.BuildingContractorBus();
           
         int index;
         
@@ -28,6 +28,7 @@ namespace PhanMemQuanLyCongTrinh
         }
         private void frm_BuildingContractor_Load(object sender, EventArgs e)
         {
+            StyleDevxpressGridControl.styleGridControl(grdc_BuidingContractor, grdv_BuidingContractor);
             loadAllBuildingContractor();
         }
 

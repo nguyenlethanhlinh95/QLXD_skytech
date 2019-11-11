@@ -193,7 +193,7 @@
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Caption = "Chĩnh Sửa";
+            this.btn_Edit.Caption = "Chỉnh Sửa";
             this.btn_Edit.ContentHorizontalAlignment = DevExpress.XtraBars.BarItemContentAlignment.Center;
             this.btn_Edit.Id = 1;
             this.btn_Edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Edit.ImageOptions.Image")));
@@ -209,6 +209,7 @@
             toolTipTitleItem2.Text = "Ctrl + E";
             superToolTip2.Items.Add(toolTipTitleItem2);
             this.btn_Edit.SuperTip = superToolTip2;
+            this.btn_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Edit_ItemClick);
             // 
             // barStaticItem2
             // 
@@ -546,13 +547,13 @@
             this.grdv_EnterCoupon.OptionsView.ShowGroupPanel = false;
             this.grdv_EnterCoupon.RowHeight = 30;
             this.grdv_EnterCoupon.ViewCaptionHeight = 0;
+            this.grdv_EnterCoupon.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdv_EnterCoupon_FocusedRowChanged);
             // 
             // enter_coupon_supplies_id
             // 
             this.enter_coupon_supplies_id.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enter_coupon_supplies_id.AppearanceCell.Options.UseFont = true;
             this.enter_coupon_supplies_id.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enter_coupon_supplies_id.AppearanceHeader.Options.UseFont = true;
             this.enter_coupon_supplies_id.Caption = "ID";
             this.enter_coupon_supplies_id.FieldName = "enter_coupon_supplies_id";
             this.enter_coupon_supplies_id.MinWidth = 10;
@@ -563,22 +564,19 @@
             // 
             this.enter_coupon_supplies_id_custom.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enter_coupon_supplies_id_custom.AppearanceCell.Options.UseFont = true;
-            this.enter_coupon_supplies_id_custom.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enter_coupon_supplies_id_custom.AppearanceHeader.Options.UseFont = true;
+            this.enter_coupon_supplies_id_custom.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enter_coupon_supplies_id_custom.Caption = "Mã Phiếu Nhập";
             this.enter_coupon_supplies_id_custom.FieldName = "enter_coupon_supplies_id_custom";
             this.enter_coupon_supplies_id_custom.Name = "enter_coupon_supplies_id_custom";
             this.enter_coupon_supplies_id_custom.OptionsColumn.FixedWidth = true;
             this.enter_coupon_supplies_id_custom.Visible = true;
             this.enter_coupon_supplies_id_custom.VisibleIndex = 0;
-            this.enter_coupon_supplies_id_custom.Width = 100;
             // 
             // storehouse_name
             // 
             this.storehouse_name.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.storehouse_name.AppearanceCell.Options.UseFont = true;
-            this.storehouse_name.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.storehouse_name.AppearanceHeader.Options.UseFont = true;
+            this.storehouse_name.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.storehouse_name.Caption = "Tên Kho";
             this.storehouse_name.FieldName = "storehouse_name";
             this.storehouse_name.Name = "storehouse_name";
@@ -591,42 +589,40 @@
             // 
             this.enter_coupon_supplies_created_date.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enter_coupon_supplies_created_date.AppearanceCell.Options.UseFont = true;
-            this.enter_coupon_supplies_created_date.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enter_coupon_supplies_created_date.AppearanceHeader.Options.UseFont = true;
+            this.enter_coupon_supplies_created_date.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enter_coupon_supplies_created_date.Caption = "Ngày Lập";
             this.enter_coupon_supplies_created_date.FieldName = "enter_coupon_supplies_created_date";
             this.enter_coupon_supplies_created_date.Name = "enter_coupon_supplies_created_date";
             this.enter_coupon_supplies_created_date.OptionsColumn.FixedWidth = true;
             this.enter_coupon_supplies_created_date.Visible = true;
             this.enter_coupon_supplies_created_date.VisibleIndex = 2;
-            this.enter_coupon_supplies_created_date.Width = 150;
+            this.enter_coupon_supplies_created_date.Width = 100;
             // 
             // enter_coupon_supplies_number
             // 
             this.enter_coupon_supplies_number.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enter_coupon_supplies_number.AppearanceCell.Options.UseFont = true;
-            this.enter_coupon_supplies_number.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enter_coupon_supplies_number.AppearanceHeader.Options.UseFont = true;
+            this.enter_coupon_supplies_number.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enter_coupon_supplies_number.Caption = "Số Phiếu";
             this.enter_coupon_supplies_number.FieldName = "enter_coupon_supplies_number";
             this.enter_coupon_supplies_number.Name = "enter_coupon_supplies_number";
             this.enter_coupon_supplies_number.OptionsColumn.FixedWidth = true;
             this.enter_coupon_supplies_number.Visible = true;
             this.enter_coupon_supplies_number.VisibleIndex = 3;
-            this.enter_coupon_supplies_number.Width = 150;
+            this.enter_coupon_supplies_number.Width = 100;
             // 
             // enter_coupon_supplies_total_percent_discount
             // 
             this.enter_coupon_supplies_total_percent_discount.Caption = "Chiết Khấu";
             this.enter_coupon_supplies_total_percent_discount.FieldName = "enter_coupon_supplies_total_percent_discount";
             this.enter_coupon_supplies_total_percent_discount.Name = "enter_coupon_supplies_total_percent_discount";
+            this.enter_coupon_supplies_total_percent_discount.OptionsColumn.FixedWidth = true;
             this.enter_coupon_supplies_total_percent_discount.Visible = true;
             this.enter_coupon_supplies_total_percent_discount.VisibleIndex = 4;
-            this.enter_coupon_supplies_total_percent_discount.Width = 150;
+            this.enter_coupon_supplies_total_percent_discount.Width = 100;
             // 
             // enter_coupon_supplies_total_price
             // 
-            this.enter_coupon_supplies_total_price.AppearanceCell.Options.UseTextOptions = true;
             this.enter_coupon_supplies_total_price.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.enter_coupon_supplies_total_price.Caption = "Tổng Tiền";
             this.enter_coupon_supplies_total_price.DisplayFormat.FormatString = "{0:n0} VNĐ";
@@ -638,25 +634,27 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "enter_coupon_supplies_total_price", "Tổng Tiền ={0:n0} VNĐ")});
             this.enter_coupon_supplies_total_price.Visible = true;
             this.enter_coupon_supplies_total_price.VisibleIndex = 5;
-            this.enter_coupon_supplies_total_price.Width = 200;
+            this.enter_coupon_supplies_total_price.Width = 100;
             // 
             // employee_name
             // 
             this.employee_name.Caption = "Người Lập";
             this.employee_name.FieldName = "employee_name";
             this.employee_name.Name = "employee_name";
+            this.employee_name.OptionsColumn.FixedWidth = true;
             this.employee_name.Visible = true;
             this.employee_name.VisibleIndex = 6;
-            this.employee_name.Width = 226;
+            this.employee_name.Width = 150;
             // 
             // enter_coupon_supplies_description
             // 
             this.enter_coupon_supplies_description.Caption = "Ghi Chú";
             this.enter_coupon_supplies_description.FieldName = "enter_coupon_supplies_description";
             this.enter_coupon_supplies_description.Name = "enter_coupon_supplies_description";
+            this.enter_coupon_supplies_description.OptionsColumn.FixedWidth = true;
             this.enter_coupon_supplies_description.Visible = true;
             this.enter_coupon_supplies_description.VisibleIndex = 7;
-            this.enter_coupon_supplies_description.Width = 226;
+            this.enter_coupon_supplies_description.Width = 200;
             // 
             // frm_EnterCoupon
             // 

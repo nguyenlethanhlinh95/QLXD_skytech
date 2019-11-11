@@ -7,9 +7,9 @@ using PhanMemQuanLyCongTrinh.DTO;
 
 namespace PhanMemQuanLyCongTrinh.BUS
 {
-    public class userBus
+    public class UserBus
     {
-        userDao _userDao = new userDao();
+        UserDao _userDao = new UserDao();
 
        public Int64 checkLogin(string userName, string passWord)
        {
@@ -66,6 +66,11 @@ namespace PhanMemQuanLyCongTrinh.BUS
        public IEnumerable<Object> getAllUserByDepartment(Int64 id)
        {
            return _userDao.getAllUserByDepartment(id);
+       }
+
+       public bool changeUserToDeparment(Int64 idDep)
+       {
+        return _userDao.changeUserToDeparment(idDep);
        }
     }
 }

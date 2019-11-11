@@ -15,14 +15,14 @@ namespace PhanMemQuanLyCongTrinh
     {
         DataClasses1DataContext db = new DataClasses1DataContext();
 
-        BUS.storehouseBus storehouse = new storehouseBus();
-        BUS.constructionBus construction = new constructionBus();
+        BUS.StorehouseBus storehouse = new StorehouseBus();
+        BUS.ConstructionBus construction = new ConstructionBus();
         public frm_NewOutCouponToConstructions()
         {
             InitializeComponent();
         }
-        supliesBus _sup = new supliesBus();
-        storehouseDetailBus storehouseDetail = new storehouseDetailBus();
+        SupliesBus _sup = new SupliesBus();
+        StorehouseDetailBus storehouseDetail = new StorehouseDetailBus();
         private Int64 idSupplies = 0;
 
         List<Add_Supplies_And_Quantity> listObject = new List<Add_Supplies_And_Quantity>();

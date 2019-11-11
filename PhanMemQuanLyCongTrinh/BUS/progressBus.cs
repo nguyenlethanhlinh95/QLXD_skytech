@@ -5,9 +5,9 @@ using System.Text;
 
 namespace PhanMemQuanLyCongTrinh.BUS
 {
-    class progressBus
+    class ProgressBus
     {
-        DAO.progressDao progressDao = new DAO.progressDao();
+        DAO.ProgressDao progressDao = new DAO.ProgressDao();
         public bool insertProgress(DTO.ST_progress_construction_item progress)
         {
             return progressDao.insertProgress(progress);

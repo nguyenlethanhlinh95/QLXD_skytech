@@ -5,7 +5,7 @@ using System.Text;
 using PhanMemQuanLyCongTrinh.DTO;
 namespace PhanMemQuanLyCongTrinh.DAO
 {
-    class buildingContractorDao
+    class BuildingContractorDao
     {
         DataClasses1DataContext db = new DataClasses1DataContext();
 

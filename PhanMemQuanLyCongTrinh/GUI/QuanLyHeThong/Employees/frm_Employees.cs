@@ -13,8 +13,8 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_Employees : DevExpress.XtraEditors.XtraForm
     {
-        userBus _user = new userBus();
-        deparmentBus _dep = new deparmentBus();
+        UserBus _user = new UserBus();
+        DeparmentBus _dep = new DeparmentBus();
 
         public int index;
         public int index_user;
@@ -66,6 +66,9 @@ namespace PhanMemQuanLyCongTrinh
 
         private void frm_Employees_Load(object sender, EventArgs e)
         {
+            StyleDevxpressGridControl.styleGridControl(grdc_Department, grdv_Department);
+            StyleDevxpressGridControl.styleGridControl(grdc_Employee, grdv_Employee);
+
             LoadDepartment( );
             LoadEmployee();
         }
@@ -84,21 +87,34 @@ namespace PhanMemQuanLyCongTrinh
         {
            frm_Newdepartment frm = new frm_Newdepartment();
            frm.FormClosed += new FormClosedEventHandler(dongformGroup);
-           frm.Show( );
+           frm.ShowDialog( );
         }
 
         private void btn_EditDepartment(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if ( grdv_Department.RowCount > 0 )
+            try{
+                if ( grdv_Department.RowCount > 0 )
+                {
+                    if ( index >= 0 )
+                    {
+                        Int64 id = Convert.ToInt64(grdv_Department.GetRowCellValue(index, "department_id").ToString( ));
+
+
+                        frm_EditDeparment frm = new frm_EditDeparment( );
+                        frm.FormClosed += new FormClosedEventHandler(dongformGroup);
+
+                        frm.id = id;
+                        frm.ShowDialog( );
+                    }
+                    else
+                    {
+                        messeage.error("Bạn chưa chọn dữ liệu !");
+                    }
+                }
+            }
+            catch(Exception)
             {
-                Int64 id = Convert.ToInt64(grdv_Department.GetRowCellValue(index, "department_id").ToString( ));
-
-
-                frm_EditDeparment frm = new frm_EditDeparment( );
-                frm.FormClosed += new FormClosedEventHandler(dongformGroup);
-
-                frm.id = id;
-                frm.Show();
+                
             }
 
             
@@ -106,34 +122,107 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_DeleteDepartmnent(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (grdv_Department.RowCount > 0)
+            try
             {
-                Int64 id = Convert.ToInt64(grdv_Department.GetRowCellValue(index, "department_id").ToString( ));
+                if ( grdv_Department.RowCount > 0 )
+                {
+                    if ( index >= 0 )
+                    {
+                        Int64 id = Convert.ToInt64(grdv_Department.GetRowCellValue(index, "department_id").ToString( ));
 
-                MessageBox.Show(id.ToString());
+
+                        // if id danh muc la nhan vien thi khong duoc xoa, vì là mặc định
+                        if ( id == 3 )
+                        {
+                            messeage.error("Bạn không thể xóa danh mục này !");
+                        }
+                        else
+                        {
+                            var bStatus = messeage.info("Bạn có muốn xóa danh mục này không?", "Thông báo");
+                            if ( bStatus )
+                            {
+                                // chuyển tất cả nhân viên con về danh mục nhân viên mặc định 
+                                if ( _user.changeUserToDeparment(id) )
+                                {
+                                    // xóa danh mục hiện tại
+                                    _dep.deleteDepartment(id);
+
+                                    LoadDepartment( );
+                                    LoadEmployee( );
+                                    messeage.success("Xóa thành công !");
+                                }
+
+                            }
+
+
+                        }
+                    }
+                    else
+                    {
+                        messeage.error("Bạn chưa chọn dữ liệu !");
+                    }
+
+                }
             }
+            catch(Exception)
+            {
+                
+            }
+            
             
             
         }
 
-       
-        #endregion End event
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch ( keyData )
+            {
+                case (Keys.N | Keys.Control):
+                    btn_Add.PerformClick( );
+                    break;
+                case (Keys.E | Keys.Control):
+                    btn_Edit.PerformClick( );
+                    break;
+                case (Keys.Delete | Keys.Control):
+                    btn_Delete.PerformClick( );
+                    break;
+                //case (Keys.R | Keys.Control):
+                //    btn_.PerformClick( );
+                //    break;
+                case (Keys.F8 | Keys.Control):
+                    btn_Import.PerformClick( );
+                    break;
+                case (Keys.F9 | Keys.Control):
+                    btn_Export.PerformClick( );
+                    break;
+                case (Keys.P | Keys.Control):
+                    btn_Print.PerformClick( );
+                    break;
+                case (Keys.Escape):
+                    btn_Close.PerformClick( );
+                    break;
+
+            }
+            // return true;
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
 
         private void grdv_Department_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             index = e.FocusedRowHandle;
-
-            Int64 departmentGroupId = Int64.Parse(grdv_Department.GetRowCellValue(index, "department_id").ToString( ));
-
-            loadDepartmentWithGroup(departmentGroupId);
+            if ( index >= 0 )
+            {
+                Int64 departmentGroupId = Convert.ToInt64(grdv_Department.GetRowCellValue(index, "department_id").ToString( ));
+                loadDepartmentWithGroup(departmentGroupId);
+            }
         }
 
         private void btn_Add_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frm_RegisterUser f = new frm_RegisterUser();
+            frm_RegisterUser f = new frm_RegisterUser( );
             f.FormClosed += new FormClosedEventHandler(dongformEmployee);
 
-            f.ShowDialog();
+            f.ShowDialog( );
         }
 
 
@@ -144,23 +233,35 @@ namespace PhanMemQuanLyCongTrinh
 
         // Chinh Sua nhan vien
         private void btn_Edit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {          
-            frm_NewCustomer frm = new frm_NewCustomer( );
-            frm.FormClosed += new FormClosedEventHandler(dongformEmployee);
-            user_id = Convert.ToInt64(grdv_Employee.GetRowCellValue(index_user, "employee_id").ToString( ));
-   
-            if ( user_id != 0 )
+        {
+            try
             {
-                frm_UserInfo f = new frm_UserInfo( );
-                f.user_id = user_id;
-                f.ShowDialog( );
+                if ( grdv_Employee.RowCount > 0 )
+                {
+                    if ( index_user >= 0 )
+                    {
+                        user_id = Convert.ToInt64(grdv_Employee.GetRowCellValue(index_user, "employee_id").ToString( ));
+                        if ( user_id != 0 )
+                        {
+                            frm_UserInfo f = new frm_UserInfo( );
+                            f.user_id = user_id;
+                            f.ShowDialog( );
+                        }
+                        else
+                        {
+                            messeage.error("Không thể chỉnh sửa !");
+                        }
+                    }
+                    else
+                    {
+                        messeage.error("Bạn chưa chọn dữ liệu !");
+                    }
+                    }
             }
-            else
+            catch(Exception)
             {
-                messeage.error("Không thể chỉnh sửa !");
+                
             }
-
-            
         }
 
         private void btn_Refesh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -171,54 +272,74 @@ namespace PhanMemQuanLyCongTrinh
         // Xoa Nhan vien
         private void btn_Delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if ( grdv_Employee.RowCount > 0)
+            try
             {
-                user_id_delete = Convert.ToInt64(grdv_Employee.GetRowCellValue(index_user, "employee_id").ToString( ));
-
-                if ( user_id_delete == 0 )
+                if ( grdv_Employee.RowCount > 0 )
                 {
-                    messeage.error("Bạn không thể xóa được!");
-                }
-                else
-                {
-                    var employeeUserName = grdv_Employee.GetRowCellValue(index_user, "employee_username").ToString( );
-
-                    // kiem tra quyen admin thi khong duoc xoa - dang lam thu nghiem, cap nhat sau
-                    if ( employeeUserName == "admin" || user_id_delete == frm_Main.Vitual_id )
+                    if ( index_user >= 0 )
                     {
-                        messeage.error("Bạn không thể xóa !");
-                    }
-                    else
-                    {
-                        bool bMess = messeage.info("Bạn Có Muốn Xóa Khách Hàng ", employeeUserName + " này không !");
+                        user_id_delete = Convert.ToInt64(grdv_Employee.GetRowCellValue(index_user, "employee_id").ToString( ));
 
-                        if ( bMess )
+                        if ( user_id_delete == 0 )
                         {
-                            bool boolDeleteCustomer = _user.deleteUser(user_id_delete);
-                            if ( boolDeleteCustomer == true )
-                            {
-                                messeage.success("Xóa Khách hàng Thành Công!");
+                            messeage.error("Bạn không thể xóa được!");
+                        }
+                        else
+                        {
+                            var employeeUserName = grdv_Employee.GetRowCellValue(index_user, "employee_username").ToString( );
 
-                                // reset user id
-                                user_id_delete = 0;
-                                LoadEmployee( );
+                            // kiem tra quyen admin thi khong duoc xoa - dang lam thu nghiem, cap nhat sau
+                            if ( employeeUserName == "admin" || user_id_delete == frm_Main.Vitual_id )
+                            {
+                                messeage.error("Bạn không thể xóa !");
                             }
                             else
                             {
-                                messeage.error("Không thể xóa khách hàng này!");
+                                bool bMess = messeage.info("Bạn Có Muốn Xóa Nhân viên ", employeeUserName + " này không !");
+
+                                if ( bMess )
+                                {
+                                    bool boolDeleteCustomer = _user.deleteUser(user_id_delete);
+                                    if ( boolDeleteCustomer == true )
+                                    {
+                                        messeage.success("Xóa Nhân viên Thành Công!");
+
+                                        // reset user id
+                                        user_id_delete = 0;
+                                        LoadEmployee( );
+                                    }
+                                    else
+                                    {
+                                        messeage.error("Không thể xóa Nhân viên này!");
+                                    }
+                                }
                             }
                         }
                     }
+                    else
+                    {
+                        messeage.error("Bạn chưa chọn dữ liệu !");
+                    }
+
+
                 }
             }
-                                     
+            catch(Exception)
+            {
+                
+            }
+
         }
 
-        private void btn_DeleteDepartmnet_CheckedChanged(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btn_Close_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            this.Close( );
         }
+        #endregion End event
 
         
+
+        
+
     }
 }

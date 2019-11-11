@@ -13,7 +13,7 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_UpdateVendor : DevExpress.XtraEditors.XtraForm
     {
-        BUS.vendorBus vendorBus = new BUS.vendorBus();
+        BUS.VendorBus vendorBus = new BUS.VendorBus();
 
         public Int64 vendorId { get; set; }
         public frm_UpdateVendor()

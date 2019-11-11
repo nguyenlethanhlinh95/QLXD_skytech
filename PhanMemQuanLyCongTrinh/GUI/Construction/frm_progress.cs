@@ -15,10 +15,10 @@ namespace PhanMemQuanLyCongTrinh
 
         int index;
 
-        BUS.progressBus progressBus = new BUS.progressBus();
+        BUS.ProgressBus progressBus = new BUS.ProgressBus();
 
-        BUS.constructionBus constructionBus = new BUS.constructionBus();
-        BUS.constructionItemBus constructionItemBus = new BUS.constructionItemBus();
+        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus();
+        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus();
         public frm_progress()
         {
             InitializeComponent();
@@ -55,6 +55,7 @@ namespace PhanMemQuanLyCongTrinh
         }
         private void frm_progress_Load(object sender, EventArgs e)
         {
+            StyleDevxpressGridControl.styleGridControl(grdc_progress, grdv_progress);
             loadAllProgress();
             loadContruction();
         }

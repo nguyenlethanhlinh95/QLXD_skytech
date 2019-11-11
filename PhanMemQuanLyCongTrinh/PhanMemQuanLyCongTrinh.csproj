@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -41,10 +42,12 @@
     <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,42 +61,48 @@
     <Compile Include="Add_Supplies_And_Quantity.cs" />
     <Compile Include="BUS\AccountingAccountGroupBus.cs" />
     <Compile Include="BUS\AcountingAcountBus.cs" />
-    <Compile Include="BUS\buildingContractorBus.cs" />
+    <Compile Include="BUS\BuildingContractorBus.cs" />
     <Compile Include="BUS\ChangeColorGridView.cs" />
-    <Compile Include="BUS\constructionBus.cs" />
-    <Compile Include="BUS\constructionItemBus.cs" />
-    <Compile Include="BUS\customerBus.cs" />
-    <Compile Include="BUS\customerGroupBus.cs" />
-    <Compile Include="BUS\detailEnterCouponSuppliesBus.cs" />
-    <Compile Include="BUS\detailPulicDebtBus.cs" />
-    <Compile Include="BUS\detail_employee_constructionBus.cs" />
+    <Compile Include="BUS\ConstructionBus.cs" />
+    <Compile Include="BUS\ConstructionItemBus.cs" />
+    <Compile Include="BUS\CustomerBus.cs" />
+    <Compile Include="BUS\CustomerGroupBus.cs" />
+    <Compile Include="BUS\DetailEnterCouponSuppliesBus.cs" />
+    <Compile Include="BUS\DetailPulicDebtBus.cs" />
+    <Compile Include="BUS\Detail_Employee_ConstructionBus.cs" />
     <Compile Include="BUS\EnterCouponSuppliesBus.cs" />
     <Compile Include="BUS\OutCouponSuppliesToConstructionBus.cs" />
     <Compile Include="BUS\PaymentSlipBus.cs" />
-    <Compile Include="BUS\progressBus.cs" />
-    <Compile Include="BUS\pulicDebtBus.cs" />
-    <Compile Include="BUS\storehouseBus.cs" />
-    <Compile Include="BUS\storehouseDetailBus.cs" />
-    <Compile Include="DAO\detailEnterCouponSuppliesDao.cs" />
-    <Compile Include="DAO\detailPulicDebtDao.cs" />
+    <Compile Include="BUS\ProgressBus.cs" />
+    <Compile Include="BUS\PulicDebtBus.cs" />
+    <Compile Include="BUS\StorehouseBus.cs" />
+    <Compile Include="BUS\StorehouseDetailBus.cs" />
+    <Compile Include="DAO\DetailEnterCouponSuppliesDao.cs" />
+    <Compile Include="DAO\DetailPulicDebtDao.cs" />
     <Compile Include="DAO\EnterCouponSuppliesDao.cs" />
     <Compile Include="DAO\OutCouponSuppliesToConstructionDao.cs" />
     <Compile Include="DAO\PaymentSlipDao.cs" />
-    <Compile Include="DAO\pulicDebtDao.cs" />
+    <Compile Include="DAO\PulicDebtDao.cs" />
+    <Compile Include="frm_DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DangNhap.Designer.cs">
+      <DependentUpon>frm_DangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\StyleDevxpressGridControl.cs" />
-    <Compile Include="BUS\supliesBus.cs" />
+    <Compile Include="BUS\SupliesBus.cs" />
     <Compile Include="DAO\AccountingAccountGroupDao.cs" />
     <Compile Include="DAO\AcountingAcountDaocs.cs" />
-    <Compile Include="DAO\buildingContractorDao.cs" />
-    <Compile Include="DAO\constructionDao.cs" />
-    <Compile Include="DAO\constructionItemDao.cs" />
-    <Compile Include="DAO\customerDao.cs" />
-    <Compile Include="DAO\customerGroupDao.cs" />
-    <Compile Include="DAO\detail_employee_constructionDao.cs" />
-    <Compile Include="DAO\progressDao.cs" />
-    <Compile Include="DAO\storehouseDao.cs" />
-    <Compile Include="DAO\storehouseDetailDao.cs" />
-    <Compile Include="DAO\supliesDao.cs" />
+    <Compile Include="DAO\BuildingContractorDao.cs" />
+    <Compile Include="DAO\ConstructionDao.cs" />
+    <Compile Include="DAO\ConstructionItemDao.cs" />
+    <Compile Include="DAO\CustomerDao.cs" />
+    <Compile Include="DAO\CustomerGroupDao.cs" />
+    <Compile Include="DAO\Detail_employee_constructionDao.cs" />
+    <Compile Include="DAO\ProgressDao.cs" />
+    <Compile Include="DAO\StorehouseDao.cs" />
+    <Compile Include="DAO\StorehouseDetailDao.cs" />
+    <Compile Include="DAO\SupliesDao.cs" />
     <Compile Include="DTO\DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -201,18 +210,18 @@
     <Compile Include="GUI\QuanLyHeThong\GroupSupplies\frm_AddNewGroupSupplies.Designer.cs">
       <DependentUpon>frm_AddNewGroupSupplies.cs</DependentUpon>
     </Compile>
-    <Compile Include="BUS\deparmentBus.cs" />
-    <Compile Include="BUS\group_suppliesBus.cs" />
+    <Compile Include="BUS\DeparmentBus.cs" />
+    <Compile Include="BUS\Group_suppliesBus.cs" />
     <Compile Include="BUS\messeage.cs" />
-    <Compile Include="BUS\unitBus.cs" />
-    <Compile Include="BUS\userBus.cs" />
-    <Compile Include="BUS\vendorBus.cs" />
-    <Compile Include="DAO\customer_groupDao.cs" />
-    <Compile Include="DAO\departmentDao.cs" />
-    <Compile Include="DAO\group_suppliesDao.cs" />
-    <Compile Include="DAO\unitDao.cs" />
-    <Compile Include="DAO\userDao.cs" />
-    <Compile Include="DAO\vendorDao.cs" />
+    <Compile Include="BUS\UnitBus.cs" />
+    <Compile Include="BUS\UserBus.cs" />
+    <Compile Include="BUS\VendorBus.cs" />
+    <Compile Include="DAO\Customer_groupDao.cs" />
+    <Compile Include="DAO\DepartmentDao.cs" />
+    <Compile Include="DAO\Group_suppliesDao.cs" />
+    <Compile Include="DAO\UnitDao.cs" />
+    <Compile Include="DAO\UserDao.cs" />
+    <Compile Include="DAO\VendorDao.cs" />
     <Compile Include="GUI\QuanLyHeThong\GroupSupplies\frm_UpdateGroupSupplies.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -407,6 +416,18 @@
     <Compile Include="frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraForm1.Designer.cs">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frm_DangNhap.resx">
+      <DependentUpon>frm_DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraForm1.resx">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="DTO\DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>

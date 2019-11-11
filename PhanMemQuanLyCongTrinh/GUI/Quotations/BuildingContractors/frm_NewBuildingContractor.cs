@@ -16,12 +16,12 @@ namespace PhanMemQuanLyCongTrinh
     {
         public Int64 buildingContractorId { get; set; }
 
-        BUS.buildingContractorBus buildingContractorBus;
+        BUS.BuildingContractorBus buildingContractorBus;
 
         public frm_NewBuildingContractor()
         {
             InitializeComponent();
-            buildingContractorBus = new BUS.buildingContractorBus();
+            buildingContractorBus = new BUS.BuildingContractorBus();
         }
 
         private void loadBuildingContractor()

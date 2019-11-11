@@ -7,12 +7,16 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using PhanMemQuanLyCongTrinh.BUS;
 
 namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_EnterCoupon : DevExpress.XtraEditors.XtraForm
     {
         BUS.EnterCouponSuppliesBus enterCouponBus = new BUS.EnterCouponSuppliesBus( );
+
+        int index;
+        public Int64 idEnter = 0;
         public frm_EnterCoupon()
         {
             InitializeComponent();
@@ -24,7 +28,8 @@ namespace PhanMemQuanLyCongTrinh
         }
         private void frm_EnterCoupon_Load(object sender, EventArgs e)
         {
-            loadAllEnterCoupon();
+            StyleDevxpressGridControl.styleGridControl(grdc_EnterCoupon, grdv_EnterCoupon);
+            loadAllEnterCoupon();            
         }
 
         private void date_Start_EditValueChanged(object sender, EventArgs e)
@@ -62,6 +67,44 @@ namespace PhanMemQuanLyCongTrinh
             loadAllEnterCoupon();
         }
 
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            grdc_EnterCoupon.ExportToXls("D:/asv.xls");
+        }
+
+        private void grdv_EnterCoupon_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            index = e.FocusedRowHandle;
+
+            if ( index >= 0 )
+            {
+                idEnter = Convert.ToInt64(grdv_EnterCoupon.GetRowCellValue(index, "enter_coupon_supplies_id").ToString( ));
+            }
+        }
+
+        private void btn_Edit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (idEnter == 0)
+            {
+                messeage.error("Bạn chưa chọn dữ liệu !");
+            }
+            else
+            {
+                frm_AddNewEnterCouponSupplies frm = new frm_AddNewEnterCouponSupplies();
+                frm.checkEdit = 1;
+                frm.idEnterSupplies = idEnter;
+
+                frm.FormClosed += new FormClosedEventHandler(dongformEnter);
+                frm.ShowDialog();
+            }
+        }
+
+        private void dongformEnter(object sender, EventArgs e)
+        {
+            loadAllEnterCoupon();
+        }
+
+  
         
 
         

@@ -26,6 +26,8 @@ namespace PhanMemQuanLyCongTrinh
 
         private void frm_AccountingAccounts_Load(object sender, EventArgs e)
         {
+            StyleDevxpressGridControl.styleGridControl(grdc_Customer, grdv_Customer);
+            StyleDevxpressGridControl.styleGridControl(grdc_AcountingAcountGroup, grdv_AcountingAcountGroup);
             loadAcountingAcountGroup();
         }
 

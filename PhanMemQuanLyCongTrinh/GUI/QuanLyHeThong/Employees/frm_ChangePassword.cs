@@ -26,6 +26,11 @@ namespace PhanMemQuanLyCongTrinh
         {
             this.Close();
         }
+
+        private void frm_ChangePassword_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btn_Update;
+        }
     }
 
 

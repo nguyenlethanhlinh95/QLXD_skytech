@@ -48,7 +48,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(116, 57);
+            this.pictureBox1.Location = new System.Drawing.Point(90, 56);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(103, 91);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -66,7 +66,7 @@
             this.btn_Exit.Appearance.Options.UseForeColor = true;
             this.btn_Exit.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.btn_Exit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Exit.ImageOptions.Image")));
-            this.btn_Exit.Location = new System.Drawing.Point(404, 331);
+            this.btn_Exit.Location = new System.Drawing.Point(432, 330);
             this.btn_Exit.LookAndFeel.SkinMaskColor = System.Drawing.Color.Gray;
             this.btn_Exit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Black;
             this.btn_Exit.LookAndFeel.SkinName = "Office 2010 Black";
@@ -89,8 +89,8 @@
             this.btn_Update.Appearance.Options.UseFont = true;
             this.btn_Update.Appearance.Options.UseForeColor = true;
             this.btn_Update.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Login.ImageOptions.Image")));
-            this.btn_Update.Location = new System.Drawing.Point(274, 331);
+            this.btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Update.ImageOptions.Image")));
+            this.btn_Update.Location = new System.Drawing.Point(302, 330);
             this.btn_Update.LookAndFeel.SkinMaskColor = System.Drawing.Color.RoyalBlue;
             this.btn_Update.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Update.LookAndFeel.SkinName = "Office 2010 Black";
@@ -105,43 +105,43 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 16F);
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold);
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(284, 88);
+            this.labelControl6.Location = new System.Drawing.Point(274, 88);
             this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(197, 25);
+            this.labelControl6.Size = new System.Drawing.Size(218, 25);
             this.labelControl6.TabIndex = 236;
             this.labelControl6.Text = "THAY ĐỔI MẬTKHẨU";
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(120, 197);
+            this.labelControl2.Location = new System.Drawing.Point(94, 196);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(69, 16);
+            this.labelControl2.Size = new System.Drawing.Size(84, 17);
             this.labelControl2.TabIndex = 243;
             this.labelControl2.Text = "Mật khẩu cũ";
             // 
             // labelControl7
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(120, 236);
+            this.labelControl7.Location = new System.Drawing.Point(94, 235);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(77, 16);
+            this.labelControl7.Size = new System.Drawing.Size(93, 17);
             this.labelControl7.TabIndex = 244;
             this.labelControl7.Text = "Mật khẩu mới";
             // 
             // txt_ReNewPass
             // 
-            this.txt_ReNewPass.Location = new System.Drawing.Point(251, 269);
+            this.txt_ReNewPass.Location = new System.Drawing.Point(274, 269);
             this.txt_ReNewPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_ReNewPass.Name = "txt_ReNewPass";
-            this.txt_ReNewPass.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_ReNewPass.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_ReNewPass.Properties.Appearance.Options.UseFont = true;
             this.txt_ReNewPass.Properties.PasswordChar = '*';
             this.txt_ReNewPass.Size = new System.Drawing.Size(291, 22);
@@ -149,10 +149,10 @@
             // 
             // txt_NewPass
             // 
-            this.txt_NewPass.Location = new System.Drawing.Point(251, 230);
+            this.txt_NewPass.Location = new System.Drawing.Point(274, 230);
             this.txt_NewPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_NewPass.Name = "txt_NewPass";
-            this.txt_NewPass.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_NewPass.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_NewPass.Properties.Appearance.Options.UseFont = true;
             this.txt_NewPass.Properties.PasswordChar = '*';
             this.txt_NewPass.Size = new System.Drawing.Size(291, 22);
@@ -160,10 +160,10 @@
             // 
             // txt_OldPass
             // 
-            this.txt_OldPass.Location = new System.Drawing.Point(251, 191);
+            this.txt_OldPass.Location = new System.Drawing.Point(274, 191);
             this.txt_OldPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_OldPass.Name = "txt_OldPass";
-            this.txt_OldPass.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.txt_OldPass.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txt_OldPass.Properties.Appearance.Options.UseFont = true;
             this.txt_OldPass.Properties.PasswordChar = '*';
             this.txt_OldPass.Size = new System.Drawing.Size(291, 22);
@@ -171,12 +171,12 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(120, 272);
+            this.labelControl1.Location = new System.Drawing.Point(94, 271);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(103, 16);
+            this.labelControl1.Size = new System.Drawing.Size(114, 16);
             this.labelControl1.TabIndex = 244;
             this.labelControl1.Text = "Nhập lại mật khẩu";
             // 

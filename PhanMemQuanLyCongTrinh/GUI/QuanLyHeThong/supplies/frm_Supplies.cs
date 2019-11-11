@@ -25,12 +25,14 @@ namespace PhanMemQuanLyCongTrinh
         public int index_group;
         public int index;
 
-        group_suppliesBus _group = new group_suppliesBus();
-        supliesBus _sup = new supliesBus();
+        Group_suppliesBus _group = new Group_suppliesBus();
+        SupliesBus _sup = new SupliesBus();
         
 
         private void frm_Supplies_Load(object sender, EventArgs e)
         {
+            StyleDevxpressGridControl.styleGridControl(grdc_group_supplies, grdv_group_supplies);
+            StyleDevxpressGridControl.styleGridControl(grdc_Supplies, grdv_Supplies);
             LoadGroupSupplies( );
 
             LoadSupplies();
@@ -82,6 +84,40 @@ namespace PhanMemQuanLyCongTrinh
 
 
         #region Event
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch ( keyData )
+            {
+                case (Keys.N | Keys.Control):
+                    btn_Add.PerformClick( );
+                    break;
+                case (Keys.E | Keys.Control):
+                    btn_Edit.PerformClick( );
+                    break;
+                case (Keys.Delete | Keys.Control):
+                    btn_Delete.PerformClick( );
+                    break;
+                //case (Keys.R | Keys.Control):
+                //    btn_.PerformClick( );
+                //    break;
+                case (Keys.F8 | Keys.Control):
+                    btn_Import.PerformClick( );
+                    break;
+                case (Keys.F9 | Keys.Control):
+                    btn_Export.PerformClick( );
+                    break;
+                case (Keys.P | Keys.Control):
+                    btn_Print.PerformClick( );
+                    break;
+                case (Keys.Escape):
+                    btn_Close.PerformClick( );
+                    break;
+
+            }
+            // return true;
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void btn_AddGroup_supplies_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frm_AddNewGroupSupplies f = new frm_AddNewGroupSupplies();
@@ -95,126 +131,179 @@ namespace PhanMemQuanLyCongTrinh
         // xoa danh muc
         private void btn_DeleteGroup_supplies_CheckedChanged(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if ( grdv_group_supplies.RowCount > 0 )
+            try
             {
-                Int64 id = Convert.ToInt64(grdv_group_supplies.GetRowCellValue(index_group, "group_supplies_id").ToString( ));
-                var customerGroupName = grdv_group_supplies.GetRowCellValue(index_group, "group_supplies_name").ToString( );
-
-                bool boolCheckDeleteGroup = messeage.info("Bạn Có Muốn Xóa Nhóm Vật Tư '", customerGroupName);
-
-                if ( boolCheckDeleteGroup == true )
+                if ( grdv_group_supplies.RowCount > 0 )
                 {
-                    // chuyen tat ca san pham co id dang xoa ve mac dinh
-                    if ( id == 1)
+                    if ( index_group >= 0 )
                     {
-                        messeage.info("Bạn không thể xóa Nhóm này!", "");
-                    }
-                    else
-                    {
-                        if ( _group.changeIdParent(id) )
+                        Int64 id = Convert.ToInt64(grdv_group_supplies.GetRowCellValue(index_group, "group_supplies_id").ToString( ));
+                        var customerGroupName = grdv_group_supplies.GetRowCellValue(index_group, "group_supplies_name").ToString( );
+
+                        bool boolCheckDeleteGroup = messeage.info("Bạn Có Muốn Xóa Nhóm Vật Tư '", customerGroupName);
+
+                        if ( boolCheckDeleteGroup == true )
                         {
-                            bool boolDeleteCustomerGroup = _group.deleteGroupSupplie(id);
-
-                            if ( boolDeleteCustomerGroup == true )
+                            // chuyen tat ca san pham co id dang xoa ve mac dinh
+                            if ( id == 1 )
                             {
-
-                                messeage.success("Xóa Nhóm Khách hàng Thành Công!");
-                                LoadGroupSupplies( );
-
+                                messeage.info("Bạn không thể xóa Nhóm này!", "");
                             }
                             else
                             {
-                                messeage.error("Xóa Nhóm Khách hàng Không Thành Công!");
+                                if ( _group.changeIdParent(id) )
+                                {
+                                    bool boolDeleteCustomerGroup = _group.deleteGroupSupplie(id);
 
+                                    if ( boolDeleteCustomerGroup == true )
+                                    {
+
+                                        messeage.success("Xóa Nhóm Khách hàng Thành Công!");
+                                        LoadGroupSupplies( );
+
+                                    }
+                                    else
+                                    {
+                                        messeage.error("Xóa Nhóm Khách hàng Không Thành Công!");
+
+                                    }
+                                }
+                                else
+                                {
+
+                                }
                             }
                         }
-                        else
-                        {
-
-                        }
                     }
-                    }
-                    
-
-
+                }
+                else
+                {
+                    messeage.error("Không có Nhóm  Khách Hàng Để Xóa!!!");
+                }
             }
-            else
+            catch(Exception)
             {
-                messeage.error("Không có Nhóm  Khách Hàng Để Xóa!!!");
-
+                messeage.error("Không thể xóa!!!");
             }
+            
         }
 
 
         private void btn_EditGroup_supplies_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if ( grdv_group_supplies.RowCount > 0 )
+            try
             {
-                Int64 id = Convert.ToInt64(grdv_group_supplies.GetRowCellValue(index_group, "group_supplies_id").ToString( ));
+                if ( grdv_group_supplies.RowCount > 0 )
+                {
+                    if ( index_group >= 0 )
+                    {
+                        Int64 id = Convert.ToInt64(grdv_group_supplies.GetRowCellValue(index_group, "group_supplies_id").ToString( ));
 
 
-                frm_UpdateGroupSupplies frm = new frm_UpdateGroupSupplies( );
+                        frm_UpdateGroupSupplies frm = new frm_UpdateGroupSupplies( );
 
-                frm.id_group = id;
-                frm.FormClosed += new FormClosedEventHandler(dongformGroup);
+                        frm.id_group = id;
+                        frm.FormClosed += new FormClosedEventHandler(dongformGroup);
 
-                //frm.id = id;
-                frm.Show( );
+                        //frm.id = id;
+                        frm.ShowDialog( );
+                    }
+                    else
+                    {
+                        messeage.error("Bạn chưa chọn dữ liệu !");
+                    }
+
+                }
             }
+            catch(Exception)
+            {
+                messeage.error("Không thể chỉnh sửa !");
+            }
+            
         }
 
         private void grdv_group_supplies_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            index_group = e.FocusedRowHandle;
-
-            Int64 GroupId = Int64.Parse(grdv_group_supplies.GetRowCellValue(index_group, "group_supplies_id").ToString( ));
-
-            if ( GroupId != null)
+            try
             {
-                loadSuppliesWithGroup(GroupId);
+                if ( grdv_group_supplies.RowCount > 0 )
+                {
+                    index_group = e.FocusedRowHandle;
+                    if ( index >= 0 )
+                    {
+                        Int64 GroupId = Int64.Parse(grdv_group_supplies.GetRowCellValue(index_group, "group_supplies_id").ToString( ));
+
+                        if ( GroupId != null )
+                        {
+                            loadSuppliesWithGroup(GroupId);
+                        }
+                    }
+                }
             }
+            catch(Exception)
+            {
+            
+            }
+            
+            
+            
             
         }
 
         private void btn_Delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if ( grdv_Supplies.RowCount > 0 )
+            try
             {
-                Int64 id = Convert.ToInt64(grdv_Supplies.GetRowCellValue(index, "supplies_id").ToString( ));
-                
-
-                if ( id == 0 )
+                if ( grdv_Supplies.RowCount > 0 )
                 {
-                    messeage.error("Bạn không thể xóa được!");
-                }
-                else
-                {
-                    var customerGroupName = grdv_Supplies.GetRowCellValue(index, "supplies_name").ToString( );
-                    // kiem tra quyen admin thi khong duoc xoa - dang lam thu nghiem, cap nhat sau
-                    if ( id == 1 )
+                    if ( index >= 0 )
                     {
-                        messeage.error("Bạn không thể xóa !");
-                    }
-                    else
-                    {
-                        bool bMess = messeage.info("Bạn Có Muốn Xóa Mặt Hàng ", customerGroupName + " Này không !");
-
-                        if ( bMess )
+                        Int64 id = Convert.ToInt64(grdv_Supplies.GetRowCellValue(index, "supplies_id").ToString( ));
+                        if ( id == 0 )
                         {
-                            bool boolDeleteCustomer = _sup.deleteSuplies(id);
-                            if ( boolDeleteCustomer == true )
+                            messeage.error("Bạn không thể xóa được!");
+                        }
+                        else
+                        {
+                            var customerGroupName = grdv_Supplies.GetRowCellValue(index, "supplies_name").ToString( );
+                            // kiem tra quyen admin thi khong duoc xoa - dang lam thu nghiem, cap nhat sau
+                            if ( id == 1 )
                             {
-                                messeage.success("Xóa Mặt Hàng Thành Công!");
-                                LoadSupplies( );
+                                messeage.error("Bạn không thể xóa !");
                             }
                             else
                             {
-                                messeage.error("Không thể xóa Mặt Hàng Này!");
+                                bool bMess = messeage.info("Bạn Có Muốn Xóa Mặt Hàng ", customerGroupName + " Này không !");
+
+                                if ( bMess )
+                                {
+                                    bool boolDeleteCustomer = _sup.deleteSuplies(id);
+                                    if ( boolDeleteCustomer == true )
+                                    {
+                                        messeage.success("Xóa Mặt Hàng Thành Công!");
+                                        LoadSupplies( );
+                                    }
+                                    else
+                                    {
+                                        messeage.error("Không thể xóa Mặt Hàng Này!");
+                                    }
+                                }
                             }
                         }
                     }
+                    else
+                    {
+                        messeage.error("Không thể xóa !");
+                    }
+
                 }
             }
+            catch (Exception)
+            {
+                messeage.error("Không thể xóa !");
+            }
+            
+            
         }
 
         // them moi vat tu
@@ -229,18 +318,34 @@ namespace PhanMemQuanLyCongTrinh
         // Chinh Sua Vat Tu
         private void btn_Edit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if ( grdv_Supplies.RowCount > 0 )
+            try
             {
-                Int64 supplies_Id = Convert.ToInt64(grdv_Supplies.GetRowCellValue(index, "supplies_id").ToString( ));
-                frm_UpdateSuppliescs frm = new frm_UpdateSuppliescs( );
-                frm.FormClosed += new FormClosedEventHandler(dongformSupplies);
-                frm.id_Suppliesc = supplies_Id;
-                frm.Show( );
+                if ( grdv_Supplies.RowCount > 0 )
+                {
+                    if ( index >= 0 )
+                    {
+                        Int64 supplies_Id = Convert.ToInt64(grdv_Supplies.GetRowCellValue(index, "supplies_id").ToString( ));
+                        frm_UpdateSuppliescs frm = new frm_UpdateSuppliescs( );
+                        frm.FormClosed += new FormClosedEventHandler(dongformSupplies);
+                        frm.id_Suppliesc = supplies_Id;
+                        frm.Show( );
+                    }
+                    else
+                    {
+                        messeage.error("Không thể chỉnh sửa !");
+                    }
+
+                }
+                else
+                {
+                    messeage.error("Không thể chỉnh sửa !");
+                }
             }
-            else
+            catch(Exception)
             {
-                messeage.error("Không Có Khách Hàng Để Sửa");
+                messeage.error("Không thể chỉnh sửa !");
             }
+            
         }
 
         private void grdv_Supplies_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -249,6 +354,11 @@ namespace PhanMemQuanLyCongTrinh
         }
 
         #endregion EndEvent      
+
+        private void grdc_Supplies_Click(object sender, EventArgs e)
+        {
+
+        }
 
         
 

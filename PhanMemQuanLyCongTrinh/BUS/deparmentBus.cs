@@ -6,9 +6,9 @@ using PhanMemQuanLyCongTrinh.DAO;
 
 namespace PhanMemQuanLyCongTrinh.BUS
 {
-    public class deparmentBus
+    public class DeparmentBus
     {
-        departmentDao departmentDao = new departmentDao();
+        DepartmentDao departmentDao = new DepartmentDao();
         public IEnumerable<Object> listAll()
         {
             return departmentDao.getAllDepartment();
@@ -36,6 +36,11 @@ namespace PhanMemQuanLyCongTrinh.BUS
         public bool update(string name, Int64 id)
         {
             return departmentDao.update(name, id);
+        }
+
+        public bool deleteDepartment(Int64 idDepartment)
+        {
+            return departmentDao.deleteDepartment(idDepartment);
         }
     }
 }

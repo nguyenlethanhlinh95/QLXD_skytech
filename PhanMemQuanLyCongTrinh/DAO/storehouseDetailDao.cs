@@ -5,7 +5,7 @@ using System.Text;
 using PhanMemQuanLyCongTrinh.DTO;
 namespace PhanMemQuanLyCongTrinh.DAO
 {
-    class storehouseDetailDao
+    class StorehouseDetailDao
     {
         DataClasses1DataContext db = new DataClasses1DataContext();
         public bool changeIdParent(Int64 groupId)
@@ -74,6 +74,33 @@ namespace PhanMemQuanLyCongTrinh.DAO
                 return true;
             }
             catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        // tru di so luong
+        public bool updateQuantityDiv(Int64 idSup , int quality, Int64 storehousesId)
+        {
+            try
+            {
+                var update = db.ST_storehouses_details.Where(p => p.supplies_id == idSup).SingleOrDefault( );
+                Int64 quantity = Int64.Parse(update.storehouse_detail_quantity.ToString( ));
+
+                if ( quantity > quality )
+                {
+                    update.storehouse_detail_quantity = quantity - quality;
+                    update.storehouse_id = storehousesId;
+                    update.supplies_id = idSup;
+                    db.SubmitChanges( );
+                }
+                else
+                {
+                    return false;
+                }
+                return true;
+            }
+            catch(Exception)
             {
                 return false;
             }
@@ -232,6 +259,25 @@ namespace PhanMemQuanLyCongTrinh.DAO
                 return storehouseDetail;
             }
             catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public object getSuppliesAndQuantityWithStoreHouse(Int64 storehouseId)
+        {
+            try
+            {
+                db.Dispose( );
+                db = new DTO.DataClasses1DataContext( );
+                db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
+                var data = from k in db.ST_storehouses_details
+                           join sp in db.ST_supplies on k.supplies_id equals sp.supplies_id
+                           where k.storehouse_id == storehouseId
+                           select new { sp.supplies_image, sp.supplies_name, sp.supplies_id, sp.supplies_id_custom, k.storehouse_detail_quantity };
+                return data;
+            }
+            catch ( Exception )
             {
                 return null;
             }
