@@ -11,7 +11,8 @@
     <RootNamespace>PhanMemQuanLyCongTrinh</RootNamespace>
     <AssemblyName>PhanMemQuanLyCongTrinh</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -35,10 +36,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v18.1.UI, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v18.1.Wizard, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -88,6 +93,36 @@
     </Compile>
     <Compile Include="frm_DangNhap.Designer.cs">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Quotations\AccountingAccounts\frm_NewAcountingAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quotations\AccountingAccounts\frm_NewAcountingAccount.designer.cs">
+      <DependentUpon>frm_NewAcountingAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Quotations\AccountingAccounts\frm_UpdateAccountingAccounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quotations\AccountingAccounts\frm_UpdateAccountingAccounts.designer.cs">
+      <DependentUpon>frm_UpdateAccountingAccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Quotations\BuildingContractors\frm_UpdateBuildingContractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quotations\BuildingContractors\frm_UpdateBuildingContractor.Designer.cs">
+      <DependentUpon>frm_UpdateBuildingContractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Quotations\Customer\frm_UpdateCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quotations\Customer\frm_UpdateCustomer.Designer.cs">
+      <DependentUpon>frm_UpdateCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Quotations\Customer\frm_UpdateCustomerGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Quotations\Customer\frm_UpdateCustomerGroup.Designer.cs">
+      <DependentUpon>frm_UpdateCustomerGroup.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\StyleDevxpressGridControl.cs" />
     <Compile Include="BUS\SupliesBus.cs" />
@@ -300,12 +335,6 @@
     <Compile Include="GUI\QuanLyHeThong\Deparment\frm_NewDepartment.Designer.cs">
       <DependentUpon>frm_NewDepartment.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Login.Designer.cs">
-      <DependentUpon>frm_Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\QuanLyHeThong\Employees\frm_ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -425,6 +454,21 @@
     <EmbeddedResource Include="frm_DangNhap.resx">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quotations\AccountingAccounts\frm_NewAcountingAccount.resx">
+      <DependentUpon>frm_NewAcountingAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quotations\AccountingAccounts\frm_UpdateAccountingAccounts.resx">
+      <DependentUpon>frm_UpdateAccountingAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quotations\BuildingContractors\frm_UpdateBuildingContractor.resx">
+      <DependentUpon>frm_UpdateBuildingContractor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quotations\Customer\frm_UpdateCustomer.resx">
+      <DependentUpon>frm_UpdateCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Quotations\Customer\frm_UpdateCustomerGroup.resx">
+      <DependentUpon>frm_UpdateCustomerGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraForm1.resx">
       <DependentUpon>XtraForm1.cs</DependentUpon>
     </EmbeddedResource>
@@ -516,9 +560,6 @@
     <EmbeddedResource Include="GUI\QuanLyHeThong\Deparment\frm_NewDepartment.resx">
       <DependentUpon>frm_NewDepartment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_Login.resx">
-      <DependentUpon>frm_Login.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\QuanLyHeThong\Employees\frm_ChangePassword.resx">
       <DependentUpon>frm_ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -582,6 +623,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>

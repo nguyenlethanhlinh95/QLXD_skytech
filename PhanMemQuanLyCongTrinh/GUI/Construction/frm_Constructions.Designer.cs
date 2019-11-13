@@ -52,6 +52,8 @@
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem10 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.SuperToolTip superToolTip11 = new DevExpress.Utils.SuperToolTip();
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem11 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip12 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem12 = new DevExpress.Utils.ToolTipTitleItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btn_AddCustomerGroup = new DevExpress.XtraBars.BarButtonItem();
@@ -179,7 +181,7 @@
             this.btn_AddCustomerGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_AddCustomerGroup.ImageOptions.LargeImage")));
             this.btn_AddCustomerGroup.Name = "btn_AddCustomerGroup";
             this.btn_AddCustomerGroup.Size = new System.Drawing.Size(60, 0);
-            toolTipTitleItem1.Text = "Thêm Nhóm Khách Hàng\r\n";
+            toolTipTitleItem1.Text = "Thêm Công Trình\r\n";
             superToolTip1.Items.Add(toolTipTitleItem1);
             this.btn_AddCustomerGroup.SuperTip = superToolTip1;
             this.btn_AddCustomerGroup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_AddCustomerGroup_ItemClick);
@@ -192,7 +194,7 @@
             this.btn_EditCustomerGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_EditCustomerGroup.ImageOptions.LargeImage")));
             this.btn_EditCustomerGroup.Name = "btn_EditCustomerGroup";
             this.btn_EditCustomerGroup.Size = new System.Drawing.Size(60, 0);
-            toolTipTitleItem2.Text = "Chĩnh Sửa Nhóm Khách Hàng";
+            toolTipTitleItem2.Text = "Chĩnh Sửa Công Trình\r\n";
             superToolTip2.Items.Add(toolTipTitleItem2);
             this.btn_EditCustomerGroup.SuperTip = superToolTip2;
             this.btn_EditCustomerGroup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_EditCustomerGroup_ItemClick);
@@ -205,7 +207,7 @@
             this.btn_DeleteCustomerGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_DeleteCustomerGroup.ImageOptions.LargeImage")));
             this.btn_DeleteCustomerGroup.Name = "btn_DeleteCustomerGroup";
             this.btn_DeleteCustomerGroup.Size = new System.Drawing.Size(50, 0);
-            toolTipTitleItem3.Text = "Xóa Nhóm Khách Hàng\r\n";
+            toolTipTitleItem3.Text = "Xóa Công Trình\r\n";
             superToolTip3.Items.Add(toolTipTitleItem3);
             this.btn_DeleteCustomerGroup.SuperTip = superToolTip3;
             this.btn_DeleteCustomerGroup.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DeleteCustomerGroup_CheckedChanged);
@@ -218,6 +220,9 @@
             this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.Size = new System.Drawing.Size(50, 0);
+            toolTipTitleItem4.Text = "Xem";
+            superToolTip4.Items.Add(toolTipTitleItem4);
+            this.barButtonItem1.SuperTip = superToolTip4;
             // 
             // btnView
             // 
@@ -483,9 +488,9 @@
             this.btn_Add.ItemInMenuAppearance.Normal.Options.UseFont = true;
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem4.Text = "Ctrl + N";
-            superToolTip4.Items.Add(toolTipTitleItem4);
-            this.btn_Add.SuperTip = superToolTip4;
+            toolTipTitleItem5.Text = "Ctrl + N";
+            superToolTip5.Items.Add(toolTipTitleItem5);
+            this.btn_Add.SuperTip = superToolTip5;
             this.btn_Add.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Add_ItemClick);
             // 
             // barStaticItem4
@@ -510,9 +515,9 @@
             this.btn_Edit.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem5.Text = "Ctrl + E";
-            superToolTip5.Items.Add(toolTipTitleItem5);
-            this.btn_Edit.SuperTip = superToolTip5;
+            toolTipTitleItem6.Text = "Ctrl + E";
+            superToolTip6.Items.Add(toolTipTitleItem6);
+            this.btn_Edit.SuperTip = superToolTip6;
             this.btn_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Edit_ItemClick);
             // 
             // barStaticItem2
@@ -537,9 +542,9 @@
             this.btn_Delete.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(80, 0);
-            toolTipTitleItem6.Text = "Ctrl + Delete\r\n";
-            superToolTip6.Items.Add(toolTipTitleItem6);
-            this.btn_Delete.SuperTip = superToolTip6;
+            toolTipTitleItem7.Text = "Ctrl + Delete\r\n";
+            superToolTip7.Items.Add(toolTipTitleItem7);
+            this.btn_Delete.SuperTip = superToolTip7;
             this.btn_Delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Delete_ItemClick);
             // 
             // barStaticItem5
@@ -564,9 +569,9 @@
             this.btn_Refesh.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Refesh.Name = "btn_Refesh";
             this.btn_Refesh.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem7.Text = "Ctrl + F5\r\n";
-            superToolTip7.Items.Add(toolTipTitleItem7);
-            this.btn_Refesh.SuperTip = superToolTip7;
+            toolTipTitleItem8.Text = "Ctrl + F5\r\n";
+            superToolTip8.Items.Add(toolTipTitleItem8);
+            this.btn_Refesh.SuperTip = superToolTip8;
             this.btn_Refesh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Refesh_ItemClick);
             // 
             // barStaticItem6
@@ -591,9 +596,9 @@
             this.btn_Import.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Import.Name = "btn_Import";
             this.btn_Import.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem8.Text = "Ctrl + F7";
-            superToolTip8.Items.Add(toolTipTitleItem8);
-            this.btn_Import.SuperTip = superToolTip8;
+            toolTipTitleItem9.Text = "Ctrl + F7";
+            superToolTip9.Items.Add(toolTipTitleItem9);
+            this.btn_Import.SuperTip = superToolTip9;
             // 
             // barStaticItem7
             // 
@@ -617,9 +622,9 @@
             this.btn_Export.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Export.Name = "btn_Export";
             this.btn_Export.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem9.Text = "Ctrl + F8";
-            superToolTip9.Items.Add(toolTipTitleItem9);
-            this.btn_Export.SuperTip = superToolTip9;
+            toolTipTitleItem10.Text = "Ctrl + F8";
+            superToolTip10.Items.Add(toolTipTitleItem10);
+            this.btn_Export.SuperTip = superToolTip10;
             // 
             // barStaticItem8
             // 
@@ -643,9 +648,9 @@
             this.btn_Print.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Print.Name = "btn_Print";
             this.btn_Print.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem10.Text = "Ctrl + P";
-            superToolTip10.Items.Add(toolTipTitleItem10);
-            this.btn_Print.SuperTip = superToolTip10;
+            toolTipTitleItem11.Text = "Ctrl + P";
+            superToolTip11.Items.Add(toolTipTitleItem11);
+            this.btn_Print.SuperTip = superToolTip11;
             // 
             // barStaticItem9
             // 
@@ -669,9 +674,9 @@
             this.btn_Close.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem11.Text = "Esc";
-            superToolTip11.Items.Add(toolTipTitleItem11);
-            this.btn_Close.SuperTip = superToolTip11;
+            toolTipTitleItem12.Text = "Esc";
+            superToolTip12.Items.Add(toolTipTitleItem12);
+            this.btn_Close.SuperTip = superToolTip12;
             this.btn_Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Close_ItemClick);
             // 
             // bar8
@@ -844,11 +849,15 @@
             // 
             // construction_item_total_price
             // 
-            this.construction_item_total_price.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.construction_item_total_price.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.construction_item_total_price.AppearanceCell.Options.UseFont = true;
+            this.construction_item_total_price.AppearanceCell.Options.UseTextOptions = true;
+            this.construction_item_total_price.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.construction_item_total_price.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.construction_item_total_price.AppearanceHeader.Options.UseFont = true;
             this.construction_item_total_price.Caption = "Giá Trị";
+            this.construction_item_total_price.DisplayFormat.FormatString = "{0:n0} VNĐ";
+            this.construction_item_total_price.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.construction_item_total_price.FieldName = "construction_item_total_price";
             this.construction_item_total_price.MaxWidth = 100;
             this.construction_item_total_price.Name = "construction_item_total_price";

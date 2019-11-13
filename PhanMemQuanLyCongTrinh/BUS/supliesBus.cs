@@ -43,5 +43,13 @@ namespace PhanMemQuanLyCongTrinh.BUS
         {
             return _sup.getAllSuplies_LoadSerach();
         }
+
+        public bool changeSuppliesWithVendor(Int64 vendorId)
+        {
+            return _sup.changeSuppliesWithVendor(vendorId);
+        }
+
+
+
     }
 }

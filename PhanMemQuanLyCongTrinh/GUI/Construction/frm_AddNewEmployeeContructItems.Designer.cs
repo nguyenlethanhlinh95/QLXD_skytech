@@ -110,8 +110,8 @@
             this.btn_AddNew.Appearance.Options.UseForeColor = true;
             this.btn_AddNew.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.btn_AddNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_AddNew.ImageOptions.Image")));
-            this.btn_AddNew.Location = new System.Drawing.Point(462, 17);
-            this.btn_AddNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.RoyalBlue;
+            this.btn_AddNew.Location = new System.Drawing.Point(457, 17);
+            this.btn_AddNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_AddNew.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_AddNew.LookAndFeel.SkinName = "Office 2010 Black";
             this.btn_AddNew.LookAndFeel.UseDefaultLookAndFeel = false;

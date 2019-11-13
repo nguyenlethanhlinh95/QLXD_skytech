@@ -737,7 +737,7 @@
             this.btn_AddDepartmnet.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_AddDepartmnet.ImageOptions.LargeImage")));
             this.btn_AddDepartmnet.Name = "btn_AddDepartmnet";
             this.btn_AddDepartmnet.Size = new System.Drawing.Size(60, 0);
-            toolTipTitleItem9.Text = "Thêm Nhóm Khách Hàng\r\n";
+            toolTipTitleItem9.Text = "Thêm Nhóm\r\n";
             superToolTip9.Items.Add(toolTipTitleItem9);
             this.btn_AddDepartmnet.SuperTip = superToolTip9;
             this.btn_AddDepartmnet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_AddNewDepartment);
@@ -750,7 +750,7 @@
             this.btn_EditDepartmnet.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_EditDepartmnet.ImageOptions.LargeImage")));
             this.btn_EditDepartmnet.Name = "btn_EditDepartmnet";
             this.btn_EditDepartmnet.Size = new System.Drawing.Size(60, 0);
-            toolTipTitleItem10.Text = "Chĩnh Sửa Nhóm Khách Hàng";
+            toolTipTitleItem10.Text = "Chỉnh Sửa Nhóm";
             superToolTip10.Items.Add(toolTipTitleItem10);
             this.btn_EditDepartmnet.SuperTip = superToolTip10;
             this.btn_EditDepartmnet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_EditDepartment);
@@ -763,7 +763,7 @@
             this.btn_DeleteDepartmnet.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_DeleteDepartmnet.ImageOptions.LargeImage")));
             this.btn_DeleteDepartmnet.Name = "btn_DeleteDepartmnet";
             this.btn_DeleteDepartmnet.Size = new System.Drawing.Size(50, 0);
-            toolTipTitleItem11.Text = "Xóa Nhóm Khách Hàng\r\n";
+            toolTipTitleItem11.Text = "Xóa Nhóm";
             superToolTip11.Items.Add(toolTipTitleItem11);
             this.btn_DeleteDepartmnet.SuperTip = superToolTip11;
             this.btn_DeleteDepartmnet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DeleteDepartmnent);

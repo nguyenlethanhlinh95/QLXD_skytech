@@ -11,6 +11,7 @@ using DevExpress.LookAndFeel;
 using DevExpress.Skins;
 using DevExpress.UserSkins;
 using DevExpress.Utils.Taskbar.Core;
+using PhanMemQuanLyCongTrinh.BUS;
 
 namespace PhanMemQuanLyCongTrinh
 {
@@ -418,8 +419,11 @@ namespace PhanMemQuanLyCongTrinh
 
         private void barButtonItem1_DangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (messeage.info("Bạn có muốn thoát?", "Thông báo"))
+            {
+                this.Close( );
+            }
             
-            this.Close();
         }
 
         private void barButtonItem_login_ItemClick(object sender, ItemClickEventArgs e)

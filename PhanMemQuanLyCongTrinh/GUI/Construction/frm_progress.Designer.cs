@@ -488,7 +488,7 @@
             this.grdv_progress.OptionsBehavior.Editable = false;
             this.grdv_progress.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.grdv_progress.OptionsView.ShowGroupPanel = false;
-            this.grdv_progress.RowHeight = 150;
+            this.grdv_progress.RowHeight = 30;
             this.grdv_progress.ViewCaptionHeight = 0;
             this.grdv_progress.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdv_progress_FocusedRowChanged);
             // 

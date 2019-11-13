@@ -14,8 +14,8 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_Vendor : DevExpress.XtraEditors.XtraForm
     {
-        BUS.VendorBus vendorBus = new VendorBus();
-
+        BUS.VendorBus vendorBus = new VendorBus( );
+        BUS.SupliesBus supliesBus = new SupliesBus( );
         int index;
 
         public frm_Vendor()
@@ -31,9 +31,45 @@ namespace PhanMemQuanLyCongTrinh
             StyleDevxpressGridControl.styleGridControl(grdc_Vendor, grdv_Vendor);
             loadAllVenDor();
         }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case (Keys.N | Keys.Control):
+                    btn_Add.PerformClick();
+                    break;
+                case (Keys.E | Keys.Control):
+                    btn_Edit.PerformClick();
+                    break;
+                case (Keys.Delete | Keys.Control):
+                    btn_Delete.PerformClick();
+                    break;
+                case (Keys.F5 | Keys.Control):
+                    btn_Refesh.PerformClick();
+                    break;
+                //case (Keys.R | Keys.Control):
+                //    btn_.PerformClick( );
+                //    break;
+                case (Keys.F8 | Keys.Control):
+                    btn_Import.PerformClick();
+                    break;
+                case (Keys.F9 | Keys.Control):
+                    btn_Export.PerformClick();
+                    break;
+                case (Keys.P | Keys.Control):
+                    btn_Print.PerformClick();
+                    break;
+                case (Keys.Escape):
+                    btn_Close.PerformClick();
+                    break;
 
+            }
+            // return true;
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void btn_Refesh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            grdv_Vendor.ClearColumnsFilter();
             loadAllVenDor();
         }
 
@@ -46,28 +82,52 @@ namespace PhanMemQuanLyCongTrinh
         {
             if (grdv_Vendor.RowCount > 0)
             {
-                Int64 vendorId = Convert.ToInt64(grdv_Vendor.GetRowCellValue(index, "vendor_id").ToString());
-                string vendorName = grdv_Vendor.GetRowCellValue(index, "vendor_name").ToString();
-
-                bool boolCheckDelete = messeage.info("Bạn Có Muốn Xóa Nhà Cung Cấp '", vendorName);
-
-                if (boolCheckDelete == true)
+                if (index >= 0)
                 {
-                    bool boolDeleteBuildContractor = vendorBus.deleteVendor(vendorId);
-                    if (boolDeleteBuildContractor == true)
+                    Int64 vendorId = Convert.ToInt64(grdv_Vendor.GetRowCellValue(index, "vendor_id").ToString());
+
+                    if (vendorId != 1)
                     {
-                        messeage.success("Xóa Nhà Cung cấp Thành Công!");
+                        bool boolChangeSupliesWithVendor = supliesBus.changeSuppliesWithVendor(vendorId);
+                        if (boolChangeSupliesWithVendor == true)
+                        {
+                            string vendorName = grdv_Vendor.GetRowCellValue(index, "vendor_name").ToString();
+
+                            bool boolCheckDelete = messeage.info("Bạn Có Muốn Xóa Nhà Cung Cấp '", vendorName);
+
+                            if (boolCheckDelete == true)
+                            {
 
 
-                        loadAllVenDor();
+
+
+
+                                bool boolDeleteBuildContractor = vendorBus.deleteVendor(vendorId);
+                                if (boolDeleteBuildContractor == true)
+                                {
+                                    messeage.success("Xóa Nhà Cung cấp Thành Công!");
+
+
+                                    loadAllVenDor();
+                                }
+                                else
+                                {
+                                    messeage.error("Xóa Nhà Cung Cấp  Thất Bại!");
+
+                                }
+                            }
+                        }
+                        else
+                        {
+                            messeage.error("Xóa Nhà Cung Cấp  Thất Bại!");
+                        }
+
                     }
                     else
                     {
-                        messeage.error("Xóa Nhà Cung Cấp Không Thất Bại!");
-
+                        messeage.error("Bạn Không Thể Xóa Nhóm Này!");
                     }
                 }
-
             }
             else
             {
@@ -98,16 +158,24 @@ namespace PhanMemQuanLyCongTrinh
         {
             if (grdv_Vendor.RowCount > 0)
             {
-                frm_UpdateVendor frm = new frm_UpdateVendor();
-                frm.FormClosed += new FormClosedEventHandler(dongform);
-                frm.vendorId = Convert.ToInt64(grdv_Vendor.GetRowCellValue(index, "vendor_id").ToString());
-                frm.Show();
+                if (index >= 0)
+                {
+                    frm_UpdateVendor frm = new frm_UpdateVendor();
+                    frm.FormClosed += new FormClosedEventHandler(dongform);
+                    frm.vendorId = Convert.ToInt64(grdv_Vendor.GetRowCellValue(index, "vendor_id").ToString());
+                    frm.Show();
+                }
             }
             else
             {
                 messeage.error("Không Có Nhà Cung Cấp Để Chĩnh Sửa");
             }
            
+        }
+
+        private void tabPane2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

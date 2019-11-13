@@ -78,6 +78,7 @@
             // 
             // txt_AAGroupId
             // 
+            this.txt_AAGroupId.Enabled = false;
             this.txt_AAGroupId.Location = new System.Drawing.Point(339, 33);
             this.txt_AAGroupId.Name = "txt_AAGroupId";
             this.txt_AAGroupId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,6 +128,7 @@
             this.but_Exit.TabIndex = 303;
             this.but_Exit.Text = "Đóng";
             this.but_Exit.ToolTipTitle = "ESC";
+            this.but_Exit.Click += new System.EventHandler(this.but_Exit_Click);
             // 
             // but_Add
             // 

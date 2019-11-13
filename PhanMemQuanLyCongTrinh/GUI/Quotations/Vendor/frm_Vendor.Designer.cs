@@ -628,6 +628,7 @@
             this.tabPane2.Size = new System.Drawing.Size(1370, 749);
             this.tabPane2.TabIndex = 11;
             this.tabPane2.Text = "tabPane2";
+            this.tabPane2.Click += new System.EventHandler(this.tabPane2_Click);
             // 
             // frm_Vendor
             // 

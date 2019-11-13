@@ -15,10 +15,10 @@ namespace PhanMemQuanLyCongTrinh
 
         int index;
 
-        BUS.ProgressBus progressBus = new BUS.ProgressBus();
+        BUS.ProgressBus progressBus = new BUS.ProgressBus( );
 
-        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus();
-        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus();
+        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus( );
+        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus( );
         public frm_progress()
         {
             InitializeComponent();
@@ -53,6 +53,45 @@ namespace PhanMemQuanLyCongTrinh
             lke_Contruct.Properties.ValueMember = "construction_id";
             lke_Contruct.Properties.DataSource = constructionBus.getAllContruction();
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case (Keys.N | Keys.Control):
+                    btn_Add.PerformClick();
+                    break;
+                case (Keys.E | Keys.Control):
+                    btn_Edit.PerformClick();
+                    break;
+                case (Keys.Delete | Keys.Control):
+                    btn_Delete.PerformClick();
+                    break;
+                case (Keys.F5 | Keys.Control):
+                    btn_Refesh.PerformClick();
+                    break;
+                //case (Keys.R | Keys.Control):
+                //    btn_.PerformClick( );
+                //    break;
+                case (Keys.F8 | Keys.Control):
+                    btn_Import.PerformClick();
+                    break;
+                case (Keys.F9 | Keys.Control):
+                    btn_Export.PerformClick();
+                    break;
+                case (Keys.P | Keys.Control):
+                    btn_Print.PerformClick();
+                    break;
+                case (Keys.Escape):
+                    btn_Close.PerformClick();
+                    break;
+
+            }
+            // return true;
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+
         private void frm_progress_Load(object sender, EventArgs e)
         {
             StyleDevxpressGridControl.styleGridControl(grdc_progress, grdv_progress);

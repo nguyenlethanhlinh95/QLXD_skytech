@@ -19,8 +19,8 @@ namespace PhanMemQuanLyCongTrinh
             InitializeComponent( );
         }
 
-        UserBus _user = new UserBus();
-        Detail_Employee_ConstructionBus _detail = new Detail_Employee_ConstructionBus();
+        UserBus _user = new UserBus( );
+        Detail_Employee_ConstructionBus _detail = new Detail_Employee_ConstructionBus( );
 
         public IEnumerable<Object> source = null;
         public Int64 idContructItemms = 0;
@@ -31,6 +31,10 @@ namespace PhanMemQuanLyCongTrinh
             StyleDevxpressGridControl.styleGridControl(grdc_em, grdv_em);
             grdv_em.OptionsSelection.MultiSelect = true;
             grdv_em.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
+
+
+
+            this.AcceptButton = btn_AddNew;
         }
 
         #region Load

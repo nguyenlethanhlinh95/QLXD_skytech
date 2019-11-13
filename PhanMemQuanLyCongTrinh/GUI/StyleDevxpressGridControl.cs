@@ -34,7 +34,7 @@ namespace PhanMemQuanLyCongTrinh.BUS
             {  
                 item.AppearanceHeader.Options.UseFont = false;
             }
-            gv.Appearance.HeaderPanel.Font = new Font("Tahoma", 12, FontStyle.Bold);
+            gv.Appearance.HeaderPanel.Font = new Font("Tahoma", 11, FontStyle.Bold);
             ////gv.RowSeparatorHeight = 1;
             ////gv.OptionsView.EnableAppearanceEvenRow = true;
             gv.Appearance.HeaderPanel.TextOptions.HAlignment = HorzAlignment.Center;
@@ -70,6 +70,11 @@ namespace PhanMemQuanLyCongTrinh.BUS
             lue.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
         }
 
+        public static string convertDecimaToNumberic(Decimal value)
+        {
+            return string.Format("{0:0,0}", value);
+        }
 
+        
     }
 }

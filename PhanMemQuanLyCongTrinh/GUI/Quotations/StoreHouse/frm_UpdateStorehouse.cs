@@ -14,7 +14,7 @@ namespace PhanMemQuanLyCongTrinh
     {
         public Int64 storehouseId;
 
-        BUS.StorehouseBus storehouseBus = new BUS.StorehouseBus();
+        BUS.StorehouseBus storehouseBus = new BUS.StorehouseBus( );
         public frm_UpdateStorehouse()
         {
             InitializeComponent();
@@ -31,6 +31,7 @@ namespace PhanMemQuanLyCongTrinh
         private void frm_UpdateStorehouse_Load(object sender, EventArgs e)
         {
             loadStorehouse();
+            this.AcceptButton = but_Add;
         }
         private string checkNull()
         {

@@ -77,5 +77,10 @@ namespace PhanMemQuanLyCongTrinh
                 messeage.error(check);
             }
         }
+
+        private void but_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

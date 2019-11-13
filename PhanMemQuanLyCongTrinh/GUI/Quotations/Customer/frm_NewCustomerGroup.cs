@@ -12,55 +12,24 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_NewCustomerGroup : DevExpress.XtraEditors.XtraForm
     {
-        public Int64 customerGroupId { set; get; }
-        BUS.CustomerGroupBus customerGroupBus;
+
+        BUS.CustomerGroupBus customerGroupBus = new BUS.CustomerGroupBus( );
         public frm_NewCustomerGroup()
         {
             InitializeComponent();
-            customerGroupBus = new BUS.CustomerGroupBus();
+            
         }
-        public void loadCustomerGroup()
-        {
-            var dt = customerGroupBus.getCustomerGroup(customerGroupId);
-            txt_CustomerGroupId.Text = dt.GetType().GetProperty("customer_group_id_custom").GetValue(dt, null).ToString();
-            txt_CustomerGroupName.Text = dt.GetType().GetProperty("customer_group_name").GetValue(dt, null).ToString();
-        }
+       
 
         private void frm_NewCustomerGroup_Load(object sender, EventArgs e)
         {
-            if (customerGroupId == 0)
-            {
-                lbl_CustomerGroupId.Visible = false;
-                txt_CustomerGroupId.Visible = false;
-
-                but_Update.Text = "Thêm mới";
-            }
-            else
-            {
-                but_Update.Text = "Cập nhật";
-                txt_CustomerGroupId.Enabled = false;
-                loadCustomerGroup();
-            }
+           
+            
+            this.AcceptButton = but_Update;
         }
 
-        private string updateCustomerGroup()
-        {
-           DTO.ST_customer_group customerGroup = new DTO.ST_customer_group();
-            customerGroup.customer_group_id= customerGroupId;
-            customerGroup.customer_group_name = txt_CustomerGroupName.Text;
-            bool boolUpdateCustomerGroup = customerGroupBus.updateCustomerGroup(customerGroup);
-            if (boolUpdateCustomerGroup == true)
-            {
-                return "Chĩnh Sửa Thành Công!";
-            }
-            else
-            {
-                return "Không Thể Chỉnh Sửa!";
-            }
-
-        }
-
-        private string insertCustomerGroup()
+       
+        private bool insertCustomerGroup()
         {
             DTO.ST_customer_group customerGroup = new DTO.ST_customer_group();
             
@@ -68,27 +37,35 @@ namespace PhanMemQuanLyCongTrinh
             bool boolInsertCustomerGroup = customerGroupBus.insertCustomerGroup(customerGroup);
             if (boolInsertCustomerGroup == true)
             {
-                return "Thêm Mới Thành Công!";
-                this.Close();
+                return true;
+                
             }
             else
             {
-                return "Không Thể Thêm Mới!";
+                return false;
             }
         }
 
         private void but_Update_Click(object sender, EventArgs e)
         {
-            if (customerGroupId == 0)
-            {
-                messeage.success(insertCustomerGroup());
-                
-            }
-            else
-            {
-                messeage.error(updateCustomerGroup());
-                
-            }
+          
+                if (txt_CustomerGroupName.Text == "")
+                {
+                    txt_CustomerGroupName.Focus();
+                    messeage.error("Vui Lòng Nhập Tên Nhóm Khách Hàng!");
+                }
+                else
+                {
+                    if (insertCustomerGroup() == true)
+                    {
+                        messeage.success("Thêm Mới Thành Công!");
+                        this.Close();
+                    }
+                    else
+                    {
+                        messeage.error("Không Thể Thêm Mới!");
+                    }
+                }
         }
 
         private void but_Exit_Click(object sender, EventArgs e)

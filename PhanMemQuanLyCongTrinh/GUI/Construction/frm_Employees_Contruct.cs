@@ -22,8 +22,8 @@ namespace PhanMemQuanLyCongTrinh
         Int64 id_contruct = 0;
         Int64 id_contruct_items = 0;
         ConstructionBus _contruct = new ConstructionBus( );
-        ConstructionItemBus _contructItem = new ConstructionItemBus();
-        Detail_Employee_ConstructionBus _detai = new Detail_Employee_ConstructionBus();
+        ConstructionItemBus _contructItem = new ConstructionItemBus( );
+        Detail_Employee_ConstructionBus _detai = new Detail_Employee_ConstructionBus( );
 
         #region Load
 
@@ -253,6 +253,49 @@ namespace PhanMemQuanLyCongTrinh
             frm.FormClosed += new FormClosedEventHandler(dongformConItem);
 
             frm.ShowDialog( );
+
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case (Keys.N | Keys.Control):
+                    btn_Add.PerformClick();
+                    break;
+                case (Keys.E | Keys.Control):
+                    btn_Edit.PerformClick();
+                    break;
+                case (Keys.Delete | Keys.Control):
+                    btn_Delete.PerformClick();
+                    break;
+                case (Keys.F5 | Keys.Control):
+                    btn_Refesh.PerformClick();
+                    break;
+                //case (Keys.R | Keys.Control):
+                //    btn_.PerformClick( );
+                //    break;
+                case (Keys.F8 | Keys.Control):
+                    btn_Import.PerformClick();
+                    break;
+                case (Keys.F9 | Keys.Control):
+                    btn_Export.PerformClick();
+                    break;
+                case (Keys.P | Keys.Control):
+                    btn_Print.PerformClick();
+                    break;
+                case (Keys.Escape):
+                    btn_Close.PerformClick();
+                    break;
+
+            }
+            // return true;
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
 

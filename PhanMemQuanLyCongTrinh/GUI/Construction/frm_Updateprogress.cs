@@ -13,9 +13,9 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_Updateprogress : DevExpress.XtraEditors.XtraForm
     {
-        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus();
-        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus();
-        BUS.ProgressBus progressBus = new BUS.ProgressBus();
+        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus( );
+        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus( );
+        BUS.ProgressBus progressBus = new BUS.ProgressBus( );
 
         public Int64 progressId { get; set; }
         Int64 contructionId;
@@ -33,8 +33,13 @@ namespace PhanMemQuanLyCongTrinh
             txt_description.Text = progress.GetType().GetProperty("progress_construction_item_description").GetValue(progress, null).ToString();
             txt_percent.Text = progress.GetType().GetProperty("progress_construction_item_percent").GetValue(progress, null).ToString();
 
-            date_Start.Text = progress.GetType().GetProperty("progress_construction_item_date").GetValue(progress, null).ToString();
-
+            var date = progress.GetType().GetProperty("progress_construction_item_date").GetValue(progress, null);
+            if (date != null)
+            {
+                
+                DateTime day = Convert.ToDateTime(date);
+                date_Start.Text = day.ToString("dd/MM/yyyy");
+            }
             var brimary = progress.GetType().GetProperty("progress_construction_item_image").GetValue(progress, null);
             if (brimary != null)
             {
@@ -50,6 +55,7 @@ namespace PhanMemQuanLyCongTrinh
         private void frm_Updateprogress_Load(object sender, EventArgs e)
         {
             loadProgress();
+            this.AcceptButton = btn_Update;
         }
 
         private void but_Exit_Click(object sender, EventArgs e)

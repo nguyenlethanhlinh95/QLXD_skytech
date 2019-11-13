@@ -263,7 +263,7 @@
             this.btn_AddGroup_supplies.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_AddGroup_supplies.ImageOptions.LargeImage")));
             this.btn_AddGroup_supplies.Name = "btn_AddGroup_supplies";
             this.btn_AddGroup_supplies.Size = new System.Drawing.Size(60, 0);
-            toolTipTitleItem1.Text = "Thêm Nhóm Khách Hàng\r\n";
+            toolTipTitleItem1.Text = "Thêm Nhóm\r\n";
             superToolTip1.Items.Add(toolTipTitleItem1);
             this.btn_AddGroup_supplies.SuperTip = superToolTip1;
             this.btn_AddGroup_supplies.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_AddGroup_supplies_ItemClick);
@@ -276,7 +276,7 @@
             this.btn_EditGroup_supplies.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_EditGroup_supplies.ImageOptions.LargeImage")));
             this.btn_EditGroup_supplies.Name = "btn_EditGroup_supplies";
             this.btn_EditGroup_supplies.Size = new System.Drawing.Size(60, 0);
-            toolTipTitleItem2.Text = "Chĩnh Sửa Nhóm Khách Hàng";
+            toolTipTitleItem2.Text = "Chỉnh Sửa Nhóm";
             superToolTip2.Items.Add(toolTipTitleItem2);
             this.btn_EditGroup_supplies.SuperTip = superToolTip2;
             this.btn_EditGroup_supplies.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_EditGroup_supplies_ItemClick);
@@ -289,7 +289,7 @@
             this.btn_DeleteGroup_supplies.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_DeleteGroup_supplies.ImageOptions.LargeImage")));
             this.btn_DeleteGroup_supplies.Name = "btn_DeleteGroup_supplies";
             this.btn_DeleteGroup_supplies.Size = new System.Drawing.Size(50, 0);
-            toolTipTitleItem3.Text = "Xóa Nhóm Khách Hàng\r\n";
+            toolTipTitleItem3.Text = "Xóa Nhóm";
             superToolTip3.Items.Add(toolTipTitleItem3);
             this.btn_DeleteGroup_supplies.SuperTip = superToolTip3;
             this.btn_DeleteGroup_supplies.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DeleteGroup_supplies_CheckedChanged);

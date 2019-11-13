@@ -12,7 +12,7 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_NewStorehouse : DevExpress.XtraEditors.XtraForm
     {
-        BUS.StorehouseBus storehouseBus = new BUS.StorehouseBus();
+        BUS.StorehouseBus storehouseBus = new BUS.StorehouseBus( );
         public frm_NewStorehouse()
         {
             InitializeComponent();
@@ -75,7 +75,7 @@ namespace PhanMemQuanLyCongTrinh
 
         private void frm_NewStorehouse_Load(object sender, EventArgs e)
         {
-
+            this.AcceptButton = but_Add;
         }
 
     }

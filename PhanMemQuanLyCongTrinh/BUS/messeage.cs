@@ -39,6 +39,9 @@ namespace PhanMemQuanLyCongTrinh.BUS
             }
         }
 
-        
+        public static void err()
+        {
+            XtraMessageBox.Show("Chương trình bị lỗi, hãy kiểm tra lại", "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

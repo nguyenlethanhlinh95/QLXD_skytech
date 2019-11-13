@@ -14,9 +14,9 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_NewConstructionItem : DevExpress.XtraEditors.XtraForm
     {
-        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus();
-        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus();
-        BUS.BuildingContractorBus buildingContractorBus = new BuildingContractorBus();
+        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus( );
+        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus( );
+        BUS.BuildingContractorBus buildingContractorBus = new BuildingContractorBus( );
 
         public frm_NewConstructionItem()
         {
@@ -39,6 +39,9 @@ namespace PhanMemQuanLyCongTrinh
         {
             loadConstruction();
             loadBuildingContractor();
+            StyleDevxpressGridControl.autoLookUpEdit(lke_buildingContractor);
+            StyleDevxpressGridControl.autoLookUpEdit(lke_Constraction);
+            this.AcceptButton = btn_Add;
         }
 
         private void btn_OpenFile_Click(object sender, EventArgs e)
@@ -253,6 +256,7 @@ namespace PhanMemQuanLyCongTrinh
             this.Close();
         }
 
-        
+
+       
     }
 }

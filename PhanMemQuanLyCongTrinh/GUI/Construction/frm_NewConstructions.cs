@@ -13,8 +13,8 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_NewConstructions : DevExpress.XtraEditors.XtraForm
     {
-        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus();
-        BUS.CustomerBus customerBus = new BUS.CustomerBus();
+        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus( );
+        BUS.CustomerBus customerBus = new BUS.CustomerBus( );
         public frm_NewConstructions()
         {
             InitializeComponent();
@@ -203,7 +203,7 @@ namespace PhanMemQuanLyCongTrinh
         {
             frm_NewCustomer frm = new frm_NewCustomer();
             frm.FormClosed += new FormClosedEventHandler(dongform);
-            frm.customerId = 0;
+           
             frm.ShowDialog();
         }
         private void dongform(object sender, EventArgs e)
@@ -214,6 +214,8 @@ namespace PhanMemQuanLyCongTrinh
         private void frm_NewConstructions_Load(object sender, EventArgs e)
         {
             loadCustomer();
+            StyleDevxpressGridControl.autoLookUpEdit(lke_Customer);
+            this.AcceptButton = btn_Update;
         }
 
         private void btn_Img_Click(object sender, EventArgs e)

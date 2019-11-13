@@ -29,41 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_AccountingAccounts));
-            DevExpress.Utils.SuperToolTip superToolTip12 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem12 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip13 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem13 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip14 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem14 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip15 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem15 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip16 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem16 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip17 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem17 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip18 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem18 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip19 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem19 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip20 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem20 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip21 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem21 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip22 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem22 = new DevExpress.Utils.ToolTipTitleItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar1 = new DevExpress.XtraBars.Bar();
-            this.btn_AddAcountiongAcountGroup = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_EditAcountiongAcountGroup = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_DeleteAcountiongAcountGroup = new DevExpress.XtraBars.BarCheckItem();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
-            this.bar2 = new DevExpress.XtraBars.Bar();
-            this.bar3 = new DevExpress.XtraBars.Bar();
-            this.barDockControl13 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl14 = new DevExpress.XtraBars.BarDockControl();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.grdc_AcountingAcountGroup = new DevExpress.XtraGrid.GridControl();
             this.grdv_AcountingAcountGroup = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -100,8 +82,8 @@
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.grdc_Customer = new DevExpress.XtraGrid.GridControl();
-            this.grdv_Customer = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grdc_AcountingAccount = new DevExpress.XtraGrid.GridControl();
+            this.grdv_AcountingAccount = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.detail_income_and_expenditure_pattern_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.detail_income_and_expenditure_pattern_id_custom = new DevExpress.XtraGrid.Columns.GridColumn();
             this.detail_income_and_expenditure_pattern_description = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -116,7 +98,6 @@
             this.barHeaderItem3 = new DevExpress.XtraBars.BarHeaderItem();
             this.barHeaderItem4 = new DevExpress.XtraBars.BarHeaderItem();
             this.tabPane2 = new DevExpress.XtraBars.Navigation.TabPane();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdc_AcountingAcountGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdv_AcountingAcountGroup)).BeginInit();
@@ -125,147 +106,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdc_Customer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_Customer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdc_AcountingAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_AcountingAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane2)).BeginInit();
             this.tabPane2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // barManager1
-            // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1,
-            this.bar2,
-            this.bar3});
-            this.barManager1.DockControls.Add(this.barDockControl13);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControl14);
-            this.barManager1.Form = this.tabNavigationPage1;
-            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.btn_AddAcountiongAcountGroup,
-            this.btn_EditAcountiongAcountGroup,
-            this.btn_DeleteAcountiongAcountGroup,
-            this.barStaticItem1});
-            this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 4;
-            this.barManager1.StatusBar = this.bar3;
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "Tools";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 1;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_AddAcountiongAcountGroup),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_EditAcountiongAcountGroup),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btn_DeleteAcountiongAcountGroup),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem1)});
-            this.bar1.Offset = 2;
-            this.bar1.OptionsBar.AllowQuickCustomization = false;
-            this.bar1.Text = "Tools";
-            // 
-            // btn_AddAcountiongAcountGroup
-            // 
-            this.btn_AddAcountiongAcountGroup.Caption = "Thêm";
-            this.btn_AddAcountiongAcountGroup.Id = 0;
-            this.btn_AddAcountiongAcountGroup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_AddAcountiongAcountGroup.ImageOptions.Image")));
-            this.btn_AddAcountiongAcountGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_AddAcountiongAcountGroup.ImageOptions.LargeImage")));
-            this.btn_AddAcountiongAcountGroup.Name = "btn_AddAcountiongAcountGroup";
-            this.btn_AddAcountiongAcountGroup.Size = new System.Drawing.Size(60, 0);
-            toolTipTitleItem12.Text = "Thêm Nhóm Tài Khoản";
-            superToolTip12.Items.Add(toolTipTitleItem12);
-            this.btn_AddAcountiongAcountGroup.SuperTip = superToolTip12;
-            this.btn_AddAcountiongAcountGroup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_AddAcountiongAcountGroup_ItemClick);
-            // 
-            // btn_EditAcountiongAcountGroup
-            // 
-            this.btn_EditAcountiongAcountGroup.Caption = "Sửa";
-            this.btn_EditAcountiongAcountGroup.Id = 1;
-            this.btn_EditAcountiongAcountGroup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_EditAcountiongAcountGroup.ImageOptions.Image")));
-            this.btn_EditAcountiongAcountGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_EditAcountiongAcountGroup.ImageOptions.LargeImage")));
-            this.btn_EditAcountiongAcountGroup.Name = "btn_EditAcountiongAcountGroup";
-            this.btn_EditAcountiongAcountGroup.Size = new System.Drawing.Size(60, 0);
-            toolTipTitleItem13.Text = "Chĩnh Sửa Nhóm Tài khoản";
-            superToolTip13.Items.Add(toolTipTitleItem13);
-            this.btn_EditAcountiongAcountGroup.SuperTip = superToolTip13;
-            this.btn_EditAcountiongAcountGroup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_EditAcountiongAcountGroup_ItemClick);
-            // 
-            // btn_DeleteAcountiongAcountGroup
-            // 
-            this.btn_DeleteAcountiongAcountGroup.Caption = "Xóa";
-            this.btn_DeleteAcountiongAcountGroup.Id = 2;
-            this.btn_DeleteAcountiongAcountGroup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_DeleteAcountiongAcountGroup.ImageOptions.Image")));
-            this.btn_DeleteAcountiongAcountGroup.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_DeleteAcountiongAcountGroup.ImageOptions.LargeImage")));
-            this.btn_DeleteAcountiongAcountGroup.Name = "btn_DeleteAcountiongAcountGroup";
-            this.btn_DeleteAcountiongAcountGroup.Size = new System.Drawing.Size(50, 0);
-            toolTipTitleItem14.Text = "Xóa Nhóm Tài Khoản\r\n";
-            superToolTip14.Items.Add(toolTipTitleItem14);
-            this.btn_DeleteAcountiongAcountGroup.SuperTip = superToolTip14;
-            this.btn_DeleteAcountiongAcountGroup.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_DeleteAcountiongAcountGroup_CheckedChanged);
-            // 
-            // barStaticItem1
-            // 
-            this.barStaticItem1.Id = 3;
-            this.barStaticItem1.Name = "barStaticItem1";
-            this.barStaticItem1.Size = new System.Drawing.Size(300, 0);
-            this.barStaticItem1.Width = 300;
-            // 
-            // bar2
-            // 
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
-            this.bar2.Visible = false;
-            // 
-            // bar3
-            // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
-            // 
-            // barDockControl13
-            // 
-            this.barDockControl13.CausesValidation = false;
-            this.barDockControl13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl13.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl13.Manager = this.barManager1;
-            this.barDockControl13.Size = new System.Drawing.Size(422, 51);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 699);
-            this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(422, 23);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 51);
-            this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 648);
-            // 
-            // barDockControl14
-            // 
-            this.barDockControl14.CausesValidation = false;
-            this.barDockControl14.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl14.Location = new System.Drawing.Point(422, 51);
-            this.barDockControl14.Manager = this.barManager1;
-            this.barDockControl14.Size = new System.Drawing.Size(0, 648);
             // 
             // tabNavigationPage1
             // 
@@ -275,21 +120,16 @@
             this.tabNavigationPage1.Controls.Add(this.barDockControl16);
             this.tabNavigationPage1.Controls.Add(this.barDockControl17);
             this.tabNavigationPage1.Controls.Add(this.barDockControl18);
-            this.tabNavigationPage1.Controls.Add(this.barDockControlLeft);
-            this.tabNavigationPage1.Controls.Add(this.barDockControl14);
-            this.tabNavigationPage1.Controls.Add(this.barDockControlBottom);
-            this.tabNavigationPage1.Controls.Add(this.barDockControl13);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
             this.tabNavigationPage1.Size = new System.Drawing.Size(422, 722);
             // 
             // grdc_AcountingAcountGroup
             // 
             this.grdc_AcountingAcountGroup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdc_AcountingAcountGroup.Location = new System.Drawing.Point(0, 51);
+            this.grdc_AcountingAcountGroup.Location = new System.Drawing.Point(0, 0);
             this.grdc_AcountingAcountGroup.MainView = this.grdv_AcountingAcountGroup;
-            this.grdc_AcountingAcountGroup.MenuManager = this.barManager1;
             this.grdc_AcountingAcountGroup.Name = "grdc_AcountingAcountGroup";
-            this.grdc_AcountingAcountGroup.Size = new System.Drawing.Size(422, 648);
+            this.grdc_AcountingAcountGroup.Size = new System.Drawing.Size(422, 722);
             this.grdc_AcountingAcountGroup.TabIndex = 4;
             this.grdc_AcountingAcountGroup.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_AcountingAcountGroup});
@@ -345,32 +185,28 @@
             // 
             this.barDockControl15.CausesValidation = false;
             this.barDockControl15.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl15.Location = new System.Drawing.Point(0, 51);
-            this.barDockControl15.Manager = this.barManager1;
-            this.barDockControl15.Size = new System.Drawing.Size(0, 648);
+            this.barDockControl15.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl15.Size = new System.Drawing.Size(0, 722);
             // 
             // barDockControl16
             // 
             this.barDockControl16.CausesValidation = false;
             this.barDockControl16.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl16.Location = new System.Drawing.Point(422, 51);
-            this.barDockControl16.Manager = this.barManager1;
-            this.barDockControl16.Size = new System.Drawing.Size(0, 648);
+            this.barDockControl16.Location = new System.Drawing.Point(422, 0);
+            this.barDockControl16.Size = new System.Drawing.Size(0, 722);
             // 
             // barDockControl17
             // 
             this.barDockControl17.CausesValidation = false;
             this.barDockControl17.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl17.Location = new System.Drawing.Point(0, 699);
-            this.barDockControl17.Manager = this.barManager1;
+            this.barDockControl17.Location = new System.Drawing.Point(0, 722);
             this.barDockControl17.Size = new System.Drawing.Size(422, 0);
             // 
             // barDockControl18
             // 
             this.barDockControl18.CausesValidation = false;
             this.barDockControl18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl18.Location = new System.Drawing.Point(0, 51);
-            this.barDockControl18.Manager = this.barManager1;
+            this.barDockControl18.Location = new System.Drawing.Point(0, 0);
             this.barDockControl18.Size = new System.Drawing.Size(422, 0);
             // 
             // tabPane1
@@ -437,15 +273,10 @@
             this.bar7.DockRow = 1;
             this.bar7.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar7.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Add, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem4),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Edit, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem2),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Delete, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem5),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Refesh, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem6),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Import, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem7),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Export, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem8),
@@ -460,6 +291,7 @@
             // 
             this.btn_Add.Caption = "Thêm Mới";
             this.btn_Add.ContentHorizontalAlignment = DevExpress.XtraBars.BarItemContentAlignment.Center;
+            this.btn_Add.Enabled = false;
             this.btn_Add.Id = 0;
             this.btn_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Add.ImageOptions.Image")));
             this.btn_Add.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_Add.ImageOptions.LargeImage")));
@@ -473,9 +305,10 @@
             this.btn_Add.ItemInMenuAppearance.Normal.Options.UseFont = true;
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem15.Text = "Ctrl + N";
-            superToolTip15.Items.Add(toolTipTitleItem15);
-            this.btn_Add.SuperTip = superToolTip15;
+            toolTipTitleItem4.Text = "Ctrl + N";
+            superToolTip4.Items.Add(toolTipTitleItem4);
+            this.btn_Add.SuperTip = superToolTip4;
+            this.btn_Add.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Add_ItemClick);
             // 
             // barStaticItem4
             // 
@@ -499,9 +332,10 @@
             this.btn_Edit.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem16.Text = "Ctrl + E";
-            superToolTip16.Items.Add(toolTipTitleItem16);
-            this.btn_Edit.SuperTip = superToolTip16;
+            toolTipTitleItem5.Text = "Ctrl + E";
+            superToolTip5.Items.Add(toolTipTitleItem5);
+            this.btn_Edit.SuperTip = superToolTip5;
+            this.btn_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Edit_ItemClick);
             // 
             // barStaticItem2
             // 
@@ -525,9 +359,10 @@
             this.btn_Delete.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(80, 0);
-            toolTipTitleItem17.Text = "Ctrl + Delete\r\n";
-            superToolTip17.Items.Add(toolTipTitleItem17);
-            this.btn_Delete.SuperTip = superToolTip17;
+            toolTipTitleItem6.Text = "Ctrl + Delete\r\n";
+            superToolTip6.Items.Add(toolTipTitleItem6);
+            this.btn_Delete.SuperTip = superToolTip6;
+            this.btn_Delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Delete_ItemClick);
             // 
             // barStaticItem5
             // 
@@ -551,9 +386,10 @@
             this.btn_Refesh.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Refesh.Name = "btn_Refesh";
             this.btn_Refesh.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem18.Text = "Ctrl + F5\r\n";
-            superToolTip18.Items.Add(toolTipTitleItem18);
-            this.btn_Refesh.SuperTip = superToolTip18;
+            toolTipTitleItem7.Text = "Ctrl + F5\r\n";
+            superToolTip7.Items.Add(toolTipTitleItem7);
+            this.btn_Refesh.SuperTip = superToolTip7;
+            this.btn_Refesh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Refesh_ItemClick);
             // 
             // barStaticItem6
             // 
@@ -577,9 +413,9 @@
             this.btn_Import.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Import.Name = "btn_Import";
             this.btn_Import.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem19.Text = "Ctrl + F7";
-            superToolTip19.Items.Add(toolTipTitleItem19);
-            this.btn_Import.SuperTip = superToolTip19;
+            toolTipTitleItem8.Text = "Ctrl + F7";
+            superToolTip8.Items.Add(toolTipTitleItem8);
+            this.btn_Import.SuperTip = superToolTip8;
             // 
             // barStaticItem7
             // 
@@ -603,9 +439,9 @@
             this.btn_Export.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Export.Name = "btn_Export";
             this.btn_Export.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem20.Text = "Ctrl + F8";
-            superToolTip20.Items.Add(toolTipTitleItem20);
-            this.btn_Export.SuperTip = superToolTip20;
+            toolTipTitleItem1.Text = "Ctrl + F8";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            this.btn_Export.SuperTip = superToolTip1;
             // 
             // barStaticItem8
             // 
@@ -629,9 +465,9 @@
             this.btn_Print.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Print.Name = "btn_Print";
             this.btn_Print.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem21.Text = "Ctrl + P";
-            superToolTip21.Items.Add(toolTipTitleItem21);
-            this.btn_Print.SuperTip = superToolTip21;
+            toolTipTitleItem2.Text = "Ctrl + P";
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            this.btn_Print.SuperTip = superToolTip2;
             // 
             // barStaticItem9
             // 
@@ -655,9 +491,10 @@
             this.btn_Close.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem22.Text = "Esc";
-            superToolTip22.Items.Add(toolTipTitleItem22);
-            this.btn_Close.SuperTip = superToolTip22;
+            toolTipTitleItem3.Text = "Esc";
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            this.btn_Close.SuperTip = superToolTip3;
+            this.btn_Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Close_ItemClick);
             // 
             // bar8
             // 
@@ -720,7 +557,7 @@
             this.tabNavigationPage2.Appearance.BackColor = System.Drawing.Color.Black;
             this.tabNavigationPage2.Appearance.Options.UseBackColor = true;
             this.tabNavigationPage2.Caption = "Danh Sách Tài Khoản Kế Toán";
-            this.tabNavigationPage2.Controls.Add(this.grdc_Customer);
+            this.tabNavigationPage2.Controls.Add(this.grdc_AcountingAccount);
             this.tabNavigationPage2.Controls.Add(this.barDockControl1);
             this.tabNavigationPage2.Controls.Add(this.barDockControl2);
             this.tabNavigationPage2.Controls.Add(this.barDockControl3);
@@ -733,36 +570,36 @@
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Size = new System.Drawing.Size(911, 724);
             // 
-            // grdc_Customer
+            // grdc_AcountingAccount
             // 
-            this.grdc_Customer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdc_Customer.Location = new System.Drawing.Point(0, 51);
-            this.grdc_Customer.MainView = this.grdv_Customer;
-            this.grdc_Customer.MenuManager = this.barManager1;
-            this.grdc_Customer.Name = "grdc_Customer";
-            this.grdc_Customer.Size = new System.Drawing.Size(911, 650);
-            this.grdc_Customer.TabIndex = 18;
-            this.grdc_Customer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.grdv_Customer});
+            this.grdc_AcountingAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdc_AcountingAccount.Location = new System.Drawing.Point(0, 51);
+            this.grdc_AcountingAccount.MainView = this.grdv_AcountingAccount;
+            this.grdc_AcountingAccount.Name = "grdc_AcountingAccount";
+            this.grdc_AcountingAccount.Size = new System.Drawing.Size(911, 650);
+            this.grdc_AcountingAccount.TabIndex = 18;
+            this.grdc_AcountingAccount.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdv_AcountingAccount});
             // 
-            // grdv_Customer
+            // grdv_AcountingAccount
             // 
-            this.grdv_Customer.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdv_Customer.Appearance.Row.Options.UseFont = true;
-            this.grdv_Customer.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grdv_Customer.Appearance.TopNewRow.Options.UseFont = true;
-            this.grdv_Customer.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.grdv_AcountingAccount.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_AcountingAccount.Appearance.Row.Options.UseFont = true;
+            this.grdv_AcountingAccount.Appearance.TopNewRow.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grdv_AcountingAccount.Appearance.TopNewRow.Options.UseFont = true;
+            this.grdv_AcountingAccount.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.detail_income_and_expenditure_pattern_id,
             this.detail_income_and_expenditure_pattern_id_custom,
             this.detail_income_and_expenditure_pattern_description,
             this.income_and_expenditure_pattern_name2});
-            this.grdv_Customer.GridControl = this.grdc_Customer;
-            this.grdv_Customer.Name = "grdv_Customer";
-            this.grdv_Customer.OptionsBehavior.Editable = false;
-            this.grdv_Customer.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            this.grdv_Customer.OptionsView.ShowGroupPanel = false;
-            this.grdv_Customer.RowHeight = 30;
-            this.grdv_Customer.ViewCaptionHeight = 0;
+            this.grdv_AcountingAccount.GridControl = this.grdc_AcountingAccount;
+            this.grdv_AcountingAccount.Name = "grdv_AcountingAccount";
+            this.grdv_AcountingAccount.OptionsBehavior.Editable = false;
+            this.grdv_AcountingAccount.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.grdv_AcountingAccount.OptionsView.ShowGroupPanel = false;
+            this.grdv_AcountingAccount.RowHeight = 30;
+            this.grdv_AcountingAccount.ViewCaptionHeight = 0;
+            this.grdv_AcountingAccount.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdv_AcountingAccount_FocusedRowChanged);
             // 
             // detail_income_and_expenditure_pattern_id
             // 
@@ -910,7 +747,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TÀI KHOẢN KẾ TOÁN";
             this.Load += new System.EventHandler(this.frm_AccountingAccounts_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.tabNavigationPage1.ResumeLayout(false);
             this.tabNavigationPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdc_AcountingAcountGroup)).EndInit();
@@ -921,8 +757,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             this.tabNavigationPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdc_Customer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdv_Customer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdc_AcountingAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdv_AcountingAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane2)).EndInit();
             this.tabPane2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -931,18 +767,6 @@
 
         #endregion
 
-        private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar1;
-        private DevExpress.XtraBars.BarButtonItem btn_AddAcountiongAcountGroup;
-        private DevExpress.XtraBars.BarButtonItem btn_EditAcountiongAcountGroup;
-        private DevExpress.XtraBars.BarCheckItem btn_DeleteAcountiongAcountGroup;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
-        private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.Bar bar3;
-        private DevExpress.XtraBars.BarDockControl barDockControl13;
-        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
-        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
-        private DevExpress.XtraBars.BarDockControl barDockControl14;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
         private DevExpress.XtraGrid.GridControl grdc_AcountingAcountGroup;
         private DevExpress.XtraGrid.Views.Grid.GridView grdv_AcountingAcountGroup;
@@ -984,8 +808,8 @@
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem3;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem4;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
-        private DevExpress.XtraGrid.GridControl grdc_Customer;
-        private DevExpress.XtraGrid.Views.Grid.GridView grdv_Customer;
+        private DevExpress.XtraGrid.GridControl grdc_AcountingAccount;
+        private DevExpress.XtraGrid.Views.Grid.GridView grdv_AcountingAccount;
         private DevExpress.XtraGrid.Columns.GridColumn detail_income_and_expenditure_pattern_id;
         private DevExpress.XtraGrid.Columns.GridColumn detail_income_and_expenditure_pattern_id_custom;
         private DevExpress.XtraGrid.Columns.GridColumn detail_income_and_expenditure_pattern_description;

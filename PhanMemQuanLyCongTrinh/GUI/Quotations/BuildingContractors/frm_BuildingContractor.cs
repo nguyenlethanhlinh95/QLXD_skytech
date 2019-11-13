@@ -12,7 +12,7 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_BuildingContractor : DevExpress.XtraEditors.XtraForm
     {
-        BUS.BuildingContractorBus buildingContractorBus = new BUS.BuildingContractorBus();
+        BUS.BuildingContractorBus buildingContractorBus = new BUS.BuildingContractorBus( );
           
         int index;
         
@@ -25,6 +25,42 @@ namespace PhanMemQuanLyCongTrinh
         {
             grdc_BuidingContractor.DataSource = buildingContractorBus.loadAllBuildingContractor();
                 
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case (Keys.N | Keys.Control):
+                    btn_Add.PerformClick();
+                    break;
+                case (Keys.E | Keys.Control):
+                    btn_Edit.PerformClick();
+                    break;
+                case (Keys.Delete | Keys.Control):
+                    btn_Delete.PerformClick();
+                    break;
+                case (Keys.F5 | Keys.Control):
+                    btn_Refesh.PerformClick();
+                    break;
+                //case (Keys.R | Keys.Control):
+                //    btn_.PerformClick( );
+                //    break;
+                case (Keys.F8 | Keys.Control):
+                    btn_Import.PerformClick();
+                    break;
+                case (Keys.F9 | Keys.Control):
+                    btn_Export.PerformClick();
+                    break;
+                case (Keys.P | Keys.Control):
+                    btn_Print.PerformClick();
+                    break;
+                case (Keys.Escape):
+                    btn_Close.PerformClick();
+                    break;
+
+            }
+            // return true;
+            return base.ProcessCmdKey(ref msg, keyData);
         }
         private void frm_BuildingContractor_Load(object sender, EventArgs e)
         {
@@ -39,6 +75,7 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_Refesh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            grdv_BuidingContractor.ClearColumnsFilter();
             loadAllBuildingContractor();
         }
 
@@ -55,31 +92,33 @@ namespace PhanMemQuanLyCongTrinh
 
                 if (grdv_BuidingContractor.RowCount > 0)
                 {
-                    Int64 buildingContractorId = Convert.ToInt64( grdv_BuidingContractor.GetRowCellValue(index, "building_contractor_id").ToString());
-                    string buildingContractorName = grdv_BuidingContractor.GetRowCellValue(index, "building_contractor_name").ToString();
-                    
-
-                    bool boolCheckDelete = messeage.info("Bạn Có Muốn Xóa Thầu '", buildingContractorName);
-
-                    if (boolCheckDelete == true)
+                    if (index >= 0)
                     {
-                        bool boolDeleteBuildContractor = buildingContractorBus.deleteBuildingContractor(buildingContractorId);
-                        if (boolDeleteBuildContractor == true)
+                        Int64 buildingContractorId = Convert.ToInt64(grdv_BuidingContractor.GetRowCellValue(index, "building_contractor_id").ToString());
+                        string buildingContractorName = grdv_BuidingContractor.GetRowCellValue(index, "building_contractor_name").ToString();
+
+
+                        bool boolCheckDelete = messeage.info("Bạn Có Muốn Xóa Thầu '", buildingContractorName);
+
+                        if (boolCheckDelete == true)
                         {
-                            messeage.success("Xóa Thầu Xây Dựng Thành Công!");
+                            bool boolDeleteBuildContractor = buildingContractorBus.deleteBuildingContractor(buildingContractorId);
+                            if (boolDeleteBuildContractor == true)
+                            {
+                                messeage.success("Xóa Thầu Xây Dựng Thành Công!");
 
-                            buildingContractorId = 0;
+                                buildingContractorId = 0;
 
-                            loadAllBuildingContractor();
+                                loadAllBuildingContractor();
 
-                        }
-                        else
-                        {
-                            messeage.error("Xóa Thầu Xây Dựng Không Thất Bại!");
+                            }
+                            else
+                            {
+                                messeage.error("Xóa Thầu Xây Dựng Không Thất Bại!");
 
+                            }
                         }
                     }
-
                 }
                 else
                 {
@@ -94,7 +133,7 @@ namespace PhanMemQuanLyCongTrinh
              
             frm_NewBuildingContractor frm = new frm_NewBuildingContractor();
             frm.FormClosed += new FormClosedEventHandler(dongform);
-            frm.buildingContractorId = 0;
+            
             frm.ShowDialog();
             
         }
@@ -109,10 +148,13 @@ namespace PhanMemQuanLyCongTrinh
         {
             if (grdv_BuidingContractor.RowCount > 0)
             {
-                frm_NewBuildingContractor frm = new frm_NewBuildingContractor();
-                frm.FormClosed += new FormClosedEventHandler(dongform);
-                frm.buildingContractorId = Convert.ToInt64(grdv_BuidingContractor.GetRowCellValue(index, "building_contractor_id").ToString());
-                frm.ShowDialog();
+                if (index >= 0)
+                {
+                    frm_UpdateBuildingContractor frm = new frm_UpdateBuildingContractor();
+                    frm.FormClosed += new FormClosedEventHandler(dongform);
+                    frm.buildingContractorId = Convert.ToInt64(grdv_BuidingContractor.GetRowCellValue(index, "building_contractor_id").ToString());
+                    frm.ShowDialog();
+                }
             }
             else
             {

@@ -47,7 +47,7 @@
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(548, 69);
+            this.labelControl1.Location = new System.Drawing.Point(571, 69);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(8, 16);
@@ -60,7 +60,7 @@
             this.lbl1.Appearance.ForeColor = System.Drawing.Color.Red;
             this.lbl1.Appearance.Options.UseFont = true;
             this.lbl1.Appearance.Options.UseForeColor = true;
-            this.lbl1.Location = new System.Drawing.Point(548, 32);
+            this.lbl1.Location = new System.Drawing.Point(571, 32);
             this.lbl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(8, 16);
@@ -69,7 +69,7 @@
             // 
             // txt_AAGroupName
             // 
-            this.txt_AAGroupName.Location = new System.Drawing.Point(238, 66);
+            this.txt_AAGroupName.Location = new System.Drawing.Point(261, 66);
             this.txt_AAGroupName.Name = "txt_AAGroupName";
             this.txt_AAGroupName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AAGroupName.Properties.Appearance.Options.UseFont = true;
@@ -78,7 +78,7 @@
             // 
             // txt_AAGroupId
             // 
-            this.txt_AAGroupId.Location = new System.Drawing.Point(238, 29);
+            this.txt_AAGroupId.Location = new System.Drawing.Point(261, 29);
             this.txt_AAGroupId.Name = "txt_AAGroupId";
             this.txt_AAGroupId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_AAGroupId.Properties.Appearance.Options.UseFont = true;
@@ -87,21 +87,21 @@
             // 
             // lbl_CustomerGroupName
             // 
-            this.lbl_CustomerGroupName.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CustomerGroupName.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CustomerGroupName.Appearance.Options.UseFont = true;
-            this.lbl_CustomerGroupName.Location = new System.Drawing.Point(61, 69);
+            this.lbl_CustomerGroupName.Location = new System.Drawing.Point(62, 69);
             this.lbl_CustomerGroupName.Name = "lbl_CustomerGroupName";
-            this.lbl_CustomerGroupName.Size = new System.Drawing.Size(171, 16);
+            this.lbl_CustomerGroupName.Size = new System.Drawing.Size(183, 16);
             this.lbl_CustomerGroupName.TabIndex = 297;
             this.lbl_CustomerGroupName.Text = "Tên Nhóm Tài Khoản Kế Toán";
             // 
             // lbl_CustomerGroupId
             // 
-            this.lbl_CustomerGroupId.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CustomerGroupId.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CustomerGroupId.Appearance.Options.UseFont = true;
-            this.lbl_CustomerGroupId.Location = new System.Drawing.Point(66, 32);
+            this.lbl_CustomerGroupId.Location = new System.Drawing.Point(67, 32);
             this.lbl_CustomerGroupId.Name = "lbl_CustomerGroupId";
-            this.lbl_CustomerGroupId.Size = new System.Drawing.Size(166, 16);
+            this.lbl_CustomerGroupId.Size = new System.Drawing.Size(179, 16);
             this.lbl_CustomerGroupId.TabIndex = 296;
             this.lbl_CustomerGroupId.Text = "Mã Nhóm Tài Khoản Kế Toán";
             // 
@@ -116,14 +116,14 @@
             this.but_Exit.Appearance.Options.UseForeColor = true;
             this.but_Exit.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.but_Exit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("but_Exit.ImageOptions.Image")));
-            this.but_Exit.Location = new System.Drawing.Point(391, 117);
+            this.but_Exit.Location = new System.Drawing.Point(414, 117);
             this.but_Exit.LookAndFeel.SkinMaskColor = System.Drawing.Color.Gray;
             this.but_Exit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Black;
             this.but_Exit.LookAndFeel.SkinName = "Office 2010 Black";
             this.but_Exit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.but_Exit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.but_Exit.Name = "but_Exit";
-            this.but_Exit.Size = new System.Drawing.Size(110, 36);
+            this.but_Exit.Size = new System.Drawing.Size(121, 36);
             this.but_Exit.TabIndex = 295;
             this.but_Exit.Text = "Đóng";
             this.but_Exit.ToolTipTitle = "ESC";
@@ -138,16 +138,16 @@
             this.but_Add.Appearance.Options.UseBackColor = true;
             this.but_Add.Appearance.Options.UseFont = true;
             this.but_Add.Appearance.Options.UseForeColor = true;
-            this.but_Add.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.but_Add.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
             this.but_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("but_Add.ImageOptions.Image")));
-            this.but_Add.Location = new System.Drawing.Point(237, 117);
-            this.but_Add.LookAndFeel.SkinMaskColor = System.Drawing.Color.RoyalBlue;
+            this.but_Add.Location = new System.Drawing.Point(260, 117);
+            this.but_Add.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.but_Add.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.but_Add.LookAndFeel.SkinName = "Office 2010 Black";
             this.but_Add.LookAndFeel.UseDefaultLookAndFeel = false;
             this.but_Add.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.but_Add.Name = "but_Add";
-            this.but_Add.Size = new System.Drawing.Size(110, 36);
+            this.but_Add.Size = new System.Drawing.Size(124, 36);
             this.but_Add.TabIndex = 294;
             this.but_Add.Text = "Thêm Mới";
             this.but_Add.ToolTipTitle = "Ctrl +S";
@@ -172,6 +172,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NHÓM TÀI KHOẢN";
+            this.Load += new System.EventHandler(this.frm_NewAccountingAccountsGroup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_AAGroupName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_AAGroupId.Properties)).EndInit();
             this.ResumeLayout(false);

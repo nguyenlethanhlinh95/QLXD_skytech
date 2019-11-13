@@ -20,9 +20,9 @@ namespace PhanMemQuanLyCongTrinh
         string fileName;
 
         public Int64 counstructionItemId { get; set; }
-        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus();
-        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus();
-        BUS.BuildingContractorBus buildingContractorBus = new BUS.BuildingContractorBus();
+        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus( );
+        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus( );
+        BUS.BuildingContractorBus buildingContractorBus = new BUS.BuildingContractorBus( );
 
         public frm_UpdateConstructionItem()
         {
@@ -30,64 +30,76 @@ namespace PhanMemQuanLyCongTrinh
         }
         private void loadConstructionItem()
         {
-            var constructionItem = constructionItemBus.getConstructionItem(counstructionItemId);
-            txt_ContructionItemId.Text = constructionItem.GetType().GetProperty("construction_item_custom").GetValue(constructionItem, null).ToString();
-            txt_name.Text = constructionItem.GetType().GetProperty("construction_item_name").GetValue(constructionItem, null).ToString();
-            lke_Constraction.EditValue = constructionItem.GetType().GetProperty("construction_id").GetValue(constructionItem, null).ToString();
-            lke_buildingContractor.EditValue = constructionItem.GetType().GetProperty("building_contractor_id").GetValue(constructionItem, null).ToString();
-
-            txt_ContractNumber.Text = constructionItem.GetType().GetProperty("construction_contract_number").GetValue(constructionItem, null).ToString();
-
-            decimal money = Convert.ToDecimal(constructionItem.GetType().GetProperty("construction_item_total_price").GetValue(constructionItem, null).ToString());
-            txt_Price.Text = money.ToString("0");
-
-
-            txt_file.Text = constructionItem.GetType().GetProperty("construction_item_file_name").GetValue(constructionItem, null).ToString();
-
-            var brimary = constructionItem.GetType().GetProperty("construction_item_image").GetValue(constructionItem, null);
-            if (brimary != null)
+            try
             {
-                byte[] array = (brimary as System.Data.Linq.Binary).ToArray();
-                MemoryStream ms = new MemoryStream(array);
-                pic_Logo.Image = Image.FromStream(ms);
-            }
+                var constructionItem = constructionItemBus.getConstructionItem(counstructionItemId);
+                txt_ContructionItemId.Text = constructionItem.GetType( ).GetProperty("construction_item_custom").GetValue(constructionItem, null).ToString( );
+                txt_name.Text = constructionItem.GetType( ).GetProperty("construction_item_name").GetValue(constructionItem, null).ToString( );
+                lke_Constraction.EditValue = constructionItem.GetType( ).GetProperty("construction_id").GetValue(constructionItem, null).ToString( );
+                lke_buildingContractor.EditValue = constructionItem.GetType( ).GetProperty("building_contractor_id").GetValue(constructionItem, null).ToString( );
+
+                txt_ContractNumber.Text = constructionItem.GetType( ).GetProperty("construction_contract_number").GetValue(constructionItem, null).ToString( );
+
+                decimal money = Convert.ToDecimal(constructionItem.GetType( ).GetProperty("construction_item_total_price").GetValue(constructionItem, null).ToString( ));
+                txt_Price.Text = money.ToString("0");
+
+
+                txt_file.Text = constructionItem.GetType( ).GetProperty("construction_item_file_name").GetValue(constructionItem, null).ToString( );
+
+                var brimary = constructionItem.GetType( ).GetProperty("construction_item_image").GetValue(constructionItem, null);
+                if ( brimary != null )
+                {
+                    byte[] array = (brimary as System.Data.Linq.Binary).ToArray( );
+                    MemoryStream ms = new MemoryStream(array);
+                    pic_Logo.Image = Image.FromStream(ms);
+                }
 
 
 
 
-            var startDay = constructionItem.GetType().GetProperty("construction_item_date_start").GetValue(constructionItem, null);
-            if (startDay != null)
-            {
+                var startDay = constructionItem.GetType( ).GetProperty("construction_item_date_start").GetValue(constructionItem, null);
+                if ( startDay != null )
+                {
+                    DateTime day = Convert.ToDateTime(startDay);
+
+                    date_Start.Text = day.ToString("dd/MM/yyyy");
+                }
 
 
-                date_Start.Text = startDay.ToString();
-            }
+                var endDay = constructionItem.GetType( ).GetProperty("construction_item_date_end").GetValue(constructionItem, null);
+                if ( endDay != null )
+                {
+
+                    DateTime day = Convert.ToDateTime(endDay);
+
+                    date_End.Text = day.ToString("dd/MM/yyyy");
+                }
 
 
-            var endDay = constructionItem.GetType().GetProperty("construction_item_date_end").GetValue(constructionItem, null);
-            if (endDay != null)
-            {
+                var guarantee = constructionItem.GetType( ).GetProperty("construction_item_date_end_guarantee").GetValue(constructionItem, null);
+                if ( guarantee != null )
+                {
 
-                date_End.Text = endDay.ToString();
-            }
+                    DateTime day = Convert.ToDateTime(guarantee);
 
+                    date_Guarantee.Text = day.ToString("dd/MM/yyyy");
+                }
 
-            var guarantee = constructionItem.GetType().GetProperty("construction_item_date_end_guarantee").GetValue(constructionItem, null);
-            if (guarantee != null)
-            {
+                var fileNull = constructionItem.GetType( ).GetProperty("construction_item_file").GetValue(constructionItem, null);
 
-                date_Guarantee.Text = guarantee.ToString();
-            }
-
-            var fileNull = constructionItem.GetType().GetProperty("construction_item_file").GetValue(constructionItem, null);
-
-            if (fileNull != null)
-            {
-                byte[] arr = (fileNull as System.Data.Linq.Binary).ToArray();
-                file = arr;
-                fileName = constructionItem.GetType().GetProperty("construction_item_file_name").GetValue(constructionItem, null).ToString();
-            }
+                if ( fileNull != null )
+                {
+                    byte[] arr = (fileNull as System.Data.Linq.Binary).ToArray( );
+                    file = arr;
+                    fileName = constructionItem.GetType( ).GetProperty("construction_item_file_name").GetValue(constructionItem, null).ToString( );
+                }
           
+            }
+            catch(Exception )
+            {
+                messeage.error("Lỗi !");
+            }
+            
 
         }
 
@@ -109,6 +121,8 @@ namespace PhanMemQuanLyCongTrinh
             loadConstructionItem();
             loadConstuction();
             loadBuilding();
+            StyleDevxpressGridControl.autoLookUpEdit(lke_buildingContractor);
+            StyleDevxpressGridControl.autoLookUpEdit(lke_Constraction);
         }
 
         private void but_Exit_Click(object sender, EventArgs e)

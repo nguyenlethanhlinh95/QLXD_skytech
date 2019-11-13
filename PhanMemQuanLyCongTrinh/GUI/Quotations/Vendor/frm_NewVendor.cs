@@ -14,7 +14,7 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_NewVendor : DevExpress.XtraEditors.XtraForm
     {
-        BUS.VendorBus vendorBus = new VendorBus();
+        BUS.VendorBus vendorBus = new VendorBus( );
         public frm_NewVendor()
         {
             InitializeComponent();
@@ -82,7 +82,7 @@ namespace PhanMemQuanLyCongTrinh
        
         private void frm_NewVendor_Load(object sender, EventArgs e)
         {
-
+            this.AcceptButton = btn_Add;
         }
 
         private void btn_Add_Click(object sender, EventArgs e)

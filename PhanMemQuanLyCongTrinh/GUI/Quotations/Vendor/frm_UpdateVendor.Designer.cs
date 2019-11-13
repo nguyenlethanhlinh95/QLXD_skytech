@@ -60,7 +60,7 @@
             this.labelControl16.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl16.Appearance.Options.UseFont = true;
             this.labelControl16.Appearance.Options.UseForeColor = true;
-            this.labelControl16.Location = new System.Drawing.Point(596, 175);
+            this.labelControl16.Location = new System.Drawing.Point(468, 162);
             this.labelControl16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(8, 16);
@@ -73,7 +73,7 @@
             this.labelControl15.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl15.Appearance.Options.UseFont = true;
             this.labelControl15.Appearance.Options.UseForeColor = true;
-            this.labelControl15.Location = new System.Drawing.Point(771, 130);
+            this.labelControl15.Location = new System.Drawing.Point(468, 117);
             this.labelControl15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(8, 16);
@@ -86,7 +86,7 @@
             this.labelControl13.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl13.Appearance.Options.UseFont = true;
             this.labelControl13.Appearance.Options.UseForeColor = true;
-            this.labelControl13.Location = new System.Drawing.Point(596, 83);
+            this.labelControl13.Location = new System.Drawing.Point(468, 70);
             this.labelControl13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(8, 16);
@@ -95,18 +95,18 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(192, 219);
+            this.labelControl3.Location = new System.Drawing.Point(58, 206);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(76, 16);
+            this.labelControl3.Size = new System.Drawing.Size(82, 16);
             this.labelControl3.TabIndex = 368;
             this.labelControl3.Text = "Số Tài Khoản";
             // 
             // txt_BankAccountNumber
             // 
-            this.txt_BankAccountNumber.Location = new System.Drawing.Point(299, 216);
+            this.txt_BankAccountNumber.Location = new System.Drawing.Point(171, 203);
             this.txt_BankAccountNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_BankAccountNumber.Name = "txt_BankAccountNumber";
             this.txt_BankAccountNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
@@ -117,39 +117,39 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(229, 130);
+            this.labelControl1.Location = new System.Drawing.Point(97, 117);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(39, 16);
+            this.labelControl1.Size = new System.Drawing.Size(43, 16);
             this.labelControl1.TabIndex = 367;
             this.labelControl1.Text = "Địa chỉ";
             // 
             // txt_Address
             // 
-            this.txt_Address.Location = new System.Drawing.Point(299, 127);
+            this.txt_Address.Location = new System.Drawing.Point(171, 114);
             this.txt_Address.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_Address.Name = "txt_Address";
             this.txt_Address.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
             this.txt_Address.Properties.Appearance.Options.UseFont = true;
-            this.txt_Address.Size = new System.Drawing.Size(466, 22);
+            this.txt_Address.Size = new System.Drawing.Size(291, 22);
             this.txt_Address.TabIndex = 358;
             // 
             // labelControl10
             // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(210, 175);
+            this.labelControl10.Location = new System.Drawing.Point(74, 162);
             this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(58, 16);
+            this.labelControl10.Size = new System.Drawing.Size(66, 16);
             this.labelControl10.TabIndex = 366;
             this.labelControl10.Text = "Điện thoại";
             // 
             // txt_PhoneNumber
             // 
-            this.txt_PhoneNumber.Location = new System.Drawing.Point(299, 172);
+            this.txt_PhoneNumber.Location = new System.Drawing.Point(171, 159);
             this.txt_PhoneNumber.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_PhoneNumber.Name = "txt_PhoneNumber";
             this.txt_PhoneNumber.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
@@ -169,7 +169,7 @@
             this.btn_Img.Appearance.Options.UseForeColor = true;
             this.btn_Img.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
             this.btn_Img.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Img.ImageOptions.Image")));
-            this.btn_Img.Location = new System.Drawing.Point(1086, 253);
+            this.btn_Img.Location = new System.Drawing.Point(597, 207);
             this.btn_Img.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Img.Name = "btn_Img";
             this.btn_Img.Size = new System.Drawing.Size(100, 23);
@@ -188,14 +188,14 @@
             this.but_Exit.Appearance.Options.UseForeColor = true;
             this.but_Exit.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.but_Exit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("but_Exit.ImageOptions.Image")));
-            this.but_Exit.Location = new System.Drawing.Point(794, 299);
+            this.but_Exit.Location = new System.Drawing.Point(414, 272);
             this.but_Exit.LookAndFeel.SkinMaskColor = System.Drawing.Color.Gray;
             this.but_Exit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Black;
             this.but_Exit.LookAndFeel.SkinName = "Office 2010 Black";
             this.but_Exit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.but_Exit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.but_Exit.Name = "but_Exit";
-            this.but_Exit.Size = new System.Drawing.Size(110, 36);
+            this.but_Exit.Size = new System.Drawing.Size(143, 36);
             this.but_Exit.TabIndex = 362;
             this.but_Exit.Text = "Đóng";
             this.but_Exit.ToolTipTitle = "ESC";
@@ -212,14 +212,14 @@
             this.btn_Update.Appearance.Options.UseForeColor = true;
             this.btn_Update.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Update.ImageOptions.Image")));
-            this.btn_Update.Location = new System.Drawing.Point(646, 299);
+            this.btn_Update.Location = new System.Drawing.Point(228, 272);
             this.btn_Update.LookAndFeel.SkinMaskColor = System.Drawing.Color.RoyalBlue;
             this.btn_Update.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Update.LookAndFeel.SkinName = "Office 2010 Black";
             this.btn_Update.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btn_Update.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(110, 36);
+            this.btn_Update.Size = new System.Drawing.Size(134, 36);
             this.btn_Update.TabIndex = 361;
             this.btn_Update.Text = "Cập Nhật";
             this.btn_Update.ToolTipTitle = "Ctrl +S";
@@ -227,7 +227,7 @@
             // 
             // pic_Logo
             // 
-            this.pic_Logo.Location = new System.Drawing.Point(1041, 77);
+            this.pic_Logo.Location = new System.Drawing.Point(552, 31);
             this.pic_Logo.Name = "pic_Logo";
             this.pic_Logo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pic_Logo.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
@@ -236,18 +236,18 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(154, 83);
+            this.labelControl7.Location = new System.Drawing.Point(25, 70);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(107, 16);
+            this.labelControl7.Size = new System.Drawing.Size(115, 16);
             this.labelControl7.TabIndex = 365;
             this.labelControl7.Text = "Tên Nhà Cung Cấp";
             // 
             // txt_VendorName
             // 
-            this.txt_VendorName.Location = new System.Drawing.Point(299, 80);
+            this.txt_VendorName.Location = new System.Drawing.Point(171, 67);
             this.txt_VendorName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_VendorName.Name = "txt_VendorName";
             this.txt_VendorName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
@@ -257,19 +257,19 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(154, 44);
+            this.labelControl2.Location = new System.Drawing.Point(29, 31);
             this.labelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(102, 16);
+            this.labelControl2.Size = new System.Drawing.Size(111, 16);
             this.labelControl2.TabIndex = 373;
             this.labelControl2.Text = "Mã Nhà Cung Cấp";
             // 
             // txt_VendorId
             // 
             this.txt_VendorId.Enabled = false;
-            this.txt_VendorId.Location = new System.Drawing.Point(299, 41);
+            this.txt_VendorId.Location = new System.Drawing.Point(171, 28);
             this.txt_VendorId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_VendorId.Name = "txt_VendorId";
             this.txt_VendorId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
@@ -281,7 +281,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 380);
+            this.ClientSize = new System.Drawing.Size(789, 336);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txt_VendorId);
             this.Controls.Add(this.labelControl16);
@@ -300,6 +300,7 @@
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.txt_VendorName);
             this.Name = "frm_UpdateVendor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CHĨNH SỬA NHÀ CUNG CẤP";
             this.Load += new System.EventHandler(this.frm_UpdateVendor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_BankAccountNumber.Properties)).EndInit();

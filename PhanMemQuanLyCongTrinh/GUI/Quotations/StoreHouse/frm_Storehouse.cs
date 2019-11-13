@@ -12,7 +12,7 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_Storehouse : DevExpress.XtraEditors.XtraForm
     {
-        BUS.StorehouseBus storehouseBus = new BUS.StorehouseBus();
+        BUS.StorehouseBus storehouseBus = new BUS.StorehouseBus( );
         int index;
         public frm_Storehouse()
         {
@@ -27,7 +27,42 @@ namespace PhanMemQuanLyCongTrinh
         {
             grdc_Storehouse.DataSource = storehouseBus.getAllStorehouse();
         }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case (Keys.N | Keys.Control):
+                    btn_Add.PerformClick();
+                    break;
+                case (Keys.E | Keys.Control):
+                    btn_Edit.PerformClick();
+                    break;
+                case (Keys.Delete | Keys.Control):
+                    btn_Delete.PerformClick();
+                    break;
+                case (Keys.F5 | Keys.Control):
+                    btn_Refesh.PerformClick();
+                    break;
+                //case (Keys.R | Keys.Control):
+                //    btn_.PerformClick( );
+                //    break;
+                case (Keys.F8 | Keys.Control):
+                    btn_Import.PerformClick();
+                    break;
+                case (Keys.F9 | Keys.Control):
+                    btn_Export.PerformClick();
+                    break;
+                case (Keys.P | Keys.Control):
+                    btn_Print.PerformClick();
+                    break;
+                case (Keys.Escape):
+                    btn_Close.PerformClick();
+                    break;
 
+            }
+            // return true;
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void frm_Storehouse_Load(object sender, EventArgs e)
         {
             StyleDevxpressGridControl.styleGridControl(grdc_Storehouse, grdv_Storehouse);
@@ -36,6 +71,7 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_Refesh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            grdv_Storehouse.ClearColumnsFilter();
             loadAllStorehouse();
         }
 
@@ -48,28 +84,30 @@ namespace PhanMemQuanLyCongTrinh
         {
             if (grdv_Storehouse.RowCount > 0)
             {
-                Int64 storehouseId = Convert.ToInt64(grdv_Storehouse.GetRowCellValue(index, "storehouse_id").ToString());
-                string storehouseName = grdv_Storehouse.GetRowCellValue(index, "storehouse_name").ToString();
-
-                bool boolCheckDelete = messeage.info("Bạn Có Muốn Xóa Nhà Cung Cấp '", storehouseName);
-
-                if (boolCheckDelete == true)
+                if (index >= 0)
                 {
-                    bool boolDeleteStorehouse = storehouseBus.deleteStorehouse(storehouseId);
-                    if (boolDeleteStorehouse == true)
+                    Int64 storehouseId = Convert.ToInt64(grdv_Storehouse.GetRowCellValue(index, "storehouse_id").ToString());
+                    string storehouseName = grdv_Storehouse.GetRowCellValue(index, "storehouse_name").ToString();
+
+                    bool boolCheckDelete = messeage.info("Bạn Có Muốn Xóa Nhà Cung Cấp '", storehouseName);
+
+                    if (boolCheckDelete == true)
                     {
-                        messeage.success("Xóa Nhà Kho Thành Công!");
+                        bool boolDeleteStorehouse = storehouseBus.deleteStorehouse(storehouseId);
+                        if (boolDeleteStorehouse == true)
+                        {
+                            messeage.success("Xóa Nhà Kho Thành Công!");
 
 
-                        loadAllStorehouse();
-                    }
-                    else
-                    {
-                        messeage.error("Xóa Nhà Cung Cấp Không Thất Bại!");
+                            loadAllStorehouse();
+                        }
+                        else
+                        {
+                            messeage.error("Xóa Nhà Cung Cấp Không Thất Bại!");
 
+                        }
                     }
                 }
-
             }
             else
             {
@@ -94,10 +132,13 @@ namespace PhanMemQuanLyCongTrinh
         {
             if (grdv_Storehouse.RowCount > 0)
             {
-                frm_UpdateStorehouse frm = new frm_UpdateStorehouse();
-                frm.FormClosed += new FormClosedEventHandler(dongform);
-                frm.storehouseId = Convert.ToInt64(grdv_Storehouse.GetRowCellValue(index, "storehouse_id").ToString());
-                frm.Show();
+                if (index >= 0)
+                {
+                    frm_UpdateStorehouse frm = new frm_UpdateStorehouse();
+                    frm.FormClosed += new FormClosedEventHandler(dongform);
+                    frm.storehouseId = Convert.ToInt64(grdv_Storehouse.GetRowCellValue(index, "storehouse_id").ToString());
+                    frm.Show();
+                }
             }
             else
             {

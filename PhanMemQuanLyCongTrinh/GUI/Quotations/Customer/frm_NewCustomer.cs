@@ -13,20 +13,16 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_NewCustomer : DevExpress.XtraEditors.XtraForm
     {
-        BUS.CustomerBus customerBus;
+        BUS.CustomerBus customerBus = new BUS.CustomerBus( );
 
-        BUS.CustomerGroupBus customerGroupBus;
-        public Int64 customerId
-        {
-            get;
-            set;
-        }
+        BUS.CustomerGroupBus customerGroupBus = new BUS.CustomerGroupBus( );
+        
 
         public frm_NewCustomer()
         {
             InitializeComponent();
-            customerBus = new BUS.CustomerBus();
-            customerGroupBus = new BUS.CustomerGroupBus();
+           
+           
         }
 
         
@@ -40,54 +36,7 @@ namespace PhanMemQuanLyCongTrinh
             }
         }
 
-        #region Load Customer
-        public void loadDetailCustomer()
-        {
-            var customer = customerBus.getCustomer(customerId);
-            txt_CustomerId.Text = customer.GetType().GetProperty("customer_id_custom").GetValue(customer, null).ToString();
-            txt_CustomerName.Text = customer.GetType().GetProperty("customer_name").GetValue(customer, null).ToString();
-            txt_BankAccountNumber.Text = customer.GetType().GetProperty("custome_bank_account_number").GetValue(customer, null).ToString();
-            txt_Address.Text = customer.GetType().GetProperty("customer_address").GetValue(customer, null).ToString();
-            txt_Description.Text = customer.GetType().GetProperty("customer_description").GetValue(customer, null).ToString();
-            txt_Fax.Text = customer.GetType().GetProperty("custome_tax_code").GetValue(customer, null).ToString();
-            txt_Liabilities.Text = customer.GetType().GetProperty("customer_liabilities").GetValue(customer, null).ToString();
-            txt_PhoneNumber.Text = customer.GetType().GetProperty("custome_phone").GetValue(customer, null).ToString();
-            txt_Email.Text = customer.GetType().GetProperty("customer_email").GetValue(customer, null).ToString();
-            var boolGender = customer.GetType().GetProperty("custome_gender").GetValue(customer, null).ToString();
-            var birthday=customer.GetType().GetProperty("custome_date_of_birth").GetValue(customer, null);
-            if (birthday != null)
-            date_BirthDay.Text = customer.GetType().GetProperty("custome_date_of_birth").GetValue(customer, null).ToString();
-
-            lke_CustomerGroup.EditValue = customer.GetType().GetProperty("customer_group_id").GetValue(customer, null).ToString();
-
-            //load image
-            
-            var brimary =   customer.GetType().GetProperty("customer_image").GetValue(customer, null);
-            if (brimary != null)
-            {
-                byte[] array = (brimary as System.Data.Linq.Binary).ToArray();
-                MemoryStream ms = new MemoryStream(array);
-                pic_Logo.Image = Image.FromStream(ms);
-            }
-            
-
-
-
-            if (boolGender == "true")
-            {
-                cbb_Gender.SelectedItem = "Nam";
-            }
-            else
-            {
-                cbb_Gender.SelectedItem = "Nữ";
-            }
-
-
-            
-
-
-        }
-        #endregion 
+       
 
         #region Load Customer Group
         public void loadComboboxCustomerGroup()
@@ -100,22 +49,11 @@ namespace PhanMemQuanLyCongTrinh
 
         private void frm_NewCustomer_Load(object sender, EventArgs e)
         {
-          
-            if (customerId == 0)
-            {
-                btn_Update.Text = "Thêm mới";
-                lbl1.Visible = false;
-                txt_CustomerId.Visible = false;
-                lblMaKhachHang.Visible = false;
-            }
-            else
-            {
-                btn_Update.Text = "Cập nhật";
-                txt_CustomerId.Enabled = false;
-                loadDetailCustomer();
-                
-            }
+
+            StyleDevxpressGridControl.styleTextBoxVND(txt_Liabilities);
+            StyleDevxpressGridControl.autoLookUpEdit(lke_CustomerGroup);
             loadComboboxCustomerGroup();
+            this.AcceptButton = btn_Update;
         }
 
 
@@ -124,7 +62,7 @@ namespace PhanMemQuanLyCongTrinh
         {
             frm_NewCustomerGroup frm = new frm_NewCustomerGroup();
             frm.FormClosed += new FormClosedEventHandler(dongformGroup);
-            frm.customerGroupId = 0;
+           
             frm.ShowDialog();
         }
 
@@ -205,68 +143,7 @@ namespace PhanMemQuanLyCongTrinh
         }
         #endregion
 
-        #region update Customer Group
-        public void updateCustomer()
-        {
-            DTO.ST_customer updateCustomer = new DTO.ST_customer();
-            updateCustomer.customer_id = customerId;
-            updateCustomer.customer_name = txt_CustomerName.Text;
-            updateCustomer.custome_bank_account_number = txt_BankAccountNumber.Text;
-            if (date_BirthDay.Text != "")
-            {
-                DateTime date = Convert.ToDateTime(date_BirthDay.Text);
-                date.ToString("yy/MM/dd");
-                updateCustomer.custome_date_of_birth = date;
-            }
-            var gender = cbb_Gender.SelectedItem;
-            if (gender == "Nam")
-            {
-                updateCustomer.custome_gender = true;
-            }
-            else
-            {
-                updateCustomer.custome_gender = false;
-            }
-
-            updateCustomer.custome_phone = txt_PhoneNumber.Text;
-            updateCustomer.custome_tax_code = txt_Fax.Text;
-            updateCustomer.customer_address = txt_Address.Text;
-            updateCustomer.customer_created_date = DateTime.Now;
-            updateCustomer.customer_description = txt_Description.Text;
-            updateCustomer.customer_email = txt_Email.Text;
-            updateCustomer.customer_liabilities = txt_Liabilities.Text;
-            updateCustomer.employee_created = 1;
-
-
-            // get value lookup edit customer group
-
-            updateCustomer.customer_group_id = Convert.ToInt64(lke_CustomerGroup.EditValue);
-
-            //get value picter customer pricter
-            if (pic_Logo.Image != null)
-            {
-                byte[] fileByte = converImageToBirany(pic_Logo.Image);
-                System.Data.Linq.Binary fileBinary = new System.Data.Linq.Binary(fileByte);
-                updateCustomer.customer_image = fileBinary;
-
-            }
-            
-            bool boolUpdateCustomer = customerBus.updateCustomer(updateCustomer);
-            if (boolUpdateCustomer == true)
-            {
-                messeage.success("Chĩnh Sửa Thành Công!");
-                
-            }
-            else
-            {
-                messeage.error("Không Thể Chĩnh Sửa!");
-            }   
-
-
-
-        }
-
-        #endregion
+        
 
 
         public string checkNull()
@@ -327,10 +204,7 @@ namespace PhanMemQuanLyCongTrinh
 
             if (check == "true")
             {
-                if (customerId == 0)
                     insertCustomer();
-                else
-                    updateCustomer();
             }  
             else
             {

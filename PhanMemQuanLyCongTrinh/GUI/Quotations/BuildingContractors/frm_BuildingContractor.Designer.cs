@@ -30,22 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_BuildingContractor));
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip9 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem9 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip10 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem10 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip11 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem11 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip12 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem12 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip13 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem13 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip14 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem14 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip15 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem15 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip16 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem16 = new DevExpress.Utils.ToolTipTitleItem();
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar7 = new DevExpress.XtraBars.Bar();
             this.btn_Add = new DevExpress.XtraBars.BarButtonItem();
@@ -176,9 +176,9 @@
             this.btn_Add.ItemInMenuAppearance.Normal.Options.UseFont = true;
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem1.Text = "Ctrl + N";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            this.btn_Add.SuperTip = superToolTip1;
+            toolTipTitleItem9.Text = "Ctrl + N";
+            superToolTip9.Items.Add(toolTipTitleItem9);
+            this.btn_Add.SuperTip = superToolTip9;
             this.btn_Add.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Add_ItemClick);
             // 
             // barStaticItem4
@@ -203,9 +203,9 @@
             this.btn_Edit.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem2.Text = "Ctrl + E";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            this.btn_Edit.SuperTip = superToolTip2;
+            toolTipTitleItem10.Text = "Ctrl + E";
+            superToolTip10.Items.Add(toolTipTitleItem10);
+            this.btn_Edit.SuperTip = superToolTip10;
             this.btn_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Edit_ItemClick);
             // 
             // barStaticItem2
@@ -230,9 +230,9 @@
             this.btn_Delete.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(80, 0);
-            toolTipTitleItem3.Text = "Ctrl + Delete\r\n";
-            superToolTip3.Items.Add(toolTipTitleItem3);
-            this.btn_Delete.SuperTip = superToolTip3;
+            toolTipTitleItem11.Text = "Ctrl + Delete\r\n";
+            superToolTip11.Items.Add(toolTipTitleItem11);
+            this.btn_Delete.SuperTip = superToolTip11;
             this.btn_Delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Delete_ItemClick);
             // 
             // barStaticItem5
@@ -257,9 +257,9 @@
             this.btn_Refesh.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Refesh.Name = "btn_Refesh";
             this.btn_Refesh.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem4.Text = "Ctrl + F5\r\n";
-            superToolTip4.Items.Add(toolTipTitleItem4);
-            this.btn_Refesh.SuperTip = superToolTip4;
+            toolTipTitleItem12.Text = "Ctrl + F5\r\n";
+            superToolTip12.Items.Add(toolTipTitleItem12);
+            this.btn_Refesh.SuperTip = superToolTip12;
             this.btn_Refesh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Refesh_ItemClick);
             // 
             // barStaticItem6
@@ -284,9 +284,9 @@
             this.btn_Import.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Import.Name = "btn_Import";
             this.btn_Import.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem5.Text = "Ctrl + F7";
-            superToolTip5.Items.Add(toolTipTitleItem5);
-            this.btn_Import.SuperTip = superToolTip5;
+            toolTipTitleItem13.Text = "Ctrl + F7";
+            superToolTip13.Items.Add(toolTipTitleItem13);
+            this.btn_Import.SuperTip = superToolTip13;
             // 
             // barStaticItem7
             // 
@@ -310,9 +310,9 @@
             this.btn_Export.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Export.Name = "btn_Export";
             this.btn_Export.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem6.Text = "Ctrl + F8";
-            superToolTip6.Items.Add(toolTipTitleItem6);
-            this.btn_Export.SuperTip = superToolTip6;
+            toolTipTitleItem14.Text = "Ctrl + F8";
+            superToolTip14.Items.Add(toolTipTitleItem14);
+            this.btn_Export.SuperTip = superToolTip14;
             // 
             // barStaticItem8
             // 
@@ -336,9 +336,9 @@
             this.btn_Print.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Print.Name = "btn_Print";
             this.btn_Print.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem7.Text = "Ctrl + P";
-            superToolTip7.Items.Add(toolTipTitleItem7);
-            this.btn_Print.SuperTip = superToolTip7;
+            toolTipTitleItem15.Text = "Ctrl + P";
+            superToolTip15.Items.Add(toolTipTitleItem15);
+            this.btn_Print.SuperTip = superToolTip15;
             // 
             // barStaticItem9
             // 
@@ -362,9 +362,9 @@
             this.btn_Close.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(100, 0);
-            toolTipTitleItem8.Text = "Esc";
-            superToolTip8.Items.Add(toolTipTitleItem8);
-            this.btn_Close.SuperTip = superToolTip8;
+            toolTipTitleItem16.Text = "Esc";
+            superToolTip16.Items.Add(toolTipTitleItem16);
+            this.btn_Close.SuperTip = superToolTip16;
             this.btn_Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Close_ItemClick);
             // 
             // bar8
@@ -557,12 +557,12 @@
             // 
             // building_contractor_liabilities
             // 
-            this.building_contractor_liabilities.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.building_contractor_liabilities.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.building_contractor_liabilities.AppearanceCell.Options.UseFont = true;
             this.building_contractor_liabilities.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.building_contractor_liabilities.AppearanceHeader.Options.UseFont = true;
             this.building_contractor_liabilities.Caption = "Công Nợ";
-            this.building_contractor_liabilities.DisplayFormat.FormatString = "{0:n0}";
+            this.building_contractor_liabilities.DisplayFormat.FormatString = "{0:n0} VNĐ";
             this.building_contractor_liabilities.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.building_contractor_liabilities.FieldName = "building_contractor_liabilities";
             this.building_contractor_liabilities.Name = "building_contractor_liabilities";

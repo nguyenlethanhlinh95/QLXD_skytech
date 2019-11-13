@@ -12,8 +12,8 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_Constructions : DevExpress.XtraEditors.XtraForm
     {
-        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus();
-        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus();
+        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus( );
+        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus( );
         int indexConstruction;
         int indexConstructionItem;
 
@@ -35,7 +35,42 @@ namespace PhanMemQuanLyCongTrinh
             StyleDevxpressGridControl.styleGridControl(grdc_ConstructionItem, grdv_ConstructionItem);
             loadContruction();
         }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case (Keys.N | Keys.Control):
+                    btn_Add.PerformClick();
+                    break;
+                case (Keys.E | Keys.Control):
+                    btn_Edit.PerformClick();
+                    break;
+                case (Keys.Delete | Keys.Control):
+                    btn_Delete.PerformClick();
+                    break;
+                case (Keys.F5 | Keys.Control):
+                    btn_Refesh.PerformClick();
+                    break;
+                //case (Keys.R | Keys.Control):
+                //    btn_.PerformClick( );
+                //    break;
+                case (Keys.F8 | Keys.Control):
+                    btn_Import.PerformClick();
+                    break;
+                case (Keys.F9 | Keys.Control):
+                    btn_Export.PerformClick();
+                    break;
+                case (Keys.P | Keys.Control):
+                    btn_Print.PerformClick();
+                    break;
+                case (Keys.Escape):
+                    btn_Close.PerformClick();
+                    break;
 
+            }
+            // return true;
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void grdv_Construction_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             indexConstruction = e.FocusedRowHandle;

@@ -90,21 +90,21 @@
             // 
             // lbl_CustomerGroupName
             // 
-            this.lbl_CustomerGroupName.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CustomerGroupName.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CustomerGroupName.Appearance.Options.UseFont = true;
             this.lbl_CustomerGroupName.Location = new System.Drawing.Point(76, 80);
             this.lbl_CustomerGroupName.Name = "lbl_CustomerGroupName";
-            this.lbl_CustomerGroupName.Size = new System.Drawing.Size(92, 16);
+            this.lbl_CustomerGroupName.Size = new System.Drawing.Size(100, 16);
             this.lbl_CustomerGroupName.TabIndex = 298;
             this.lbl_CustomerGroupName.Text = "Địa Chỉ Nhà Kho";
             // 
             // lbl_CustomerGroupId
             // 
-            this.lbl_CustomerGroupId.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CustomerGroupId.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CustomerGroupId.Appearance.Options.UseFont = true;
             this.lbl_CustomerGroupId.Location = new System.Drawing.Point(95, 48);
             this.lbl_CustomerGroupId.Name = "lbl_CustomerGroupId";
-            this.lbl_CustomerGroupId.Size = new System.Drawing.Size(73, 16);
+            this.lbl_CustomerGroupId.Size = new System.Drawing.Size(79, 16);
             this.lbl_CustomerGroupId.TabIndex = 297;
             this.lbl_CustomerGroupId.Text = "Tên Nhà Kho";
             // 
@@ -126,7 +126,7 @@
             this.but_Exit.LookAndFeel.UseDefaultLookAndFeel = false;
             this.but_Exit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.but_Exit.Name = "but_Exit";
-            this.but_Exit.Size = new System.Drawing.Size(110, 36);
+            this.but_Exit.Size = new System.Drawing.Size(132, 36);
             this.but_Exit.TabIndex = 296;
             this.but_Exit.Text = "Đóng";
             this.but_Exit.ToolTipTitle = "ESC";
@@ -150,7 +150,7 @@
             this.but_Add.LookAndFeel.UseDefaultLookAndFeel = false;
             this.but_Add.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.but_Add.Name = "but_Add";
-            this.but_Add.Size = new System.Drawing.Size(110, 36);
+            this.but_Add.Size = new System.Drawing.Size(136, 36);
             this.but_Add.TabIndex = 295;
             this.but_Add.Text = "Cập Nhật";
             this.but_Add.ToolTipTitle = "Ctrl +S";
@@ -168,11 +168,11 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(95, 15);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(73, 16);
+            this.labelControl2.Size = new System.Drawing.Size(79, 16);
             this.labelControl2.TabIndex = 303;
             this.labelControl2.Text = "Tên Nhà Kho";
             // 
@@ -192,6 +192,7 @@
             this.Controls.Add(this.but_Exit);
             this.Controls.Add(this.but_Add);
             this.Name = "frm_UpdateStorehouse";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CHỈNH SỬA NHÀ KHO";
             this.Load += new System.EventHandler(this.frm_UpdateStorehouse_Load);

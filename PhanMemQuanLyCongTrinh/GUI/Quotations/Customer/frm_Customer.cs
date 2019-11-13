@@ -14,8 +14,8 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_Customer : DevExpress.XtraEditors.XtraForm
     {
-        BUS.CustomerBus customerBus = new BUS.CustomerBus();
-        BUS.CustomerGroupBus customerGroupBus = new BUS.CustomerGroupBus();
+        BUS.CustomerBus customerBus = new BUS.CustomerBus( );
+        BUS.CustomerGroupBus customerGroupBus = new BUS.CustomerGroupBus( );
 
      
         public int index;
@@ -38,7 +38,42 @@ namespace PhanMemQuanLyCongTrinh
             grdc_CustomerGroup.DataSource = customerGroupBus.getAllCustomerGroup();
         }
 
-        
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case (Keys.N | Keys.Control):
+                    btn_Add.PerformClick();
+                    break;
+                case (Keys.E | Keys.Control):
+                    btn_Edit.PerformClick();
+                    break;
+                case (Keys.Delete | Keys.Control):
+                    btn_Delete.PerformClick();
+                    break;
+                case (Keys.F5 | Keys.Control):
+                    btn_Refesh.PerformClick();
+                    break;
+                //case (Keys.R | Keys.Control):
+                //    btn_.PerformClick( );
+                //    break;
+                case (Keys.F8 | Keys.Control):
+                    btn_Import.PerformClick();
+                    break;
+                case (Keys.F9 | Keys.Control):
+                    btn_Export.PerformClick();
+                    break;
+                case (Keys.P | Keys.Control):
+                    btn_Print.PerformClick();
+                    break;
+                case (Keys.Escape):
+                    btn_Close.PerformClick();
+                    break;
+
+            }
+            // return true;
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void frm_CustomerGroup_Load(object sender, EventArgs e)
         {
             StyleDevxpressGridControl.styleGridControl(grdc_Customer, grdv_Customer);
@@ -59,11 +94,14 @@ namespace PhanMemQuanLyCongTrinh
         {
             if (grdv_Customer.RowCount > 0)
             {
-                Int64 customerId = Convert.ToInt64(grdv_Customer.GetRowCellValue(index, "customer_id").ToString());
-                frm_NewCustomer frm = new frm_NewCustomer();
-                frm.FormClosed += new FormClosedEventHandler(dongform);
-                frm.customerId = customerId;
-                frm.ShowDialog();
+                if (index >= 0)
+                {
+                    Int64 customerId = Convert.ToInt64(grdv_Customer.GetRowCellValue(index, "customer_id").ToString());
+                    frm_UpdateCustomer frm = new frm_UpdateCustomer();
+                    frm.FormClosed += new FormClosedEventHandler(dongform);
+                    frm.customerId = customerId;
+                    frm.ShowDialog();
+                }
             }
             else
             {
@@ -74,7 +112,7 @@ namespace PhanMemQuanLyCongTrinh
         {
             frm_NewCustomerGroup frm = new frm_NewCustomerGroup();
             frm.FormClosed += new FormClosedEventHandler(dongformGroup);
-            frm.customerGroupId = 0;
+          
             frm.ShowDialog();
         }
 
@@ -82,11 +120,14 @@ namespace PhanMemQuanLyCongTrinh
         {
             if (grdv_CustomerGroup.RowCount > 0)
             {
-                Int64 customerGroupId = Convert.ToInt64(grdv_CustomerGroup.GetRowCellValue(indexCustomerGroup, "customer_group_id").ToString());
-            frm_NewCustomerGroup frm = new frm_NewCustomerGroup();
-            frm.FormClosed += new FormClosedEventHandler(dongformGroup);
-            frm.customerGroupId = customerGroupId;
-            frm.ShowDialog();
+                if (indexCustomerGroup >= 0)
+                {
+                    Int64 customerGroupId = Convert.ToInt64(grdv_CustomerGroup.GetRowCellValue(indexCustomerGroup, "customer_group_id").ToString());
+                    frm_UpdateCustomerGroup frm = new frm_UpdateCustomerGroup();
+                    frm.FormClosed += new FormClosedEventHandler(dongformGroup);
+                    frm.customerGroupId = customerGroupId;
+                    frm.ShowDialog();
+                }
             }
             else
             {
@@ -113,28 +154,31 @@ namespace PhanMemQuanLyCongTrinh
         {
              if (grdv_Customer.RowCount > 0)
             {
-                Int64 customerId = Convert.ToInt64(grdv_Customer.GetRowCellValue(index, "customer_id").ToString());
-                var CustomerName =grdv_Customer.GetRowCellValue(index, "customer_name").ToString();
 
-               bool boolCheckDelete = messeage.info("Bạn Có Muốn Xóa Khách Hàng '", CustomerName);
+                if (index >= 0)
+                {
+                    Int64 customerId = Convert.ToInt64(grdv_Customer.GetRowCellValue(index, "customer_id").ToString());
+                    var CustomerName = grdv_Customer.GetRowCellValue(index, "customer_name").ToString();
 
-               if (boolCheckDelete == true)
-               {
-                   bool boolDeleteCustomer = customerBus.deleteCustomer(customerId);
-                   if (boolDeleteCustomer == true)
-                   {
-                       messeage.success("Xóa Khách hàng Thành Công!");
-                       customerId = 0;
-                       loadCustomer();   
-                   }
-                   else
-                   {
-                       messeage.error("Xóa Khách hàng Không Thành Công!");
-                       
-                   }
-               }
+                    bool boolCheckDelete = messeage.info("Bạn Có Muốn Xóa Khách Hàng '", CustomerName);
 
-               
+                    if (boolCheckDelete == true)
+                    {
+                        bool boolDeleteCustomer = customerBus.deleteCustomer(customerId);
+                        if (boolDeleteCustomer == true)
+                        {
+                            messeage.success("Xóa Khách hàng Thành Công!");
+                            customerId = 0;
+                            loadCustomer();
+                        }
+                        else
+                        {
+                            messeage.error("Xóa Khách hàng Không Thành Công!");
+
+                        }
+                    }
+                }
+                
             }
              else
              {
@@ -160,6 +204,7 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_Refesh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            grdv_Customer.ClearColumnsFilter();
             loadCustomer();
         }
 
@@ -172,47 +217,50 @@ namespace PhanMemQuanLyCongTrinh
         {
             if (grdv_CustomerGroup.RowCount > 0)
             {
-                Int64 customerGroupId = Convert.ToInt64(grdv_CustomerGroup.GetRowCellValue(indexCustomerGroup, "customer_group_id").ToString());
-               
-                
-                var customerGroupName = grdv_CustomerGroup.GetRowCellValue(indexCustomerGroup, "customer_group_name").ToString();
-                if (customerGroupId != 1)
+                if (indexCustomerGroup >= 0)
                 {
-                    bool boolCheckDeleteGroup = messeage.info("Bạn Có Muốn Xóa Nhóm Khách Hàng '", customerGroupName);
+                    Int64 customerGroupId = Convert.ToInt64(grdv_CustomerGroup.GetRowCellValue(indexCustomerGroup, "customer_group_id").ToString());
 
-                    if (boolCheckDeleteGroup == true)
+
+                    var customerGroupName = grdv_CustomerGroup.GetRowCellValue(indexCustomerGroup, "customer_group_name").ToString();
+                    if (customerGroupId != 1)
                     {
+                        bool boolCheckDeleteGroup = messeage.info("Bạn Có Muốn Xóa Nhóm Khách Hàng '", customerGroupName);
 
-                        bool changeGroupId = customerBus.changeIdParent(customerGroupId);
-                        if (changeGroupId == true)
+                        if (boolCheckDeleteGroup == true)
                         {
-                            bool boolDeleteCustomerGroup = customerGroupBus.deleteCustomerGroup(customerGroupId);
-                            if (boolDeleteCustomerGroup == true)
+
+                            bool changeGroupId = customerBus.changeIdParent(customerGroupId);
+                            if (changeGroupId == true)
                             {
+                                bool boolDeleteCustomerGroup = customerGroupBus.deleteCustomerGroup(customerGroupId);
+                                if (boolDeleteCustomerGroup == true)
+                                {
 
-                                messeage.success("Xóa Nhóm Khách hàng Thành Công!");
-                                loadCustomerGroup();
+                                    messeage.success("Xóa Nhóm Khách hàng Thành Công!");
+                                    loadCustomerGroup();
 
+                                }
+                                else
+                                {
+                                    messeage.error("Xóa Nhóm Khách hàng Không Thành Công!");
+
+                                }
                             }
                             else
                             {
                                 messeage.error("Xóa Nhóm Khách hàng Không Thành Công!");
 
                             }
-                        }
-                        else
-                        {
-                            messeage.error("Xóa Nhóm Khách hàng Không Thành Công!");
 
                         }
-                        
+
+
                     }
-
-
-                }
-                else
-                {
-                    messeage.error("Nhóm Khách Hàng Này Không Thể Xóa");
+                    else
+                    {
+                        messeage.error("Nhóm Khách Hàng Này Không Thể Xóa");
+                    }
                 }
             }
             else

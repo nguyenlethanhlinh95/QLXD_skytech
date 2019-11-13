@@ -182,6 +182,30 @@ namespace PhanMemQuanLyCongTrinh.DAO
             
         }
 
+        public bool changeSuppliesWithVendor(Int64 vendorId)
+        {
+            try
+            {
+                var datasource = from u in db.ST_supplies
+                                 where u.vendor_id == vendorId
+                                 select u;
+                if ( datasource != null )
+                {
+                    foreach ( var item in datasource )
+                    {
+                        item.vendor_id = 1;
+                    }
+                    db.SubmitChanges( );
+                    return true;
+                }
+                return true;
+            }
+            catch ( Exception )
+            {
+                return false;
+            }
+        }
+
 
     }
 }

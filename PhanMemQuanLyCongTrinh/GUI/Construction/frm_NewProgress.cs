@@ -14,9 +14,9 @@ namespace PhanMemQuanLyCongTrinh
     public partial class frm_NewProgress : DevExpress.XtraEditors.XtraForm
     {
 
-        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus();
-        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus();
-        BUS.ProgressBus progressBus = new BUS.ProgressBus();
+        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus( );
+        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus( );
+        BUS.ProgressBus progressBus = new BUS.ProgressBus( );
 
         public frm_NewProgress()
         {
@@ -38,6 +38,7 @@ namespace PhanMemQuanLyCongTrinh
         private void frm_NewProgress_Load(object sender, EventArgs e)
         {
             loadConstruction();
+            this.AcceptButton = btn_Add;
         }
 
         private void lke_Constraction_EditValueChanged(object sender, EventArgs e)
@@ -181,6 +182,11 @@ namespace PhanMemQuanLyCongTrinh
                     pic_Logo.Image = Image.FromFile(filename);
                 }
             }
+        }
+
+        private void but_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
     }
