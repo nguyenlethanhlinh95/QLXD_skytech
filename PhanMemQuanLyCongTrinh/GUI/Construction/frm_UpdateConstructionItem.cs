@@ -18,7 +18,7 @@ namespace PhanMemQuanLyCongTrinh
 
         public byte[] file;
         string fileName;
-
+        bool isChooseFile = false;
         public Int64 counstructionItemId { get; set; }
         BUS.ConstructionBus constructionBus = new BUS.ConstructionBus( );
         BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus( );
@@ -43,8 +43,6 @@ namespace PhanMemQuanLyCongTrinh
                 decimal money = Convert.ToDecimal(constructionItem.GetType( ).GetProperty("construction_item_total_price").GetValue(constructionItem, null).ToString( ));
                 txt_Price.Text = StyleDevxpressGridControl.convertDecimaToNumberic(money);
 
-
-                txt_file.Text = constructionItem.GetType( ).GetProperty("construction_item_file_name").GetValue(constructionItem, null).ToString( );
 
                 var brimary = constructionItem.GetType( ).GetProperty("construction_item_image").GetValue(constructionItem, null);
                 if ( brimary != null )
@@ -99,6 +97,10 @@ namespace PhanMemQuanLyCongTrinh
                     byte[] arr = (fileNull as System.Data.Linq.Binary).ToArray( );
                     file = arr;
                     fileName = constructionItem.GetType( ).GetProperty("construction_item_file_name").GetValue(constructionItem, null).ToString( );
+
+                    txt_file.Text = constructionItem.GetType().GetProperty("construction_item_file_name").GetValue(constructionItem, null).ToString();
+
+                    
                 }
           
             }
@@ -184,11 +186,7 @@ namespace PhanMemQuanLyCongTrinh
                 txt_Price.Focus();
                 return "Vui Lòng Nhập Ngày Kết Thúc!";
             }
-            else if (file == null)
-            {
-                btn_OpenFile.Focus();
-                return "File Bạn không Có!";
-            }
+            
 
             else
             {
@@ -243,12 +241,17 @@ namespace PhanMemQuanLyCongTrinh
                 dateEnd.ToString("yy/MM/dd");
                 newConstructionItem.construction_item_date_end = dateEnd;
             }
-
+            if (dte_NgayBDBaoHanh.Text != "")
+            {
+                DateTime dateGuaranteeStart = Convert.ToDateTime(dte_NgayBDBaoHanh.Text);
+                dateGuaranteeStart.ToString("yy/MM/dd");
+                newConstructionItem.construction_item_date_start_guarantee = dateGuaranteeStart;
+            }
             if (dte_NgayKTBaoHanh.Text != "")
             {
-                DateTime dateGuarantee = Convert.ToDateTime(dte_NgayKTBaoHanh.Text);
-                dateGuarantee.ToString("yy/MM/dd");
-                newConstructionItem.construction_item_date_end_guarantee = dateGuarantee;
+                DateTime dateGuaranteeEnd = Convert.ToDateTime(dte_NgayKTBaoHanh.Text);
+                dateGuaranteeEnd.ToString("yy/MM/dd");
+                newConstructionItem.construction_item_date_end_guarantee = dateGuaranteeEnd;
             }
 
 
@@ -317,17 +320,22 @@ namespace PhanMemQuanLyCongTrinh
                 foreach (string fileName1 in openFileDialog.FileNames)
                 {
                     txt_file.Text = fileName1;
-
+                    isChooseFile = true;
                 }
             }
 
             string filepath = txt_file.Text;
-            fileName = Path.GetFileName(filepath);
-            FileStream fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            file = br.ReadBytes((Int32)fs.Length);
-            br.Close();
-            fs.Close();
+            if (isChooseFile == true)
+            {
+                fileName = Path.GetFileName(filepath);
+                FileStream fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(fs);
+                file = br.ReadBytes((Int32)fs.Length);
+                isChooseFile = false;
+                br.Close();
+                fs.Close();
+            }
+
 
         }
 

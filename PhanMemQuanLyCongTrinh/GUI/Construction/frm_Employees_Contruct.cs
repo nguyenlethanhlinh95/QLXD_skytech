@@ -299,6 +299,18 @@ namespace PhanMemQuanLyCongTrinh
 
         }
 
+
+
+        private void btn_Import_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
         
         
 

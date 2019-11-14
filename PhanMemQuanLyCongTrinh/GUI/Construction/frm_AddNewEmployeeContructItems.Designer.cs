@@ -180,6 +180,7 @@
             this.grdc_em.TabIndex = 18;
             this.grdc_em.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grdv_em});
+            this.grdc_em.Click += new System.EventHandler(this.grdc_em_Click);
             // 
             // grdv_em
             // 

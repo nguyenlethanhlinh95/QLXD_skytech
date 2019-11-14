@@ -124,12 +124,6 @@ namespace PhanMemQuanLyCongTrinh
                 date_End.Focus();
                 return "Vui Lòng Nhập Ngày Kết Thúc!";
             }
-            else if (bytes == null)
-            {
-                btn_OpenFile.Focus();
-                return "File Bạn không Có!";
-            }
-
             else
             {
                 return "true";
@@ -170,16 +164,16 @@ namespace PhanMemQuanLyCongTrinh
             }
             if (dte_NgayBDBaoHanh.Text != "")
             {
-                DateTime dateGuarantee = Convert.ToDateTime(dte_NgayBDBaoHanh.Text);
-                dateGuarantee.ToString("yy/MM/dd");
-                newConstructionItem.construction_item_date_end_guarantee = dateGuarantee;
+                DateTime dateGuaranteeStart = Convert.ToDateTime(dte_NgayBDBaoHanh.Text);
+                dateGuaranteeStart.ToString("yy/MM/dd");
+                newConstructionItem.construction_item_date_start_guarantee = dateGuaranteeStart;
             }
 
             if ( dte_NgayKTBaoHanh.Text != "" )
             {
-                DateTime dateGuarantee = Convert.ToDateTime(dte_NgayKTBaoHanh.Text);
-                dateGuarantee.ToString("yy/MM/dd");
-                newConstructionItem.construction_item_date_end_guarantee = dateGuarantee;
+                DateTime dateGuaranteeEnd = Convert.ToDateTime(dte_NgayKTBaoHanh.Text);
+                dateGuaranteeEnd.ToString("yy/MM/dd");
+                newConstructionItem.construction_item_date_end_guarantee = dateGuaranteeEnd;
             }
 
             if (pic_Logo.Image != null)

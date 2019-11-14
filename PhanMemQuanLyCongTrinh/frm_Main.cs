@@ -43,6 +43,10 @@ namespace PhanMemQuanLyCongTrinh
             // The following line provides localization for data formats.  
             System.Threading.Thread.CurrentThread.CurrentCulture =
                 new System.Globalization.CultureInfo("vi-VN");  
+
+
+            // ThongBao
+
         }
 
         private void btnUserInformation_ItemClick(object sender, ItemClickEventArgs e)
@@ -126,6 +130,9 @@ namespace PhanMemQuanLyCongTrinh
                         barButtonItem_login.Visibility = BarItemVisibility.Never;
                         Menu_adminstrator_true();
                         //Menu_adminstrator_true( );
+
+                        // Nhac Nho
+
                     }
                     else
                     {
@@ -439,6 +446,51 @@ namespace PhanMemQuanLyCongTrinh
             if ( frm == null )
             {
                 frm_TienDoCongTrinh forms = new frm_TienDoCongTrinh( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
+        private void btnContructionProcessing_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_CongTrinhDangThucHien));
+            if ( frm == null )
+            {
+                frm_CongTrinhDangThucHien forms = new frm_CongTrinhDangThucHien( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
+        private void btnSuccessContruction_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_CongTrinhDaThucHien));
+            if ( frm == null )
+            {
+                frm_CongTrinhDaThucHien forms = new frm_CongTrinhDaThucHien( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
+        private void barButtonItem3_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = kiemtraform(typeof(frm_DanhSachFileMau));
+            if ( frm == null )
+            {
+                frm_DanhSachFileMau forms = new frm_DanhSachFileMau( );
                 forms.MdiParent = this;
                 forms.Show( );
             }

@@ -33,6 +33,20 @@ namespace PhanMemQuanLyCongTrinh.BUS
         {
             return constructionDao.updateStatusContstruction(constractionID, status);
         }
+
+        public int checkContructionSuccess(Int64 idContruct)
+        {
+            return constructionDao.checkContructionSuccess(idContruct);
+        }
         
+        public IEnumerable<Object> getAllContruct_DangThucHien()
+        {
+            return constructionDao.getAllContruct_DangThucHien();
+        }
+
+        public IEnumerable<Object> getAllContruct_DaThucHien( )
+        {
+            return constructionDao.getAllContruct_DaThucHien( );
+        }
     }
 }

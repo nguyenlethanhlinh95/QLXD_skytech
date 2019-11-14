@@ -8,6 +8,9 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using PhanMemQuanLyCongTrinh.BUS;
+using System.IO;
+using System.Runtime.InteropServices;
+using Excel = Microsoft.Office.Interop.Excel; 
 
 namespace PhanMemQuanLyCongTrinh
 {
@@ -337,9 +340,55 @@ namespace PhanMemQuanLyCongTrinh
         }
         #endregion End event
 
-        
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                FolderBrowserDialog fbd = new FolderBrowserDialog( );
 
-        
+                if ( fbd.ShowDialog( ) == DialogResult.OK )
+                {
+                    string fileName = "NhanSu.xlsx";
+                    string sourcePath = fbd.SelectedPath;
+
+                    string sourceFile = System.Windows.Forms.Application.StartupPath + @"\FIleMau\NhanSu.xlsx";
+                    string destFile = System.IO.Path.Combine(sourcePath, fileName);
+                    //string destFile = System.IO.Path.Combine(targetPath, fileName);
+                    
+
+                    if (! File.Exists(destFile) )
+                    {
+
+                        Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application( );
+                        if ( xlApp == null )
+                        {
+                            MessageBox.Show("Excel is not properly installed!!");
+                            return;
+                        }
+                        Excel.Workbook xlWorkBook;
+                        Excel.Worksheet xlWorkSheet;
+                        object misValue = System.Reflection.Missing.Value;
+                        xlWorkBook = xlApp.Workbooks.Add(misValue);
+                        xlWorkSheet = (Excel.Worksheet) xlWorkBook.Worksheets.get_Item(1);
+
+                        xlWorkBook.SaveAs(destFile);
+
+                    }
+                    System.IO.File.Copy(sourceFile, destFile, true);
+                    messeage.success("Tải tệp thành công !");
+
+
+                }
+            }
+            catch(Exception)
+            {
+                messeage.err();
+            }
+            
+        }
+
+
+       
 
     }
 }

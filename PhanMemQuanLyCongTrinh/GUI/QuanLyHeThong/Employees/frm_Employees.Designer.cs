@@ -149,6 +149,7 @@
             this.bar10 = new DevExpress.XtraBars.Bar();
             this.bar11 = new DevExpress.XtraBars.Bar();
             this.bar12 = new DevExpress.XtraBars.Bar();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdc_Employee)).BeginInit();
@@ -215,7 +216,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem8),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Print, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.barStaticItem9),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Close, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btn_Close, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
             this.bar7.OptionsBar.AllowQuickCustomization = false;
             this.bar7.OptionsBar.DrawDragBorder = false;
             this.bar7.Text = "Tools";
@@ -466,9 +468,10 @@
             this.barStaticItem6,
             this.barStaticItem7,
             this.barStaticItem8,
-            this.barStaticItem9});
+            this.barStaticItem9,
+            this.barButtonItem1});
             this.barManager2.MainMenu = this.bar8;
-            this.barManager2.MaxItemId = 20;
+            this.barManager2.MaxItemId = 21;
             this.barManager2.StatusBar = this.bar9;
             // 
             // bar8
@@ -1160,6 +1163,13 @@
             this.bar12.OptionsBar.AllowQuickCustomization = false;
             this.bar12.Text = "Tools";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "FileMau";
+            this.barButtonItem1.Id = 20;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // frm_Employees
             // 
             this.Appearance.Options.UseFont = true;
@@ -1284,5 +1294,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn employee_bank_account_number;
         private DevExpress.XtraGrid.Columns.GridColumn permission_id;
         private DevExpress.XtraGrid.Columns.GridColumn employee_status;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

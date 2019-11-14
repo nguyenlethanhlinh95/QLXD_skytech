@@ -101,9 +101,6 @@ namespace PhanMemQuanLyCongTrinh.DAO
 
         }
 
-
-
-
         public bool updateContstruction(DTO.ST_construction constraction)
         {
             try
@@ -141,6 +138,90 @@ namespace PhanMemQuanLyCongTrinh.DAO
             catch
             {
                 return false;
+            }
+        }
+
+        public int checkContructionSuccess(Int64 idContruct)
+        {
+            // 1 chua thuc hien, 2 dang thuc hien, 3 hoan thanh
+            try
+            {
+                var data = from b in db.ST_construction_items
+                           where b.construction_id == idContruct
+                           select b;
+                int soluong = data.Count();
+                int soLuongNgayBatDau = 0;
+                int soLuongNgayKetThuc = 0;
+                if ( soluong > 0)
+                {
+                    // duyet qua tung phan tu hang muc kiem tra if tat ca ngay thuc hien == null thi chua thuc hien, if  tat ca lon hon > 0 va <  ngay thuc hien 
+                    foreach (var item in data)
+                    {
+                        if (item.construction_item_date_start_real != null)
+                        {
+                            soLuongNgayBatDau += 1;
+                        }
+                        if (item.construction_item_date_end_real != null)
+                        {
+                            soLuongNgayKetThuc += 1;
+                        }
+                    }
+
+                    if ( soLuongNgayBatDau == 0)
+                    {
+                        return 1; // chua thuc hien
+                    }
+
+                    if ( soLuongNgayBatDau == soluong && soLuongNgayKetThuc == soluong )
+                    {
+                        return 3; // hoan thanh
+                    }
+
+                    return 2; // dang thuc hien
+                }
+                else
+                {
+                    return 0;
+                }
+                
+            }
+            catch(Exception)
+            {
+                return 0; // bi loi
+            }
+        }
+
+        public IEnumerable<Object> getAllContruct_DangThucHien()
+        {
+            try
+            {
+                var data = from b in db.ST_constructions
+                            where b.construction_status == 0
+                            select b;
+                if ( data.Any())
+                    return data;
+                return null;
+            }
+            catch(Exception)
+            {
+                return null;
+            }
+        }
+
+        public IEnumerable<Object> getAllContruct_DaThucHien( )
+        {
+            try
+            {
+                var data = from b in db.ST_constructions
+                           where b.construction_status == 2
+                           select b;
+                if ( data.Any( ) )
+                    return data;
+                return null;
+            }
+            catch ( Exception )
+            {
+                return null;
             }
         }
     }

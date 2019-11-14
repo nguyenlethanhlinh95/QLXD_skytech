@@ -210,6 +210,13 @@
       <Column Name="enter_coupon_supplies_deliver" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.ST_FileMau" Member="ST_FileMaus">
+    <Type Name="ST_FileMau">
+      <Column Name="fileMau_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fileMau_TenDanhMuc" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="fileMau_File" Type="System.Data.Linq.Binary" DbType="VarBinary(8000)" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
   <Table Name="dbo.ST_group_supplies" Member="ST_group_supplies">
     <Type Name="ST_group_supply">
       <Column Name="group_supplies_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

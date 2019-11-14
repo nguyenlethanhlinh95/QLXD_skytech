@@ -75,6 +75,9 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void InsertST_enter_coupon_supply(ST_enter_coupon_supply instance);
     partial void UpdateST_enter_coupon_supply(ST_enter_coupon_supply instance);
     partial void DeleteST_enter_coupon_supply(ST_enter_coupon_supply instance);
+    partial void InsertST_FileMau(ST_FileMau instance);
+    partial void UpdateST_FileMau(ST_FileMau instance);
+    partial void DeleteST_FileMau(ST_FileMau instance);
     partial void InsertST_group_supply(ST_group_supply instance);
     partial void UpdateST_group_supply(ST_group_supply instance);
     partial void DeleteST_group_supply(ST_group_supply instance);
@@ -266,6 +269,14 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			get
 			{
 				return this.GetTable<ST_enter_coupon_supply>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ST_FileMau> ST_FileMaus
+		{
+			get
+			{
+				return this.GetTable<ST_FileMau>();
 			}
 		}
 		
@@ -4535,6 +4546,116 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._enter_coupon_supplies_deliver = value;
 					this.SendPropertyChanged("enter_coupon_supplies_deliver");
 					this.Onenter_coupon_supplies_deliverChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_FileMau")]
+	public partial class ST_FileMau : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _fileMau_id;
+		
+		private string _fileMau_TenDanhMuc;
+		
+		private System.Data.Linq.Binary _fileMau_File;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnfileMau_idChanging(int value);
+    partial void OnfileMau_idChanged();
+    partial void OnfileMau_TenDanhMucChanging(string value);
+    partial void OnfileMau_TenDanhMucChanged();
+    partial void OnfileMau_FileChanging(System.Data.Linq.Binary value);
+    partial void OnfileMau_FileChanged();
+    #endregion
+		
+		public ST_FileMau()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fileMau_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int fileMau_id
+		{
+			get
+			{
+				return this._fileMau_id;
+			}
+			set
+			{
+				if ((this._fileMau_id != value))
+				{
+					this.OnfileMau_idChanging(value);
+					this.SendPropertyChanging();
+					this._fileMau_id = value;
+					this.SendPropertyChanged("fileMau_id");
+					this.OnfileMau_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fileMau_TenDanhMuc", DbType="NVarChar(200)")]
+		public string fileMau_TenDanhMuc
+		{
+			get
+			{
+				return this._fileMau_TenDanhMuc;
+			}
+			set
+			{
+				if ((this._fileMau_TenDanhMuc != value))
+				{
+					this.OnfileMau_TenDanhMucChanging(value);
+					this.SendPropertyChanging();
+					this._fileMau_TenDanhMuc = value;
+					this.SendPropertyChanged("fileMau_TenDanhMuc");
+					this.OnfileMau_TenDanhMucChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fileMau_File", DbType="VarBinary(8000)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary fileMau_File
+		{
+			get
+			{
+				return this._fileMau_File;
+			}
+			set
+			{
+				if ((this._fileMau_File != value))
+				{
+					this.OnfileMau_FileChanging(value);
+					this.SendPropertyChanging();
+					this._fileMau_File = value;
+					this.SendPropertyChanged("fileMau_File");
+					this.OnfileMau_FileChanged();
 				}
 			}
 		}

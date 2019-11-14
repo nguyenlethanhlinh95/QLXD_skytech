@@ -82,6 +82,9 @@ namespace PhanMemQuanLyCongTrinh
 
         void XuLyBieuDo()
         {
+            chartControl1.DataSource = null;
+            chartControl1.Series.Clear( );
+
             chartControl1.Visible = true;
 
             Series series1 = new Series("Kế hoạch", ViewType.Gantt);
@@ -121,9 +124,6 @@ namespace PhanMemQuanLyCongTrinh
                  chartControl1.Titles[0].Text = "BIỂU ĐỒ GANTT DỰ ÁN " + contruct_name.ToString();
 
                 this.Controls.Add(chartControl1);
-
-               
-
             }
             else
             {

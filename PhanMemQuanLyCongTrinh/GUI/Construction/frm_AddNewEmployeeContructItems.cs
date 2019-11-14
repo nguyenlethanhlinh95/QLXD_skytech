@@ -107,6 +107,11 @@ namespace PhanMemQuanLyCongTrinh
             
         }
 
+        private void grdc_em_Click(object sender, EventArgs e)
+        {
+
+        }
+
  
 
         #region Event

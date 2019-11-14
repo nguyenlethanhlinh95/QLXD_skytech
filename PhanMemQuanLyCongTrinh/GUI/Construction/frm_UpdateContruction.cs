@@ -18,7 +18,7 @@ namespace PhanMemQuanLyCongTrinh
 
         public byte[] file;
         string fileName;
-
+        bool isChooseFile = false;
         public Int64 counstructionId { get; set; }
         BUS.ConstructionBus constructionBus = new BUS.ConstructionBus( );
         BUS.CustomerBus customerBus = new BUS.CustomerBus( );
@@ -37,8 +37,7 @@ namespace PhanMemQuanLyCongTrinh
             txt_ConstructionName.Text = construction.GetType().GetProperty("construction_name").GetValue(construction, null).ToString();
             txt_ContractNumber.Text = construction.GetType().GetProperty("construction_contract_number").GetValue(construction, null).ToString();
             
-            if(file != null)
-            txt_file.Text = construction.GetType().GetProperty("construction_file_name").GetValue(construction, null).ToString();
+         
 
             decimal money = Convert.ToDecimal(construction.GetType().GetProperty("construction_total_price").GetValue(construction, null).ToString());
             txt_Price.Text = money.ToString();
@@ -103,6 +102,8 @@ namespace PhanMemQuanLyCongTrinh
                 byte[] arr = (fileNull as System.Data.Linq.Binary).ToArray();
                 file = arr;
                 fileName = construction.GetType().GetProperty("construction_file_name").GetValue(construction, null).ToString();
+
+                txt_file.Text = construction.GetType().GetProperty("construction_file_name").GetValue(construction, null).ToString();
             }
           
 
@@ -314,18 +315,22 @@ namespace PhanMemQuanLyCongTrinh
                 foreach (string fileName1 in openFileDialog.FileNames)
                 {
                     txt_file.Text = fileName1;
-
+                    isChooseFile = true;
                 }
             }
 
 
             string filepath = txt_file.Text;
-            fileName = Path.GetFileName(filepath);
-            FileStream fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            file = br.ReadBytes((Int32)fs.Length);
-            br.Close();
-            fs.Close();
+            if (isChooseFile == true)
+            {
+                fileName = Path.GetFileName(filepath);
+                FileStream fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(fs);
+                file = br.ReadBytes((Int32)fs.Length);
+                isChooseFile = false;
+                br.Close();
+                fs.Close();
+            }
            
         }
 

@@ -147,8 +147,12 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.taskbarAssistant1 = new DevExpress.Utils.Taskbar.TaskbarAssistant();
+            this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
+            this.ribbonPageGroup25 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -235,9 +239,10 @@
             this.btnListEnterCouponSupplies,
             this.skinRibbonGalleryBarItem2,
             this.barButtonItem1_DangXuat,
-            this.barButtonItem_login});
+            this.barButtonItem_login,
+            this.barButtonItem3});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 84;
+            this.ribbon.MaxItemId = 85;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage4,
@@ -763,6 +768,7 @@
             this.btnContructionProcessing.LargeWidth = 100;
             this.btnContructionProcessing.Name = "btnContructionProcessing";
             this.btnContructionProcessing.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnContructionProcessing.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnContructionProcessing_ItemClick);
             // 
             // barButtonItem57
             // 
@@ -789,6 +795,7 @@
             this.btnSuccessContruction.LargeWidth = 100;
             this.btnSuccessContruction.Name = "btnSuccessContruction";
             this.btnSuccessContruction.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnSuccessContruction.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSuccessContruction_ItemClick);
             // 
             // btnCustomerComment
             // 
@@ -977,7 +984,8 @@
             this.ribbonPage4.Appearance.Options.UseFont = true;
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup12,
-            this.ribbonPageGroup11});
+            this.ribbonPageGroup11,
+            this.ribbonPageGroup25});
             this.ribbonPage4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage4.ImageOptions.Image")));
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Hệ Thống";
@@ -1267,11 +1275,37 @@
             // 
             // xtraTabbedMdiManager1
             // 
+            this.xtraTabbedMdiManager1.AppearancePage.Header.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.xtraTabbedMdiManager1.AppearancePage.Header.Options.UseFont = true;
+            this.xtraTabbedMdiManager1.AppearancePage.HeaderActive.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.xtraTabbedMdiManager1.AppearancePage.HeaderActive.Options.UseFont = true;
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
             // taskbarAssistant1
             // 
             this.taskbarAssistant1.ParentControl = this;
+            // 
+            // toastNotificationsManager1
+            // 
+            this.toastNotificationsManager1.ApplicationId = "33aef39b-9a86-43aa-b65b-d9c1d34fdfec";
+            this.toastNotificationsManager1.ApplicationName = "PhanMemQuanLyCongTrinh";
+            // 
+            // ribbonPageGroup25
+            // 
+            this.ribbonPageGroup25.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ribbonPageGroup25.ImageOptions.SvgImage")));
+            this.ribbonPageGroup25.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup25.Name = "ribbonPageGroup25";
+            this.ribbonPageGroup25.Text = "File Mẫu";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "File Mẫu";
+            this.barButtonItem3.Id = 84;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.barButtonItem3.LargeWidth = 100;
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // frm_Main
             // 
@@ -1290,6 +1324,7 @@
             this.Load += new System.EventHandler(this.frm_Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1414,5 +1449,8 @@
         private DevExpress.Utils.Taskbar.TaskbarAssistant taskbarAssistant1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1_DangXuat;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_login;
+        private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup25;
     }
 }
