@@ -73,9 +73,11 @@
     <Compile Include="BUS\CustomerBus.cs" />
     <Compile Include="BUS\CustomerGroupBus.cs" />
     <Compile Include="BUS\DetailEnterCouponSuppliesBus.cs" />
+    <Compile Include="BUS\DetailOutCouponSuppliesBus.cs" />
     <Compile Include="BUS\DetailPulicDebtBus.cs" />
     <Compile Include="BUS\Detail_Employee_ConstructionBus.cs" />
     <Compile Include="BUS\EnterCouponSuppliesBus.cs" />
+    <Compile Include="BUS\IncomeCouponBus.cs" />
     <Compile Include="BUS\OutCouponSuppliesToConstructionBus.cs" />
     <Compile Include="BUS\PaymentSlipBus.cs" />
     <Compile Include="BUS\ProgressBus.cs" />
@@ -83,8 +85,10 @@
     <Compile Include="BUS\StorehouseBus.cs" />
     <Compile Include="BUS\StorehouseDetailBus.cs" />
     <Compile Include="DAO\DetailEnterCouponSuppliesDao.cs" />
+    <Compile Include="DAO\DetailOutCouponSuppliesDao.cs" />
     <Compile Include="DAO\DetailPulicDebtDao.cs" />
     <Compile Include="DAO\EnterCouponSuppliesDao.cs" />
+    <Compile Include="DAO\IncomeCouponDao.cs" />
     <Compile Include="DAO\OutCouponSuppliesToConstructionDao.cs" />
     <Compile Include="DAO\PaymentSlipDao.cs" />
     <Compile Include="DAO\PulicDebtDao.cs" />
@@ -93,6 +97,18 @@
     </Compile>
     <Compile Include="frm_DangNhap.Designer.cs">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\frm_TienDoCongTrinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\frm_TienDoCongTrinh.Designer.cs">
+      <DependentUpon>frm_TienDoCongTrinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Accountant\IncomeCoupon\frm_IncomeCoupon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Accountant\IncomeCoupon\frm_IncomeCoupon.Designer.cs">
+      <DependentUpon>frm_IncomeCoupon.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Quotations\AccountingAccounts\frm_NewAcountingAccount.cs">
       <SubType>Form</SubType>
@@ -220,6 +236,12 @@
     </Compile>
     <Compile Include="GUI\Supplies\OutCoupon\frm_OutCouponToConstructions.Designer.cs">
       <DependentUpon>frm_OutCouponToConstructions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Supplies\OutCoupon\frm_UpdateOutCouponToConstructions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Supplies\OutCoupon\frm_UpdateOutCouponToConstructions.designer.cs">
+      <DependentUpon>frm_UpdateOutCouponToConstructions.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Supplies\StorehouseDetail\frm_StorehouseDetail.cs">
       <SubType>Form</SubType>
@@ -454,6 +476,12 @@
     <EmbeddedResource Include="frm_DangNhap.resx">
       <DependentUpon>frm_DangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\frm_TienDoCongTrinh.resx">
+      <DependentUpon>frm_TienDoCongTrinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Accountant\IncomeCoupon\frm_IncomeCoupon.resx">
+      <DependentUpon>frm_IncomeCoupon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Quotations\AccountingAccounts\frm_NewAcountingAccount.resx">
       <DependentUpon>frm_NewAcountingAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -468,6 +496,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Quotations\Customer\frm_UpdateCustomerGroup.resx">
       <DependentUpon>frm_UpdateCustomerGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Supplies\OutCoupon\frm_UpdateOutCouponToConstructions.resx">
+      <DependentUpon>frm_UpdateOutCouponToConstructions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraForm1.resx">
       <DependentUpon>XtraForm1.cs</DependentUpon>

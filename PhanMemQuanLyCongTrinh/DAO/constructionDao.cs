@@ -127,7 +127,8 @@ namespace PhanMemQuanLyCongTrinh.DAO
                 updateConstruction.construction_date_end = constraction.construction_date_end;
 
 
-                updateConstruction.construction_date_guarantee = constraction.construction_date_guarantee;
+                updateConstruction.construction_date_start_guarantee = constraction.construction_date_start_guarantee;
+                updateConstruction.construction_date_end_guarantee = constraction.construction_date_end_guarantee;
 
 
 

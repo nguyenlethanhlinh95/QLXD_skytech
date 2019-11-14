@@ -51,24 +51,31 @@ namespace PhanMemQuanLyCongTrinh
 
         private void but_Add_Click(object sender, EventArgs e)
         {
-            string check = checkNull();
-            if (check == "true")
+            try
             {
-
-                bool boolInsertStorehouse = insertStorehouse();
-                if (boolInsertStorehouse == true)
+                string check = checkNull();
+                if (check == "true")
                 {
-                    messeage.success("Thêm Mới Thành Công!");
-                    this.Close();
+
+                    bool boolInsertStorehouse = insertStorehouse();
+                    if (boolInsertStorehouse == true)
+                    {
+                        messeage.success("Thêm Mới Thành Công!");
+                        this.Close();
+                    }
+                    else
+                    {
+                        messeage.error("Không Thể Thêm Mới!");
+                    }
                 }
                 else
                 {
-                    messeage.error("Không Thể Thêm Mới!");
+                    messeage.error(check);
                 }
             }
-            else
+            catch (Exception)
             {
-                messeage.error(check);
+                messeage.err();
             }
         }
         #endregion

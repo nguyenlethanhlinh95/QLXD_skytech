@@ -76,8 +76,8 @@
             this.employee_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.construction_item_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.progress_construction_item_custom = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.progress_construction_item_percent = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.progress_construction_item_date = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.progress_construction_item_date_start = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.progress_construction_item_date_end = new DevExpress.XtraGrid.Columns.GridColumn();
             this.progress_construction_item_image = new DevExpress.XtraGrid.Columns.GridColumn();
             this.progress_construction_item_description = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barDockControl9 = new DevExpress.XtraBars.BarDockControl();
@@ -479,8 +479,8 @@
             this.employee_name,
             this.construction_item_name,
             this.progress_construction_item_custom,
-            this.progress_construction_item_percent,
-            this.progress_construction_item_date,
+            this.progress_construction_item_date_start,
+            this.progress_construction_item_date_end,
             this.progress_construction_item_image,
             this.progress_construction_item_description});
             this.grdv_progress.GridControl = this.grdc_progress;
@@ -549,33 +549,33 @@
             this.progress_construction_item_custom.Visible = true;
             this.progress_construction_item_custom.VisibleIndex = 2;
             // 
-            // progress_construction_item_percent
+            // progress_construction_item_date_start
             // 
-            this.progress_construction_item_percent.AppearanceCell.Options.UseTextOptions = true;
-            this.progress_construction_item_percent.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.progress_construction_item_percent.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.progress_construction_item_percent.AppearanceHeader.Options.UseFont = true;
-            this.progress_construction_item_percent.AppearanceHeader.Options.UseTextOptions = true;
-            this.progress_construction_item_percent.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.progress_construction_item_percent.Caption = "Phần Trăm";
-            this.progress_construction_item_percent.FieldName = "progress_construction_item_percent";
-            this.progress_construction_item_percent.Name = "progress_construction_item_percent";
-            this.progress_construction_item_percent.Visible = true;
-            this.progress_construction_item_percent.VisibleIndex = 3;
+            this.progress_construction_item_date_start.AppearanceCell.Options.UseTextOptions = true;
+            this.progress_construction_item_date_start.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.progress_construction_item_date_start.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progress_construction_item_date_start.AppearanceHeader.Options.UseFont = true;
+            this.progress_construction_item_date_start.AppearanceHeader.Options.UseTextOptions = true;
+            this.progress_construction_item_date_start.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.progress_construction_item_date_start.Caption = "Ngày Bắt Đầu";
+            this.progress_construction_item_date_start.FieldName = "progress_construction_item_date_start";
+            this.progress_construction_item_date_start.Name = "progress_construction_item_date_start";
+            this.progress_construction_item_date_start.Visible = true;
+            this.progress_construction_item_date_start.VisibleIndex = 3;
             // 
-            // progress_construction_item_date
+            // progress_construction_item_date_end
             // 
-            this.progress_construction_item_date.AppearanceCell.Options.UseTextOptions = true;
-            this.progress_construction_item_date.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.progress_construction_item_date.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.progress_construction_item_date.AppearanceHeader.Options.UseFont = true;
-            this.progress_construction_item_date.AppearanceHeader.Options.UseTextOptions = true;
-            this.progress_construction_item_date.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.progress_construction_item_date.Caption = "Ngày";
-            this.progress_construction_item_date.FieldName = "progress_construction_item_date";
-            this.progress_construction_item_date.Name = "progress_construction_item_date";
-            this.progress_construction_item_date.Visible = true;
-            this.progress_construction_item_date.VisibleIndex = 4;
+            this.progress_construction_item_date_end.AppearanceCell.Options.UseTextOptions = true;
+            this.progress_construction_item_date_end.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.progress_construction_item_date_end.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progress_construction_item_date_end.AppearanceHeader.Options.UseFont = true;
+            this.progress_construction_item_date_end.AppearanceHeader.Options.UseTextOptions = true;
+            this.progress_construction_item_date_end.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.progress_construction_item_date_end.Caption = "Ngày Kết Thúc";
+            this.progress_construction_item_date_end.FieldName = "progress_construction_item_date_end";
+            this.progress_construction_item_date_end.Name = "progress_construction_item_date_end";
+            this.progress_construction_item_date_end.Visible = true;
+            this.progress_construction_item_date_end.VisibleIndex = 4;
             // 
             // progress_construction_item_image
             // 
@@ -853,8 +853,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn progress_construction_item_id;
         private DevExpress.XtraGrid.Columns.GridColumn employee_name;
         private DevExpress.XtraGrid.Columns.GridColumn progress_construction_item_custom;
-        private DevExpress.XtraGrid.Columns.GridColumn progress_construction_item_percent;
-        private DevExpress.XtraGrid.Columns.GridColumn progress_construction_item_date;
+        private DevExpress.XtraGrid.Columns.GridColumn progress_construction_item_date_start;
+        private DevExpress.XtraGrid.Columns.GridColumn progress_construction_item_date_end;
         private DevExpress.XtraGrid.Columns.GridColumn progress_construction_item_image;
         private DevExpress.XtraGrid.Columns.GridColumn progress_construction_item_description;
         private DevExpress.XtraBars.BarDockControl barDockControl9;

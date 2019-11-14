@@ -84,6 +84,7 @@
             this.out_coupon_supplies_id_custom = new DevExpress.XtraGrid.Columns.GridColumn();
             this.storehouse_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.construction_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.construction_item_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.out_coupon_supplies_created_date = new DevExpress.XtraGrid.Columns.GridColumn();
             this.out_coupon_supplies_number = new DevExpress.XtraGrid.Columns.GridColumn();
             this.out_coupon_supplies_total_percent_discount = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -225,6 +226,7 @@
             toolTipTitleItem2.Text = "Ctrl + E";
             superToolTip2.Items.Add(toolTipTitleItem2);
             this.btn_Edit.SuperTip = superToolTip2;
+            this.btn_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Edit_ItemClick);
             // 
             // barStaticItem2
             // 
@@ -251,6 +253,7 @@
             toolTipTitleItem3.Text = "Ctrl + Delete\r\n";
             superToolTip3.Items.Add(toolTipTitleItem3);
             this.btn_Delete.SuperTip = superToolTip3;
+            this.btn_Delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Delete_ItemClick);
             // 
             // barStaticItem5
             // 
@@ -382,6 +385,7 @@
             toolTipTitleItem8.Text = "Esc";
             superToolTip8.Items.Add(toolTipTitleItem8);
             this.btn_Close.SuperTip = superToolTip8;
+            this.btn_Close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_Close_ItemClick);
             // 
             // bar8
             // 
@@ -522,6 +526,7 @@
             this.out_coupon_supplies_id_custom,
             this.storehouse_name,
             this.construction_name,
+            this.construction_item_name,
             this.out_coupon_supplies_created_date,
             this.out_coupon_supplies_number,
             this.out_coupon_supplies_total_percent_discount,
@@ -535,6 +540,7 @@
             this.grdv_OutCoupon.OptionsView.ShowGroupPanel = false;
             this.grdv_OutCoupon.RowHeight = 30;
             this.grdv_OutCoupon.ViewCaptionHeight = 0;
+            this.grdv_OutCoupon.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.grdv_OutCoupon_FocusedRowChanged);
             // 
             // out_coupon_supplies_id
             // 
@@ -569,7 +575,7 @@
             this.storehouse_name.Name = "storehouse_name";
             this.storehouse_name.Visible = true;
             this.storehouse_name.VisibleIndex = 1;
-            this.storehouse_name.Width = 150;
+            this.storehouse_name.Width = 123;
             // 
             // construction_name
             // 
@@ -585,6 +591,15 @@
             this.construction_name.VisibleIndex = 2;
             this.construction_name.Width = 150;
             // 
+            // construction_item_name
+            // 
+            this.construction_item_name.Caption = "Tên Hạng Mục";
+            this.construction_item_name.FieldName = "construction_item_name";
+            this.construction_item_name.Name = "construction_item_name";
+            this.construction_item_name.Visible = true;
+            this.construction_item_name.VisibleIndex = 3;
+            this.construction_item_name.Width = 100;
+            // 
             // out_coupon_supplies_created_date
             // 
             this.out_coupon_supplies_created_date.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -596,7 +611,7 @@
             this.out_coupon_supplies_created_date.Name = "out_coupon_supplies_created_date";
             this.out_coupon_supplies_created_date.OptionsColumn.FixedWidth = true;
             this.out_coupon_supplies_created_date.Visible = true;
-            this.out_coupon_supplies_created_date.VisibleIndex = 3;
+            this.out_coupon_supplies_created_date.VisibleIndex = 4;
             this.out_coupon_supplies_created_date.Width = 150;
             // 
             // out_coupon_supplies_number
@@ -610,7 +625,7 @@
             this.out_coupon_supplies_number.Name = "out_coupon_supplies_number";
             this.out_coupon_supplies_number.OptionsColumn.FixedWidth = true;
             this.out_coupon_supplies_number.Visible = true;
-            this.out_coupon_supplies_number.VisibleIndex = 4;
+            this.out_coupon_supplies_number.VisibleIndex = 5;
             this.out_coupon_supplies_number.Width = 150;
             // 
             // out_coupon_supplies_total_percent_discount
@@ -619,8 +634,8 @@
             this.out_coupon_supplies_total_percent_discount.FieldName = "out_coupon_supplies_total_percent_discount";
             this.out_coupon_supplies_total_percent_discount.Name = "out_coupon_supplies_total_percent_discount";
             this.out_coupon_supplies_total_percent_discount.Visible = true;
-            this.out_coupon_supplies_total_percent_discount.VisibleIndex = 5;
-            this.out_coupon_supplies_total_percent_discount.Width = 100;
+            this.out_coupon_supplies_total_percent_discount.VisibleIndex = 6;
+            this.out_coupon_supplies_total_percent_discount.Width = 74;
             // 
             // out_coupon_supplies_total_price
             // 
@@ -635,8 +650,8 @@
             this.out_coupon_supplies_total_price.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "enter_coupon_supplies_total_price", "Tổng Tiền ={0:n0} VNĐ")});
             this.out_coupon_supplies_total_price.Visible = true;
-            this.out_coupon_supplies_total_price.VisibleIndex = 6;
-            this.out_coupon_supplies_total_price.Width = 200;
+            this.out_coupon_supplies_total_price.VisibleIndex = 7;
+            this.out_coupon_supplies_total_price.Width = 150;
             // 
             // employee_name
             // 
@@ -644,8 +659,8 @@
             this.employee_name.FieldName = "employee_name";
             this.employee_name.Name = "employee_name";
             this.employee_name.Visible = true;
-            this.employee_name.VisibleIndex = 7;
-            this.employee_name.Width = 226;
+            this.employee_name.VisibleIndex = 8;
+            this.employee_name.Width = 150;
             // 
             // out_coupon_supplies_description
             // 
@@ -653,8 +668,8 @@
             this.out_coupon_supplies_description.FieldName = "out_coupon_supplies_description";
             this.out_coupon_supplies_description.Name = "out_coupon_supplies_description";
             this.out_coupon_supplies_description.Visible = true;
-            this.out_coupon_supplies_description.VisibleIndex = 8;
-            this.out_coupon_supplies_description.Width = 179;
+            this.out_coupon_supplies_description.VisibleIndex = 9;
+            this.out_coupon_supplies_description.Width = 205;
             // 
             // groupControl1
             // 
@@ -750,5 +765,6 @@
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem3;
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem4;
         private DevExpress.XtraGrid.Columns.GridColumn storehouse_name;
+        private DevExpress.XtraGrid.Columns.GridColumn construction_item_name;
     }
 }

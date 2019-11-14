@@ -50,23 +50,29 @@ namespace PhanMemQuanLyCongTrinh
 
         private void but_Update_Click(object sender, EventArgs e)
         {
-            if (txt_CustomerGroupName.Text == "")
+            try
             {
-                txt_CustomerGroupName.Focus();
-                messeage.error("Vui Lòng Nhập Tên Nhóm Khách Hàng!");
-            }
-            else
-            {
-                if (updateCustomerGroup() == true)
+                if (txt_CustomerGroupName.Text == "")
                 {
-                    messeage.success("Chỉnh Sửa Thành Công!");
+                    txt_CustomerGroupName.Focus();
+                    messeage.error("Vui Lòng Nhập Tên Nhóm Khách Hàng!");
                 }
                 else
                 {
-                    messeage.error("Không Thể Chỉnh Sửa!");
+                    if (updateCustomerGroup() == true)
+                    {
+                        messeage.success("Chỉnh Sửa Thành Công!");
+                    }
+                    else
+                    {
+                        messeage.error("Không Thể Chỉnh Sửa!");
+                    }
                 }
             }
-                
+            catch (Exception)
+            {
+                messeage.err();
+            }  
             
         }
 

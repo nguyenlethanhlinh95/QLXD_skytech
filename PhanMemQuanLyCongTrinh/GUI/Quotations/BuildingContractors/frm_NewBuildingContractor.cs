@@ -108,11 +108,13 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            string check = checkNull();
-
-            if (check == "true")
+            try
             {
-                
+                string check = checkNull();
+
+                if (check == "true")
+                {
+
                     bool boolInsertBuildingContractor = insertBuildingContractor();
                     if (boolInsertBuildingContractor == true)
                     {
@@ -123,13 +125,18 @@ namespace PhanMemQuanLyCongTrinh
                     {
                         messeage.error("Không Thể Thêm Mới!");
                     }
-                
-               
-               
+
+
+
+                }
+                else
+                {
+                    messeage.error(check);
+                }
             }
-            else
+            catch (Exception)
             {
-                messeage.error(check);
+                messeage.err();
             }
         }
 

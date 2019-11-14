@@ -48,7 +48,8 @@ namespace PhanMemQuanLyCongTrinh
 
         private void but_Update_Click(object sender, EventArgs e)
         {
-          
+            try
+            {
                 if (txt_CustomerGroupName.Text == "")
                 {
                     txt_CustomerGroupName.Focus();
@@ -66,6 +67,11 @@ namespace PhanMemQuanLyCongTrinh
                         messeage.error("Không Thể Thêm Mới!");
                     }
                 }
+            }
+             catch (Exception)
+            {
+                messeage.err();
+            }
         }
 
         private void but_Exit_Click(object sender, EventArgs e)

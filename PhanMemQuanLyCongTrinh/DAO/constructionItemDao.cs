@@ -9,6 +9,7 @@ namespace PhanMemQuanLyCongTrinh.DAO
     {
         DataClasses1DataContext db = new DataClasses1DataContext();
 
+
         public object isContructionIdtemGroup(Int64 contructionId)
         {
             try
@@ -143,13 +144,6 @@ namespace PhanMemQuanLyCongTrinh.DAO
             }
         }
 
-
-
-
-
-
-
-
         public bool insertContstructionItem(DTO.ST_construction_item constractionItem)
         {
             try
@@ -202,8 +196,9 @@ namespace PhanMemQuanLyCongTrinh.DAO
                 updateConstruction.construction_item_date_end = constractionItem.construction_item_date_end;
 
 
-                updateConstruction.construction_item_date_end_guarantee = constractionItem.construction_item_date_end_guarantee;
+                updateConstruction.construction_item_date_start_guarantee = constractionItem.construction_item_date_start_guarantee;
 
+                updateConstruction.construction_item_date_end_guarantee = constractionItem.construction_item_date_end_guarantee;
 
 
                 updateConstruction.construction_item_image = constractionItem.construction_item_image;
@@ -218,6 +213,52 @@ namespace PhanMemQuanLyCongTrinh.DAO
             }
         }
 
+        public object getAllContructionItem( )
+        {
+            db.Dispose( );
+            db = new DataClasses1DataContext( );
+            db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
+            var customer = from t1 in db.ST_construction_items
+                           join t2 in db.ST_constructions
+                           on t1.construction_id equals t2.construction_id
+                           join t3 in db.ST_building_contractors
+                           on t1.building_contractor_id equals t3.building_contractor_id
 
+                           select new
+                           {
+                               t1.construction_item_id,
+                               t1.construction_item_custom,
+                               t1.construction_item_name,
+                               t2.construction_name,
+                               t3.building_contractor_name,
+                               t1.construction_item_total_price,
+                               t1.construction_item_date_start,
+                               t1.construction_item_date_end,
+                               t1.construction_item_status,
+                               t1.construction_item_date_start_guarantee,
+                               t1.construction_item_date_end_guarantee
+                           }
+                                  ;
+            return customer;
+        }
+
+
+        public bool updateContstructionItemProcess(Int64 idConstractionItem, DateTime st, DateTime de)
+        {
+            try
+            {
+                var updateConstruction = db.ST_construction_items.Where(p => p.construction_item_id.Equals(idConstractionItem)).SingleOrDefault( );
+
+                updateConstruction.construction_item_date_start_real = st;
+                updateConstruction.construction_item_date_end_real = de;
+
+                db.SubmitChanges( );
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

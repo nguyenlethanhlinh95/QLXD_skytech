@@ -70,5 +70,16 @@ namespace PhanMemQuanLyCongTrinh.BUS
 
                 return false;
         }
+
+
+        public object getAllContructionItem( )
+        {
+            return constructionItemDao.getAllContructionItem();
+        }
+
+        public bool updateContstructionItemProcess(Int64 idConstractionItem, DateTime st, DateTime de)
+        {
+            return constructionItemDao.updateContstructionItemProcess(idConstractionItem, st, de);
+        }
     }
 }

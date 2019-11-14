@@ -30,12 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_NewOutCouponToConstructions));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.lue_ConstructionItem = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.txt_total_price = new DevExpress.XtraEditors.TextEdit();
             this.lue_Construction = new DevExpress.XtraEditors.LookUpEdit();
             this.s_number = new DevExpress.XtraEditors.SpinEdit();
             this.btn_Exit = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_AddNew = new DevExpress.XtraEditors.SimpleButton();
-            this.txt_descriptoon = new DevExpress.XtraEditors.MemoEdit();
+            this.btn_Add = new DevExpress.XtraEditors.SimpleButton();
+            this.txt_description = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txt_deliver = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -68,16 +70,17 @@
             this.supplies_name_VT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.supplies_unit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.supplies_quantity = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItem_quantity = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.txtQty = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.supplies_price = new DevExpress.XtraGrid.Columns.GridColumn();
             this.total = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txtQty = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
+            this.repositoryItem_quantity = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_ConstructionItem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_total_price.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_Construction.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.s_number.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_descriptoon.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_description.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_deliver.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_total_yes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_total.Properties)).BeginInit();
@@ -89,18 +92,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.lue_Storehouse.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItem_quantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtQty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItem_quantity)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.lue_ConstructionItem);
+            this.groupControl1.Controls.Add(this.labelControl11);
             this.groupControl1.Controls.Add(this.txt_total_price);
             this.groupControl1.Controls.Add(this.lue_Construction);
             this.groupControl1.Controls.Add(this.s_number);
             this.groupControl1.Controls.Add(this.btn_Exit);
-            this.groupControl1.Controls.Add(this.btn_AddNew);
-            this.groupControl1.Controls.Add(this.txt_descriptoon);
+            this.groupControl1.Controls.Add(this.btn_Add);
+            this.groupControl1.Controls.Add(this.txt_description);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.txt_deliver);
             this.groupControl1.Controls.Add(this.labelControl3);
@@ -120,20 +125,50 @@
             this.groupControl1.Size = new System.Drawing.Size(412, 513);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "groupControl1";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
+            // 
+            // lue_ConstructionItem
+            // 
+            this.lue_ConstructionItem.Location = new System.Drawing.Point(140, 82);
+            this.lue_ConstructionItem.Name = "lue_ConstructionItem";
+            this.lue_ConstructionItem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
+            this.lue_ConstructionItem.Properties.Appearance.Options.UseFont = true;
+            this.lue_ConstructionItem.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lue_ConstructionItem.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("construction_item_custom", "Mã Hạng Mục", 75, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("construction_item_name", "Tên Hạng Mục", 120, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lue_ConstructionItem.Properties.NullText = "Chọn";
+            this.lue_ConstructionItem.Size = new System.Drawing.Size(240, 22);
+            this.lue_ConstructionItem.TabIndex = 299;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(20, 85);
+            this.labelControl11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(68, 16);
+            this.labelControl11.TabIndex = 298;
+            this.labelControl11.Text = "Hạng Mục:";
             // 
             // txt_total_price
             // 
             this.txt_total_price.Enabled = false;
-            this.txt_total_price.Location = new System.Drawing.Point(141, 206);
+            this.txt_total_price.Location = new System.Drawing.Point(141, 231);
             this.txt_total_price.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_total_price.Name = "txt_total_price";
             this.txt_total_price.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
             this.txt_total_price.Properties.Appearance.Options.UseFont = true;
-            this.txt_total_price.Properties.DisplayFormat.FormatString = "{0:n0} VNĐ";
+            this.txt_total_price.Properties.DisplayFormat.FormatString = "{0:n0}";
             this.txt_total_price.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txt_total_price.Properties.EditFormat.FormatString = "{0:n0}";
+            this.txt_total_price.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txt_total_price.Properties.Mask.EditMask = "n0";
             this.txt_total_price.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txt_total_price.Properties.ReadOnly = true;
+            this.txt_total_price.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_total_price.Size = new System.Drawing.Size(241, 22);
             this.txt_total_price.TabIndex = 297;
             // 
@@ -151,6 +186,7 @@
             this.lue_Construction.Properties.NullText = "Chọn";
             this.lue_Construction.Size = new System.Drawing.Size(240, 22);
             this.lue_Construction.TabIndex = 296;
+            this.lue_Construction.EditValueChanged += new System.EventHandler(this.lue_Construction_EditValueChanged);
             // 
             // s_number
             // 
@@ -159,7 +195,7 @@
             0,
             0,
             0});
-            this.s_number.Location = new System.Drawing.Point(141, 175);
+            this.s_number.Location = new System.Drawing.Point(141, 200);
             this.s_number.Name = "s_number";
             this.s_number.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
             this.s_number.Properties.Appearance.Options.UseFont = true;
@@ -196,37 +232,38 @@
             this.btn_Exit.TabIndex = 294;
             this.btn_Exit.Text = "Thoát";
             this.btn_Exit.ToolTipTitle = "ESC";
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
-            // btn_AddNew
+            // btn_Add
             // 
-            this.btn_AddNew.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_AddNew.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_AddNew.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
-            this.btn_AddNew.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btn_AddNew.Appearance.Options.UseBackColor = true;
-            this.btn_AddNew.Appearance.Options.UseFont = true;
-            this.btn_AddNew.Appearance.Options.UseForeColor = true;
-            this.btn_AddNew.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.btn_AddNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_AddNew.ImageOptions.Image")));
-            this.btn_AddNew.Location = new System.Drawing.Point(140, 472);
-            this.btn_AddNew.LookAndFeel.SkinMaskColor = System.Drawing.Color.RoyalBlue;
-            this.btn_AddNew.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_AddNew.LookAndFeel.SkinName = "Office 2010 Black";
-            this.btn_AddNew.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btn_AddNew.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_AddNew.Name = "btn_AddNew";
-            this.btn_AddNew.Size = new System.Drawing.Size(110, 36);
-            this.btn_AddNew.TabIndex = 293;
-            this.btn_AddNew.Text = "Thêm mới";
-            this.btn_AddNew.ToolTipTitle = "Ctrl +S";
-            this.btn_AddNew.Click += new System.EventHandler(this.btn_AddNew_Click);
+            this.btn_Add.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Add.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Add.Appearance.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold);
+            this.btn_Add.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_Add.Appearance.Options.UseBackColor = true;
+            this.btn_Add.Appearance.Options.UseFont = true;
+            this.btn_Add.Appearance.Options.UseForeColor = true;
+            this.btn_Add.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.btn_Add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Add.ImageOptions.Image")));
+            this.btn_Add.Location = new System.Drawing.Point(140, 472);
+            this.btn_Add.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_Add.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_Add.LookAndFeel.SkinName = "Office 2010 Black";
+            this.btn_Add.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btn_Add.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(110, 36);
+            this.btn_Add.TabIndex = 293;
+            this.btn_Add.Text = "Thêm mới";
+            this.btn_Add.ToolTipTitle = "Ctrl +S";
+            this.btn_Add.Click += new System.EventHandler(this.btn_AddNew_Click);
             // 
-            // txt_descriptoon
+            // txt_description
             // 
-            this.txt_descriptoon.Location = new System.Drawing.Point(140, 309);
-            this.txt_descriptoon.Name = "txt_descriptoon";
-            this.txt_descriptoon.Size = new System.Drawing.Size(241, 133);
-            this.txt_descriptoon.TabIndex = 292;
+            this.txt_description.Location = new System.Drawing.Point(140, 309);
+            this.txt_description.Name = "txt_description";
+            this.txt_description.Size = new System.Drawing.Size(241, 133);
+            this.txt_description.TabIndex = 292;
             // 
             // labelControl2
             // 
@@ -241,7 +278,7 @@
             // 
             // txt_deliver
             // 
-            this.txt_deliver.Location = new System.Drawing.Point(140, 116);
+            this.txt_deliver.Location = new System.Drawing.Point(140, 141);
             this.txt_deliver.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_deliver.Name = "txt_deliver";
             this.txt_deliver.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
@@ -253,7 +290,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(21, 119);
+            this.labelControl3.Location = new System.Drawing.Point(21, 144);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(77, 16);
@@ -267,8 +304,13 @@
             this.txt_total_yes.Name = "txt_total_yes";
             this.txt_total_yes.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
             this.txt_total_yes.Properties.Appearance.Options.UseFont = true;
+            this.txt_total_yes.Properties.DisplayFormat.FormatString = "{0:n0}";
+            this.txt_total_yes.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txt_total_yes.Properties.EditFormat.FormatString = "{0:n0}";
+            this.txt_total_yes.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txt_total_yes.Properties.Mask.EditMask = "n0";
             this.txt_total_yes.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_total_yes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_total_yes.Size = new System.Drawing.Size(241, 22);
             this.txt_total_yes.TabIndex = 289;
             // 
@@ -287,7 +329,7 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(21, 212);
+            this.labelControl7.Location = new System.Drawing.Point(21, 237);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(114, 16);
@@ -298,7 +340,7 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(21, 182);
+            this.labelControl5.Location = new System.Drawing.Point(21, 207);
             this.labelControl5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(76, 16);
@@ -308,16 +350,19 @@
             // txt_total
             // 
             this.txt_total.Enabled = false;
-            this.txt_total.Location = new System.Drawing.Point(140, 146);
+            this.txt_total.Location = new System.Drawing.Point(140, 171);
             this.txt_total.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_total.Name = "txt_total";
             this.txt_total.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
             this.txt_total.Properties.Appearance.Options.UseFont = true;
-            this.txt_total.Properties.DisplayFormat.FormatString = "{0:n0} VNĐ";
+            this.txt_total.Properties.DisplayFormat.FormatString = "{0:n0}";
             this.txt_total.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txt_total.Properties.EditFormat.FormatString = "{0:n0}";
+            this.txt_total.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txt_total.Properties.Mask.EditMask = "n0";
             this.txt_total.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txt_total.Properties.ReadOnly = true;
+            this.txt_total.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_total.Size = new System.Drawing.Size(241, 22);
             this.txt_total.TabIndex = 287;
             // 
@@ -325,7 +370,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(21, 152);
+            this.labelControl4.Location = new System.Drawing.Point(21, 177);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(101, 16);
@@ -345,7 +390,7 @@
             // 
             // txt_number
             // 
-            this.txt_number.Location = new System.Drawing.Point(140, 86);
+            this.txt_number.Location = new System.Drawing.Point(140, 111);
             this.txt_number.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_number.Name = "txt_number";
             this.txt_number.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
@@ -357,7 +402,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F, System.Drawing.FontStyle.Bold);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(21, 92);
+            this.labelControl1.Location = new System.Drawing.Point(21, 117);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(60, 16);
@@ -452,6 +497,7 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1183, 50);
             this.panelControl1.TabIndex = 4;
+            this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
             // btn_AddStorehouse
             // 
@@ -525,12 +571,6 @@
             this.gridView1.Appearance.FooterPanel.Options.UseForeColor = true;
             this.gridView1.Appearance.GroupPanel.BackColor = System.Drawing.Color.Transparent;
             this.gridView1.Appearance.GroupPanel.Options.UseBackColor = true;
-            this.gridView1.Appearance.HeaderPanel.BackColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.White;
-            this.gridView1.Appearance.HeaderPanel.Options.UseBackColor = true;
-            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
-            this.gridView1.Appearance.HeaderPanel.Options.UseForeColor = true;
             this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F);
@@ -546,6 +586,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
             // 
@@ -619,10 +660,12 @@
             this.supplies_quantity.Visible = true;
             this.supplies_quantity.VisibleIndex = 3;
             // 
-            // repositoryItem_quantity
+            // txtQty
             // 
-            this.repositoryItem_quantity.AutoHeight = false;
-            this.repositoryItem_quantity.Name = "repositoryItem_quantity";
+            this.txtQty.AutoHeight = false;
+            this.txtQty.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtQty.Name = "txtQty";
             // 
             // supplies_price
             // 
@@ -664,12 +707,10 @@
             this.total.VisibleIndex = 5;
             this.total.Width = 200;
             // 
-            // txtQty
+            // repositoryItem_quantity
             // 
-            this.txtQty.AutoHeight = false;
-            this.txtQty.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtQty.Name = "txtQty";
+            this.repositoryItem_quantity.AutoHeight = false;
+            this.repositoryItem_quantity.Name = "repositoryItem_quantity";
             // 
             // frm_NewOutCouponToConstructions
             // 
@@ -687,10 +728,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_ConstructionItem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_total_price.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lue_Construction.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.s_number.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_descriptoon.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_description.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_deliver.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_total_yes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_total.Properties)).EndInit();
@@ -703,8 +745,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lue_Storehouse.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItem_quantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtQty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItem_quantity)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -715,8 +757,8 @@
         private DevExpress.XtraEditors.LookUpEdit lue_Construction;
         private DevExpress.XtraEditors.SpinEdit s_number;
         private DevExpress.XtraEditors.SimpleButton btn_Exit;
-        private DevExpress.XtraEditors.SimpleButton btn_AddNew;
-        private DevExpress.XtraEditors.MemoEdit txt_descriptoon;
+        private DevExpress.XtraEditors.SimpleButton btn_Add;
+        private DevExpress.XtraEditors.MemoEdit txt_description;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txt_deliver;
         private DevExpress.XtraEditors.LabelControl labelControl3;
@@ -754,5 +796,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_AddStorehouse;
         private DevExpress.XtraEditors.LookUpEdit lue_Storehouse;
         private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.LookUpEdit lue_ConstructionItem;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
     }
 }

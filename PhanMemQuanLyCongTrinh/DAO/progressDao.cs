@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,18 +36,16 @@ namespace PhanMemQuanLyCongTrinh.DAO
                                join t3 in db.ST_constructions
                                on t2.construction_id equals t3.construction_id
                                where t1.progress_construction_item_id == progressId
-                               
+
                                select new
                                {
                                    t1.progress_construction_item_id,
                                    t1.progress_construction_item_custom,
-                                   t1.progress_construction_item_date,
+                                   t1.progress_construction_item_date_start,
                                    t1.progress_construction_item_description,
                                    t1.progress_construction_item_image,
-                                   t1.progress_construction_item_percent,
-                                   t2.construction_item_name,
-                                   t3.construction_name,
-                                   t2.construction_item_id,
+                                   t1.progress_construction_item_date_end,
+                                   t1.construction_item_id,
                                    t3.construction_id
                                };
                 return progress.First();
@@ -73,14 +71,15 @@ namespace PhanMemQuanLyCongTrinh.DAO
                                join t3 in db.ST_employees
                                on t1.employee_created equals t3.employee_id
                                where t2.construction_id == constructionId
-                               orderby t1.progress_construction_item_date descending
-                               select new {
+                               orderby t1.progress_construction_item_date_end descending
+                               select new
+                               {
                                    t1.progress_construction_item_id,
                                    t1.progress_construction_item_custom,
-                                   t1.progress_construction_item_date,
+                                   t1.progress_construction_item_date_end,
                                    t1.progress_construction_item_description,
                                    t1.progress_construction_item_image,
-                                   t1.progress_construction_item_percent,
+                                   t1.progress_construction_item_date_start,
                                    t2.construction_item_name,
                                    t3.employee_name
                                };
@@ -105,15 +104,15 @@ namespace PhanMemQuanLyCongTrinh.DAO
                                join t3 in db.ST_employees
                                on t1.employee_created equals t3.employee_id
                                where t1.construction_item_id == constructionItemId
-                               orderby t1.progress_construction_item_date descending
+                               orderby t1.progress_construction_item_date_end descending
                                select new
                                {
                                    t1.progress_construction_item_id,
                                    t1.progress_construction_item_custom,
-                                   t1.progress_construction_item_date,
+                                   t1.progress_construction_item_date_end,
                                    t1.progress_construction_item_description,
                                    t1.progress_construction_item_image,
-                                   t1.progress_construction_item_percent,
+                                   t1.progress_construction_item_date_start,
                                    t2.construction_item_name,
                                    t3.employee_name
                                };
@@ -137,15 +136,15 @@ namespace PhanMemQuanLyCongTrinh.DAO
                                on t1.construction_item_id equals t2.construction_item_id
                                join t3 in db.ST_employees
                                on t1.employee_created equals t3.employee_id
-                               orderby t1.progress_construction_item_date descending
+                               orderby t1.progress_construction_item_date_end descending
                                select new
                                {
                                    t1.progress_construction_item_id,
                                    t1.progress_construction_item_custom,
-                                   t1.progress_construction_item_date,
+                                   t1.progress_construction_item_date_end,
                                    t1.progress_construction_item_description,
                                    t1.progress_construction_item_image,
-                                   t1.progress_construction_item_percent,
+                                   t1.progress_construction_item_date_start,
                                    t2.construction_item_name,
                                    t3.employee_name
                                };
@@ -175,20 +174,35 @@ namespace PhanMemQuanLyCongTrinh.DAO
         }
         public bool updateProgress(DTO.ST_progress_construction_item progress)
         {
-              try
+            try
             {
                 var updateProgress = db.ST_progress_construction_items.Where(p => p.progress_construction_item_id.Equals(progress.progress_construction_item_id)).SingleOrDefault();
-                updateProgress.progress_construction_item_percent = progress.progress_construction_item_percent;
-                updateProgress.progress_construction_item_date = progress.progress_construction_item_date;
+                updateProgress.progress_construction_item_date_end = progress.progress_construction_item_date_end;
+                updateProgress.progress_construction_item_date_start = progress.progress_construction_item_date_start;
                 updateProgress.progress_construction_item_description = progress.progress_construction_item_description;
                 updateProgress.progress_construction_item_image = progress.progress_construction_item_image;
                 db.SubmitChanges();
-            return true;
+                return true;
             }
-              catch (Exception)
-              {
-                  return false;
-              }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+
+        public object isConstructionItem(Int64 constructionItemId)
+        {
+            try
+            {
+                var progress = from t1 in db.ST_progress_construction_items where t1.construction_item_id == constructionItemId select t1;
+                return progress.First();
+            }
+            catch (Exception)
+            {
+                return null;
+
+            }
         }
     }
 }

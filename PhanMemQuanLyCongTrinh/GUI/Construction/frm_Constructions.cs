@@ -85,42 +85,50 @@ namespace PhanMemQuanLyCongTrinh
         {
             if (grdv_Construction.RowCount > 0)
             {
-                Int64 constructionId = Convert.ToInt64(grdv_Construction.GetRowCellValue(indexConstruction, "construction_id").ToString());
-                
-
-                var constructionName = grdv_Construction.GetRowCellValue(indexConstruction, "construction_name").ToString();
-
-                if (constructionItemBus.isContructionIdtemGroup(constructionId) == false)
+                if (indexConstruction >= 0)
                 {
+                    Int64 constructionId = Convert.ToInt64(grdv_Construction.GetRowCellValue(indexConstruction, "construction_id").ToString());
 
-                    bool boolCheckDelete = messeage.info("Bạn Có Muốn Xóa Khách Hàng '", constructionName);
 
-                    if (boolCheckDelete == true)
+                    var constructionName = grdv_Construction.GetRowCellValue(indexConstruction, "construction_name").ToString();
+
+                    if (constructionItemBus.isContructionIdtemGroup(constructionId) == false)
                     {
-                        bool boolDeleteCustomer = constructionBus.deleteContruction(constructionId);
-                        if (boolDeleteCustomer == true)
-                        {
-                            messeage.success("Xóa Khách hàng Thành Công!");
 
-                            loadContruction();
-                        }
-                        else
-                        {
-                            messeage.error("Xóa Khách hàng Không Thành Công!");
+                        bool boolCheckDelete = messeage.info("Bạn Có Muốn Xóa Công Trình", constructionName);
 
+                        if (boolCheckDelete == true)
+                        {
+                            bool boolDeleteCustomer = constructionBus.deleteContruction(constructionId);
+                            if (boolDeleteCustomer == true)
+                            {
+                                messeage.success("Xóa Khách hàng Thành Công!");
+
+                                loadContruction();
+                            }
+                            else
+                            {
+                                messeage.error("Xóa Khách hàng Không Thành Công!");
+
+                            }
                         }
                     }
-                }
+               
                 else
                 {
                     messeage.error("Vui Lòng Xóa Tất Cả Các hạng Mục Của Công Trình!");
 
                 }
+                }
+                else
+                {
+                    messeage.error("Bạn Hãy Chọn Công  Trình Để Xóa!!!");
 
+                }
             }
             else
             {
-                messeage.error("Không có  Khách Hàng Để Xóa!!!");
+                messeage.error("Không có Gì Để Xóa!!!");
 
             }
             
@@ -139,10 +147,24 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_EditCustomerGroup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frm_UpdateContruction frm = new frm_UpdateContruction();
-            frm.FormClosed += new FormClosedEventHandler(dongform);
-            frm.counstructionId = Convert.ToInt64(grdv_Construction.GetRowCellValue(indexConstruction, "construction_id").ToString());
-            frm.ShowDialog();
+            if (grdv_Construction.RowCount > 0)
+            {
+                if (indexConstruction >= 0)
+                {
+                    frm_UpdateContruction frm = new frm_UpdateContruction();
+                    frm.FormClosed += new FormClosedEventHandler(dongform);
+                    frm.counstructionId = Convert.ToInt64(grdv_Construction.GetRowCellValue(indexConstruction, "construction_id").ToString());
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    messeage.error("Bạn Chưa Chọn Công Trình Để Chỉnh Sửa!");
+                }
+            }
+            else
+            {
+                messeage.error("Không Có Gì Để Chỉnh Sửa!");
+            }
         }
 
         private void btn_Close_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -150,37 +172,48 @@ namespace PhanMemQuanLyCongTrinh
             this.Close();
         }
 
+        private void loadAllConstructionItem()
+        {
+            grdc_ConstructionItem.DataSource = constructionItemBus.getAllContructionItem();  
+        }
         private void btn_Refesh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            loadAllConstructionItem();
         }
 
         private void btn_Delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (grdv_ConstructionItem.RowCount > 0)
             {
-                Int64 Id = Convert.ToInt64(grdv_ConstructionItem.GetRowCellValue(indexConstructionItem, "construction_item_id").ToString());
-                string Name = grdv_ConstructionItem.GetRowCellValue(indexConstructionItem, "construction_item_name").ToString();
-
-                bool boolCheckDelete = messeage.info("Bạn Có Muốn Hạng Mục '", Name);
-
-                if (boolCheckDelete == true)
+                if (indexConstructionItem >= 0)
                 {
-                    bool boolDeleteBuildContractor = constructionItemBus.deleteConstructionItem(Id);
-                    if (boolDeleteBuildContractor == true)
+                    Int64 Id = Convert.ToInt64(grdv_ConstructionItem.GetRowCellValue(indexConstructionItem, "construction_item_id").ToString());
+                    string Name = grdv_ConstructionItem.GetRowCellValue(indexConstructionItem, "construction_item_name").ToString();
+
+                    bool boolCheckDelete = messeage.info("Bạn Có Muốn Hạng Mục ", Name);
+
+                    if (boolCheckDelete == true)
                     {
-                        messeage.success("Xóa Hạng Mục Thành Công!");
-                        if (indexConstruction >= 0)
+                        bool boolDeleteBuildContractor = constructionItemBus.deleteConstructionItem(Id);
+                        if (boolDeleteBuildContractor == true)
                         {
-                            Int64 ContructionIdd = Convert.ToInt64(grdv_Construction.GetRowCellValue(indexConstruction, "construction_id").ToString());
-                            loadContructionItem(ContructionIdd);
+                            messeage.success("Xóa Hạng Mục Thành Công!");
+                            if (indexConstruction >= 0)
+                            {
+                                Int64 ContructionIdd = Convert.ToInt64(grdv_Construction.GetRowCellValue(indexConstruction, "construction_id").ToString());
+                                loadContructionItem(ContructionIdd);
+                            }
+                        }
+                        else
+                        {
+                            messeage.error("Xóa Nhà Cung Cấp Không Thất Bại!");
+
                         }
                     }
-                    else
-                    {
-                        messeage.error("Xóa Nhà Cung Cấp Không Thất Bại!");
-
-                    }
+                }
+                else
+                {
+                    messeage.error("Bạn Hãy Chọn Hạng Mục Để Xóa!!");
                 }
 
             }
@@ -204,7 +237,7 @@ namespace PhanMemQuanLyCongTrinh
         }
         private void dongformItem(object sender, EventArgs e)
         {
-            if (indexConstruction >= 0)
+            if (grdv_Construction.RowCount > 0)
             {
                 Int64 ContructionIdd = Convert.ToInt64(grdv_Construction.GetRowCellValue(indexConstruction, "construction_id").ToString());
                 loadContructionItem(ContructionIdd);
@@ -214,10 +247,24 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_Edit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frm_UpdateConstructionItem frm = new frm_UpdateConstructionItem();
-            frm.FormClosed += new FormClosedEventHandler(dongformItem);
-            frm.counstructionItemId = Convert.ToInt64(grdv_ConstructionItem.GetRowCellValue(indexConstructionItem, "construction_item_id").ToString());
-            frm.ShowDialog();
+            if (grdv_ConstructionItem.RowCount >= 0)
+            {
+                if (indexConstructionItem >= 0)
+                {
+                    frm_UpdateConstructionItem frm = new frm_UpdateConstructionItem();
+                    frm.FormClosed += new FormClosedEventHandler(dongformItem);
+                    frm.counstructionItemId = Convert.ToInt64(grdv_ConstructionItem.GetRowCellValue(indexConstructionItem, "construction_item_id").ToString());
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    messeage.error("Bạn Hãy Chọn Hạng Mục Để Chỉnh Sửa!");
+                }
+            }
+            else
+            {
+                messeage.error("Không Có Gì Để Chỉnh Sửa!");
+            }
         }
     }
 }

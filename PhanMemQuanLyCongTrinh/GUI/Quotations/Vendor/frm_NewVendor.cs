@@ -87,10 +87,12 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            string check = checkNull();
-            if (check == "true")
+            try
             {
-                
+                string check = checkNull();
+                if (check == "true")
+                {
+
                     bool boolInsertVendor = insertVendor();
                     if (boolInsertVendor == true)
                     {
@@ -101,10 +103,15 @@ namespace PhanMemQuanLyCongTrinh
                     {
                         messeage.error("Không Thể Thêm Mới!");
                     }
+                }
+                else
+                {
+                    messeage.error(check);
+                }
             }
-            else
+            catch (Exception)
             {
-                messeage.error(check);
+                messeage.err();
             }
         }
 

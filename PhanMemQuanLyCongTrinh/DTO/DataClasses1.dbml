@@ -54,11 +54,15 @@
       <Column Name="construction_id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
       <Column Name="building_contractor_id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
       <Column Name="construction_item_total_price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="construction_item_total_price_reality" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="construction_item_image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="construction_item_file_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="construction_item_file" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="construction_item_date_start" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="construction_item_date_end" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="construction_item_date_start_real" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="construction_item_date_end_real" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="construction_item_date_start_guarantee" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="construction_item_date_end_guarantee" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="construction_item_status" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="employee_created" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
@@ -76,10 +80,12 @@
       <Column Name="construction_phone" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Column Name="construction_file_name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="construction_total_price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="construction_total_price_reality" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="construction_file" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="construction_date_start" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="construction_date_end" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="construction_date_guarantee" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="construction_date_start_guarantee" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="construction_date_end_guarantee" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="construction_status" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="employee_created" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
     </Type>
@@ -239,10 +245,12 @@
       <Column Name="out_coupon_supplies_id_custom" Type="System.String" DbType="VarChar(45)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="employee_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="construction_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="construction_item_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="customer_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="storehouse_id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
       <Column Name="out_coupon_supplies_created_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="out_coupon_supplies_number" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="out_coupon_supplies_receiver" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
       <Column Name="out_coupon_supplies_description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="out_coupon_supplies_total_percent_discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="out_coupon_supplies_total_price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
@@ -292,8 +300,9 @@
       <Column Name="progress_construction_item_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="progress_construction_item_custom" Type="System.String" DbType="VarChar(55)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="construction_item_id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
-      <Column Name="progress_construction_item_percent" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="progress_construction_item_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="progress_construction_item_status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="progress_construction_item_date_start" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="progress_construction_item_date_end" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="progress_construction_item_description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="progress_construction_item_image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="employee_created" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
@@ -305,6 +314,12 @@
       <Column Name="pulic_debt_id_custom" Type="System.String" DbType="VarChar(33)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="customer_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="vendor_id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ST_status" Member="ST_status">
+    <Type Name="ST_status">
+      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.ST_storehouses" Member="ST_storehouses">

@@ -341,6 +341,14 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
+		public System.Data.Linq.Table<ST_status> ST_status
+		{
+			get
+			{
+				return this.GetTable<ST_status>();
+			}
+		}
+		
 		public System.Data.Linq.Table<ST_storehouse> ST_storehouses
 		{
 			get
@@ -1308,6 +1316,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		
 		private System.Nullable<decimal> _construction_item_total_price;
 		
+		private System.Nullable<decimal> _construction_item_total_price_reality;
+		
 		private System.Data.Linq.Binary _construction_item_image;
 		
 		private string _construction_item_file_name;
@@ -1317,6 +1327,12 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		private System.Nullable<System.DateTime> _construction_item_date_start;
 		
 		private System.Nullable<System.DateTime> _construction_item_date_end;
+		
+		private System.Nullable<System.DateTime> _construction_item_date_start_real;
+		
+		private System.Nullable<System.DateTime> _construction_item_date_end_real;
+		
+		private System.Nullable<System.DateTime> _construction_item_date_start_guarantee;
 		
 		private System.Nullable<System.DateTime> _construction_item_date_end_guarantee;
 		
@@ -1342,6 +1358,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void Onbuilding_contractor_idChanged();
     partial void Onconstruction_item_total_priceChanging(System.Nullable<decimal> value);
     partial void Onconstruction_item_total_priceChanged();
+    partial void Onconstruction_item_total_price_realityChanging(System.Nullable<decimal> value);
+    partial void Onconstruction_item_total_price_realityChanged();
     partial void Onconstruction_item_imageChanging(System.Data.Linq.Binary value);
     partial void Onconstruction_item_imageChanged();
     partial void Onconstruction_item_file_nameChanging(string value);
@@ -1352,6 +1370,12 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void Onconstruction_item_date_startChanged();
     partial void Onconstruction_item_date_endChanging(System.Nullable<System.DateTime> value);
     partial void Onconstruction_item_date_endChanged();
+    partial void Onconstruction_item_date_start_realChanging(System.Nullable<System.DateTime> value);
+    partial void Onconstruction_item_date_start_realChanged();
+    partial void Onconstruction_item_date_end_realChanging(System.Nullable<System.DateTime> value);
+    partial void Onconstruction_item_date_end_realChanged();
+    partial void Onconstruction_item_date_start_guaranteeChanging(System.Nullable<System.DateTime> value);
+    partial void Onconstruction_item_date_start_guaranteeChanged();
     partial void Onconstruction_item_date_end_guaranteeChanging(System.Nullable<System.DateTime> value);
     partial void Onconstruction_item_date_end_guaranteeChanged();
     partial void Onconstruction_item_statusChanging(System.Nullable<int> value);
@@ -1505,6 +1529,26 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_total_price_reality", DbType="Money")]
+		public System.Nullable<decimal> construction_item_total_price_reality
+		{
+			get
+			{
+				return this._construction_item_total_price_reality;
+			}
+			set
+			{
+				if ((this._construction_item_total_price_reality != value))
+				{
+					this.Onconstruction_item_total_price_realityChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_total_price_reality = value;
+					this.SendPropertyChanged("construction_item_total_price_reality");
+					this.Onconstruction_item_total_price_realityChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary construction_item_image
 		{
@@ -1601,6 +1645,66 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._construction_item_date_end = value;
 					this.SendPropertyChanged("construction_item_date_end");
 					this.Onconstruction_item_date_endChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_date_start_real", DbType="Date")]
+		public System.Nullable<System.DateTime> construction_item_date_start_real
+		{
+			get
+			{
+				return this._construction_item_date_start_real;
+			}
+			set
+			{
+				if ((this._construction_item_date_start_real != value))
+				{
+					this.Onconstruction_item_date_start_realChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_date_start_real = value;
+					this.SendPropertyChanged("construction_item_date_start_real");
+					this.Onconstruction_item_date_start_realChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_date_end_real", DbType="Date")]
+		public System.Nullable<System.DateTime> construction_item_date_end_real
+		{
+			get
+			{
+				return this._construction_item_date_end_real;
+			}
+			set
+			{
+				if ((this._construction_item_date_end_real != value))
+				{
+					this.Onconstruction_item_date_end_realChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_date_end_real = value;
+					this.SendPropertyChanged("construction_item_date_end_real");
+					this.Onconstruction_item_date_end_realChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_date_start_guarantee", DbType="Date")]
+		public System.Nullable<System.DateTime> construction_item_date_start_guarantee
+		{
+			get
+			{
+				return this._construction_item_date_start_guarantee;
+			}
+			set
+			{
+				if ((this._construction_item_date_start_guarantee != value))
+				{
+					this.Onconstruction_item_date_start_guaranteeChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_date_start_guarantee = value;
+					this.SendPropertyChanged("construction_item_date_start_guarantee");
+					this.Onconstruction_item_date_start_guaranteeChanged();
 				}
 			}
 		}
@@ -1712,13 +1816,17 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		
 		private System.Nullable<decimal> _construction_total_price;
 		
+		private System.Nullable<decimal> _construction_total_price_reality;
+		
 		private System.Data.Linq.Binary _construction_file;
 		
 		private System.Nullable<System.DateTime> _construction_date_start;
 		
 		private System.Nullable<System.DateTime> _construction_date_end;
 		
-		private System.Nullable<System.DateTime> _construction_date_guarantee;
+		private System.Nullable<System.DateTime> _construction_date_start_guarantee;
+		
+		private System.Nullable<System.DateTime> _construction_date_end_guarantee;
 		
 		private System.Nullable<int> _construction_status;
 		
@@ -1748,14 +1856,18 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void Onconstruction_file_nameChanged();
     partial void Onconstruction_total_priceChanging(System.Nullable<decimal> value);
     partial void Onconstruction_total_priceChanged();
+    partial void Onconstruction_total_price_realityChanging(System.Nullable<decimal> value);
+    partial void Onconstruction_total_price_realityChanged();
     partial void Onconstruction_fileChanging(System.Data.Linq.Binary value);
     partial void Onconstruction_fileChanged();
     partial void Onconstruction_date_startChanging(System.Nullable<System.DateTime> value);
     partial void Onconstruction_date_startChanged();
     partial void Onconstruction_date_endChanging(System.Nullable<System.DateTime> value);
     partial void Onconstruction_date_endChanged();
-    partial void Onconstruction_date_guaranteeChanging(System.Nullable<System.DateTime> value);
-    partial void Onconstruction_date_guaranteeChanged();
+    partial void Onconstruction_date_start_guaranteeChanging(System.Nullable<System.DateTime> value);
+    partial void Onconstruction_date_start_guaranteeChanged();
+    partial void Onconstruction_date_end_guaranteeChanging(System.Nullable<System.DateTime> value);
+    partial void Onconstruction_date_end_guaranteeChanged();
     partial void Onconstruction_statusChanging(System.Nullable<int> value);
     partial void Onconstruction_statusChanged();
     partial void Onemployee_createdChanging(System.Nullable<long> value);
@@ -1967,6 +2079,26 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_total_price_reality", DbType="Money")]
+		public System.Nullable<decimal> construction_total_price_reality
+		{
+			get
+			{
+				return this._construction_total_price_reality;
+			}
+			set
+			{
+				if ((this._construction_total_price_reality != value))
+				{
+					this.Onconstruction_total_price_realityChanging(value);
+					this.SendPropertyChanging();
+					this._construction_total_price_reality = value;
+					this.SendPropertyChanged("construction_total_price_reality");
+					this.Onconstruction_total_price_realityChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_file", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary construction_file
 		{
@@ -2027,22 +2159,42 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_date_guarantee", DbType="Date")]
-		public System.Nullable<System.DateTime> construction_date_guarantee
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_date_start_guarantee", DbType="Date")]
+		public System.Nullable<System.DateTime> construction_date_start_guarantee
 		{
 			get
 			{
-				return this._construction_date_guarantee;
+				return this._construction_date_start_guarantee;
 			}
 			set
 			{
-				if ((this._construction_date_guarantee != value))
+				if ((this._construction_date_start_guarantee != value))
 				{
-					this.Onconstruction_date_guaranteeChanging(value);
+					this.Onconstruction_date_start_guaranteeChanging(value);
 					this.SendPropertyChanging();
-					this._construction_date_guarantee = value;
-					this.SendPropertyChanged("construction_date_guarantee");
-					this.Onconstruction_date_guaranteeChanged();
+					this._construction_date_start_guarantee = value;
+					this.SendPropertyChanged("construction_date_start_guarantee");
+					this.Onconstruction_date_start_guaranteeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_date_end_guarantee", DbType="Date")]
+		public System.Nullable<System.DateTime> construction_date_end_guarantee
+		{
+			get
+			{
+				return this._construction_date_end_guarantee;
+			}
+			set
+			{
+				if ((this._construction_date_end_guarantee != value))
+				{
+					this.Onconstruction_date_end_guaranteeChanging(value);
+					this.SendPropertyChanging();
+					this._construction_date_end_guarantee = value;
+					this.SendPropertyChanged("construction_date_end_guarantee");
+					this.Onconstruction_date_end_guaranteeChanged();
 				}
 			}
 		}
@@ -4944,6 +5096,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		
 		private System.Nullable<long> _construction_id;
 		
+		private System.Nullable<long> _construction_item_id;
+		
 		private System.Nullable<long> _customer_id;
 		
 		private long _storehouse_id;
@@ -4951,6 +5105,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		private System.Nullable<System.DateTime> _out_coupon_supplies_created_date;
 		
 		private string _out_coupon_supplies_number;
+		
+		private string _out_coupon_supplies_receiver;
 		
 		private string _out_coupon_supplies_description;
 		
@@ -4972,6 +5128,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void Onemployee_idChanged();
     partial void Onconstruction_idChanging(System.Nullable<long> value);
     partial void Onconstruction_idChanged();
+    partial void Onconstruction_item_idChanging(System.Nullable<long> value);
+    partial void Onconstruction_item_idChanged();
     partial void Oncustomer_idChanging(System.Nullable<long> value);
     partial void Oncustomer_idChanged();
     partial void Onstorehouse_idChanging(long value);
@@ -4980,6 +5138,8 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void Onout_coupon_supplies_created_dateChanged();
     partial void Onout_coupon_supplies_numberChanging(string value);
     partial void Onout_coupon_supplies_numberChanged();
+    partial void Onout_coupon_supplies_receiverChanging(string value);
+    partial void Onout_coupon_supplies_receiverChanged();
     partial void Onout_coupon_supplies_descriptionChanging(string value);
     partial void Onout_coupon_supplies_descriptionChanged();
     partial void Onout_coupon_supplies_total_percent_discountChanging(System.Nullable<int> value);
@@ -5075,6 +5235,26 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_construction_item_id", DbType="BigInt")]
+		public System.Nullable<long> construction_item_id
+		{
+			get
+			{
+				return this._construction_item_id;
+			}
+			set
+			{
+				if ((this._construction_item_id != value))
+				{
+					this.Onconstruction_item_idChanging(value);
+					this.SendPropertyChanging();
+					this._construction_item_id = value;
+					this.SendPropertyChanged("construction_item_id");
+					this.Onconstruction_item_idChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_id", DbType="BigInt")]
 		public System.Nullable<long> customer_id
 		{
@@ -5151,6 +5331,26 @@ namespace PhanMemQuanLyCongTrinh.DTO
 					this._out_coupon_supplies_number = value;
 					this.SendPropertyChanged("out_coupon_supplies_number");
 					this.Onout_coupon_supplies_numberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_out_coupon_supplies_receiver", DbType="NVarChar(250)")]
+		public string out_coupon_supplies_receiver
+		{
+			get
+			{
+				return this._out_coupon_supplies_receiver;
+			}
+			set
+			{
+				if ((this._out_coupon_supplies_receiver != value))
+				{
+					this.Onout_coupon_supplies_receiverChanging(value);
+					this.SendPropertyChanging();
+					this._out_coupon_supplies_receiver = value;
+					this.SendPropertyChanged("out_coupon_supplies_receiver");
+					this.Onout_coupon_supplies_receiverChanged();
 				}
 			}
 		}
@@ -6006,9 +6206,11 @@ namespace PhanMemQuanLyCongTrinh.DTO
 		
 		private long _construction_item_id;
 		
-		private System.Nullable<int> _progress_construction_item_percent;
+		private System.Nullable<int> _progress_construction_item_status;
 		
-		private System.Nullable<System.DateTime> _progress_construction_item_date;
+		private System.Nullable<System.DateTime> _progress_construction_item_date_start;
+		
+		private System.Nullable<System.DateTime> _progress_construction_item_date_end;
 		
 		private string _progress_construction_item_description;
 		
@@ -6026,10 +6228,12 @@ namespace PhanMemQuanLyCongTrinh.DTO
     partial void Onprogress_construction_item_customChanged();
     partial void Onconstruction_item_idChanging(long value);
     partial void Onconstruction_item_idChanged();
-    partial void Onprogress_construction_item_percentChanging(System.Nullable<int> value);
-    partial void Onprogress_construction_item_percentChanged();
-    partial void Onprogress_construction_item_dateChanging(System.Nullable<System.DateTime> value);
-    partial void Onprogress_construction_item_dateChanged();
+    partial void Onprogress_construction_item_statusChanging(System.Nullable<int> value);
+    partial void Onprogress_construction_item_statusChanged();
+    partial void Onprogress_construction_item_date_startChanging(System.Nullable<System.DateTime> value);
+    partial void Onprogress_construction_item_date_startChanged();
+    partial void Onprogress_construction_item_date_endChanging(System.Nullable<System.DateTime> value);
+    partial void Onprogress_construction_item_date_endChanged();
     partial void Onprogress_construction_item_descriptionChanging(string value);
     partial void Onprogress_construction_item_descriptionChanged();
     partial void Onprogress_construction_item_imageChanging(System.Data.Linq.Binary value);
@@ -6103,42 +6307,62 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_progress_construction_item_percent", DbType="Int")]
-		public System.Nullable<int> progress_construction_item_percent
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_progress_construction_item_status", DbType="Int")]
+		public System.Nullable<int> progress_construction_item_status
 		{
 			get
 			{
-				return this._progress_construction_item_percent;
+				return this._progress_construction_item_status;
 			}
 			set
 			{
-				if ((this._progress_construction_item_percent != value))
+				if ((this._progress_construction_item_status != value))
 				{
-					this.Onprogress_construction_item_percentChanging(value);
+					this.Onprogress_construction_item_statusChanging(value);
 					this.SendPropertyChanging();
-					this._progress_construction_item_percent = value;
-					this.SendPropertyChanged("progress_construction_item_percent");
-					this.Onprogress_construction_item_percentChanged();
+					this._progress_construction_item_status = value;
+					this.SendPropertyChanged("progress_construction_item_status");
+					this.Onprogress_construction_item_statusChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_progress_construction_item_date", DbType="DateTime")]
-		public System.Nullable<System.DateTime> progress_construction_item_date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_progress_construction_item_date_start", DbType="DateTime")]
+		public System.Nullable<System.DateTime> progress_construction_item_date_start
 		{
 			get
 			{
-				return this._progress_construction_item_date;
+				return this._progress_construction_item_date_start;
 			}
 			set
 			{
-				if ((this._progress_construction_item_date != value))
+				if ((this._progress_construction_item_date_start != value))
 				{
-					this.Onprogress_construction_item_dateChanging(value);
+					this.Onprogress_construction_item_date_startChanging(value);
 					this.SendPropertyChanging();
-					this._progress_construction_item_date = value;
-					this.SendPropertyChanged("progress_construction_item_date");
-					this.Onprogress_construction_item_dateChanged();
+					this._progress_construction_item_date_start = value;
+					this.SendPropertyChanged("progress_construction_item_date_start");
+					this.Onprogress_construction_item_date_startChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_progress_construction_item_date_end", DbType="DateTime")]
+		public System.Nullable<System.DateTime> progress_construction_item_date_end
+		{
+			get
+			{
+				return this._progress_construction_item_date_end;
+			}
+			set
+			{
+				if ((this._progress_construction_item_date_end != value))
+				{
+					this.Onprogress_construction_item_date_endChanging(value);
+					this.SendPropertyChanging();
+					this._progress_construction_item_date_end = value;
+					this.SendPropertyChanged("progress_construction_item_date_end");
+					this.Onprogress_construction_item_date_endChanged();
 				}
 			}
 		}
@@ -6354,6 +6578,51 @@ namespace PhanMemQuanLyCongTrinh.DTO
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ST_status")]
+	public partial class ST_status
+	{
+		
+		private System.Nullable<int> _id;
+		
+		private string _name;
+		
+		public ST_status()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int")]
+		public System.Nullable<int> id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(255)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this._name = value;
+				}
 			}
 		}
 	}

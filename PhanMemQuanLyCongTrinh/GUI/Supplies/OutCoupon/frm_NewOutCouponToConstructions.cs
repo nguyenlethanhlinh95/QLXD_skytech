@@ -17,6 +17,10 @@ namespace PhanMemQuanLyCongTrinh
 
         BUS.StorehouseBus storehouse = new StorehouseBus();
         BUS.ConstructionBus construction = new ConstructionBus();
+        BUS.OutCouponSuppliesToConstructionBus outCouponConstruction = new OutCouponSuppliesToConstructionBus();
+        BUS.DetailOutCouponSuppliesBus detailOCSBus = new DetailOutCouponSuppliesBus();
+        BUS.ConstructionItemBus constructionItemBus = new ConstructionItemBus();
+        BUS.StorehouseDetailBus storehouseDetailBus = new StorehouseDetailBus();
         public frm_NewOutCouponToConstructions()
         {
             InitializeComponent();
@@ -29,23 +33,31 @@ namespace PhanMemQuanLyCongTrinh
         List<Int64> ListID = new List<Int64>();
         private Int64 qty = 0;
         private decimal price = 0;
-
-
+        private decimal totalPrice = 0;
+        private bool checkChangeStorehouse = true;
         private Int64 storehouseId = 0;
+
         private void LoadSearchLookUp()
         {
            
-            //slue_Supplies.Properties.ValueMember = "supplies_id";
-            //slue_Supplies.Properties.DisplayMember = "supplies_name";
-            //slue_Supplies.Properties.DataSource = _sup.getAllSupliesInStorehouse(storehouseId);
-            //slue_Supplies.Properties.ShowClearButton = false;
+            slue_Supplies.Properties.ValueMember = "supplies_id";
+            slue_Supplies.Properties.DisplayMember = "supplies_name";
+            slue_Supplies.Properties.DataSource = _sup.getAllSupliesInStorehouse(storehouseId);
+            slue_Supplies.Properties.ShowClearButton = false;
         }
         private void frm_NewOutCouponToConstructions_Load(object sender, EventArgs e)
         {
-           
+            this.AcceptButton = btn_Add;
             StyleDevxpressGridControl.styleGridControl(gridControl1, gridView1);
-            loadStoreHouse();
-            loadConstruction();
+            try
+            {
+                loadStoreHouse();
+                loadConstruction();
+            }
+            catch (Exception)
+            {
+                messeage.err();
+            }
         }
 
         public void loadStoreHouse()
@@ -79,20 +91,20 @@ namespace PhanMemQuanLyCongTrinh
                         {
                             // update quantity len 1
                             
-                            //var supplies1 = storehouseDetail.getQuality(idSupplies, storehouseId);
+                            var supplies1 = storehouseDetail.getQuality(idSupplies, storehouseId);
 
-                            //Int64 qtyStorehouse = Convert.ToInt64(supplies1.GetType().GetProperty("storehouse_detail_quantity").GetValue(supplies1, null).ToString());
-                            //if (qtyStorehouse > item.quantity)
-                            //{
-                            //    item.quantity += 1;
-                            //}
-                            //else
-                            //{
-                            //    messeage.error("Số Lượng Lớn Hơn Hàng Tồn");
-                            //    item.quantity = qtyStorehouse;
-                            //}
-                            //check = true;
-                            //break;
+                            Int64 qtyStorehouse = Convert.ToInt64(supplies1.GetType().GetProperty("storehouse_detail_quantity").GetValue(supplies1, null).ToString());
+                            if (qtyStorehouse > item.quantity)
+                            {
+                                item.quantity += 1;
+                            }
+                            else
+                            {
+                                messeage.error("Số Lượng Lớn Hơn Hàng Tồn");
+                                item.quantity = qtyStorehouse;
+                            }
+                            check = true;
+                            break;
                         }
                     }
 
@@ -195,86 +207,92 @@ namespace PhanMemQuanLyCongTrinh
         private void SumPrice()
         {
 
-            string total_price_supplies = DoFormat(decimal.Parse(gridView1.Columns["total"].SummaryItem.SummaryValue.ToString()));
+            decimal total_price_supplies = decimal.Parse(gridView1.Columns["total"].SummaryItem.SummaryValue.ToString());
            
-            StyleDevxpressGridControl.styleTextBoxVND(txt_total);
+            
           
-            txt_total.Text = total_price_supplies.ToString();
+            txt_total.Text = StyleDevxpressGridControl.convertDecimaToNumberic(total_price_supplies);
             int percent = 0;
             percent = int.Parse(s_number.EditValue.ToString());
-            decimal total = Convert.ToDecimal(total_price_supplies) - (percent * Convert.ToDecimal(total_price_supplies)/100);
-            txt_total_yes.Text = total.ToString();
-            txt_total_price.Text = total.ToString();
+            totalPrice = Convert.ToDecimal(total_price_supplies) - (percent * Convert.ToDecimal(total_price_supplies) / 100);
+            txt_total_price.Text = StyleDevxpressGridControl.convertDecimaToNumberic(totalPrice);
+           
         }
 
         private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-
-            if (e.Column == supplies_quantity)
+            try
             {
-               
-                var suppliesId = Convert.ToInt64(gridView1.GetFocusedRowCellValue(ID).ToString());
-                qty = Convert.ToInt64(gridView1.GetFocusedRowCellValue(supplies_quantity).ToString());
 
-                //var supplies1 = storehouseDetail.getQuality(suppliesId,storehouseId);
+                if (e.Column == supplies_quantity)
+                {
 
-                //Int64 qtyStorehouse = Convert.ToInt64( supplies1.GetType().GetProperty("storehouse_detail_quantity").GetValue(supplies1, null).ToString());
-                //if (qty == 0)
-                //{
-                //    messeage.error("Số Lượng Ít Nhất Bằng 1");
-                //    foreach (var item in listObject)
-                //    {
-                //        gridView1.SetFocusedRowCellValue(supplies_quantity, "1");
-                //        if (item.id == suppliesId)
-                //        {
-                //            item.quantity = 1;
+                    var suppliesId = Convert.ToInt64(gridView1.GetFocusedRowCellValue(ID).ToString());
+                    qty = Convert.ToInt64(gridView1.GetFocusedRowCellValue(supplies_quantity).ToString());
 
-                //        }
-                //    }
-                //}
-                //else if (qty <= qtyStorehouse)
-                //{
-                    
-                //    price = Convert.ToDecimal(gridView1.GetFocusedRowCellValue(supplies_price).ToString());
-                //    decimal total1 = qty * price;
-                //    gridView1.SetFocusedRowCellValue(total, total1.ToString());
+                    var supplies1 = storehouseDetail.getQuality(suppliesId, storehouseId);
 
-                //    foreach (var item in listObject)
-                //    {
-                //        if (item.id == suppliesId)
-                //        {
-                //            item.quantity = qty;
-                           
-                //        }
-                //    }
-                    
+                    Int64 qtyStorehouse = Convert.ToInt64(supplies1.GetType().GetProperty("storehouse_detail_quantity").GetValue(supplies1, null).ToString());
+                    if (qty == 0)
+                    {
+                        messeage.error("Số Lượng Ít Nhất Bằng 1");
+                        foreach (var item in listObject)
+                        {
+                            gridView1.SetFocusedRowCellValue(supplies_quantity, "1");
+                            if (item.id == suppliesId)
+                            {
+                                item.quantity = 1;
 
-                //    gridView1.RefreshData();
-                //    SumPrice();
-                //}
-                //else
-                //{
-                //    messeage.error("Số Lượng không Đủ!");
-                //    gridView1.SetFocusedRowCellValue(supplies_quantity, qtyStorehouse.ToString());
-                //    decimal total1 = qtyStorehouse * price;
-                //    gridView1.SetFocusedRowCellValue(total, total1.ToString());
-                  
+                            }
+                        }
+                    }
+                    else if (qty <= qtyStorehouse)
+                    {
 
-                //    foreach (var item in listObject)
-                //    {
-                //        if (item.id == suppliesId)
-                //        {
-                //            item.quantity = qty;
+                        price = Convert.ToDecimal(gridView1.GetFocusedRowCellValue(supplies_price).ToString());
+                        decimal total1 = qty * price;
+                        gridView1.SetFocusedRowCellValue(total, total1.ToString());
 
-                //        }
-                //    }
+                        foreach (var item in listObject)
+                        {
+                            if (item.id == suppliesId)
+                            {
+                                item.quantity = qty;
 
-                //    SumPrice();
-                //    gridView1.RefreshData();
-                //}
-               
+                            }
+                        }
+
+
+                        gridView1.RefreshData();
+                        SumPrice();
+                    }
+                    else
+                    {
+                        messeage.error("Số Lượng không Đủ!");
+                        gridView1.SetFocusedRowCellValue(supplies_quantity, qtyStorehouse.ToString());
+                        decimal total1 = qtyStorehouse * price;
+                        gridView1.SetFocusedRowCellValue(total, total1.ToString());
+
+
+                        foreach (var item in listObject)
+                        {
+                            if (item.id == suppliesId)
+                            {
+                                item.quantity = qty;
+
+                            }
+                        }
+
+                        SumPrice();
+                        gridView1.RefreshData();
+                    }
+
+                }
             }
-           
+            catch (Exception)
+            {
+                messeage.err();
+            }
         }
 
         private void gridView1_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -284,37 +302,62 @@ namespace PhanMemQuanLyCongTrinh
 
         private void lue_Storehouse_EditValueChanged(object sender, EventArgs e)
         {
-            if (storehouseId == 0)
+            try
             {
-                storehouseId = Convert.ToInt64(lue_Storehouse.EditValue);
-                LoadSearchLookUp();
-            }
-            else
-            {
-                bool isChangeStorehouse = messeage.info("Bạn Có Muốn Đổi Kho.Khi Đổi Sẽ Mất Hết Vật Tư Đã Nhập","");
-                if (isChangeStorehouse == true)
+                if (checkChangeStorehouse == true)
                 {
-                    storehouseId = Convert.ToInt64(lue_Storehouse.EditValue);
-                    LoadSearchLookUp();
+                    if (storehouseId == 0)
+                    {
+                        storehouseId = Convert.ToInt64(lue_Storehouse.EditValue);
+                        LoadSearchLookUp();
+                    }
+                    else
+                    {
+                        bool isChangeStorehouse = messeage.info("Bạn Có Muốn Đổi Kho.Khi Đổi Sẽ Mất Hết Vật Tư Đã Nhập", "");
+                        if (isChangeStorehouse == true)
+                        {
+                            storehouseId = Convert.ToInt64(lue_Storehouse.EditValue);
+                            LoadSearchLookUp();
+                            gridControl1.DataSource = null;
+                            listObject.Clear();
+                        }
+                        else
+                        {
+                            checkChangeStorehouse = false;
+                            lue_Storehouse.EditValue = storehouseId;
+                        }
+                    }
                 }
                 else
                 {
-                    lue_Storehouse.EditValue = storehouseId;
+                    checkChangeStorehouse = true;
                 }
             }
-
+            catch (Exception)
+            {
+                messeage.err();
+            }
         }
 
         private void s_number_EditValueChanged(object sender, EventArgs e)
         {
-            SumPrice();
+            try
+            {
+                SumPrice();
+            }
+            catch (Exception)
+            {
+                messeage.err();
+            }
         }
 
         private string checkNull()
         {
-            if (lue_Construction.Text == "")
+            if (lue_ConstructionItem.Text == "")
             {
-                lue_Construction.Focus();
+              
+                    lue_ConstructionItem.Focus();
+
                 return "Xin Nhập Công Trình";
             }
             else if (gridView1.RowCount == 0)
@@ -327,31 +370,129 @@ namespace PhanMemQuanLyCongTrinh
                 txt_number.Focus();
                 return "Xin Nhập Số Phiếu";
             }
+            else if (txt_deliver.Text == "")
+            {
+                txt_deliver.Focus();
+                return "Xin Nhập Người Nhận";
+            }
+            else if (txt_total_yes.Text == "")
+            {
+                txt_total_yes.Focus();
+                return "Xin Nhập Tiền Trả Trước";
+            }
+
             else
-            return "true";
+                return "true";
         }
 
 
         private void btn_AddNew_Click(object sender, EventArgs e)
         {
             string check = checkNull();
-            if (check == "true")
+            if (gridView1.RowCount > 0)
             {
-                //thêm phiếu xuất
+                if (check == "true")
+                {
+                    //kiểm tra số phiếu
+                    string couponNumber = txt_number.Text;
+                    if (outCouponConstruction.isCouponNumber(couponNumber) == true)
+                    {
+                        messeage.error("Mã Phiếu Đã Tồn Tại!");
+                    }
+                    else
+                    {
+                        //thêm phiếu xuất
 
-                //DTO.ST_out_coupon_supply newOutCoupon = new ST_out_coupon_supply();
-                //newOutCoupon.construction_id = Convert.ToInt64( lue_Construction.EditValue);
-                //newOutCoupon.out_coupon_supplies_number = txt_number.Text;
-                //newOutCoupon.
+                        DTO.ST_out_coupon_supply newOutCoupon = new ST_out_coupon_supply();
+                        newOutCoupon.construction_item_id = Convert.ToInt64(lue_ConstructionItem.EditValue);
+                        newOutCoupon.out_coupon_supplies_number = txt_number.Text;
+                        newOutCoupon.out_coupon_supplies_receiver = txt_deliver.Text;
+                        newOutCoupon.out_coupon_supplies_total_percent_discount = Convert.ToInt32(s_number.Text);
+                        newOutCoupon.storehouse_id = Convert.ToInt64(lue_Storehouse.EditValue);
+                        newOutCoupon.out_coupon_supplies_created_date = DateTime.Now;
+                        newOutCoupon.out_coupon_supplies_description = txt_description.Text;
+                        newOutCoupon.out_coupon_supplies_total_price = totalPrice;
+                        newOutCoupon.customer_id = 0;
+                        newOutCoupon.employee_id_created = frm_Main.Vitual_id;
+
+                        Int64 outCouponId = outCouponConstruction.insertOutCouponConstruction(newOutCoupon);
+                        if (outCouponId != 0)
+                        {
+                            bool boolCheckInsertDetailOCS = true;
+                            for (int i = 0; i < gridView1.RowCount; i++)
+                            {
+                                Int64 suppliesID = Convert.ToInt64(gridView1.GetRowCellValue(i, "ID"));
+                                Int32 quality = Convert.ToInt32(gridView1.GetRowCellValue(i, "supplies_quantity"));
+                                DTO.ST_detail_out_coupon_supply newDetailOCS = new ST_detail_out_coupon_supply();
+                                newDetailOCS.out_coupon_supplies_id = outCouponId;
+                                newDetailOCS.supplies_id = suppliesID;
+                                newDetailOCS.detail_out_coupon_supplies_quantity = quality;
+                                Int64 detailOCSId = detailOCSBus.insertDetailOutCoupon(newDetailOCS);
+                                Int64 storeId =Convert.ToInt64(lue_Storehouse.EditValue);
+                                storehouseDetailBus.updateOutSuppliesQuality(storeId, suppliesID, quality);
+                                
+
+
+                                if (detailOCSId == 0)
+                                {
+                                    boolCheckInsertDetailOCS = false;
+                                    break;
+                                }
+
+                            }
+                            if (boolCheckInsertDetailOCS == true)
+                            {
+                                messeage.success("Thêm Mới Thành Công!");
+                            }
+                            else
+                            {
+                                messeage.error("Không Thể Thêm Mới!");
+                            }
+
+                            // công nợ
 
 
 
+                            this.Close();
+                        }
+                        else
+                        {
+                            messeage.error("Không Thể Thêm Mới!");
+                        }
+                    }
 
+                }
+                else
+                {
+                    messeage.error(check);
+                }
             }
             else
             {
-                 messeage.error(check);
+                messeage.error("Không Có Vật Tư!");
             }
+        }
+
+        private void lue_Construction_EditValueChanged(object sender, EventArgs e)
+        {
+            lue_ConstructionItem.Properties.DisplayMember = "construction_item_name";
+            lue_ConstructionItem.Properties.ValueMember = "construction_item_id";
+            lue_ConstructionItem.Properties.DataSource = constructionItemBus.getContructionItemWithGroup(Convert.ToInt64(lue_Construction.EditValue));
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         

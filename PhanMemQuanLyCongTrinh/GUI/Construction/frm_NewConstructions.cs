@@ -13,20 +13,24 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_NewConstructions : DevExpress.XtraEditors.XtraForm
     {
-        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus( );
-        BUS.CustomerBus customerBus = new BUS.CustomerBus( );
+        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus();
+        BUS.CustomerBus customerBus = new BUS.CustomerBus();
+
+        byte[] bytes = null;
+        string fileName;
+
         public frm_NewConstructions()
         {
             InitializeComponent();
         }
-       
+
         OpenFileDialog open;
 
         public void loadCustomer()
         {
             lke_Customer.Properties.DisplayMember = "customer_name";
             lke_Customer.Properties.ValueMember = "customer_id";
-            lke_Customer.Properties.DataSource = customerBus.getAllCustomer();      
+            lke_Customer.Properties.DataSource = customerBus.getAllCustomer();
         }
 
         private void btn_OpenFile_Click(object sender, EventArgs e)
@@ -39,9 +43,18 @@ namespace PhanMemQuanLyCongTrinh
 
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                foreach (string fileName in openFileDialog.FileNames)
+                foreach (string fileName1 in openFileDialog.FileNames)
                 {
-                    txt_file.Text = fileName;
+                    txt_file.Text = fileName1;
+
+                    string filepath = txt_file.Text;
+                    string filename = Path.GetFileName(filepath);
+                    FileStream fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fs);
+                    bytes = br.ReadBytes((Int32)fs.Length);
+                    br.Close();
+                    fs.Close();
+                    fileName = filename;
                 }
             }
         }
@@ -80,32 +93,16 @@ namespace PhanMemQuanLyCongTrinh
             }
             else if (date_End.Text == "")
             {
-                txt_Price.Focus();
+                date_End.Focus();
                 return "Vui Lòng Nhập Ngày Kết Thúc!";
             }
-            else if (txt_file.Text != "" && getFile() == null)
-            {
-                btn_OpenFile.Focus();
-                return "File Bạn không Có!";
-            }
-
             else
             {
                 return "true";
             }
         }
 
-        private byte[] getFile()
-        {
-            string filepath = txt_file.Text;
-            string filename = Path.GetFileName(filepath);
-            FileStream fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            byte[] bytes = br.ReadBytes((Int32)fs.Length);
-            br.Close();
-            fs.Close();
-            return bytes;
-        }
+
 
 
         byte[] converImageToBirany(Image img)
@@ -120,7 +117,7 @@ namespace PhanMemQuanLyCongTrinh
 
         private bool insertConstruction()
         {
-           
+
 
             DTO.ST_construction newConstruction = new DTO.ST_construction();
             newConstruction.construction_name = txt_ConstructionName.Text;
@@ -128,46 +125,52 @@ namespace PhanMemQuanLyCongTrinh
             newConstruction.construction_addresss = txt_Address.Text;
             newConstruction.construction_contract_number = txt_ContractNumber.Text;
             newConstruction.construction_total_price = Convert.ToDecimal(txt_Price.Text);
-            string filepath = txt_file.Text;
-            string filename = Path.GetFileName(filepath);
-            FileStream fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            byte[] bytes = br.ReadBytes((Int32)fs.Length);
-            br.Close();
-            fs.Close();
 
 
-            newConstruction.construction_file_name = filename;
 
-            newConstruction.construction_file = bytes;
+
+            if (bytes != null)
+            {
+                newConstruction.construction_file_name = fileName;
+                newConstruction.construction_file = bytes;
+            }
+
             if (date_Start.Text != "")
             {
                 DateTime dateStart = Convert.ToDateTime(date_Start.Text);
-                dateStart.ToString("yy/MM/dd");
+                dateStart.ToString("yyyy/MM/dd");
                 newConstruction.construction_date_start = dateStart;
             }
 
             if (date_End.Text != "")
             {
                 DateTime dateEnd = Convert.ToDateTime(date_End.Text);
-                dateEnd.ToString("yy/MM/dd");
+                dateEnd.ToString("yyyy/MM/dd");
                 newConstruction.construction_date_end = dateEnd;
             }
-            if (date_Guarantee.Text != "")
+
+
+            if (date_GuaranteeStart.Text != "")
             {
-                DateTime dateGuarantee = Convert.ToDateTime(date_Guarantee.Text);
-                dateGuarantee.ToString("yy/MM/dd");
-                newConstruction.construction_date_guarantee = dateGuarantee;
+                DateTime dateGuarantee = Convert.ToDateTime(date_GuaranteeStart.Text);
+                dateGuarantee.ToString("yyyy/MM/dd");
+                newConstruction.construction_date_start_guarantee = dateGuarantee;
+            }
+            if (date_GuaranteeEnd.Text != "")
+            {
+                DateTime dateGuarantee = Convert.ToDateTime(date_GuaranteeEnd.Text);
+                dateGuarantee.ToString("yyyy/MM/dd");
+                newConstruction.construction_date_end_guarantee = dateGuarantee;
             }
 
-             if (pic_Logo.Image != null)
+            if (pic_Logo.Image != null)
             {
                 byte[] fileByte = converImageToBirany(pic_Logo.Image);
                 System.Data.Linq.Binary fileBinary = new System.Data.Linq.Binary(fileByte);
                 newConstruction.construction_image = fileBinary;
             }
-             newConstruction.construction_status = 0;
-             newConstruction.employee_created = frm_Main.Vitual_id;
+            newConstruction.construction_status = 0;
+            newConstruction.employee_created = frm_Main.Vitual_id;
 
 
 
@@ -203,7 +206,7 @@ namespace PhanMemQuanLyCongTrinh
         {
             frm_NewCustomer frm = new frm_NewCustomer();
             frm.FormClosed += new FormClosedEventHandler(dongform);
-           
+            
             frm.ShowDialog();
         }
         private void dongform(object sender, EventArgs e)
@@ -215,6 +218,7 @@ namespace PhanMemQuanLyCongTrinh
         {
             loadCustomer();
             StyleDevxpressGridControl.autoLookUpEdit(lke_Customer);
+            StyleDevxpressGridControl.styleTextBoxVND(txt_Price);
             this.AcceptButton = btn_Update;
         }
 
@@ -238,26 +242,33 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_Update_Click_1(object sender, EventArgs e)
         {
-            string check = checkNull();
-            if (check == "true")
+            try
             {
-
-                bool boolInsertVendor = insertConstruction();
-                if (boolInsertVendor == true)
+                string check = checkNull();
+                if (check == "true")
                 {
-                    messeage.success("Thêm Mới Thành Công!");
-                    this.Close();
+
+                    bool boolInsertVendor = insertConstruction();
+                    if (boolInsertVendor == true)
+                    {
+                        messeage.success("Thêm Mới Thành Công!");
+                        this.Close();
+                    }
+                    else
+                    {
+                        messeage.error("Không Thể Thêm Mới!");
+                    }
                 }
                 else
                 {
-                    messeage.error("Không Thể Thêm Mới!");
+                    messeage.error(check);
                 }
             }
-            else
+            catch (Exception)
             {
-                messeage.error(check);
+                messeage.err();
             }
         }
-       
+
     }
 }

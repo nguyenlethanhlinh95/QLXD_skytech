@@ -200,15 +200,22 @@ namespace PhanMemQuanLyCongTrinh
 
         private void but_Update_Click(object sender, EventArgs e)
         {
-            string check = checkNull();
+            try
+            {
+                string check = checkNull();
 
-            if (check == "true")
-            {
+                if (check == "true")
+                {
                     insertCustomer();
-            }  
-            else
+                }
+                else
+                {
+                    messeage.error(check);
+                }
+            }
+            catch (Exception)
             {
-                messeage.error(check);
+                messeage.err();
             }
         }
 

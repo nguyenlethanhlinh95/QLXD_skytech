@@ -50,6 +50,9 @@ namespace PhanMemQuanLyCongTrinh.BUS
         }
 
 
-
+        public object getAllSupliesInStorehouse(Int64 id)
+        {
+            return _sup.getAllSupliesInStorehouse(id);
+        }
     }
 }

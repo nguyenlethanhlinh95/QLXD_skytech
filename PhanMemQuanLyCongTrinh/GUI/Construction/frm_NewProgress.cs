@@ -61,18 +61,22 @@ namespace PhanMemQuanLyCongTrinh
             else if (date_Start.Text == "")
             {
                 date_Start.Focus();
-                return "Vui Lòng Nhập Ngày Lập!";
+                return "Vui Lòng Nhập Ngày Bắt Đầu!";
             }
-            else if (txt_percent.Text == "" || Convert.ToInt32(txt_percent.Text) <= 0 || Convert.ToInt32(txt_percent.Text) >100)
-            {
-                txt_percent.Focus();
-                return "Vui Lòng Nhập Phần Trăm Chính Xác!";
-            }
-            else if (pic_Logo.Image == null)
-            {
-                btn_Img.Focus();
-                return "Vui Lòng Nhập Hình Ảnh Tiến Độ Công Trình!";
-            }
+            //else if (txt_percent.Text == "" || Convert.ToInt32(txt_percent.Text) <= 0 || Convert.ToInt32(txt_percent.Text) >100)
+            //{
+            //    txt_percent.Focus();
+            //    return "Vui Lòng Nhập Phần Trăm Chính Xác!";
+            //}
+            //else if ( cmb_status == null)
+            //{
+            //    return "Vui Lòng Chọn Tình Trạng!";
+            //}
+            //else if (pic_Logo.Image == null)
+            //{
+            //    btn_Img.Focus();
+            //    return "Vui Lòng Nhập Hình Ảnh Tiến Độ Công Trình!";
+            //}
             else
             {
                 return "true";
@@ -84,8 +88,12 @@ namespace PhanMemQuanLyCongTrinh
 
             DTO.ST_progress_construction_item newProgress = new DTO.ST_progress_construction_item();
             newProgress.construction_item_id = Convert.ToInt64(lke_ConstractionItem.EditValue);
-            newProgress.progress_construction_item_percent = Convert.ToInt32( txt_percent.Text);
-            newProgress.progress_construction_item_date = Convert.ToDateTime(date_Start.Text);
+            //newProgress.progress_construction_item_percent = Convert.ToInt32( txt_percent.Text);
+
+           
+
+            newProgress.progress_construction_item_date_start = Convert.ToDateTime(date_Start.Text);
+            newProgress.progress_construction_item_date_end = Convert.ToDateTime(date_End.Text);
             newProgress.progress_construction_item_description = txt_description.Text;
           
 
@@ -114,50 +122,25 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            string checkNull1 = checkNull();
-            if (checkNull1 == "true")
+            try
             {
-                bool boolCheckUpdateStatus = false;
-                    if (Convert.ToInt32(txt_percent.Text) > 0 && Convert.ToInt32(txt_percent.Text) < 100)
+                string checkNull1 = checkNull();
+                if (checkNull1 == "true")
+                {
+                    //bool isConstructionItem = progressBus.isConstructionItem(Convert.ToInt64(lke_ConstractionItem.EditValue));
+                    Int64 idContructItemss = Int64.Parse(lke_ConstractionItem.EditValue.ToString());
+                    var startDate = Convert.ToDateTime(date_Start.Text);
+                    var endDate = Convert.ToDateTime(date_End.Text) ;
+                    bool isConstructionItem = constructionItemBus.updateContstructionItemProcess(idContructItemss, startDate, endDate);
+                    if (isConstructionItem == true)
                     {
-                        boolCheckUpdateStatus = constructionItemBus.updateContstructionItemStatus(Convert.ToInt64(lke_ConstractionItem.EditValue), 1);
+                        messeage.success("Thêm Mới Thành Công!");
+                        this.Close( );
                     }
-                    else if (Convert.ToInt32(txt_percent.Text) == 100)
-                        {
-                            boolCheckUpdateStatus = constructionItemBus.updateContstructionItemStatus(Convert.ToInt64(lke_ConstractionItem.EditValue), 2);
-                            bool boolCheckUpdateStatusCon = true;
-                            if (constructionItemBus.isContructionStatus(Convert.ToInt64(lke_Constraction.EditValue)) == true)
-                            {
-                                boolCheckUpdateStatusCon = constructionBus.updateStatusContstruction(Convert.ToInt64(lke_Constraction.EditValue), 1);
-                            }
-                            else
-                            {
-                                boolCheckUpdateStatusCon = constructionBus.updateStatusContstruction(Convert.ToInt64(lke_Constraction.EditValue), 2);
-                            }
-                        }
-                    
-                    
-                    
-
-                    if (boolCheckUpdateStatus == true)
-                    {
-                        bool boolInsertConstruction = insertProgress();
-                        if (boolInsertConstruction == true)
-                        {
-                            messeage.success("Thêm Mới Thành Công!");
-                            this.Close();
-                        }
-                        else
-                        {
-                            messeage.error("Không Thể Thêm Mới!");
-                        }
-                    }
-
                     else
                     {
                         messeage.error("Không Thể Thêm Mới!");
                     }
-               
 
                 }
                 else
@@ -165,7 +148,11 @@ namespace PhanMemQuanLyCongTrinh
                     messeage.error(checkNull1);
                 }
 
-
+            }
+            catch (Exception)
+            {
+                messeage.err();
+            }
 
 
             
@@ -187,6 +174,41 @@ namespace PhanMemQuanLyCongTrinh
         private void but_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmb_status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_AddConstruction_Click(object sender, EventArgs e)
+        {
+            frm_NewConstructions frm = new frm_NewConstructions();
+            frm.FormClosed += new FormClosedEventHandler(dongformGroup);
+
+            frm.ShowDialog();
+        }
+
+
+
+        private void dongformGroup(object sender, EventArgs e)
+        {
+            loadConstruction();
+        }
+
+        private void btn_AddBuildingContractor_Click(object sender, EventArgs e)
+        {
+            frm_NewConstructionItem frm = new frm_NewConstructionItem();
+            frm.FormClosed += new FormClosedEventHandler(dongform);
+
+            frm.ShowDialog();
+        }
+
+
+
+        private void dongform(object sender, EventArgs e)
+        {
+            loadConstruction();
         }
 
     }

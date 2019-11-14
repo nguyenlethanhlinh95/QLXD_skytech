@@ -432,6 +432,22 @@ namespace PhanMemQuanLyCongTrinh
             frm.ShowDialog();
         }
 
+        private void btnProgress_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            Form frm = kiemtraform(typeof(frm_TienDoCongTrinh));
+            if ( frm == null )
+            {
+                frm_TienDoCongTrinh forms = new frm_TienDoCongTrinh( );
+                forms.MdiParent = this;
+                forms.Show( );
+            }
+            else
+            {
+                frm.Activate( );
+            }
+        }
+
         
         
     }

@@ -54,16 +54,15 @@
             this.txt_ConstructionName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.date_End = new DevExpress.XtraEditors.DateEdit();
-            this.date_Guarantee = new DevExpress.XtraEditors.DateEdit();
+            this.date_GuaranteeEnd = new DevExpress.XtraEditors.DateEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txt_file = new DevExpress.XtraEditors.TextEdit();
             this.btn_OpenFile = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.date_GuaranteeStart = new DevExpress.XtraEditors.DateEdit();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_ContractNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lke_Customer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_Start.Properties.CalendarTimeProperties)).BeginInit();
@@ -74,11 +73,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_ConstructionName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_End.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_End.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_Guarantee.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_Guarantee.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_GuaranteeEnd.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_GuaranteeEnd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_file.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_GuaranteeStart.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_GuaranteeStart.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl16
@@ -146,7 +145,7 @@
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(101, 131);
+            this.labelControl11.Location = new System.Drawing.Point(104, 131);
             this.labelControl11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(83, 16);
@@ -197,7 +196,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(94, 253);
+            this.labelControl3.Location = new System.Drawing.Point(95, 253);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(92, 16);
@@ -208,7 +207,7 @@
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(109, 70);
+            this.labelControl9.Location = new System.Drawing.Point(111, 70);
             this.labelControl9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(76, 16);
@@ -219,7 +218,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(137, 101);
+            this.labelControl1.Location = new System.Drawing.Point(144, 101);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(43, 16);
@@ -251,7 +250,7 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(120, 191);
+            this.labelControl8.Location = new System.Drawing.Point(124, 191);
             this.labelControl8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(63, 16);
@@ -262,7 +261,7 @@
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(138, 161);
+            this.labelControl10.Location = new System.Drawing.Point(148, 161);
             this.labelControl10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(39, 16);
@@ -316,7 +315,7 @@
             this.but_Exit.Appearance.Options.UseForeColor = true;
             this.but_Exit.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.but_Exit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("but_Exit.ImageOptions.Image")));
-            this.but_Exit.Location = new System.Drawing.Point(536, 396);
+            this.but_Exit.Location = new System.Drawing.Point(521, 360);
             this.but_Exit.LookAndFeel.SkinMaskColor = System.Drawing.Color.Gray;
             this.but_Exit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Black;
             this.but_Exit.LookAndFeel.SkinName = "Office 2010 Black";
@@ -340,7 +339,7 @@
             this.btn_Update.Appearance.Options.UseForeColor = true;
             this.btn_Update.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.btn_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Update.ImageOptions.Image")));
-            this.btn_Update.Location = new System.Drawing.Point(388, 396);
+            this.btn_Update.Location = new System.Drawing.Point(373, 360);
             this.btn_Update.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_Update.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_Update.LookAndFeel.SkinName = "Office 2010 Black";
@@ -366,7 +365,7 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(87, 41);
+            this.labelControl7.Location = new System.Drawing.Point(92, 41);
             this.labelControl7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(95, 16);
@@ -387,12 +386,12 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(33, 312);
+            this.labelControl4.Location = new System.Drawing.Point(30, 305);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(157, 16);
             this.labelControl4.TabIndex = 310;
-            this.labelControl4.Text = "Ngày Kết Thúc Bảo Hành";
+            this.labelControl4.Text = "Ngày Kết Thúc Bảo Hành";
             // 
             // date_End
             // 
@@ -408,19 +407,19 @@
             this.date_End.Size = new System.Drawing.Size(291, 22);
             this.date_End.TabIndex = 330;
             // 
-            // date_Guarantee
+            // date_GuaranteeEnd
             // 
-            this.date_Guarantee.EditValue = null;
-            this.date_Guarantee.Location = new System.Drawing.Point(210, 306);
-            this.date_Guarantee.Name = "date_Guarantee";
-            this.date_Guarantee.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date_Guarantee.Properties.Appearance.Options.UseFont = true;
-            this.date_Guarantee.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.date_GuaranteeEnd.EditValue = null;
+            this.date_GuaranteeEnd.Location = new System.Drawing.Point(210, 306);
+            this.date_GuaranteeEnd.Name = "date_GuaranteeEnd";
+            this.date_GuaranteeEnd.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date_GuaranteeEnd.Properties.Appearance.Options.UseFont = true;
+            this.date_GuaranteeEnd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.date_Guarantee.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.date_GuaranteeEnd.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.date_Guarantee.Size = new System.Drawing.Size(291, 22);
-            this.date_Guarantee.TabIndex = 331;
+            this.date_GuaranteeEnd.Size = new System.Drawing.Size(291, 22);
+            this.date_GuaranteeEnd.TabIndex = 331;
             // 
             // labelControl5
             // 
@@ -437,6 +436,7 @@
             // 
             // txt_file
             // 
+            this.txt_file.Enabled = false;
             this.txt_file.Location = new System.Drawing.Point(210, 188);
             this.txt_file.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_file.Name = "txt_file";
@@ -481,19 +481,6 @@
             this.labelControl17.TabIndex = 337;
             this.labelControl17.Text = "*";
             // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.5F);
-            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Appearance.Options.UseForeColor = true;
-            this.labelControl6.Location = new System.Drawing.Point(539, 192);
-            this.labelControl6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(8, 16);
-            this.labelControl6.TabIndex = 362;
-            this.labelControl6.Text = "*";
-            // 
             // labelControl18
             // 
             this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -505,46 +492,46 @@
             this.labelControl18.TabIndex = 363;
             this.labelControl18.Text = "VNĐ";
             // 
+            // date_GuaranteeStart
+            // 
+            this.date_GuaranteeStart.EditValue = null;
+            this.date_GuaranteeStart.Location = new System.Drawing.Point(210, 278);
+            this.date_GuaranteeStart.Name = "date_GuaranteeStart";
+            this.date_GuaranteeStart.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date_GuaranteeStart.Properties.Appearance.Options.UseFont = true;
+            this.date_GuaranteeStart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.date_GuaranteeStart.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.date_GuaranteeStart.Size = new System.Drawing.Size(291, 22);
+            this.date_GuaranteeStart.TabIndex = 365;
+            // 
             // labelControl19
             // 
             this.labelControl19.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl19.Appearance.Options.UseFont = true;
-            this.labelControl19.Location = new System.Drawing.Point(33, 281);
+            this.labelControl19.Location = new System.Drawing.Point(34, 277);
             this.labelControl19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(153, 16);
-            this.labelControl19.TabIndex = 310;
-            this.labelControl19.Text = "Ngày Bắt Đầu Bảo Hành";
-            // 
-            // dateEdit1
-            // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(210, 278);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateEdit1.Properties.Appearance.Options.UseFont = true;
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(291, 22);
-            this.dateEdit1.TabIndex = 331;
+            this.labelControl19.TabIndex = 364;
+            this.labelControl19.Text = "Ngày Bắt Đầu Bảo Hành";
             // 
             // frm_NewConstructions
             // 
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 470);
+            this.ClientSize = new System.Drawing.Size(896, 403);
+            this.Controls.Add(this.date_GuaranteeStart);
+            this.Controls.Add(this.labelControl19);
             this.Controls.Add(this.labelControl18);
-            this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl17);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.btn_OpenFile);
             this.Controls.Add(this.txt_file);
             this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.dateEdit1);
-            this.Controls.Add(this.date_Guarantee);
+            this.Controls.Add(this.date_GuaranteeEnd);
             this.Controls.Add(this.date_End);
             this.Controls.Add(this.labelControl16);
             this.Controls.Add(this.labelControl15);
@@ -568,7 +555,6 @@
             this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.pic_Logo);
             this.Controls.Add(this.labelControl7);
-            this.Controls.Add(this.labelControl19);
             this.Controls.Add(this.txt_ConstructionName);
             this.Controls.Add(this.labelControl4);
             this.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -587,11 +573,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_ConstructionName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_End.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_End.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_Guarantee.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.date_Guarantee.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_GuaranteeEnd.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_GuaranteeEnd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_file.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_GuaranteeStart.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.date_GuaranteeStart.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -624,16 +610,15 @@
         private DevExpress.XtraEditors.TextEdit txt_ConstructionName;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.DateEdit date_End;
-        private DevExpress.XtraEditors.DateEdit date_Guarantee;
+        private DevExpress.XtraEditors.DateEdit date_GuaranteeEnd;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit txt_file;
         private DevExpress.XtraEditors.SimpleButton btn_OpenFile;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl17;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl18;
+        private DevExpress.XtraEditors.DateEdit date_GuaranteeStart;
         private DevExpress.XtraEditors.LabelControl labelControl19;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
 
     }
 }

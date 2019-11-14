@@ -158,12 +158,14 @@ namespace PhanMemQuanLyCongTrinh
         {
             if (grdv_progress.RowCount > 0)
             {
-                Int64 id = Convert.ToInt64(grdv_progress.GetRowCellValue(index, "progress_construction_item_id").ToString());
+                if (index >= 0)
+                {
+                    Int64 id = Convert.ToInt64(grdv_progress.GetRowCellValue(index, "progress_construction_item_id").ToString());
 
 
-                var name = grdv_progress.GetRowCellValue(index, "construction_item_name").ToString();
+                    var name = grdv_progress.GetRowCellValue(index, "construction_item_name").ToString();
 
-                
+
                     bool boolCheckDelete = messeage.info("Bạn Có Muốn Xóa Tiến Độ Của Hạng Mục ", name);
 
                     if (boolCheckDelete == true)
@@ -181,6 +183,11 @@ namespace PhanMemQuanLyCongTrinh
 
                         }
                     }
+                }
+                else
+                {
+                    messeage.error("Bạn Hãy Chọn Tiến Độ!");
+                }
                
 
             }
@@ -198,10 +205,25 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_Edit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frm_Updateprogress frm = new frm_Updateprogress();
-            frm.FormClosed += new FormClosedEventHandler(dongform);
-            frm.progressId = Convert.ToInt64(grdv_progress.GetRowCellValue(index, "progress_construction_item_id").ToString());
-            frm.ShowDialog();
+            if (grdv_progress.RowCount > 0)
+            {
+                if (index >= 0)
+                {
+                    frm_Updateprogress frm = new frm_Updateprogress();
+                    frm.FormClosed += new FormClosedEventHandler(dongform);
+                    frm.progressId = Convert.ToInt64(grdv_progress.GetRowCellValue(index, "progress_construction_item_id").ToString());
+                    frm.ShowDialog();
+                }
+                else
+                {
+                    messeage.error("Bạn Hãy Chọn Tiến Độ!");
+                }
+            }
+            else
+            {
+                messeage.error("Không Có Gì Để Chỉnh Sửa!");
+            }
+
         }
     }
 }

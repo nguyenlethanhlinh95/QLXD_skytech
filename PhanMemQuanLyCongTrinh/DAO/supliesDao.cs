@@ -206,6 +206,35 @@ namespace PhanMemQuanLyCongTrinh.DAO
             }
         }
 
-
+        public object getAllSupliesInStorehouse(Int64 id)
+        {
+            try
+            {
+                db.Dispose( );
+                db = new DTO.DataClasses1DataContext( );
+                db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
+                var suplies = from sup in db.ST_supplies
+                              join storehouse in db.ST_storehouses_details on sup.supplies_id equals storehouse.supplies_id
+                              join unit in db.ST_units on sup.unit_id equals unit.unit_id
+                              join group_sup in db.ST_group_supplies on sup.group_supplies_id equals group_sup.group_supplies_id
+                              where storehouse.storehouse_id == id
+                              select new
+                              {
+                                  sup.supplies_id,
+                                  sup.supplies_id_custom,
+                                  sup.supplies_name,
+                                  unit.unit_name,
+                                  group_sup.group_supplies_name,
+                                  sup.supplies_entry_price,
+                                  sup.supplies_commercial_price,
+                              }
+                                   ;
+                return suplies;
+            }
+            catch ( Exception )
+            {
+                return null;
+            }
+        }
     }
 }

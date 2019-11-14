@@ -14,9 +14,12 @@ namespace PhanMemQuanLyCongTrinh
 {
     public partial class frm_NewConstructionItem : DevExpress.XtraEditors.XtraForm
     {
-        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus( );
-        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus( );
-        BUS.BuildingContractorBus buildingContractorBus = new BuildingContractorBus( );
+        BUS.ConstructionBus constructionBus = new BUS.ConstructionBus();
+        BUS.ConstructionItemBus constructionItemBus = new BUS.ConstructionItemBus();
+        BUS.BuildingContractorBus buildingContractorBus = new BuildingContractorBus();
+
+        byte[] bytes = null;
+        string fileName;
 
         public frm_NewConstructionItem()
         {
@@ -39,8 +42,10 @@ namespace PhanMemQuanLyCongTrinh
         {
             loadConstruction();
             loadBuildingContractor();
+
             StyleDevxpressGridControl.autoLookUpEdit(lke_buildingContractor);
             StyleDevxpressGridControl.autoLookUpEdit(lke_Constraction);
+            StyleDevxpressGridControl.styleTextBoxVND(txt_Price);
             this.AcceptButton = btn_Add;
         }
 
@@ -57,11 +62,18 @@ namespace PhanMemQuanLyCongTrinh
                 foreach (string fileName1 in openFileDialog.FileNames)
                 {
                     txt_file.Text = fileName1;
-
+                    string filepath = txt_file.Text;
+                    string filename = Path.GetFileName(filepath);
+                    FileStream fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fs);
+                    bytes = br.ReadBytes((Int32)fs.Length);
+                    br.Close();
+                    fs.Close();
+                    fileName = filename;
                 }
             }
 
-        
+
         }
 
         private byte[] getFile()
@@ -87,7 +99,7 @@ namespace PhanMemQuanLyCongTrinh
                 lke_Constraction.Focus();
                 return "Vui Lòng Nhập Công Trình!";
             }
-            else if (lke_buildingContractor.Text == "")
+            else if (lke_buildingContractor.Text == lke_buildingContractor.Properties.NullText)
             {
                 lke_buildingContractor.Focus();
                 return "Vui Lòng Nhập Hạng Mục!";
@@ -109,10 +121,10 @@ namespace PhanMemQuanLyCongTrinh
             }
             else if (date_End.Text == "")
             {
-                txt_Price.Focus();
+                date_End.Focus();
                 return "Vui Lòng Nhập Ngày Kết Thúc!";
             }
-            else if (txt_file.Text != "" && getFile() == null)
+            else if (bytes == null)
             {
                 btn_OpenFile.Focus();
                 return "File Bạn không Có!";
@@ -135,18 +147,14 @@ namespace PhanMemQuanLyCongTrinh
             newConstructionItem.building_contractor_id = Convert.ToInt64(lke_buildingContractor.EditValue);
             newConstructionItem.construction_contract_number = txt_ContractNumber.Text;
             newConstructionItem.construction_item_total_price = Convert.ToDecimal(txt_Price.Text);
-            string filepath = txt_file.Text;
-            string filename = Path.GetFileName(filepath);
-            FileStream fs = new FileStream(filepath, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            byte[] bytes = br.ReadBytes((Int32)fs.Length);
-            br.Close();
-            fs.Close();
+
+            if (bytes != null)
+            {
+                newConstructionItem.construction_item_file_name = fileName;
+                newConstructionItem.construction_item_file = bytes;
+            }
 
 
-            newConstructionItem.construction_item_file_name = filename;
-
-            newConstructionItem.construction_item_file = bytes;
             if (date_Start.Text != "")
             {
                 DateTime dateStart = Convert.ToDateTime(date_Start.Text);
@@ -160,9 +168,16 @@ namespace PhanMemQuanLyCongTrinh
                 dateEnd.ToString("yy/MM/dd");
                 newConstructionItem.construction_item_date_end = dateEnd;
             }
-            if (date_Guarantee.Text != "")
+            if (dte_NgayBDBaoHanh.Text != "")
             {
-                DateTime dateGuarantee = Convert.ToDateTime(date_Guarantee.Text);
+                DateTime dateGuarantee = Convert.ToDateTime(dte_NgayBDBaoHanh.Text);
+                dateGuarantee.ToString("yy/MM/dd");
+                newConstructionItem.construction_item_date_end_guarantee = dateGuarantee;
+            }
+
+            if ( dte_NgayKTBaoHanh.Text != "" )
+            {
+                DateTime dateGuarantee = Convert.ToDateTime(dte_NgayKTBaoHanh.Text);
                 dateGuarantee.ToString("yy/MM/dd");
                 newConstructionItem.construction_item_date_end_guarantee = dateGuarantee;
             }
@@ -175,8 +190,6 @@ namespace PhanMemQuanLyCongTrinh
             }
             newConstructionItem.construction_item_status = 0;
             newConstructionItem.employee_created = frm_Main.Vitual_id;
-
-
 
             return constructionItemBus.insertContstructionItem(newConstructionItem);
 
@@ -193,24 +206,31 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            string checkNull1 = checkNull();
-            if (checkNull1 == "true")
+            try
             {
-                bool boolInsertConstruction = insertConstruction();
-                if (boolInsertConstruction == true)
+                string checkNull1 = checkNull();
+                if (checkNull1 == "true")
                 {
-                    messeage.success("Thêm Mới Thành Công!");
-                    this.Close();
+                    bool boolInsertConstruction = insertConstruction();
+                    if (boolInsertConstruction == true)
+                    {
+                        messeage.success("Thêm Mới Thành Công!");
+                        this.Close();
+                    }
+                    else
+                    {
+                        messeage.error("Không Thể Thêm Mới!");
+                    }
+
                 }
                 else
                 {
-                    messeage.error("Không Thể Thêm Mới!");
+                    messeage.error(checkNull1);
                 }
-
             }
-            else
+            catch (Exception)
             {
-                messeage.error(checkNull1);
+                messeage.err();
             }
         }
 
@@ -218,7 +238,7 @@ namespace PhanMemQuanLyCongTrinh
         {
             frm_NewConstructions frm = new frm_NewConstructions();
             frm.FormClosed += new FormClosedEventHandler(dongform);
-            
+
             frm.ShowDialog();
         }
         private void dongform(object sender, EventArgs e)
@@ -251,12 +271,19 @@ namespace PhanMemQuanLyCongTrinh
             }
         }
 
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            frm_NewBuildingContractor frm = new frm_NewBuildingContractor();
+            frm.FormClosed += new FormClosedEventHandler(dongformBC);
+
+            frm.ShowDialog();
+        }
+
         private void but_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
 
-       
     }
 }

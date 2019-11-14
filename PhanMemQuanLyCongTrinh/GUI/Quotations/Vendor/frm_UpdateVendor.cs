@@ -39,7 +39,14 @@ namespace PhanMemQuanLyCongTrinh
         }
         private void frm_UpdateVendor_Load(object sender, EventArgs e)
         {
-            loadVendor();
+            try
+            {
+                loadVendor();
+            }
+            catch (Exception)
+            {
+                messeage.err();
+            }
             this.AcceptButton = btn_Update;
         }
 

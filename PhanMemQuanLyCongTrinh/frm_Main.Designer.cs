@@ -109,6 +109,8 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnListEnterCouponSupplies = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.barButtonItem1_DangXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem_login = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -145,8 +147,6 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.taskbarAssistant1 = new DevExpress.Utils.Taskbar.TaskbarAssistant();
-            this.barButtonItem1_DangXuat = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem_login = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -779,6 +779,7 @@
             this.btnProgress.LargeWidth = 100;
             this.btnProgress.Name = "btnProgress";
             this.btnProgress.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnProgress.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnProgress_ItemClick);
             // 
             // btnSuccessContruction
             // 
@@ -949,6 +950,26 @@
             this.skinRibbonGalleryBarItem2.Caption = "skinRibbonGalleryBarItem2";
             this.skinRibbonGalleryBarItem2.Id = 81;
             this.skinRibbonGalleryBarItem2.Name = "skinRibbonGalleryBarItem2";
+            // 
+            // barButtonItem1_DangXuat
+            // 
+            this.barButtonItem1_DangXuat.Caption = "Đăng xuất khỏi hệ thống";
+            this.barButtonItem1_DangXuat.Id = 82;
+            this.barButtonItem1_DangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_DangXuat.ImageOptions.Image")));
+            this.barButtonItem1_DangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_DangXuat.ImageOptions.LargeImage")));
+            this.barButtonItem1_DangXuat.LargeWidth = 100;
+            this.barButtonItem1_DangXuat.Name = "barButtonItem1_DangXuat";
+            this.barButtonItem1_DangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_DangXuat_ItemClick);
+            // 
+            // barButtonItem_login
+            // 
+            this.barButtonItem_login.Caption = "Đăng nhập";
+            this.barButtonItem_login.Id = 83;
+            this.barButtonItem_login.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem_login.ImageOptions.Image")));
+            this.barButtonItem_login.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem_login.ImageOptions.LargeImage")));
+            this.barButtonItem_login.LargeWidth = 100;
+            this.barButtonItem_login.Name = "barButtonItem_login";
+            this.barButtonItem_login.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_login_ItemClick);
             // 
             // ribbonPage4
             // 
@@ -1251,26 +1272,6 @@
             // taskbarAssistant1
             // 
             this.taskbarAssistant1.ParentControl = this;
-            // 
-            // barButtonItem1_DangXuat
-            // 
-            this.barButtonItem1_DangXuat.Caption = "Đăng xuất khỏi hệ thống";
-            this.barButtonItem1_DangXuat.Id = 82;
-            this.barButtonItem1_DangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_DangXuat.ImageOptions.Image")));
-            this.barButtonItem1_DangXuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1_DangXuat.ImageOptions.LargeImage")));
-            this.barButtonItem1_DangXuat.LargeWidth = 100;
-            this.barButtonItem1_DangXuat.Name = "barButtonItem1_DangXuat";
-            this.barButtonItem1_DangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_DangXuat_ItemClick);
-            // 
-            // barButtonItem_login
-            // 
-            this.barButtonItem_login.Caption = "Đăng nhập";
-            this.barButtonItem_login.Id = 83;
-            this.barButtonItem_login.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem_login.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.barButtonItem_login.LargeWidth = 100;
-            this.barButtonItem_login.Name = "barButtonItem_login";
-            this.barButtonItem_login.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_login_ItemClick);
             // 
             // frm_Main
             // 

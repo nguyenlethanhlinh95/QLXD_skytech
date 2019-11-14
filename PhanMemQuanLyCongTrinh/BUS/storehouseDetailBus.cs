@@ -55,5 +55,20 @@ namespace PhanMemQuanLyCongTrinh.BUS
         {
             return store.updateQuantityDiv(idSup, quality, storehousesId);
         }
+
+        public Object getQuality(Int64 suppliesId, Int64 storeHouseId)
+        {
+            return store.getQuality(suppliesId, storeHouseId);
+        }
+
+        public bool updateEnterSuppliesQuality(Int64 storehouseId, Int64 suppliesId, Int64 quality)
+        {
+            return store.updateEnterSuppliesQuality(storehouseId, suppliesId, quality);
+        }
+
+        public bool updateOutSuppliesQuality(Int64 storehouseId, Int64 suppliesId, Int64 quality)
+        {
+            return store.updateOutSuppliesQuality(storehouseId, suppliesId, quality);
+        }
     }
 }

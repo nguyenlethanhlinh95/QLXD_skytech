@@ -31,72 +31,79 @@ namespace PhanMemQuanLyCongTrinh
 
         private void loadConstruction()
         {
-            try
-            {
-                var construction = constructionBus.getContruction(counstructionId);
-                txt_ConstructionId.Text = construction.GetType( ).GetProperty("construction_id_custom").GetValue(construction, null).ToString( );
-                txt_Address.Text = construction.GetType( ).GetProperty("construction_addresss").GetValue(construction, null).ToString( );
-                txt_ConstructionName.Text = construction.GetType( ).GetProperty("construction_name").GetValue(construction, null).ToString( );
-                txt_ContractNumber.Text = construction.GetType( ).GetProperty("construction_contract_number").GetValue(construction, null).ToString( );
-                txt_file.Text = construction.GetType( ).GetProperty("construction_file_name").GetValue(construction, null).ToString( );
-
-                decimal money = Convert.ToDecimal(construction.GetType( ).GetProperty("construction_total_price").GetValue(construction, null).ToString( ));
-                //txt_Price.Text = money.ToString("0");
-                txt_Price.Text = StyleDevxpressGridControl.convertDecimaToNumberic(money);
-
-
-                var brimary = construction.GetType( ).GetProperty("construction_image").GetValue(construction, null);
-                if ( brimary != null )
-                {
-                    byte[] array = (brimary as System.Data.Linq.Binary).ToArray( );
-                    MemoryStream ms = new MemoryStream(array);
-                    pic_Logo.Image = Image.FromStream(ms);
-                }
-                lke_Customer.EditValue = construction.GetType( ).GetProperty("customer_id").GetValue(construction, null).ToString( );
-
-
-
-                var startDay = construction.GetType( ).GetProperty("construction_date_start").GetValue(construction, null);
-                if ( startDay != null )
-                {
-                    DateTime date = Convert.ToDateTime(startDay);
-
-                    date_Start.Text = date.ToString("dd/MM/yyyy");
-                }
-
-
-                var endDay = construction.GetType( ).GetProperty("construction_date_end").GetValue(construction, null);
-                if ( endDay != null )
-                {
-
-                    DateTime date = Convert.ToDateTime(endDay);
-
-                    date_End.Text = date.ToString("dd/MM/yyyy");
-                }
-
-
-                var guarantee = construction.GetType( ).GetProperty("construction_date_guarantee").GetValue(construction, null);
-                if ( guarantee != null )
-                {
-
-                    DateTime date = Convert.ToDateTime(guarantee);
-
-                    date_Guarantee.Text = date.ToString("dd/MM/yyyy");
-                }
-                var fileNull = construction.GetType( ).GetProperty("construction_file").GetValue(construction, null);
-
-                if ( fileNull != null )
-                {
-                    byte[] arr = (fileNull as System.Data.Linq.Binary).ToArray( );
-                    file = arr;
-                    fileName = construction.GetType( ).GetProperty("construction_file_name").GetValue(construction, null).ToString( );
-                }
-            }
-            catch(Exception)
-            {
-                messeage.err();
-            }
+            var construction = constructionBus.getContruction(counstructionId);
+            txt_ConstructionId.Text = construction.GetType().GetProperty("construction_id_custom").GetValue(construction, null).ToString();
+            txt_Address.Text = construction.GetType().GetProperty("construction_addresss").GetValue(construction, null).ToString();
+            txt_ConstructionName.Text = construction.GetType().GetProperty("construction_name").GetValue(construction, null).ToString();
+            txt_ContractNumber.Text = construction.GetType().GetProperty("construction_contract_number").GetValue(construction, null).ToString();
             
+            if(file != null)
+            txt_file.Text = construction.GetType().GetProperty("construction_file_name").GetValue(construction, null).ToString();
+
+            decimal money = Convert.ToDecimal(construction.GetType().GetProperty("construction_total_price").GetValue(construction, null).ToString());
+            txt_Price.Text = money.ToString();
+
+            var brimary = construction.GetType().GetProperty("construction_image").GetValue(construction, null);
+            if (brimary != null)
+            {
+                byte[] array = (brimary as System.Data.Linq.Binary).ToArray();
+                MemoryStream ms = new MemoryStream(array);
+                pic_Logo.Image = Image.FromStream(ms);
+            }
+            lke_Customer.EditValue = construction.GetType().GetProperty("customer_id").GetValue(construction, null).ToString();
+
+
+
+            var startDay =  construction.GetType().GetProperty("construction_date_start").GetValue(construction, null);
+            
+            if (startDay != null)
+            {
+                DateTime date = Convert.ToDateTime(startDay);
+
+                date_Start.Text = date.ToShortDateString();
+            }
+
+
+            var endDay = construction.GetType().GetProperty("construction_date_end").GetValue(construction, null);
+            if (endDay != null)
+            {
+
+                DateTime date = Convert.ToDateTime(endDay);
+
+                date_End.Text = date.ToShortDateString();
+            }
+
+
+            var guaranteeStar = construction.GetType().GetProperty("construction_date_start_guarantee").GetValue(construction, null);
+            if (guaranteeStar != null)
+            {
+
+                DateTime date = Convert.ToDateTime(guaranteeStar);
+
+                date_GuaranteeStart.Text = date.ToShortDateString();
+            }
+
+            var guaranteeEnd = construction.GetType().GetProperty("construction_date_end_guarantee").GetValue(construction, null);
+            if (guaranteeEnd != null)
+            {
+
+                DateTime date = Convert.ToDateTime(guaranteeEnd);
+
+                date_GuaranteeEnd.Text = date.ToShortDateString();
+            }
+
+
+
+
+
+            var  fileNull = construction.GetType().GetProperty("construction_file").GetValue(construction, null);
+
+            if (fileNull != null)
+            {
+                byte[] arr = (fileNull as System.Data.Linq.Binary).ToArray();
+                file = arr;
+                fileName = construction.GetType().GetProperty("construction_file_name").GetValue(construction, null).ToString();
+            }
           
 
 
@@ -105,10 +112,20 @@ namespace PhanMemQuanLyCongTrinh
 
         private void frm_UpdateContruction_Load(object sender, EventArgs e)
         {
-            loadConstruction();
-            loadCustomer();
-            
             StyleDevxpressGridControl.autoLookUpEdit(lke_Customer);
+            StyleDevxpressGridControl.styleTextBoxVND(txt_Price);
+            try
+            {
+
+                loadConstruction();
+
+                loadCustomer();
+            }
+            catch (Exception)
+            {
+                messeage.err();
+                this.Close();
+            }
             this.AcceptButton = btn_Update;
         }
 
@@ -162,12 +179,7 @@ namespace PhanMemQuanLyCongTrinh
                 txt_Price.Focus();
                 return "Vui Lòng Nhập Ngày Kết Thúc!";
             }
-            else if ( file == null)
-            {
-                btn_OpenFile.Focus();
-                return "File Bạn không Có!";
-            }
-
+           
             else
             {
                 return "true";
@@ -196,22 +208,28 @@ namespace PhanMemQuanLyCongTrinh
 
             if (date_Start.Text != "")
             {
-                var dateStar = date_Start.Text;
-                update.construction_date_start = Convert.ToDateTime( dateStar);
+                DateTime dateStart = Convert.ToDateTime(date_Start.Text);
+                dateStart.ToString("yyyy/MM/dd");
+                update.construction_date_start = dateStart;
             }
             if (date_End.Text != "")
             {
-                var dateEnd = Convert.ToDateTime(date_End.Text);
+                DateTime dateEnd = Convert.ToDateTime(date_End.Text);
                 dateEnd.ToString("yyyy/MM/dd");
                 update.construction_date_end = dateEnd;
             }
-            if (date_Guarantee.Text != "")
+            if (date_GuaranteeStart.Text != "")
             {
-                var dateGuarantee = Convert.ToDateTime(date_Guarantee.Text);
+                DateTime dateGuarantee = Convert.ToDateTime(date_GuaranteeStart.Text);
                 dateGuarantee.ToString("yyyy/MM/dd");
-                update.construction_date_guarantee = dateGuarantee;
+                update.construction_date_start_guarantee = dateGuarantee;
             }
-
+            if (date_GuaranteeEnd.Text != "")
+            {
+                DateTime dateGuarantee = Convert.ToDateTime(date_GuaranteeEnd.Text);
+                dateGuarantee.ToString("yyyy/MM/dd");
+                update.construction_date_end_guarantee = dateGuarantee;
+            }
 
                     if (file != null)
                     {
@@ -230,7 +248,6 @@ namespace PhanMemQuanLyCongTrinh
 
 
 
-
                 return constructionBus.updateContstruction(update);
         }
 
@@ -238,24 +255,31 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            string checkNull1 = checkNull();
-            if (checkNull1 == "true")
+            try
             {
-                bool boolInsertConstruction = updateConstruction();
-                if (boolInsertConstruction == true)
+                string checkNull1 = checkNull();
+                if (checkNull1 == "true")
                 {
-                    messeage.success("Cập Nhật Thành Công!");
-                   
+                    bool boolUpdateConstruction = updateConstruction();
+                    if (boolUpdateConstruction == true)
+                    {
+                        messeage.success("Cập Nhật Thành Công!");
+
+                    }
+                    else
+                    {
+                        messeage.error("Không Thể Cập Nhật!");
+                    }
+
                 }
                 else
                 {
-                    messeage.error("Không Thể Cập Nhật!");
+                    messeage.error(checkNull1);
                 }
-
             }
-            else
+            catch (Exception)
             {
-                messeage.error(checkNull1);
+                messeage.err();
             }
         }
         public void loadCustomer()

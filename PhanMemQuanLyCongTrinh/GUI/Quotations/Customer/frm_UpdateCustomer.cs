@@ -101,9 +101,17 @@ namespace PhanMemQuanLyCongTrinh
         {
 
             StyleDevxpressGridControl.autoLookUpEdit(lke_CustomerGroup);
-            loadComboboxCustomerGroup();
-            loadDetailCustomer();
+            try
+            {
+                loadComboboxCustomerGroup();
+                loadDetailCustomer();
+            }
+            catch (Exception)
+            {
+                messeage.err();
+            }
 
+            StyleDevxpressGridControl.styleTextBoxVND(txt_Liabilities);
             this.AcceptButton = btn_Update;
         }
 
@@ -235,14 +243,21 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            string check = checkNull();
-            if (check == "true")
+            try
             {
-            updateCustomer();
+                string check = checkNull();
+                if (check == "true")
+                {
+                    updateCustomer();
+                }
+                else
+                {
+                    messeage.error(check);
+                }
             }
-            else
+            catch (Exception)
             {
-                messeage.error(check);
+                messeage.err();
             }
         }
 

@@ -20,6 +20,7 @@ namespace PhanMemQuanLyCongTrinh
         public Int64 progressId { get; set; }
         Int64 contructionId;
         Int64 contructionItemId;
+        bool checkChange = true;
         public frm_Updateprogress()
         {
             InitializeComponent();
@@ -28,18 +29,25 @@ namespace PhanMemQuanLyCongTrinh
         public void loadProgress()
         {
             var progress = progressBus.getProgress(progressId);
-            txt_Construction.Text = progress.GetType().GetProperty("construction_name").GetValue(progress, null).ToString();
-            txt_ConstructionIten.Text = progress.GetType().GetProperty("construction_item_name").GetValue(progress, null).ToString();
+            lke_Constraction.EditValue = progress.GetType().GetProperty("construction_id").GetValue(progress, null).ToString();
+            lke_ConstractionItem.EditValue = progress.GetType().GetProperty("construction_item_id").GetValue(progress, null).ToString();
             txt_description.Text = progress.GetType().GetProperty("progress_construction_item_description").GetValue(progress, null).ToString();
-            txt_percent.Text = progress.GetType().GetProperty("progress_construction_item_percent").GetValue(progress, null).ToString();
-
-            var date = progress.GetType().GetProperty("progress_construction_item_date").GetValue(progress, null);
-            if (date != null)
+            
+            var dateStart = progress.GetType().GetProperty("progress_construction_item_date_start").GetValue(progress, null);
+            if (dateStart != null)
             {
-                
-                DateTime day = Convert.ToDateTime(date);
+
+                DateTime day = Convert.ToDateTime(dateStart);
                 date_Start.Text = day.ToString("dd/MM/yyyy");
             }
+            var dateEnd = progress.GetType().GetProperty("progress_construction_item_date_end").GetValue(progress, null);
+            if (dateEnd != null)
+            {
+
+                DateTime day = Convert.ToDateTime(dateEnd);
+                date_End.Text = day.ToString("dd/MM/yyyy");
+            }
+
             var brimary = progress.GetType().GetProperty("progress_construction_item_image").GetValue(progress, null);
             if (brimary != null)
             {
@@ -47,14 +55,39 @@ namespace PhanMemQuanLyCongTrinh
                 MemoryStream ms = new MemoryStream(array);
                 pic_Logo.Image = Image.FromStream(ms);
             }
-            contructionId =Convert.ToInt64( progress.GetType().GetProperty("construction_id").GetValue(progress, null));
+            contructionId = Convert.ToInt64(progress.GetType().GetProperty("construction_id").GetValue(progress, null));
             contructionItemId = Convert.ToInt64(progress.GetType().GetProperty("construction_item_id").GetValue(progress, null));
-
+            
+            
+            loadConstruction();
+            loadConstructionItem(Convert.ToInt64(progress.GetType().GetProperty("construction_id").GetValue(progress, null)));
         }
+        public void loadConstruction()
+        {
+            lke_Constraction.Properties.DisplayMember = "construction_name";
+            lke_Constraction.Properties.ValueMember = "construction_id";
+            lke_Constraction.Properties.DataSource = constructionBus.getAllContruction();
+        }
+        public void loadConstructionItem(Int64 id)
+        {
+            lke_ConstractionItem.Properties.DisplayMember = "construction_item_name";
+            lke_ConstractionItem.Properties.ValueMember = "construction_item_id";
+            lke_ConstractionItem.Properties.DataSource = constructionItemBus.getAllIdNameContructionItem(id);
+        }
+
 
         private void frm_Updateprogress_Load(object sender, EventArgs e)
         {
-            loadProgress();
+            try
+            {
+                loadProgress();
+
+
+            }
+            catch (Exception)
+            {
+                messeage.err();
+            }
             this.AcceptButton = btn_Update;
         }
 
@@ -63,21 +96,33 @@ namespace PhanMemQuanLyCongTrinh
             this.Close();
         }
         public string checkNull()
-        { if (date_Start.Text == "")
+
+        {
+            if (lke_Constraction.Text == lke_Constraction.Properties.NullText)
+            {
+                lke_Constraction.Focus();
+                return "Vui Lòng Nhập Công Trình!";
+            }
+            else if (lke_ConstractionItem.Text == lke_ConstractionItem.Properties.NullText)
+            {
+                lke_ConstractionItem.Focus();
+                return "Vui Lòng Nhập Hạng Mục!";
+            }
+            else if (date_Start.Text == "")
             {
                 date_Start.Focus();
-                return "Vui Lòng Nhập Ngày Lập!";
+                return "Vui Lòng Nhập Ngày Bắt Đầu!";
             }
-            else if (txt_percent.Text == "" || Convert.ToInt32(txt_percent.Text) <= 0 || Convert.ToInt32(txt_percent.Text) > 100)
-            {
-                txt_percent.Focus();
-                return "Vui Lòng Nhập Phần Trăm Chính Xác!";
-            }
-            else if (pic_Logo.Image == null)
-            {
-                btn_Img.Focus();
-                return "Vui Lòng Nhập Hình Ảnh Tiến Độ Công Trình!";
-            }
+        //else if (txt_percent.Text == "" || Convert.ToInt32(txt_percent.Text) <= 0 || Convert.ToInt32(txt_percent.Text) > 100)
+        //{
+        //    txt_percent.Focus();
+        //    return "Vui Lòng Nhập Phần Trăm Chính Xác!";
+        //}
+            //else if (pic_Logo.Image == null)
+            //{
+            //    btn_Img.Focus();
+            //    return "Vui Lòng Nhập Hình Ảnh Tiến Độ Công Trình!";
+            //}
             else
             {
                 return "true";
@@ -90,8 +135,8 @@ namespace PhanMemQuanLyCongTrinh
             DTO.ST_progress_construction_item newProgress = new DTO.ST_progress_construction_item();
 
             newProgress.progress_construction_item_id = progressId;
-            newProgress.progress_construction_item_percent = Convert.ToInt32(txt_percent.Text);
-            newProgress.progress_construction_item_date = Convert.ToDateTime(date_Start.Text);
+            newProgress.progress_construction_item_date_end = Convert.ToDateTime(date_End.Text);
+            newProgress.progress_construction_item_date_start = Convert.ToDateTime(date_Start.Text);
             newProgress.progress_construction_item_description = txt_description.Text;
 
             if (pic_Logo.Image != null)
@@ -116,58 +161,38 @@ namespace PhanMemQuanLyCongTrinh
         }
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            string checkNull1 = checkNull();
-            if (checkNull1 == "true")
+            try
             {
-                bool boolCheckUpdateStatus = false;
-                if (Convert.ToInt32(txt_percent.Text) > 0 && Convert.ToInt32(txt_percent.Text) < 100)
+                string checkNull1 = checkNull();
+                if (checkNull1 == "true")
                 {
-                    boolCheckUpdateStatus = constructionItemBus.updateContstructionItemStatus(contructionItemId, 1);
-                }
-                else if (Convert.ToInt32(txt_percent.Text) == 100)
-                {
-                    boolCheckUpdateStatus = constructionItemBus.updateContstructionItemStatus(contructionItemId, 2);
                     
-                }
 
-                bool boolCheckUpdateStatusCon = true;
-                if (constructionItemBus.isContructionStatus(Convert.ToInt64(contructionId)) == true)
-                {
-                    boolCheckUpdateStatusCon = constructionBus.updateStatusContstruction(contructionId, 1);
+
+                    
+                        bool boolUpdateProgress = updateProgress();
+                        if (boolUpdateProgress == true)
+                        {
+                            messeage.success("Cập Nhật Thành Công!");
+                            this.Close();
+                        }
+                        else
+                        {
+                            messeage.error("Không Thể Cập Nhật!");
+                        }
+                   
+
                 }
                 else
                 {
-                    boolCheckUpdateStatusCon = constructionBus.updateStatusContstruction(contructionId, 2);
+                    messeage.error(checkNull1);
                 }
-
-
-                if (boolCheckUpdateStatus == true)
-                {
-                    bool boolUpdateProgress = updateProgress();
-                    if (boolUpdateProgress == true)
-                    {
-                        messeage.success("Cập Nhật Thành Công!");
-                        this.Close();
-                    }
-                    else
-                    {
-                        messeage.error("Không Thể Cập Nhật!");
-                    }
-                }
-
-                else
-                {
-                    messeage.error("Không Thể Cập Nhật!");
-                }
-
 
             }
-            else
+            catch (Exception)
             {
-                messeage.error(checkNull1);
+                messeage.err();
             }
-
-
 
 
         }
@@ -182,6 +207,28 @@ namespace PhanMemQuanLyCongTrinh
                     filename = ofd.FileName;
                     pic_Logo.Image = Image.FromFile(filename);
                 }
+            }
+        }
+
+        private void labelControl6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lke_Constraction_EditValueChanged(object sender, EventArgs e)
+        {
+            if (checkChange == false)
+            {
+                loadConstructionItem(Convert.ToInt64(lke_Constraction.EditValue));
+            }
+            else
+            {
+                checkChange = false;
             }
         }
     }

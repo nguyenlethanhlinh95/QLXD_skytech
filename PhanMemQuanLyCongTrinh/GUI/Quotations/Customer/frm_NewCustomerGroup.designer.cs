@@ -48,7 +48,7 @@
             this.but_Exit.Appearance.Options.UseForeColor = true;
             this.but_Exit.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.but_Exit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("but_Exit.ImageOptions.Image")));
-            this.but_Exit.Location = new System.Drawing.Point(313, 84);
+            this.but_Exit.Location = new System.Drawing.Point(333, 93);
             this.but_Exit.LookAndFeel.SkinMaskColor = System.Drawing.Color.Gray;
             this.but_Exit.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Black;
             this.but_Exit.LookAndFeel.SkinName = "Office 2010 Black";
@@ -72,7 +72,7 @@
             this.but_Update.Appearance.Options.UseForeColor = true;
             this.but_Update.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.but_Update.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("but_Update.ImageOptions.Image")));
-            this.but_Update.Location = new System.Drawing.Point(147, 84);
+            this.but_Update.Location = new System.Drawing.Point(167, 93);
             this.but_Update.LookAndFeel.SkinMaskColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.but_Update.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.but_Update.LookAndFeel.SkinName = "Office 2010 Black";
@@ -89,7 +89,7 @@
             // 
             this.lbl_CustomerGroupName.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_CustomerGroupName.Appearance.Options.UseFont = true;
-            this.lbl_CustomerGroupName.Location = new System.Drawing.Point(41, 30);
+            this.lbl_CustomerGroupName.Location = new System.Drawing.Point(83, 33);
             this.lbl_CustomerGroupName.Name = "lbl_CustomerGroupName";
             this.lbl_CustomerGroupName.Size = new System.Drawing.Size(142, 16);
             this.lbl_CustomerGroupName.TabIndex = 18;
@@ -98,11 +98,11 @@
             // 
             // txt_CustomerGroupName
             // 
-            this.txt_CustomerGroupName.Location = new System.Drawing.Point(191, 28);
+            this.txt_CustomerGroupName.Location = new System.Drawing.Point(233, 31);
             this.txt_CustomerGroupName.Name = "txt_CustomerGroupName";
             this.txt_CustomerGroupName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_CustomerGroupName.Properties.Appearance.Options.UseFont = true;
-            this.txt_CustomerGroupName.Size = new System.Drawing.Size(304, 22);
+            this.txt_CustomerGroupName.Size = new System.Drawing.Size(257, 22);
             this.txt_CustomerGroupName.TabIndex = 20;
             // 
             // labelControl1
@@ -111,7 +111,7 @@
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(501, 34);
+            this.labelControl1.Location = new System.Drawing.Point(496, 34);
             this.labelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(8, 16);

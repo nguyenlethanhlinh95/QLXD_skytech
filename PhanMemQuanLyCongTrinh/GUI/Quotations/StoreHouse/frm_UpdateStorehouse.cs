@@ -61,24 +61,31 @@ namespace PhanMemQuanLyCongTrinh
         }
         private void but_Add_Click(object sender, EventArgs e)
         {
-            string check = checkNull();
-            if (check == "true")
+            try
             {
-
-                bool boolUpdateStorehouse = updateStorehouse();
-                if (boolUpdateStorehouse == true)
+                string check = checkNull();
+                if (check == "true")
                 {
-                    messeage.success("Cập Nhật Thành Công!");
-                  
+
+                    bool boolUpdateStorehouse = updateStorehouse();
+                    if (boolUpdateStorehouse == true)
+                    {
+                        messeage.success("Cập Nhật Thành Công!");
+
+                    }
+                    else
+                    {
+                        messeage.error("Không Thể Cập Nhật!");
+                    }
                 }
                 else
                 {
-                    messeage.error("Không Thể Cập Nhật!");
+                    messeage.error(check);
                 }
             }
-            else
+            catch (Exception)
             {
-                messeage.error(check);
+                messeage.err();
             }
         }
         #endregion

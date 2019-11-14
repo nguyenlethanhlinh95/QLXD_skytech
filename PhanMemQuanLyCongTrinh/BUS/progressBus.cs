@@ -37,5 +37,18 @@ namespace PhanMemQuanLyCongTrinh.BUS
         {
             return progressDao.updateProgress(progress);
         }
+
+        public bool isConstructionItem(Int64 constructionItemId)
+        {
+            var coupon = progressDao.isConstructionItem(constructionItemId);
+            if ( coupon == null )
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

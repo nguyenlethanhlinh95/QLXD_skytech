@@ -342,5 +342,57 @@ namespace PhanMemQuanLyCongTrinh.DAO
                 return false;
             }
         }
+
+
+        public Object getQuality(Int64 suppliesId, Int64 storeHouseId)
+        {
+            try
+            {
+                db.Dispose( );
+                db = new DTO.DataClasses1DataContext( );
+                db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
+                var storehouseDetail = from t1 in db.ST_storehouses_details
+                                       where t1.storehouse_id == storeHouseId && t1.supplies_id == suppliesId
+                                       select new
+                                       {
+                                           t1.storehouses_detail_id,
+                                           t1.storehouse_detail_quantity,
+                                       };
+                return storehouseDetail.First( );
+            }
+            catch ( Exception )
+            {
+                return null;
+            }
+        }
+
+        public bool updateEnterSuppliesQuality(Int64 storehouseId, Int64 suppliesId, Int64 quality)
+        {
+            try
+            {
+                var update = db.ST_storehouses_details.Where(p => p.storehouse_id == storehouseId && p.supplies_id == suppliesId).SingleOrDefault( );
+                update.storehouse_detail_quantity += quality;
+                db.SubmitChanges( );
+                return true;
+            }
+            catch ( Exception )
+            {
+                return false;
+            }
+        }
+        public bool updateOutSuppliesQuality(Int64 storehouseId, Int64 suppliesId, Int64 quality)
+        {
+            try
+            {
+                var update = db.ST_storehouses_details.Where(p => p.storehouse_id == storehouseId && p.supplies_id == suppliesId).SingleOrDefault( );
+                update.storehouse_detail_quantity -= quality;
+                db.SubmitChanges( );
+                return true;
+            }
+            catch ( Exception )
+            {
+                return false;
+            }
+        }
     }
 }

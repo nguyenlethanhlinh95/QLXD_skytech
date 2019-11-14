@@ -24,8 +24,17 @@ namespace PhanMemQuanLyCongTrinh
 
         private void frm_UpdateBuildingContractor_Load(object sender, EventArgs e)
         {
+            StyleDevxpressGridControl.styleTextBoxVND(txt_Liabilities);
             this.AcceptButton = btn_Update;
-            loadBuildingContractor();
+            try
+            {
+                loadBuildingContractor();
+            }
+            catch (Exception)
+            {
+                messeage.err();
+            }
+           
         }
 
 
@@ -134,10 +143,12 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            string check = checkNull();
-
-            if (check == "true")
+            try
             {
+                string check = checkNull();
+
+                if (check == "true")
+                {
                     bool boolUpdateBuildingContractor = updateBuildingContractor();
                     if (boolUpdateBuildingContractor == true)
                     {
@@ -147,12 +158,16 @@ namespace PhanMemQuanLyCongTrinh
                     {
                         messeage.error("Không Thể Chỉnh Sửa!");
                     }
+                }
+                else
+                {
+                    messeage.error(check);
+                }
             }
-            else
+            catch (Exception)
             {
-                messeage.error(check);
+                messeage.err();
             }
-                
         }
 
         private void btn_Img_Click(object sender, EventArgs e)

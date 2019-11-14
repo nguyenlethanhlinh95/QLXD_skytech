@@ -41,7 +41,7 @@ namespace PhanMemQuanLyCongTrinh
                 txt_ContractNumber.Text = constructionItem.GetType( ).GetProperty("construction_contract_number").GetValue(constructionItem, null).ToString( );
 
                 decimal money = Convert.ToDecimal(constructionItem.GetType( ).GetProperty("construction_item_total_price").GetValue(constructionItem, null).ToString( ));
-                txt_Price.Text = money.ToString("0");
+                txt_Price.Text = StyleDevxpressGridControl.convertDecimaToNumberic(money);
 
 
                 txt_file.Text = constructionItem.GetType( ).GetProperty("construction_item_file_name").GetValue(constructionItem, null).ToString( );
@@ -53,8 +53,6 @@ namespace PhanMemQuanLyCongTrinh
                     MemoryStream ms = new MemoryStream(array);
                     pic_Logo.Image = Image.FromStream(ms);
                 }
-
-
 
 
                 var startDay = constructionItem.GetType( ).GetProperty("construction_item_date_start").GetValue(constructionItem, null);
@@ -76,13 +74,22 @@ namespace PhanMemQuanLyCongTrinh
                 }
 
 
-                var guarantee = constructionItem.GetType( ).GetProperty("construction_item_date_end_guarantee").GetValue(constructionItem, null);
-                if ( guarantee != null )
+                var ngayBDBaoHanh = constructionItem.GetType( ).GetProperty("construction_item_date_start_guarantee").GetValue(constructionItem, null);
+                if ( ngayBDBaoHanh != null )
                 {
 
-                    DateTime day = Convert.ToDateTime(guarantee);
+                    DateTime day = Convert.ToDateTime(ngayBDBaoHanh);
 
-                    date_Guarantee.Text = day.ToString("dd/MM/yyyy");
+                    dte_NgayBDBaoHanh.Text = day.ToString("dd/MM/yyyy");
+                }
+
+                var ngayKTBaoHanh = constructionItem.GetType( ).GetProperty("construction_item_date_end_guarantee").GetValue(constructionItem, null);
+                if ( ngayKTBaoHanh != null )
+                {
+
+                    DateTime day = Convert.ToDateTime(ngayKTBaoHanh);
+
+                    dte_NgayKTBaoHanh.Text = day.ToString("dd/MM/yyyy");
                 }
 
                 var fileNull = constructionItem.GetType( ).GetProperty("construction_item_file").GetValue(constructionItem, null);
@@ -118,11 +125,21 @@ namespace PhanMemQuanLyCongTrinh
 
         private void frm_UpdateConstructionItem_Load(object sender, EventArgs e)
         {
-            loadConstructionItem();
-            loadConstuction();
-            loadBuilding();
             StyleDevxpressGridControl.autoLookUpEdit(lke_buildingContractor);
             StyleDevxpressGridControl.autoLookUpEdit(lke_Constraction);
+            StyleDevxpressGridControl.styleTextBoxVND(txt_Price);
+            try
+            {
+                loadConstructionItem();
+                loadConstuction();
+                loadBuilding();
+            }
+            catch (Exception)
+            {
+                messeage.err();
+            }
+            
+            this.AcceptButton = btn_Update;
         }
 
         private void but_Exit_Click(object sender, EventArgs e)
@@ -227,9 +244,9 @@ namespace PhanMemQuanLyCongTrinh
                 newConstructionItem.construction_item_date_end = dateEnd;
             }
 
-            if (date_Guarantee.Text != "")
+            if (dte_NgayKTBaoHanh.Text != "")
             {
-                DateTime dateGuarantee = Convert.ToDateTime(date_Guarantee.Text);
+                DateTime dateGuarantee = Convert.ToDateTime(dte_NgayKTBaoHanh.Text);
                 dateGuarantee.ToString("yy/MM/dd");
                 newConstructionItem.construction_item_date_end_guarantee = dateGuarantee;
             }
@@ -259,24 +276,31 @@ namespace PhanMemQuanLyCongTrinh
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            string checkNull1 = checkNull();
-            if (checkNull1 == "true")
+            try
             {
-                bool boolInsertConstruction = updateConstructionItem();
-                if (boolInsertConstruction == true)
+                string checkNull1 = checkNull();
+                if (checkNull1 == "true")
                 {
-                    messeage.success("Cập Nhật Thành Công!");
-                    this.Close();
+                    bool boolInsertConstruction = updateConstructionItem();
+                    if (boolInsertConstruction == true)
+                    {
+                        messeage.success("Cập Nhật Thành Công!");
+                        this.Close();
+                    }
+                    else
+                    {
+                        messeage.error("Không Thể Cập Nhật!");
+                    }
+
                 }
                 else
                 {
-                    messeage.error("Không Thể Cập Nhật!");
+                    messeage.error(checkNull1);
                 }
-
             }
-            else
+            catch (Exception)
             {
-                messeage.error(checkNull1);
+                messeage.err();
             }
         }
 
